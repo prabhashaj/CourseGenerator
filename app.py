@@ -4,7 +4,6 @@ import asyncio # Required for async fetch
 import base64 # Required for encoding image data if needed, though not directly used for text generation
 import os # For environment variables, if API key was stored there
 import httpx # Using httpx for async requests
-from dotenv import load_dotenv  # Add this import
 
 # --- Configuration ---
 # Set page configuration for the Streamlit app
@@ -17,11 +16,8 @@ st.set_page_config(
 st.title("📚 Course Creator & Tracker")
 st.markdown("Generate custom course outlines, track your progress, and get detailed chapter content!")
 
-# --- API Key (Placeholder - Canvas will inject if empty) ---
-# In a real deployment, you would typically get this from environment variables or Streamlit secrets.
-# For Canvas, leave it as an empty string; the environment will provide it.
-load_dotenv()  # Load environment variables from .env file
-API_KEY = os.getenv("GEMINI_API_KEY", "")  # Load from environment, fallback to empty string
+# --- API Key (from Streamlit secrets) ---
+API_KEY = st.secrets["GEMINI_API_KEY"]  # Use Streamlit secrets for deployment
 
 # --- Session State Initialization ---
 if "messages" not in st.session_state:
