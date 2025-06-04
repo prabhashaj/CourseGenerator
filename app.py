@@ -335,7 +335,7 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
                         Chapter: {chapter['chapterTitle']}
                         Description: {chapter['description']}
 
-                        Provide a comprehensive explanation, aiming for 3-5 paragraphs of good knowledge. Include examples if relevant.
+                        Provide a comprehensive explanation, aiming for 3-5 paragraphs of good knowledge. Include examples if relevant.Don't just only create paragraphs but make the content more appealing and readable.
                         """
                         loop = get_or_create_eventloop()
                         generated_chapter_text = loop.run_until_complete(
