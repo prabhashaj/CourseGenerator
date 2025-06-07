@@ -230,8 +230,6 @@ if generate_course_button:
         It must have exactly {num_modules} modules.
         Each module should have chapters, and the content for each module should be designed to take approximately {read_time_per_module} to read.
 
-        For each chapter, generate a description that is 3-4 lines long, providing a concise yet informative summary (not just a single line). The description should give a clear idea of what the chapter covers and highlight key concepts or skills.
-
         The JSON output should strictly follow this schema:
         {{
             "courseTitle": "string",
@@ -350,7 +348,7 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
                         border: 2px solid #e53935 !important;
                         box-shadow: 0 2px 8px rgba(229,57,53,0.15);
                         margin-bottom: 10px;
-                        transition: background 0.2s, color 0.2s;
+`                        transition: background 0.2s, color 0.2s;
                     }
                     .red-btn button:hover {
                         background-color: #b71c1c !important;
