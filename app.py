@@ -223,12 +223,12 @@ if generate_course_button:
             "required": ["courseTitle", "introduction", "modules", "conclusion"]
         }
 
-        # Construct the prompt for the LLM
-        course_prompt = f"""
+        # Construct the prompt for the LLM        course_prompt = f"""
         Generate a detailed course outline in JSON format for a '{course_topic}' course.
         The course should be designed for a '{difficulty_level}' level audience.
         It must have exactly {num_modules} modules.
         Each module should have chapters, and the content for each module should be designed to take approximately {read_time_per_module} to read.
+        When describing chapters, ensure that each description is 3-4 lines long with rich, informative content about what will be covered.
 
         The JSON output should strictly follow this schema:
         {{
@@ -241,14 +241,14 @@ if generate_course_button:
                     "chapters": [
                         {{
                             "chapterTitle": "string",
-                            "description": "string"
+                            "description": "string - Provide 3-4 lines of detailed description here, covering the key points, concepts, and learning outcomes of this chapter. Make the description informative and comprehensive while maintaining clarity."
                         }}
                     ]
                 }}
             ],
             "conclusion": "string"
         }}
-        Ensure the JSON is valid and complete. Do not include any additional text outside the JSON.
+        Ensure the JSON is valid and complete. Do not include any additional text outside the JSON. Remember that each chapter description should be 3-4 lines long and provide substantial, meaningful content.
         """
         with st.spinner("Generating new course outline..."):
             loop = get_or_create_eventloop()
