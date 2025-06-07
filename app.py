@@ -376,67 +376,28 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
         module_quiz_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_quiz"
         if module_quiz_id not in st.session_state.quiz_progress:
             st.session_state.quiz_progress[module_quiz_id] = {"completed": False, "score": 0, "answers": []}
-        # Highlight the Take Quiz and Generate Detailed Content buttons in red
-        highlight_btn_style = """
+        # Highlight the Take Quiz button
+        take_quiz_btn_style = """
             <style>
-            .red-action-btn button {
-                background-color: #e53935 !important;
-                color: #fff !important;
+            .take-quiz-btn button {
+                background-color: #ff9800 !important;
+                color: white !important;
                 font-weight: bold !important;
                 border-radius: 8px !important;
-                border: 2px solid #e53935 !important;
-                box-shadow: 0 2px 8px rgba(229,57,53,0.15);
+                border: 2px solid #ff9800 !important;
+                box-shadow: 0 2px 8px rgba(255,152,0,0.15);
                 margin-bottom: 10px;
             }
-            .red-action-btn button:hover {
-                background-color: #b71c1c !important;
-                border-color: #b71c1c !important;
-                color: #fff !important;
+            .take-quiz-btn button:hover {
+                background-color: #fb8c00 !important;
+                border-color: #fb8c00 !important;
             }
             </style>
         """
-        st.markdown(highlight_btn_style, unsafe_allow_html=True)
-        # Generate Detailed Content buttons (apply red style)
-        for chapter in module.get("chapters", []):
-            # ...existing code for chapter_id, checkbox, expander...
-            with st.expander(f"Chapter Details: {chapter['chapterTitle']}", expanded=False):
-                st.markdown(f"**Description:** {chapter['description']}")
-                gen_btn_container = st.container()
-                with gen_btn_container:
-                    gen_btn = st.button(f"Generate Detailed Content for '{chapter['chapterTitle']}'", key=f"gen_content_btn_{chapter_id}", help="Generate in-depth content for this chapter.", use_container_width=True)
-                gen_btn_container.markdown('<div class="red-action-btn"></div>', unsafe_allow_html=True)
-                if gen_btn:
-                    with st.spinner(f"Generating detailed content for '{chapter['chapterTitle']}'..."):
-                        chapter_content_prompt = f"""
-                        Elaborate in detail on the following chapter from a course titled '{current_course['courseTitle']}' (Difficulty: {difficulty_level}, Read Time: {read_time_per_module}):
-                        Module: {module['moduleTitle']}
-                        Chapter: {chapter['chapterTitle']}
-                        Description: {chapter['description']}
-
-                        Provide a comprehensive explanation, aiming for 3-5 paragraphs of good knowledge. Include examples if relevant.Don't just only create paragraphs but make the content more appealing and readable.
-                        """
-                        loop = get_or_create_eventloop()
-                        generated_chapter_text = loop.run_until_complete(
-                            generate_content_with_gemini(
-                                chapter_content_prompt,
-                                temperature,
-                                max_tokens,
-                                top_k,
-                                top_p,
-                                response_schema=None # No schema for free-form text
-                            )
-                        )
-                        if generated_chapter_text:
-                            st.session_state.chapter_contents[chapter_id] = generated_chapter_text
-                            st.success(f"Content for '{chapter['chapterTitle']}' generated!")
-                        else:
-                            st.error(f"Failed to generate content for '{chapter['chapterTitle']}'.")
-                # ...existing code for displaying content...
-        # Take Quiz button (apply red style)
-        quiz_btn_container = st.container()
-        with quiz_btn_container:
+        st.markdown(take_quiz_btn_style, unsafe_allow_html=True)
+        take_quiz_btn_container = st.container()
+        with take_quiz_btn_container:
             take_quiz_btn = st.button(f"Take Quiz for Module {module['moduleNumber']} ({module['moduleTitle']})", key=f"quiz_btn_{module_quiz_id}", help="Test your knowledge for this module!", use_container_width=True)
-        quiz_btn_container.markdown('<div class="red-action-btn"></div>', unsafe_allow_html=True)
         if take_quiz_btn:
             module_content = "\n".join([chapter['description'] for chapter in module.get('chapters', [])])
             quiz_prompt = f"Module: {module['moduleTitle']}\n{module_content}"
@@ -460,6 +421,64 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
                     st.success("Quiz generated! Scroll down to attempt it.")
                 else:
                     st.error("Failed to generate quiz for this module.")
-        # ...existing code for displaying quiz...
-# ...existing code...
+        # Display quiz if available (immediately after module)
+        quiz_obj = st.session_state.quiz_progress.get(module_quiz_id, {})
+        if quiz_obj.get("questions"):
+            st.markdown(f"#### Quiz for Module {module['moduleNumber']} ({module['moduleTitle']})")
+            answers = quiz_obj.get("answers", [None]*len(quiz_obj["questions"]))
+            submitted = False
+            with st.form(f"quiz_form_{module_quiz_id}"):
+                for idx, q in enumerate(quiz_obj["questions"]):
+                    st.markdown(f"**Q{idx+1}: {q['question']}**")
+                    options = q["options"]
+                    answers[idx] = st.radio(
+                        f"Select answer for Q{idx+1}",
+                        options,
+                        index=options.index(answers[idx]) if answers[idx] in options else 0,
+                        key=f"quiz_{module_quiz_id}_q{idx}"
+                    )
+                submitted = st.form_submit_button("Submit Quiz", use_container_width=True)
+            if submitted and not quiz_obj.get("completed", False):
+                correct_answers = [q["answer"] for q in quiz_obj["questions"]]
+                score = quiz_utils.update_quiz_progress(st.session_state, module_quiz_id, answers, correct_answers)
+                st.success(f"Quiz submitted! Your score: {score}/{len(correct_answers)}")
+                for idx, q in enumerate(quiz_obj["questions"]):
+                    st.markdown(f"**Q{idx+1} Explanation:** {q['explanation']}")
+            elif quiz_obj.get("completed", False):
+                st.info(f"Quiz already completed. Score: {quiz_obj['score']}/{len(quiz_obj['questions'])}")
+                for idx, q in enumerate(quiz_obj["questions"]):
+                    st.markdown(f"**Q{idx+1} Explanation:** {q['explanation']}")
+    st.markdown(f"**Conclusion:** {current_course['conclusion']}")
+else:
+    st.info("Select a course from the sidebar or generate a new one to get started!")
+
+
+# --- Display Chat Messages (for general chatbot interaction) ---
+st.subheader("Chat History")
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+
+# --- Chat Input for general questions ---
+st.subheader("Ask a general question (optional)")
+if prompt := st.chat_input("What else can I help you with?"):
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    with st.chat_message("user"):
+        st.markdown(prompt)
+
+    with st.spinner("Thinking..."):
+        # For general chat, we don't need a specific schema
+        loop = get_or_create_eventloop()
+        response = loop.run_until_complete(
+            generate_content_with_gemini(
+                prompt,
+                temperature,
+                max_tokens,
+                top_k,
+                top_p
+            )
+        )
+    with st.chat_message("assistant"):
+        st.markdown(response)
+    st.session_state.messages.append({"role": "assistant", "content": response})
 
