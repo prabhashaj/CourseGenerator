@@ -376,21 +376,22 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
         module_quiz_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_quiz"
         if module_quiz_id not in st.session_state.quiz_progress:
             st.session_state.quiz_progress[module_quiz_id] = {"completed": False, "score": 0, "answers": []}
-        # Highlight the Take Quiz button
-        take_quiz_btn_style = """
+        # Highlight the Take Quiz and Generate Detailed Content buttons in red
+        highlight_btn_style = """
             <style>
-            .take-quiz-btn button {
-                background-color: #ff9800 !important;
-                color: white !important;
+            .red-action-btn button {
+                background-color: #e53935 !important;
+                color: #fff !important;
                 font-weight: bold !important;
                 border-radius: 8px !important;
-                border: 2px solid #ff9800 !important;
-                box-shadow: 0 2px 8px rgba(255,152,0,0.15);
+                border: 2px solid #e53935 !important;
+                box-shadow: 0 2px 8px rgba(229,57,53,0.15);
                 margin-bottom: 10px;
             }
-            .take-quiz-btn button:hover {
-                background-color: #fb8c00 !important;
-                border-color: #fb8c00 !important;
+            .red-action-btn button:hover {
+                background-color: #b71c1c !important;
+                border-color: #b71c1c !important;
+                color: #fff !important;
             }
             </style>
         """
@@ -398,6 +399,7 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
         take_quiz_btn_container = st.container()
         with take_quiz_btn_container:
             take_quiz_btn = st.button(f"Take Quiz for Module {module['moduleNumber']} ({module['moduleTitle']})", key=f"quiz_btn_{module_quiz_id}", help="Test your knowledge for this module!", use_container_width=True)
+        quiz_btn_container.markdown('<div class="red-action-btn"></div>', unsafe_allow_html=True)
         if take_quiz_btn:
             module_content = "\n".join([chapter['description'] for chapter in module.get('chapters', [])])
             quiz_prompt = f"Module: {module['moduleTitle']}\n{module_content}"
