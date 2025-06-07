@@ -230,6 +230,8 @@ if generate_course_button:
         It must have exactly {num_modules} modules.
         Each module should have chapters, and the content for each module should be designed to take approximately {read_time_per_module} to read.
 
+        For each chapter, the 'description' field must be a detailed summary of the chapter content, written as a paragraph of 3-4 full sentences (not a single line or sentence). Each description should be informative, engaging, and clearly explain what will be covered in the chapter. Do not use bullet points or lists; write as a natural, multi-sentence paragraph.
+
         The JSON output should strictly follow this schema:
         {{
             "courseTitle": "string",
