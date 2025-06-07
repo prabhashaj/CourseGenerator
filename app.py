@@ -338,11 +338,8 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
             with st.expander(f"Chapter Details: {chapter['chapterTitle']}", expanded=False):
                 st.markdown(f"**Description:** {chapter['description']}")
                 
-                # Button to generate content for this specific chapter (with red style)
-                gen_content_btn_container = st.container()
-                with gen_content_btn_container:
-                    gen_content_btn = st.button(f"Generate Detailed Content for '{chapter['chapterTitle']}'", key=f"gen_content_btn_{chapter_id}", type="secondary")
-                if gen_content_btn:
+                # Button to generate content for this specific chapter
+                if st.button(f"Generate Detailed Content for '{chapter['chapterTitle']}'", key=f"gen_content_btn_{chapter_id}"):
                     with st.spinner(f"Generating detailed content for '{chapter['chapterTitle']}'..."):
                         chapter_content_prompt = f"""
                         Elaborate in detail on the following chapter from a course titled '{current_course['courseTitle']}' (Difficulty: {difficulty_level}, Read Time: {read_time_per_module}):
