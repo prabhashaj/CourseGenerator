@@ -1,2 +1,3 @@
 httpx
 streamlit
+fpdf

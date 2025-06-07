@@ -169,15 +169,53 @@ with st.sidebar:
     st.header("My Saved Courses")
     if st.session_state.courses:
         course_titles = [f"{i+1}. {course['courseTitle']}" for i, course in enumerate(st.session_state.courses)]
-        # Use a unique key for the radio button
         selected_course_display = st.radio(
             "Select a Course to View",
             course_titles,
             index=st.session_state.selected_course_index if st.session_state.selected_course_index is not None else 0,
             key="course_selector_radio"
         )
-        # Update selected_course_index based on user selection
         st.session_state.selected_course_index = course_titles.index(selected_course_display)
+
+        # --- Course Management Buttons ---
+        col1, col2, col3, col4 = st.columns(4)
+        with col1:
+            if st.button("📝 Edit Name", key="edit_course_btn"):
+                st.session_state.editing_course = True
+        with col2:
+            if st.button("⬆️ Move Up", key="move_up_btn") and st.session_state.selected_course_index > 0:
+                idx = st.session_state.selected_course_index
+                st.session_state.courses[idx-1], st.session_state.courses[idx] = st.session_state.courses[idx], st.session_state.courses[idx-1]
+                st.session_state.selected_course_index -= 1
+                st.rerun()
+        with col3:
+            if st.button("⬇️ Move Down", key="move_down_btn") and st.session_state.selected_course_index < len(st.session_state.courses)-1:
+                idx = st.session_state.selected_course_index
+                st.session_state.courses[idx+1], st.session_state.courses[idx] = st.session_state.courses[idx], st.session_state.courses[idx+1]
+                st.session_state.selected_course_index += 1
+                st.rerun()
+        with col4:
+            if st.button("🗑️ Delete", key="delete_course_btn"):
+                idx = st.session_state.selected_course_index
+                st.session_state.courses.pop(idx)
+                if len(st.session_state.courses) == 0:
+                    st.session_state.selected_course_index = None
+                else:
+                    st.session_state.selected_course_index = max(0, idx-1)
+                st.rerun()
+
+        # --- Rename Course Modal ---
+        if st.session_state.get("editing_course", False):
+            with st.form("rename_course_form", clear_on_submit=True):
+                new_name = st.text_input("Rename Course", value=st.session_state.courses[st.session_state.selected_course_index]["courseTitle"])
+                submitted = st.form_submit_button("Save Name")
+                if submitted:
+                    st.session_state.courses[st.session_state.selected_course_index]["courseTitle"] = new_name
+                    st.session_state.editing_course = False
+                    st.rerun()
+            if st.button("Cancel Rename", key="cancel_rename_btn"):
+                st.session_state.editing_course = False
+                st.rerun()
     else:
         st.info("No courses generated yet. Generate one above!")
 
@@ -294,108 +332,126 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
 
     st.subheader(f"Viewing Course: {current_course['courseTitle']}")
 
-    # Calculate and display progress
-    total_chapters = 0
-    completed_chapters = 0
-    total_quizzes = 0
-    completed_quizzes = 0
-    for module in current_course.get("modules", []):
-        for chapter in module.get("chapters", []):
-            total_chapters += 1
-            chapter_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_chapter_{chapter['chapterTitle'].replace(' ', '_').replace('.', '').replace(',', '')}"
-            if current_course['completion_status'].get(chapter_id, False):
-                completed_chapters += 1
-        module_quiz_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_quiz"
-        if module_quiz_id in st.session_state.quiz_progress and st.session_state.quiz_progress[module_quiz_id].get("completed", False):
-            total_quizzes += 1
-            completed_quizzes += 1
-        elif module_quiz_id in st.session_state.quiz_progress and st.session_state.quiz_progress[module_quiz_id].get("questions"):
-            total_quizzes += 1
-    total_items = total_chapters + total_quizzes
-    completed_items = completed_chapters + completed_quizzes
-    progress_percentage = (completed_items / total_items) * 100 if total_items > 0 else 0
-    st.progress(progress_percentage / 100, text=f"Course Progress: {progress_percentage:.0f}% ({completed_items}/{total_items} items completed, including quizzes)")
+    # --- Download Buttons ---
+    col_dl1, col_dl2 = st.columns(2)
+    with col_dl1:
+        json_str = json.dumps(current_course, indent=2)
+        st.download_button(
+            label="Download Outline (JSON)",
+            data=json_str,
+            file_name=f"{current_course['courseTitle'].replace(' ', '_')}_outline.json",
+            mime="application/json",
+            key="download_json_btn"
+        )
+    with col_dl2:
+        from utils_pdf import course_to_pdf
+        pdf_bytes = course_to_pdf(current_course)
+        st.download_button(
+            label="Download Outline (PDF)",
+            data=pdf_bytes,
+            file_name=f"{current_course['courseTitle'].replace(' ', '_')}_outline.pdf",
+            mime="application/pdf",
+            key="download_pdf_btn"
+        )
 
-    st.markdown(f"**Introduction:** {current_course['introduction']}")
+    # --- Progress Bar and Introduction ---
+    col_prog, col_intro = st.columns([1,2])
+    with col_prog:
+        # Calculate and display progress
+        total_chapters = 0
+        completed_chapters = 0
+        total_quizzes = 0
+        completed_quizzes = 0
+        for module in current_course.get("modules", []):
+            for chapter in module.get("chapters", []):
+                total_chapters += 1
+                chapter_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_chapter_{chapter['chapterTitle'].replace(' ', '_').replace('.', '').replace(',', '')}"
+                if current_course['completion_status'].get(chapter_id, False):
+                    completed_chapters += 1
+            module_quiz_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_quiz"
+            if module_quiz_id in st.session_state.quiz_progress and st.session_state.quiz_progress[module_quiz_id].get("completed", False):
+                total_quizzes += 1
+                completed_quizzes += 1
+            elif module_quiz_id in st.session_state.quiz_progress and st.session_state.quiz_progress[module_quiz_id].get("questions"):
+                total_quizzes += 1
+        total_items = total_chapters + total_quizzes
+        completed_items = completed_chapters + completed_quizzes
+        progress_percentage = (completed_items / total_items) * 100 if total_items > 0 else 0
+        st.progress(progress_percentage / 100, text=f"Course Progress: {progress_percentage:.0f}% ({completed_items}/{total_items} items completed, including quizzes)")
+    with col_intro:
+        st.markdown(f"**Introduction:** {current_course['introduction']}")
 
+    # --- Modules and Chapters in Columns ---
     for module in current_course.get("modules", []):
         st.markdown(f"### Module {module['moduleNumber']}: {module['moduleTitle']}")
-        for chapter in module.get("chapters", []):
-            # Re-create chapter_id consistently
-            chapter_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_chapter_{chapter['chapterTitle'].replace(' ', '_').replace('.', '').replace(',', '')}"
+        chapter_cols = st.columns(2)
+        for i, chapter in enumerate(module.get("chapters", [])):
+            with chapter_cols[i % 2]:
+                chapter_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_chapter_{chapter['chapterTitle'].replace(' ', '_').replace('.', '').replace(',', '')}"
+                is_completed = st.checkbox(
+                    f"Mark as complete: **{chapter['chapterTitle']}**",
+                    value=current_course['completion_status'].get(chapter_id, False),
+                    key=f"checkbox_{chapter_id}"
+                )
+                if is_completed != current_course['completion_status'].get(chapter_id, False):
+                    current_course['completion_status'][chapter_id] = is_completed
+                    st.session_state.courses[st.session_state.selected_course_index] = current_course
+                    st.rerun()
+                with st.expander(f"Chapter Details: {chapter['chapterTitle']}", expanded=False):
+                    st.markdown(f"**Description:** {chapter['description']}")
+                    st.markdown("""
+                        <style>
+                        .red-btn button {
+                            background-color: #e53935 !important;
+                            color: #fff !important;
+                            font-weight: bold !important;
+                            border-radius: 8px !important;
+                            border: 2px solid #e53935 !important;
+                            box-shadow: 0 2px 8px rgba(229,57,53,0.15);
+                            margin-bottom: 10px;
+                            transition: background 0.2s, color 0.2s;
+                        }
+                        .red-btn button:hover {
+                            background-color: #b71c1c !important;
+                            border-color: #b71c1c !important;
+                            color: #fff !important;
+                        }
+                        </style>
+                    """, unsafe_allow_html=True)
+                    with st.container():
+                        gen_content_btn = st.button(f"Generate Detailed Content for '{chapter['chapterTitle']}'", key=f"gen_content_btn_{chapter_id}", type="secondary")
+                        st.markdown('<style>div[data-testid="stButton"] button {background-color: #e53935 !important; color: #fff !important; font-weight: bold !important; border-radius: 8px !important; border: 2px solid #e53935 !important;}</style>', unsafe_allow_html=True)
+                    if gen_content_btn:
+                        with st.spinner(f"Generating detailed content for '{chapter['chapterTitle']}'..."):
+                            chapter_content_prompt = f"""
+                            Elaborate in detail on the following chapter from a course titled '{current_course['courseTitle']}' (Difficulty: {difficulty_level}, Read Time: {read_time_per_module}):
+                            Module: {module['moduleTitle']}
+                            Chapter: {chapter['chapterTitle']}
+                            Description: {chapter['description']}
 
-            # Checkbox for completion
-            is_completed = st.checkbox(
-                f"Mark as complete: **{chapter['chapterTitle']}**",
-                value=current_course['completion_status'].get(chapter_id, False),
-                key=f"checkbox_{chapter_id}" # Unique key for each checkbox
-            )
-
-            # Update completion status in session state if changed
-            if is_completed != current_course['completion_status'].get(chapter_id, False):
-                current_course['completion_status'][chapter_id] = is_completed
-                st.session_state.courses[st.session_state.selected_course_index] = current_course # Update the course in session state
-                st.rerun() # Rerun to update the progress bar immediately
-
-            with st.expander(f"Chapter Details: {chapter['chapterTitle']}", expanded=False):
-                st.markdown(f"**Description:** {chapter['description']}")
-                # --- Custom Red Button Style for Chapter Content and Quiz ---
-                st.markdown("""
-                    <style>
-                    .red-btn button {
-                        background-color: #e53935 !important;
-                        color: #fff !important;
-                        font-weight: bold !important;
-                        border-radius: 8px !important;
-                        border: 2px solid #e53935 !important;
-                        box-shadow: 0 2px 8px rgba(229,57,53,0.15);
-                        margin-bottom: 10px;
-                        transition: background 0.2s, color 0.2s;
-                    }
-                    .red-btn button:hover {
-                        background-color: #b71c1c !important;
-                        border-color: #b71c1c !important;
-                        color: #fff !important;
-                    }
-                    </style>
-                """, unsafe_allow_html=True)
-                # --- Red Button for Generate Detailed Content ---
-                with st.container():
-                    gen_content_btn = st.button(f"Generate Detailed Content for '{chapter['chapterTitle']}'", key=f"gen_content_btn_{chapter_id}", type="secondary")
-                    st.markdown('<style>div[data-testid="stButton"] button {background-color: #e53935 !important; color: #fff !important; font-weight: bold !important; border-radius: 8px !important; border: 2px solid #e53935 !important;}</style>', unsafe_allow_html=True)
-                if gen_content_btn:
-                    with st.spinner(f"Generating detailed content for '{chapter['chapterTitle']}'..."):
-                        chapter_content_prompt = f"""
-                        Elaborate in detail on the following chapter from a course titled '{current_course['courseTitle']}' (Difficulty: {difficulty_level}, Read Time: {read_time_per_module}):
-                        Module: {module['moduleTitle']}
-                        Chapter: {chapter['chapterTitle']}
-                        Description: {chapter['description']}
-
-                        Provide a comprehensive explanation, aiming for 3-5 paragraphs of good knowledge. Include examples if relevant.Don't just only create paragraphs but make the content more appealing and readable.
-                        """
-                        loop = get_or_create_eventloop()
-                        generated_chapter_text = loop.run_until_complete(
-                            generate_content_with_gemini(
-                                chapter_content_prompt,
-                                temperature,
-                                max_tokens,
-                                top_k,
-                                top_p,
-                                response_schema=None # No schema for free-form text
+                            Provide a comprehensive explanation, aiming for 3-5 paragraphs of good knowledge. Include examples if relevant.Don't just only create paragraphs but make the content more appealing and readable.
+                            """
+                            loop = get_or_create_eventloop()
+                            generated_chapter_text = loop.run_until_complete(
+                                generate_content_with_gemini(
+                                    chapter_content_prompt,
+                                    temperature,
+                                    max_tokens,
+                                    top_k,
+                                    top_p,
+                                    response_schema=None
+                                )
                             )
-                        )
-                        if generated_chapter_text:
-                            st.session_state.chapter_contents[chapter_id] = generated_chapter_text
-                            st.success(f"Content for '{chapter['chapterTitle']}' generated!")
-                        else:
-                            st.error(f"Failed to generate content for '{chapter['chapterTitle']}'.")
-                
-                # Display generated content if available
-                if chapter_id in st.session_state.chapter_contents:
-                    st.markdown("---")
-                    st.markdown(st.session_state.chapter_contents[chapter_id])
-                else:
-                    st.info("Click 'Generate Detailed Content' to get more information for this chapter.")
+                            if generated_chapter_text:
+                                st.session_state.chapter_contents[chapter_id] = generated_chapter_text
+                                st.success(f"Content for '{chapter['chapterTitle']}' generated!")
+                            else:
+                                st.error(f"Failed to generate content for '{chapter['chapterTitle']}'.")
+                    if chapter_id in st.session_state.chapter_contents:
+                        st.markdown("---")
+                        st.markdown(st.session_state.chapter_contents[chapter_id])
+                    else:
+                        st.info("Click 'Generate Detailed Content' to get more information for this chapter.")
         # --- Quiz for this module (after chapters) ---
         module_quiz_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_quiz"
         if module_quiz_id not in st.session_state.quiz_progress:
