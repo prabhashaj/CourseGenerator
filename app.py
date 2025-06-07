@@ -237,9 +237,8 @@ if generate_course_button:
                     "moduleNumber": integer,
                     "moduleTitle": "string",
                     "chapters": [
-                        {{
-                            "chapterTitle": "string",
-                            "description": "string"
+                        {{                            "chapterTitle": "string",
+                            "description": "string - Write a detailed 3-4 line description that covers core concepts, learning objectives, and practical applications. Each description should be thorough and informative, helping students understand what they will learn."
                         }}
                     ]
                 }}
