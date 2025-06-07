@@ -366,9 +366,15 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
                         Read Time: {read_time_per_module}
                         Module: {module['moduleTitle']}
                         Chapter: {chapter['chapterTitle']}
-                        Description: {chapter['description']}
 
-                        Provide a comprehensive explanation, aiming for 3-5 paragraphs of good knowledge. Include examples if relevant.Don't just only create paragraphs but make the content more appealing and readable.
+                        Requirements for the description:
+                        1. Must be 3-4 lines long (not sentences, but actual text lines)
+                        2. First line: Introduce the main concept and its importance
+                        3. Second line: Explain the core technical details and principles
+                        4. Third/Fourth line: Cover practical applications, examples, and learning outcomes
+                        5. Write in a clear, engaging style suitable for the {difficulty_level} level
+                        
+                        Previous description for reference: {chapter['description']}
                         """
                         loop = get_or_create_eventloop()
                         generated_chapter_text = loop.run_until_complete(
