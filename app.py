@@ -43,7 +43,7 @@ async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, t
     generation_config = {
         "temperature": temperature,
         "maxOutputTokens": max_tokens,
-        "topK": int(top_k), # Ensure integer
+        "topK": int(top_k),
         "topP": top_p
     }
 
@@ -73,12 +73,27 @@ async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, t
            result["candidates"][0]["content"].get("parts") and \
            result["candidates"][0]["content"]["parts"][0].get("text"):
             text_response = result["candidates"][0]["content"]["parts"][0]["text"]
+            
             if response_schema:
                 try:
-                    return json.loads(text_response)
-                except json.JSONDecodeError:
-                    st.error("Failed to parse JSON response from LLM. Please try again. Raw response might be:")
-                    st.json(text_response) # Show raw response for debugging
+                    # Clean up any potential whitespace or control characters
+                    text_response = text_response.strip()
+                    # Handle case where response might be wrapped in backticks
+                    if text_response.startswith("```json"):
+                        text_response = text_response.replace("```json", "", 1)
+                    if text_response.endswith("```"):
+                        text_response = text_response.rsplit("```", 1)[0]
+                    text_response = text_response.strip()
+                    
+                    parsed_json = json.loads(text_response)
+                    return parsed_json
+                except json.JSONDecodeError as e:
+                    st.error(f"Failed to parse JSON response. Error: {str(e)}")
+                    # Show the problematic part of the response
+                    error_pos = e.pos
+                    context_start = max(0, error_pos - 50)
+                    context_end = min(len(text_response), error_pos + 50)
+                    st.error(f"Error context (position {error_pos}):\n{text_response[context_start:context_end]}")
                     return None
             return text_response
         else:
