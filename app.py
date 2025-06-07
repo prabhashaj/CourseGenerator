@@ -4,6 +4,8 @@ import asyncio # Required for async fetch
 import base64 # Required for encoding image data if needed, though not directly used for text generation
 import os # For environment variables, if API key was stored there
 import httpx # Using httpx for async requests
+import importlib
+quiz_utils = importlib.import_module("quiz_utils")
 
 # --- Configuration ---
 # Set page configuration for the Streamlit app
@@ -28,6 +30,8 @@ if "selected_course_index" not in st.session_state:
     st.session_state.selected_course_index = None # Index of the currently viewed course
 if "chapter_contents" not in st.session_state:
     st.session_state.chapter_contents = {} # Stores generated content for chapters, keyed by chapter_id
+if "quiz_progress" not in st.session_state:
+    st.session_state.quiz_progress = {}
 
 # --- Gemini API Call Function ---
 async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, top_p, response_schema=None):
@@ -291,6 +295,8 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
     # Calculate and display progress
     total_chapters = 0
     completed_chapters = 0
+    total_quizzes = 0
+    completed_quizzes = 0
     for module in current_course.get("modules", []):
         for chapter in module.get("chapters", []):
             total_chapters += 1
@@ -298,9 +304,17 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
             chapter_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_chapter_{chapter['chapterTitle'].replace(' ', '_').replace('.', '').replace(',', '')}"
             if current_course['completion_status'].get(chapter_id, False):
                 completed_chapters += 1
-
-    progress_percentage = (completed_chapters / total_chapters) * 100 if total_chapters > 0 else 0
-    st.progress(progress_percentage / 100, text=f"Course Progress: {progress_percentage:.0f}% ({completed_chapters}/{total_chapters} chapters completed)")
+        # Quiz progress
+        module_quiz_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_quiz"
+        if module_quiz_id in st.session_state.quiz_progress and st.session_state.quiz_progress[module_quiz_id].get("completed", False):
+            total_quizzes += 1
+            completed_quizzes += 1
+        elif module_quiz_id in st.session_state.quiz_progress:
+            total_quizzes += 1
+    total_items = total_chapters + total_quizzes
+    completed_items = completed_chapters + completed_quizzes
+    progress_percentage = (completed_items / total_items) * 100 if total_items > 0 else 0
+    st.progress(progress_percentage / 100, text=f"Course Progress: {progress_percentage:.0f}% ({completed_items}/{total_items} items completed, including quizzes)")
 
     st.markdown(f"**Introduction:** {current_course['introduction']}")
 
@@ -360,6 +374,61 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
                     st.markdown(st.session_state.chapter_contents[chapter_id])
                 else:
                     st.info("Click 'Generate Detailed Content' to get more information for this chapter.")
+        # --- Quiz for this module ---
+        module_quiz_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_quiz"
+        if module_quiz_id not in st.session_state.quiz_progress:
+            st.session_state.quiz_progress[module_quiz_id] = {"completed": False, "score": 0, "answers": []}
+        if st.button(f"Generate Quiz for Module {module['moduleNumber']}", key=f"quiz_btn_{module_quiz_id}"):
+            # Gather all chapter descriptions for the module
+            module_content = "\n".join([chapter['description'] for chapter in module.get('chapters', [])])
+            quiz_prompt = f"Module: {module['moduleTitle']}\n{module_content}"
+            with st.spinner(f"Generating quiz for Module {module['moduleNumber']}..."):
+                loop = quiz_utils.get_or_create_eventloop()
+                quiz_data = loop.run_until_complete(
+                    quiz_utils.generate_quiz_with_gemini(
+                        quiz_prompt,
+                        API_KEY,
+                        temperature,
+                        max_tokens,
+                        top_k,
+                        top_p,
+                        num_questions=5
+                    )
+                )
+                if quiz_data and "questions" in quiz_data:
+                    st.session_state.quiz_progress[module_quiz_id]["questions"] = quiz_data["questions"]
+                    st.session_state.quiz_progress[module_quiz_id]["completed"] = False
+                    st.session_state.quiz_progress[module_quiz_id]["answers"] = [None] * len(quiz_data["questions"])
+                    st.success("Quiz generated! Scroll down to attempt it.")
+                else:
+                    st.error("Failed to generate quiz for this module.")
+        # Display quiz if available
+        quiz_obj = st.session_state.quiz_progress.get(module_quiz_id, {})
+        if quiz_obj.get("questions"):
+            st.markdown(f"#### Quiz for Module {module['moduleNumber']}")
+            answers = quiz_obj.get("answers", [None]*len(quiz_obj["questions"]))
+            submitted = False
+            with st.form(f"quiz_form_{module_quiz_id}"):
+                for idx, q in enumerate(quiz_obj["questions"]):
+                    st.markdown(f"**Q{idx+1}: {q['question']}**")
+                    options = q["options"]
+                    answers[idx] = st.radio(
+                        f"Select answer for Q{idx+1}",
+                        options,
+                        index=options.index(answers[idx]) if answers[idx] in options else 0,
+                        key=f"quiz_{module_quiz_id}_q{idx}"
+                    )
+                submitted = st.form_submit_button("Submit Quiz")
+            if submitted and not quiz_obj.get("completed", False):
+                correct_answers = [q["answer"] for q in quiz_obj["questions"]]
+                score = quiz_utils.update_quiz_progress(st.session_state, module_quiz_id, answers, correct_answers)
+                st.success(f"Quiz submitted! Your score: {score}/{len(correct_answers)}")
+                for idx, q in enumerate(quiz_obj["questions"]):
+                    st.markdown(f"**Q{idx+1} Explanation:** {q['explanation']}")
+            elif quiz_obj.get("completed", False):
+                st.info(f"Quiz already completed. Score: {quiz_obj['score']}/{len(quiz_obj['questions'])}")
+                for idx, q in enumerate(quiz_obj["questions"]):
+                    st.markdown(f"**Q{idx+1} Explanation:** {q['explanation']}")
     st.markdown(f"**Conclusion:** {current_course['conclusion']}")
 else:
     st.info("Select a course from the sidebar or generate a new one to get started!")
