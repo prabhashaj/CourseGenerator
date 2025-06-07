@@ -320,6 +320,61 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
 
     for module in current_course.get("modules", []):
         st.markdown(f"### Module {module['moduleNumber']}: {module['moduleTitle']}")
+        # --- Quiz for this module ---
+        module_quiz_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_quiz"
+        if module_quiz_id not in st.session_state.quiz_progress:
+            st.session_state.quiz_progress[module_quiz_id] = {"completed": False, "score": 0, "answers": []}
+        # Always show the quiz button for each module
+        if st.button(f"Generate Quiz for Module {module['moduleNumber']} ({module['moduleTitle']})", key=f"quiz_btn_{module_quiz_id}"):
+            module_content = "\n".join([chapter['description'] for chapter in module.get('chapters', [])])
+            quiz_prompt = f"Module: {module['moduleTitle']}\n{module_content}"
+            with st.spinner(f"Generating quiz for Module {module['moduleNumber']}..."):
+                loop = quiz_utils.get_or_create_eventloop()
+                quiz_data = loop.run_until_complete(
+                    quiz_utils.generate_quiz_with_gemini(
+                        quiz_prompt,
+                        API_KEY,
+                        temperature,
+                        max_tokens,
+                        top_k,
+                        top_p,
+                        num_questions=5
+                    )
+                )
+                if quiz_data and "questions" in quiz_data:
+                    st.session_state.quiz_progress[module_quiz_id]["questions"] = quiz_data["questions"]
+                    st.session_state.quiz_progress[module_quiz_id]["completed"] = False
+                    st.session_state.quiz_progress[module_quiz_id]["answers"] = [None] * len(quiz_data["questions"])
+                    st.success("Quiz generated! Scroll down to attempt it.")
+                else:
+                    st.error("Failed to generate quiz for this module.")
+        # Display quiz if available
+        quiz_obj = st.session_state.quiz_progress.get(module_quiz_id, {})
+        if quiz_obj.get("questions"):
+            st.markdown(f"#### Quiz for Module {module['moduleNumber']}")
+            answers = quiz_obj.get("answers", [None]*len(quiz_obj["questions"]))
+            submitted = False
+            with st.form(f"quiz_form_{module_quiz_id}"):
+                for idx, q in enumerate(quiz_obj["questions"]):
+                    st.markdown(f"**Q{idx+1}: {q['question']}**")
+                    options = q["options"]
+                    answers[idx] = st.radio(
+                        f"Select answer for Q{idx+1}",
+                        options,
+                        index=options.index(answers[idx]) if answers[idx] in options else 0,
+                        key=f"quiz_{module_quiz_id}_q{idx}"
+                    )
+                submitted = st.form_submit_button("Submit Quiz")
+            if submitted and not quiz_obj.get("completed", False):
+                correct_answers = [q["answer"] for q in quiz_obj["questions"]]
+                score = quiz_utils.update_quiz_progress(st.session_state, module_quiz_id, answers, correct_answers)
+                st.success(f"Quiz submitted! Your score: {score}/{len(correct_answers)}")
+                for idx, q in enumerate(quiz_obj["questions"]):
+                    st.markdown(f"**Q{idx+1} Explanation:** {q['explanation']}")
+            elif quiz_obj.get("completed", False):
+                st.info(f"Quiz already completed. Score: {quiz_obj['score']}/{len(quiz_obj['questions'])}")
+                for idx, q in enumerate(quiz_obj["questions"]):
+                    st.markdown(f"**Q{idx+1} Explanation:** {q['explanation']}")
         for chapter in module.get("chapters", []):
             # Re-create chapter_id consistently
             chapter_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_chapter_{chapter['chapterTitle'].replace(' ', '_').replace('.', '').replace(',', '')}"
@@ -374,61 +429,6 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
                     st.markdown(st.session_state.chapter_contents[chapter_id])
                 else:
                     st.info("Click 'Generate Detailed Content' to get more information for this chapter.")
-        # --- Quiz for this module ---
-        module_quiz_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_quiz"
-        if module_quiz_id not in st.session_state.quiz_progress:
-            st.session_state.quiz_progress[module_quiz_id] = {"completed": False, "score": 0, "answers": []}
-        if st.button(f"Generate Quiz for Module {module['moduleNumber']}", key=f"quiz_btn_{module_quiz_id}"):
-            # Gather all chapter descriptions for the module
-            module_content = "\n".join([chapter['description'] for chapter in module.get('chapters', [])])
-            quiz_prompt = f"Module: {module['moduleTitle']}\n{module_content}"
-            with st.spinner(f"Generating quiz for Module {module['moduleNumber']}..."):
-                loop = quiz_utils.get_or_create_eventloop()
-                quiz_data = loop.run_until_complete(
-                    quiz_utils.generate_quiz_with_gemini(
-                        quiz_prompt,
-                        API_KEY,
-                        temperature,
-                        max_tokens,
-                        top_k,
-                        top_p,
-                        num_questions=5
-                    )
-                )
-                if quiz_data and "questions" in quiz_data:
-                    st.session_state.quiz_progress[module_quiz_id]["questions"] = quiz_data["questions"]
-                    st.session_state.quiz_progress[module_quiz_id]["completed"] = False
-                    st.session_state.quiz_progress[module_quiz_id]["answers"] = [None] * len(quiz_data["questions"])
-                    st.success("Quiz generated! Scroll down to attempt it.")
-                else:
-                    st.error("Failed to generate quiz for this module.")
-        # Display quiz if available
-        quiz_obj = st.session_state.quiz_progress.get(module_quiz_id, {})
-        if quiz_obj.get("questions"):
-            st.markdown(f"#### Quiz for Module {module['moduleNumber']}")
-            answers = quiz_obj.get("answers", [None]*len(quiz_obj["questions"]))
-            submitted = False
-            with st.form(f"quiz_form_{module_quiz_id}"):
-                for idx, q in enumerate(quiz_obj["questions"]):
-                    st.markdown(f"**Q{idx+1}: {q['question']}**")
-                    options = q["options"]
-                    answers[idx] = st.radio(
-                        f"Select answer for Q{idx+1}",
-                        options,
-                        index=options.index(answers[idx]) if answers[idx] in options else 0,
-                        key=f"quiz_{module_quiz_id}_q{idx}"
-                    )
-                submitted = st.form_submit_button("Submit Quiz")
-            if submitted and not quiz_obj.get("completed", False):
-                correct_answers = [q["answer"] for q in quiz_obj["questions"]]
-                score = quiz_utils.update_quiz_progress(st.session_state, module_quiz_id, answers, correct_answers)
-                st.success(f"Quiz submitted! Your score: {score}/{len(correct_answers)}")
-                for idx, q in enumerate(quiz_obj["questions"]):
-                    st.markdown(f"**Q{idx+1} Explanation:** {q['explanation']}")
-            elif quiz_obj.get("completed", False):
-                st.info(f"Quiz already completed. Score: {quiz_obj['score']}/{len(quiz_obj['questions'])}")
-                for idx, q in enumerate(quiz_obj["questions"]):
-                    st.markdown(f"**Q{idx+1} Explanation:** {q['explanation']}")
     st.markdown(f"**Conclusion:** {current_course['conclusion']}")
 else:
     st.info("Select a course from the sidebar or generate a new one to get started!")
