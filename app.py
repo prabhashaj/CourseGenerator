@@ -348,6 +348,7 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
                         border: 2px solid #e53935 !important;
                         box-shadow: 0 2px 8px rgba(229,57,53,0.15);
                         margin-bottom: 10px;
+`                        transition: background 0.2s, color 0.2s;
                     }
                     .red-btn button:hover {
                         background-color: #b71c1c !important;
@@ -357,10 +358,9 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
                     </style>
                 """, unsafe_allow_html=True)
                 # --- Red Button for Generate Detailed Content ---
-                gen_content_btn_container = st.container()
-                with gen_content_btn_container:
+                with st.container():
                     gen_content_btn = st.button(f"Generate Detailed Content for '{chapter['chapterTitle']}'", key=f"gen_content_btn_{chapter_id}", type="secondary")
-                gen_content_btn_container.markdown('<div class="red-btn"></div>', unsafe_allow_html=True)
+                    st.markdown('<style>div[data-testid="stButton"] button {background-color: #e53935 !important; color: #fff !important; font-weight: bold !important; border-radius: 8px !important; border: 2px solid #e53935 !important;}</style>', unsafe_allow_html=True)
                 if gen_content_btn:
                     with st.spinner(f"Generating detailed content for '{chapter['chapterTitle']}'..."):
                         chapter_content_prompt = f"""
@@ -399,10 +399,9 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
         if module_quiz_id not in st.session_state.quiz_progress:
             st.session_state.quiz_progress[module_quiz_id] = {"completed": False, "score": 0, "answers": []}
         # --- Red Button for Take Quiz ---
-        take_quiz_btn_container = st.container()
-        with take_quiz_btn_container:
+        with st.container():
             take_quiz_btn = st.button(f"Take Quiz for Module {module['moduleNumber']} ({module['moduleTitle']})", key=f"quiz_btn_{module_quiz_id}", type="secondary")
-        take_quiz_btn_container.markdown('<div class="red-btn"></div>', unsafe_allow_html=True)
+            st.markdown('<style>div[data-testid="stButton"] button {background-color: #e53935 !important; color: #fff !important; font-weight: bold !important; border-radius: 8px !important; border: 2px solid #e53935 !important;}</style>', unsafe_allow_html=True)
         if take_quiz_btn:
             module_content = "\n".join([chapter['description'] for chapter in module.get('chapters', [])])
             quiz_prompt = f"Module: {module['moduleTitle']}\n{module_content}"
