@@ -338,8 +338,11 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
             with st.expander(f"Chapter Details: {chapter['chapterTitle']}", expanded=False):
                 st.markdown(f"**Description:** {chapter['description']}")
                 
-                # Button to generate content for this specific chapter
-                if st.button(f"Generate Detailed Content for '{chapter['chapterTitle']}'", key=f"gen_content_btn_{chapter_id}"):
+                # Button to generate content for this specific chapter (with red style)
+                gen_content_btn_container = st.container()
+                with gen_content_btn_container:
+                    gen_content_btn = st.button(f"Generate Detailed Content for '{chapter['chapterTitle']}'", key=f"gen_content_btn_{chapter_id}", type="secondary")
+                if gen_content_btn:
                     with st.spinner(f"Generating detailed content for '{chapter['chapterTitle']}'..."):
                         chapter_content_prompt = f"""
                         Elaborate in detail on the following chapter from a course titled '{current_course['courseTitle']}' (Difficulty: {difficulty_level}, Read Time: {read_time_per_module}):
@@ -376,28 +379,29 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
         module_quiz_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_quiz"
         if module_quiz_id not in st.session_state.quiz_progress:
             st.session_state.quiz_progress[module_quiz_id] = {"completed": False, "score": 0, "answers": []}
-        # Highlight the Take Quiz button
-        take_quiz_btn_style = """
+        # Highlight the Take Quiz button and Generate Detailed Content button
+        custom_btn_style = """
             <style>
-            .take-quiz-btn button {
-                background-color: #ff9800 !important;
-                color: white !important;
+            .take-quiz-btn button, .gen-content-btn button {
+                background-color: #e53935 !important; /* Red */
+                color: #fff !important;
                 font-weight: bold !important;
                 border-radius: 8px !important;
-                border: 2px solid #ff9800 !important;
-                box-shadow: 0 2px 8px rgba(255,152,0,0.15);
+                border: 2px solid #e53935 !important;
+                box-shadow: 0 2px 8px rgba(229,57,53,0.15);
                 margin-bottom: 10px;
             }
-            .take-quiz-btn button:hover {
-                background-color: #fb8c00 !important;
-                border-color: #fb8c00 !important;
+            .take-quiz-btn button:hover, .gen-content-btn button:hover {
+                background-color: #b71c1c !important;
+                border-color: #b71c1c !important;
+                color: #fff !important;
             }
             </style>
         """
-        st.markdown(take_quiz_btn_style, unsafe_allow_html=True)
+        st.markdown(custom_btn_style, unsafe_allow_html=True)
         take_quiz_btn_container = st.container()
         with take_quiz_btn_container:
-            take_quiz_btn = st.button(f"Take Quiz for Module {module['moduleNumber']} ({module['moduleTitle']})", key=f"quiz_btn_{module_quiz_id}", help="Test your knowledge for this module!", use_container_width=True)
+            take_quiz_btn = st.button(f"Take Quiz for Module {module['moduleNumber']} ({module['moduleTitle']})", key=f"quiz_btn_{module_quiz_id}", help="Test your knowledge for this module!", use_container_width=True, type="secondary")
         if take_quiz_btn:
             module_content = "\n".join([chapter['description'] for chapter in module.get('chapters', [])])
             quiz_prompt = f"Module: {module['moduleTitle']}\n{module_content}"
