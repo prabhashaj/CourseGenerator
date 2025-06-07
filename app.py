@@ -376,7 +376,29 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
         module_quiz_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_quiz"
         if module_quiz_id not in st.session_state.quiz_progress:
             st.session_state.quiz_progress[module_quiz_id] = {"completed": False, "score": 0, "answers": []}
-        if st.button(f"Take Quiz for Module {module['moduleNumber']} ({module['moduleTitle']})", key=f"quiz_btn_{module_quiz_id}"):
+        # Highlight the Take Quiz button
+        take_quiz_btn_style = """
+            <style>
+            .take-quiz-btn button {
+                background-color: #ff9800 !important;
+                color: white !important;
+                font-weight: bold !important;
+                border-radius: 8px !important;
+                border: 2px solid #ff9800 !important;
+                box-shadow: 0 2px 8px rgba(255,152,0,0.15);
+                margin-bottom: 10px;
+            }
+            .take-quiz-btn button:hover {
+                background-color: #fb8c00 !important;
+                border-color: #fb8c00 !important;
+            }
+            </style>
+        """
+        st.markdown(take_quiz_btn_style, unsafe_allow_html=True)
+        take_quiz_btn_container = st.container()
+        with take_quiz_btn_container:
+            take_quiz_btn = st.button(f"Take Quiz for Module {module['moduleNumber']} ({module['moduleTitle']})", key=f"quiz_btn_{module_quiz_id}", help="Test your knowledge for this module!", use_container_width=True)
+        if take_quiz_btn:
             module_content = "\n".join([chapter['description'] for chapter in module.get('chapters', [])])
             quiz_prompt = f"Module: {module['moduleTitle']}\n{module_content}"
             with st.spinner(f"Generating quiz for Module {module['moduleNumber']}..."):
@@ -415,7 +437,7 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
                         index=options.index(answers[idx]) if answers[idx] in options else 0,
                         key=f"quiz_{module_quiz_id}_q{idx}"
                     )
-                submitted = st.form_submit_button("Submit Quiz")
+                submitted = st.form_submit_button("Submit Quiz", use_container_width=True)
             if submitted and not quiz_obj.get("completed", False):
                 correct_answers = [q["answer"] for q in quiz_obj["questions"]]
                 score = quiz_utils.update_quiz_progress(st.session_state, module_quiz_id, answers, correct_answers)
