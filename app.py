@@ -341,7 +341,7 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
                 st.markdown("""
                     <style>
                     .red-btn button {
-                        background-color: #e53935 !important;
+                        background-color: #red !important;
                         color: #fff !important;
                         font-weight: bold !important;
                         border-radius: 8px !important;
@@ -349,7 +349,7 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
                         box-shadow: 0 2px 8px rgba(229,57,53,0.15);
                         margin-bottom: 10px;
                     }
-                    .red-btn button:hover {
+                    .white-btn button:hover {
                         background-color: #b71c1c !important;
                         border-color: #b71c1c !important;
                         color: #fff !important;
