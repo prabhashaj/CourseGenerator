@@ -207,9 +207,8 @@ if generate_course_button:
                                 "description": "A list of chapters within the module.",
                                 "items": {
                                     "type": "OBJECT",
-                                    "properties": {
-                                        "chapterTitle": {"type": "STRING", "description": "The title of the chapter."},
-                                        "description": {"type": "STRING", "description": "A brief description of the chapter content."}
+                                    "properties": {                                        "chapterTitle": {"type": "STRING", "description": "The title of the chapter."},
+                                        "description": {"type": "STRING", "description": "MUST be 3-4 lines long. Line 1: Introduce the main concept. Line 2: Explain core technical details. Line 3-4: Cover applications and learning outcomes. Make each line a full line of text, not just a short sentence."}
                                     },
                                     "required": ["chapterTitle", "description"]
                                 }
@@ -221,14 +220,17 @@ if generate_course_button:
                 "conclusion": {"type": "STRING", "description": "A brief conclusion or next steps for the course."}
             },
             "required": ["courseTitle", "introduction", "modules", "conclusion"]
-        }
-
-        # Construct the prompt for the LLM
+        }        # Construct the prompt for the LLM
         course_prompt = f"""
         Generate a detailed course outline in JSON format for a '{course_topic}' course.
         The course should be designed for a '{difficulty_level}' level audience.
         It must have exactly {num_modules} modules.
-        Each module should have chapters, and the content for each module should be designed to take approximately {read_time_per_module} to read.
+        For each chapter in the modules:
+        1. The description MUST be 3-4 lines long (not just sentences, but actual lines of text)
+        2. First line should introduce the main concept
+        3. Second line should explain the core technical details
+        4. Third/Fourth lines should cover applications and learning outcomes
+        Each module should take approximately {read_time_per_module} to read.
 
         The JSON output should strictly follow this schema:
         {{
@@ -239,9 +241,8 @@ if generate_course_button:
                     "moduleNumber": integer,
                     "moduleTitle": "string",
                     "chapters": [
-                        {{
-                            "chapterTitle": "string",
-                            "description": "string"
+                        {{                            "chapterTitle": "string",
+                            "description": "string - Write a detailed 3-4 line description that covers core concepts, learning objectives, and practical applications. Each description should be thorough and informative, helping students understand what they will learn."
                         }}
                     ]
                 }}
