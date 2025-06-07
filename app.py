@@ -359,9 +359,11 @@ if st.session_state.selected_course_index is not None and st.session_state.selec
                     gen_content_btn = st.button(f"Generate Detailed Content for '{chapter['chapterTitle']}'", key=f"gen_content_btn_{chapter_id}", type="secondary")
                     st.markdown('<style>div[data-testid="stButton"] button {background-color: #e53935 !important; color: #fff !important; font-weight: bold !important; border-radius: 8px !important; border: 2px solid #e53935 !important;}</style>', unsafe_allow_html=True)
                 if gen_content_btn:
-                    with st.spinner(f"Generating detailed content for '{chapter['chapterTitle']}'..."):
-                        chapter_content_prompt = f"""
-                        Elaborate in detail on the following chapter from a course titled '{current_course['courseTitle']}' (Difficulty: {difficulty_level}, Read Time: {read_time_per_module}):
+                    with st.spinner(f"Generating detailed content for '{chapter['chapterTitle']}'..."):                        chapter_content_prompt = f"""
+                        Generate a comprehensive multi-line description for the following chapter:
+                        Course: {current_course['courseTitle']}
+                        Difficulty Level: {difficulty_level}
+                        Read Time: {read_time_per_module}
                         Module: {module['moduleTitle']}
                         Chapter: {chapter['chapterTitle']}
                         Description: {chapter['description']}
