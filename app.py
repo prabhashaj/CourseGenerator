@@ -1,6 +1,7 @@
 import streamlit as st
 import json
 import asyncio # Required for async fetch
+from datetime import datetime
 import base64 # Required for encoding image data if needed, though not directly used for text generation
 import os # For environment variables, if API key was stored there
 import httpx # Using httpx for async requests
@@ -281,6 +282,17 @@ if generate_course_button:
                 print("\n=== Generated Course Data ===")
                 print(json.dumps(course_data, indent=2))
                 print("============================")
+                
+                # Save the input and output data to JSONL file
+                dataset_entry = {
+                    "timestamp": str(datetime.now()),
+                    "input": input_params,
+                    "output": course_data
+                }
+                
+                # Append to JSONL file
+                with open("my_dataset.jsonl", "a", encoding="utf-8") as f:
+                    f.write(json.dumps(dataset_entry) + "\n")
                 
                 # Initialize completion status for the new course
                 completion_status = {}
