@@ -186,6 +186,21 @@ if generate_course_button:
     if not course_topic:
         st.error("Please enter a course topic to generate an outline.")
     else:
+        # Log the input parameters
+        input_params = {
+            "course_topic": course_topic,
+            "difficulty_level": difficulty_level,
+            "num_modules": num_modules,
+            "read_time_per_module": read_time_per_module,
+            "temperature": temperature,
+            "max_tokens": max_tokens,
+            "top_k": top_k,
+            "top_p": top_p
+        }
+        print("\n=== Course Generation Input Parameters ===")
+        print(json.dumps(input_params, indent=2))
+        print("=====================================")
+        
         st.session_state.messages.append({"role": "user", "content": f"Request: Generate a {difficulty_level} course outline on '{course_topic}' with {num_modules} modules, each taking approx. {read_time_per_module} to read."})
 
         # Define the JSON schema for the expected course outline
@@ -261,9 +276,12 @@ if generate_course_button:
                     top_p,
                     response_schema=course_schema
                 )
-            )
-
-            if course_data and isinstance(course_data, dict) and "courseTitle" in course_data:
+            )            if course_data and isinstance(course_data, dict) and "courseTitle" in course_data:
+                # Log the generated course data
+                print("\n=== Generated Course Data ===")
+                print(json.dumps(course_data, indent=2))
+                print("============================")
+                
                 # Initialize completion status for the new course
                 completion_status = {}
                 for module in course_data.get("modules", []):
