@@ -261,8 +261,7 @@ if generate_course_button:
                     ]
                 }}
             ],
-            "conclusion": "string"
-        }}
+            "conclusion": "string"        }}
         Ensure the JSON is valid and complete. Do not include any additional text outside the JSON.
         """
         with st.spinner("Generating new course outline..."):
@@ -276,7 +275,8 @@ if generate_course_button:
                     top_p,
                     response_schema=course_schema
                 )
-            )            if course_data and isinstance(course_data, dict) and "courseTitle" in course_data:
+            )
+            if course_data and isinstance(course_data, dict) and "courseTitle" in course_data:
                 # Log the generated course data
                 print("\n=== Generated Course Data ===")
                 print(json.dumps(course_data, indent=2))
