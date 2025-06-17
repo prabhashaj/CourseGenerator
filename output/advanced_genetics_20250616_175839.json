@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 17:58:39.511981",
+  "input": {
+    "course_topic": "Genetics",
+    "difficulty_level": "Expert",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.3,
+    "max_tokens": 2048,
+    "top_k": 28,
+    "top_p": 0.88
+  },
+  "output": {
+    "conclusion": "By completing this course, you will have a comprehensive understanding of advanced genetics concepts and their applications.",
+    "courseTitle": "Advanced Genetics",
+    "introduction": "Welcome to Advanced Genetics! This course delves into complex genetic mechanisms, cutting-edge research, and their implications in various fields.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Mendelian Genetics",
+            "description": "Explore complex inheritance patterns, including epistasis, pleiotropy, and polygenic inheritance. Analyze case studies of human genetic disorders with non-Mendelian inheritance."
+          },
+          {
+            "chapterTitle": "Linkage and Recombination",
+            "description": "Examine the concepts of genetic linkage, recombination frequency, and chromosome mapping. Discuss advanced techniques for constructing high-resolution genetic maps."
+          },
+          {
+            "chapterTitle": "Population Genetics",
+            "description": "Dive into allele frequencies, Hardy-Weinberg equilibrium, and factors that influence genetic variation in populations. Analyze the impact of natural selection, genetic drift, and gene flow."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Foundations of Advanced Genetics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "DNA Structure and Replication",
+            "description": "Explore the intricacies of DNA structure, including higher-order chromatin organization. Investigate the mechanisms of DNA replication, repair, and recombination."
+          },
+          {
+            "chapterTitle": "Transcription and Translation",
+            "description": "Delve into the processes of transcription and translation, including RNA processing, ribosome function, and protein folding. Analyze the regulation of gene expression at the transcriptional and translational levels."
+          },
+          {
+            "chapterTitle": "Mutation and DNA Repair",
+            "description": "Examine the causes and consequences of mutations, including point mutations, frameshift mutations, and chromosomal rearrangements. Investigate the mechanisms of DNA repair pathways."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Molecular Genetics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Genomics and Proteomics",
+            "description": "Explore the principles of genomics and proteomics, including DNA sequencing, genome annotation, and protein identification. Discuss the applications of genomics and proteomics in medicine and biotechnology."
+          },
+          {
+            "chapterTitle": "Bioinformatics",
+            "description": "Learn about bioinformatics tools and databases for analyzing genetic and genomic data. Practice using bioinformatics techniques for sequence alignment, phylogenetic analysis, and gene expression analysis."
+          },
+          {
+            "chapterTitle": "Epigenetics",
+            "description": "Investigate the mechanisms of epigenetic inheritance, including DNA methylation, histone modification, and non-coding RNAs. Analyze the role of epigenetics in development, disease, and evolution."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Genomics and Bioinformatics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Genetic Engineering",
+            "description": "Explore the principles of genetic engineering, including gene cloning, gene editing, and gene therapy. Discuss the ethical and social implications of genetic engineering."
+          },
+          {
+            "chapterTitle": "Developmental Genetics",
+            "description": "Investigate the genetic control of development, including pattern formation, cell differentiation, and organogenesis. Analyze the role of developmental genes in human genetic disorders."
+          },
+          {
+            "chapterTitle": "Cancer Genetics",
+            "description": "Delve into the genetic basis of cancer, including oncogenes, tumor suppressor genes, and DNA repair genes. Discuss the applications of cancer genetics in diagnosis, prognosis, and therapy."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Applications of Genetics"
+      }
+    ]
+  }
+}

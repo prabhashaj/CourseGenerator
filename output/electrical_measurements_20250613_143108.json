@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 14:31:08.044726",
+  "input": {
+    "course_topic": "Electrical Measurements",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.68,
+    "max_tokens": 1024,
+    "top_k": 23,
+    "top_p": 0.87
+  },
+  "output": {
+    "conclusion": "This course provided a comprehensive overview of electrical measurements, equipping you with the knowledge and skills to accurately measure electrical quantities and analyze circuits. Further study and practical experience are encouraged to enhance your expertise in this field.",
+    "courseTitle": "Electrical Measurements",
+    "introduction": "Welcome to Electrical Measurements! This course is designed for intermediate-level learners seeking to deepen their understanding of electrical measurement techniques and instrumentation. We will explore various measurement principles, instruments, and their applications in electrical engineering.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Electrical Measurements",
+            "description": "Overview of electrical quantities, measurement units, and the importance of accurate measurements in electrical engineering."
+          },
+          {
+            "chapterTitle": "Measurement Errors and Uncertainty",
+            "description": "Discussion of different types of measurement errors (systematic, random) and methods for quantifying uncertainty in measurements."
+          },
+          {
+            "chapterTitle": "Standards and Calibration",
+            "description": "Explanation of measurement standards (primary, secondary) and the calibration process for ensuring accuracy of measuring instruments."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Electrical Measurements"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Analog Meters",
+            "description": "Construction, working principle, and applications of analog ammeters, voltmeters, and ohmmeters."
+          },
+          {
+            "chapterTitle": "Digital Meters",
+            "description": "Working principle of digital multimeters (DMMs), advantages over analog meters, and measurement ranges."
+          },
+          {
+            "chapterTitle": "Measurement of Resistance",
+            "description": "Methods for measuring resistance using voltmeters, ammeters, and Wheatstone bridge."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Measurement Instruments"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Measurement of Inductance",
+            "description": "Techniques for measuring inductance using AC bridges (Maxwell bridge, Hay bridge)."
+          },
+          {
+            "chapterTitle": "Measurement of Capacitance",
+            "description": "Methods for measuring capacitance using AC bridges (Schering bridge)."
+          },
+          {
+            "chapterTitle": "Impedance Measurement",
+            "description": "Introduction to impedance measurement using LCR meters and impedance analyzers."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "AC Bridge Measurements"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Oscilloscopes",
+            "description": "Working principle of oscilloscopes, front panel controls, and applications in waveform analysis."
+          },
+          {
+            "chapterTitle": "Signal Generators",
+            "description": "Types of signal generators (function generators, arbitrary waveform generators) and their applications."
+          },
+          {
+            "chapterTitle": "Power and Energy Measurement",
+            "description": "Methods for measuring power and energy in AC circuits using wattmeters and energy meters."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Measurement Techniques"
+      }
+    ]
+  }
+}

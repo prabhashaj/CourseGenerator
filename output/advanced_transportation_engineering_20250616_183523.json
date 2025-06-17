@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:35:23.150674",
+  "input": {
+    "course_topic": "Transportation Engineering",
+    "difficulty_level": "Advanced",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.3,
+    "max_tokens": 1024,
+    "top_k": 31,
+    "top_p": 0.62
+  },
+  "output": {
+    "conclusion": "This course provides an advanced understanding of transportation engineering principles and practices, equipping students with the knowledge and skills to address complex transportation challenges.",
+    "courseTitle": "Advanced Transportation Engineering",
+    "introduction": "Welcome to Advanced Transportation Engineering! This course delves into advanced concepts and techniques used in the planning, design, operation, and management of transportation systems. We will explore topics such as traffic flow theory, transportation planning models, pavement design, and intelligent transportation systems.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Traffic Flow Theory: Advanced Concepts",
+            "description": "Explore advanced traffic flow models, including non-equilibrium flow, shockwave analysis, and queuing theory applications in complex transportation networks."
+          },
+          {
+            "chapterTitle": "Traffic Simulation and Modeling",
+            "description": "Learn about advanced traffic simulation software and techniques for modeling complex traffic scenarios, including microscopic and macroscopic simulation approaches."
+          },
+          {
+            "chapterTitle": "Capacity Analysis of Freeways and Arterials",
+            "description": "In-depth analysis of freeway and arterial capacity, including the impact of weaving sections, ramp junctions, and signal timing on traffic flow."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Traffic Flow and Capacity Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Transportation Planning Models",
+            "description": "Study advanced transportation planning models, including activity-based models, land use transport interaction models, and dynamic traffic assignment."
+          },
+          {
+            "chapterTitle": "Freight Transportation Planning",
+            "description": "Examine the unique challenges and considerations in freight transportation planning, including intermodal transportation, logistics, and supply chain management."
+          },
+          {
+            "chapterTitle": "Sustainable Transportation Planning",
+            "description": "Explore strategies for sustainable transportation planning, including reducing greenhouse gas emissions, promoting alternative modes of transportation, and incorporating environmental considerations into transportation projects."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Transportation Planning"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Pavement Design: Advanced Analysis",
+            "description": "Advanced analysis techniques for pavement design, including mechanistic-empirical pavement design methods and the use of finite element analysis."
+          },
+          {
+            "chapterTitle": "Intelligent Transportation Systems (ITS)",
+            "description": "Explore the latest advancements in ITS, including connected and autonomous vehicles, smart traffic management systems, and real-time traffic information."
+          },
+          {
+            "chapterTitle": "Transportation Safety Analysis",
+            "description": "Advanced techniques for transportation safety analysis, including crash data analysis, safety performance functions, and network screening."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Pavement Design and ITS"
+      }
+    ]
+  }
+}

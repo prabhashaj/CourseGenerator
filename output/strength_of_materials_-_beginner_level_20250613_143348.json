@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 14:33:48.782828",
+  "input": {
+    "course_topic": "Strength of Materials",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.65,
+    "max_tokens": 2048,
+    "top_k": 11,
+    "top_p": 0.7
+  },
+  "output": {
+    "conclusion": "This course provided a foundational understanding of Strength of Materials. Further study and practice are encouraged to master these concepts.",
+    "courseTitle": "Strength of Materials - Beginner Level",
+    "introduction": "Welcome to Strength of Materials! This course introduces the fundamental concepts needed to understand how materials behave under stress and strain.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Stress and Strain",
+            "description": "Definition of stress and strain, types of stress (tensile, compressive, shear), and Hooke's Law. Explanation of elastic and plastic behavior."
+          },
+          {
+            "chapterTitle": "Axial Loading",
+            "description": "Analysis of members under axial loads, including stress distribution and deformation. Introduction to statically determinate and indeterminate problems."
+          },
+          {
+            "chapterTitle": "Stress-Strain Diagrams",
+            "description": "Understanding stress-strain diagrams for ductile and brittle materials. Key properties like yield strength, ultimate tensile strength, and fracture point."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Basic Concepts"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Torsional Loading",
+            "description": "Introduction to torsion in circular shafts. Calculation of shear stress and angle of twist. Power transmission by shafts."
+          },
+          {
+            "chapterTitle": "Bending of Beams",
+            "description": "Introduction to bending moments and shear forces in beams. Understanding bending stress and shear stress distribution in beams."
+          },
+          {
+            "chapterTitle": "Moment of Inertia",
+            "description": "Definition and calculation of moment of inertia for various cross-sections. Parallel axis theorem and its application."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Loading Scenarios"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Deflection of Beams",
+            "description": "Introduction to beam deflection. Methods for calculating deflection (e.g., direct integration). Boundary conditions and support types."
+          },
+          {
+            "chapterTitle": "Combined Stresses",
+            "description": "Analysis of elements subjected to combined axial, bending, and torsional loads. Introduction to principal stresses."
+          },
+          {
+            "chapterTitle": "Material Properties",
+            "description": "Discussion of different material properties such as Young's modulus, Poisson's ratio, and thermal expansion coefficient."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Topics"
+      }
+    ]
+  }
+}

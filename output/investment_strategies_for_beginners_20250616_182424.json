@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:24:24.947377",
+  "input": {
+    "course_topic": "Investment Strategies",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.43,
+    "max_tokens": 1024,
+    "top_k": 16,
+    "top_p": 0.59
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a foundational understanding of investment strategies. Remember to continuously learn and adapt your strategies as the market evolves.",
+    "courseTitle": "Investment Strategies for Beginners",
+    "introduction": "Welcome to Investment Strategies for Beginners! This course will provide you with a basic understanding of different investment options and strategies to help you start your investment journey.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding Investment Basics",
+            "description": "Learn about the fundamental concepts of investing, including risk and return, diversification, and asset allocation."
+          },
+          {
+            "chapterTitle": "Types of Investments",
+            "description": "Explore different investment options such as stocks, bonds, mutual funds, and ETFs. Understand the characteristics of each type."
+          },
+          {
+            "chapterTitle": "Setting Financial Goals",
+            "description": "Define your investment goals and time horizon. Learn how to align your investment strategy with your financial objectives."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Investing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Value Investing",
+            "description": "Discover the principles of value investing, focusing on identifying undervalued companies with strong fundamentals."
+          },
+          {
+            "chapterTitle": "Growth Investing",
+            "description": "Learn about growth investing, which involves investing in companies with high growth potential."
+          },
+          {
+            "chapterTitle": "Income Investing",
+            "description": "Explore income investing strategies, focusing on generating regular income through dividends and interest payments."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Popular Investment Strategies"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Dollar-Cost Averaging",
+            "description": "Understand the concept of dollar-cost averaging and how it can help reduce risk when investing over time."
+          },
+          {
+            "chapterTitle": "Diversification Strategies",
+            "description": "Learn how to diversify your portfolio across different asset classes and sectors to minimize risk."
+          },
+          {
+            "chapterTitle": "Long-Term Investing",
+            "description": "Explore the benefits of long-term investing and the importance of staying patient and disciplined."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Building a Portfolio"
+      }
+    ]
+  }
+}

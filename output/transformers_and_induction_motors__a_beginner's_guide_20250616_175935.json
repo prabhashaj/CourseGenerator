@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 17:59:35.026176",
+  "input": {
+    "course_topic": "Transformers and Induction Motors",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.6,
+    "max_tokens": 1024,
+    "top_k": 22,
+    "top_p": 0.53
+  },
+  "output": {
+    "conclusion": "This course provided a foundational understanding of transformers and induction motors. Further study is recommended for advanced applications and design considerations.",
+    "courseTitle": "Transformers and Induction Motors: A Beginner's Guide",
+    "introduction": "Welcome to the beginner's guide to Transformers and Induction Motors! This course will provide a fundamental understanding of their principles, operation, and applications.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Transformers",
+            "description": "What are transformers? Basic principles of operation. Step-up and step-down transformers. Applications of transformers."
+          },
+          {
+            "chapterTitle": "Transformer Construction",
+            "description": "Core types (core and shell). Winding arrangements. Materials used in transformer construction."
+          },
+          {
+            "chapterTitle": "Transformer EMF Equation",
+            "description": "Derivation of the EMF equation. Factors affecting induced EMF. Voltage and turns ratio."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Transformer Basics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Induction Motors",
+            "description": "What are induction motors? Basic principles of operation. Stator and rotor construction."
+          },
+          {
+            "chapterTitle": "Types of Induction Motors",
+            "description": "Squirrel cage induction motor. Wound rotor induction motor. Applications of each type."
+          },
+          {
+            "chapterTitle": "Induction Motor Operation",
+            "description": "Rotating magnetic field. Slip. Torque production in induction motors."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Induction Motor Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transformer Losses and Efficiency",
+            "description": "Core losses (hysteresis and eddy current). Copper losses. Transformer efficiency calculation."
+          },
+          {
+            "chapterTitle": "Induction Motor Losses and Efficiency",
+            "description": "Stator and rotor copper losses. Core losses. Mechanical losses. Efficiency calculation."
+          },
+          {
+            "chapterTitle": "Applications and Selection",
+            "description": "Selecting the right transformer and induction motor for different applications. Factors to consider."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Losses, Efficiency, and Applications"
+      }
+    ]
+  }
+}

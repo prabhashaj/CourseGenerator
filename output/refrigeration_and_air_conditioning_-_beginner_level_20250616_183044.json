@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:30:44.720044",
+  "input": {
+    "course_topic": "Refrigeration and Air Conditioning",
+    "difficulty_level": "Beginner",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.51,
+    "max_tokens": 2048,
+    "top_k": 30,
+    "top_p": 0.71
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of refrigeration and air conditioning principles. Further study and practical experience are recommended for advanced applications.",
+    "courseTitle": "Refrigeration and Air Conditioning - Beginner Level",
+    "introduction": "Welcome to the world of Refrigeration and Air Conditioning! This course will introduce you to the fundamental concepts and components of these essential systems. No prior knowledge is required.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Refrigeration",
+            "description": "What is refrigeration? Historical overview and its importance in modern life. Applications of refrigeration in various industries."
+          },
+          {
+            "chapterTitle": "Basic Thermodynamics",
+            "description": "Understanding heat transfer: conduction, convection, and radiation. Temperature scales and their conversions (Celsius, Fahrenheit, Kelvin)."
+          },
+          {
+            "chapterTitle": "Refrigerants Overview",
+            "description": "What are refrigerants? Types of refrigerants (CFCs, HCFCs, HFCs, natural refrigerants). Environmental impact and safety considerations."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Refrigeration"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Refrigeration Cycle - Part 1",
+            "description": "Introduction to the vapor-compression refrigeration cycle. The four main components: compressor, condenser, expansion valve, evaporator."
+          },
+          {
+            "chapterTitle": "The Refrigeration Cycle - Part 2",
+            "description": "Detailed explanation of each component's function. Pressure and temperature changes within the cycle."
+          },
+          {
+            "chapterTitle": "Cycle Efficiency and Performance",
+            "description": "Understanding Coefficient of Performance (COP). Factors affecting cycle efficiency."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "The Refrigeration Cycle"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Air Conditioning",
+            "description": "What is air conditioning? Differences between refrigeration and air conditioning. Comfort parameters: temperature, humidity, air quality."
+          },
+          {
+            "chapterTitle": "Air Conditioning Systems - Types",
+            "description": "Window air conditioners, split air conditioners, central air conditioning systems. Advantages and disadvantages of each type."
+          },
+          {
+            "chapterTitle": "Air Distribution Systems",
+            "description": "Ductwork design and airflow principles. Air filters and their importance in maintaining air quality."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Introduction to Air Conditioning Systems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Basic Components - Air Conditioning",
+            "description": "Fans and blowers. Cooling coils and heating coils. Humidifiers and dehumidifiers."
+          },
+          {
+            "chapterTitle": "Air Conditioning Controls",
+            "description": "Thermostats and their function. Basic control strategies for temperature and humidity."
+          },
+          {
+            "chapterTitle": "Safety and Maintenance",
+            "description": "Basic safety precautions when working with refrigeration and air conditioning equipment. Simple maintenance tasks: filter replacement, coil cleaning."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Air Conditioning Components and Maintenance"
+      }
+    ]
+  }
+}

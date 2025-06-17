@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:39:03.996719",
+  "input": {
+    "course_topic": "Machine Design",
+    "difficulty_level": "Beginner",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.36,
+    "max_tokens": 2048,
+    "top_k": 27,
+    "top_p": 0.62
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of machine design principles, preparing you for more advanced topics and practical applications.",
+    "courseTitle": "Machine Design for Beginners",
+    "introduction": "Welcome to Machine Design! This course introduces fundamental concepts and principles essential for designing machines and mechanical systems. We'll cover basic mechanics, materials, and design considerations.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Machine Design",
+            "description": "Overview of machine design, its importance, and the design process. Discussing the different stages involved in designing a machine."
+          },
+          {
+            "chapterTitle": "Basic Mechanical Components",
+            "description": "Introduction to common machine elements such as fasteners, bearings, and gears. Brief overview of their functions."
+          },
+          {
+            "chapterTitle": "Units and Measurements",
+            "description": "Review of essential units and measurements used in machine design. Conversion between different unit systems."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Machine Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Stress and Strain",
+            "description": "Basic concepts of stress, strain, and their relationship. Different types of stresses and strains."
+          },
+          {
+            "chapterTitle": "Material Properties",
+            "description": "Overview of material properties relevant to machine design, including yield strength, tensile strength, and modulus of elasticity."
+          },
+          {
+            "chapterTitle": "Factor of Safety",
+            "description": "Introduction to the concept of factor of safety and its importance in design. How to determine an appropriate factor of safety."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Stress, Strain, and Material Properties"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Fasteners",
+            "description": "Overview of different types of fasteners, including bolts, screws, and rivets. Their applications and advantages."
+          },
+          {
+            "chapterTitle": "Threaded Fasteners",
+            "description": "Detailed discussion of threaded fasteners, including thread types, sizes, and materials. Torque and preload considerations."
+          },
+          {
+            "chapterTitle": "Welded Joints",
+            "description": "Introduction to welding processes and welded joint design. Types of welds and their strengths."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Joining Methods"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Shafts",
+            "description": "Overview of shafts, their functions, and types. Materials used for shafts."
+          },
+          {
+            "chapterTitle": "Introduction to Bearings",
+            "description": "Overview of different types of bearings, including ball bearings, roller bearings, and journal bearings. Their applications and selection criteria."
+          },
+          {
+            "chapterTitle": "Introduction to Gears",
+            "description": "Overview of different types of gears, including spur gears, helical gears, and bevel gears. Gear terminology and applications."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Shafts, Bearings, and Gears"
+      }
+    ]
+  }
+}

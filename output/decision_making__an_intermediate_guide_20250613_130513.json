@@ -1,0 +1,86 @@
+{
+  "timestamp": "2025-06-13 13:05:13.253975",
+  "input": {
+    "course_topic": "Decision Making",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.39,
+    "max_tokens": 2048,
+    "top_k": 31,
+    "top_p": 0.68
+  },
+  "output": {
+    "conclusion": "By mastering the concepts and techniques covered in this course, you will be well-equipped to make more informed and effective decisions in both your personal and professional life. Remember to continuously practice and refine your decision-making skills to achieve optimal outcomes.",
+    "courseTitle": "Decision Making: An Intermediate Guide",
+    "introduction": "Welcome to 'Decision Making: An Intermediate Guide'. This course is designed to enhance your decision-making skills by exploring various frameworks, biases, and techniques. We will delve into practical strategies for making informed choices in complex situations. This course assumes a basic understanding of decision-making principles.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Module 1: Foundations of Decision Making",
+            "description": "This module introduces the fundamental concepts of decision making, including defining problems, setting objectives, and identifying alternatives."
+          },
+          {
+            "chapterTitle": "Chapter 1.1: Defining the Problem",
+            "description": "Learn how to accurately define the problem you are trying to solve. Understand the importance of clarity and scope in problem definition."
+          },
+          {
+            "chapterTitle": "Chapter 1.2: Setting Objectives",
+            "description": "Explore the process of setting clear and measurable objectives for your decisions. Learn how to prioritize objectives based on their importance."
+          },
+          {
+            "chapterTitle": "Chapter 1.3: Identifying Alternatives",
+            "description": "Discover techniques for generating a wide range of potential solutions. Understand the importance of creativity and brainstorming in identifying alternatives."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Module 1: Foundations of Decision Making"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Module 2: Decision-Making Frameworks",
+            "description": "This module explores various decision-making frameworks, including cost-benefit analysis, SWOT analysis, and decision trees."
+          },
+          {
+            "chapterTitle": "Chapter 2.1: Cost-Benefit Analysis",
+            "description": "Learn how to conduct a cost-benefit analysis to evaluate the financial implications of different options. Understand how to quantify costs and benefits."
+          },
+          {
+            "chapterTitle": "Chapter 2.2: SWOT Analysis",
+            "description": "Explore the SWOT (Strengths, Weaknesses, Opportunities, Threats) analysis framework. Learn how to use SWOT to assess the internal and external factors affecting your decisions."
+          },
+          {
+            "chapterTitle": "Chapter 2.3: Decision Trees",
+            "description": "Discover how to use decision trees to visualize and analyze complex decisions with multiple possible outcomes. Understand how to calculate expected values."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Module 2: Decision-Making Frameworks"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Module 3: Overcoming Biases and Improving Decision Quality",
+            "description": "This module focuses on identifying and mitigating common cognitive biases that can negatively impact decision making. We will also explore techniques for improving decision quality."
+          },
+          {
+            "chapterTitle": "Chapter 3.1: Identifying Cognitive Biases",
+            "description": "Learn about common cognitive biases such as confirmation bias, anchoring bias, and availability heuristic. Understand how these biases can distort your judgment."
+          },
+          {
+            "chapterTitle": "Chapter 3.2: Mitigating Biases",
+            "description": "Explore strategies for mitigating the impact of cognitive biases on your decisions. Learn techniques such as seeking diverse perspectives and using checklists."
+          },
+          {
+            "chapterTitle": "Chapter 3.3: Improving Decision Quality",
+            "description": "Discover techniques for improving the overall quality of your decisions, including using data-driven insights, conducting post-decision reviews, and learning from mistakes."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Module 3: Overcoming Biases and Improving Decision Quality"
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:07:30.381141",
+  "input": {
+    "course_topic": "Power Systems",
+    "difficulty_level": "Advanced",
+    "num_modules": 6,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.5,
+    "max_tokens": 1024,
+    "top_k": 25,
+    "top_p": 0.98
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of power systems, equipping you with the knowledge and skills to analyze, design, and operate modern power grids effectively.",
+    "courseTitle": "Advanced Power Systems",
+    "introduction": "Welcome to Advanced Power Systems! This course delves into the intricacies of modern power grids, covering advanced topics in power system analysis, control, and protection. We will explore the challenges and opportunities presented by renewable energy integration, smart grids, and emerging technologies.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Power System Modeling",
+            "description": "Representation of power system components (generators, transformers, transmission lines, loads) using equivalent circuit models. Per-unit system and its advantages. Network matrices (Ybus, Zbus) formulation."
+          },
+          {
+            "chapterTitle": "Load Flow Analysis",
+            "description": "Newton-Raphson and Gauss-Seidel methods for solving power flow equations. PV and PQ buses. Convergence criteria. Load flow studies for different operating conditions."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Power System Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Symmetrical Fault Analysis",
+            "description": "Calculation of fault currents and voltages during balanced three-phase faults. Thevenin's theorem application. Short-circuit capacity and its impact on equipment selection."
+          },
+          {
+            "chapterTitle": "Unsymmetrical Fault Analysis",
+            "description": "Symmetrical components (positive, negative, and zero sequence). Sequence networks for different types of unsymmetrical faults (SLG, LL, LLG). Fault current calculation using sequence networks."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Fault Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Power System Stability",
+            "description": "Classification of power system stability (transient, dynamic, voltage). Swing equation and its application to transient stability analysis. Equal area criterion."
+          },
+          {
+            "chapterTitle": "Voltage Stability",
+            "description": "Voltage collapse phenomenon. P-V and Q-V curves. Voltage stability margins. Methods for improving voltage stability."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Power System Stability"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Power System Protection",
+            "description": "Principles of power system protection. Overcurrent, distance, and differential relays. Protection of generators, transformers, and transmission lines."
+          },
+          {
+            "chapterTitle": "Adaptive Protection",
+            "description": "Adaptive relaying schemes for improved protection performance. Wide-area measurement systems (WAMS) based protection."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Power System Protection"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Power System Control",
+            "description": "Automatic generation control (AGC). Load frequency control (LFC). Voltage control techniques. Reactive power management."
+          },
+          {
+            "chapterTitle": "FACTS Devices",
+            "description": "Flexible AC transmission systems (FACTS) devices. Static VAR compensators (SVC), thyristor-controlled series compensators (TCSC), and unified power flow controllers (UPFC)."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Power System Control"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Smart Grids",
+            "description": "Smart grid concepts and technologies. Advanced metering infrastructure (AMI). Demand response. Wide area monitoring, protection and control (WAMPAC)."
+          },
+          {
+            "chapterTitle": "Renewable Energy Integration",
+            "description": "Impact of renewable energy sources (wind, solar) on power system operation and stability. Grid integration challenges and solutions. Microgrids."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Emerging Trends"
+      }
+    ]
+  }
+}

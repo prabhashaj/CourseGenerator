@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:17:58.029839",
+  "input": {
+    "course_topic": "Surveying and Levelling",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.54,
+    "max_tokens": 2048,
+    "top_k": 23,
+    "top_p": 0.7
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of surveying and leveling principles. Further study and practical experience are recommended for professional application.",
+    "courseTitle": "Surveying and Leveling: A Beginner's Guide",
+    "introduction": "Welcome to the world of surveying and leveling! This course will introduce you to the fundamental concepts and techniques used to measure and map the Earth's surface. No prior experience is necessary.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Surveying",
+            "description": "What is surveying? Its importance in construction, mapping, and land management. Different types of surveying (plane, geodetic). Basic surveying equipment overview."
+          },
+          {
+            "chapterTitle": "Units and Measurements",
+            "description": "Understanding different units of measurement (metric and imperial). Conversion between units. Accuracy and precision in surveying measurements. Common sources of error."
+          },
+          {
+            "chapterTitle": "Basic Principles of Measurement",
+            "description": "Principles of linear measurement (chaining, taping). Principles of angular measurement (bearings, azimuths). Introduction to coordinate systems (Cartesian, geographic)."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Surveying"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Leveling",
+            "description": "What is leveling? Its purpose in determining elevations. Definition of datum, benchmark, and elevation. Different types of leveling (differential, profile)."
+          },
+          {
+            "chapterTitle": "Leveling Equipment",
+            "description": "Overview of leveling instruments (level, tripod, leveling rod). Different types of levels (dumpy level, automatic level). Care and handling of leveling equipment."
+          },
+          {
+            "chapterTitle": "Leveling Procedures",
+            "description": "Setting up the level. Reading the leveling rod. Taking backsight, foresight, and intermediate sights. Establishing benchmarks."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Introduction to Leveling Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Differential Leveling",
+            "description": "Performing differential leveling. Calculating elevations using backsight and foresight readings. Closing a level loop. Applying arithmetic checks."
+          },
+          {
+            "chapterTitle": "Sources of Error in Leveling",
+            "description": "Instrumental errors. Personal errors. Natural errors. Methods for minimizing errors in leveling."
+          },
+          {
+            "chapterTitle": "Applications of Leveling",
+            "description": "Creating topographic maps. Determining cut and fill volumes. Setting grades for construction projects. Monitoring ground deformation."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Leveling Calculations and Applications"
+      }
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-06-16 18:08:11.675326",
+  "input": {
+    "course_topic": "Theory of Machines",
+    "difficulty_level": "Intermediate",
+    "num_modules": 6,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.56,
+    "max_tokens": 2048,
+    "top_k": 26,
+    "top_p": 0.64
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of the principles governing the behavior of machines. By understanding kinematics, dynamics, and the mechanics of various machine components, students will be equipped to analyze and design effective mechanical systems.",
+    "courseTitle": "Theory of Machines",
+    "introduction": "Welcome to Theory of Machines! This course delves into the fundamental principles governing the motion and forces within machines. We will explore kinematics, dynamics, and the analysis of various machine components to understand how they function and interact.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Kinematics",
+            "description": "Definition of kinematics, kinematic variables (displacement, velocity, acceleration), types of motion (translation, rotation, general plane motion)."
+          },
+          {
+            "chapterTitle": "Mechanisms and Machines",
+            "description": "Distinction between mechanisms and machines, basic components of a machine, examples of common mechanisms (linkages, cams, gears)."
+          },
+          {
+            "chapterTitle": "Degrees of Freedom",
+            "description": "Concept of degrees of freedom, Kutzbach criterion for planar mechanisms, examples of calculating degrees of freedom."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Kinematics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Four-Bar Linkages",
+            "description": "Introduction to four-bar linkages, Grashof's law, classification of four-bar linkages (crank-rocker, double-crank, double-rocker)."
+          },
+          {
+            "chapterTitle": "Slider-Crank Mechanisms",
+            "description": "Description of slider-crank mechanisms, applications in engines and compressors, kinematic analysis of slider-crank mechanisms."
+          },
+          {
+            "chapterTitle": "Inversions of Mechanisms",
+            "description": "Concept of inversions, examples of inversions of four-bar and slider-crank mechanisms, applications of different inversions."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Kinematic Analysis of Mechanisms"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Dynamics",
+            "description": "Definition of dynamics, Newton's laws of motion, concepts of force, mass, and acceleration."
+          },
+          {
+            "chapterTitle": "Inertia Forces and Torques",
+            "description": "Calculation of inertia forces and torques, effect of inertia on machine components, balancing of rotating masses."
+          },
+          {
+            "chapterTitle": "Dynamic Force Analysis",
+            "description": "Methods for dynamic force analysis, free body diagrams, application of Newton's laws to machine components."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Fundamentals of Dynamics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Cams and Followers",
+            "description": "Introduction to cams and followers, types of cams and followers, displacement diagrams, velocity and acceleration analysis."
+          },
+          {
+            "chapterTitle": "Design of Cam Profiles",
+            "description": "Methods for designing cam profiles, consideration of jerk and other higher-order derivatives, applications of cams and followers."
+          },
+          {
+            "chapterTitle": "Balancing of Rotating Masses",
+            "description": "Static and dynamic balancing, balancing machines, balancing of single and multiple rotating masses."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Cams, Followers and Balancing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Gear Terminology",
+            "description": "Basic gear terminology (pitch circle, module, pressure angle), types of gears (spur, helical, bevel, worm)."
+          },
+          {
+            "chapterTitle": "Gear Trains",
+            "description": "Simple, compound, and epicyclic gear trains, velocity ratio calculations, applications of gear trains."
+          },
+          {
+            "chapterTitle": "Interference and Undercutting",
+            "description": "Causes and effects of interference and undercutting in gears, methods to avoid interference."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Gears and Gear Trains"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Belt Drives",
+            "description": "Types of belt drives (flat, V-belt), velocity ratio, slip, power transmission, belt tension calculations."
+          },
+          {
+            "chapterTitle": "Chain Drives",
+            "description": "Types of chain drives, roller chains, silent chains, velocity ratio, power transmission, chain tension calculations."
+          },
+          {
+            "chapterTitle": "Friction",
+            "description": "Types of friction, laws of friction, friction in machine elements (bearings, clutches, brakes)."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Belt, Chain and Friction"
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 12:40:15.474180",
+  "input": {
+    "course_topic": "Statistical Analysis",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.32,
+    "max_tokens": 1024,
+    "top_k": 32,
+    "top_p": 0.99
+  },
+  "output": {
+    "conclusion": "This course provided a comprehensive overview of statistical analysis, equipping you with the skills to analyze data and draw meaningful conclusions. Next steps include practicing with real-world datasets and exploring advanced statistical techniques.",
+    "courseTitle": "Statistical Analysis for Intermediate Learners",
+    "introduction": "Welcome to Statistical Analysis! This course is designed for learners with some prior knowledge of statistics. We will delve deeper into various statistical methods, focusing on practical applications and interpretation of results.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Hypothesis Testing: Advanced Concepts",
+            "description": "Review of null and alternative hypotheses, type I and type II errors, power of a test, and p-values. Focus on selecting the appropriate test based on data type and research question."
+          },
+          {
+            "chapterTitle": "One-Sample t-Test",
+            "description": "Learn how to perform a one-sample t-test, including assumptions, calculation of the t-statistic, and interpretation of results. Examples with varying sample sizes."
+          },
+          {
+            "chapterTitle": "Two-Sample t-Test",
+            "description": "Learn how to perform a two-sample t-test, including assumptions, calculation of the t-statistic, and interpretation of results. Examples with varying sample sizes."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Hypothesis Testing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "ANOVA: Introduction and Assumptions",
+            "description": "Introduction to Analysis of Variance (ANOVA). Understanding the underlying assumptions of ANOVA, including normality, homogeneity of variance, and independence."
+          },
+          {
+            "chapterTitle": "One-Way ANOVA",
+            "description": "Performing one-way ANOVA to compare means of multiple groups. Calculating F-statistic, degrees of freedom, and interpreting ANOVA results. Post-hoc tests for pairwise comparisons."
+          },
+          {
+            "chapterTitle": "Two-Way ANOVA",
+            "description": "Performing two-way ANOVA to compare means of multiple groups. Calculating F-statistic, degrees of freedom, and interpreting ANOVA results. Post-hoc tests for pairwise comparisons."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Analysis of Variance (ANOVA)"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Correlation Analysis",
+            "description": "Exploring different types of correlation coefficients (Pearson, Spearman, Kendall). Interpreting correlation coefficients and understanding their limitations. Scatter plots and visual assessment of relationships."
+          },
+          {
+            "chapterTitle": "Simple Linear Regression",
+            "description": "Building and interpreting simple linear regression models. Understanding the assumptions of linear regression. Evaluating model fit using R-squared and residual analysis."
+          },
+          {
+            "chapterTitle": "Multiple Linear Regression",
+            "description": "Building and interpreting multiple linear regression models. Understanding the assumptions of linear regression. Evaluating model fit using R-squared and residual analysis."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Regression Analysis"
+      }
+    ]
+  }
+}

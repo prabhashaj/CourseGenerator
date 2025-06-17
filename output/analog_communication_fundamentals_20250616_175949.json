@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 17:59:49.827082",
+  "input": {
+    "course_topic": "Analog Communication",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.52,
+    "max_tokens": 1024,
+    "top_k": 14,
+    "top_p": 0.76
+  },
+  "output": {
+    "conclusion": "This course provided a foundational understanding of analog communication principles. Further exploration into digital communication and advanced modulation techniques is recommended.",
+    "courseTitle": "Analog Communication Fundamentals",
+    "introduction": "Welcome to Analog Communication Fundamentals! This course will introduce you to the basic principles of analog communication systems, covering modulation techniques, noise, and system analysis. No prior knowledge of communication systems is assumed.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Communication Systems",
+            "description": "Overview of communication systems, components, and types (analog vs. digital). Basic block diagram of a communication system."
+          },
+          {
+            "chapterTitle": "Signals and Spectra",
+            "description": "Time-domain and frequency-domain representation of signals. Fourier series and Fourier transform basics. Signal bandwidth."
+          },
+          {
+            "chapterTitle": "Amplitude Modulation (AM)",
+            "description": "Introduction to Amplitude Modulation (AM). Modulation index, power calculations, and applications of AM."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Analog Communication"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Frequency Modulation (FM)",
+            "description": "Introduction to Frequency Modulation (FM). Modulation index, bandwidth considerations (Carson's rule), and advantages of FM over AM."
+          },
+          {
+            "chapterTitle": "Phase Modulation (PM)",
+            "description": "Introduction to Phase Modulation (PM). Relationship between FM and PM. Applications of PM."
+          },
+          {
+            "chapterTitle": "Angle Modulation Demodulation",
+            "description": "Basic demodulation techniques for FM and PM signals. Discriminators and phase-locked loops (PLLs)."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Angle Modulation Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Noise in Communication Systems",
+            "description": "Introduction to noise. Types of noise (thermal noise, shot noise, etc.). Signal-to-noise ratio (SNR)."
+          },
+          {
+            "chapterTitle": "Noise Performance of AM Systems",
+            "description": "Analysis of SNR in AM systems. Effects of noise on AM signal quality."
+          },
+          {
+            "chapterTitle": "Noise Performance of FM Systems",
+            "description": "Analysis of SNR in FM systems. Noise reduction capabilities of FM compared to AM. Capture effect."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Noise in Analog Communication"
+      }
+    ]
+  }
+}

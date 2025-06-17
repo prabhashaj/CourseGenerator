@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-06-13 14:27:32.620889",
+  "input": {
+    "course_topic": "Analog Electronics",
+    "difficulty_level": "Beginner",
+    "num_modules": 6,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.39,
+    "max_tokens": 2048,
+    "top_k": 24,
+    "top_p": 0.74
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of analog electronics, equipping you with the knowledge to analyze and design basic analog circuits. Further exploration in specific areas will build upon this base.",
+    "courseTitle": "Analog Electronics for Beginners",
+    "introduction": "Welcome to Analog Electronics! This course will introduce you to the fundamental concepts of analog circuits, components, and their applications. No prior electronics knowledge is assumed.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Analog Signals",
+            "description": "What are analog signals? Continuous vs. discrete signals. Examples of analog signals in the real world (temperature, sound, light)."
+          },
+          {
+            "chapterTitle": "Voltage, Current, and Resistance",
+            "description": "Basic electrical quantities: voltage (potential difference), current (flow of charge), and resistance (opposition to current). Units of measurement (Volts, Amperes, Ohms)."
+          },
+          {
+            "chapterTitle": "Ohm's Law",
+            "description": "The relationship between voltage, current, and resistance: V = IR. Simple circuit examples using Ohm's Law."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Basic Electrical Concepts"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Resistors",
+            "description": "Introduction to resistors. Types of resistors (carbon film, metal film, wirewound). Resistor color codes and tolerance."
+          },
+          {
+            "chapterTitle": "Series Resistors",
+            "description": "Resistors connected in series. Calculating total resistance in a series circuit. Voltage division in a series circuit."
+          },
+          {
+            "chapterTitle": "Parallel Resistors",
+            "description": "Resistors connected in parallel. Calculating total resistance in a parallel circuit. Current division in a parallel circuit."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Resistors and Resistance"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Capacitors",
+            "description": "Introduction to capacitors. What is capacitance? Units of measurement (Farads). Types of capacitors (ceramic, electrolytic)."
+          },
+          {
+            "chapterTitle": "Capacitor Charging and Discharging",
+            "description": "How capacitors store and release electrical energy. Time constant (RC). Applications of capacitors (filtering, energy storage)."
+          },
+          {
+            "chapterTitle": "Capacitors in Series and Parallel",
+            "description": "Calculating total capacitance for series and parallel capacitor configurations."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Capacitors and Capacitance"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Inductors",
+            "description": "Introduction to inductors. What is inductance? Units of measurement (Henries). Types of inductors (air core, iron core)."
+          },
+          {
+            "chapterTitle": "Inductor Behavior",
+            "description": "How inductors store energy in a magnetic field. Inductive reactance. Applications of inductors (filtering, energy storage)."
+          },
+          {
+            "chapterTitle": "Inductors in Series and Parallel",
+            "description": "Calculating total inductance for series and parallel inductor configurations."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Inductors and Inductance"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Diodes",
+            "description": "Introduction to diodes. Semiconductor materials (silicon, germanium). P-N junction. Forward and reverse bias."
+          },
+          {
+            "chapterTitle": "Diode Characteristics",
+            "description": "Diode voltage-current (V-I) characteristics. Forward voltage drop. Reverse leakage current."
+          },
+          {
+            "chapterTitle": "Diode Applications",
+            "description": "Simple diode circuits: rectifiers (half-wave, full-wave). Diode as a switch."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Semiconductor Diodes"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Bipolar Junction Transistors (BJTs)",
+            "description": "Introduction to BJTs. NPN and PNP transistors. Terminals (base, collector, emitter)."
+          },
+          {
+            "chapterTitle": "Transistor Operation",
+            "description": "Transistor operating regions (cutoff, active, saturation). Basic transistor biasing."
+          },
+          {
+            "chapterTitle": "Transistor as a Switch",
+            "description": "Using a BJT as a simple electronic switch. Applications of transistor switches."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Bipolar Junction Transistors (BJTs)"
+      }
+    ]
+  }
+}

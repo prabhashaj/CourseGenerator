@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-16 18:24:33.303698",
+  "input": {
+    "course_topic": "Optics",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.69,
+    "max_tokens": 1024,
+    "top_k": 14,
+    "top_p": 0.94
+  },
+  "output": {
+    "conclusion": "This course has provided a comprehensive overview of optics, covering fundamental principles and advanced applications. Students should now have a solid foundation for further study and research in this fascinating field.",
+    "courseTitle": "Intermediate Optics",
+    "introduction": "Welcome to Intermediate Optics! This course builds upon introductory physics concepts to explore the fascinating world of light and its interactions with matter. We will delve into wave optics, interference, diffraction, polarization, and applications in imaging and modern technology.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Wave Nature of Light",
+            "description": "A brief review of the wave nature of light, including wavelength, frequency, and the electromagnetic spectrum."
+          },
+          {
+            "chapterTitle": "Huygens' Principle",
+            "description": "Introduction to Huygens' Principle and its application in understanding wave propagation."
+          },
+          {
+            "chapterTitle": "Superposition of Waves",
+            "description": "Explanation of the principle of superposition and its relevance to interference phenomena."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Wave Optics Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Two-Source Interference",
+            "description": "Detailed analysis of Young's double-slit experiment and the resulting interference pattern."
+          },
+          {
+            "chapterTitle": "Thin-Film Interference",
+            "description": "Explanation of interference in thin films and its applications (e.g., anti-reflective coatings)."
+          },
+          {
+            "chapterTitle": "Michelson Interferometer",
+            "description": "Introduction to the Michelson interferometer and its uses in precision measurements."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Interference"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Single-Slit Diffraction",
+            "description": "Analysis of diffraction patterns produced by a single slit."
+          },
+          {
+            "chapterTitle": "Diffraction Grating",
+            "description": "Explanation of diffraction gratings and their use in spectroscopy."
+          },
+          {
+            "chapterTitle": "Circular Aperture Diffraction",
+            "description": "Introduction to the Airy disk and resolution limits in optical systems."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Diffraction"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Polarization States",
+            "description": "Introduction to linear, circular, and elliptical polarization."
+          },
+          {
+            "chapterTitle": "Polarizers and Analyzers",
+            "description": "Explanation of how polarizers and analyzers work, including Malus's law."
+          },
+          {
+            "chapterTitle": "Birefringence",
+            "description": "Introduction to birefringence and its applications in waveplates."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Polarization"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Optical Instruments",
+            "description": "Overview of common optical instruments like telescopes and microscopes."
+          },
+          {
+            "chapterTitle": "Image Formation",
+            "description": "Brief explanation of image formation using lenses and mirrors."
+          },
+          {
+            "chapterTitle": "Aberrations",
+            "description": "Introduction to common optical aberrations and methods to correct them."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Optical Instruments and Imaging"
+      }
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-16 18:42:24.555133",
+  "input": {
+    "course_topic": "Electricity and Magnetism",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.58,
+    "max_tokens": 1024,
+    "top_k": 31,
+    "top_p": 0.72
+  },
+  "output": {
+    "conclusion": "This course has provided a comprehensive overview of Electricity and Magnetism, equipping you with the knowledge to understand and analyze electromagnetic phenomena. Further study in specialized areas like optics, plasma physics, or high-energy physics is highly recommended.",
+    "courseTitle": "Advanced Electricity and Magnetism",
+    "introduction": "Welcome to Advanced Electricity and Magnetism! This course delves into the fundamental principles governing electric and magnetic fields, their interactions, and applications. We will explore vector calculus, electrostatics, magnetostatics, electrodynamics, and radiation, building upon prior knowledge of basic physics and calculus.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Vector Calculus Review",
+            "description": "A quick refresher on vector algebra, scalar and vector fields, gradient, divergence, curl, line and surface integrals, and the divergence and Stokes' theorems."
+          },
+          {
+            "chapterTitle": "Coordinate Systems",
+            "description": "Exploration of Cartesian, cylindrical, and spherical coordinate systems. Conversion between coordinate systems. Applications in electromagnetism."
+          },
+          {
+            "chapterTitle": "Dirac Delta Function",
+            "description": "Introduction to the Dirac delta function in one, two, and three dimensions. Properties and applications in representing point charges and currents."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Mathematical Preliminaries"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Coulomb's Law and Electric Field",
+            "description": "Review of Coulomb's law, electric field due to point charges and continuous charge distributions. Superposition principle."
+          },
+          {
+            "chapterTitle": "Gauss's Law",
+            "description": "Gauss's law and its applications in calculating electric fields for symmetric charge distributions. Differential form of Gauss's law."
+          },
+          {
+            "chapterTitle": "Electric Potential",
+            "description": "Electric potential, potential difference, and equipotential surfaces. Potential due to various charge distributions. Poisson's and Laplace's equations."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Electrostatics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Magnetostatics: Biot-Savart Law",
+            "description": "Biot-Savart law and its applications in calculating magnetic fields due to current-carrying wires and loops."
+          },
+          {
+            "chapterTitle": "Ampere's Law",
+            "description": "Ampere's law and its applications in calculating magnetic fields for symmetric current distributions. Differential form of Ampere's law."
+          },
+          {
+            "chapterTitle": "Magnetic Vector Potential",
+            "description": "Introduction to the magnetic vector potential. Relationship between magnetic field and vector potential. Applications."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Magnetostatics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Electromagnetic Induction",
+            "description": "Faraday's law of induction, Lenz's law, and motional EMF. Inductance and mutual inductance."
+          },
+          {
+            "chapterTitle": "Maxwell's Equations",
+            "description": "A comprehensive overview of Maxwell's equations in integral and differential forms. Displacement current."
+          },
+          {
+            "chapterTitle": "Electromagnetic Waves",
+            "description": "Wave equation, plane waves, energy and momentum of electromagnetic waves, Poynting vector."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Electrodynamics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Radiation from Accelerated Charges",
+            "description": "Larmor formula for power radiated by an accelerated charge. Dipole radiation."
+          },
+          {
+            "chapterTitle": "Antennas",
+            "description": "Basic antenna principles, antenna gain, and radiation patterns. Examples of different antenna types."
+          },
+          {
+            "chapterTitle": "Applications of Electromagnetism",
+            "description": "Overview of applications in various fields, including communication, medical imaging, and particle accelerators."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Radiation and Applications"
+      }
+    ]
+  }
+}

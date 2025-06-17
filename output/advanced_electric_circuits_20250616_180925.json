@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-16 18:09:25.148261",
+  "input": {
+    "course_topic": "Electric Circuits",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.32,
+    "max_tokens": 2048,
+    "top_k": 24,
+    "top_p": 0.63
+  },
+  "output": {
+    "conclusion": "By completing this course, you will have a strong foundation in electric circuit analysis and design, enabling you to tackle complex problems and contribute to advancements in electrical engineering.",
+    "courseTitle": "Advanced Electric Circuits",
+    "introduction": "Welcome to Advanced Electric Circuits! This course delves into the intricacies of circuit analysis, building upon foundational knowledge to explore advanced techniques and applications. We will cover topics such as transient analysis, frequency response, and filter design, equipping you with the skills to analyze and design complex electrical systems.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transient Analysis Fundamentals",
+            "description": "Review of first and second-order circuits. Initial conditions and their importance. Step response of RL and RC circuits."
+          },
+          {
+            "chapterTitle": "RLC Circuit Transient Response",
+            "description": "Detailed analysis of series and parallel RLC circuits. Overdamped, critically damped, and underdamped responses. Understanding the effects of component values."
+          },
+          {
+            "chapterTitle": "Transient Analysis with Dependent Sources",
+            "description": "Analyzing circuits with dependent voltage and current sources during transient conditions. Applying superposition and source transformation techniques."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Transient Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Sinusoidal Steady-State Analysis",
+            "description": "Introduction to phasors and impedance. Analyzing circuits with sinusoidal sources using phasor techniques. Power calculations in AC circuits."
+          },
+          {
+            "chapterTitle": "AC Circuit Theorems",
+            "description": "Application of Thevenin's, Norton's, and superposition theorems to AC circuits. Maximum power transfer in AC circuits."
+          },
+          {
+            "chapterTitle": "Three-Phase Circuits",
+            "description": "Understanding balanced and unbalanced three-phase systems. Power calculations in three-phase circuits. Delta and wye connections."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "AC Circuit Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Frequency Response Basics",
+            "description": "Defining frequency response and its importance. Bode plots and their construction. Understanding magnitude and phase responses."
+          },
+          {
+            "chapterTitle": "Resonance",
+            "description": "Series and parallel resonance. Bandwidth and quality factor (Q). Applications of resonant circuits."
+          },
+          {
+            "chapterTitle": "Two-Port Networks",
+            "description": "Introduction to two-port network parameters (Z, Y, h, T). Analyzing cascaded two-port networks."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Frequency Response"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Filter Fundamentals",
+            "description": "Introduction to filter types (low-pass, high-pass, band-pass, band-stop). Filter specifications and design considerations."
+          },
+          {
+            "chapterTitle": "Active Filter Design",
+            "description": "Designing active filters using operational amplifiers. Butterworth, Chebyshev, and Bessel filter responses."
+          },
+          {
+            "chapterTitle": "Passive Filter Design",
+            "description": "Designing passive filters using resistors, capacitors, and inductors. Limitations of passive filters."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Filter Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Laplace Transforms in Circuit Analysis",
+            "description": "Applying Laplace transforms to solve circuit problems. Transforming circuit elements and sources into the s-domain."
+          },
+          {
+            "chapterTitle": "Transfer Functions",
+            "description": "Defining transfer functions and their use in circuit analysis. Pole-zero plots and their relationship to circuit behavior."
+          },
+          {
+            "chapterTitle": "Stability Analysis",
+            "description": "Understanding stability criteria for circuits and systems. Routh-Hurwitz criterion and Nyquist plots."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Advanced Circuit Analysis Techniques"
+      }
+    ]
+  }
+}

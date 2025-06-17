@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-16 18:30:25.752866",
+  "input": {
+    "course_topic": "UI/UX Design",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.52,
+    "max_tokens": 1024,
+    "top_k": 31,
+    "top_p": 0.86
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a strong foundation in UI/UX design principles and practical skills. You are now equipped to create user-centered designs that are both aesthetically pleasing and highly functional. Continue to practice and explore new trends to further enhance your expertise.",
+    "courseTitle": "UI/UX Design: Intermediate Level",
+    "introduction": "Welcome to the Intermediate UI/UX Design course! This course builds upon your existing knowledge of UI/UX principles and delves deeper into advanced techniques and methodologies. We'll explore topics such as advanced prototyping, usability testing, design systems, and accessibility, enabling you to create sophisticated and user-centered designs.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Prototyping Techniques",
+            "description": "Explore advanced prototyping tools and techniques, including micro-interactions, animations, and conditional logic. Learn how to create realistic and interactive prototypes for user testing and stakeholder feedback."
+          },
+          {
+            "chapterTitle": "Prototyping with Figma",
+            "description": "Hands-on practice using Figma for advanced prototyping, focusing on variables, components, and interactive components. Learn how to create reusable and dynamic prototypes that can be easily updated and maintained."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Prototyping"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Usability Testing Methodologies",
+            "description": "Delve into various usability testing methodologies, including moderated and unmoderated testing, remote testing, and A/B testing. Learn how to choose the appropriate method for different project needs and budgets."
+          },
+          {
+            "chapterTitle": "Analyzing Usability Test Results",
+            "description": "Learn how to analyze usability test data, identify key insights, and translate them into actionable design recommendations. Explore techniques for prioritizing issues and communicating findings to stakeholders."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Usability Testing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Design Systems: Principles and Implementation",
+            "description": "Understand the principles behind design systems and their importance in creating consistent and scalable user experiences. Learn how to define design tokens, components, and patterns."
+          },
+          {
+            "chapterTitle": "Building and Maintaining a Design System",
+            "description": "Explore the process of building and maintaining a design system, including documentation, version control, and governance. Learn how to ensure that the design system remains up-to-date and relevant."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Design Systems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Accessibility Standards and Guidelines",
+            "description": "Gain a comprehensive understanding of accessibility standards and guidelines, including WCAG (Web Content Accessibility Guidelines). Learn how to design for users with disabilities, including visual, auditory, motor, and cognitive impairments."
+          },
+          {
+            "chapterTitle": "Accessibility Testing and Auditing",
+            "description": "Explore techniques for testing and auditing the accessibility of your designs, including using automated tools and conducting manual reviews. Learn how to identify and fix accessibility issues."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Accessibility"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "UI Animation Principles",
+            "description": "Learn the core principles of UI animation, including timing, easing, and choreography. Understand how to use animation to enhance usability, provide feedback, and create a more engaging user experience."
+          },
+          {
+            "chapterTitle": "Implementing UI Animations",
+            "description": "Explore different techniques for implementing UI animations, including CSS animations, JavaScript animations, and animation libraries. Learn how to optimize animations for performance and accessibility."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "UI Animation"
+      }
+    ]
+  }
+}

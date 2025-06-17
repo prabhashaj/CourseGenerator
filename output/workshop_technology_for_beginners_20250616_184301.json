@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-16 18:43:01.883621",
+  "input": {
+    "course_topic": "Workshop Technology",
+    "difficulty_level": "Beginner",
+    "num_modules": 5,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.51,
+    "max_tokens": 2048,
+    "top_k": 24,
+    "top_p": 0.73
+  },
+  "output": {
+    "conclusion": "This workshop technology course provides a foundational understanding of common workshop tools and practices. Further learning and hands-on experience are recommended to develop proficiency.",
+    "courseTitle": "Workshop Technology for Beginners",
+    "introduction": "Welcome to the Workshop Technology course! This course will introduce you to the fundamental tools and techniques used in a typical workshop environment. No prior experience is required.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Workshop Safety",
+            "description": "Overview of general safety rules, personal protective equipment (PPE) such as safety glasses and gloves, and hazard identification in a workshop."
+          },
+          {
+            "chapterTitle": "Basic Hand Tools: Screwdrivers",
+            "description": "Introduction to different types of screwdrivers (Phillips, flathead), proper usage, and selecting the right screwdriver for the job."
+          },
+          {
+            "chapterTitle": "Basic Hand Tools: Wrenches",
+            "description": "Introduction to different types of wrenches (open-end, box-end, adjustable), proper usage, and selecting the right wrench for the job."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Workshop Safety and Basic Hand Tools"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Measuring Tools: Rulers and Tape Measures",
+            "description": "Introduction to rulers and tape measures, reading measurements (inches, centimeters), and accurate measuring techniques."
+          },
+          {
+            "chapterTitle": "Measuring Tools: Calipers",
+            "description": "Introduction to calipers (inside, outside, depth), reading measurements, and using calipers for precise measurements."
+          },
+          {
+            "chapterTitle": "Marking Tools: Pencils and Markers",
+            "description": "Introduction to different types of pencils and markers used for marking materials, and techniques for accurate marking."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Measuring and Marking Tools"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fastening Techniques: Screws and Bolts",
+            "description": "Introduction to different types of screws and bolts, selecting the right fastener for the job, and using screws and bolts effectively."
+          },
+          {
+            "chapterTitle": "Fastening Techniques: Nails",
+            "description": "Introduction to different types of nails, using a hammer to drive nails, and techniques for secure nailing."
+          },
+          {
+            "chapterTitle": "Adhesives: Glues and Tapes",
+            "description": "Introduction to different types of glues and tapes, selecting the right adhesive for the job, and applying adhesives effectively."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Fastening Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Cutting Tools: Hand Saws",
+            "description": "Introduction to different types of hand saws (rip saw, crosscut saw), proper usage, and cutting techniques."
+          },
+          {
+            "chapterTitle": "Cutting Tools: Utility Knives",
+            "description": "Introduction to utility knives, safe usage, and changing blades."
+          },
+          {
+            "chapterTitle": "Cutting Tools: Files",
+            "description": "Introduction to files, different types of files, and using files for shaping and smoothing materials."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Basic Cutting Tools"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Drilling",
+            "description": "Overview of drilling safety, parts of a drill, and selecting the right drill bit for the material."
+          },
+          {
+            "chapterTitle": "Drilling Techniques",
+            "description": "Proper techniques for drilling straight holes, using a drill press (if available), and drilling different materials."
+          },
+          {
+            "chapterTitle": "Sanding Techniques",
+            "description": "Introduction to sandpaper grits, hand sanding techniques, and using a sanding block."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Introduction to Drilling and Sanding"
+      }
+    ]
+  }
+}

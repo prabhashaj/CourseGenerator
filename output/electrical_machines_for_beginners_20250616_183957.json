@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-06-16 18:39:57.991034",
+  "input": {
+    "course_topic": "Electrical Machines",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.51,
+    "max_tokens": 1024,
+    "top_k": 16,
+    "top_p": 0.98
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of electrical machines, preparing you for more advanced topics in electrical engineering.",
+    "courseTitle": "Electrical Machines for Beginners",
+    "introduction": "Welcome to the Electrical Machines course! This course will introduce you to the fundamental principles and operation of various electrical machines, including transformers, DC machines, and AC machines.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Electrical Machines",
+            "description": "Overview of electrical machines, their types, and applications. Basic concepts of electromagnetism and magnetic circuits."
+          },
+          {
+            "chapterTitle": "Magnetic Circuits",
+            "description": "Understanding magnetic fields, flux, MMF, reluctance, and their relationships. Simple magnetic circuit calculations."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Electrical Machines"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transformers: Basic Principles",
+            "description": "Introduction to transformers, their construction, working principle, and types. Ideal transformer model."
+          },
+          {
+            "chapterTitle": "Transformer Equivalent Circuit",
+            "description": "Development of the equivalent circuit of a transformer. Understanding transformer parameters and their significance."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Transformers"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "DC Machines: Construction and Operation",
+            "description": "Constructional details of DC machines. Working principle of DC generators and motors."
+          },
+          {
+            "chapterTitle": "DC Motor Types",
+            "description": "Introduction to different types of DC motors: series, shunt, and compound. Characteristics and applications of each type."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "DC Machines"
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-13 14:09:08.478731",
+  "input": {
+    "course_topic": "Decentralized Science (DeSci)",
+    "difficulty_level": "Beginner",
+    "num_modules": 5,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.32,
+    "max_tokens": 1024,
+    "top_k": 28,
+    "top_p": 0.81
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a foundational understanding of Decentralized Science (DeSci) and its potential to revolutionize scientific research and collaboration. You are now equipped to explore DeSci projects, contribute to DAOs, and participate in shaping the future of science.",
+    "courseTitle": "Decentralized Science (DeSci) for Beginners",
+    "introduction": "Welcome to Decentralized Science (DeSci) for Beginners! This course provides a gentle introduction to the exciting world of DeSci, exploring how blockchain technology and decentralized principles are transforming scientific research, funding, and collaboration. No prior knowledge of blockchain or science is required.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is Science?",
+            "description": "A brief overview of the scientific method, its goals, and its traditional structure."
+          },
+          {
+            "chapterTitle": "Problems with Traditional Science",
+            "description": "Exploration of issues like funding bias, publication delays, and lack of reproducibility."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Science and its Challenges"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is Decentralization?",
+            "description": "Explanation of decentralization concepts: distributed systems, blockchain, and DAOs."
+          },
+          {
+            "chapterTitle": "Key Benefits of Decentralization",
+            "description": "Focus on transparency, immutability, and community governance."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Understanding Decentralization"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "DeSci Defined",
+            "description": "Combining decentralization and science to address current limitations."
+          },
+          {
+            "chapterTitle": "Core Principles of DeSci",
+            "description": "Open access, verifiable research, and community-driven funding."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "What is Decentralized Science (DeSci)?"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "DeSci Funding Mechanisms",
+            "description": "Exploring DAOs, tokenized research, and quadratic funding."
+          },
+          {
+            "chapterTitle": "DeSci Tools and Platforms",
+            "description": "Overview of IP-NFTs, decentralized data storage, and open-source lab equipment."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "DeSci Tools and Funding"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Real-World DeSci Examples",
+            "description": "Showcasing successful DeSci projects and initiatives."
+          },
+          {
+            "chapterTitle": "Getting Involved in DeSci",
+            "description": "Guidance on joining DAOs, contributing to research, and promoting DeSci principles."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "DeSci in Action and Getting Involved"
+      }
+    ]
+  }
+}

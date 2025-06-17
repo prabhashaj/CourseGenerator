@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:06:32.254192",
+  "input": {
+    "course_topic": "Power Systems",
+    "difficulty_level": "Beginner",
+    "num_modules": 6,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.36,
+    "max_tokens": 2048,
+    "top_k": 32,
+    "top_p": 0.74
+  },
+  "output": {
+    "conclusion": "This course provided a foundational understanding of power systems. Further study is recommended for advanced topics.",
+    "courseTitle": "Introduction to Power Systems",
+    "introduction": "Welcome to the Introduction to Power Systems course! This course will provide you with a basic understanding of the fundamental concepts of power systems.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is a Power System?",
+            "description": "Overview of power generation, transmission, and distribution."
+          },
+          {
+            "chapterTitle": "Basic Components",
+            "description": "Introduction to generators, transformers, and transmission lines."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Power Systems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Voltage and Current",
+            "description": "Understanding voltage and current in AC circuits."
+          },
+          {
+            "chapterTitle": "Power and Energy",
+            "description": "Introduction to real, reactive, and apparent power."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Basic Electrical Concepts"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Generation Overview",
+            "description": "Introduction to different types of power generation (coal, gas, hydro, nuclear, renewable)."
+          },
+          {
+            "chapterTitle": "Renewable Energy Sources",
+            "description": "A brief overview of solar and wind power generation."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Power Generation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transmission Lines",
+            "description": "Introduction to transmission line characteristics."
+          },
+          {
+            "chapterTitle": "Substations",
+            "description": "Overview of substation equipment and functions."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Power Transmission"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Distribution Systems",
+            "description": "Introduction to distribution feeders and substations."
+          },
+          {
+            "chapterTitle": "Load Types",
+            "description": "Overview of residential, commercial, and industrial loads."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Power Distribution"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Power System Protection",
+            "description": "Introduction to protective relays and circuit breakers."
+          },
+          {
+            "chapterTitle": "Basic Grid Operation",
+            "description": "Overview of power system control and stability."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Power System Protection and Operation"
+      }
+    ]
+  }
+}

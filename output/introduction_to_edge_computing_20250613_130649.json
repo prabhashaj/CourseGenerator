@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 13:06:49.842013",
+  "input": {
+    "course_topic": "Edge Computing",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.63,
+    "max_tokens": 1024,
+    "top_k": 32,
+    "top_p": 0.71
+  },
+  "output": {
+    "conclusion": "Edge computing is transforming industries by bringing computation closer to data sources. This course provides a foundational understanding to embark on your edge computing journey.",
+    "courseTitle": "Introduction to Edge Computing",
+    "introduction": "This course provides a beginner-friendly introduction to edge computing, covering its core concepts, benefits, and applications.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is Edge Computing?",
+            "description": "Defining edge computing and contrasting it with cloud computing. Discussing the shift from centralized to distributed processing."
+          },
+          {
+            "chapterTitle": "Key Characteristics of Edge Computing",
+            "description": "Exploring low latency, reduced bandwidth usage, and enhanced security as defining features of edge computing."
+          },
+          {
+            "chapterTitle": "Benefits of Edge Computing",
+            "description": "Highlighting improved performance, cost savings, and enhanced privacy as key advantages."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Understanding Edge Computing Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Edge Devices and Infrastructure",
+            "description": "Overview of common edge devices like sensors, gateways, and micro data centers. Discussing the infrastructure required to support edge deployments."
+          },
+          {
+            "chapterTitle": "Edge Computing Architectures",
+            "description": "Exploring different architectural patterns for edge computing, including single-tier, multi-tier, and hybrid approaches."
+          },
+          {
+            "chapterTitle": "Edge Computing Platforms",
+            "description": "Introducing popular edge computing platforms and frameworks like AWS IoT Greengrass, Azure IoT Edge, and Google Edge TPU."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Edge Computing Architecture and Infrastructure"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Edge Computing Use Cases: IoT",
+            "description": "Examining edge computing applications in IoT, such as smart homes, industrial automation, and connected vehicles."
+          },
+          {
+            "chapterTitle": "Edge Computing Use Cases: Healthcare",
+            "description": "Exploring edge computing applications in healthcare, including remote patient monitoring, telemedicine, and medical imaging analysis."
+          },
+          {
+            "chapterTitle": "Edge Computing Use Cases: Retail",
+            "description": "Discussing edge computing applications in retail, such as personalized shopping experiences, inventory management, and security surveillance."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Edge Computing Applications and Use Cases"
+      }
+    ]
+  }
+}

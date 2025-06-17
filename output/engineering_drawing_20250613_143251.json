@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 14:32:51.632730",
+  "input": {
+    "course_topic": "Engineering Drawing",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.3,
+    "max_tokens": 2048,
+    "top_k": 12,
+    "top_p": 0.5
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in engineering drawing, equipping you with the skills to interpret and create technical drawings effectively. Continued practice and exploration of advanced topics will further enhance your expertise.",
+    "courseTitle": "Engineering Drawing",
+    "introduction": "Welcome to Engineering Drawing! This intermediate-level course builds upon basic drafting principles, focusing on advanced techniques and industry standards. You will learn to create detailed and accurate technical drawings essential for engineering communication.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Orthographic Projection Review",
+            "description": "A quick recap of orthographic projection principles, including multi-view drawings and their importance in representing 3D objects in 2D."
+          },
+          {
+            "chapterTitle": "Sectional Views: Principles",
+            "description": "Introduction to sectional views, explaining the purpose of cutting planes and how they reveal internal features of an object."
+          },
+          {
+            "chapterTitle": "Sectional Views: Types",
+            "description": "Exploration of different types of sectional views, such as full sections, half sections, offset sections, and broken-out sections."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Orthographic Projections and Sectional Views"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Auxiliary Views: Introduction",
+            "description": "Understanding the need for auxiliary views to represent inclined surfaces accurately and without distortion."
+          },
+          {
+            "chapterTitle": "Primary Auxiliary Views",
+            "description": "Creating primary auxiliary views to show the true shape and size of a single inclined surface."
+          },
+          {
+            "chapterTitle": "Secondary Auxiliary Views",
+            "description": "Introduction to secondary auxiliary views for representing objects with multiple inclined surfaces."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Auxiliary Views"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Dimensioning: Advanced Techniques",
+            "description": "Exploring advanced dimensioning techniques, including chain dimensioning, baseline dimensioning, and coordinate dimensioning."
+          },
+          {
+            "chapterTitle": "Tolerancing: Introduction",
+            "description": "Introduction to tolerancing, explaining the need for specifying acceptable variations in dimensions."
+          },
+          {
+            "chapterTitle": "Geometric Dimensioning and Tolerancing (GD&T): Basics",
+            "description": "A brief overview of GD&T principles and its advantages over traditional tolerancing methods."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Dimensioning and Tolerancing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fasteners: Types and Representation",
+            "description": "Identifying different types of fasteners (bolts, screws, rivets) and their standard representation in engineering drawings."
+          },
+          {
+            "chapterTitle": "Assembly Drawings: Principles",
+            "description": "Understanding the principles of creating assembly drawings, including bill of materials (BOM) and exploded views."
+          },
+          {
+            "chapterTitle": "CAD Software: Introduction",
+            "description": "A brief introduction to Computer-Aided Design (CAD) software and its role in modern engineering drawing practices."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Fasteners, Assembly Drawings, and CAD Introduction"
+      }
+    ]
+  }
+}

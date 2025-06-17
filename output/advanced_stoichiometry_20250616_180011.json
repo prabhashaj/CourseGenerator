@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-06-16 18:00:11.771186",
+  "input": {
+    "course_topic": "Stoichiometry",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.53,
+    "max_tokens": 2048,
+    "top_k": 15,
+    "top_p": 0.99
+  },
+  "output": {
+    "conclusion": "Mastery of stoichiometry is crucial for advanced chemistry and related fields. This course equips you with the necessary tools and understanding to confidently tackle complex stoichiometric problems and apply these principles in real-world scenarios.",
+    "courseTitle": "Advanced Stoichiometry",
+    "introduction": "Welcome to Advanced Stoichiometry! This course delves into the intricacies of chemical calculations, building upon foundational knowledge to explore complex stoichiometric relationships and problem-solving techniques. We will cover advanced topics such as limiting reactants, percent yield, solution stoichiometry, and gas stoichiometry, with a focus on practical applications and critical thinking.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Review of Basic Stoichiometry",
+            "description": "A quick refresher on moles, molar mass, and balancing chemical equations. We'll revisit the fundamental concepts necessary for advanced calculations."
+          },
+          {
+            "chapterTitle": "Mole Ratios and Stoichiometric Factors",
+            "description": "A deeper dive into mole ratios derived from balanced chemical equations and their application in stoichiometric calculations. Focus on converting between reactants and products."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Foundations of Stoichiometry"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Limiting Reactant Problems",
+            "description": "Complex scenarios involving multiple reactants and determining the limiting reactant. Emphasis on problem-solving strategies."
+          },
+          {
+            "chapterTitle": "Percent Yield and Actual Yield",
+            "description": "Understanding the factors affecting yield and calculating percent yield in complex reactions. Error analysis and optimization."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Limiting Reactants and Yield"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Molarity and Solution Stoichiometry",
+            "description": "Calculating concentrations, dilutions, and stoichiometric calculations involving solutions. Focus on titrations and volumetric analysis."
+          },
+          {
+            "chapterTitle": "Acid-Base Titrations",
+            "description": "Detailed analysis of acid-base titrations, including endpoint determination, standardization, and applications in quantitative analysis."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Solution Stoichiometry"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Ideal Gas Law and Stoichiometry",
+            "description": "Applying the ideal gas law to stoichiometric calculations involving gaseous reactants and products. Focus on standard conditions and partial pressures."
+          },
+          {
+            "chapterTitle": "Real Gases and Deviations from Ideality",
+            "description": "Understanding the limitations of the ideal gas law and accounting for deviations in real gases using the van der Waals equation. Impact on stoichiometric calculations."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Gas Stoichiometry"
+      }
+    ]
+  }
+}

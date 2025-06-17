@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-06-13 14:28:04.600548",
+  "input": {
+    "course_topic": "Laws of Motion",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.69,
+    "max_tokens": 2048,
+    "top_k": 24,
+    "top_p": 0.88
+  },
+  "output": {
+    "conclusion": "This course has provided an in-depth exploration of Newton's Laws of Motion and their applications. You should now have a solid understanding of classical mechanics and be prepared for more advanced topics in physics.",
+    "courseTitle": "Laws of Motion: An Advanced Course",
+    "introduction": "Welcome to the advanced course on the Laws of Motion! This course delves into the intricacies of classical mechanics, focusing on Newton's Laws and their far-reaching implications. We will explore advanced concepts and problem-solving techniques.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Newton's First Law: Inertial Frames",
+            "description": "A detailed examination of inertial frames of reference and their importance in understanding Newton's First Law. Includes examples of non-inertial frames and pseudo-forces."
+          },
+          {
+            "chapterTitle": "Galilean Transformations",
+            "description": "Exploration of Galilean transformations and their limitations in describing motion at high speeds. Focus on the concept of relative velocity."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Inertia and Inertial Frames"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Newton's Second Law: Momentum and Force",
+            "description": "A rigorous treatment of Newton's Second Law, emphasizing the relationship between force, mass, and acceleration. Includes a discussion of momentum and impulse."
+          },
+          {
+            "chapterTitle": "Applications of Second Law",
+            "description": "Application of the second law to solve problems involving forces, mass and acceleration."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Force and Acceleration"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Newton's Third Law: Action and Reaction",
+            "description": "A deep dive into Newton's Third Law, clarifying the concepts of action and reaction forces. Includes examples of interacting bodies and conservation of momentum."
+          },
+          {
+            "chapterTitle": "Constraints and Constraint Forces",
+            "description": "Introduction to the concept of constraints and constraint forces, such as tension in a string or the normal force on a surface. Includes examples of constrained motion."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Action-Reaction Pairs"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Work and Energy Theorem",
+            "description": "The Work and Energy theorem and its importance to problem solving."
+          },
+          {
+            "chapterTitle": "Conservative Forces and Potential Energy",
+            "description": "Explanation of conservative forces and potential energy."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Work and Energy"
+      }
+    ]
+  }
+}

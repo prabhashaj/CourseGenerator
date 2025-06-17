@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-06-16 18:25:09.156580",
+  "input": {
+    "course_topic": "Business Analytics",
+    "difficulty_level": "Advanced",
+    "num_modules": 6,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.52,
+    "max_tokens": 2048,
+    "top_k": 30,
+    "top_p": 0.78
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, participants will be equipped with advanced analytical skills to drive data-informed decision-making, optimize business processes, and gain a competitive edge in today's data-driven environment.",
+    "courseTitle": "Advanced Business Analytics",
+    "introduction": "Welcome to Advanced Business Analytics! This course is designed for professionals seeking to deepen their understanding of data analysis techniques and apply them to solve complex business problems. We will explore advanced statistical methods, predictive modeling, and data visualization to extract actionable insights and drive strategic decision-making.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Review of Descriptive Statistics",
+            "description": "A quick recap of mean, median, mode, standard deviation, and variance."
+          },
+          {
+            "chapterTitle": "Probability Distributions",
+            "description": "Understanding normal, binomial, and Poisson distributions."
+          },
+          {
+            "chapterTitle": "Hypothesis Testing Fundamentals",
+            "description": "Revisiting null and alternative hypotheses, p-values, and significance levels."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Statistical Foundations Revisited"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Multiple Linear Regression",
+            "description": "Building and interpreting regression models with multiple independent variables."
+          },
+          {
+            "chapterTitle": "Model Diagnostics",
+            "description": "Assessing model fit, checking for multicollinearity, and handling outliers."
+          },
+          {
+            "chapterTitle": "Regularization Techniques",
+            "description": "Introduction to Ridge, Lasso, and Elastic Net regression for model improvement."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Regression Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Logistic Regression",
+            "description": "Predicting binary outcomes using logistic regression models."
+          },
+          {
+            "chapterTitle": "Model Evaluation Metrics",
+            "description": "Understanding accuracy, precision, recall, F1-score, and AUC-ROC."
+          },
+          {
+            "chapterTitle": "Classification Threshold Tuning",
+            "description": "Optimizing classification thresholds for specific business objectives."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Classification Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Clustering Algorithms",
+            "description": "Exploring K-Means, Hierarchical, and DBSCAN clustering techniques."
+          },
+          {
+            "chapterTitle": "Cluster Evaluation Metrics",
+            "description": "Using silhouette score and other metrics to evaluate cluster quality."
+          },
+          {
+            "chapterTitle": "Applications of Clustering",
+            "description": "Customer segmentation, anomaly detection, and market basket analysis."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Clustering and Segmentation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Time Series Decomposition",
+            "description": "Decomposing time series data into trend, seasonality, and residuals."
+          },
+          {
+            "chapterTitle": "ARIMA Models",
+            "description": "Building and forecasting with Autoregressive Integrated Moving Average (ARIMA) models."
+          },
+          {
+            "chapterTitle": "Evaluating Forecast Accuracy",
+            "description": "Using metrics like MAE, MSE, and RMSE to assess forecast performance."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Time Series Analysis and Forecasting"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Data Storytelling Principles",
+            "description": "Crafting compelling narratives with data visualizations."
+          },
+          {
+            "chapterTitle": "Advanced Visualization Tools",
+            "description": "Exploring tools like Tableau, Power BI, and Python libraries for data visualization."
+          },
+          {
+            "chapterTitle": "Communicating Insights Effectively",
+            "description": "Presenting analytical findings to diverse audiences."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Data Visualization and Communication"
+      }
+    ]
+  }
+}

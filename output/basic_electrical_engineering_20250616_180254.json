@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:02:54.525911",
+  "input": {
+    "course_topic": "Basic Electrical Engineering",
+    "difficulty_level": "Expert",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.39,
+    "max_tokens": 1024,
+    "top_k": 29,
+    "top_p": 0.69
+  },
+  "output": {
+    "conclusion": "This course has provided a comprehensive overview of basic electrical engineering principles. Further study and practical application are essential for mastery.",
+    "courseTitle": "Basic Electrical Engineering",
+    "introduction": "Welcome to Basic Electrical Engineering! This course is designed for individuals with a strong technical background seeking a rapid refresher or a concise overview of fundamental electrical engineering concepts.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Circuit Fundamentals: Voltage, Current, Resistance",
+            "description": "Review of voltage, current, and resistance. Ohm's Law and its applications. Power and energy calculations in DC circuits. Series and parallel resistor combinations. Voltage and current dividers."
+          },
+          {
+            "chapterTitle": "Kirchhoff's Laws and Circuit Analysis Techniques",
+            "description": "In-depth exploration of Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL). Nodal and mesh analysis techniques for solving complex DC circuits. Source transformations and superposition theorem."
+          },
+          {
+            "chapterTitle": "Thevenin's and Norton's Theorems",
+            "description": "Application of Thevenin's and Norton's theorems for circuit simplification. Maximum power transfer theorem and its implications. Practical examples and advanced problem-solving."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "DC Circuit Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Capacitors and Inductors: Behavior and Characteristics",
+            "description": "Detailed analysis of capacitors and inductors. Voltage-current relationships. Energy storage. Series and parallel combinations. Transient response in RC and RL circuits."
+          },
+          {
+            "chapterTitle": "AC Fundamentals: Sinusoidal Waveforms and Phasors",
+            "description": "Introduction to alternating current (AC). Sinusoidal waveforms: amplitude, frequency, phase. Phasor representation of AC quantities. Impedance and admittance."
+          },
+          {
+            "chapterTitle": "AC Circuit Analysis: Impedance, Power, and Resonance",
+            "description": "AC circuit analysis using impedance. Power calculations in AC circuits: real, reactive, and apparent power. Power factor correction. Series and parallel resonance."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "AC Circuit Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Semiconductor Devices: Diodes and Transistors",
+            "description": "Overview of semiconductor materials. Introduction to diodes: characteristics and applications. Bipolar junction transistors (BJTs) and field-effect transistors (FETs): operation and biasing."
+          },
+          {
+            "chapterTitle": "Operational Amplifiers: Ideal Characteristics and Applications",
+            "description": "Ideal operational amplifier (op-amp) characteristics. Inverting and non-inverting amplifier configurations. Summing amplifiers, difference amplifiers, and integrators."
+          },
+          {
+            "chapterTitle": "Digital Logic Gates: Basic Gates and Boolean Algebra",
+            "description": "Introduction to digital logic gates: AND, OR, NOT, NAND, NOR, XOR. Boolean algebra and logic simplification. Combinational logic circuits."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Electronics Fundamentals"
+      }
+    ]
+  }
+}

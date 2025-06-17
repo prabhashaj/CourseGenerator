@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:20:02.831541",
+  "input": {
+    "course_topic": "Engineering Drawing",
+    "difficulty_level": "Intermediate",
+    "num_modules": 6,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.33,
+    "max_tokens": 1024,
+    "top_k": 14,
+    "top_p": 0.65
+  },
+  "output": {
+    "conclusion": "This course has provided a comprehensive overview of engineering drawing principles and techniques. By mastering these skills, you will be well-equipped to create and interpret technical drawings effectively.",
+    "courseTitle": "Engineering Drawing",
+    "introduction": "Welcome to Engineering Drawing! This intermediate-level course builds upon foundational knowledge to enhance your skills in creating and interpreting technical drawings. We will explore advanced techniques and industry best practices.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Review of Basic Principles",
+            "description": "A quick recap of lines, lettering, and basic geometric constructions. Reinforce understanding of fundamental drawing elements."
+          },
+          {
+            "chapterTitle": "Orthographic Projection Refresher",
+            "description": "Revisit the principles of multi-view projection. Focus on creating accurate and clear representations of objects."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals Review"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Section Views: Cutting Planes",
+            "description": "Learn about different types of section views and how to create them using cutting plane lines."
+          },
+          {
+            "chapterTitle": "Section Views: Hatching and Conventions",
+            "description": "Understand the conventions for hatching different materials in section views. Ensure clarity and accuracy."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Section Views"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Auxiliary Views: Primary Auxiliary Views",
+            "description": "Introduction to auxiliary views and their purpose. Focus on creating primary auxiliary views to show true shapes."
+          },
+          {
+            "chapterTitle": "Auxiliary Views: Secondary Auxiliary Views",
+            "description": "Learn about secondary auxiliary views and how to create them for complex geometries."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Auxiliary Views"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Dimensioning: Advanced Techniques",
+            "description": "Explore advanced dimensioning techniques, including chain dimensioning, baseline dimensioning, and coordinate dimensioning."
+          },
+          {
+            "chapterTitle": "Dimensioning: Tolerances and Fits",
+            "description": "Understand the concepts of tolerances and fits and how to apply them in engineering drawings."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Dimensioning and Tolerances"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fasteners: Bolts and Screws",
+            "description": "Learn about different types of bolts and screws and how to represent them in engineering drawings."
+          },
+          {
+            "chapterTitle": "Fasteners: Rivets and Welds",
+            "description": "Understand the representation of rivets and welds in engineering drawings. Focus on standard symbols and conventions."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Fasteners and Connections"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Assembly Drawings: Creating Assembly Drawings",
+            "description": "Learn how to create assembly drawings from individual part drawings. Focus on bill of materials and part identification."
+          },
+          {
+            "chapterTitle": "Assembly Drawings: Exploded Views",
+            "description": "Understand how to create exploded views to show the relationship between parts in an assembly."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Assembly Drawings"
+      }
+    ]
+  }
+}

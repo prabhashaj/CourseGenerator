@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-16 18:18:49.379753",
+  "input": {
+    "course_topic": "Engineering Mechanics",
+    "difficulty_level": "Expert",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.51,
+    "max_tokens": 1024,
+    "top_k": 29,
+    "top_p": 0.71
+  },
+  "output": {
+    "conclusion": "Upon completion of this advanced Engineering Mechanics course, participants will possess a comprehensive understanding of complex mechanical systems and be equipped to tackle challenging engineering problems with confidence and precision.",
+    "courseTitle": "Engineering Mechanics: Advanced Principles and Applications",
+    "introduction": "This course delves into advanced concepts in Engineering Mechanics, building upon foundational knowledge to explore complex systems and problem-solving techniques. Designed for experienced engineers and researchers, it provides a rigorous treatment of topics essential for advanced analysis and design.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Tensor Analysis for Stress and Strain",
+            "description": "Review of tensor notation; stress and strain tensors; transformation laws; principal stresses and strains; invariants; applications to anisotropic materials."
+          },
+          {
+            "chapterTitle": "Advanced Stress-Strain Relationships",
+            "description": "Hyperelastic material models; viscoplasticity; creep; damage mechanics; introduction to finite element formulation based on advanced material models."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Stress and Strain Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Virtual Work and Energy Methods",
+            "description": "Principle of virtual work; principle of minimum potential energy; Castigliano's theorems; applications to complex structural systems."
+          },
+          {
+            "chapterTitle": "Stability Analysis",
+            "description": "Buckling of columns and beams; energy methods for stability analysis; dynamic stability; introduction to post-buckling behavior."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Energy Methods and Stability"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Dynamics of Rigid Bodies in 3D",
+            "description": "Euler angles; angular momentum; kinetic energy; Euler's equations of motion; gyroscopic motion; applications to spacecraft and robotics."
+          },
+          {
+            "chapterTitle": "Vibrations of Continuous Systems",
+            "description": "Wave equation; free and forced vibrations of strings, rods, and beams; modal analysis; damping; applications to structural dynamics."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Dynamics and Vibrations"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fluid Mechanics: Viscous Flow",
+            "description": "Navier-Stokes equations; boundary layer theory; turbulence modeling; computational fluid dynamics (CFD) fundamentals."
+          },
+          {
+            "chapterTitle": "Fluid-Structure Interaction",
+            "description": "Added mass; aeroelasticity; hydroelasticity; applications to aerospace and marine engineering."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Fluid Mechanics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fracture Mechanics",
+            "description": "Stress intensity factors; fracture criteria; fatigue crack growth; applications to structural integrity assessment."
+          },
+          {
+            "chapterTitle": "Composite Materials",
+            "description": "Micromechanics and macromechanics of composites; lamination theory; failure analysis; applications to aerospace and automotive industries."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Fracture and Composite Mechanics"
+      }
+    ]
+  }
+}

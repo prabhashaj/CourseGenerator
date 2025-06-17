@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-06-16 17:55:46.810856",
+  "input": {
+    "course_topic": "Mental Health Awareness",
+    "difficulty_level": "Beginner",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.34,
+    "max_tokens": 2048,
+    "top_k": 12,
+    "top_p": 0.73
+  },
+  "output": {
+    "conclusion": "By completing this course, you've taken a significant step in understanding and promoting mental health awareness. Remember to apply what you've learned in your daily life and continue to be an advocate for mental well-being.",
+    "courseTitle": "Mental Health Awareness: A Beginner's Guide",
+    "introduction": "Welcome to the Mental Health Awareness course! This course is designed for beginners and will provide you with a foundational understanding of mental health, common mental health conditions, and how to support yourself and others.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding Mental Health",
+            "description": "What is mental health? Exploring the definition and importance of mental well-being. Discussing the difference between mental health and mental illness."
+          },
+          {
+            "chapterTitle": "Factors Influencing Mental Health",
+            "description": "Identifying various factors that can impact mental health, including biological, psychological, and social influences. Briefly touch on the role of genetics, trauma, and environment."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Mental Health"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Anxiety Disorders",
+            "description": "Overview of common anxiety disorders such as generalized anxiety disorder (GAD), social anxiety disorder, and panic disorder. Briefly discuss symptoms and impact on daily life."
+          },
+          {
+            "chapterTitle": "Mood Disorders",
+            "description": "Introduction to mood disorders like depression and bipolar disorder. Discussing the key characteristics and differences between these conditions."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Common Mental Health Conditions"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Recognizing Signs and Symptoms",
+            "description": "Learning to identify potential signs and symptoms of mental health challenges in yourself and others. Emphasizing the importance of early detection."
+          },
+          {
+            "chapterTitle": "The Importance of Early Intervention",
+            "description": "Understanding why early intervention is crucial for positive outcomes. Discussing the benefits of seeking help promptly."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Identifying Mental Health Challenges"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Self-Care Strategies",
+            "description": "Introducing basic self-care techniques for maintaining mental well-being. Examples include mindfulness, exercise, and healthy sleep habits."
+          },
+          {
+            "chapterTitle": "Seeking Help and Support",
+            "description": "Providing information on where to find professional help and support resources. Discussing the importance of building a support network."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Promoting Mental Well-being"
+      }
+    ]
+  }
+}

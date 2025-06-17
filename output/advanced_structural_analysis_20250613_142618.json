@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 14:26:18.681601",
+  "input": {
+    "course_topic": "Structural Analysis",
+    "difficulty_level": "Advanced",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.67,
+    "max_tokens": 1024,
+    "top_k": 24,
+    "top_p": 0.85
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of advanced structural analysis techniques, equipping you with the skills to analyze complex structural systems and make informed engineering decisions.",
+    "courseTitle": "Advanced Structural Analysis",
+    "introduction": "Welcome to Advanced Structural Analysis! This course delves into sophisticated methods for analyzing structures, building upon fundamental principles. We will explore advanced topics such as finite element analysis, non-linear behavior, and stability analysis.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Finite Element Analysis (FEA)",
+            "description": "Overview of FEA principles, including discretization, element types, and the stiffness matrix method. Emphasis on understanding the underlying theory and assumptions of FEA."
+          },
+          {
+            "chapterTitle": "Element Formulation and Types",
+            "description": "Detailed discussion of various element types (truss, beam, shell, solid) and their formulation. Focus on selecting appropriate element types for different structural applications."
+          },
+          {
+            "chapterTitle": "FEA Modeling Techniques",
+            "description": "Practical guidance on creating accurate and efficient FEA models. Topics include meshing strategies, boundary conditions, and load application."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Finite Element Analysis Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Geometric Nonlinearity",
+            "description": "Introduction to geometric nonlinearity (large deformations) and its effects on structural behavior. Discussion of solution methods for nonlinear problems."
+          },
+          {
+            "chapterTitle": "Material Nonlinearity",
+            "description": "Exploration of material nonlinearity (plasticity, creep) and its impact on structural response. Constitutive models for nonlinear materials."
+          },
+          {
+            "chapterTitle": "Nonlinear Analysis Techniques",
+            "description": "Advanced techniques for solving nonlinear structural problems, including Newton-Raphson method and arc-length method."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Nonlinear Structural Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Buckling and Stability Analysis",
+            "description": "Introduction to structural stability and buckling phenomena. Euler buckling and its limitations."
+          },
+          {
+            "chapterTitle": "Eigenvalue Buckling Analysis",
+            "description": "Application of eigenvalue analysis to determine critical buckling loads and mode shapes. Practical considerations for buckling analysis."
+          },
+          {
+            "chapterTitle": "Advanced Stability Concepts",
+            "description": "Discussion of advanced stability concepts, such as post-buckling behavior and imperfection sensitivity."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Stability Analysis of Structures"
+      }
+    ]
+  }
+}

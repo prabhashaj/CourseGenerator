@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 17:57:48.290080",
+  "input": {
+    "course_topic": "Electrical Machines",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.62,
+    "max_tokens": 2048,
+    "top_k": 28,
+    "top_p": 0.58
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in electrical machines, equipping you with the knowledge to analyze and design basic motor and generator systems.",
+    "courseTitle": "Electrical Machines",
+    "introduction": "Welcome to Electrical Machines! This course will delve into the principles, operation, and applications of various electrical machines, including transformers, DC machines, induction machines, and synchronous machines. We will cover both the theoretical aspects and practical considerations relevant to these machines.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Electrical Machines",
+            "description": "Overview of electrical machines, their types, and applications. Basic principles of electromechanical energy conversion. Faraday's Law and Lenz's Law. Magnetic circuits and their analysis."
+          },
+          {
+            "chapterTitle": "Transformers - Part 1",
+            "description": "Construction and working principle of transformers. Ideal transformer model. EMF equation. Transformer ratings and types."
+          },
+          {
+            "chapterTitle": "Transformers - Part 2",
+            "description": "Equivalent circuit of a transformer. Transformer testing (open-circuit and short-circuit tests). Voltage regulation and efficiency. Autotransformers."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Transformers"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "DC Machines - Part 1",
+            "description": "Construction and working principle of DC machines. Types of DC machines (separately excited, shunt, series, and compound). EMF equation and torque equation."
+          },
+          {
+            "chapterTitle": "DC Machines - Part 2",
+            "description": "DC motor characteristics (speed-torque characteristics). DC motor starting and speed control methods. DC generator characteristics."
+          },
+          {
+            "chapterTitle": "DC Machines - Part 3",
+            "description": "Armature reaction and commutation in DC machines. Compensating windings and interpoles. Applications of DC machines."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "DC Machines"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Induction Machines - Part 1",
+            "description": "Construction and working principle of three-phase induction motors. Rotating magnetic field. Slip and rotor frequency. Equivalent circuit of an induction motor."
+          },
+          {
+            "chapterTitle": "Induction Machines - Part 2",
+            "description": "Torque-slip characteristics of induction motors. Maximum torque and starting torque. Induction motor testing (no-load and blocked-rotor tests)."
+          },
+          {
+            "chapterTitle": "Induction Machines - Part 3",
+            "description": "Induction motor starting methods (direct-on-line, star-delta, autotransformer). Speed control methods of induction motors. Single-phase induction motors."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Induction Machines"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Synchronous Machines - Part 1",
+            "description": "Construction and working principle of synchronous generators (alternators). EMF equation. Synchronous reactance and equivalent circuit."
+          },
+          {
+            "chapterTitle": "Synchronous Machines - Part 2",
+            "description": "Synchronous motor operation. Torque angle and power angle characteristics. Synchronous motor starting methods. V-curves and inverted V-curves."
+          },
+          {
+            "chapterTitle": "Synchronous Machines - Part 3",
+            "description": "Synchronous machine applications. Power factor control using synchronous condensers. Parallel operation of synchronous generators."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Synchronous Machines"
+      }
+    ]
+  }
+}

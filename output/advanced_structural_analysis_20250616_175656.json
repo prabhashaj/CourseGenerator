@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 17:56:56.209141",
+  "input": {
+    "course_topic": "Structural Analysis",
+    "difficulty_level": "Expert",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.36,
+    "max_tokens": 1024,
+    "top_k": 14,
+    "top_p": 0.93
+  },
+  "output": {
+    "conclusion": "This course provides an in-depth understanding of advanced structural analysis techniques, equipping you with the skills to tackle complex engineering challenges.",
+    "courseTitle": "Advanced Structural Analysis",
+    "introduction": "Welcome to Advanced Structural Analysis! This course delves into sophisticated methods for analyzing structures, focusing on non-linear behavior, finite element analysis, and dynamic loading. It is designed for experienced engineers seeking to expand their expertise.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Non-Linear Material Behavior",
+            "description": "Explore stress-strain relationships beyond the elastic limit, including plasticity, creep, and damage models. Discuss material non-linearity in steel, concrete, and composites."
+          },
+          {
+            "chapterTitle": "Geometric Non-Linearity",
+            "description": "Examine large deformation theory and its impact on structural stability. Analyze buckling and post-buckling behavior of columns and plates."
+          },
+          {
+            "chapterTitle": "Non-Linear Analysis Methods",
+            "description": "Introduce incremental and iterative solution techniques for non-linear structural problems. Cover Newton-Raphson and arc-length methods."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Non-Linear Structural Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Finite Element Formulation",
+            "description": "Review the principles of finite element analysis (FEA) and its application to structural problems. Discuss element types, shape functions, and stiffness matrices."
+          },
+          {
+            "chapterTitle": "Advanced Element Types",
+            "description": "Explore specialized elements for modeling beams, plates, shells, and solids. Cover isoparametric elements and reduced integration techniques."
+          },
+          {
+            "chapterTitle": "Mesh Generation and Refinement",
+            "description": "Discuss strategies for creating high-quality finite element meshes. Cover mesh refinement techniques and error estimation."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Finite Element Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Dynamic Loading and Response",
+            "description": "Introduce the concepts of dynamic loading and structural response. Discuss single-degree-of-freedom (SDOF) and multi-degree-of-freedom (MDOF) systems."
+          },
+          {
+            "chapterTitle": "Modal Analysis",
+            "description": "Explore modal analysis techniques for determining natural frequencies and mode shapes. Cover eigenvalue extraction methods."
+          },
+          {
+            "chapterTitle": "Time History Analysis",
+            "description": "Analyze structural response to time-varying loads using direct integration methods. Discuss Newmark and Wilson-theta methods."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Dynamic Structural Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Modeling Techniques",
+            "description": "Explore advanced modeling techniques for complex structural systems. Cover substructuring, contact analysis, and fluid-structure interaction."
+          },
+          {
+            "chapterTitle": "Reliability Analysis",
+            "description": "Introduce the concepts of structural reliability and probabilistic analysis. Discuss Monte Carlo simulation and first-order reliability methods (FORM)."
+          },
+          {
+            "chapterTitle": "Case Studies",
+            "description": "Examine real-world case studies of advanced structural analysis applications. Cover bridges, buildings, and aerospace structures."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Topics in Structural Analysis"
+      }
+    ]
+  }
+}

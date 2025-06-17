@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-16 18:33:31.157099",
+  "input": {
+    "course_topic": "Inorganic Chemistry",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.68,
+    "max_tokens": 1024,
+    "top_k": 11,
+    "top_p": 0.55
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in inorganic chemistry, equipping students with the knowledge and skills necessary for further study in related fields.",
+    "courseTitle": "Intermediate Inorganic Chemistry",
+    "introduction": "Welcome to Intermediate Inorganic Chemistry! This course builds upon your existing knowledge of chemistry to explore the fascinating world of inorganic compounds, their structure, bonding, and reactivity.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Atomic Structure and Properties",
+            "description": "Review of atomic structure, electronic configuration, and periodic trends relevant to inorganic chemistry. Focus on ionization energy, electronegativity, and atomic/ionic radii."
+          },
+          {
+            "chapterTitle": "Periodic Trends in Inorganic Chemistry",
+            "description": "Detailed analysis of periodic trends including electronegativity, ionization energy, electron affinity, and their influence on chemical properties of elements."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Atomic Structure and Periodic Trends"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Ionic Bonding and Crystal Structures",
+            "description": "Formation of ionic compounds, lattice energy, Born-Haber cycle. Introduction to common crystal structures (NaCl, CsCl, ZnS) and their properties."
+          },
+          {
+            "chapterTitle": "Covalent Bonding and Molecular Orbital Theory",
+            "description": "Review of covalent bonding, Lewis structures, VSEPR theory. Introduction to molecular orbital theory for diatomic molecules (homonuclear and heteronuclear)."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Chemical Bonding"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Coordination Chemistry: Introduction",
+            "description": "Definition of coordination complexes, ligands, and metal ions. Nomenclature and isomerism in coordination compounds."
+          },
+          {
+            "chapterTitle": "Coordination Chemistry: Bonding Theories",
+            "description": "Valence bond theory and crystal field theory applied to coordination complexes. Factors affecting crystal field splitting."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Coordination Chemistry"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Acids and Bases in Inorganic Chemistry",
+            "description": "Review of Arrhenius, Bronsted-Lowry, and Lewis acid-base theories. Hard and Soft Acids and Bases (HSAB) principle."
+          },
+          {
+            "chapterTitle": "Solvent Systems",
+            "description": "Understanding the role of solvents in inorganic reactions. Protic and aprotic solvents. Liquid ammonia as a solvent."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Acids, Bases, and Solvents"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Organometallic Chemistry",
+            "description": "Definition and scope of organometallic chemistry. 18-electron rule and its applications."
+          },
+          {
+            "chapterTitle": "Common Ligands in Organometallic Chemistry",
+            "description": "Overview of common ligands such as CO, phosphines, and cyclopentadienyl. Bonding modes and their influence on reactivity."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Organometallic Chemistry"
+      }
+    ]
+  }
+}

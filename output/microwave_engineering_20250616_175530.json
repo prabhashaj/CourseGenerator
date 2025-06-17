@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 17:55:30.992497",
+  "input": {
+    "course_topic": "Microwave Engineering",
+    "difficulty_level": "Intermediate",
+    "num_modules": 6,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.57,
+    "max_tokens": 1024,
+    "top_k": 27,
+    "top_p": 0.83
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of microwave engineering principles and their applications. Students will be equipped with the knowledge and skills to analyze, design, and implement microwave circuits and systems.",
+    "courseTitle": "Microwave Engineering",
+    "introduction": "Welcome to Microwave Engineering! This course delves into the fascinating world of high-frequency electromagnetic waves and their applications. We will explore the fundamental principles, components, and systems used in microwave technology.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Microwaves",
+            "description": "Overview of the electromagnetic spectrum, microwave frequency range, and applications of microwaves in various fields (communication, radar, medical, etc.)."
+          },
+          {
+            "chapterTitle": "Microwave Components",
+            "description": "Introduction to passive microwave components like resistors, capacitors, and inductors at microwave frequencies. Differences in behavior compared to lower frequencies."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Microwave Engineering"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transmission Line Theory",
+            "description": "Review of transmission line parameters (characteristic impedance, propagation constant), reflection coefficient, VSWR, and impedance matching techniques."
+          },
+          {
+            "chapterTitle": "Smith Chart",
+            "description": "Introduction to the Smith chart as a graphical tool for impedance matching and transmission line analysis. Examples of using the Smith chart for impedance transformation."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Transmission Lines and Waveguides"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Waveguide Fundamentals",
+            "description": "Introduction to waveguides, their advantages and disadvantages. Different types of waveguides (rectangular, circular). Cutoff frequency and mode propagation."
+          },
+          {
+            "chapterTitle": "Waveguide Components",
+            "description": "Brief overview of waveguide components like bends, twists, attenuators, and directional couplers."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Waveguides"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Microwave Network Analysis",
+            "description": "Introduction to S-parameters and their use in characterizing microwave networks. S-parameter measurements and applications."
+          },
+          {
+            "chapterTitle": "Two-Port Network Analysis",
+            "description": "Analysis of two-port networks using S-parameters. Gain, stability, and impedance matching considerations."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Microwave Network Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Microwave Amplifiers",
+            "description": "Introduction to microwave amplifier design. Gain, noise figure, and stability considerations. Different amplifier topologies (LNA, power amplifiers)."
+          },
+          {
+            "chapterTitle": "Microwave Oscillators",
+            "description": "Introduction to microwave oscillator design. Feedback oscillators, negative resistance oscillators. Phase noise considerations."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Microwave Amplifiers and Oscillators"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Microwave Filters",
+            "description": "Introduction to microwave filter design. Filter specifications, filter types (Butterworth, Chebyshev). Implementation using lumped elements and distributed elements."
+          },
+          {
+            "chapterTitle": "Microwave Systems",
+            "description": "Overview of microwave systems (radar, communication systems). System-level design considerations. Link budget analysis."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Microwave Filters and Systems"
+      }
+    ]
+  }
+}

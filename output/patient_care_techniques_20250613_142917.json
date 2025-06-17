@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-06-13 14:29:17.603446",
+  "input": {
+    "course_topic": "Patient Care Techniques",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.54,
+    "max_tokens": 1024,
+    "top_k": 22,
+    "top_p": 0.93
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, students will be equipped with essential patient care techniques, enabling them to provide safe, effective, and compassionate care in various healthcare settings.",
+    "courseTitle": "Patient Care Techniques",
+    "introduction": "This course provides an intermediate-level overview of essential patient care techniques. It is designed for healthcare professionals seeking to enhance their skills in providing safe and effective patient care.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Vital Signs Monitoring",
+            "description": "Learn the proper techniques for measuring and interpreting vital signs, including temperature, pulse, respiration, and blood pressure."
+          },
+          {
+            "chapterTitle": "Pain Assessment",
+            "description": "Understand different pain scales and methods for assessing a patient's pain level effectively and accurately."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Patient Assessment"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Safe Patient Handling",
+            "description": "Explore techniques for safe patient transfers, positioning, and ambulation to prevent injuries to both patients and healthcare providers."
+          },
+          {
+            "chapterTitle": "Assistive Devices",
+            "description": "Overview of using walkers, canes, crutches, and wheelchairs to aid patient mobility."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Mobility and Transfer Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Wound Care Basics",
+            "description": "Learn about basic wound assessment, cleaning, and dressing techniques to promote healing and prevent infection."
+          },
+          {
+            "chapterTitle": "Infection Control",
+            "description": "Understand standard precautions and transmission-based precautions to prevent the spread of infections in healthcare settings."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Hygiene and Wound Care"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Medication Administration Routes",
+            "description": "Understand different routes of medication administration (oral, topical, subcutaneous, intramuscular) and related safety considerations."
+          },
+          {
+            "chapterTitle": "Medication Safety",
+            "description": "Learn about the 5 rights of medication administration and strategies for preventing medication errors."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Medication Administration"
+      }
+    ]
+  }
+}

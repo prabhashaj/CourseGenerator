@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:23:40.747864",
+  "input": {
+    "course_topic": "Electrical Machines",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.32,
+    "max_tokens": 2048,
+    "top_k": 18,
+    "top_p": 0.8
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in electrical machines, preparing you for advanced topics and practical applications.",
+    "courseTitle": "Electrical Machines",
+    "introduction": "Welcome to Electrical Machines! This course will cover the fundamental principles, construction, operation, and applications of various electrical machines.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Electrical Machines",
+            "description": "Overview of electrical machines, their types (motors and generators), and applications. Basic principles of electromechanical energy conversion."
+          },
+          {
+            "chapterTitle": "Magnetic Circuits",
+            "description": "Magnetic circuit concepts, including mmf, flux, reluctance, and permeability. Analysis of simple magnetic circuits."
+          },
+          {
+            "chapterTitle": "Transformers - Basic Principles",
+            "description": "Transformer construction, working principle, EMF equation, and ideal transformer model."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Electrical Machines and Transformers"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "DC Machine Construction and Operation",
+            "description": "Constructional details of DC machines, including armature, field windings, commutator, and brushes. Working principle of DC generators and motors."
+          },
+          {
+            "chapterTitle": "DC Generator Characteristics",
+            "description": "Types of DC generators (separately excited, shunt, series, and compound). Open-circuit and load characteristics of DC generators."
+          },
+          {
+            "chapterTitle": "DC Motor Characteristics",
+            "description": "Types of DC motors (shunt, series, and compound). Torque-speed characteristics, speed control methods, and applications of DC motors."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "DC Machines"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Three-Phase Induction Motors - Construction",
+            "description": "Constructional features of three-phase induction motors, including stator and rotor. Types of rotors (squirrel cage and wound rotor)."
+          },
+          {
+            "chapterTitle": "Three-Phase Induction Motors - Operation",
+            "description": "Working principle of three-phase induction motors. Slip, rotor frequency, and equivalent circuit."
+          },
+          {
+            "chapterTitle": "Synchronous Machines - Introduction",
+            "description": "Construction and working principle of synchronous generators and motors. Types of synchronous machines."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "AC Machines"
+      }
+    ]
+  }
+}

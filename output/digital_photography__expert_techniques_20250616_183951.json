@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:39:51.240347",
+  "input": {
+    "course_topic": "Digital Photography",
+    "difficulty_level": "Expert",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.49,
+    "max_tokens": 2048,
+    "top_k": 11,
+    "top_p": 0.96
+  },
+  "output": {
+    "conclusion": "By mastering these advanced techniques, you'll be equipped to create stunning and impactful digital photographs, pushing the boundaries of your artistic vision and technical expertise.",
+    "courseTitle": "Digital Photography: Expert Techniques",
+    "introduction": "Welcome to the Expert Level Digital Photography course. This course is designed for seasoned photographers seeking to refine their skills and explore advanced techniques. We will delve into complex concepts, pushing the boundaries of your creative vision and technical mastery.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Compositional Strategies",
+            "description": "Explore complex compositional techniques beyond the rule of thirds, including leading lines, symmetry and asymmetry, figure-ground relationship, and the use of negative space to create visually compelling images."
+          },
+          {
+            "chapterTitle": "Mastering Light: Natural and Artificial",
+            "description": "Delve into the nuances of natural light, understanding its qualities at different times of day and in various weather conditions. Explore advanced artificial lighting techniques using multiple light sources, modifiers, and gels to achieve specific effects."
+          },
+          {
+            "chapterTitle": "Color Theory and Grading",
+            "description": "Explore advanced color theory concepts, including color harmonies, temperature, and psychology. Learn to use professional software for advanced color grading, creating unique and impactful visual styles."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Composition, Light, and Color"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "High Dynamic Range (HDR) Photography",
+            "description": "Master the techniques of capturing and processing HDR images to expand the dynamic range of your photographs, revealing detail in both highlights and shadows."
+          },
+          {
+            "chapterTitle": "Focus Stacking for Extreme Sharpness",
+            "description": "Learn how to use focus stacking techniques to achieve extreme sharpness in your images, particularly useful for macro and landscape photography."
+          },
+          {
+            "chapterTitle": "Panorama Photography: Advanced Techniques",
+            "description": "Explore advanced panorama techniques, including multi-row panoramas and the use of specialized equipment to create seamless and immersive panoramic images."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Shooting Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Retouching and Manipulation",
+            "description": "Master advanced retouching techniques in Photoshop, including frequency separation, dodging and burning, and complex masking, to enhance your images while maintaining a natural look."
+          },
+          {
+            "chapterTitle": "Creative Compositing and Special Effects",
+            "description": "Learn to create stunning composite images by combining multiple photographs and using special effects to bring your creative visions to life."
+          },
+          {
+            "chapterTitle": "Workflow Optimization and Digital Asset Management",
+            "description": "Optimize your digital photography workflow, from capture to post-processing, and learn to effectively manage your digital assets using professional software and techniques."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Post-Processing and Workflow"
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:41:48.466526",
+  "input": {
+    "course_topic": "Production Engineering",
+    "difficulty_level": "Intermediate",
+    "num_modules": 6,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.57,
+    "max_tokens": 1024,
+    "top_k": 11,
+    "top_p": 0.59
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive overview of production engineering principles and practices. By understanding the concepts covered in each module, you will be equipped to optimize manufacturing processes, improve efficiency, and enhance product quality.",
+    "courseTitle": "Production Engineering",
+    "introduction": "Welcome to the Production Engineering course! This course is designed for intermediate-level learners who want to deepen their understanding of manufacturing processes, optimization techniques, and quality control in production environments. We will explore key concepts and methodologies used in modern production systems.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Production Systems",
+            "description": "Overview of different types of production systems (job shop, batch, mass, continuous). Key elements of a production system: inputs, processes, outputs, and feedback. Performance metrics for production systems."
+          },
+          {
+            "chapterTitle": "Product Design and Development",
+            "description": "The role of product design in production engineering. Design for manufacturability (DFM) and Design for Assembly (DFA). Concurrent engineering principles."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Production Engineering"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Process Planning and Selection",
+            "description": "Steps in process planning: routing, scheduling, and dispatching. Factors influencing process selection: cost, quality, capacity, and flexibility."
+          },
+          {
+            "chapterTitle": "Work Measurement Techniques",
+            "description": "Time study, work sampling, and predetermined motion time systems (PMTS). Standard time calculation and its applications."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Process Planning and Work Study"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Layout Design Principles",
+            "description": "Types of plant layouts: product, process, fixed-position, and cellular. Factors influencing layout design: material flow, space utilization, and safety."
+          },
+          {
+            "chapterTitle": "Material Handling Systems",
+            "description": "Types of material handling equipment: conveyors, forklifts, automated guided vehicles (AGVs). Selection criteria for material handling systems."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Plant Layout and Material Handling"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Inventory Control Techniques",
+            "description": "Economic order quantity (EOQ) model. Reorder point (ROP) calculation. ABC analysis for inventory classification."
+          },
+          {
+            "chapterTitle": "Just-in-Time (JIT) Production",
+            "description": "Principles of JIT production. Kanban system for pull production. Benefits and limitations of JIT."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Inventory Management and Production Control"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Statistical Process Control (SPC)",
+            "description": "Control charts for variables (X-bar and R charts) and attributes (p and c charts). Process capability analysis: Cp and Cpk."
+          },
+          {
+            "chapterTitle": "Quality Improvement Tools",
+            "description": "Cause-and-effect diagrams (Ishikawa diagrams). Pareto charts. Scatter diagrams. Root cause analysis."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Quality Control and Improvement"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Lean Manufacturing Principles",
+            "description": "The 5S methodology (Sort, Set in order, Shine, Standardize, Sustain). Value stream mapping (VSM). Waste reduction techniques."
+          },
+          {
+            "chapterTitle": "Automation in Production",
+            "description": "Types of automation: fixed, programmable, and flexible. Robotics in manufacturing. Benefits and challenges of automation."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Advanced Manufacturing Techniques"
+      }
+    ]
+  }
+}

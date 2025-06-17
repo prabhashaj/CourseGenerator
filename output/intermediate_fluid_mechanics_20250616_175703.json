@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-06-16 17:57:03.806962",
+  "input": {
+    "course_topic": "Fluid Mechanics",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.59,
+    "max_tokens": 1024,
+    "top_k": 13,
+    "top_p": 0.92
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in fluid mechanics, equipping you with the knowledge to analyze and solve a wide range of fluid flow problems. Further study and practical application are encouraged to deepen your understanding.",
+    "courseTitle": "Intermediate Fluid Mechanics",
+    "introduction": "Welcome to Intermediate Fluid Mechanics! This course builds upon introductory concepts and delves into more advanced topics, including viscous flow, boundary layers, and turbulence. We will explore both theoretical principles and practical applications.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Viscosity and Surface Tension",
+            "description": "Review of viscosity concepts, Newtonian and non-Newtonian fluids, surface tension phenomena, and capillary action."
+          },
+          {
+            "chapterTitle": "Fluid Statics Revisited",
+            "description": "Pressure distribution in static fluids, hydrostatic forces on curved surfaces, buoyancy and stability."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals Review and Advanced Statics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Navier-Stokes Equations",
+            "description": "Derivation and physical interpretation of the Navier-Stokes equations, simplifications for specific flow conditions."
+          },
+          {
+            "chapterTitle": "Exact Solutions of Navier-Stokes Equations",
+            "description": "Couette flow, Poiseuille flow, and other analytical solutions for simple geometries."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Viscous Flow"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Boundary Layer Theory",
+            "description": "Prandtl's boundary layer equations, laminar and turbulent boundary layers, boundary layer separation."
+          },
+          {
+            "chapterTitle": "Boundary Layer Solutions",
+            "description": "Blasius solution for laminar flow over a flat plate, approximate methods for boundary layer analysis."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Boundary Layer Concepts"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Turbulence",
+            "description": "Characteristics of turbulent flow, Reynolds decomposition, Reynolds stresses."
+          },
+          {
+            "chapterTitle": "Turbulence Modeling",
+            "description": "Overview of different turbulence models (e.g., k-epsilon, k-omega), their applications and limitations."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Turbulence"
+      }
+    ]
+  }
+}

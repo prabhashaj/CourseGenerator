@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-06-13 13:05:29.088828",
+  "input": {
+    "course_topic": "Linear Algebra",
+    "difficulty_level": "Intermediate",
+    "num_modules": 6,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.53,
+    "max_tokens": 1024,
+    "top_k": 27,
+    "top_p": 0.93
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in linear algebra, equipping you with the tools to solve complex problems in various fields. Further exploration of advanced topics and applications is highly encouraged.",
+    "courseTitle": "Linear Algebra",
+    "introduction": "Welcome to Linear Algebra! This course provides an intermediate-level introduction to the fundamental concepts and techniques of linear algebra. We will explore vector spaces, linear transformations, eigenvalues, and more. Each module is designed for approximately 5 minutes of reading.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Vectors and Vector Spaces",
+            "description": "Introduction to vectors in n-dimensional space. Definition of vector spaces and subspaces. Examples of vector spaces."
+          },
+          {
+            "chapterTitle": "Linear Combinations and Span",
+            "description": "Linear combinations of vectors. Span of a set of vectors. Determining if a vector is in the span of a set."
+          },
+          {
+            "chapterTitle": "Linear Independence",
+            "description": "Definition of linear independence and dependence. Methods for determining linear independence."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Vector Spaces"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Matrices and Matrix Operations",
+            "description": "Introduction to matrices. Matrix addition, scalar multiplication, and matrix multiplication."
+          },
+          {
+            "chapterTitle": "Special Matrices",
+            "description": "Identity matrix, zero matrix, diagonal matrix, triangular matrices."
+          },
+          {
+            "chapterTitle": "Transpose of a Matrix",
+            "description": "Definition and properties of the transpose of a matrix."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Matrices"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Systems of Linear Equations",
+            "description": "Introduction to systems of linear equations. Representing systems as matrices."
+          },
+          {
+            "chapterTitle": "Gaussian Elimination",
+            "description": "Solving systems of linear equations using Gaussian elimination and row echelon form."
+          },
+          {
+            "chapterTitle": "Gauss-Jordan Elimination",
+            "description": "Reduced row echelon form and Gauss-Jordan elimination."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Solving Linear Systems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Determinants",
+            "description": "Definition and properties of determinants. Calculating determinants using cofactor expansion."
+          },
+          {
+            "chapterTitle": "Determinants and Matrix Invertibility",
+            "description": "Using determinants to determine if a matrix is invertible."
+          },
+          {
+            "chapterTitle": "Cramer's Rule",
+            "description": "Solving systems of linear equations using Cramer's rule."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Determinants and Invertibility"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Linear Transformations",
+            "description": "Introduction to linear transformations. Definition and examples."
+          },
+          {
+            "chapterTitle": "Matrix Representation of Linear Transformations",
+            "description": "Representing linear transformations using matrices."
+          },
+          {
+            "chapterTitle": "Kernel and Range",
+            "description": "Kernel (null space) and range (image) of a linear transformation."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Linear Transformations"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Eigenvalues and Eigenvectors",
+            "description": "Definition of eigenvalues and eigenvectors. Finding eigenvalues by solving the characteristic equation."
+          },
+          {
+            "chapterTitle": "Eigenspaces",
+            "description": "Eigenspaces corresponding to eigenvalues."
+          },
+          {
+            "chapterTitle": "Diagonalization",
+            "description": "Diagonalizing matrices using eigenvalues and eigenvectors."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Eigenvalues and Eigenvectors"
+      }
+    ]
+  }
+}

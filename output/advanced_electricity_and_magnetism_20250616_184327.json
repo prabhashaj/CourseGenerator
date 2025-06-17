@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:43:27.397677",
+  "input": {
+    "course_topic": "Electricity and Magnetism",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.56,
+    "max_tokens": 2048,
+    "top_k": 14,
+    "top_p": 0.51
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of electricity and magnetism, equipping students with the knowledge and skills necessary for advanced studies and research in physics and related fields.",
+    "courseTitle": "Advanced Electricity and Magnetism",
+    "introduction": "Welcome to Advanced Electricity and Magnetism! This course delves into the fundamental principles governing electric and magnetic phenomena, building upon introductory concepts to explore more complex and nuanced topics. We will utilize mathematical rigor and problem-solving techniques to gain a deep understanding of electromagnetism.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Electrostatics: Review and Advanced Techniques",
+            "description": "Review of Coulomb's Law and electric fields. Introduction to advanced techniques for calculating electric fields, including multipole expansions and image charges."
+          },
+          {
+            "chapterTitle": "Electric Potential and Energy",
+            "description": "Electric potential, potential energy, and the relationship between electric field and potential. Poisson's and Laplace's equations."
+          },
+          {
+            "chapterTitle": "Conductors and Dielectrics",
+            "description": "Behavior of conductors in electric fields. Polarization, electric displacement, and dielectric materials."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Electrostatics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Magnetostatics: Review and Biot-Savart Law",
+            "description": "Review of magnetic fields and forces. Biot-Savart Law and its applications for calculating magnetic fields."
+          },
+          {
+            "chapterTitle": "Ampere's Law and Magnetic Vector Potential",
+            "description": "Ampere's Law and its applications. Introduction to the magnetic vector potential and its properties."
+          },
+          {
+            "chapterTitle": "Magnetic Materials",
+            "description": "Magnetization, magnetic susceptibility, and magnetic materials. Hysteresis."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Magnetostatics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Electromagnetic Induction",
+            "description": "Faraday's Law of Induction and Lenz's Law. Motional EMF and induced electric fields."
+          },
+          {
+            "chapterTitle": "Maxwell's Equations: The Foundation of Electromagnetism",
+            "description": "Introduction to Maxwell's Equations in integral and differential form. Displacement current and the unification of electricity and magnetism."
+          },
+          {
+            "chapterTitle": "Electromagnetic Energy and Momentum",
+            "description": "Poynting vector and electromagnetic energy density. Electromagnetic momentum and radiation pressure."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Electrodynamics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Electromagnetic Waves in Vacuum",
+            "description": "Wave equation for electromagnetic waves in vacuum. Properties of electromagnetic waves: polarization, energy, and momentum."
+          },
+          {
+            "chapterTitle": "Electromagnetic Waves in Matter",
+            "description": "Propagation of electromagnetic waves in conducting and dielectric media. Reflection and refraction."
+          },
+          {
+            "chapterTitle": "Radiation",
+            "description": "Accelerated charges and radiation. Dipole radiation."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Electromagnetic Waves"
+      }
+    ]
+  }
+}

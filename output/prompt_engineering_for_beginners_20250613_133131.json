@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 13:31:31.078961",
+  "input": {
+    "course_topic": "Prompt Engineering",
+    "difficulty_level": "Beginner",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.69,
+    "max_tokens": 2048,
+    "top_k": 28,
+    "top_p": 0.51
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a foundational understanding of prompt engineering. You can now craft effective prompts for various applications and continue to explore advanced techniques to further refine your skills.",
+    "courseTitle": "Prompt Engineering for Beginners",
+    "introduction": "Welcome to Prompt Engineering for Beginners! This course will introduce you to the fundamental concepts and techniques of crafting effective prompts for large language models. You'll learn how to structure prompts, use different prompting strategies, and evaluate the quality of your prompts.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is Prompt Engineering?",
+            "description": "An introduction to the concept of prompt engineering and its importance in interacting with large language models. We'll define what a prompt is and why well-crafted prompts are crucial for achieving desired results."
+          },
+          {
+            "chapterTitle": "Basic Prompt Structure",
+            "description": "Learn the fundamental components of a prompt, including instructions, context, input data, and output indicators. We'll explore how to combine these elements to create clear and effective prompts."
+          },
+          {
+            "chapterTitle": "Understanding Language Models",
+            "description": "A brief overview of how large language models work and how they interpret prompts. This will help you understand why certain prompting techniques are more effective than others."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Prompt Engineering"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Clear and Concise Instructions",
+            "description": "Learn how to write clear and concise instructions that guide the language model towards the desired output. We'll cover techniques for avoiding ambiguity and ensuring the model understands your intent."
+          },
+          {
+            "chapterTitle": "Providing Context",
+            "description": "Explore the importance of providing relevant context to the language model. We'll discuss how to include background information and examples to help the model generate more accurate and relevant responses."
+          },
+          {
+            "chapterTitle": "Specifying Output Format",
+            "description": "Learn how to specify the desired output format in your prompts. We'll cover techniques for requesting specific types of responses, such as lists, summaries, or code snippets."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Crafting Effective Prompts"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Zero-Shot Prompting",
+            "description": "An introduction to zero-shot prompting, where the model is asked to perform a task without any prior examples. We'll explore the limitations and potential of this technique."
+          },
+          {
+            "chapterTitle": "Few-Shot Prompting",
+            "description": "Learn about few-shot prompting, where the model is provided with a few examples of the desired input-output relationship. We'll discuss how to select effective examples and structure the prompt for optimal results."
+          },
+          {
+            "chapterTitle": "Chain-of-Thought Prompting (Brief Overview)",
+            "description": "A brief introduction to chain-of-thought prompting, where the model is encouraged to explain its reasoning process step-by-step. We'll discuss the benefits of this technique for complex tasks."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Basic Prompting Strategies"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Evaluating Prompt Performance",
+            "description": "Learn how to evaluate the performance of your prompts. We'll discuss metrics for assessing the accuracy, relevance, and coherence of the model's responses."
+          },
+          {
+            "chapterTitle": "Iterative Prompt Refinement",
+            "description": "Explore the process of iteratively refining your prompts based on the evaluation results. We'll discuss techniques for identifying areas for improvement and making targeted adjustments to your prompts."
+          },
+          {
+            "chapterTitle": "Common Prompting Mistakes",
+            "description": "Learn about common mistakes to avoid when crafting prompts. We'll discuss issues such as ambiguity, lack of context, and unclear instructions."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Evaluating and Refining Prompts"
+      }
+    ]
+  }
+}

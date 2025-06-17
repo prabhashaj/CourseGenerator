@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 13:01:10.299898",
+  "input": {
+    "course_topic": "Digital Marketing",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.67,
+    "max_tokens": 1024,
+    "top_k": 11,
+    "top_p": 0.63
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a foundational understanding of digital marketing. Continue exploring and experimenting to master these skills!",
+    "courseTitle": "Digital Marketing for Beginners",
+    "introduction": "Welcome to the world of Digital Marketing! This course will provide you with the essential knowledge to understand and navigate the digital landscape.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is Digital Marketing?",
+            "description": "An overview of digital marketing, its importance, and how it differs from traditional marketing."
+          },
+          {
+            "chapterTitle": "Key Digital Marketing Channels",
+            "description": "Introduction to various digital marketing channels like SEO, SEM, Social Media, Email Marketing, and Content Marketing."
+          },
+          {
+            "chapterTitle": "Understanding Your Audience",
+            "description": "Importance of identifying and understanding your target audience for effective marketing campaigns."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Digital Marketing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Search Engine Optimization (SEO) Basics",
+            "description": "Understanding how search engines work and basic SEO techniques to improve website visibility."
+          },
+          {
+            "chapterTitle": "Social Media Marketing Fundamentals",
+            "description": "Introduction to social media platforms and strategies for building a brand presence."
+          },
+          {
+            "chapterTitle": "Email Marketing Essentials",
+            "description": "Creating effective email campaigns and building an email list."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Core Digital Marketing Strategies"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Content Marketing Overview",
+            "description": "Creating valuable and engaging content to attract and retain customers."
+          },
+          {
+            "chapterTitle": "Analyzing Your Marketing Efforts",
+            "description": "Introduction to basic analytics and metrics to track the success of your campaigns."
+          },
+          {
+            "chapterTitle": "Ethical Considerations in Digital Marketing",
+            "description": "Importance of ethical practices and transparency in digital marketing."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Concepts and Best Practices"
+      }
+    ]
+  }
+}

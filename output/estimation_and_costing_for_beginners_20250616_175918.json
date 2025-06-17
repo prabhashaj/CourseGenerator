@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-16 17:59:18.131940",
+  "input": {
+    "course_topic": "Estimation and Costing",
+    "difficulty_level": "Beginner",
+    "num_modules": 5,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.31,
+    "max_tokens": 1024,
+    "top_k": 25,
+    "top_p": 0.65
+  },
+  "output": {
+    "conclusion": "By completing this course, you will have a foundational understanding of estimation and costing principles, enabling you to contribute effectively to project planning and budgeting.",
+    "courseTitle": "Estimation and Costing for Beginners",
+    "introduction": "Welcome to Estimation and Costing for Beginners! This course provides a comprehensive introduction to the fundamental concepts and techniques used in project estimation and cost management. Designed for individuals with little to no prior experience, this course will equip you with the essential skills to understand and participate in the estimation and costing process.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Estimation and Costing",
+            "description": "Overview of estimation and costing. Importance in project management. Types of estimates. Cost classifications."
+          },
+          {
+            "chapterTitle": "Basic Cost Concepts",
+            "description": "Direct costs vs. indirect costs. Fixed costs vs. variable costs. Opportunity cost. Sunk cost."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Estimation and Costing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Estimation Techniques: Analogous Estimating",
+            "description": "What is Analogous Estimating? Using historical data. Advantages and disadvantages. Examples."
+          },
+          {
+            "chapterTitle": "Estimation Techniques: Parametric Estimating",
+            "description": "What is Parametric Estimating? Using statistical relationships. Advantages and disadvantages. Examples."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Estimation Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Estimation Techniques: Bottom-Up Estimating",
+            "description": "What is Bottom-Up Estimating? Breaking down the project. Advantages and disadvantages. Examples."
+          },
+          {
+            "chapterTitle": "Estimation Techniques: Three-Point Estimating",
+            "description": "What is Three-Point Estimating? PERT formula. Triangular distribution. Advantages and disadvantages."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Estimation Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Cost Budgeting Process",
+            "description": "Creating a cost baseline. Allocating costs. Contingency reserves. Management reserves."
+          },
+          {
+            "chapterTitle": "Cost Control",
+            "description": "Monitoring project costs. Variance analysis. Earned Value Management (EVM) basics."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Cost Budgeting and Control"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Software and Tools for Estimation and Costing",
+            "description": "Overview of popular software. Spreadsheet software. Specialized estimation tools."
+          },
+          {
+            "chapterTitle": "Best Practices and Common Pitfalls",
+            "description": "Tips for accurate estimation. Avoiding common mistakes. Importance of documentation."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Tools, Best Practices and Pitfalls"
+      }
+    ]
+  }
+}

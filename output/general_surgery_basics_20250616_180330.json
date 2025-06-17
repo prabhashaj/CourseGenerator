@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-06-16 18:03:30.000832",
+  "input": {
+    "course_topic": "General Surgery Basics",
+    "difficulty_level": "Beginner",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.5,
+    "max_tokens": 2048,
+    "top_k": 23,
+    "top_p": 0.73
+  },
+  "output": {
+    "conclusion": "This course provided a foundational understanding of general surgery basics. Further learning and practical experience are crucial for developing proficiency.",
+    "courseTitle": "General Surgery Basics",
+    "introduction": "Welcome to General Surgery Basics! This course will introduce you to fundamental concepts and principles in general surgery. Designed for beginners, it provides a concise overview of essential topics.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to General Surgery",
+            "description": "Overview of the scope of general surgery, its history, and the role of a general surgeon. Includes common surgical procedures and settings."
+          },
+          {
+            "chapterTitle": "Surgical Ethics and Patient Safety",
+            "description": "Discussion of ethical considerations in surgery, principles of patient safety, and prevention of surgical errors. Focus on informed consent and communication."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Surgery"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Basic Surgical Instruments",
+            "description": "Identification and use of common surgical instruments, including scalpels, forceps, clamps, and retractors. Emphasizes proper handling and care."
+          },
+          {
+            "chapterTitle": "Sterile Technique and Asepsis",
+            "description": "Principles of sterile technique, including hand hygiene, gowning, gloving, and preparation of the surgical field. Focus on preventing surgical site infections."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Surgical Principles and Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Wound Healing and Management",
+            "description": "Stages of wound healing, factors affecting wound healing, and techniques for wound closure (sutures, staples, adhesives). Discusses different types of wounds."
+          },
+          {
+            "chapterTitle": "Surgical Infections and Antibiotics",
+            "description": "Common surgical infections, principles of antibiotic use in surgery, and prevention of antibiotic resistance. Focus on surgical site infections and their management."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Wound Care and Infection Control"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Preoperative Patient Assessment",
+            "description": "Components of a preoperative assessment, including medical history, physical examination, and laboratory investigations. Focus on identifying risk factors and optimizing patient preparation."
+          },
+          {
+            "chapterTitle": "Postoperative Care and Complications",
+            "description": "Principles of postoperative care, including pain management, wound care, and monitoring for complications. Discusses common postoperative complications and their management."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Perioperative Management"
+      }
+    ]
+  }
+}

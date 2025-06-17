@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-06-16 18:45:14.790312",
+  "input": {
+    "course_topic": "Theory of Machines",
+    "difficulty_level": "Advanced",
+    "num_modules": 6,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.6,
+    "max_tokens": 2048,
+    "top_k": 12,
+    "top_p": 0.97
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of the fundamental principles and advanced concepts in the Theory of Machines, equipping students with the knowledge and skills necessary for analyzing and designing mechanical systems.",
+    "courseTitle": "Advanced Theory of Machines",
+    "introduction": "Welcome to the Advanced Theory of Machines course. This course delves into the kinematics and dynamics of machinery, covering topics such as mechanisms, gear trains, balancing, vibrations, and control systems.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Kinematic Analysis of Mechanisms",
+            "description": "Introduction to kinematic chains, degrees of freedom, Grubler's criterion, and Kutzbach criterion. Detailed analysis of four-bar linkages, slider-crank mechanisms, and other common mechanisms."
+          },
+          {
+            "chapterTitle": "Velocity and Acceleration Analysis",
+            "description": "Vector loop method, instantaneous center method, and relative velocity method for determining velocities and accelerations of links in mechanisms."
+          },
+          {
+            "chapterTitle": "Complex Algebra in Kinematic Analysis",
+            "description": "Application of complex numbers and complex algebra for analyzing the motion of mechanisms. Derivation of velocity and acceleration equations using complex algebra."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Kinematics of Mechanisms"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Static Force Analysis",
+            "description": "Free-body diagrams, equilibrium equations, and static force analysis of mechanisms. Determination of forces and torques required for static equilibrium."
+          },
+          {
+            "chapterTitle": "Dynamic Force Analysis",
+            "description": "Inertia forces and torques, D'Alembert's principle, and dynamic force analysis of mechanisms. Balancing of rotating and reciprocating masses."
+          },
+          {
+            "chapterTitle": "Engine Force Analysis",
+            "description": "Analysis of forces in reciprocating engines, including piston effort, connecting rod force, and crankshaft torque. Turning moment diagrams and flywheel design."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Dynamics of Machines"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Gear Geometry and Terminology",
+            "description": "Introduction to gear types, gear tooth profiles, involute curves, and gear terminology. Calculation of gear ratios, center distances, and contact ratios."
+          },
+          {
+            "chapterTitle": "Gear Trains",
+            "description": "Simple gear trains, compound gear trains, reverted gear trains, and epicyclic gear trains. Analysis of gear train velocity ratios and torque transmission."
+          },
+          {
+            "chapterTitle": "Forces in Gear Trains",
+            "description": "Forces between meshing gears, gear tooth loading, and gear train efficiency. Design considerations for gear trains to minimize wear and maximize power transmission."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Gear Trains"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Static and Dynamic Balancing",
+            "description": "Balancing of rotating masses, single-plane balancing, and multi-plane balancing. Static and dynamic unbalance and their effects on machine vibration."
+          },
+          {
+            "chapterTitle": "Balancing Machines",
+            "description": "Description of balancing machines, including static balancing machines and dynamic balancing machines. Procedures for balancing rotating machinery."
+          },
+          {
+            "chapterTitle": "Balancing Reciprocating Masses",
+            "description": "Partial balancing of reciprocating masses, primary and secondary unbalance, and methods for reducing vibration in reciprocating machinery."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Balancing of Rotating and Reciprocating Masses"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Free Vibration",
+            "description": "Single degree of freedom systems, natural frequency, damping, and damped free vibration. Logarithmic decrement and damping ratio."
+          },
+          {
+            "chapterTitle": "Forced Vibration",
+            "description": "Harmonic excitation, resonance, transmissibility, and vibration isolation. Analysis of vibration absorbers and vibration dampers."
+          },
+          {
+            "chapterTitle": "Multi-Degree of Freedom Systems",
+            "description": "Equations of motion, natural frequencies, mode shapes, and modal analysis. Vibration analysis of continuous systems."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Vibration Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Control Systems",
+            "description": "Open-loop and closed-loop control systems, feedback control, and control system components. Transfer functions and block diagrams."
+          },
+          {
+            "chapterTitle": "Stability Analysis",
+            "description": "Routh-Hurwitz criterion, root locus method, and Bode plots for analyzing the stability of control systems. Design of compensators for improving system stability."
+          },
+          {
+            "chapterTitle": "Control System Applications",
+            "description": "Applications of control systems in machinery, including speed control, position control, and force control. Case studies of control system design for specific machines."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Control Systems in Machinery"
+      }
+    ]
+  }
+}

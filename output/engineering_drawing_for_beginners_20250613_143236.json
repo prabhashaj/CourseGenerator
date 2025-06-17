@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-13 14:32:36.693305",
+  "input": {
+    "course_topic": "Engineering Drawing",
+    "difficulty_level": "Beginner",
+    "num_modules": 5,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.53,
+    "max_tokens": 1024,
+    "top_k": 16,
+    "top_p": 0.85
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of engineering drawing principles and techniques, preparing you for more advanced topics in engineering design and manufacturing.",
+    "courseTitle": "Engineering Drawing for Beginners",
+    "introduction": "Welcome to Engineering Drawing! This course will introduce you to the fundamental principles and techniques used in creating and interpreting engineering drawings. No prior experience is required.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Engineering Drawing",
+            "description": "Overview of engineering drawing, its importance, and applications in various engineering fields."
+          },
+          {
+            "chapterTitle": "Drawing Instruments and Materials",
+            "description": "Introduction to the tools and materials used in engineering drawing, such as pencils, erasers, scales, and drawing boards."
+          },
+          {
+            "chapterTitle": "Line Types and Conventions",
+            "description": "Understanding different types of lines used in engineering drawings and their specific meanings (e.g., visible lines, hidden lines, center lines)."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Engineering Drawing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Geometric Constructions: Lines and Angles",
+            "description": "Constructing basic geometric shapes, including lines, angles, and parallel lines, using drawing instruments."
+          },
+          {
+            "chapterTitle": "Geometric Constructions: Circles and Arcs",
+            "description": "Constructing circles, arcs, and tangents using compasses and other drawing tools."
+          },
+          {
+            "chapterTitle": "Dividing Lines and Angles",
+            "description": "Techniques for dividing lines and angles into equal parts using geometric constructions."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Geometric Constructions"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Orthographic Projection",
+            "description": "Understanding the principles of orthographic projection and how to represent 3D objects in 2D views."
+          },
+          {
+            "chapterTitle": "First Angle Projection",
+            "description": "Learning how to create orthographic projections using the first angle projection method."
+          },
+          {
+            "chapterTitle": "Third Angle Projection",
+            "description": "Learning how to create orthographic projections using the third angle projection method."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Orthographic Projection"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Creating Top, Front, and Side Views",
+            "description": "Drawing the top, front, and side views of simple objects using orthographic projection."
+          },
+          {
+            "chapterTitle": "Understanding Hidden Lines",
+            "description": "Using hidden lines to represent features that are not directly visible in a particular view."
+          },
+          {
+            "chapterTitle": "Applying Center Lines and Symmetry",
+            "description": "Using center lines to indicate symmetry and the center of circular features."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Creating Orthographic Views"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Sectional Views",
+            "description": "Understanding the purpose of sectional views and how they reveal internal features of an object."
+          },
+          {
+            "chapterTitle": "Full Sectional Views",
+            "description": "Creating full sectional views by cutting the object completely in half."
+          },
+          {
+            "chapterTitle": "Half Sectional Views",
+            "description": "Creating half sectional views by cutting the object partially in half."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Sectional Views"
+      }
+    ]
+  }
+}

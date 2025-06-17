@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 17:56:13.088051",
+  "input": {
+    "course_topic": "Soil Mechanics",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.58,
+    "max_tokens": 2048,
+    "top_k": 30,
+    "top_p": 0.59
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in soil mechanics, enabling you to analyze soil behavior and apply these principles to geotechnical engineering problems.",
+    "courseTitle": "Soil Mechanics",
+    "introduction": "Welcome to Soil Mechanics! This intermediate-level course will delve into the fundamental principles governing soil behavior, covering topics from soil composition and classification to stress analysis and shear strength. Get ready to explore the fascinating world beneath our feet!",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Soil Composition and Formation",
+            "description": "Explore the mineralogical composition of soils, understanding how different minerals contribute to soil properties. Learn about the weathering processes that break down rocks and form soil particles."
+          },
+          {
+            "chapterTitle": "Soil Particle Size and Gradation",
+            "description": "Understand the different size fractions of soil particles (gravel, sand, silt, clay) and their impact on soil behavior. Learn how to perform sieve analysis and hydrometer tests to determine particle size distribution."
+          },
+          {
+            "chapterTitle": "Atterberg Limits and Soil Plasticity",
+            "description": "Define and determine Atterberg limits (Liquid Limit, Plastic Limit, Shrinkage Limit) to characterize the plasticity of fine-grained soils. Understand the Plasticity Index and its relationship to soil behavior."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Soil Composition and Classification"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Soil Structure and Fabric",
+            "description": "Examine the arrangement of soil particles and the resulting soil structure (e.g., single-grained, flocculated, dispersed). Understand how soil fabric influences permeability and strength."
+          },
+          {
+            "chapterTitle": "Soil Classification Systems (USCS and AASHTO)",
+            "description": "Learn the Unified Soil Classification System (USCS) and the American Association of State Highway and Transportation Officials (AASHTO) classification system. Classify soils based on particle size distribution and plasticity characteristics."
+          },
+          {
+            "chapterTitle": "Soil Compaction",
+            "description": "Understand the principles of soil compaction and its effects on soil properties (density, strength, permeability). Learn about compaction methods and equipment."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Soil Structure and Classification Systems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Effective Stress Principle",
+            "description": "Introduce the concept of effective stress and its importance in soil mechanics. Understand how pore water pressure affects the stress state in soil."
+          },
+          {
+            "chapterTitle": "Total Stress, Pore Water Pressure, and Effective Stress",
+            "description": "Calculate total stress, pore water pressure, and effective stress at different depths in a soil profile. Analyze the effects of groundwater table fluctuations on effective stress."
+          },
+          {
+            "chapterTitle": "Stress Distribution in Soils",
+            "description": "Explore the distribution of stresses in soil due to applied loads (e.g., Boussinesq's equation, Westergaard's equation). Analyze stress contours and their implications for foundation design."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Stress in Soil"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Shear Strength of Soils",
+            "description": "Define shear strength and its importance in soil stability. Understand the Mohr-Coulomb failure criterion and its application to soil."
+          },
+          {
+            "chapterTitle": "Direct Shear Test",
+            "description": "Describe the direct shear test and its procedure. Calculate shear strength parameters (cohesion and friction angle) from direct shear test results."
+          },
+          {
+            "chapterTitle": "Triaxial Test",
+            "description": "Explain the triaxial test and its different types (UU, CU, CD). Analyze triaxial test results to determine shear strength parameters under different drainage conditions."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Shear Strength of Soil"
+      }
+    ]
+  }
+}

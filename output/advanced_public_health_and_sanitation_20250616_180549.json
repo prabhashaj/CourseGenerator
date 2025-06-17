@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:05:49.068668",
+  "input": {
+    "course_topic": "Public Health and Sanitation",
+    "difficulty_level": "Advanced",
+    "num_modules": 6,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.34,
+    "max_tokens": 2048,
+    "top_k": 22,
+    "top_p": 0.9
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, participants will be equipped with advanced knowledge and skills in public health and sanitation, enabling them to effectively address complex challenges and contribute to improved community health outcomes.",
+    "courseTitle": "Advanced Public Health and Sanitation",
+    "introduction": "This advanced course delves into the complexities of public health and sanitation, equipping participants with the knowledge and skills to address contemporary challenges in the field. It builds upon foundational concepts and explores advanced topics, focusing on practical application and critical thinking.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Environmental Health Risk Assessment",
+            "description": "Explore advanced methodologies for assessing environmental health risks, including quantitative risk assessment and exposure modeling. Focus on identifying and evaluating potential hazards in various settings."
+          },
+          {
+            "chapterTitle": "Water Quality Management",
+            "description": "Examine advanced techniques for water quality monitoring, treatment, and distribution. Discuss emerging contaminants and strategies for ensuring safe and sustainable water supplies."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Environmental Health"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Food Safety Regulations and Standards",
+            "description": "Analyze current food safety regulations and international standards, focusing on HACCP principles and risk-based approaches to food safety management."
+          },
+          {
+            "chapterTitle": "Foodborne Disease Outbreak Investigation",
+            "description": "Learn advanced techniques for investigating foodborne disease outbreaks, including epidemiological methods, laboratory analysis, and trace-back investigations."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Food Safety"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Waste Management Technologies",
+            "description": "Evaluate advanced waste management technologies, including incineration, composting, and anaerobic digestion. Discuss the environmental and economic impacts of different waste disposal methods."
+          },
+          {
+            "chapterTitle": "Hazardous Waste Management",
+            "description": "Explore the regulations and best practices for managing hazardous waste, including identification, storage, transportation, and disposal. Focus on minimizing environmental contamination and protecting public health."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Waste Management"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Vector-borne Disease Control Strategies",
+            "description": "Examine advanced strategies for controlling vector-borne diseases, including integrated vector management, insecticide resistance management, and community-based interventions."
+          },
+          {
+            "chapterTitle": "Zoonotic Disease Prevention",
+            "description": "Discuss the prevention and control of zoonotic diseases, focusing on the interface between human, animal, and environmental health. Explore One Health approaches to disease prevention."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Disease Control"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Sanitation in Emergency Situations",
+            "description": "Address sanitation challenges in emergency situations, including natural disasters and humanitarian crises. Focus on providing safe water, sanitation facilities, and hygiene promotion in resource-limited settings."
+          },
+          {
+            "chapterTitle": "Urban Sanitation Planning",
+            "description": "Explore the complexities of urban sanitation planning, including infrastructure development, wastewater treatment, and solid waste management. Discuss the challenges of providing sanitation services in rapidly growing urban areas."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Advanced Sanitation Practices"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Health Promotion and Behavior Change",
+            "description": "Apply advanced health promotion theories and behavior change models to design effective public health interventions. Focus on community engagement, social marketing, and health communication strategies."
+          },
+          {
+            "chapterTitle": "Public Health Policy and Advocacy",
+            "description": "Analyze the role of public health policy and advocacy in promoting health and preventing disease. Discuss the policy-making process, lobbying strategies, and the importance of evidence-based policy development."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Advanced Public Health Strategies"
+      }
+    ]
+  }
+}

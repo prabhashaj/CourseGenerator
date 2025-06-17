@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 14:30:31.074892",
+  "input": {
+    "course_topic": "Inorganic Chemistry",
+    "difficulty_level": "Advanced",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.36,
+    "max_tokens": 1024,
+    "top_k": 15,
+    "top_p": 0.97
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive overview of advanced inorganic chemistry concepts, preparing students for further research and study in the field.",
+    "courseTitle": "Advanced Inorganic Chemistry",
+    "introduction": "Welcome to Advanced Inorganic Chemistry! This course delves into the complexities of inorganic compounds, bonding theories, and their applications. We will explore advanced topics, building upon foundational knowledge to understand the intricate world of inorganic chemistry.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Molecular Symmetry and Group Theory",
+            "description": "Introduction to symmetry elements and operations. Point groups and their determination. Application of group theory to molecular vibrations and electronic structure."
+          },
+          {
+            "chapterTitle": "Character Tables and Symmetry Adapted Linear Combinations (SALCs)",
+            "description": "Understanding character tables. Constructing SALCs for sigma and pi bonding. Application to MO diagrams."
+          },
+          {
+            "chapterTitle": "Applications of Group Theory in Spectroscopy",
+            "description": "Selection rules for IR and Raman spectroscopy. Predicting vibrational modes and their activities."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Symmetry and Group Theory in Inorganic Chemistry"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Coordination Chemistry: Ligand Field Theory",
+            "description": "Limitations of crystal field theory. Introduction to ligand field theory and its application to octahedral complexes."
+          },
+          {
+            "chapterTitle": "Spectrochemical Series and Jahn-Teller Distortion",
+            "description": "Understanding the spectrochemical series. Jahn-Teller theorem and its effects on electronic spectra and structure."
+          },
+          {
+            "chapterTitle": "Molecular Orbital Theory for Coordination Complexes",
+            "description": "Constructing MO diagrams for octahedral and tetrahedral complexes. Understanding bonding and antibonding interactions."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Coordination Chemistry: Advanced Bonding Theories"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Organometallic Chemistry: 18-Electron Rule",
+            "description": "Introduction to organometallic compounds. The 18-electron rule and its applications in predicting stability."
+          },
+          {
+            "chapterTitle": "Common Ligands in Organometallic Chemistry",
+            "description": "Carbonyl, phosphine, and cyclopentadienyl ligands. Their bonding modes and reactivity."
+          },
+          {
+            "chapterTitle": "Catalytic Cycles in Organometallic Chemistry",
+            "description": "Hydrogenation, hydroformylation, and olefin polymerization. Understanding the steps involved in catalytic cycles."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Organometallic Chemistry and Catalysis"
+      }
+    ]
+  }
+}

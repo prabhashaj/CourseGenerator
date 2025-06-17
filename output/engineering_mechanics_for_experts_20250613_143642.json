@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 14:36:42.024100",
+  "input": {
+    "course_topic": "Engineering Mechanics",
+    "difficulty_level": "Expert",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.38,
+    "max_tokens": 1024,
+    "top_k": 29,
+    "top_p": 0.88
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of engineering mechanics principles, equipping experts with the tools to analyze and design complex mechanical systems.",
+    "courseTitle": "Engineering Mechanics for Experts",
+    "introduction": "Welcome to Engineering Mechanics for Experts. This course delves into advanced concepts and applications of statics, dynamics, and mechanics of materials, tailored for professionals seeking to enhance their expertise.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Statics: Equilibrium of Rigid Bodies",
+            "description": "Review of equilibrium conditions, free-body diagrams, and analysis of complex truss and frame structures."
+          },
+          {
+            "chapterTitle": "Virtual Work and Energy Methods",
+            "description": "Application of virtual work principle to determine equilibrium configurations and stability analysis."
+          },
+          {
+            "chapterTitle": "Stability Analysis of Structures",
+            "description": "Buckling analysis of columns and frames, critical load determination, and design considerations."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Statics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Kinematics of Rigid Body Motion",
+            "description": "Angular velocity and acceleration, general plane motion, and analysis of mechanisms."
+          },
+          {
+            "chapterTitle": "Kinetics of Rigid Body Motion: Equations of Motion",
+            "description": "Application of Newton's laws and Euler's equations to analyze the motion of rigid bodies."
+          },
+          {
+            "chapterTitle": "Work-Energy and Impulse-Momentum Methods",
+            "description": "Energy and momentum principles for rigid body dynamics, impact and collision analysis."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Dynamics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Stress and Strain Transformations",
+            "description": "Principal stresses and strains, Mohr's circle, and stress concentration analysis."
+          },
+          {
+            "chapterTitle": "Failure Theories",
+            "description": "Yield criteria, fracture mechanics, and fatigue analysis for structural design."
+          },
+          {
+            "chapterTitle": "Advanced Beam Theory",
+            "description": "Shear center, unsymmetrical bending, and curved beam analysis."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Mechanics of Materials"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Finite Element Analysis (FEA) Fundamentals",
+            "description": "Introduction to FEA, element types, meshing techniques, and boundary conditions."
+          },
+          {
+            "chapterTitle": "FEA Applications in Structural Mechanics",
+            "description": "Using FEA software to solve complex stress analysis, buckling, and vibration problems."
+          },
+          {
+            "chapterTitle": "Advanced Topics in FEA",
+            "description": "Nonlinear analysis, dynamic analysis, and optimization techniques using FEA."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Computational Mechanics and FEA"
+      }
+    ]
+  }
+}

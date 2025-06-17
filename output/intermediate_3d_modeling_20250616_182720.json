@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-06-16 18:27:20.520867",
+  "input": {
+    "course_topic": "3D Modeling",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.59,
+    "max_tokens": 1024,
+    "top_k": 11,
+    "top_p": 0.8
+  },
+  "output": {
+    "conclusion": "By the end of this course, you will have a strong understanding of advanced 3D modeling techniques and be able to create complex and visually appealing 3D models.",
+    "courseTitle": "Intermediate 3D Modeling",
+    "introduction": "Welcome to the Intermediate 3D Modeling course! This course builds upon your existing 3D modeling knowledge and introduces advanced techniques for creating complex and realistic models. We will explore advanced sculpting, retopology, UV unwrapping, and texturing workflows.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Sculpting Techniques",
+            "description": "Learn advanced sculpting brushes and techniques for creating detailed organic models."
+          },
+          {
+            "chapterTitle": "Sculpting Workflows",
+            "description": "Explore efficient workflows for sculpting complex models, including the use of dynamic topology and multi-resolution sculpting."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Sculpting"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Retopology Fundamentals",
+            "description": "Understand the importance of retopology and learn techniques for creating clean and efficient meshes from high-resolution sculpts."
+          },
+          {
+            "chapterTitle": "Manual Retopology",
+            "description": "Learn manual retopology techniques using various tools and methods."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Retopology"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "UV Unwrapping Principles",
+            "description": "Learn the principles of UV unwrapping and how to create efficient UV layouts for complex models."
+          },
+          {
+            "chapterTitle": "Advanced Texturing Techniques",
+            "description": "Explore advanced texturing techniques using software like Substance Painter, including creating custom materials and textures."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "UV Unwrapping and Texturing"
+      }
+    ]
+  }
+}

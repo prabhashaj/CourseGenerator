@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-16 18:04:20.737288",
+  "input": {
+    "course_topic": "Inorganic Chemistry",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.31,
+    "max_tokens": 2048,
+    "top_k": 16,
+    "top_p": 1.0
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in inorganic chemistry, equipping students with the knowledge and skills necessary for further study in related fields.",
+    "courseTitle": "Intermediate Inorganic Chemistry",
+    "introduction": "Welcome to Intermediate Inorganic Chemistry! This course builds upon your existing knowledge of chemistry to explore the fascinating world of inorganic compounds, their structures, properties, and reactions.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Atomic Structure and Periodic Trends",
+            "description": "Review of atomic structure, electronic configurations, and the periodic table. Focus on trends in ionization energy, electronegativity, atomic size, and electron affinity."
+          },
+          {
+            "chapterTitle": "Chemical Bonding in Inorganic Compounds",
+            "description": "Exploration of ionic, covalent, and metallic bonding. Introduction to molecular orbital theory and its application to simple inorganic molecules."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Atomic Structure and Bonding"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Coordination Chemistry: Introduction",
+            "description": "Definition of coordination complexes, ligands, and metal ions. Nomenclature and isomerism in coordination compounds."
+          },
+          {
+            "chapterTitle": "Coordination Chemistry: Bonding Theories",
+            "description": "Valence bond theory and crystal field theory applied to coordination complexes. Factors affecting crystal field splitting."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Coordination Chemistry"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Acids and Bases: Advanced Concepts",
+            "description": "Lewis acid-base theory, hard and soft acids and bases (HSAB principle), and acid-base reactions in non-aqueous solvents."
+          },
+          {
+            "chapterTitle": "Redox Chemistry",
+            "description": "Balancing redox reactions, electrochemical series, and applications of redox reactions in inorganic chemistry."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Acids, Bases, and Redox Chemistry"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Descriptive Chemistry of Main Group Elements (Part 1)",
+            "description": "Detailed study of the properties, reactions, and applications of Group 1 and Group 2 elements (alkali and alkaline earth metals)."
+          },
+          {
+            "chapterTitle": "Descriptive Chemistry of Main Group Elements (Part 2)",
+            "description": "Detailed study of the properties, reactions, and applications of Group 13-18 elements (focus on trends and unique properties)."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Main Group Chemistry"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Transition Metal Chemistry",
+            "description": "General properties of transition metals, oxidation states, and common coordination geometries."
+          },
+          {
+            "chapterTitle": "Organometallic Chemistry: Basic Concepts",
+            "description": "Introduction to organometallic compounds, ligands, and bonding interactions between metals and organic ligands."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Transition Metal and Organometallic Chemistry"
+      }
+    ]
+  }
+}

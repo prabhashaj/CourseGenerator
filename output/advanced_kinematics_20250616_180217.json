@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:02:17.490933",
+  "input": {
+    "course_topic": "Kinematics",
+    "difficulty_level": "Advanced",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.5,
+    "max_tokens": 2048,
+    "top_k": 23,
+    "top_p": 0.62
+  },
+  "output": {
+    "conclusion": "By completing this course, you have gained a comprehensive understanding of advanced kinematics concepts, including vector calculus applications, constraint motion analysis, and non-inertial reference frames. You are now equipped to tackle complex problems in mechanics and related fields.",
+    "courseTitle": "Advanced Kinematics",
+    "introduction": "Welcome to Advanced Kinematics! This course delves into the intricacies of motion, building upon foundational concepts to explore more complex and nuanced topics. We will utilize vector calculus extensively and analyze motion in various coordinate systems and reference frames.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Vector Calculus Review",
+            "description": "A quick recap of vector algebra, differentiation, and integration. Focus on position, velocity, and acceleration vectors in Cartesian coordinates. Examples of finding velocity and acceleration from a given position vector."
+          },
+          {
+            "chapterTitle": "Curvilinear Motion",
+            "description": "Introduction to curvilinear motion and path coordinates (tangential and normal components). Derivation of velocity and acceleration in path coordinates. Examples of particle motion along curved paths."
+          },
+          {
+            "chapterTitle": "Cylindrical and Spherical Coordinates",
+            "description": "Coordinate transformation from Cartesian to cylindrical and spherical coordinates. Velocity and acceleration components in cylindrical and spherical coordinates. Application to problems with radial symmetry."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Kinematics in Different Coordinate Systems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Relative Motion",
+            "description": "Introduction to relative motion analysis. Relative velocity and acceleration equations. Examples of determining the motion of one object relative to another."
+          },
+          {
+            "chapterTitle": "Rotating Reference Frames",
+            "description": "Analysis of motion in rotating reference frames. Coriolis and centrifugal accelerations. Derivation of the general acceleration equation for rotating frames."
+          },
+          {
+            "chapterTitle": "Applications of Rotating Frames",
+            "description": "Examples of using rotating reference frames to solve problems involving rotating machinery, projectile motion with Earth's rotation, and other complex scenarios."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Relative Motion and Rotating Frames"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Constraint Motion",
+            "description": "Introduction to constraint motion. Kinematic constraints and degrees of freedom. Examples of systems with interconnected parts."
+          },
+          {
+            "chapterTitle": "Analysis of Linkages",
+            "description": "Kinematic analysis of linkages. Velocity and acceleration analysis using instantaneous centers of rotation and relative motion approaches. Examples of four-bar linkages and slider-crank mechanisms."
+          },
+          {
+            "chapterTitle": "Advanced Constraint Examples",
+            "description": "More complex examples of constraint motion, including systems with multiple constraints and non-holonomic constraints. Discussion of applications in robotics and other advanced systems."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Constraint Motion Analysis"
+      }
+    ]
+  }
+}

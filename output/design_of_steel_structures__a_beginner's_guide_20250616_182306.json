@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:23:06.953710",
+  "input": {
+    "course_topic": "Design of Steel Structures",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.59,
+    "max_tokens": 1024,
+    "top_k": 15,
+    "top_p": 0.91
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of steel structure design, equipping you with the knowledge to analyze and design basic steel elements. Further study and practical experience are necessary for advanced applications.",
+    "courseTitle": "Design of Steel Structures: A Beginner's Guide",
+    "introduction": "Welcome to the 'Design of Steel Structures' course! This course is designed for beginners with little to no prior knowledge of steel design. We will cover the fundamentals of steel behavior, common structural elements, and basic design principles.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Steel Structures",
+            "description": "Overview of steel as a structural material, its advantages (strength, ductility, recyclability) and disadvantages (corrosion, fire resistance). Common applications of steel structures (buildings, bridges, towers)."
+          },
+          {
+            "chapterTitle": "Types of Steel and Their Properties",
+            "description": "Discussion of different types of structural steel (e.g., A36, A572). Key mechanical properties: yield strength, tensile strength, modulus of elasticity. Understanding stress-strain curves."
+          },
+          {
+            "chapterTitle": "Loads on Steel Structures",
+            "description": "Introduction to different types of loads: dead loads (self-weight), live loads (occupancy), environmental loads (wind, snow, seismic). Load combinations and their importance in design."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Steel and Loads"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Tension Members",
+            "description": "Introduction to tension members and their behavior under tensile loads. Calculation of tensile capacity based on yielding and fracture limit states."
+          },
+          {
+            "chapterTitle": "Compression Members",
+            "description": "Overview of compression members (columns) and their behavior under compressive loads. Concept of buckling and its influence on column capacity."
+          },
+          {
+            "chapterTitle": "Beam Members",
+            "description": "Introduction to beam members and their behavior under bending loads. Calculation of bending moment and shear force diagrams. Introduction to section modulus."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Basic Steel Elements"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Connections",
+            "description": "Overview of different types of steel connections (bolted, welded). Advantages and disadvantages of each type. Importance of connection design."
+          },
+          {
+            "chapterTitle": "Bolted Connections",
+            "description": "Fundamentals of bolted connections. Bolt grades, bolt spacing, edge distances. Introduction to shear and bearing resistance of bolted connections."
+          },
+          {
+            "chapterTitle": "Welded Connections",
+            "description": "Fundamentals of welded connections. Types of welds (fillet, groove). Weld symbols and their interpretation. Introduction to weld strength."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Introduction to Steel Connections"
+      }
+    ]
+  }
+}

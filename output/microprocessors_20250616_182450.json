@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-16 18:24:50.084668",
+  "input": {
+    "course_topic": "Microprocessors",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.37,
+    "max_tokens": 1024,
+    "top_k": 30,
+    "top_p": 0.65
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of microprocessors, their architecture, and their applications. By completing this course, you will be equipped with the knowledge and skills necessary to design, develop, and troubleshoot microprocessor-based systems.",
+    "courseTitle": "Microprocessors",
+    "introduction": "Welcome to the Microprocessors course! This course is designed for intermediate-level learners who have a basic understanding of digital logic and computer architecture. We will delve into the core concepts of microprocessors, exploring their architecture, instruction sets, and programming techniques.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Microprocessors",
+            "description": "Overview of microprocessors, their evolution, and applications. Key components of a microprocessor: ALU, control unit, registers. Different types of microprocessors: CISC vs. RISC."
+          },
+          {
+            "chapterTitle": "Microprocessor Architecture",
+            "description": "Detailed explanation of microprocessor architecture. Instruction execution cycle. Memory organization and addressing modes. Input/Output (I/O) techniques."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Microprocessors"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Instruction Set Architecture (ISA)",
+            "description": "Introduction to instruction set architecture. Instruction formats and types. Addressing modes: immediate, direct, indirect, register, etc."
+          },
+          {
+            "chapterTitle": "Assembly Language Programming",
+            "description": "Introduction to assembly language. Assembly language syntax and structure. Basic assembly language instructions: data transfer, arithmetic, logical, control flow."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Instruction Set and Assembly Language"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Memory Interfacing",
+            "description": "Memory organization and types: RAM, ROM, EPROM, EEPROM. Memory address decoding techniques. Interfacing memory with microprocessors."
+          },
+          {
+            "chapterTitle": "I/O Interfacing",
+            "description": "I/O interfacing techniques: memory-mapped I/O, I/O-mapped I/O. Parallel and serial communication interfaces. Interrupt handling."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Memory and I/O Interfacing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Interrupts and Exceptions",
+            "description": "Interrupts: types, sources, and handling. Interrupt service routines (ISRs). Exception handling mechanisms."
+          },
+          {
+            "chapterTitle": "Direct Memory Access (DMA)",
+            "description": "DMA concepts and operation. DMA controllers. Advantages and disadvantages of DMA."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Interrupts and DMA"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Microprocessor Applications",
+            "description": "Microprocessors in embedded systems. Microprocessors in personal computers. Microprocessors in industrial control systems."
+          },
+          {
+            "chapterTitle": "Advanced Microprocessor Concepts",
+            "description": "Introduction to pipelining, caching, and multi-core processors. Overview of modern microprocessor architectures."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Applications and Advanced Concepts"
+      }
+    ]
+  }
+}

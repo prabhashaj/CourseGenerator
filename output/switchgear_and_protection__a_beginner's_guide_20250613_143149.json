@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-13 14:31:49.513808",
+  "input": {
+    "course_topic": "Switchgear and Protection",
+    "difficulty_level": "Beginner",
+    "num_modules": 6,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.51,
+    "max_tokens": 1024,
+    "top_k": 20,
+    "top_p": 0.77
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, you will have a foundational understanding of switchgear and protection principles, enabling you to contribute effectively to power system operations and maintenance.",
+    "courseTitle": "Switchgear and Protection: A Beginner's Guide",
+    "introduction": "Welcome to the 'Switchgear and Protection' course! This course is designed for beginners and will provide you with a comprehensive introduction to the fundamental concepts of switchgear and protection systems used in electrical power systems.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Power Systems",
+            "description": "Overview of electrical power generation, transmission, and distribution systems. Basic components and their functions."
+          },
+          {
+            "chapterTitle": "The Role of Switchgear",
+            "description": "Defining switchgear and its importance in power system protection and control. Different types of switchgear and their applications."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Power Systems and Switchgear"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Circuit Breakers: Operation and Types",
+            "description": "Introduction to circuit breakers, their operating principles, and interrupting mechanisms. Different types of circuit breakers (e.g., air, oil, vacuum, SF6)."
+          },
+          {
+            "chapterTitle": "Isolators and Disconnectors",
+            "description": "Understanding the function of isolators and disconnectors in isolating equipment for maintenance. Safety considerations."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Switchgear Components: Circuit Breakers and Isolators"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Need for Protection",
+            "description": "Why protection is essential for power system reliability and safety. Common types of faults and their consequences."
+          },
+          {
+            "chapterTitle": "Basic Protection Principles",
+            "description": "Overcurrent, overvoltage, and undervoltage protection. Introduction to impedance protection."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Introduction to Power System Protection"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Current Transformers (CTs)",
+            "description": "Function and application of CTs in protection schemes. Accuracy and burden ratings."
+          },
+          {
+            "chapterTitle": "Voltage Transformers (VTs/PTs)",
+            "description": "Function and application of VTs/PTs in protection schemes. Accuracy and burden ratings."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Instrument Transformers: CTs and VTs"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Relay Operating Principles",
+            "description": "Basic relay construction and operating principles. Electromechanical, static, and numerical relays."
+          },
+          {
+            "chapterTitle": "Overcurrent Relays",
+            "description": "Types of overcurrent relays (instantaneous, definite time, inverse time). Time-current characteristics."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Protective Relays: Overcurrent Protection"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Differential Protection",
+            "description": "Basic principles of differential protection for transformers and generators. Percentage differential relays."
+          },
+          {
+            "chapterTitle": "Distance Protection",
+            "description": "Introduction to distance protection schemes for transmission lines. Zone settings and reach."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Advanced Protection Schemes: Differential and Distance"
+      }
+    ]
+  }
+}

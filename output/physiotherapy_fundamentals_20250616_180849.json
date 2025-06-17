@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:08:49.084126",
+  "input": {
+    "course_topic": "Physiotherapy Fundamentals",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.53,
+    "max_tokens": 2048,
+    "top_k": 20,
+    "top_p": 0.78
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of physiotherapy principles and practices. By completing this course, you should have a strong grasp of the core concepts and be prepared for more advanced studies in physiotherapy.",
+    "courseTitle": "Physiotherapy Fundamentals",
+    "introduction": "Welcome to Physiotherapy Fundamentals! This course is designed for beginners and will introduce you to the core principles, concepts, and practices of physiotherapy. We will cover basic anatomy, biomechanics, and common therapeutic techniques.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Physiotherapy",
+            "description": "What is physiotherapy? History and evolution of physiotherapy. Scope of practice and professional roles. Ethical considerations in physiotherapy."
+          },
+          {
+            "chapterTitle": "Basic Anatomy and Terminology",
+            "description": "Introduction to anatomical planes and movements. Key anatomical structures relevant to physiotherapy (bones, muscles, joints). Common anatomical terminology."
+          },
+          {
+            "chapterTitle": "The Human Musculoskeletal System",
+            "description": "Detailed review of the skeletal system. Focus on major bones and joints. Common musculoskeletal injuries and conditions."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Physiotherapy and Basic Anatomy"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Principles of Biomechanics",
+            "description": "Introduction to biomechanics and its relevance to physiotherapy. Levers, forces, and motion. Application of biomechanical principles to human movement."
+          },
+          {
+            "chapterTitle": "Posture and Balance",
+            "description": "Understanding normal posture and balance. Common postural deviations. Assessment and correction of postural imbalances."
+          },
+          {
+            "chapterTitle": "Gait Analysis",
+            "description": "Phases of gait cycle. Normal gait patterns. Common gait deviations and their causes."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Biomechanics and Human Movement"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Therapeutic Exercise",
+            "description": "Principles of therapeutic exercise. Types of therapeutic exercises (ROM, strengthening, stretching). Indications and contraindications for therapeutic exercise."
+          },
+          {
+            "chapterTitle": "Basic Manual Therapy Techniques",
+            "description": "Introduction to manual therapy. Palpation skills. Basic massage techniques (effleurage, petrissage). Joint mobilization principles."
+          },
+          {
+            "chapterTitle": "Electrotherapy and Modalities",
+            "description": "Overview of electrotherapy modalities (TENS, ultrasound). Cryotherapy and thermotherapy. Indications and contraindications for common modalities."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Therapeutic Techniques"
+      }
+    ]
+  }
+}

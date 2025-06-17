@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:20:44.063681",
+  "input": {
+    "course_topic": "Fashion Design",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.52,
+    "max_tokens": 1024,
+    "top_k": 30,
+    "top_p": 0.61
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of fashion design, equipping you with the basic skills and knowledge to begin your creative journey. We encourage you to continue exploring and experimenting to develop your unique style and vision.",
+    "courseTitle": "Fashion Design for Beginners",
+    "introduction": "Welcome to the exciting world of fashion design! This course is designed for beginners with no prior experience. We'll cover the fundamental principles and techniques to get you started on your creative path.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Fashion",
+            "description": "What is fashion design? Exploring its history, influence, and the role of a fashion designer."
+          },
+          {
+            "chapterTitle": "Basic Design Principles",
+            "description": "Understanding elements like line, shape, color, texture, and their application in fashion."
+          },
+          {
+            "chapterTitle": "Fashion Terminology",
+            "description": "Learning common terms used in the fashion industry, from silhouettes to fabrics."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Fashion Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Sketching Basics",
+            "description": "Introduction to sketching techniques for fashion design, including croquis and garment details."
+          },
+          {
+            "chapterTitle": "Basic Figure Drawing",
+            "description": "Learning how to draw a basic fashion figure (croquis) as a foundation for garment sketching."
+          },
+          {
+            "chapterTitle": "Sketching Garments",
+            "description": "Practicing sketching different types of garments, such as skirts, tops, and dresses."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Sketching and Illustration"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Fabrics",
+            "description": "Overview of different types of fabrics, their properties, and uses in fashion design."
+          },
+          {
+            "chapterTitle": "Color Theory",
+            "description": "Understanding color relationships, color palettes, and their impact on fashion design."
+          },
+          {
+            "chapterTitle": "Basic Sewing Tools",
+            "description": "Identifying and understanding the use of essential sewing tools for beginners."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Fabrics, Color, and Basic Sewing"
+      }
+    ]
+  }
+}

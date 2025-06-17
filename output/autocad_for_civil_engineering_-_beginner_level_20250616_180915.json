@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:09:15.480237",
+  "input": {
+    "course_topic": "AutoCAD for Civil",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.34,
+    "max_tokens": 2048,
+    "top_k": 30,
+    "top_p": 0.81
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, you will have a foundational understanding of AutoCAD for Civil Engineering, enabling you to create and modify basic civil engineering drawings.",
+    "courseTitle": "AutoCAD for Civil Engineering - Beginner Level",
+    "introduction": "Welcome to the AutoCAD for Civil Engineering course designed for beginners! This course will guide you through the fundamentals of using AutoCAD in the context of civil engineering projects. You'll learn how to navigate the interface, create basic drawings, and understand civil-specific tools.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to AutoCAD Interface",
+            "description": "Overview of the AutoCAD interface, including the ribbon, command line, and status bar. Learn how to customize the interface for civil engineering workflows."
+          },
+          {
+            "chapterTitle": "Basic Drawing Tools",
+            "description": "Learn to use basic drawing tools like lines, circles, arcs, and rectangles. Practice creating simple shapes and understanding coordinate systems."
+          },
+          {
+            "chapterTitle": "Object Selection and Modification",
+            "description": "Explore different methods for selecting objects and using modification tools like move, copy, rotate, and scale."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "AutoCAD Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Civil Engineering Workspace",
+            "description": "Understanding the Civil 3D workspace and its specific tools for civil engineering projects."
+          },
+          {
+            "chapterTitle": "Working with Points",
+            "description": "Learn how to create and manage points in AutoCAD Civil 3D, including importing point data from external sources."
+          },
+          {
+            "chapterTitle": "Creating Surfaces",
+            "description": "Introduction to creating surfaces from point data, contour lines, or other sources. Understanding surface properties and analysis."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Civil Engineering Basics in AutoCAD"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Alignments",
+            "description": "Understanding the concept of alignments and how they are used to define road or pipeline centerlines."
+          },
+          {
+            "chapterTitle": "Creating Profiles",
+            "description": "Learn how to create profiles from surfaces and alignments, visualizing the elevation changes along a route."
+          },
+          {
+            "chapterTitle": "Basic Annotation and Labeling",
+            "description": "Adding annotations and labels to your drawings, including dimensions, text, and symbols specific to civil engineering."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Civil Engineering Drawings"
+      }
+    ]
+  }
+}

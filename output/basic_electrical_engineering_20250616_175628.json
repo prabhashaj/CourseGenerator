@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 17:56:28.985271",
+  "input": {
+    "course_topic": "Basic Electrical Engineering",
+    "difficulty_level": "Beginner",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.54,
+    "max_tokens": 1024,
+    "top_k": 30,
+    "top_p": 0.58
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of basic electrical engineering principles. By completing this course, you should have a solid grasp of circuits, components, and fundamental laws, preparing you for more advanced topics.",
+    "courseTitle": "Basic Electrical Engineering",
+    "introduction": "Welcome to Basic Electrical Engineering! This course is designed for beginners with no prior knowledge of electrical concepts. We will cover fundamental principles, circuit analysis, and basic components, providing you with a solid foundation for further learning in this exciting field.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Electricity",
+            "description": "What is electricity? Understanding voltage, current, and charge. Introduction to circuits and their basic components."
+          },
+          {
+            "chapterTitle": "Basic Electrical Quantities",
+            "description": "Defining and measuring voltage (Volts), current (Amperes), and resistance (Ohms). Introduction to units and symbols."
+          },
+          {
+            "chapterTitle": "Electric Circuits",
+            "description": "What are open and closed circuits? Introduction to series and parallel circuits. Simple circuit diagrams and representations."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Electricity"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Ohm's Law",
+            "description": "Introduction to Ohm's Law: V = IR. Applying Ohm's Law to simple circuits. Calculating voltage, current, or resistance."
+          },
+          {
+            "chapterTitle": "Power and Energy",
+            "description": "Understanding electrical power (Watts) and energy (Joules). Calculating power in a circuit using P = VI. Introduction to energy consumption."
+          },
+          {
+            "chapterTitle": "Series Circuits",
+            "description": "Analyzing series circuits. Calculating total resistance, current, and voltage drops in series circuits."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Basic Circuit Laws"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Parallel Circuits",
+            "description": "Analyzing parallel circuits. Calculating total resistance, current division, and voltage in parallel circuits."
+          },
+          {
+            "chapterTitle": "Series-Parallel Circuits",
+            "description": "Introduction to combined series-parallel circuits. Simplifying and analyzing these circuits."
+          },
+          {
+            "chapterTitle": "Kirchhoff's Laws",
+            "description": "Introduction to Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL). Applying KCL and KVL to solve circuit problems."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Circuit Analysis Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Resistors",
+            "description": "Introduction to resistors. Types of resistors and their applications. Understanding resistor color codes."
+          },
+          {
+            "chapterTitle": "Capacitors",
+            "description": "Introduction to capacitors. Types of capacitors and their applications. Understanding capacitance and energy storage."
+          },
+          {
+            "chapterTitle": "Inductors",
+            "description": "Introduction to inductors. Types of inductors and their applications. Understanding inductance and energy storage."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Basic Electrical Components"
+      }
+    ]
+  }
+}

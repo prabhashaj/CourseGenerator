@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:43:33.836537",
+  "input": {
+    "course_topic": "Supply Chain Management",
+    "difficulty_level": "Advanced",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.64,
+    "max_tokens": 1024,
+    "top_k": 10,
+    "top_p": 0.96
+  },
+  "output": {
+    "conclusion": "Upon completion of this advanced Supply Chain Management course, participants will be equipped with the knowledge and skills to optimize supply chain operations, enhance efficiency, and drive competitive advantage in today's dynamic global marketplace.",
+    "courseTitle": "Advanced Supply Chain Management",
+    "introduction": "Welcome to Advanced Supply Chain Management. This course delves into advanced concepts and strategies for optimizing supply chain performance. It is designed for professionals with prior supply chain experience seeking to enhance their expertise.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Demand Forecasting Techniques",
+            "description": "Explore advanced statistical models and machine learning algorithms for improving demand forecast accuracy, reducing inventory costs, and enhancing responsiveness to market changes."
+          },
+          {
+            "chapterTitle": "Collaborative Planning, Forecasting, and Replenishment (CPFR)",
+            "description": "Understand the principles of CPFR and its application in fostering collaboration between supply chain partners to improve forecast accuracy and optimize inventory levels."
+          },
+          {
+            "chapterTitle": "Demand Shaping and Demand Management Strategies",
+            "description": "Learn how to influence customer demand through pricing, promotions, and product placement to align demand with supply and improve profitability."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Demand Management"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Supply Chain Network Design Optimization",
+            "description": "Learn about network optimization models and techniques for designing resilient and cost-effective supply chain networks that meet customer service requirements."
+          },
+          {
+            "chapterTitle": "Strategic Sourcing and Supplier Relationship Management",
+            "description": "Explore advanced sourcing strategies, supplier selection criteria, and relationship management techniques for building strong and collaborative supplier partnerships."
+          },
+          {
+            "chapterTitle": "Global Logistics and Transportation Management",
+            "description": "Understand the complexities of global logistics and transportation, including international trade regulations, customs compliance, and transportation mode selection."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Strategic Sourcing and Logistics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Risk Management in the Supply Chain",
+            "description": "Identify and assess potential risks in the supply chain, including disruptions, natural disasters, and geopolitical events, and develop mitigation strategies."
+          },
+          {
+            "chapterTitle": "Sustainable Supply Chain Practices",
+            "description": "Explore the principles of sustainable supply chain management, including environmental responsibility, social equity, and ethical sourcing."
+          },
+          {
+            "chapterTitle": "Supply Chain Analytics and Performance Measurement",
+            "description": "Learn how to use data analytics and key performance indicators (KPIs) to monitor supply chain performance, identify areas for improvement, and drive continuous improvement."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Supply Chain Resilience and Sustainability"
+      }
+    ]
+  }
+}

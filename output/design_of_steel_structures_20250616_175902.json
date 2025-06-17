@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-06-16 17:59:02.369460",
+  "input": {
+    "course_topic": "Design of Steel Structures",
+    "difficulty_level": "Expert",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.51,
+    "max_tokens": 1024,
+    "top_k": 17,
+    "top_p": 0.92
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of advanced steel structure design principles and practices, equipping participants with the expertise to tackle complex engineering challenges.",
+    "courseTitle": "Design of Steel Structures",
+    "introduction": "Welcome to the 'Design of Steel Structures' course. This expert-level course delves into advanced concepts and practical applications in steel design, covering topics from advanced connection design to stability analysis and seismic design considerations.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Connection Design",
+            "description": "Explore advanced connection types, including moment connections, shear connections, and bracing connections. Focus on design considerations for high-strength bolts and welds."
+          },
+          {
+            "chapterTitle": "Fatigue and Fracture",
+            "description": "Understand the principles of fatigue and fracture mechanics in steel structures. Learn about fatigue life assessment and design for fatigue resistance."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Connection Design and Fatigue"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Stability Analysis",
+            "description": "Delve into advanced stability analysis techniques, including buckling analysis, finite element modeling, and second-order effects."
+          },
+          {
+            "chapterTitle": "Column Design",
+            "description": "Focus on advanced column design considerations, including slender columns, effective length factors, and combined axial and bending loads."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Stability and Advanced Column Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Seismic Design Principles",
+            "description": "Understand the fundamental principles of seismic design for steel structures. Learn about seismic load combinations, ductility requirements, and energy dissipation mechanisms."
+          },
+          {
+            "chapterTitle": "Seismic Detailing",
+            "description": "Explore seismic detailing requirements for steel members and connections. Focus on detailing for ductility and preventing brittle failure."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Seismic Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Special Steel Structures",
+            "description": "Investigate the design considerations for special steel structures, such as long-span bridges, high-rise buildings, and offshore platforms."
+          },
+          {
+            "chapterTitle": "Case Studies",
+            "description": "Analyze real-world case studies of steel structure design, including design challenges, solutions, and lessons learned."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Special Structures and Case Studies"
+      }
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 17:58:22.816160",
+  "input": {
+    "course_topic": "First Aid & Emergency Care",
+    "difficulty_level": "Beginner",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.42,
+    "max_tokens": 1024,
+    "top_k": 26,
+    "top_p": 0.64
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, you will be equipped with the fundamental knowledge and skills to provide initial assistance in various emergency situations, potentially saving lives and minimizing harm until professional medical help arrives.",
+    "courseTitle": "First Aid & Emergency Care: A Beginner's Guide",
+    "introduction": "Welcome to the First Aid & Emergency Care course! This course is designed for beginners with no prior medical experience. You will learn essential skills to respond effectively to common emergencies.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to First Aid",
+            "description": "What is first aid? Importance of first aid. Legal and ethical considerations. Basic principles of first aid: Preserve Life, Prevent Deterioration, Promote Recovery."
+          },
+          {
+            "chapterTitle": "Emergency Scene Assessment",
+            "description": "Assessing the scene for safety. Identifying hazards. Determining the number of victims. Calling for help (Emergency Medical Services - EMS)."
+          },
+          {
+            "chapterTitle": "Personal Protective Equipment (PPE)",
+            "description": "Understanding the importance of PPE. Types of PPE: gloves, masks, eye protection. Proper use and disposal of PPE."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to First Aid and Emergency Response"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Basic Life Support (BLS) - CPR",
+            "description": "Introduction to CPR. Recognizing the signs of cardiac arrest. Chest compressions: hand placement, depth, and rate."
+          },
+          {
+            "chapterTitle": "Basic Life Support (BLS) - Rescue Breaths",
+            "description": "Giving rescue breaths. Using a barrier device (pocket mask). Combining chest compressions and rescue breaths."
+          },
+          {
+            "chapterTitle": "Basic Life Support (BLS) - Choking",
+            "description": "Recognizing the signs of choking. Performing abdominal thrusts (Heimlich maneuver) on adults and children. Back blows for infants."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Basic Life Support (BLS)"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Wound Care - Bleeding Control",
+            "description": "Types of bleeding: arterial, venous, capillary. Applying direct pressure. Using a tourniquet (if necessary)."
+          },
+          {
+            "chapterTitle": "Wound Care - Minor Wounds",
+            "description": "Cleaning and dressing minor cuts and scrapes. Preventing infection. Recognizing signs of infection."
+          },
+          {
+            "chapterTitle": "Wound Care - Burns",
+            "description": "Types of burns: first, second, and third degree. Cooling burns with water. Covering burns with a sterile dressing."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Wound Care and Bleeding Control"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Common Medical Emergencies - Allergic Reactions",
+            "description": "Recognizing the signs of an allergic reaction (anaphylaxis). Using an epinephrine auto-injector (EpiPen)."
+          },
+          {
+            "chapterTitle": "Common Medical Emergencies - Seizures",
+            "description": "Recognizing the signs of a seizure. Protecting the person from injury during a seizure. What to do after a seizure."
+          },
+          {
+            "chapterTitle": "Common Medical Emergencies - Fainting",
+            "description": "Recognizing the signs of fainting. Helping someone who has fainted. Elevating the legs."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Common Medical Emergencies"
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 17:58:56.457237",
+  "input": {
+    "course_topic": "Engineering Drawing",
+    "difficulty_level": "Beginner",
+    "num_modules": 6,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.49,
+    "max_tokens": 2048,
+    "top_k": 24,
+    "top_p": 0.86
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of engineering drawing principles, preparing you for more advanced topics and practical applications in various engineering fields.",
+    "courseTitle": "Engineering Drawing for Beginners",
+    "introduction": "Welcome to Engineering Drawing! This course will introduce you to the fundamentals of creating and interpreting technical drawings, essential for engineers and designers. We'll cover basic concepts, tools, and techniques to help you develop your drawing skills.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Engineering Drawing",
+            "description": "Overview of engineering drawing, its importance, applications, and the role it plays in communication within engineering disciplines."
+          },
+          {
+            "chapterTitle": "Drawing Instruments and Materials",
+            "description": "Introduction to basic drawing tools such as pencils, erasers, scales, compasses, and drafting paper. Proper usage and care will be discussed."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Engineering Drawing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Lines and Lettering",
+            "description": "Understanding different types of lines used in engineering drawings (e.g., visible, hidden, center lines) and their applications. Introduction to standard lettering techniques."
+          },
+          {
+            "chapterTitle": "Line Conventions and Applications",
+            "description": "Practical exercises on applying different line types in simple drawings to represent object features."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Lines, Lettering, and Dimensioning Basics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Geometric Constructions - Part 1",
+            "description": "Basic geometric constructions using compass and straightedge, including bisecting lines and angles, drawing perpendiculars and parallels."
+          },
+          {
+            "chapterTitle": "Geometric Constructions - Part 2",
+            "description": "Advanced geometric constructions, such as dividing a line into equal parts, constructing polygons, and drawing tangents to circles."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Geometric Constructions"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Orthographic Projection - Introduction",
+            "description": "Introduction to orthographic projection, the principle of projecting 3D objects onto 2D planes to create multiple views."
+          },
+          {
+            "chapterTitle": "Creating Orthographic Views",
+            "description": "Learning to create top, front, and side views of simple objects using orthographic projection techniques."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Introduction to Orthographic Projection"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Dimensioning Principles",
+            "description": "Introduction to dimensioning, including terminology, placement rules, and types of dimensions (e.g., linear, angular, diameter)."
+          },
+          {
+            "chapterTitle": "Dimensioning Techniques",
+            "description": "Applying dimensioning techniques to orthographic views to accurately represent the size and shape of objects."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Dimensioning"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Sectional Views",
+            "description": "Understanding the purpose of sectional views in revealing internal features of objects."
+          },
+          {
+            "chapterTitle": "Types of Sectional Views",
+            "description": "Exploring different types of sectional views (e.g., full section, half section, offset section) and their applications."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Sectional Views"
+      }
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-13 13:31:15.259133",
+  "input": {
+    "course_topic": "Cloud-native Development",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.64,
+    "max_tokens": 2048,
+    "top_k": 10,
+    "top_p": 0.96
+  },
+  "output": {
+    "conclusion": "By completing this course, you'll have a solid understanding of cloud-native development principles and be equipped to build and deploy modern applications in the cloud.",
+    "courseTitle": "Cloud-Native Development",
+    "introduction": "Welcome to the Cloud-Native Development course! This course is designed for intermediate developers who want to learn how to build and deploy applications using cloud-native technologies. We'll cover key concepts like microservices, containers, orchestration, and continuous delivery.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Cloud-Native Architecture",
+            "description": "Overview of cloud-native principles, 12-factor app methodology, and benefits of using cloud-native architectures."
+          },
+          {
+            "chapterTitle": "Microservices Architecture",
+            "description": "Understanding microservices, designing microservices, and communication patterns between microservices."
+          },
+          {
+            "chapterTitle": "API Gateways",
+            "description": "Introduction to API Gateways, their role in microservice architectures, and common API Gateway patterns."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Cloud-Native Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Containerization",
+            "description": "What are containers? Understanding Docker and container images. Benefits of using containers."
+          },
+          {
+            "chapterTitle": "Building Docker Images",
+            "description": "Writing Dockerfiles, best practices for building efficient container images, and using Docker Hub."
+          },
+          {
+            "chapterTitle": "Container Orchestration with Kubernetes",
+            "description": "Introduction to Kubernetes, its architecture, and key concepts like Pods, Deployments, and Services."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Containers and Kubernetes"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Service Meshes Explained",
+            "description": "Understanding service meshes, their benefits, and how they improve microservice communication."
+          },
+          {
+            "chapterTitle": "Istio Fundamentals",
+            "description": "Introduction to Istio, its components, and how to configure traffic management, security, and observability."
+          },
+          {
+            "chapterTitle": "Traffic Management with Istio",
+            "description": "Using Istio to implement traffic splitting, canary deployments, and A/B testing."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Service Meshes"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Continuous Integration and Continuous Delivery (CI/CD)",
+            "description": "Understanding CI/CD pipelines, benefits of automation, and common CI/CD tools."
+          },
+          {
+            "chapterTitle": "GitOps Principles",
+            "description": "Introduction to GitOps, using Git as the single source of truth, and automating deployments with Git."
+          },
+          {
+            "chapterTitle": "Implementing CI/CD for Cloud-Native Applications",
+            "description": "Setting up CI/CD pipelines for building, testing, and deploying cloud-native applications."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "CI/CD and GitOps"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Monitoring and Logging",
+            "description": "Importance of monitoring and logging in cloud-native environments, and key metrics to track."
+          },
+          {
+            "chapterTitle": "Distributed Tracing",
+            "description": "Understanding distributed tracing, its benefits, and using tools like Jaeger or Zipkin."
+          },
+          {
+            "chapterTitle": "Alerting and Incident Management",
+            "description": "Setting up alerts based on key metrics, and implementing incident management processes."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Observability"
+      }
+    ]
+  }
+}

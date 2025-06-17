@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 13:01:30.463642",
+  "input": {
+    "course_topic": "Stress Management",
+    "difficulty_level": "Beginner",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.49,
+    "max_tokens": 1024,
+    "top_k": 14,
+    "top_p": 0.97
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained foundational knowledge and practical techniques for managing stress. Remember to consistently practice these strategies to build resilience and improve your overall well-being.",
+    "courseTitle": "Stress Management for Beginners",
+    "introduction": "Welcome to Stress Management for Beginners! This course will provide you with a basic understanding of stress, its impact, and practical techniques to manage it effectively. Each module is designed to be concise and easy to understand, requiring approximately 10 minutes of reading time.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding Stress: What is it?",
+            "description": "This chapter defines stress, explores its different types (acute vs. chronic), and identifies common stressors in daily life."
+          },
+          {
+            "chapterTitle": "The Body's Response to Stress",
+            "description": "Learn about the 'fight or flight' response and how stress affects your body's systems (nervous, endocrine, immune)."
+          },
+          {
+            "chapterTitle": "Recognizing Your Stress Signals",
+            "description": "Identify common physical, emotional, and behavioral symptoms of stress to become more aware of your personal stress response."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Stress"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Deep Breathing Techniques",
+            "description": "Learn and practice simple deep breathing exercises to calm your nervous system and reduce anxiety."
+          },
+          {
+            "chapterTitle": "Progressive Muscle Relaxation",
+            "description": "Discover how to systematically tense and relax muscle groups to release physical tension and promote relaxation."
+          },
+          {
+            "chapterTitle": "Mindfulness Meditation Basics",
+            "description": "Introduction to mindfulness meditation and how to focus on the present moment to reduce stress and improve focus."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Relaxation Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Time Management Fundamentals",
+            "description": "Learn basic time management principles to prioritize tasks, reduce overwhelm, and improve productivity."
+          },
+          {
+            "chapterTitle": "Setting Realistic Goals",
+            "description": "Discover the importance of setting achievable goals to avoid feeling overwhelmed and increase motivation."
+          },
+          {
+            "chapterTitle": "Saying 'No' Effectively",
+            "description": "Learn how to politely decline requests and set boundaries to protect your time and energy."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Managing Stressors"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Importance of Exercise",
+            "description": "Explore the benefits of regular physical activity for stress reduction and overall well-being."
+          },
+          {
+            "chapterTitle": "Healthy Eating Habits",
+            "description": "Learn how nutrition impacts stress levels and how to make healthier food choices."
+          },
+          {
+            "chapterTitle": "The Power of Social Support",
+            "description": "Discover the importance of connecting with others and building a strong support network to cope with stress."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Lifestyle Strategies for Stress Reduction"
+      }
+    ]
+  }
+}

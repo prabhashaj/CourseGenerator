@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-06-16 17:56:47.222451",
+  "input": {
+    "course_topic": "Signals and Systems",
+    "difficulty_level": "Beginner",
+    "num_modules": 6,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.35,
+    "max_tokens": 2048,
+    "top_k": 11,
+    "top_p": 0.95
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of signals and systems, equipping you with the necessary tools to analyze and manipulate signals in various applications.",
+    "courseTitle": "Signals and Systems: A Beginner's Guide",
+    "introduction": "Welcome to Signals and Systems! This course will introduce you to the fundamental concepts of signals and systems, providing a solid foundation for further study in areas like signal processing, communication, and control systems. We'll cover basic signal types, system properties, and fundamental analysis techniques.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Signals",
+            "description": "What are signals? Examples of real-world signals (audio, video, sensor data). Basic signal classifications: continuous-time vs. discrete-time, periodic vs. aperiodic, energy vs. power signals."
+          },
+          {
+            "chapterTitle": "Basic Signal Operations",
+            "description": "Time shifting, time scaling, and amplitude scaling of signals. Examples and graphical representations of these operations."
+          },
+          {
+            "chapterTitle": "Elementary Signals",
+            "description": "Unit impulse function (delta function), unit step function, ramp function, and exponential signals. Their mathematical definitions and graphical representations."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Signals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Systems",
+            "description": "What are systems? Examples of real-world systems (amplifiers, filters, control systems). Block diagram representation of systems."
+          },
+          {
+            "chapterTitle": "System Properties",
+            "description": "Linearity, time-invariance, causality, and stability. Understanding these properties and their implications."
+          },
+          {
+            "chapterTitle": "Linear Time-Invariant (LTI) Systems",
+            "description": "Introduction to LTI systems. Why LTI systems are important and widely used."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Introduction to Systems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Convolution Integral",
+            "description": "Understanding the convolution integral for continuous-time LTI systems. Graphical interpretation of convolution."
+          },
+          {
+            "chapterTitle": "Convolution Sum",
+            "description": "Understanding the convolution sum for discrete-time LTI systems. Examples of calculating the convolution sum."
+          },
+          {
+            "chapterTitle": "Properties of Convolution",
+            "description": "Commutativity, associativity, distributivity, and identity element properties of convolution."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Convolution"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fourier Series Representation",
+            "description": "Representing periodic signals as a sum of sinusoids. Introduction to Fourier series coefficients."
+          },
+          {
+            "chapterTitle": "Calculating Fourier Series Coefficients",
+            "description": "Formulas for calculating Fourier series coefficients for different types of periodic signals."
+          },
+          {
+            "chapterTitle": "Properties of Fourier Series",
+            "description": "Linearity, time shifting, time scaling, and differentiation properties of Fourier series."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Fourier Series"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Fourier Transform",
+            "description": "Extending Fourier series to aperiodic signals. Definition of the Fourier transform."
+          },
+          {
+            "chapterTitle": "Properties of the Fourier Transform",
+            "description": "Linearity, time shifting, time scaling, duality, and convolution properties of the Fourier transform."
+          },
+          {
+            "chapterTitle": "Common Fourier Transform Pairs",
+            "description": "Fourier transforms of common signals like the impulse function, step function, and exponential signals."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Fourier Transform"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Laplace Transform",
+            "description": "Definition of the Laplace transform and its region of convergence (ROC)."
+          },
+          {
+            "chapterTitle": "Properties of the Laplace Transform",
+            "description": "Linearity, time shifting, time scaling, differentiation, and integration properties of the Laplace transform."
+          },
+          {
+            "chapterTitle": "Solving Differential Equations",
+            "description": "Using the Laplace transform to solve linear differential equations with initial conditions."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Laplace Transform"
+      }
+    ]
+  }
+}

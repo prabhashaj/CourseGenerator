@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:07:04.355863",
+  "input": {
+    "course_topic": "IC Engines",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.62,
+    "max_tokens": 2048,
+    "top_k": 32,
+    "top_p": 0.56
+  },
+  "output": {
+    "conclusion": "This course provided a foundational understanding of IC Engines. Further exploration into specific engine types, advanced combustion techniques, and emission control strategies is highly recommended.",
+    "courseTitle": "Introduction to Internal Combustion Engines",
+    "introduction": "Welcome to the world of Internal Combustion Engines! This course will provide a beginner-friendly overview of the fundamental principles, components, and operation of IC Engines, which are the workhorses of modern transportation and power generation.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is an IC Engine?",
+            "description": "Definition of an IC Engine, its role in converting chemical energy to mechanical energy, and a brief history of its development."
+          },
+          {
+            "chapterTitle": "Basic Components",
+            "description": "Introduction to key engine parts: cylinder, piston, crankshaft, connecting rod, valves, spark plug/injector."
+          },
+          {
+            "chapterTitle": "Engine Classifications",
+            "description": "Overview of different engine types: gasoline vs. diesel, two-stroke vs. four-stroke, and common engine layouts (inline, V-type)."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of IC Engines"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Four-Stroke Cycle",
+            "description": "Detailed explanation of the four strokes: intake, compression, combustion (power), and exhaust."
+          },
+          {
+            "chapterTitle": "Two-Stroke Cycle",
+            "description": "Explanation of the two-stroke cycle: intake/compression and combustion/exhaust."
+          },
+          {
+            "chapterTitle": "Valve Timing",
+            "description": "Introduction to valve timing and its impact on engine performance."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Engine Operating Cycles"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fuel and Air Mixture",
+            "description": "The importance of proper air-fuel mixture for efficient combustion."
+          },
+          {
+            "chapterTitle": "Combustion Process",
+            "description": "Overview of the combustion process in gasoline and diesel engines."
+          },
+          {
+            "chapterTitle": "Engine Performance Metrics",
+            "description": "Introduction to key performance indicators: power, torque, and efficiency."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Combustion and Performance"
+      }
+    ]
+  }
+}

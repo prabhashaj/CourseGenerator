@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 13:02:22.962711",
+  "input": {
+    "course_topic": "Linear Algebra",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.53,
+    "max_tokens": 2048,
+    "top_k": 19,
+    "top_p": 0.63
+  },
+  "output": {
+    "conclusion": "This course provides a rigorous foundation in linear algebra, equipping students with the theoretical knowledge and computational skills necessary for advanced studies in mathematics, science, and engineering.",
+    "courseTitle": "Advanced Linear Algebra",
+    "introduction": "Welcome to Advanced Linear Algebra! This course delves into the core concepts of linear algebra, building upon introductory knowledge to explore more abstract and sophisticated topics. We will focus on rigorous proofs, advanced techniques, and applications in various fields.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Vector Spaces and Subspaces",
+            "description": "Axiomatic definition of vector spaces, examples including function spaces and polynomial spaces. Subspaces, span, linear independence, basis, and dimension. Examples and exercises."
+          },
+          {
+            "chapterTitle": "Quotient Spaces",
+            "description": "Construction of quotient spaces. Properties of quotient spaces. Isomorphism theorems for vector spaces."
+          },
+          {
+            "chapterTitle": "Direct Sums",
+            "description": "Internal and external direct sums. Projections and their relation to direct sums. Decomposition of vector spaces into direct sums."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Abstract Vector Spaces"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Linear Transformations and Matrices",
+            "description": "Linear transformations, kernel, and image. Matrix representation of linear transformations. Change of basis."
+          },
+          {
+            "chapterTitle": "Dual Spaces",
+            "description": "Definition and properties of dual spaces. Dual basis. Annihilators."
+          },
+          {
+            "chapterTitle": "Adjoint Operators",
+            "description": "Adjoint of a linear transformation. Properties of adjoint operators. Relation to matrix transpose."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Linear Transformations and Duality"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Eigenvalues and Eigenvectors",
+            "description": "Eigenvalues, eigenvectors, and eigenspaces. Characteristic polynomial. Cayley-Hamilton theorem."
+          },
+          {
+            "chapterTitle": "Diagonalization",
+            "description": "Diagonalizable matrices. Conditions for diagonalizability. Generalized eigenvectors."
+          },
+          {
+            "chapterTitle": "Jordan Canonical Form",
+            "description": "Jordan blocks and Jordan canonical form. Computation of Jordan form. Applications."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Eigenvalue Problems and Canonical Forms"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Inner Product Spaces",
+            "description": "Inner products, norms, and orthogonality. Gram-Schmidt process. Orthogonal projections."
+          },
+          {
+            "chapterTitle": "Self-Adjoint Operators",
+            "description": "Self-adjoint operators. Spectral theorem for self-adjoint operators. Applications."
+          },
+          {
+            "chapterTitle": "Positive Definite Operators",
+            "description": "Positive definite operators. Cholesky decomposition. Applications to optimization."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Inner Product Spaces and Operators"
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:04:37.296350",
+  "input": {
+    "course_topic": "Estimation and Costing",
+    "difficulty_level": "Intermediate",
+    "num_modules": 6,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.33,
+    "max_tokens": 2048,
+    "top_k": 31,
+    "top_p": 0.77
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, students will be equipped with the knowledge and skills necessary to accurately estimate costs, manage budgets, and make informed decisions throughout the project lifecycle. They will be able to apply various estimation techniques, analyze cost data, and effectively communicate cost information to stakeholders.",
+    "courseTitle": "Estimation and Costing",
+    "introduction": "This course provides a comprehensive overview of estimation and costing principles and practices. It is designed for intermediate-level professionals who need to develop accurate cost estimates, manage budgets effectively, and make informed decisions related to project costs. The course covers various estimation techniques, cost analysis methods, and tools used in the industry.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Estimation and Costing",
+            "description": "Overview of estimation and costing. Importance of accurate cost estimates. Types of costs (direct, indirect, fixed, variable). Cost classification and terminology."
+          },
+          {
+            "chapterTitle": "Cost Estimation Methods",
+            "description": "Detailed explanation of Analogous Estimating. Parametric Estimating techniques. Bottom-Up Estimating approach. Three-Point Estimating (PERT) method."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Estimation and Costing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Data Collection and Analysis",
+            "description": "Sources of cost data. Data collection techniques. Data validation and cleaning. Statistical analysis of cost data."
+          },
+          {
+            "chapterTitle": "Cost Indices and Escalation",
+            "description": "Understanding cost indices. Adjusting costs for inflation. Forecasting future costs. Impact of escalation on project budgets."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Data Analysis and Cost Indices"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Resource Costing",
+            "description": "Estimating labor costs. Material cost estimation. Equipment cost estimation. Subcontractor cost estimation."
+          },
+          {
+            "chapterTitle": "Activity-Based Costing (ABC)",
+            "description": "Principles of activity-based costing. Identifying cost drivers. Allocating costs to activities. Using ABC for cost management."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Resource and Activity Costing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Risk Assessment in Costing",
+            "description": "Identifying cost-related risks. Assessing the impact of risks on project costs. Developing risk mitigation strategies. Contingency planning."
+          },
+          {
+            "chapterTitle": "Sensitivity Analysis",
+            "description": "Performing sensitivity analysis. Identifying critical cost factors. Evaluating the impact of changes in key variables. Scenario planning."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Risk and Sensitivity Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Budgeting and Cost Control",
+            "description": "Developing project budgets. Budget allocation and distribution. Cost monitoring and control techniques. Variance analysis."
+          },
+          {
+            "chapterTitle": "Earned Value Management (EVM)",
+            "description": "Principles of earned value management. Calculating EVM metrics (PV, EV, AC). Analyzing cost and schedule variances. Forecasting project completion costs."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Budgeting and Cost Control Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Cost Reporting and Communication",
+            "description": "Preparing cost reports. Communicating cost information to stakeholders. Visualizing cost data. Using dashboards for cost monitoring."
+          },
+          {
+            "chapterTitle": "Software Tools for Estimation and Costing",
+            "description": "Overview of estimation and costing software. Using spreadsheets for cost analysis. Introduction to specialized cost management tools. Integration of cost data with project management systems."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Cost Reporting and Software Tools"
+      }
+    ]
+  }
+}

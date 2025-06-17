@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-16 18:34:43.794344",
+  "input": {
+    "course_topic": "Pharmaceutical Chemistry",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.56,
+    "max_tokens": 2048,
+    "top_k": 31,
+    "top_p": 0.57
+  },
+  "output": {
+    "conclusion": "This course provides an advanced understanding of pharmaceutical chemistry principles, equipping students with the knowledge and skills necessary for drug discovery, development, and analysis.",
+    "courseTitle": "Advanced Pharmaceutical Chemistry",
+    "introduction": "Welcome to Advanced Pharmaceutical Chemistry! This course delves into the intricate world of drug design, synthesis, and analysis, building upon foundational knowledge to explore advanced concepts and techniques.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Drug-Target Interactions: Advanced Concepts",
+            "description": "Exploring advanced concepts of drug-target interactions, including allosteric modulation, cooperativity, and induced fit mechanisms. Understanding the role of conformational changes in drug binding and efficacy."
+          },
+          {
+            "chapterTitle": "Quantitative Structure-Activity Relationship (QSAR) Modeling",
+            "description": "Advanced QSAR methodologies, including 3D-QSAR and machine learning approaches. Application of QSAR in predicting drug activity and optimizing lead compounds."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Drug-Target Interactions and QSAR"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Stereochemistry in Drug Design",
+            "description": "Advanced concepts in stereochemistry and their impact on drug activity. Chirality, enantiomers, diastereomers, and their influence on receptor binding and pharmacological effects."
+          },
+          {
+            "chapterTitle": "Prodrug Design and Development",
+            "description": "Advanced strategies for prodrug design to improve drug bioavailability, target specificity, and reduce toxicity. Enzyme-activated prodrugs and self-immolative linkers."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Stereochemistry and Prodrug Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Organic Synthesis in Drug Discovery",
+            "description": "Exploring advanced organic reactions and methodologies used in drug synthesis, including transition metal catalysis, asymmetric synthesis, and multicomponent reactions."
+          },
+          {
+            "chapterTitle": "Combinatorial Chemistry and High-Throughput Screening",
+            "description": "Advanced techniques in combinatorial chemistry for generating diverse compound libraries. High-throughput screening methods for identifying potential drug candidates."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Organic Synthesis and Combinatorial Chemistry"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Drug Metabolism and Pharmacokinetics: Advanced Topics",
+            "description": "In-depth analysis of drug metabolism pathways, including cytochrome P450 enzymes and other metabolic enzymes. Advanced pharmacokinetic modeling and simulation techniques."
+          },
+          {
+            "chapterTitle": "Drug Delivery Systems: Advanced Technologies",
+            "description": "Exploring advanced drug delivery systems, such as nanoparticles, liposomes, and targeted drug delivery. Controlled-release formulations and their applications."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Drug Metabolism and Delivery"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Analytical Techniques in Pharmaceutical Chemistry",
+            "description": "Advanced analytical techniques used in pharmaceutical analysis, including HPLC-MS, NMR spectroscopy, and X-ray crystallography. Application of these techniques in drug characterization and quality control."
+          },
+          {
+            "chapterTitle": "Regulatory Aspects of Pharmaceutical Chemistry",
+            "description": "Overview of regulatory guidelines and requirements for drug development and manufacturing. Good Manufacturing Practices (GMP) and quality assurance in the pharmaceutical industry."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Analytical Techniques and Regulatory Aspects"
+      }
+    ]
+  }
+}

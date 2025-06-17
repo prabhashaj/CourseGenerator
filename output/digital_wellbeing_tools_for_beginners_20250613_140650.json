@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-06-13 14:06:50.117027",
+  "input": {
+    "course_topic": "Digital Wellbeing Tools",
+    "difficulty_level": "Beginner",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.65,
+    "max_tokens": 2048,
+    "top_k": 27,
+    "top_p": 0.86
+  },
+  "output": {
+    "conclusion": "By the end of this course, you will have a foundational understanding of digital wellbeing and practical tools to manage your technology use for a healthier and more balanced life.",
+    "courseTitle": "Digital Wellbeing Tools for Beginners",
+    "introduction": "Welcome to the 'Digital Wellbeing Tools for Beginners' course! In today's digital age, it's easy to get caught up in the constant stream of information and notifications. This course will provide you with simple yet effective tools and strategies to promote a healthier relationship with technology and improve your overall wellbeing.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding Digital Wellbeing",
+            "description": "What is digital wellbeing? Exploring the impact of technology on mental and physical health. Recognizing signs of digital overload and burnout."
+          },
+          {
+            "chapterTitle": "Identifying Your Digital Habits",
+            "description": "Self-assessment: How much time do you spend online? What apps do you use most? Identifying triggers for excessive technology use."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Digital Wellbeing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Setting Boundaries with Technology",
+            "description": "Creating a schedule for technology use. Designating tech-free zones in your home. Communicating your boundaries to others."
+          },
+          {
+            "chapterTitle": "Managing Notifications",
+            "description": "Turning off unnecessary notifications. Prioritizing important notifications. Using notification management tools."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Setting Healthy Boundaries"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Utilizing Built-in Wellbeing Features",
+            "description": "Exploring screen time tracking on your phone. Using 'Do Not Disturb' mode effectively. Setting app usage limits."
+          },
+          {
+            "chapterTitle": "Discovering Wellbeing Apps",
+            "description": "Overview of popular wellbeing apps (e.g., meditation, focus). Choosing apps that align with your needs and goals. Using apps responsibly."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Leveraging Digital Tools"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Practicing Mindful Technology Use",
+            "description": "Being present while using technology. Avoiding mindless scrolling. Focusing on quality over quantity."
+          },
+          {
+            "chapterTitle": "Taking Digital Detox Breaks",
+            "description": "Planning regular breaks from technology. Engaging in offline activities. Reflecting on the benefits of digital detox."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Mindfulness and Digital Detox"
+      }
+    ]
+  }
+}

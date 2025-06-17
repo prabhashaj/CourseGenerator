@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-13 14:37:51.658092",
+  "input": {
+    "course_topic": "Image Processing",
+    "difficulty_level": "Beginner",
+    "num_modules": 5,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.61,
+    "max_tokens": 2048,
+    "top_k": 19,
+    "top_p": 0.81
+  },
+  "output": {
+    "conclusion": "This course provided a foundational understanding of image processing techniques. You should now be able to perform basic image manipulation and analysis.",
+    "courseTitle": "Introduction to Image Processing",
+    "introduction": "Welcome to the world of image processing! This course will introduce you to the fundamental concepts and techniques used to manipulate and analyze digital images. No prior experience is necessary.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is Image Processing?",
+            "description": "Definition of image processing, its applications, and the difference between analog and digital images."
+          },
+          {
+            "chapterTitle": "Digital Image Fundamentals",
+            "description": "Understanding pixels, image resolution, color depth, and basic image formats (JPEG, PNG, GIF)."
+          },
+          {
+            "chapterTitle": "Image Acquisition",
+            "description": "Brief overview of how digital images are captured using cameras and scanners."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Image Processing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Image Enhancement Techniques",
+            "description": "Introduction to spatial domain techniques like contrast stretching and histogram equalization."
+          },
+          {
+            "chapterTitle": "Brightness and Contrast Adjustment",
+            "description": "Learn how to modify the brightness and contrast of an image using simple operations."
+          },
+          {
+            "chapterTitle": "Basic Color Correction",
+            "description": "Overview of color balance and simple color adjustments."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Basic Image Enhancement"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Image Filtering Basics",
+            "description": "Introduction to image filtering and its purpose."
+          },
+          {
+            "chapterTitle": "Smoothing Filters",
+            "description": "Understanding and applying mean and median filters for noise reduction."
+          },
+          {
+            "chapterTitle": "Sharpening Filters",
+            "description": "Introduction to edge detection and sharpening using basic filters."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Image Filtering"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Image Segmentation Overview",
+            "description": "Introduction to image segmentation and its importance."
+          },
+          {
+            "chapterTitle": "Thresholding Techniques",
+            "description": "Simple thresholding methods for separating objects from the background."
+          },
+          {
+            "chapterTitle": "Edge-Based Segmentation",
+            "description": "Brief introduction to using edges for image segmentation."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Image Segmentation Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Image Compression Basics",
+            "description": "Introduction to image compression and its need."
+          },
+          {
+            "chapterTitle": "Lossy vs. Lossless Compression",
+            "description": "Understanding the difference between lossy and lossless compression techniques."
+          },
+          {
+            "chapterTitle": "Common Image Compression Formats",
+            "description": "Overview of JPEG and PNG compression methods."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Image Compression"
+      }
+    ]
+  }
+}

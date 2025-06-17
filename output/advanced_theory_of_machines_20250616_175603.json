@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-06-16 17:56:03.436556",
+  "input": {
+    "course_topic": "Theory of Machines",
+    "difficulty_level": "Advanced",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.65,
+    "max_tokens": 2048,
+    "top_k": 22,
+    "top_p": 0.82
+  },
+  "output": {
+    "conclusion": "This course provides a deep dive into the principles governing machine motion and force transmission, equipping you with the analytical skills necessary for advanced mechanical design and analysis.",
+    "courseTitle": "Advanced Theory of Machines",
+    "introduction": "Welcome to Advanced Theory of Machines! This course builds upon foundational knowledge of kinematics and dynamics to explore complex mechanisms, vibration analysis, and control systems. Prepare for a challenging but rewarding journey into the heart of machine design.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Kinematic Analysis of Complex Mechanisms",
+            "description": "Delve into advanced kinematic analysis techniques, including matrix methods and screw theory, for analyzing complex mechanisms with multiple degrees of freedom. Explore the concept of instantaneous centers of rotation and their application in velocity and acceleration analysis."
+          },
+          {
+            "chapterTitle": "Synthesis of Mechanisms",
+            "description": "Learn about the principles of mechanism synthesis, focusing on dimensional synthesis techniques for designing mechanisms to achieve specific motion requirements. Explore graphical and analytical methods for four-bar linkage synthesis and cam design."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Kinematics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Dynamic Force Analysis",
+            "description": "Explore advanced methods for dynamic force analysis of mechanisms, including the application of Lagrange's equations and virtual work principles. Analyze the effects of inertia forces and torques on mechanism performance and design considerations for minimizing dynamic loads."
+          },
+          {
+            "chapterTitle": "Balancing of Rotating and Reciprocating Masses",
+            "description": "Understand the principles of balancing rotating and reciprocating masses in machines to minimize vibrations and improve performance. Learn about static and dynamic balancing techniques and their application in engine design and other rotating machinery."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Dynamics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Vibration Analysis and Control",
+            "description": "Study the principles of vibration analysis, including free and forced vibrations, damping, and resonance. Explore methods for vibration control, such as vibration isolation and dynamic absorbers, and their application in machine design."
+          },
+          {
+            "chapterTitle": "Introduction to Machine Control Systems",
+            "description": "Gain an introduction to machine control systems, including feedback control, PID control, and state-space representation. Explore the application of control systems in regulating machine motion, force, and other performance parameters."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Vibrations and Control"
+      }
+    ]
+  }
+}

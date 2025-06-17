@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:00:29.125528",
+  "input": {
+    "course_topic": "Optics",
+    "difficulty_level": "Intermediate",
+    "num_modules": 6,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.52,
+    "max_tokens": 2048,
+    "top_k": 19,
+    "top_p": 0.58
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in optics, preparing you for advanced studies and practical applications in various fields.",
+    "courseTitle": "Intermediate Optics",
+    "introduction": "Welcome to Intermediate Optics! This course builds upon basic concepts to explore more advanced topics in light and its behavior. We will delve into wave optics, interference, diffraction, polarization, and the interaction of light with matter.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Wave Nature of Light",
+            "description": "Review of Huygens' Principle and its application to wave propagation. Introduction to the electromagnetic spectrum and the concept of coherence."
+          },
+          {
+            "chapterTitle": "Superposition and Interference",
+            "description": "Understanding the principle of superposition. Exploring constructive and destructive interference. Introduction to Young's double-slit experiment."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Wave Optics Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Thin Film Interference",
+            "description": "Interference patterns in thin films. Applications in anti-reflection coatings and optical filters."
+          },
+          {
+            "chapterTitle": "Michelson Interferometer",
+            "description": "Detailed explanation of the Michelson interferometer. Applications in precision measurements and spectral analysis."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Interference Phenomena"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Diffraction Basics",
+            "description": "Introduction to diffraction. Huygens-Fresnel principle. Fraunhofer and Fresnel diffraction."
+          },
+          {
+            "chapterTitle": "Single-Slit Diffraction",
+            "description": "Analysis of the diffraction pattern from a single slit. Calculating the positions of minima and maxima."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Diffraction"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Diffraction Gratings",
+            "description": "Understanding the operation of diffraction gratings. Resolving power and dispersion."
+          },
+          {
+            "chapterTitle": "Applications of Diffraction",
+            "description": "Applications of diffraction in spectroscopy and other scientific instruments."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Diffraction Gratings and Applications"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Polarization of Light",
+            "description": "Introduction to polarization. Different types of polarization: linear, circular, and elliptical."
+          },
+          {
+            "chapterTitle": "Polarizing Materials",
+            "description": "Polarization by reflection, refraction, and scattering. Birefringence and dichroism."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Polarization"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Optical Activity",
+            "description": "Rotation of polarized light by chiral molecules. Applications in chemistry and biology."
+          },
+          {
+            "chapterTitle": "Applications of Polarized Light",
+            "description": "Applications of polarized light in liquid crystal displays (LCDs) and stress analysis."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Applications of Polarization"
+      }
+    ]
+  }
+}

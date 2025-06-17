@@ -1,0 +1,106 @@
+{
+  "timestamp": "2025-06-16 18:01:14.276714",
+  "input": {
+    "course_topic": "Stoichiometry",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.34,
+    "max_tokens": 1024,
+    "top_k": 15,
+    "top_p": 0.62
+  },
+  "output": {
+    "conclusion": "Mastery of stoichiometry is crucial for advanced chemistry. This course equips you with the tools to confidently tackle complex stoichiometric problems and apply these principles in various chemical contexts.",
+    "courseTitle": "Advanced Stoichiometry",
+    "introduction": "Welcome to Advanced Stoichiometry! This course builds upon your existing knowledge of basic stoichiometry, delving into more complex calculations and applications. We will explore limiting reactants, percent yield, solution stoichiometry, and gas stoichiometry with a focus on problem-solving and critical thinking.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Review of Basic Concepts",
+            "description": "Briefly revisit atomic mass, molecular mass, the mole concept, and balancing chemical equations. Focus on common mistakes and efficient balancing techniques."
+          },
+          {
+            "chapterTitle": "Formula Weights and Molar Mass",
+            "description": "Detailed explanation of calculating formula weights and molar masses for complex compounds, including hydrates and coordination complexes."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals Revisited"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Limiting Reactant Identification",
+            "description": "Advanced techniques for identifying limiting reactants in complex reactions, including reactions with multiple reactants and products."
+          },
+          {
+            "chapterTitle": "Theoretical Yield Calculations",
+            "description": "Calculating theoretical yields with multiple steps and side reactions. Emphasis on error analysis and propagation."
+          },
+          {
+            "chapterTitle": "Percent Yield and Error Analysis",
+            "description": "Detailed discussion of percent yield, sources of error, and strategies for improving experimental yield."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Limiting Reactants and Yield"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Molarity and Solution Preparation",
+            "description": "Calculating molarity, molality, and mole fraction. Preparing solutions of specific concentrations from solid and liquid solutes."
+          },
+          {
+            "chapterTitle": "Solution Stoichiometry Calculations",
+            "description": "Stoichiometric calculations involving solutions, including titrations and precipitation reactions."
+          },
+          {
+            "chapterTitle": "Serial Dilutions",
+            "description": "Understanding and performing serial dilutions. Calculating the final concentration after multiple dilutions."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Solution Stoichiometry"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Ideal Gas Law and Stoichiometry",
+            "description": "Applying the ideal gas law to stoichiometric calculations involving gaseous reactants and products."
+          },
+          {
+            "chapterTitle": "Partial Pressures and Dalton's Law",
+            "description": "Using Dalton's law of partial pressures to calculate the partial pressures of gases in a mixture and apply them to stoichiometric problems."
+          },
+          {
+            "chapterTitle": "Real Gases and Deviations from Ideality",
+            "description": "Brief introduction to real gases and factors that cause deviations from ideal gas behavior. Van der Waals equation."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Gas Stoichiometry"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Stoichiometry in Complex Reactions",
+            "description": "Applying stoichiometric principles to complex reactions, such as redox reactions and organic reactions."
+          },
+          {
+            "chapterTitle": "Stoichiometry and Reaction Mechanisms",
+            "description": "Using stoichiometry to infer information about reaction mechanisms and rate laws."
+          },
+          {
+            "chapterTitle": "Stoichiometry in Environmental Chemistry",
+            "description": "Examples of stoichiometry in environmental applications, such as air pollution and water treatment."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Advanced Applications"
+      }
+    ]
+  }
+}

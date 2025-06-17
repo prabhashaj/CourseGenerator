@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-16 18:38:47.190108",
+  "input": {
+    "course_topic": "Physiotherapy Fundamentals",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.4,
+    "max_tokens": 2048,
+    "top_k": 14,
+    "top_p": 0.93
+  },
+  "output": {
+    "conclusion": "This course has provided a comprehensive overview of fundamental physiotherapy principles. Further study and practical application are essential for continued professional development.",
+    "courseTitle": "Physiotherapy Fundamentals: Advanced Level",
+    "introduction": "Welcome to Physiotherapy Fundamentals: Advanced Level. This course builds upon foundational knowledge and explores key concepts in greater depth, preparing you for advanced clinical practice.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Biomechanics Review: Advanced Concepts",
+            "description": "A detailed exploration of advanced biomechanical principles, including force couples, lever systems, and their application to human movement analysis in complex scenarios."
+          },
+          {
+            "chapterTitle": "Kinetics and Kinematics in Pathological Movement",
+            "description": "Analyzing kinetic and kinematic deviations in pathological movement patterns, focusing on the underlying causes and compensatory mechanisms."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Biomechanics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Neuroplasticity and Motor Learning: Advanced Strategies",
+            "description": "In-depth discussion of neuroplasticity mechanisms and advanced motor learning strategies for optimizing rehabilitation outcomes in neurological conditions."
+          },
+          {
+            "chapterTitle": "Motor Control Theories: Clinical Application",
+            "description": "Applying various motor control theories (e.g., systems theory, dynamic systems theory) to the assessment and treatment of movement disorders."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Motor Control"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Pain Mechanisms: Nociception and Central Sensitization",
+            "description": "A detailed examination of nociceptive pathways, central sensitization, and the biopsychosocial model of pain management."
+          },
+          {
+            "chapterTitle": "Pharmacological Interventions for Pain Management",
+            "description": "Overview of common pharmacological agents used in pain management, including their mechanisms of action, side effects, and implications for physiotherapy practice."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Pain Management"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Cardiopulmonary Physiology: Advanced Considerations",
+            "description": "Advanced concepts in cardiopulmonary physiology, including ventilation-perfusion matching, gas exchange, and respiratory muscle function."
+          },
+          {
+            "chapterTitle": "Exercise Prescription for Cardiopulmonary Rehabilitation",
+            "description": "Principles of exercise prescription for patients with cardiovascular and pulmonary conditions, including considerations for intensity, duration, and mode of exercise."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Cardiopulmonary Physiotherapy"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Evidence-Based Practice: Critical Appraisal of Research",
+            "description": "Advanced techniques for critically appraising research articles, including assessing study validity, reliability, and clinical significance."
+          },
+          {
+            "chapterTitle": "Clinical Reasoning and Decision-Making: Complex Cases",
+            "description": "Applying clinical reasoning skills to complex patient cases, integrating assessment findings, evidence-based practice, and patient preferences to develop individualized treatment plans."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Advanced Clinical Practice and Reasoning"
+      }
+    ]
+  }
+}

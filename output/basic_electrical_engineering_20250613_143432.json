@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-13 14:34:32.619827",
+  "input": {
+    "course_topic": "Basic Electrical Engineering",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.31,
+    "max_tokens": 1024,
+    "top_k": 28,
+    "top_p": 0.94
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of basic electrical engineering principles, preparing you for more advanced topics and practical applications.",
+    "courseTitle": "Basic Electrical Engineering",
+    "introduction": "Welcome to Basic Electrical Engineering! This course will introduce you to fundamental concepts such as circuits, components, and basic laws.  It is designed for individuals with an intermediate understanding of mathematics and physics.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Electrical Quantities",
+            "description": "Overview of voltage, current, resistance, and power. Units of measurement (Volts, Amperes, Ohms, Watts). Basic definitions and relationships."
+          },
+          {
+            "chapterTitle": "Ohm's Law",
+            "description": "Detailed explanation of Ohm's Law (V=IR). Applications and problem-solving examples. Understanding the relationship between voltage, current, and resistance."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamental Electrical Concepts"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Series Circuits",
+            "description": "Analysis of series circuits. Calculating total resistance, current, and voltage drops. Examples and applications."
+          },
+          {
+            "chapterTitle": "Parallel Circuits",
+            "description": "Analysis of parallel circuits. Calculating total resistance, current division, and voltage. Examples and applications."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Basic Circuit Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Resistors",
+            "description": "Types of resistors (carbon, film, wire-wound). Resistor color codes and tolerance. Power ratings of resistors."
+          },
+          {
+            "chapterTitle": "Capacitors",
+            "description": "Types of capacitors (ceramic, electrolytic, film). Capacitance, voltage rating, and applications. Charging and discharging of capacitors."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Passive Components"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to AC Signals",
+            "description": "Understanding alternating current (AC) waveforms. Frequency, amplitude, and phase. Comparison with direct current (DC)."
+          },
+          {
+            "chapterTitle": "RMS Values",
+            "description": "Explanation of Root Mean Square (RMS) values for AC voltage and current. Calculating RMS values and their significance."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Alternating Current (AC) Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Electrical Safety",
+            "description": "Importance of electrical safety. Grounding, insulation, and circuit breakers. Safe practices when working with electricity."
+          },
+          {
+            "chapterTitle": "Basic Troubleshooting",
+            "description": "Identifying common electrical faults. Using a multimeter for basic troubleshooting. Safety precautions during troubleshooting."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Safety and Troubleshooting"
+      }
+    ]
+  }
+}

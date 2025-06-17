@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 13:26:02.428526",
+  "input": {
+    "course_topic": "Self-supervised Learning",
+    "difficulty_level": "Advanced",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.35,
+    "max_tokens": 2048,
+    "top_k": 28,
+    "top_p": 0.76
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of self-supervised learning, equipping you with the knowledge to apply these techniques to various real-world problems and contribute to advancements in the field.",
+    "courseTitle": "Self-Supervised Learning: Advanced Techniques and Applications",
+    "introduction": "Welcome to the advanced course on Self-Supervised Learning! This course delves into the core concepts, advanced techniques, and practical applications of self-supervised learning. Designed for individuals with a strong foundation in machine learning, this course will equip you with the knowledge and skills to leverage self-supervised learning for various tasks.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Self-Supervised Learning",
+            "description": "A review of supervised, unsupervised, and self-supervised learning paradigms. Focus on the advantages and limitations of each approach. Introduction to pretext tasks and downstream tasks."
+          },
+          {
+            "chapterTitle": "Contrastive Learning Fundamentals",
+            "description": "Deep dive into contrastive learning. Understanding positive and negative sample selection. Loss functions: InfoNCE, Triplet Loss, and Margin Ranking Loss. Impact of temperature parameter."
+          },
+          {
+            "chapterTitle": "Generative Pretraining Techniques",
+            "description": "Exploring generative approaches to self-supervised learning. Autoencoders, Variational Autoencoders (VAEs), and Generative Adversarial Networks (GANs) for feature extraction. Masked autoencoders."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Self-Supervised Learning"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Contrastive Learning: Advanced Architectures",
+            "description": "SimCLR, MoCo, and BYOL architectures. Detailed analysis of each architecture's strengths and weaknesses. Implementation considerations and hyperparameter tuning."
+          },
+          {
+            "chapterTitle": "Masked Image Modeling",
+            "description": "BERT-style pretraining for images. Masking strategies and reconstruction objectives. Denoising autoencoders for image representation learning."
+          },
+          {
+            "chapterTitle": "Self-Supervised Learning for Sequential Data",
+            "description": "Applying self-supervised learning to text and time series data. Transformer-based models for sequential data pretraining. Applications in NLP and time series analysis."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Techniques in Self-Supervised Learning"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Self-Supervised Learning for Computer Vision",
+            "description": "Object detection, image segmentation, and video understanding using self-supervised pretraining. Transfer learning strategies for computer vision tasks."
+          },
+          {
+            "chapterTitle": "Self-Supervised Learning for Natural Language Processing",
+            "description": "Pretraining language models with self-supervision. Fine-tuning pretrained models for various NLP tasks: text classification, question answering, and machine translation."
+          },
+          {
+            "chapterTitle": "Self-Supervised Learning for Graph Data",
+            "description": "Graph neural networks (GNNs) and self-supervised learning. Node and graph representation learning. Applications in social network analysis and drug discovery."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Applications of Self-Supervised Learning"
+      }
+    ]
+  }
+}

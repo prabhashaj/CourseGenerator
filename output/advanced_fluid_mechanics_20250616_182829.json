@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-06-16 18:28:29.006305",
+  "input": {
+    "course_topic": "Fluid Mechanics",
+    "difficulty_level": "Expert",
+    "num_modules": 6,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.42,
+    "max_tokens": 2048,
+    "top_k": 30,
+    "top_p": 0.77
+  },
+  "output": {
+    "conclusion": "This course provides an expert-level understanding of fluid mechanics, equipping you with the knowledge and skills to tackle complex engineering challenges involving fluid behavior.",
+    "courseTitle": "Advanced Fluid Mechanics",
+    "introduction": "Welcome to Advanced Fluid Mechanics! This course delves into the complexities of fluid behavior, building upon foundational concepts to explore advanced topics relevant to expert-level engineers and researchers. We will cover topics from advanced tensor analysis to multiphase flows.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Tensor Analysis for Fluid Mechanics",
+            "description": "Review of tensor algebra and calculus. Introduction to curvilinear coordinate systems. Application of tensors to represent stress, strain, and rate of deformation in fluids."
+          },
+          {
+            "chapterTitle": "Constitutive Equations for Non-Newtonian Fluids",
+            "description": "Classification of non-Newtonian fluids. Discussion of various constitutive models (e.g., power-law, Bingham plastic, viscoelastic). Application of these models to solve flow problems."
+          },
+          {
+            "chapterTitle": "Advanced Viscosity Models",
+            "description": "Discussion of temperature and pressure dependent viscosity models. Introduction to thixotropic and rheopectic fluids. Modeling of complex fluid behaviors."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Mathematical Foundations and Non-Newtonian Fluids"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Navier-Stokes Equations in Generalized Coordinates",
+            "description": "Derivation of the Navier-Stokes equations in curvilinear coordinate systems. Application to complex geometries. Numerical methods for solving the equations."
+          },
+          {
+            "chapterTitle": "Stability Analysis of Laminar Flows",
+            "description": "Introduction to hydrodynamic stability theory. Linear stability analysis using normal mode decomposition. Application to classic problems like Poiseuille and Couette flow."
+          },
+          {
+            "chapterTitle": "Transition to Turbulence",
+            "description": "Mechanisms of transition from laminar to turbulent flow. Discussion of bypass transition and other non-classical transition scenarios."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Laminar Flow and Stability"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Reynolds-Averaged Navier-Stokes (RANS) Equations",
+            "description": "Derivation of the RANS equations. Discussion of the closure problem and various turbulence models (e.g., k-epsilon, k-omega SST)."
+          },
+          {
+            "chapterTitle": "Large Eddy Simulation (LES)",
+            "description": "Introduction to LES and its underlying principles. Subgrid-scale modeling. Application of LES to complex turbulent flows."
+          },
+          {
+            "chapterTitle": "Direct Numerical Simulation (DNS)",
+            "description": "Overview of DNS and its computational requirements. Application of DNS to fundamental turbulence research."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Turbulence Modeling"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Compressible Flow Equations",
+            "description": "Derivation of the governing equations for compressible flow. Introduction to the equation of state for ideal and real gases."
+          },
+          {
+            "chapterTitle": "Shock Wave Theory",
+            "description": "Analysis of normal and oblique shock waves. Rankine-Hugoniot relations. Applications to supersonic and hypersonic flows."
+          },
+          {
+            "chapterTitle": "Prandtl-Meyer Expansion Waves",
+            "description": "Introduction to expansion waves and their properties. Application to supersonic nozzle design and aerodynamic problems."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Compressible Flow"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Boundary Layer Equations for Compressible Flows",
+            "description": "Derivation of the boundary layer equations for compressible flows. Effects of heat transfer and pressure gradients."
+          },
+          {
+            "chapterTitle": "Thermal Boundary Layers",
+            "description": "Analysis of thermal boundary layers. Solutions for different boundary conditions (e.g., constant wall temperature, constant heat flux)."
+          },
+          {
+            "chapterTitle": "Heat Transfer Correlations",
+            "description": "Development and application of heat transfer correlations for various flow configurations."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Heat Transfer in Fluids"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Multiphase Flow Regimes",
+            "description": "Classification of different multiphase flow regimes (e.g., bubbly flow, slug flow, annular flow). Flow regime maps."
+          },
+          {
+            "chapterTitle": "Two-Fluid Models",
+            "description": "Introduction to two-fluid models for multiphase flow. Interfacial transfer terms and closure relations."
+          },
+          {
+            "chapterTitle": "Eulerian-Lagrangian Approaches",
+            "description": "Description of Eulerian-Lagrangian methods for simulating dispersed multiphase flows. Particle tracking and interaction models."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Multiphase Flow"
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-06-16 18:01:22.122058",
+  "input": {
+    "course_topic": "Strength of Materials",
+    "difficulty_level": "Expert",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.36,
+    "max_tokens": 2048,
+    "top_k": 17,
+    "top_p": 0.83
+  },
+  "output": {
+    "conclusion": "This course provides an in-depth understanding of the principles governing the behavior of solid materials under stress and strain, equipping experts with the analytical tools necessary for advanced engineering applications.",
+    "courseTitle": "Advanced Strength of Materials",
+    "introduction": "Welcome to Advanced Strength of Materials. This course is designed for experts seeking to deepen their understanding of material behavior under complex loading conditions. We will explore advanced theories and applications, building upon fundamental concepts to tackle challenging engineering problems.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Stress Analysis",
+            "description": "Delve into three-dimensional stress states, stress concentration factors, and the application of finite element analysis (FEA) for complex geometries."
+          },
+          {
+            "chapterTitle": "Strain Transformation and Theories of Failure",
+            "description": "Explore Mohr's circle for three-dimensional stress, octahedral shear stress theory, and advanced failure criteria for ductile and brittle materials."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Stress and Strain Concepts"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Torsion of Non-Circular Sections",
+            "description": "Analyze torsional stresses and deformations in non-circular shafts, including elliptical, rectangular, and open sections."
+          },
+          {
+            "chapterTitle": "Shear Center and Unsymmetrical Bending",
+            "description": "Determine the shear center location for various cross-sections and analyze bending stresses in beams subjected to unsymmetrical loading."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Torsion and Bending"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Energy Methods in Structural Analysis",
+            "description": "Apply Castigliano's theorems and the principle of virtual work to determine deflections and stresses in complex structures."
+          },
+          {
+            "chapterTitle": "Buckling of Columns and Plates",
+            "description": "Investigate the stability of columns under axial loading, including the effects of end conditions and imperfections, and analyze the buckling behavior of thin plates."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Energy Methods and Stability"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Creep and Fatigue Analysis",
+            "description": "Examine the time-dependent deformation of materials under sustained loading (creep) and the progressive failure of materials under cyclic loading (fatigue)."
+          },
+          {
+            "chapterTitle": "Fracture Mechanics",
+            "description": "Apply fracture mechanics principles to analyze crack propagation and predict the failure of structures containing cracks or flaws."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Time-Dependent Behavior and Fracture"
+      }
+    ]
+  }
+}

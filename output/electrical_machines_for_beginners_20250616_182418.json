@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-06-16 18:24:18.156514",
+  "input": {
+    "course_topic": "Electrical Machines",
+    "difficulty_level": "Beginner",
+    "num_modules": 6,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.63,
+    "max_tokens": 2048,
+    "top_k": 11,
+    "top_p": 0.71
+  },
+  "output": {
+    "conclusion": "This course provided a foundational understanding of electrical machines. Further study is recommended for advanced applications.",
+    "courseTitle": "Electrical Machines for Beginners",
+    "introduction": "Welcome to Electrical Machines for Beginners! This course will introduce you to the fundamental concepts and operation of various electrical machines.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Electrical Machines",
+            "description": "Overview of electrical machines, their types, and applications."
+          },
+          {
+            "chapterTitle": "Basic Principles of Electromagnetism",
+            "description": "Review of magnetic fields, magnetic circuits, and electromagnetic induction."
+          },
+          {
+            "chapterTitle": "Faraday's Law",
+            "description": "Explanation of Faraday's Law of Electromagnetic Induction."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Electrical Machines"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Construction of DC Machines",
+            "description": "Components of a DC machine: armature, field windings, commutator, and brushes."
+          },
+          {
+            "chapterTitle": "Working Principle of DC Generators",
+            "description": "How DC generators convert mechanical energy into electrical energy."
+          },
+          {
+            "chapterTitle": "Working Principle of DC Motors",
+            "description": "How DC motors convert electrical energy into mechanical energy."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "DC Machines"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Construction of Transformers",
+            "description": "Core, windings, and other essential parts of a transformer."
+          },
+          {
+            "chapterTitle": "Working Principle of Transformers",
+            "description": "How transformers step up or step down voltage levels."
+          },
+          {
+            "chapterTitle": "Transformer Types",
+            "description": "Introduction to different types of transformers."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Transformers"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to AC Machines",
+            "description": "Overview of AC machines and their importance."
+          },
+          {
+            "chapterTitle": "Construction of AC Machines",
+            "description": "Stator, rotor, and other components of AC machines."
+          },
+          {
+            "chapterTitle": "Working Principle of AC Machines",
+            "description": "How AC machines operate."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Introduction to AC Machines"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Construction of Induction Motors",
+            "description": "Squirrel-cage and wound-rotor induction motors."
+          },
+          {
+            "chapterTitle": "Working Principle of Induction Motors",
+            "description": "How induction motors produce torque."
+          },
+          {
+            "chapterTitle": "Types of Induction Motors",
+            "description": "Brief overview of different types of induction motors."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Induction Motors"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Construction of Synchronous Machines",
+            "description": "Stator, rotor, and excitation systems of synchronous machines."
+          },
+          {
+            "chapterTitle": "Working Principle of Synchronous Machines",
+            "description": "How synchronous machines maintain synchronism with the grid."
+          },
+          {
+            "chapterTitle": "Applications of Synchronous Machines",
+            "description": "Common applications of synchronous generators and motors."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Synchronous Machines"
+      }
+    ]
+  }
+}

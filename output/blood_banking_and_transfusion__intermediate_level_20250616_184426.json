@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-06-16 18:44:26.322587",
+  "input": {
+    "course_topic": "Blood Banking and Transfusion",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.57,
+    "max_tokens": 1024,
+    "top_k": 17,
+    "top_p": 0.95
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, you will have a comprehensive understanding of blood banking and transfusion practices, enabling you to contribute effectively to patient care in this critical area.",
+    "courseTitle": "Blood Banking and Transfusion: Intermediate Level",
+    "introduction": "Welcome to the intermediate-level course on Blood Banking and Transfusion! This course builds upon foundational knowledge and delves deeper into the complexities of blood group systems, compatibility testing, transfusion reactions, and special considerations in transfusion medicine.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "ABO and Rh Blood Group Systems: Advanced Concepts",
+            "description": "Explore subgroups of A and B antigens, weak D phenotypes, and variations in Rh antigens. Understand the clinical significance of these variations and their impact on transfusion compatibility."
+          },
+          {
+            "chapterTitle": "Antibody Screening and Identification: Techniques and Interpretation",
+            "description": "Learn advanced techniques for antibody screening and identification, including the use of enzyme-treated red cells and neutralization studies. Practice interpreting complex antibody panels."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Blood Group Serology"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Crossmatching Techniques: Electronic and Serological",
+            "description": "Compare and contrast electronic and serological crossmatching techniques. Understand the advantages and limitations of each method and their appropriate applications."
+          },
+          {
+            "chapterTitle": "Compatibility Testing in Special Situations",
+            "description": "Address compatibility testing challenges in patients with warm autoantibodies, multiple alloantibodies, and those requiring massive transfusion protocols."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Compatibility Testing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transfusion Reactions: Investigation and Management",
+            "description": "Learn the steps involved in investigating suspected transfusion reactions, including pre-transfusion testing, bedside checks, and laboratory investigations. Review the management of different types of transfusion reactions."
+          },
+          {
+            "chapterTitle": "Special Considerations in Transfusion Medicine",
+            "description": "Discuss transfusion support for patients with sickle cell disease, thalassemia, and other hematological disorders. Review the use of specialized blood products, such as irradiated and leukoreduced components."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Transfusion Reactions and Special Considerations"
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:27:07.663328",
+  "input": {
+    "course_topic": "Machine Design",
+    "difficulty_level": "Expert",
+    "num_modules": 6,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.63,
+    "max_tokens": 2048,
+    "top_k": 23,
+    "top_p": 0.9
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, participants will possess expert-level knowledge in machine design principles, enabling them to tackle complex engineering challenges and innovate in the field.",
+    "courseTitle": "Advanced Machine Design",
+    "introduction": "This course provides an in-depth exploration of advanced machine design concepts, focusing on analytical techniques, materials selection, and optimization strategies for experienced engineers.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Stress Analysis",
+            "description": "Review of stress concentration factors, residual stresses, and fatigue failure theories. Emphasis on finite element analysis (FEA) techniques for complex geometries."
+          },
+          {
+            "chapterTitle": "Fracture Mechanics",
+            "description": "Introduction to linear elastic fracture mechanics (LEFM) and elastic-plastic fracture mechanics (EPFM). Crack growth prediction and failure prevention strategies."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Stress and Failure Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Materials Selection",
+            "description": "Selection criteria for advanced materials including composites, ceramics, and smart materials. Consideration of environmental factors and life-cycle costs."
+          },
+          {
+            "chapterTitle": "Material Processing and Manufacturing",
+            "description": "Impact of manufacturing processes on material properties and performance. Design for manufacturability (DFM) principles for advanced materials."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Materials in Machine Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Kinematics and Dynamics of Mechanisms",
+            "description": "Advanced kinematic analysis techniques for complex mechanisms. Dynamic force analysis and vibration control strategies."
+          },
+          {
+            "chapterTitle": "Robotics and Automation",
+            "description": "Design of robotic manipulators and automated systems. Integration of sensors, actuators, and control systems."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Mechanisms and Robotics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Bearing Design and Lubrication",
+            "description": "Advanced bearing design principles for high-speed and high-load applications. Lubrication theory and selection of appropriate lubricants."
+          },
+          {
+            "chapterTitle": "Gear Design and Analysis",
+            "description": "Advanced gear geometry and manufacturing techniques. Analysis of gear tooth stresses and fatigue life."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Power Transmission Systems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Optimization Techniques",
+            "description": "Introduction to optimization algorithms for machine design. Application of genetic algorithms, simulated annealing, and gradient-based methods."
+          },
+          {
+            "chapterTitle": "Topology Optimization",
+            "description": "Shape and topology optimization for structural components. Design of lightweight and high-performance structures."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Design Optimization"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Reliability Engineering",
+            "description": "Reliability analysis techniques for machine components and systems. Failure mode and effects analysis (FMEA) and fault tree analysis (FTA)."
+          },
+          {
+            "chapterTitle": "Design for Sustainability",
+            "description": "Principles of sustainable design and life-cycle assessment. Minimizing environmental impact and maximizing resource efficiency."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Reliability and Sustainable Design"
+      }
+    ]
+  }
+}

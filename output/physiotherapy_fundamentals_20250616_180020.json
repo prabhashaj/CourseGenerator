@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:00:20.833448",
+  "input": {
+    "course_topic": "Physiotherapy Fundamentals",
+    "difficulty_level": "Intermediate",
+    "num_modules": 6,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.52,
+    "max_tokens": 1024,
+    "top_k": 26,
+    "top_p": 0.54
+  },
+  "output": {
+    "conclusion": "This course has provided a foundational understanding of physiotherapy principles and techniques. Further study and practical experience are essential for developing proficiency in this field.",
+    "courseTitle": "Physiotherapy Fundamentals",
+    "introduction": "Welcome to Physiotherapy Fundamentals! This course will provide an intermediate-level overview of the core concepts and principles that underpin physiotherapy practice. We will explore key areas such as anatomy, biomechanics, assessment techniques, and basic treatment modalities.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Physiotherapy",
+            "description": "Overview of the physiotherapy profession, its scope of practice, and ethical considerations. Discuss the role of a physiotherapist in healthcare."
+          },
+          {
+            "chapterTitle": "History and Evolution",
+            "description": "A brief history of physiotherapy and its evolution into modern practice. Key milestones and influential figures."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Physiotherapy"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Basic Anatomical Terminology",
+            "description": "Review of essential anatomical terms, planes of motion, and directional terms. Understanding anatomical position."
+          },
+          {
+            "chapterTitle": "Skeletal System Overview",
+            "description": "Introduction to the skeletal system, including bone types, joint classifications, and key bony landmarks relevant to physiotherapy."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Anatomy Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Muscle Tissue Types",
+            "description": "Overview of the three types of muscle tissue (skeletal, smooth, and cardiac) and their functions. Focus on skeletal muscle structure."
+          },
+          {
+            "chapterTitle": "Muscle Actions and Movements",
+            "description": "Explanation of muscle actions (e.g., flexion, extension, abduction) and how muscles work together to produce movement. Agonist, antagonist, and synergist muscles."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Musculoskeletal System"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Principles of Biomechanics",
+            "description": "Introduction to biomechanical principles, including levers, forces, and motion. Application of these principles to human movement."
+          },
+          {
+            "chapterTitle": "Gait Cycle Analysis",
+            "description": "Overview of the gait cycle (stance and swing phases) and the biomechanical events that occur during each phase. Common gait deviations."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Biomechanics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Subjective Assessment",
+            "description": "Introduction to the subjective assessment process, including history taking, patient interview techniques, and identifying red flags."
+          },
+          {
+            "chapterTitle": "Objective Assessment",
+            "description": "Overview of objective assessment techniques, such as observation, palpation, range of motion testing, and muscle strength testing."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Assessment Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Therapeutic Exercise",
+            "description": "Principles of therapeutic exercise, including range of motion exercises, strengthening exercises, and stretching techniques."
+          },
+          {
+            "chapterTitle": "Basic Modalities",
+            "description": "Overview of common physiotherapy modalities, such as heat, ice, ultrasound, and electrical stimulation. Indications and contraindications."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Basic Treatment Modalities"
+      }
+    ]
+  }
+}

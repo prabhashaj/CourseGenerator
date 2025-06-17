@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-16 18:42:34.378575",
+  "input": {
+    "course_topic": "Animation Basics",
+    "difficulty_level": "Expert",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.67,
+    "max_tokens": 1024,
+    "top_k": 15,
+    "top_p": 0.61
+  },
+  "output": {
+    "conclusion": "By completing this course, you've mastered the fundamental principles of animation, equipped to tackle complex projects and push the boundaries of your creative vision. You now possess the skills to bring your imagination to life, crafting compelling narratives and captivating visuals through the art of animation.",
+    "courseTitle": "Animation Basics: Mastering the Fundamentals",
+    "introduction": "Welcome to Animation Basics: Mastering the Fundamentals! This expert-level course delves into the core principles that underpin all animation, regardless of style or medium. We'll explore advanced techniques, dissect industry best practices, and challenge you to elevate your animation skills to a professional standard. Get ready to refine your understanding and unleash your creative potential.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Illusion of Life: Advanced Principles",
+            "description": "A deep dive into the 12 principles of animation, exploring nuanced applications and advanced techniques for creating believable movement and character performance. Focus on timing, spacing, anticipation, and follow-through with practical examples."
+          },
+          {
+            "chapterTitle": "Kinematics and Dynamics: Physics in Motion",
+            "description": "Advanced exploration of physics principles in animation. Learn to simulate realistic motion through understanding of forces, momentum, and inertia. Includes techniques for animating complex systems like cloth and hair."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Core Principles Refined"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Character Design for Animation: Beyond the Basics",
+            "description": "Advanced character design principles tailored for animation. Explore exaggeration, silhouette, and appeal in creating memorable and expressive characters. Focus on designing characters that are both visually engaging and animation-friendly."
+          },
+          {
+            "chapterTitle": "Advanced Rigging Techniques",
+            "description": "Mastering complex rigging systems for efficient and expressive character animation. Learn to create custom controls, implement advanced deformation techniques, and optimize rigs for performance."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Character Development & Rigging"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Keyframing and Graph Editor Mastery",
+            "description": "Unlock the full potential of keyframing and the graph editor. Learn advanced techniques for refining animation curves, creating dynamic and fluid motion, and troubleshooting common animation problems."
+          },
+          {
+            "chapterTitle": "Motion Capture Integration and Refinement",
+            "description": "Explore the use of motion capture data in animation. Learn to clean, refine, and integrate motion capture data into your projects, creating realistic and dynamic performances."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Animation Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Visual Storytelling: Composition and Cinematography",
+            "description": "Advanced principles of visual storytelling in animation. Learn to use composition, camera angles, and lighting to create compelling narratives and evoke emotion. Focus on creating cinematic sequences that enhance the story."
+          },
+          {
+            "chapterTitle": "Pacing and Timing for Maximum Impact",
+            "description": "Mastering the art of pacing and timing in animation. Learn to control the rhythm and flow of your animation to create suspense, excitement, and emotional impact. Focus on creating dynamic and engaging sequences that keep the audience captivated."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Storytelling & Cinematography"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Optimization and Workflow Strategies",
+            "description": "Advanced optimization techniques for animation projects. Learn to streamline your workflow, reduce render times, and optimize your animations for various platforms. Focus on creating efficient and scalable animation pipelines."
+          },
+          {
+            "chapterTitle": "Industry Best Practices and Portfolio Development",
+            "description": "Gain insights into industry best practices for animation. Learn how to build a professional portfolio that showcases your skills and attracts potential employers. Focus on creating a compelling and diverse portfolio that highlights your unique talents."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Professional Practices"
+      }
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 13:06:56.572726",
+  "input": {
+    "course_topic": "Photography",
+    "difficulty_level": "Beginner",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.58,
+    "max_tokens": 2048,
+    "top_k": 18,
+    "top_p": 0.5
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a foundational understanding of photography. Continue practicing and experimenting to develop your unique style and vision.",
+    "courseTitle": "Photography for Beginners",
+    "introduction": "Welcome to Photography for Beginners! This course will guide you through the essential concepts and techniques to start your photographic journey. No prior experience is needed.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding Your Camera",
+            "description": "Learn about the different parts of your camera (DSLR, mirrorless, or smartphone) and their basic functions. Focus on the shutter button, lens, and mode dial."
+          },
+          {
+            "chapterTitle": "Basic Camera Settings",
+            "description": "Explore essential camera settings like ISO, aperture, and shutter speed. Understand how they affect the exposure and overall look of your photos."
+          },
+          {
+            "chapterTitle": "Holding the Camera Correctly",
+            "description": "Learn the proper way to hold your camera to ensure stability and reduce camera shake. Practice different grips and stances."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Camera Basics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is Composition?",
+            "description": "Introduction to the concept of composition in photography. Learn how arranging elements within the frame can impact the viewer's experience."
+          },
+          {
+            "chapterTitle": "Rule of Thirds",
+            "description": "Learn about the rule of thirds and how to use it to create balanced and visually appealing compositions. Practice applying this rule in your photos."
+          },
+          {
+            "chapterTitle": "Leading Lines",
+            "description": "Discover how to use leading lines to guide the viewer's eye through the image and create a sense of depth. Identify and utilize leading lines in your surroundings."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Composition Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding Light",
+            "description": "Learn about the different types of light (natural and artificial) and how they affect your photos. Observe how light changes throughout the day."
+          },
+          {
+            "chapterTitle": "Golden Hour",
+            "description": "Discover the golden hour and its benefits for photography. Plan your shoots during this time to capture warm and flattering light."
+          },
+          {
+            "chapterTitle": "Using Shadows",
+            "description": "Explore how to use shadows to add depth, dimension, and drama to your photos. Experiment with different shadow patterns."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Understanding Light"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Editing",
+            "description": "Get a brief overview of photo editing software (e.g., Adobe Lightroom, Snapseed). Understand the basic editing tools and their functions."
+          },
+          {
+            "chapterTitle": "Basic Adjustments",
+            "description": "Learn how to adjust exposure, contrast, and white balance in your photos. Practice making subtle adjustments to enhance your images."
+          },
+          {
+            "chapterTitle": "Cropping and Straightening",
+            "description": "Discover how to crop and straighten your photos to improve composition and remove distractions. Experiment with different cropping ratios."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Basic Photo Editing"
+      }
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-06-16 18:08:59.849891",
+  "input": {
+    "course_topic": "Signals and Systems",
+    "difficulty_level": "Intermediate",
+    "num_modules": 6,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.5,
+    "max_tokens": 2048,
+    "top_k": 14,
+    "top_p": 0.8
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of signals and systems, equipping you with the tools to analyze and design various systems in engineering and related fields.",
+    "courseTitle": "Signals and Systems",
+    "introduction": "Welcome to Signals and Systems! This course will explore the fundamental concepts and techniques for analyzing and manipulating signals and systems. We will cover topics ranging from signal representation and system properties to transform analysis and filter design.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Signals",
+            "description": "Definition of signals, signal classification (continuous-time, discrete-time, periodic, aperiodic, energy, power), basic signal operations (time scaling, time shifting, amplitude scaling)."
+          },
+          {
+            "chapterTitle": "Elementary Signals",
+            "description": "Unit impulse function, unit step function, ramp function, exponential signals, sinusoidal signals. Their properties and mathematical representations."
+          },
+          {
+            "chapterTitle": "Signal Representation",
+            "description": "Representing signals as a sum of elementary signals. Orthogonal signal spaces. Signal approximation using orthogonal functions."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Signals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Systems",
+            "description": "Definition of systems, system classification (linear, non-linear, time-invariant, time-variant, causal, non-causal, stable, unstable)."
+          },
+          {
+            "chapterTitle": "Linear Time-Invariant (LTI) Systems",
+            "description": "Properties of LTI systems, impulse response, convolution integral and summation, cascade and parallel interconnections of LTI systems."
+          },
+          {
+            "chapterTitle": "Stability and Causality",
+            "description": "Conditions for stability and causality of LTI systems. Region of convergence (ROC) and its relation to system properties."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Introduction to Systems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fourier Series Representation",
+            "description": "Fourier series for periodic signals, Dirichlet conditions, properties of Fourier series (linearity, time shifting, time scaling, differentiation, integration)."
+          },
+          {
+            "chapterTitle": "Convergence of Fourier Series",
+            "description": "Gibbs phenomenon, convergence properties of Fourier series, applications of Fourier series in signal analysis."
+          },
+          {
+            "chapterTitle": "Power Spectrum",
+            "description": "Definition and properties of power spectral density (PSD). Calculation of PSD for periodic signals using Fourier series."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Fourier Series Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fourier Transform",
+            "description": "Definition of Fourier transform for aperiodic signals, properties of Fourier transform (linearity, time shifting, time scaling, duality, convolution)."
+          },
+          {
+            "chapterTitle": "Common Fourier Transform Pairs",
+            "description": "Fourier transforms of common signals (impulse, step, exponential, rectangular pulse, sinc function). Parseval's theorem."
+          },
+          {
+            "chapterTitle": "Energy Spectrum",
+            "description": "Definition and properties of energy spectral density (ESD). Calculation of ESD for aperiodic signals using Fourier transform."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Fourier Transform Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Laplace Transform",
+            "description": "Definition of Laplace transform, region of convergence (ROC), properties of Laplace transform (linearity, time shifting, time scaling, differentiation, integration)."
+          },
+          {
+            "chapterTitle": "Inverse Laplace Transform",
+            "description": "Methods for finding inverse Laplace transform (partial fraction expansion, contour integration). Applications of Laplace transform in circuit analysis."
+          },
+          {
+            "chapterTitle": "System Transfer Function",
+            "description": "Definition of system transfer function, poles and zeros, stability analysis using pole locations. Relationship between Laplace transform and Fourier transform."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Laplace Transform Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Z-Transform",
+            "description": "Definition of Z-transform, region of convergence (ROC), properties of Z-transform (linearity, time shifting, time scaling, differentiation)."
+          },
+          {
+            "chapterTitle": "Inverse Z-Transform",
+            "description": "Methods for finding inverse Z-transform (partial fraction expansion, power series expansion). Applications of Z-transform in digital signal processing."
+          },
+          {
+            "chapterTitle": "Discrete-Time System Analysis",
+            "description": "System transfer function for discrete-time systems, stability analysis using pole locations, frequency response of discrete-time systems."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Z-Transform Analysis"
+      }
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 17:57:13.965488",
+  "input": {
+    "course_topic": "Fiber Optics",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.65,
+    "max_tokens": 2048,
+    "top_k": 18,
+    "top_p": 0.88
+  },
+  "output": {
+    "conclusion": "Upon completion of this advanced Fiber Optics course, students will possess a comprehensive understanding of advanced fiber optic communication principles, enabling them to design, analyze, and troubleshoot complex fiber optic systems. They will also be equipped to evaluate emerging technologies and contribute to advancements in the field.",
+    "courseTitle": "Advanced Fiber Optics",
+    "introduction": "This course delves into advanced concepts in fiber optic communication, building upon foundational knowledge. It explores cutting-edge technologies, system design considerations, and advanced modulation techniques relevant to high-speed optical networks.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Optical Fiber Characteristics",
+            "description": "In-depth analysis of fiber attenuation, dispersion (chromatic and polarization mode), and nonlinear effects. Focus on single-mode fiber properties and their impact on high-speed transmission."
+          },
+          {
+            "chapterTitle": "Specialty Fibers",
+            "description": "Exploration of various specialty fibers, including dispersion-compensating fiber (DCF), photonic crystal fiber (PCF), and multi-core fiber (MCF). Analysis of their unique properties and applications."
+          },
+          {
+            "chapterTitle": "Fiber Optic Cables and Connectors",
+            "description": "Detailed examination of cable design, installation techniques, and connector types. Emphasis on minimizing losses and ensuring reliable connections in high-performance systems."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Optical Fiber Fundamentals: Advanced Topics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Optical Transmitters",
+            "description": "Detailed analysis of laser diodes (DFB, DBR), modulators (Mach-Zehnder), and drivers used in high-speed optical transmitters. Focus on chirp management and signal quality."
+          },
+          {
+            "chapterTitle": "Advanced Optical Receivers",
+            "description": "Exploration of photodetectors (PIN, APD), transimpedance amplifiers (TIA), and equalization techniques used in advanced optical receivers. Analysis of receiver sensitivity and noise performance."
+          },
+          {
+            "chapterTitle": "Coherent Optical Communication",
+            "description": "Introduction to coherent detection techniques, including polarization diversity and digital signal processing (DSP). Analysis of advantages and challenges of coherent systems."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Optical Transmitters and Receivers: Advanced Designs"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Wavelength Division Multiplexing (WDM) Systems",
+            "description": "In-depth analysis of WDM system architectures, including dense WDM (DWDM) and coarse WDM (CWDM). Focus on channel spacing, power management, and optical add-drop multiplexers (OADMs)."
+          },
+          {
+            "chapterTitle": "Optical Amplifiers",
+            "description": "Detailed examination of optical amplifiers, including erbium-doped fiber amplifiers (EDFAs), Raman amplifiers, and semiconductor optical amplifiers (SOAs). Analysis of gain, noise figure, and saturation effects."
+          },
+          {
+            "chapterTitle": "Optical Networking",
+            "description": "Exploration of optical networking concepts, including optical cross-connects (OXCs), wavelength routing, and network management protocols. Analysis of network scalability and resilience."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Optical Communication Systems: Advanced Architectures"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Modulation Formats",
+            "description": "Detailed analysis of advanced modulation formats, including quadrature amplitude modulation (QAM), phase-shift keying (PSK), and orthogonal frequency-division multiplexing (OFDM). Focus on spectral efficiency and robustness."
+          },
+          {
+            "chapterTitle": "Digital Signal Processing (DSP) for Optical Communication",
+            "description": "Exploration of DSP techniques for mitigating impairments in optical communication systems, including chromatic dispersion compensation, polarization mode dispersion compensation, and nonlinear impairment mitigation."
+          },
+          {
+            "chapterTitle": "Emerging Technologies in Fiber Optics",
+            "description": "Overview of emerging technologies in fiber optics, including space-division multiplexing (SDM), silicon photonics, and quantum communication. Analysis of potential applications and challenges."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Topics and Emerging Technologies"
+      }
+    ]
+  }
+}

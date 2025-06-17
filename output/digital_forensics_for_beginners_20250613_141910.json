@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-13 14:19:10.364154",
+  "input": {
+    "course_topic": "Digital Forensics",
+    "difficulty_level": "Beginner",
+    "num_modules": 5,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.46,
+    "max_tokens": 2048,
+    "top_k": 31,
+    "top_p": 0.93
+  },
+  "output": {
+    "conclusion": "This course provided a foundational understanding of digital forensics. Further learning and practical experience are essential to becoming proficient in this field.",
+    "courseTitle": "Digital Forensics for Beginners",
+    "introduction": "Welcome to the Digital Forensics course! This course will introduce you to the fundamental concepts and techniques used in digital forensics investigations.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Digital Forensics",
+            "description": "Overview of digital forensics, its importance, and applications in various fields."
+          },
+          {
+            "chapterTitle": "Types of Digital Evidence",
+            "description": "Explanation of different types of digital evidence, including data from computers, mobile devices, and networks."
+          },
+          {
+            "chapterTitle": "Legal Aspects of Digital Forensics",
+            "description": "Introduction to legal considerations, such as search warrants, chain of custody, and admissibility of evidence in court."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Digital Forensics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Imaging and Cloning Hard Drives",
+            "description": "Explanation of the process of creating a forensic image of a hard drive to preserve evidence."
+          },
+          {
+            "chapterTitle": "Write Blockers",
+            "description": "Introduction to write blockers and their importance in preventing data alteration during forensic investigations."
+          },
+          {
+            "chapterTitle": "Hashing Algorithms",
+            "description": "Explanation of hashing algorithms (MD5, SHA-1, SHA-256) and their use in verifying the integrity of digital evidence."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Data Acquisition and Preservation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "File System Basics",
+            "description": "Introduction to file systems (FAT, NTFS, HFS+) and their structure."
+          },
+          {
+            "chapterTitle": "Data Carving",
+            "description": "Explanation of data carving techniques for recovering deleted files and fragments."
+          },
+          {
+            "chapterTitle": "Timeline Analysis",
+            "description": "Introduction to timeline analysis for reconstructing events based on file timestamps and system logs."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Data Analysis Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Windows Registry Analysis",
+            "description": "Introduction to the Windows Registry and its importance in forensic investigations."
+          },
+          {
+            "chapterTitle": "Log File Analysis",
+            "description": "Explanation of log file analysis techniques for identifying suspicious activities and security breaches."
+          },
+          {
+            "chapterTitle": "Network Forensics Overview",
+            "description": "Introduction to network forensics and the types of network data that can be analyzed."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Operating System Forensics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Mobile Device Forensics Overview",
+            "description": "Introduction to mobile device forensics and the challenges involved in extracting data from mobile devices."
+          },
+          {
+            "chapterTitle": "Report Writing",
+            "description": "Guidance on writing clear and concise forensic reports that document findings and conclusions."
+          },
+          {
+            "chapterTitle": "Ethical Considerations",
+            "description": "Discussion of ethical considerations in digital forensics, including privacy, confidentiality, and professional conduct."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Advanced Topics and Ethics"
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-06-13 14:31:01.445887",
+  "input": {
+    "course_topic": "Public Health and Sanitation",
+    "difficulty_level": "Expert",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.31,
+    "max_tokens": 2048,
+    "top_k": 20,
+    "top_p": 0.74
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, participants will be equipped with advanced knowledge and skills to address complex public health and sanitation challenges, contributing to healthier and more sustainable communities.",
+    "courseTitle": "Public Health and Sanitation: An Expert Level Course",
+    "introduction": "This expert-level course delves into advanced concepts and practices in public health and sanitation. It is designed for professionals seeking to enhance their expertise in addressing complex environmental health challenges and promoting sustainable solutions.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Water Quality Management",
+            "description": "Exploration of cutting-edge technologies and strategies for ensuring safe and sustainable water supplies, including advanced treatment methods, source water protection, and risk assessment frameworks."
+          },
+          {
+            "chapterTitle": "Wastewater Treatment and Reuse Innovations",
+            "description": "In-depth analysis of innovative wastewater treatment technologies, including membrane bioreactors, constructed wetlands, and resource recovery systems, with a focus on water reuse applications and environmental sustainability."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Water and Wastewater Management: Advanced Technologies and Strategies"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Solid Waste Management: Circular Economy Approaches",
+            "description": "Examination of circular economy principles in solid waste management, including waste reduction, reuse, recycling, and composting strategies, with a focus on minimizing environmental impacts and maximizing resource recovery."
+          },
+          {
+            "chapterTitle": "Hazardous Waste Management: Risk Assessment and Remediation",
+            "description": "Comprehensive overview of hazardous waste management practices, including risk assessment methodologies, site remediation techniques, and regulatory frameworks for ensuring safe and responsible disposal of hazardous materials."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Solid and Hazardous Waste Management: Sustainable Practices and Risk Mitigation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Environmental Health Impact Assessment: Advanced Methodologies",
+            "description": "Exploration of advanced methodologies for assessing the environmental health impacts of development projects and policies, including quantitative risk assessment, exposure modeling, and health impact assessment frameworks."
+          },
+          {
+            "chapterTitle": "Climate Change and Public Health: Adaptation and Mitigation Strategies",
+            "description": "Analysis of the impacts of climate change on public health and sanitation, with a focus on adaptation and mitigation strategies for reducing vulnerability to climate-related health risks, such as heat waves, vector-borne diseases, and water scarcity."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Environmental Health and Climate Change: Advanced Assessment and Adaptation"
+      }
+    ]
+  }
+}

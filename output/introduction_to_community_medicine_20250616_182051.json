@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:20:51.479071",
+  "input": {
+    "course_topic": "Community Medicine",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.33,
+    "max_tokens": 2048,
+    "top_k": 31,
+    "top_p": 0.6
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of community medicine, equipping you with the knowledge to contribute to public health initiatives and address health disparities in your community.",
+    "courseTitle": "Introduction to Community Medicine",
+    "introduction": "Welcome to the Introduction to Community Medicine! This course will provide you with a basic understanding of the principles and practices of community medicine, focusing on public health, disease prevention, and health promotion at the community level.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is Community Medicine?",
+            "description": "An overview of the definition, scope, and importance of community medicine. Discuss the differences between clinical medicine and community medicine."
+          },
+          {
+            "chapterTitle": "Key Principles of Community Medicine",
+            "description": "Explore the core principles such as population health, social determinants of health, and health equity. Examples of how these principles are applied in practice."
+          },
+          {
+            "chapterTitle": "The Role of Community Medicine in Public Health",
+            "description": "Examine the relationship between community medicine and public health. Discuss the functions of public health and how community medicine contributes to these functions."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Understanding Community Medicine"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Identifying Community Health Needs",
+            "description": "Learn about methods for assessing the health needs of a community, including data collection and analysis."
+          },
+          {
+            "chapterTitle": "Planning Community Health Programs",
+            "description": "Explore the steps involved in planning effective community health programs, including setting goals, objectives, and strategies."
+          },
+          {
+            "chapterTitle": "Implementing and Evaluating Programs",
+            "description": "Discuss the practical aspects of implementing community health programs and evaluating their effectiveness."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Community Health Assessment and Program Planning"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Health Promotion Strategies",
+            "description": "Overview of various health promotion strategies, including education, advocacy, and social marketing."
+          },
+          {
+            "chapterTitle": "Disease Prevention Strategies",
+            "description": "Explore different levels of disease prevention (primary, secondary, tertiary) and examples of each."
+          },
+          {
+            "chapterTitle": "Addressing Health Disparities",
+            "description": "Discuss the concept of health disparities and strategies for reducing inequalities in health outcomes."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Health Promotion and Disease Prevention"
+      }
+    ]
+  }
+}

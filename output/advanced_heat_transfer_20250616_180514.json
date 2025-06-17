@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:05:14.297747",
+  "input": {
+    "course_topic": "Heat Transfer",
+    "difficulty_level": "Advanced",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.65,
+    "max_tokens": 2048,
+    "top_k": 19,
+    "top_p": 0.63
+  },
+  "output": {
+    "conclusion": "This course provided an advanced understanding of heat transfer principles and their applications. Students are now equipped to analyze and design thermal systems effectively.",
+    "courseTitle": "Advanced Heat Transfer",
+    "introduction": "Welcome to Advanced Heat Transfer! This course delves into complex heat transfer phenomena, building upon fundamental concepts. We will explore conduction, convection, and radiation in detail, with a focus on analytical and numerical techniques.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Conduction Analysis",
+            "description": "Explore multi-dimensional conduction, transient conduction in complex geometries, and the use of numerical methods like finite difference and finite element analysis."
+          },
+          {
+            "chapterTitle": "Thermal Contact Resistance",
+            "description": "Understand the concept of thermal contact resistance and its impact on heat transfer. Learn about factors affecting contact resistance and methods for minimizing it."
+          },
+          {
+            "chapterTitle": "Heat Generation",
+            "description": "Analyze heat transfer in systems with internal heat generation, such as nuclear reactors and electronic devices. Derive temperature distributions and heat fluxes."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Conduction"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Convection Analysis",
+            "description": "Delve into boundary layer theory, turbulent flow convection, and heat transfer in complex geometries. Analyze forced and natural convection scenarios."
+          },
+          {
+            "chapterTitle": "Boiling and Condensation",
+            "description": "Study the phenomena of boiling and condensation, including different boiling regimes, heat transfer coefficients, and design considerations for condensers and evaporators."
+          },
+          {
+            "chapterTitle": "Heat Exchanger Design",
+            "description": "Explore advanced heat exchanger design principles, including compact heat exchangers, enhanced heat transfer techniques, and optimization strategies."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Convection"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Radiation Properties and View Factors",
+            "description": "Understand the spectral and directional properties of surfaces, and calculate view factors for complex geometries. Analyze radiation exchange between surfaces."
+          },
+          {
+            "chapterTitle": "Radiation in Participating Media",
+            "description": "Study radiation heat transfer in absorbing, emitting, and scattering media, such as gases and particulate suspensions. Apply the radiative transfer equation."
+          },
+          {
+            "chapterTitle": "Solar Radiation",
+            "description": "Analyze solar radiation characteristics, atmospheric effects, and the design of solar thermal systems. Explore applications of solar energy."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Radiation"
+      }
+    ]
+  }
+}

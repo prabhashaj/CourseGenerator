@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 13:05:42.370499",
+  "input": {
+    "course_topic": "Game Theory",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.37,
+    "max_tokens": 1024,
+    "top_k": 31,
+    "top_p": 0.54
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of game theory, equipping students with the analytical tools to model and solve strategic interactions in various domains.",
+    "courseTitle": "Advanced Game Theory",
+    "introduction": "Welcome to Advanced Game Theory! This course delves into the intricacies of strategic decision-making, exploring both classical and modern game-theoretic concepts. We will analyze various game types, solution concepts, and applications across economics, political science, and computer science.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Static Games of Complete Information: Nash Equilibrium",
+            "description": "Review of Nash Equilibrium: Definition, properties, and examples. Focus on strategic thinking and best-response functions."
+          },
+          {
+            "chapterTitle": "Mixed Strategies",
+            "description": "Introduction to mixed strategies and their role in Nash Equilibrium. Calculation and interpretation of mixed strategy equilibria."
+          },
+          {
+            "chapterTitle": "Applications of Nash Equilibrium",
+            "description": "Real-world applications of Nash Equilibrium in economics, political science, and other fields. Case studies and examples."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Nash Equilibrium and Static Games"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Dynamic Games of Complete Information: Subgame Perfect Nash Equilibrium",
+            "description": "Introduction to dynamic games and the concept of subgame perfect Nash Equilibrium (SPNE)."
+          },
+          {
+            "chapterTitle": "Backward Induction",
+            "description": "Explanation of backward induction and its application in finding SPNE. Examples and exercises."
+          },
+          {
+            "chapterTitle": "Repeated Games",
+            "description": "Analysis of repeated games and the conditions for cooperation. Folk Theorem and its implications."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Dynamic Games and Repeated Interactions"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Static Games of Incomplete Information: Bayesian Nash Equilibrium",
+            "description": "Introduction to games with incomplete information and the concept of Bayesian Nash Equilibrium."
+          },
+          {
+            "chapterTitle": "Mechanism Design",
+            "description": "Overview of mechanism design and its applications in auctions, voting, and resource allocation."
+          },
+          {
+            "chapterTitle": "Applications of Bayesian Games",
+            "description": "Examples of Bayesian games in auctions, signaling, and other contexts. Case studies and analysis."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Games with Incomplete Information"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Cooperative Game Theory: Core and Shapley Value",
+            "description": "Introduction to cooperative game theory and the concept of the core. Examples and applications."
+          },
+          {
+            "chapterTitle": "Shapley Value",
+            "description": "Explanation of the Shapley value and its properties. Calculation and interpretation of the Shapley value."
+          },
+          {
+            "chapterTitle": "Bargaining Theory",
+            "description": "Overview of bargaining theory and its applications in negotiations and conflict resolution. Nash bargaining solution."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Cooperative Game Theory and Bargaining"
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-16 18:42:15.064841",
+  "input": {
+    "course_topic": "Soil Mechanics",
+    "difficulty_level": "Expert",
+    "num_modules": 5,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.34,
+    "max_tokens": 2048,
+    "top_k": 26,
+    "top_p": 0.72
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, participants will possess an expert-level understanding of soil mechanics principles and their application in complex geotechnical engineering problems.",
+    "courseTitle": "Advanced Soil Mechanics",
+    "introduction": "This course provides an in-depth exploration of soil mechanics, focusing on advanced concepts and practical applications for expert-level geotechnical engineers. It builds upon fundamental knowledge and delves into complex soil behavior, advanced testing techniques, and sophisticated analysis methods.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Soil Composition and Index Properties",
+            "description": "Detailed analysis of soil mineralogy, specific surface area, and its influence on soil behavior. Advanced techniques for determining index properties, including specialized tests for fine-grained soils and problematic soils."
+          },
+          {
+            "chapterTitle": "Soil Classification Systems: Beyond the Basics",
+            "description": "In-depth review of Unified Soil Classification System (USCS) and AASHTO classification. Introduction to advanced classification systems for specialized soils (e.g., organic soils, residual soils) and their engineering implications."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Soil Properties and Classification"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Effective Stress Principle: Refined Concepts",
+            "description": "Advanced discussion on the effective stress principle, including the influence of pore water chemistry and partial saturation. Application of effective stress in complex stress states and anisotropic conditions."
+          },
+          {
+            "chapterTitle": "Advanced Permeability and Seepage Analysis",
+            "description": "Detailed analysis of permeability in anisotropic soils and layered soil systems. Advanced seepage analysis techniques, including flow nets for complex geometries and numerical modeling approaches."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Effective Stress, Permeability, and Seepage"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Consolidation Theory",
+            "description": "In-depth study of Terzaghi's consolidation theory and its limitations. Introduction to advanced consolidation models, including those accounting for secondary compression and non-linear soil behavior."
+          },
+          {
+            "chapterTitle": "Settlement Analysis: Advanced Techniques",
+            "description": "Advanced methods for predicting settlement, including consideration of soil disturbance, creep, and three-dimensional effects. Application of numerical methods for settlement analysis of complex foundations."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Consolidation and Settlement"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Shear Strength: Advanced Concepts",
+            "description": "Detailed analysis of shear strength parameters (c', φ') and their determination using advanced laboratory tests (e.g., triaxial, direct shear). Influence of stress history, drainage conditions, and strain rate on shear strength."
+          },
+          {
+            "chapterTitle": "Failure Criteria: Beyond Mohr-Coulomb",
+            "description": "Introduction to advanced failure criteria (e.g., Drucker-Prager, Cam-Clay) and their application in geotechnical design. Discussion on the limitations of the Mohr-Coulomb failure criterion for specific soil types."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Shear Strength and Failure Criteria"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Slope Stability Analysis: Advanced Methods",
+            "description": "Advanced slope stability analysis techniques, including limit equilibrium methods and finite element methods. Consideration of complex slope geometries, groundwater conditions, and seismic loading."
+          },
+          {
+            "chapterTitle": "Earth Pressure Theories: Advanced Applications",
+            "description": "In-depth study of Rankine and Coulomb earth pressure theories and their limitations. Introduction to advanced earth pressure theories for retaining walls with complex geometries and soil conditions."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Slope Stability and Earth Pressure"
+      }
+    ]
+  }
+}

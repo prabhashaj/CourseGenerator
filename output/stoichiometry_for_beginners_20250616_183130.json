@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:31:30.881401",
+  "input": {
+    "course_topic": "Stoichiometry",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.66,
+    "max_tokens": 2048,
+    "top_k": 16,
+    "top_p": 0.97
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a foundational understanding of stoichiometry, empowering you to predict and analyze chemical reactions with confidence. Continue practicing and exploring to deepen your knowledge!",
+    "courseTitle": "Stoichiometry for Beginners",
+    "introduction": "Welcome to Stoichiometry for Beginners! This course will introduce you to the fundamental principles of stoichiometry, the branch of chemistry that deals with the quantitative relationships between reactants and products in chemical reactions. Get ready to explore the world of chemical calculations!",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Chemical Reactions",
+            "description": "A brief overview of chemical reactions, reactants, and products. Introduction to the concept of balancing equations."
+          },
+          {
+            "chapterTitle": "Balancing Chemical Equations (Part 1)",
+            "description": "Learn the basics of balancing chemical equations by inspection. Start with simple reactions."
+          },
+          {
+            "chapterTitle": "Balancing Chemical Equations (Part 2)",
+            "description": "Practice balancing more complex chemical equations. Introduction to polyatomic ions and their role in balancing."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Understanding Chemical Equations"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to the Mole Concept",
+            "description": "Define the mole and Avogadro's number. Explain the importance of the mole in stoichiometry."
+          },
+          {
+            "chapterTitle": "Molar Mass Calculations",
+            "description": "Learn how to calculate the molar mass of elements and compounds using the periodic table."
+          },
+          {
+            "chapterTitle": "Mole Conversions",
+            "description": "Practice converting between moles, mass, and number of particles (atoms, molecules, ions)."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "The Mole and Molar Mass"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Stoichiometric Calculations (Part 1)",
+            "description": "Introduction to stoichiometric calculations using mole ratios derived from balanced equations."
+          },
+          {
+            "chapterTitle": "Stoichiometric Calculations (Part 2)",
+            "description": "Practice calculating the amount of reactants and products in a chemical reaction given the amount of one substance."
+          },
+          {
+            "chapterTitle": "Limiting Reactants",
+            "description": "Introduce the concept of limiting reactants and how they affect the amount of product formed."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Stoichiometric Calculations"
+      }
+    ]
+  }
+}

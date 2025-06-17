@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-13 13:06:08.919948",
+  "input": {
+    "course_topic": "Business Strategy",
+    "difficulty_level": "Advanced",
+    "num_modules": 6,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.41,
+    "max_tokens": 1024,
+    "top_k": 13,
+    "top_p": 0.82
+  },
+  "output": {
+    "conclusion": "This course has equipped you with advanced strategic thinking tools and frameworks to navigate complex business environments and drive sustainable growth.",
+    "courseTitle": "Business Strategy: Advanced",
+    "introduction": "Welcome to the Advanced Business Strategy course. This course is designed for experienced professionals seeking to refine their strategic thinking and decision-making skills. We will explore advanced frameworks and real-world case studies to develop a comprehensive understanding of strategy formulation and implementation.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Evolution of Strategic Thinking",
+            "description": "A historical overview of strategic management theories, from classical approaches to contemporary perspectives."
+          },
+          {
+            "chapterTitle": "Defining Strategic Advantage",
+            "description": "Exploring different sources of competitive advantage and how to identify and leverage them."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Foundations of Advanced Strategy"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Industry Analysis: Beyond Porter's Five Forces",
+            "description": "Advanced techniques for analyzing industry structure and dynamics, including game theory and network effects."
+          },
+          {
+            "chapterTitle": "Competitive Positioning Strategies",
+            "description": "Developing differentiated positioning strategies based on value creation and cost leadership."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Analyzing the Competitive Landscape"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Resource-Based View (RBV) and Capabilities",
+            "description": "Identifying and developing core competencies and capabilities that create sustainable competitive advantage."
+          },
+          {
+            "chapterTitle": "Dynamic Capabilities and Strategic Agility",
+            "description": "Building organizational agility to adapt to changing market conditions and technological disruptions."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Internal Analysis: Resources and Capabilities"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Corporate Strategy and Diversification",
+            "description": "Evaluating different diversification strategies and managing a portfolio of businesses."
+          },
+          {
+            "chapterTitle": "Mergers, Acquisitions, and Alliances",
+            "description": "Strategic considerations for M&A transactions and forming strategic alliances."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Corporate-Level Strategy"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Innovation Strategy and Disruptive Technologies",
+            "description": "Developing strategies for managing innovation and responding to disruptive technologies."
+          },
+          {
+            "chapterTitle": "Global Strategy and International Expansion",
+            "description": "Adapting strategies for different international markets and managing global operations."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Strategic Innovation and Global Expansion"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Strategic Implementation and Change Management",
+            "description": "Overcoming organizational barriers to strategic implementation and managing change effectively."
+          },
+          {
+            "chapterTitle": "Measuring and Evaluating Strategic Performance",
+            "description": "Developing key performance indicators (KPIs) and using strategic scorecards to monitor progress."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Strategy Implementation and Performance Measurement"
+      }
+    ]
+  }
+}

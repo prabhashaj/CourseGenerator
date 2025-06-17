@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-13 14:27:57.722474",
+  "input": {
+    "course_topic": "Human Digestive System",
+    "difficulty_level": "Beginner",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.53,
+    "max_tokens": 2048,
+    "top_k": 20,
+    "top_p": 0.8
+  },
+  "output": {
+    "conclusion": "By completing this course, you should have a foundational understanding of the human digestive system, its organs, and their functions. You'll be able to explain the digestive process from start to finish and understand the importance of a healthy diet for optimal digestive health.",
+    "courseTitle": "The Human Digestive System: A Beginner's Guide",
+    "introduction": "Welcome to the fascinating world of the human digestive system! This course will guide you through the journey of food from the moment it enters your mouth until it exits your body. We'll explore the different organs involved, their specific roles, and how they work together to break down food and absorb nutrients. Get ready to unravel the mysteries of your gut!",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Overview of the Digestive System",
+            "description": "A brief introduction to the digestive system and its main functions: ingestion, digestion, absorption, and elimination. Learn about the organs involved and their general roles."
+          },
+          {
+            "chapterTitle": "The Mouth: Where Digestion Begins",
+            "description": "Explore the mouth, teeth, and saliva. Understand how chewing and saliva initiate the digestive process. Learn about the enzyme amylase and its role in breaking down carbohydrates."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Digestion"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Esophagus: The Food Highway",
+            "description": "Discover the esophagus and its role in transporting food from the mouth to the stomach. Understand the process of peristalsis and how it moves food along."
+          },
+          {
+            "chapterTitle": "The Stomach: The Churning Chamber",
+            "description": "Explore the stomach and its functions in storing and breaking down food. Learn about gastric juices, hydrochloric acid, and the enzyme pepsin. Understand the formation of chyme."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "The Journey Begins: Mouth to Stomach"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Small Intestine: Nutrient Absorption Central",
+            "description": "Introduction to the small intestine and its three parts: duodenum, jejunum, and ileum. Learn about the villi and microvilli and their role in nutrient absorption."
+          },
+          {
+            "chapterTitle": "Enzymes and Bile: Digestion Aids",
+            "description": "Explore the role of enzymes from the pancreas and bile from the liver in aiding digestion in the small intestine. Understand how fats, proteins, and carbohydrates are further broken down."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "The Small Intestine: Absorbing Nutrients"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Large Intestine: Water Absorption and Waste Formation",
+            "description": "Discover the large intestine (colon) and its role in absorbing water and electrolytes. Understand the formation of feces and the role of gut bacteria."
+          },
+          {
+            "chapterTitle": "The Rectum and Anus: Elimination",
+            "description": "Learn about the rectum and anus and their role in storing and eliminating waste products from the body."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "The Large Intestine: Waste Management"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Liver and Pancreas: Accessory Organs",
+            "description": "Learn about the liver and pancreas and their roles in digestion. Understand how the liver produces bile and the pancreas produces digestive enzymes and hormones."
+          },
+          {
+            "chapterTitle": "Maintaining a Healthy Digestive System",
+            "description": "Tips for maintaining a healthy digestive system, including diet, hydration, and lifestyle choices. Discuss common digestive problems and how to prevent them."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Supporting Organs and Healthy Habits"
+      }
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-06-13 14:02:57.476575",
+  "input": {
+    "course_topic": "Narrative Psychology",
+    "difficulty_level": "Beginner",
+    "num_modules": 6,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.33,
+    "max_tokens": 2048,
+    "top_k": 18,
+    "top_p": 0.76
+  },
+  "output": {
+    "conclusion": "By understanding narrative psychology, you can gain valuable insights into human behavior, identity formation, and the power of storytelling in shaping our lives. This course provides a foundational understanding to further explore this fascinating field.",
+    "courseTitle": "Narrative Psychology: An Introduction",
+    "introduction": "Welcome to Narrative Psychology! This course will introduce you to the core concepts of narrative psychology, exploring how stories shape our identities, relationships, and understanding of the world. No prior knowledge is required.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is Narrative Psychology?",
+            "description": "An overview of narrative psychology, its origins, and its key assumptions. We'll explore how it differs from other branches of psychology."
+          },
+          {
+            "chapterTitle": "The Power of Stories",
+            "description": "Examining the fundamental role of stories in human cognition, communication, and culture. We'll discuss why humans are natural storytellers."
+          },
+          {
+            "chapterTitle": "Narrative Identity",
+            "description": "Introduction to the concept of narrative identity – how we construct a sense of self through the stories we tell about ourselves."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Narrative Psychology"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Key Concepts: Plot",
+            "description": "Understanding the basic elements of a narrative: plot, characters, setting, and theme. Focus on how 'plot' shapes meaning."
+          },
+          {
+            "chapterTitle": "Key Concepts: Character",
+            "description": "Understanding the basic elements of a narrative: plot, characters, setting, and theme. Focus on how 'character' shapes meaning."
+          },
+          {
+            "chapterTitle": "Key Concepts: Setting & Theme",
+            "description": "Understanding the basic elements of a narrative: plot, characters, setting, and theme. Focus on how 'setting' and 'theme' shapes meaning."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Elements of a Narrative"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Personal Narratives",
+            "description": "Exploring how individuals construct and share their life stories. Focus on the role of memory and interpretation."
+          },
+          {
+            "chapterTitle": "Cultural Narratives",
+            "description": "Examining the shared stories that shape cultural values, beliefs, and practices. Examples of myths, legends, and national narratives."
+          },
+          {
+            "chapterTitle": "Narratives in Relationships",
+            "description": "How couples and families create shared narratives that define their relationships. Focus on communication and conflict resolution."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Types of Narratives"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Narrative Therapy: An Overview",
+            "description": "Introduction to narrative therapy, a therapeutic approach that emphasizes the power of stories in healing and personal growth."
+          },
+          {
+            "chapterTitle": "Externalizing Problems",
+            "description": "A core technique in narrative therapy: separating the person from the problem by externalizing it as a separate entity."
+          },
+          {
+            "chapterTitle": "Re-authoring Stories",
+            "description": "Helping clients rewrite their life stories to create more empowering and meaningful narratives."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Narrative Therapy"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Narratives in Marketing",
+            "description": "How brands use storytelling to connect with consumers and build brand loyalty. Examples of successful marketing narratives."
+          },
+          {
+            "chapterTitle": "Narratives in Politics",
+            "description": "The role of narratives in shaping political discourse and influencing public opinion. Examples of political storytelling."
+          },
+          {
+            "chapterTitle": "Narratives in Education",
+            "description": "Using storytelling as a pedagogical tool to engage students and enhance learning. Examples of narrative-based teaching methods."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Narratives in Different Contexts"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Ethical Considerations",
+            "description": "Discussing the ethical implications of using narrative approaches, particularly in therapy and research. Focus on informed consent and confidentiality."
+          },
+          {
+            "chapterTitle": "Limitations of Narrative Psychology",
+            "description": "Acknowledging the limitations of narrative psychology and potential biases in narrative interpretation."
+          },
+          {
+            "chapterTitle": "Future Directions",
+            "description": "Exploring emerging trends and future directions in narrative psychology research and practice."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Challenges and Future Directions"
+      }
+    ]
+  }
+}

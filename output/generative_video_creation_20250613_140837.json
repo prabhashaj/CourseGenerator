@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-13 14:08:37.382808",
+  "input": {
+    "course_topic": "Generative Video Creation",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.69,
+    "max_tokens": 2048,
+    "top_k": 17,
+    "top_p": 0.95
+  },
+  "output": {
+    "conclusion": "By the end of this course, you will be equipped with the knowledge and skills to leverage generative AI for video creation, enabling you to produce engaging and innovative video content efficiently.",
+    "courseTitle": "Generative Video Creation",
+    "introduction": "Welcome to Generative Video Creation! This course is designed for intermediate-level learners who want to explore the exciting world of AI-powered video generation. We'll delve into various techniques and tools, enabling you to create stunning videos using AI.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Generative Video AI",
+            "description": "Overview of generative AI in video creation. Exploring different AI models used for video generation. Understanding the potential and limitations of generative video AI. Ethical considerations in using AI for video creation."
+          },
+          {
+            "chapterTitle": "Applications of Generative Video",
+            "description": "Exploring use cases in marketing, education, entertainment, and more. Analyzing real-world examples of generative video applications. Discussing the impact of generative video on content creation workflows."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Foundations of Generative Video AI"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Text-to-Video Generation",
+            "description": "Introduction to text-to-video models. Overview of model architectures and training data. Prompt engineering techniques for generating desired video content. Practical examples of text-to-video generation."
+          },
+          {
+            "chapterTitle": "Image-to-Video Generation",
+            "description": "Exploring image-to-video techniques using AI. Understanding the process of animating still images. Discussing different approaches and tools for image-to-video conversion."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Core Techniques in Generative Video"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Using AI Video Editing Tools",
+            "description": "Exploring AI-powered video editing software. Overview of features such as automatic scene detection, object removal, and style transfer. Practical exercises in using AI editing tools to enhance video content."
+          },
+          {
+            "chapterTitle": "AI-Driven Video Enhancement",
+            "description": "Understanding techniques for improving video quality using AI. Exploring super-resolution, denoising, and color correction using AI algorithms. Comparing different AI-based video enhancement tools and methods."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "AI-Powered Video Editing and Enhancement"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Creating AI-Generated Animations",
+            "description": "Exploring AI tools for creating animations. Understanding the process of generating characters, scenes, and movements using AI. Practical examples of creating animated videos with AI."
+          },
+          {
+            "chapterTitle": "AI-Based Visual Effects",
+            "description": "Introduction to AI-driven visual effects. Exploring techniques for creating special effects such as fire, explosions, and transformations. Discussing the integration of AI effects into video projects."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "AI for Animation and Visual Effects"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Optimizing Generative Video for Different Platforms",
+            "description": "Understanding video formats and resolutions for various platforms (YouTube, TikTok, etc.). Optimizing AI-generated videos for social media and streaming services. Discussing compression techniques and best practices."
+          },
+          {
+            "chapterTitle": "Future Trends in Generative Video",
+            "description": "Exploring emerging trends and technologies in generative video AI. Discussing the potential impact of AI on the future of video creation. Analyzing the ethical and societal implications of generative video."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Optimization and Future Trends"
+      }
+    ]
+  }
+}

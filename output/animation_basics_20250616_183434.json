@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:34:34.406873",
+  "input": {
+    "course_topic": "Animation Basics",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.62,
+    "max_tokens": 1024,
+    "top_k": 26,
+    "top_p": 0.6
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a solid foundation in animation principles and techniques. You are now equipped to create compelling animations and further explore advanced topics in the field.",
+    "courseTitle": "Animation Basics",
+    "introduction": "Welcome to Animation Basics! This course is designed for intermediate learners who want to understand the fundamental principles and techniques of animation. We'll cover key concepts and provide practical examples to help you create engaging animations.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Principles of Animation: Part 1",
+            "description": "Introduction to the 12 principles of animation: Squash and Stretch, Anticipation, Staging, Straight Ahead Action and Pose to Pose."
+          },
+          {
+            "chapterTitle": "Principles of Animation: Part 2",
+            "description": "Continuation of the 12 principles of animation: Follow Through and Overlapping Action, Slow In and Slow Out, Arc, Secondary Action, Timing, Exaggeration, Solid Drawing, and Appeal."
+          },
+          {
+            "chapterTitle": "Animation Workflow",
+            "description": "Understanding the animation production pipeline: concept, storyboarding, modeling, rigging, animation, lighting, rendering, and compositing."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamental Principles"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Keyframing Techniques",
+            "description": "Introduction to keyframing: setting key poses, creating smooth transitions, and using animation curves."
+          },
+          {
+            "chapterTitle": "Tweening and In-Betweening",
+            "description": "Understanding tweening and in-betweening: automatically generating frames between keyframes to create fluid motion."
+          },
+          {
+            "chapterTitle": "Character Rigging Basics",
+            "description": "Introduction to character rigging: creating a skeleton and controls for animating characters effectively."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Core Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Animating a Bouncing Ball",
+            "description": "Step-by-step guide to animating a bouncing ball: applying squash and stretch, timing, and arcs."
+          },
+          {
+            "chapterTitle": "Animating a Walk Cycle",
+            "description": "Creating a basic walk cycle: understanding contact, passing, and up/down positions."
+          },
+          {
+            "chapterTitle": "Adding Emotion to Animation",
+            "description": "Using facial expressions and body language to convey emotions in animation."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Practical Applications"
+      }
+    ]
+  }
+}

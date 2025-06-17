@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-13 14:33:17.148383",
+  "input": {
+    "course_topic": "Electrical Machines",
+    "difficulty_level": "Expert",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.38,
+    "max_tokens": 1024,
+    "top_k": 22,
+    "top_p": 0.7
+  },
+  "output": {
+    "conclusion": "This course provides an expert-level understanding of electrical machines, equipping engineers with the knowledge to design, analyze, and optimize complex systems.",
+    "courseTitle": "Electrical Machines: Advanced Analysis and Design",
+    "introduction": "Welcome to the advanced course on Electrical Machines. This course delves into the intricacies of electrical machine design, control, and analysis, targeting expert-level engineers and researchers. We will explore advanced modeling techniques, control strategies, and emerging technologies in the field.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Magnetic Circuit Analysis",
+            "description": "In-depth analysis of magnetic circuits, including non-linear materials, fringing effects, and leakage inductance calculations. Focus on finite element analysis (FEA) techniques for complex geometries."
+          },
+          {
+            "chapterTitle": "Power Losses and Thermal Modeling",
+            "description": "Detailed examination of various power losses in electrical machines (copper, iron, mechanical). Introduction to thermal modeling techniques for predicting temperature distribution and optimizing cooling systems."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Electromagnetic Fundamentals and Machine Modeling"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Synchronous Machine Modeling and Control",
+            "description": "Advanced modeling of synchronous machines, including Park's transformation and space vector representation. Exploration of advanced control strategies like field-oriented control (FOC) and direct torque control (DTC)."
+          },
+          {
+            "chapterTitle": "Synchronous Machine Stability Analysis",
+            "description": "Analysis of synchronous machine stability under various operating conditions. Introduction to power system stabilizers (PSS) and other techniques for enhancing stability."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Synchronous Machines: Advanced Control and Stability"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Induction Machine Vector Control",
+            "description": "Detailed analysis of induction machine vector control techniques, including direct and indirect field-oriented control. Consideration of parameter sensitivity and adaptive control methods."
+          },
+          {
+            "chapterTitle": "Induction Machine Direct Torque Control",
+            "description": "In-depth study of direct torque control (DTC) for induction machines. Comparison of DTC with FOC and analysis of its advantages and limitations."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Induction Machines: Advanced Control Strategies"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Permanent Magnet Synchronous Machines (PMSM) Design",
+            "description": "Advanced design considerations for PMSMs, including magnet selection, winding configurations, and torque ripple minimization techniques."
+          },
+          {
+            "chapterTitle": "PMSM Control Techniques",
+            "description": "Exploration of advanced control techniques for PMSMs, such as sensorless control, model predictive control (MPC), and adaptive control."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Permanent Magnet Synchronous Machines (PMSM)"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Emerging Trends in Electrical Machines",
+            "description": "Overview of emerging trends in electrical machines, including high-speed machines, fault-tolerant machines, and machines for electric vehicles."
+          },
+          {
+            "chapterTitle": "Advanced Simulation and Optimization Techniques",
+            "description": "Introduction to advanced simulation and optimization techniques for electrical machine design, including multi-objective optimization and surrogate modeling."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Advanced Topics and Emerging Technologies"
+      }
+    ]
+  }
+}

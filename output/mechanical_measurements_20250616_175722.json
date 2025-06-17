@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 17:57:22.143190",
+  "input": {
+    "course_topic": "Mechanical Measurements",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.52,
+    "max_tokens": 1024,
+    "top_k": 17,
+    "top_p": 0.75
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of mechanical measurements, equipping students with the knowledge and skills to accurately and effectively measure various mechanical parameters. Further study and practical experience are recommended to deepen expertise in specific measurement techniques and applications.",
+    "courseTitle": "Mechanical Measurements",
+    "introduction": "Welcome to Mechanical Measurements! This course will cover the fundamentals of measurement techniques used in mechanical engineering. We will explore various sensors, data acquisition methods, and uncertainty analysis. This course is designed for intermediate-level learners with some prior knowledge of basic physics and engineering principles.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Measurement Systems",
+            "description": "Overview of measurement systems, their components (sensors, signal conditioning, data acquisition), and types of measurements (direct, indirect). Discuss the importance of accurate and reliable measurements in mechanical engineering. Examples of measurement applications in various industries."
+          },
+          {
+            "chapterTitle": "Units and Standards",
+            "description": "Review of SI units and other commonly used units in mechanical engineering. Discussion of measurement standards and traceability. Introduction to dimensional analysis and its applications in measurement systems."
+          },
+          {
+            "chapterTitle": "Error Analysis",
+            "description": "Introduction to error analysis, including types of errors (systematic, random), error propagation, and uncertainty analysis. Methods for estimating and minimizing errors in measurement systems. Statistical analysis of measurement data."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Mechanical Measurements"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Displacement Measurement",
+            "description": "Introduction to displacement measurement techniques, including linear variable differential transformers (LVDTs), potentiometers, and optical encoders. Principles of operation, advantages, and limitations of each technique. Applications of displacement measurement in various mechanical systems."
+          },
+          {
+            "chapterTitle": "Strain Measurement",
+            "description": "Introduction to strain measurement using strain gauges. Gauge factor, Wheatstone bridge circuits, and temperature compensation. Applications of strain measurement in stress analysis and structural health monitoring."
+          },
+          {
+            "chapterTitle": "Pressure Measurement",
+            "description": "Overview of pressure measurement techniques, including manometers, Bourdon tubes, and pressure transducers. Types of pressure (absolute, gauge, differential). Calibration and error analysis of pressure measurement systems."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Measurement of Mechanical Quantities"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Temperature Measurement",
+            "description": "Introduction to temperature measurement techniques, including thermocouples, resistance temperature detectors (RTDs), and thermistors. Principles of operation, calibration, and error analysis. Applications of temperature measurement in thermal systems and process control."
+          },
+          {
+            "chapterTitle": "Flow Measurement",
+            "description": "Overview of flow measurement techniques, including differential pressure flow meters (orifice plates, Venturi meters), turbine flow meters, and ultrasonic flow meters. Volumetric and mass flow rate. Applications of flow measurement in fluid mechanics and process engineering."
+          },
+          {
+            "chapterTitle": "Vibration Measurement",
+            "description": "Introduction to vibration measurement using accelerometers. Types of accelerometers (piezoelectric, MEMS). Frequency analysis and vibration monitoring. Applications of vibration measurement in machine diagnostics and structural health monitoring."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Measurement Techniques"
+      }
+    ]
+  }
+}

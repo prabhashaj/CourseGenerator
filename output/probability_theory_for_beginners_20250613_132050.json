@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 13:20:50.267985",
+  "input": {
+    "course_topic": "Probability Theory",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.39,
+    "max_tokens": 2048,
+    "top_k": 19,
+    "top_p": 0.88
+  },
+  "output": {
+    "conclusion": "This course provided a foundational understanding of probability theory. You should now be able to apply these concepts to real-world scenarios and further explore advanced topics.",
+    "courseTitle": "Probability Theory for Beginners",
+    "introduction": "Welcome to Probability Theory! This course will introduce you to the fundamental concepts of probability, equipping you with the tools to understand and analyze random events.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Probability",
+            "description": "What is probability? Defining events, sample spaces, and outcomes. Understanding the basic concepts with examples."
+          },
+          {
+            "chapterTitle": "Calculating Probability",
+            "description": "Calculating probability using the formula: P(event) = (Favorable Outcomes) / (Total Possible Outcomes). Examples of calculating probabilities for simple events."
+          },
+          {
+            "chapterTitle": "Types of Events",
+            "description": "Exploring different types of events: independent, dependent, mutually exclusive, and complementary events. Understanding the relationships between them."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Basic Concepts of Probability"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Conditional Probability",
+            "description": "Understanding conditional probability: P(A|B) - the probability of event A given that event B has occurred. Examples and applications."
+          },
+          {
+            "chapterTitle": "Independent Events",
+            "description": "Defining and identifying independent events. The multiplication rule for independent events: P(A and B) = P(A) * P(B)."
+          },
+          {
+            "chapterTitle": "Dependent Events",
+            "description": "Understanding dependent events and how the occurrence of one event affects the probability of another. Examples of dependent events."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Conditional and Independent Probability"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Random Variables",
+            "description": "What are random variables? Discrete and continuous random variables. Examples of different types of random variables."
+          },
+          {
+            "chapterTitle": "Probability Distributions",
+            "description": "Understanding probability distributions for discrete random variables. Calculating probabilities using probability mass functions (PMFs)."
+          },
+          {
+            "chapterTitle": "Expected Value",
+            "description": "Calculating the expected value (mean) of a discrete random variable. Understanding the concept of expected value and its applications."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Random Variables and Expected Value"
+      }
+    ]
+  }
+}

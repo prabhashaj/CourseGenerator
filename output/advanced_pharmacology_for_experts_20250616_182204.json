@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:22:04.357646",
+  "input": {
+    "course_topic": "Pharmacology",
+    "difficulty_level": "Expert",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.48,
+    "max_tokens": 2048,
+    "top_k": 18,
+    "top_p": 0.62
+  },
+  "output": {
+    "conclusion": "This course provides an expert-level understanding of pharmacology, equipping learners with the knowledge to critically evaluate drug actions and therapeutic strategies.",
+    "courseTitle": "Advanced Pharmacology for Experts",
+    "introduction": "Welcome to Advanced Pharmacology, designed for experts seeking to deepen their understanding of drug mechanisms, interactions, and therapeutic applications. This course delves into complex pharmacological principles, focusing on cutting-edge research and clinical implications.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Pharmacokinetics",
+            "description": "In-depth analysis of drug absorption, distribution, metabolism, and excretion (ADME) processes. Focus on factors influencing drug bioavailability and clearance in diverse patient populations."
+          },
+          {
+            "chapterTitle": "Pharmacogenomics and Personalized Medicine",
+            "description": "Exploration of genetic variations affecting drug response. Application of pharmacogenomic principles to optimize drug selection and dosage for individual patients."
+          },
+          {
+            "chapterTitle": "Drug Transporters",
+            "description": "Detailed examination of drug transporter proteins and their role in drug disposition and drug-drug interactions. Clinical relevance of transporter-mediated effects."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Pharmacokinetic Principles"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Receptor Pharmacology",
+            "description": "Advanced concepts in receptor theory, including receptor subtypes, allosteric modulation, and biased signaling. Implications for drug development and therapeutic efficacy."
+          },
+          {
+            "chapterTitle": "Signal Transduction Pathways",
+            "description": "Detailed analysis of intracellular signaling cascades activated by drug-receptor interactions. Focus on downstream effects and therapeutic targets."
+          },
+          {
+            "chapterTitle": "Drug-Target Interactions",
+            "description": "Exploration of drug-target binding kinetics and thermodynamics. Methods for characterizing drug-target interactions and predicting drug efficacy."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Pharmacodynamic Mechanisms"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Drug Interactions",
+            "description": "Comprehensive overview of pharmacokinetic and pharmacodynamic drug interactions. Mechanisms underlying drug interactions and clinical management strategies."
+          },
+          {
+            "chapterTitle": "Adverse Drug Reactions",
+            "description": "In-depth analysis of adverse drug reactions (ADRs), including mechanisms, risk factors, and management approaches. Focus on serious and unexpected ADRs."
+          },
+          {
+            "chapterTitle": "Drug Safety and Toxicology",
+            "description": "Principles of drug safety evaluation and toxicology testing. Methods for assessing drug-induced toxicity and mitigating risks."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Drug Safety and Interactions"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Neuropharmacology",
+            "description": "Advanced concepts in neuropharmacology, including neurotransmitter systems, receptor subtypes, and drug mechanisms in neurological disorders."
+          },
+          {
+            "chapterTitle": "Cardiovascular Pharmacology",
+            "description": "In-depth analysis of cardiovascular drugs, including mechanisms of action, therapeutic uses, and adverse effects in cardiovascular diseases."
+          },
+          {
+            "chapterTitle": "Immunopharmacology",
+            "description": "Exploration of immunomodulatory drugs and their role in treating immune-mediated diseases. Focus on mechanisms of action and clinical applications."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Pharmacology of Specific Systems"
+      }
+    ]
+  }
+}

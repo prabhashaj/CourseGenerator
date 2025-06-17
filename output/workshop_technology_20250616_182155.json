@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:21:55.247266",
+  "input": {
+    "course_topic": "Workshop Technology",
+    "difficulty_level": "Intermediate",
+    "num_modules": 6,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.37,
+    "max_tokens": 2048,
+    "top_k": 28,
+    "top_p": 0.67
+  },
+  "output": {
+    "conclusion": "This workshop technology course has provided you with a solid foundation in various manufacturing processes and techniques. By understanding the principles and applications discussed, you are now better equipped to contribute to the field of engineering and manufacturing.",
+    "courseTitle": "Workshop Technology",
+    "introduction": "Welcome to the Workshop Technology course! This course is designed for intermediate-level learners who want to expand their knowledge of manufacturing processes and workshop practices. We will explore various techniques, tools, and materials used in modern workshops.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Workshop Safety",
+            "description": "Overview of common workshop hazards and safety protocols. Importance of personal protective equipment (PPE) and safe work practices."
+          },
+          {
+            "chapterTitle": "Hand Tool Safety",
+            "description": "Detailed explanation of safe usage of hand tools like hammers, screwdrivers, saws, and pliers. Emphasis on proper handling and maintenance."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Workshop Safety and Hand Tools"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Measuring Instruments",
+            "description": "Understanding different types of measuring instruments like rulers, calipers, micrometers, and protractors. Accuracy and precision in measurement."
+          },
+          {
+            "chapterTitle": "Using Measuring Instruments",
+            "description": "Practical exercises on using measuring instruments to accurately measure dimensions and angles. Reading scales and interpreting measurements."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Measurement and Metrology"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Metal Cutting",
+            "description": "Overview of metal cutting processes like sawing, drilling, and turning. Types of cutting tools and their applications."
+          },
+          {
+            "chapterTitle": "Drilling Operations",
+            "description": "Detailed explanation of drilling operations, including drill bit selection, speed and feed rates, and safety precautions."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Metal Cutting Processes"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Welding",
+            "description": "Overview of different welding processes like arc welding, gas welding, and resistance welding. Safety considerations in welding."
+          },
+          {
+            "chapterTitle": "Arc Welding Techniques",
+            "description": "Detailed explanation of arc welding techniques, including electrode selection, welding parameters, and weld quality."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Welding and Joining"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Sheet Metal Forming",
+            "description": "Overview of sheet metal forming processes like bending, stamping, and drawing. Tools and equipment used in sheet metal forming."
+          },
+          {
+            "chapterTitle": "Bending Operations",
+            "description": "Detailed explanation of bending operations, including bend allowance, bend radius, and springback."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Sheet Metal Forming"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to CNC Machining",
+            "description": "Overview of CNC machining and its advantages. Basic concepts of CNC programming and machine operation."
+          },
+          {
+            "chapterTitle": "CNC Machine Components",
+            "description": "Explanation of the different components of a CNC machine, including the controller, motors, and feedback system."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Introduction to CNC Machining"
+      }
+    ]
+  }
+}

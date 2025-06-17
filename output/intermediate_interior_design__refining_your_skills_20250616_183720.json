@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:37:20.826458",
+  "input": {
+    "course_topic": "Interior Design",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.68,
+    "max_tokens": 2048,
+    "top_k": 14,
+    "top_p": 0.55
+  },
+  "output": {
+    "conclusion": "By completing this course, you've expanded your interior design knowledge and are ready to tackle more complex projects. Remember to stay curious, experiment with new ideas, and always prioritize the client's needs and vision.",
+    "courseTitle": "Intermediate Interior Design: Refining Your Skills",
+    "introduction": "Welcome to Intermediate Interior Design! This course builds upon your existing foundation, delving into advanced concepts and techniques to elevate your design skills. We'll explore complex spatial planning, material selection, and lighting design, equipping you to create sophisticated and impactful interiors.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Space Planning Techniques",
+            "description": "Explore complex spatial arrangements, including open-plan living, multi-functional spaces, and adaptable design solutions. Learn to optimize flow, create visual interest, and maximize usability within challenging layouts."
+          },
+          {
+            "chapterTitle": "Ergonomics and Universal Design Principles",
+            "description": "Delve into the principles of ergonomics and universal design. Understand how to create spaces that are comfortable, accessible, and safe for all users, regardless of age, ability, or size."
+          },
+          {
+            "chapterTitle": "Sustainable Design Practices",
+            "description": "Learn about sustainable material selection, energy-efficient lighting, and water conservation strategies. Discover how to minimize environmental impact and create eco-friendly interiors."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Spatial Planning and Functionality"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Material Palette Development",
+            "description": "Explore a wide range of materials, including natural stone, reclaimed wood, and innovative textiles. Learn to combine textures, patterns, and colors to create visually stunning and tactilely rich interiors."
+          },
+          {
+            "chapterTitle": "Specifying High-End Finishes and Fixtures",
+            "description": "Understand the process of specifying high-end finishes and fixtures, including flooring, wall coverings, plumbing fixtures, and lighting controls. Learn to evaluate quality, durability, and aesthetic appeal."
+          },
+          {
+            "chapterTitle": "Custom Millwork and Built-In Design",
+            "description": "Explore the design and specification of custom millwork and built-in elements, such as cabinetry, shelving, and window seats. Learn to create unique and functional storage solutions."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Materials and Finishes Mastery"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Lighting Design Strategies",
+            "description": "Explore advanced lighting techniques, including layering, accent lighting, and task lighting. Learn to create mood, highlight architectural features, and enhance the overall ambiance of a space."
+          },
+          {
+            "chapterTitle": "Integrating Smart Home Technology",
+            "description": "Understand how to integrate smart home technology into interior design projects, including lighting control systems, automated shades, and integrated audio-visual systems."
+          },
+          {
+            "chapterTitle": "Creating Lighting Plans and Specifications",
+            "description": "Learn to develop comprehensive lighting plans and specifications, including fixture schedules, wiring diagrams, and control system layouts."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Lighting Design and Technology"
+      }
+    ]
+  }
+}

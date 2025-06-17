@@ -1,96 +1,175 @@
 import streamlit as st
 import json
-import asyncio # Required for async fetch
+import asyncio
 from datetime import datetime
-import base64 # Required for encoding image data if needed, though not directly used for text generation
-import os # For environment variables, if API key was stored there
-import httpx # Using httpx for async requests
+import base64
+import os
+from dotenv import load_dotenv
+import httpx
 import importlib
+from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.vectorstores import FAISS
+from langchain.chains import ConversationalRetrievalChain
+from langchain.memory import ConversationBufferMemory
+from langchain_community.document_loaders import PyPDFLoader, TextLoader
+
 quiz_utils = importlib.import_module("quiz_utils")
 
+# Load environment variables
+load_dotenv()
+
 # --- Configuration ---
-# Set page configuration for the Streamlit app
 st.set_page_config(
-    page_title="Course Creator & Tracker",
+    page_title="Course Creator & Learning Assistant",
     page_icon="📚",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
-st.title("📚 Course Creator & Tracker")
-st.markdown("Generate custom course outlines, track your progress, and get detailed chapter content!")
+# --- API Key Configuration ---
+API_KEY = "AIzaSyDHyPyFtNn0TUaGcVgHPlTU1JgG17sIF_A"
 
-# --- API Key (from Streamlit secrets) ---
-API_KEY = st.secrets["GEMINI_API_KEY"]  # Use Streamlit secrets for deployment
+# Custom CSS for better UI
+st.markdown("""
+    <style>
+    .main {
+        padding: 2rem;
+    }
+    .stButton>button {
+        width: 100%;
+        border-radius: 5px;
+        height: 3em;
+        background-color: #4CAF50;
+        color: white;
+    }
+    .stTextInput>div>div>input {
+        border-radius: 5px;
+    }
+    .css-1d391kg {
+        padding: 2rem 1rem;
+    }
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 2px;
+    }
+    .stTabs [data-baseweb="tab"] {
+        height: 50px;
+        white-space: pre-wrap;
+        background-color: #f0f2f6;
+        border-radius: 4px 4px 0px 0px;
+        gap: 1px;
+        padding: 10px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+st.title("📚 Course Creator & Learning Assistant")
+st.markdown("Generate custom courses, track progress, get detailed content, and interact with your learning materials!")
 
 # --- Session State Initialization ---
 if "messages" not in st.session_state:
     st.session_state.messages = []
 if "courses" not in st.session_state:
-    st.session_state.courses = [] # List to store all generated courses
+    st.session_state.courses = []
 if "selected_course_index" not in st.session_state:
-    st.session_state.selected_course_index = None # Index of the currently viewed course
+    st.session_state.selected_course_index = None
 if "chapter_contents" not in st.session_state:
-    st.session_state.chapter_contents = {} # Stores generated content for chapters, keyed by chapter_id
+    st.session_state.chapter_contents = {}
 if "quiz_progress" not in st.session_state:
     st.session_state.quiz_progress = {}
+if "conversation" not in st.session_state:
+    st.session_state.conversation = None
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history = []
+if "vector_store" not in st.session_state:
+    st.session_state.vector_store = None
 
 # --- Gemini API Call Function ---
 async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, top_p, response_schema=None):
     """
     Calls the Gemini API to generate content with specified parameters.
     """
-    chat_history = [{"role": "user", "parts": [{"text": prompt}]}]
-
-    generation_config = {
-        "temperature": temperature,
-        "maxOutputTokens": max_tokens,
-        "topK": int(top_k), # Ensure integer
-        "topP": top_p
-    }
-
+    # Prepare the API request payload
     payload = {
-        "contents": chat_history,
-        "generationConfig": generation_config
-    }
-
+        "contents": [{
+            "role": "user",
+            "parts": [{
+                "text": prompt
+            }]
+        }],
+        "generationConfig": {
+            "temperature": float(temperature),
+            "maxOutputTokens": int(max_tokens),
+            "topK": int(top_k),
+            "topP": float(top_p)
+        }
+    }    # Add schema if provided
     if response_schema:
-        payload["generationConfig"]["responseMimeType"] = "application/json"
-        payload["generationConfig"]["responseSchema"] = response_schema
+        payload["generationConfig"].update({
+            "candidateCount": 1,
+            "responseMimeType": "application/json",
+            "responseSchema": response_schema
+        })
+        
+    if not validate_api_key(API_KEY):
+        st.error("API key validation failed. Please check your API key configuration.")
+        return None
 
     api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={API_KEY}"
 
     try:
         async with httpx.AsyncClient() as client:
+            st.write("Sending request with payload:", payload)  # Debug output
             response = await client.post(
                 api_url,
                 headers={'Content-Type': 'application/json'},
                 json=payload,
-                timeout=120 # Increased timeout for potentially longer content generation
+                timeout=120
             )
-            response.raise_for_status() # Raise an exception for HTTP errors (4xx or 5xx)
+            if response.status_code != 200:
+                st.error(f"API Error: {response.status_code} - {response.text}")
+                return None
+                
             result = response.json()
-
-        if result.get("candidates") and result["candidates"][0].get("content") and \
-           result["candidates"][0]["content"].get("parts") and \
-           result["candidates"][0]["content"]["parts"][0].get("text"):
-            text_response = result["candidates"][0]["content"]["parts"][0]["text"]
-            if response_schema:
-                try:
-                    return json.loads(text_response)
-                except json.JSONDecodeError:
-                    st.error("Failed to parse JSON response from LLM. Please try again. Raw response might be:")
-                    st.json(text_response) # Show raw response for debugging
-                    return None
-            return text_response
-        else:
-            st.error(f"LLM response structure unexpected: {result}")
-            return "Error: Could not get a valid response from the AI model."
+            st.write("Received response:", result)  # Debug output
+            
+            if result.get("candidates") and len(result["candidates"]) > 0:
+                candidate = result["candidates"][0]
+                if candidate.get("content") and candidate["content"].get("parts"):
+                    text_response = candidate["content"]["parts"][0].get("text", "")
+                    if response_schema:
+                        try:
+                            return json.loads(text_response)
+                        except json.JSONDecodeError as e:
+                            st.error(f"Failed to parse JSON response. Error: {e}")
+                            st.code(text_response)  # Show the raw response for debugging
+                            return None
+                    return text_response
+            
+            st.error(f"Unexpected response structure from API")
+            st.write(result)  # Show the full response for debugging
+            return None
+            
     except httpx.RequestError as e:
         st.error(f"Network or API request error: {e}")
-        return "Error: Failed to connect to the AI model. Please check your network or API key."
+        return None
     except Exception as e:
         st.error(f"An unexpected error occurred: {e}")
-        return "Error: An unexpected issue occurred during AI generation."
+        return None
+
+# --- Utility Functions ---
+def validate_api_key(api_key):
+    """Validate the API key before making requests"""
+    if not api_key:
+        st.error("API key is missing")
+        return False
+    if not isinstance(api_key, str):
+        st.error("API key must be a string")
+        return False
+    if not api_key.startswith("AIza"):
+        st.error("Invalid API key format")
+        return False
+    return True
 
 # --- Helper function to get or create an asyncio loop ---
 def get_or_create_eventloop():
@@ -283,7 +362,7 @@ if generate_course_button:
                 print(json.dumps(course_data, indent=2))
                 print("============================")
                 
-                # Save the input and output data to JSONL file
+                # Save the input and output to JSONL file
                 dataset_entry = {
                     "timestamp": str(datetime.now()),
                     "input": input_params,
@@ -515,4 +594,363 @@ if prompt := st.chat_input("What else can I help you with?"):
     with st.chat_message("assistant"):
         st.markdown(response)
     st.session_state.messages.append({"role": "assistant", "content": response})
+
+# --- RAG Helper Functions ---
+@st.cache_resource
+def get_vector_store(file_paths):
+    """
+    Loads documents, splits them, creates embeddings using Gemini's embedding model,
+    and stores them in a FAISS vector store.
+    """
+    all_documents = []
+    for file_path in file_paths:
+        file_extension = os.path.splitext(file_path)[1].lower()
+        try:
+            if file_extension == '.pdf':
+                loader = PyPDFLoader(file_path)
+            elif file_extension == '.txt':
+                loader = TextLoader(file_path)
+            else:
+                st.warning(f"Unsupported file type: {file_extension}. Skipping {os.path.basename(file_path)}")
+                continue
+            all_documents.extend(loader.load())
+        except Exception as e:
+            st.error(f"Error loading {os.path.basename(file_path)}: {e}")
+            continue
+
+    if not all_documents:
+        return None
+
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+    document_chunks = text_splitter.split_documents(all_documents)
+    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+    vector_store = FAISS.from_documents(document_chunks, embeddings)
+    return vector_store
+
+@st.cache_resource
+def get_conversational_chain(_vector_store):
+    """
+    Initializes and returns a ConversationalRetrievalChain using Gemini's chat model.
+    """
+    if not _vector_store:
+        return None
+
+    llm = ChatGoogleGenerativeAI(model="models/gemini-1.5-flash-latest", temperature=0.7)
+    memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
+    conversation_chain = ConversationalRetrievalChain.from_llm(
+        llm=llm,
+        retriever=_vector_store.as_retriever(),
+        memory=memory,
+        combine_docs_chain_kwargs={"prompt": None}
+    )
+    return conversation_chain
+
+def handle_user_input(user_question):
+    """
+    Processes the user's question and displays the response.
+    """
+    if st.session_state.conversation and user_question:
+        with st.spinner("Generating response..."):
+            response = st.session_state.conversation({'question': user_question})
+            st.session_state.chat_history = response['chat_history']
+
+        for i, message in enumerate(st.session_state.chat_history):
+            if i % 2 == 0:
+                with st.chat_message("user"):
+                    st.write(message.content)
+            else:
+                with st.chat_message("assistant"):
+                    st.write(message.content)
+    elif not st.session_state.conversation:
+        st.error("Please upload and process documents first.")
+
+# --- Content Generation Functions ---
+async def generate_course_content(topic, chapter_title):
+    """Generate detailed content for a specific chapter"""
+    llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.7)
+    
+    prompt = f"""Create detailed content for the chapter '{chapter_title}' in the course about '{topic}'.
+    Include:
+    1. Comprehensive explanation of concepts
+    2. Real-world examples
+    3. Code snippets or practical demonstrations where applicable
+    4. Best practices and common pitfalls
+    5. Summary of key points
+    
+    Format the content with proper Markdown headings and formatting."""
+    
+    try:
+        response = llm.invoke(prompt)
+        return response
+    except Exception as e:
+        st.error(f"Error generating chapter content: {str(e)}")
+        return None
+
+async def generate_quiz(topic, chapter_content):
+    """Generate a quiz based on chapter content"""
+    llm = ChatGoogleGenerativeAI(model="models/gemini-1.5-flash-latest", temperature=0.7)
+    
+    quiz_schema = {
+        "type": "object",
+        "properties": {
+            "questions": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "question": {"type": "string"},
+                        "options": {
+                            "type": "array",
+                            "items": {"type": "string"}
+                        },
+                        "correct_answer": {"type": "integer"},
+                        "explanation": {"type": "string"}
+                    }
+                }
+            }
+        }
+    }
+    
+    prompt = f"""Create a quiz to test understanding of: {topic}
+    Based on this content: {chapter_content}
+    Include 5 multiple-choice questions with explanations for the correct answers."""
+    
+    try:
+        response = await generate_content_with_gemini(
+            prompt=prompt,
+            temperature=0.7,
+            max_tokens=1024,
+            top_k=40,
+            top_p=0.95,
+            response_schema=quiz_schema
+        )
+        return response
+    except Exception as e:
+        st.error(f"Error generating quiz: {str(e)}")
+        return None
+
+async def generate_course_outline(topic, num_modules, difficulty="intermediate"):
+    """Generate a complete course structure"""
+    schema = {
+        "type": "object",
+        "properties": {
+            "title": {"type": "string"},
+            "description": {"type": "string"},
+            "duration": {"type": "string"},
+            "prerequisites": {
+                "type": "array",
+                "items": {"type": "string"}
+            },
+            "learning_objectives": {
+                "type": "array",
+                "items": {"type": "string"}
+            },
+            "chapters": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "title": {"type": "string"},
+                        "description": {"type": "string"},
+                        "key_topics": {
+                            "type": "array",
+                            "items": {"type": "string"}
+                        },
+                        "exercises": {
+                            "type": "array",
+                            "items": {"type": "string"}
+                        }
+                    },
+                    "required": ["title", "description", "key_topics", "exercises"]
+                }
+            }
+        },
+        "required": ["title", "description", "prerequisites", "learning_objectives", "chapters"]
+    }
+    
+    prompt = f"""Generate a detailed course outline for the topic: {topic}
+    Number of modules/chapters: {num_modules}
+    Difficulty level: {difficulty}
+    
+    Please provide:
+    1. A clear course title
+    2. A comprehensive description
+    3. List of prerequisites
+    4. Specific learning objectives
+    5. {num_modules} chapters/modules, each with:
+       - Title
+       - Description
+       - Key topics to cover
+       - Practical exercises
+    
+    Make the content engaging and focused on practical applications."""
+    
+    try:
+        response = await generate_content_with_gemini(
+            prompt=prompt,
+            temperature=0.7,
+            max_tokens=2048,
+            top_k=40,
+            top_p=0.95,
+            response_schema=schema
+        )
+        
+        if not response:
+            st.error("Failed to generate course content")
+            return None
+            
+        # Add metadata
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        metadata = {
+            "id": f"{topic.lower().replace(' ', '_')}_{timestamp}",
+            "created_at": timestamp,
+            "progress": 0,
+            "completed_chapters": []
+        }
+        # Combine the course data with metadata
+        final_data = {**response, **metadata}
+        return final_data
+            
+    except Exception as e:
+        st.error(f"Error generating course outline: {str(e)}")
+        st.error("Raw response: " + str(response) if response else "No response received")
+        return None
+
+def main():
+    tabs = st.tabs(["Course Creator", "Learning Assistant", "Study Progress"])
+    
+    with tabs[0]:
+        st.header("🎓 Course Creator")
+        col1, col2 = st.columns([2, 1])
+        
+        with col1:
+            course_topic = st.text_input("Enter Course Topic:", 
+                placeholder="e.g., Advanced Machine Learning, Web Development...")
+            num_modules = st.number_input("Number of Modules:", 
+                min_value=1, max_value=10, value=5)
+                
+            generate_button = st.button("Generate Course", type="primary")
+            if generate_button and course_topic:
+                with st.spinner("Creating your custom course..."):
+                    loop = get_or_create_eventloop()
+                    course_data = loop.run_until_complete(
+                        generate_course_outline(
+                            topic=course_topic,
+                            num_modules=num_modules
+                        )
+                    )
+                    
+                    if course_data:
+                        st.session_state.courses.append(course_data)
+                        st.success(f"Course '{course_data['title']}' generated successfully!")
+                        
+                        st.subheader("📚 Generated Course")
+                        st.markdown(f"### {course_data['title']}")
+                        st.markdown(course_data['description'])
+                        
+                        st.markdown("### Prerequisites")
+                        for prereq in course_data['prerequisites']:
+                            st.markdown(f"- {prereq}")
+                        
+                        st.markdown("### Learning Objectives")
+                        for obj in course_data['learning_objectives']:
+                            st.markdown(f"- {obj}")
+                        
+                        st.markdown("### Chapters")
+                        for i, chapter in enumerate(course_data['chapters'], 1):
+                            with st.expander(f"Chapter {i}: {chapter['title']}"):
+                                st.markdown(chapter['description'])
+                                st.markdown("#### Key Topics")
+                                for topic in chapter['key_topics']:
+                                    st.markdown(f"- {topic}")
+                                st.markdown("#### Exercises")
+                                for exercise in chapter['exercises']:
+                                    st.markdown(f"- {exercise}")
+                    else:
+                        st.error("Failed to generate course. Please try again.")
+            elif generate_button:
+                st.warning("Please enter a course topic")
+        
+        with col2:
+            st.markdown("""
+            ### Tips for Best Results
+            - Be specific with your course topic
+            - Consider your target audience
+            - Specify realistic duration
+            - Include practical examples
+            """)
+    
+    # Tab 2: Learning Assistant (RAG)
+    with tabs[1]:
+        st.header("📚 Learning Assistant")
+        
+        # File uploader section
+        with st.expander("Upload Learning Materials", expanded=True):
+            uploaded_files = st.file_uploader(
+                "Upload PDF or TXT files to enable intelligent Q&A",
+                type=["pdf", "txt"],
+                accept_multiple_files=True
+            )
+            
+            if uploaded_files:
+                if st.button("Process Documents"):
+                    with st.spinner("Processing documents..."):
+                        # Save uploaded files temporarily
+                        temp_paths = []
+                        for file in uploaded_files:
+                            temp_path = f"temp_{file.name}"
+                            with open(temp_path, "wb") as f:
+                                f.write(file.getvalue())
+                            temp_paths.append(temp_path)
+                        
+                        # Create vector store
+                        st.session_state.vector_store = get_vector_store(temp_paths)
+                        
+                        # Clean up temp files
+                        for path in temp_paths:
+                            os.remove(path)
+                        
+                        if st.session_state.vector_store:
+                            st.session_state.conversation = get_conversational_chain(st.session_state.vector_store)
+                            st.success("Documents processed successfully! You can now ask questions.")
+        
+        # Chat interface
+        st.markdown("### Ask Questions About Your Learning Materials")
+        user_question = st.text_input("Your question:")
+        if user_question:
+            handle_user_input(user_question)
+    
+    # Tab 3: Study Progress
+    with tabs[2]:
+        st.header("📊 Study Progress")
+        
+        if st.session_state.courses:
+            course_names = [course["title"] for course in st.session_state.courses]
+            selected_course = st.selectbox("Select Course:", course_names)
+            
+            if selected_course:
+                course_idx = course_names.index(selected_course)
+                course = st.session_state.courses[course_idx]
+                
+                # Display progress metrics
+                col1, col2, col3 = st.columns(3)
+                with col1:
+                    st.metric("Chapters Completed", "0/{}".format(len(course["chapters"])))
+                with col2:
+                    st.metric("Time Spent", "0 hours")
+                with col3:
+                    st.metric("Quiz Score", "N/A")
+                
+                # Display chapters with progress
+                st.markdown("### Chapter Progress")
+                for i, chapter in enumerate(course["chapters"]):
+                    with st.expander(f"Chapter {i+1}: {chapter['title']}", expanded=False):
+                        st.markdown(chapter["description"])
+                        if st.button(f"Mark Chapter {i+1} as Complete", key=f"complete_{i}"):
+                            st.success(f"Chapter {i+1} marked as complete!")
+        else:
+            st.info("No courses created yet. Start by creating a course in the Course Creator tab!")
+
+if __name__ == "__main__":
+    main()
 

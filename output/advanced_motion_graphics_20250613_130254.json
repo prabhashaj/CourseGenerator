@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 13:02:54.318955",
+  "input": {
+    "course_topic": "Motion Graphics",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.37,
+    "max_tokens": 1024,
+    "top_k": 29,
+    "top_p": 0.68
+  },
+  "output": {
+    "conclusion": "By the end of this course, you will be equipped with advanced motion graphics skills, enabling you to create stunning and engaging visual content for various platforms.",
+    "courseTitle": "Advanced Motion Graphics",
+    "introduction": "Welcome to the Advanced Motion Graphics course! This course is designed for experienced motion designers looking to elevate their skills and master advanced techniques in After Effects and other industry-standard software. We will explore complex animation principles, advanced visual effects, and efficient workflow strategies to create professional-grade motion graphics.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Keyframing Techniques",
+            "description": "Explore advanced keyframe interpolation methods (Bezier, Hold, Rove Across Time) and their applications. Learn to create smooth, organic animations using graph editor mastery."
+          },
+          {
+            "chapterTitle": "Expressions Deep Dive",
+            "description": "Delve into complex expressions for automating animation, creating dynamic links between properties, and building reusable animation rigs. Focus on practical examples and debugging techniques."
+          },
+          {
+            "chapterTitle": "3D Camera Tracking and Integration",
+            "description": "Master camera tracking techniques in After Effects and integrate 2D motion graphics seamlessly into 3D environments. Learn about solving camera data and creating realistic composites."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Animation Principles"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Particle Systems",
+            "description": "Explore advanced features of particle systems like Particular and Plexus. Learn to create complex visual effects such as fire, smoke, and abstract particle animations."
+          },
+          {
+            "chapterTitle": "Fluid Dynamics Simulation",
+            "description": "Introduction to fluid dynamics simulation using plugins like RealFlow or specialized After Effects techniques. Learn to create realistic fluid effects and integrate them into motion graphics."
+          },
+          {
+            "chapterTitle": "Advanced Compositing Techniques",
+            "description": "Master advanced compositing techniques including rotoscoping, keying, and color grading. Learn to seamlessly integrate different elements into a cohesive visual."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Visual Effects"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Character Animation Workflow",
+            "description": "Streamline character animation workflows using tools like Duik Bassel or RubberHose. Learn to create efficient rigs and animate characters with fluid movements."
+          },
+          {
+            "chapterTitle": "Motion Capture Integration",
+            "description": "Explore motion capture data integration into After Effects. Learn to clean up and refine motion capture data for realistic character animation."
+          },
+          {
+            "chapterTitle": "Facial Animation Techniques",
+            "description": "Master facial animation techniques using blend shapes, puppet pins, or specialized plugins. Learn to create expressive and believable facial performances."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Character Animation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Scripting for Automation",
+            "description": "Introduction to scripting in After Effects using ExtendScript. Learn to automate repetitive tasks, create custom tools, and enhance workflow efficiency."
+          },
+          {
+            "chapterTitle": "Team Collaboration Workflows",
+            "description": "Explore team collaboration workflows using shared projects, version control systems, and efficient communication strategies. Learn to manage complex projects with multiple team members."
+          },
+          {
+            "chapterTitle": "Optimizing for Performance",
+            "description": "Learn techniques for optimizing After Effects projects for performance. Understand how to reduce render times, manage memory usage, and create efficient compositions."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Workflow Optimization and Collaboration"
+      }
+    ]
+  }
+}

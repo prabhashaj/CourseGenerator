@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:30:00.178196",
+  "input": {
+    "course_topic": "Engineering Drawing",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.69,
+    "max_tokens": 1024,
+    "top_k": 20,
+    "top_p": 0.72
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of engineering drawing principles and techniques, equipping you with the skills to create and interpret technical drawings effectively.",
+    "courseTitle": "Engineering Drawing",
+    "introduction": "Welcome to the Engineering Drawing course! This intermediate-level course builds upon fundamental drawing concepts and delves into more advanced techniques used in engineering and design. We will explore orthographic projections, sectional views, auxiliary views, and dimensioning practices, enabling you to create accurate and detailed technical drawings.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Orthographic Projection Review",
+            "description": "A quick refresher on the principles of orthographic projection, including multi-view drawings and the relationship between different views."
+          },
+          {
+            "chapterTitle": "Advanced Multi-View Drawings",
+            "description": "Creating multi-view drawings for complex objects with inclined and curved surfaces."
+          },
+          {
+            "chapterTitle": "Line Conventions and Precedence",
+            "description": "Understanding and applying different line types (visible, hidden, center lines) and their precedence in technical drawings."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Orthographic Projection Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Sectional Views: Principles",
+            "description": "Introduction to sectional views and their purpose in revealing internal features of an object."
+          },
+          {
+            "chapterTitle": "Types of Sectional Views",
+            "description": "Exploring different types of sectional views, including full, half, offset, and broken-out sections."
+          },
+          {
+            "chapterTitle": "Hatching Conventions",
+            "description": "Understanding and applying appropriate hatching patterns to indicate different materials in sectional views."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Sectional Views"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Auxiliary Views: Introduction",
+            "description": "Understanding the need for auxiliary views to represent true shapes of inclined surfaces."
+          },
+          {
+            "chapterTitle": "Primary Auxiliary Views",
+            "description": "Creating primary auxiliary views to show the true shape of a single inclined surface."
+          },
+          {
+            "chapterTitle": "Partial Auxiliary Views",
+            "description": "Creating partial auxiliary views to show only the relevant portion of the inclined surface."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Auxiliary Views"
+      }
+    ]
+  }
+}

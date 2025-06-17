@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 14:37:26.862229",
+  "input": {
+    "course_topic": "Mental Health Awareness",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.64,
+    "max_tokens": 1024,
+    "top_k": 17,
+    "top_p": 0.66
+  },
+  "output": {
+    "conclusion": "By completing this course, you have gained a foundational understanding of mental health, common disorders, and strategies for promoting well-being. Remember to continue learning and advocating for mental health awareness in your community.",
+    "courseTitle": "Mental Health Awareness: An Intermediate Guide",
+    "introduction": "Welcome to the Mental Health Awareness course! This intermediate-level course is designed to provide you with a deeper understanding of mental health, common mental disorders, and strategies for promoting well-being. We will explore various aspects of mental health, equipping you with the knowledge and skills to support yourself and others.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding Mental Health",
+            "description": "Defining mental health and its importance. Exploring the spectrum of mental well-being. Factors influencing mental health: biological, psychological, and social."
+          },
+          {
+            "chapterTitle": "Stigma and Discrimination",
+            "description": "Understanding the stigma surrounding mental illness. Impact of stigma on individuals and communities. Strategies for reducing stigma and promoting acceptance."
+          },
+          {
+            "chapterTitle": "Promoting Positive Mental Health",
+            "description": "Practicing self-care and stress management. Building resilience and coping skills. Fostering healthy relationships and social support."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Foundations of Mental Health"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Anxiety Disorders",
+            "description": "Overview of different anxiety disorders (Generalized Anxiety Disorder, Panic Disorder, Social Anxiety Disorder). Symptoms, causes, and treatment options."
+          },
+          {
+            "chapterTitle": "Mood Disorders",
+            "description": "Understanding depression and bipolar disorder. Recognizing symptoms and seeking appropriate support. Treatment approaches and management strategies."
+          },
+          {
+            "chapterTitle": "Trauma and PTSD",
+            "description": "Defining trauma and its impact on mental health. Understanding Post-Traumatic Stress Disorder (PTSD). Coping mechanisms and therapeutic interventions."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Common Mental Disorders"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Recognizing Signs and Symptoms",
+            "description": "Identifying warning signs of mental health challenges in yourself and others. Differentiating between normal stress and potential mental health concerns."
+          },
+          {
+            "chapterTitle": "Offering Support and Encouragement",
+            "description": "Effective communication techniques for supporting someone struggling with their mental health. Active listening and empathy. Avoiding judgment and offering reassurance."
+          },
+          {
+            "chapterTitle": "Connecting to Resources",
+            "description": "Identifying local and national mental health resources. Knowing how to access professional help. Crisis intervention and emergency support."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Supporting Mental Health"
+      }
+    ]
+  }
+}

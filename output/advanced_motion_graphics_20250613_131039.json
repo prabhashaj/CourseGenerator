@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 13:10:39.070006",
+  "input": {
+    "course_topic": "Motion Graphics",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.49,
+    "max_tokens": 1024,
+    "top_k": 23,
+    "top_p": 0.95
+  },
+  "output": {
+    "conclusion": "By the end of this course, you will have a strong understanding of advanced motion graphics techniques and be able to create stunning animations for various applications.",
+    "courseTitle": "Advanced Motion Graphics",
+    "introduction": "Welcome to the Advanced Motion Graphics course! This course is designed for intermediate-level learners who have a basic understanding of animation principles and software like Adobe After Effects. We will delve into more complex techniques and workflows to elevate your motion graphics skills.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Keyframing Techniques",
+            "description": "Explore advanced keyframing methods such as using the graph editor for precise control over animation curves, creating complex easing functions, and mastering the use of expressions to automate animation tasks."
+          },
+          {
+            "chapterTitle": "Working with Null Objects and Parenting",
+            "description": "Learn how to use null objects to control multiple layers simultaneously, create complex hierarchies through parenting, and build rigs for character animation or intricate mechanical movements."
+          },
+          {
+            "chapterTitle": "3D Camera Tracking and Integration",
+            "description": "Understand the principles of 3D camera tracking, learn how to import and integrate 3D elements into your motion graphics projects, and create seamless compositions that blend 2D and 3D seamlessly."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Animation Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Creating Custom Transitions",
+            "description": "Dive into the world of custom transitions, learning how to design and animate unique transitions using masks, shapes, and effects to create visually stunning and seamless scene changes."
+          },
+          {
+            "chapterTitle": "Using Expressions for Dynamic Animation",
+            "description": "Master the use of expressions to create dynamic and data-driven animations, learn how to link properties, automate repetitive tasks, and create responsive designs that adapt to changing data."
+          },
+          {
+            "chapterTitle": "Working with Text Animators",
+            "description": "Explore the power of text animators to create complex and engaging text animations, learn how to use selectors, ranges, and properties to animate individual characters, words, or lines of text."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Dynamic Graphics and Text Animation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Particles and Simulations",
+            "description": "Learn how to use particle systems to create stunning visual effects such as explosions, smoke, and abstract animations, explore different particle types, parameters, and forces to achieve desired results."
+          },
+          {
+            "chapterTitle": "Integrating Sound Design",
+            "description": "Understand the importance of sound design in motion graphics, learn how to find and integrate sound effects and music into your projects, and synchronize animations with audio cues for maximum impact."
+          },
+          {
+            "chapterTitle": "Optimizing and Rendering",
+            "description": "Learn how to optimize your motion graphics projects for different platforms and devices, understand rendering settings, codecs, and formats, and prepare your animations for final delivery."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Visual Effects and Final Touches"
+      }
+    ]
+  }
+}

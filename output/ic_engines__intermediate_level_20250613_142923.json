@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-06-13 14:29:23.536054",
+  "input": {
+    "course_topic": "IC Engines",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.6,
+    "max_tokens": 2048,
+    "top_k": 27,
+    "top_p": 0.7
+  },
+  "output": {
+    "conclusion": "This course provides a solid intermediate-level understanding of Internal Combustion Engines, covering thermodynamics, combustion, and engine performance. Further studies can delve into specific engine types, advanced combustion strategies, and emission control technologies.",
+    "courseTitle": "IC Engines: Intermediate Level",
+    "introduction": "Welcome to the Intermediate IC Engines course! This course builds upon basic thermodynamics and introduces the core principles governing the operation of internal combustion engines. We will explore engine cycles, combustion processes, and performance parameters.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Engine Fundamentals and Thermodynamics",
+            "description": "Review of thermodynamic principles: open and closed systems, laws of thermodynamics. Introduction to air-standard cycles: Otto, Diesel, and Dual cycles. Analysis of cycle efficiency and mean effective pressure."
+          },
+          {
+            "chapterTitle": "Engine Components and Nomenclature",
+            "description": "Detailed overview of engine components: cylinder, piston, connecting rod, crankshaft, valves, camshaft. Understanding engine geometry: bore, stroke, compression ratio, clearance volume. Engine nomenclature and terminology."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Engine Basics and Thermodynamics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Combustion Chemistry and Stoichiometry",
+            "description": "Introduction to combustion chemistry: fuel-air mixtures, stoichiometry, air-fuel ratio, equivalence ratio. Understanding complete and incomplete combustion. Formation of combustion products."
+          },
+          {
+            "chapterTitle": "Combustion in SI Engines",
+            "description": "Stages of combustion in spark-ignition (SI) engines: ignition delay, flame propagation, afterburning. Factors affecting combustion rate and efficiency. Introduction to knock and pre-ignition."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Combustion Processes"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Engine Performance Parameters",
+            "description": "Defining key engine performance parameters: indicated power, brake power, friction power, mechanical efficiency. Understanding torque, speed, and power curves. Volumetric efficiency and its significance."
+          },
+          {
+            "chapterTitle": "Engine Testing and Performance Evaluation",
+            "description": "Overview of engine testing methods: dynamometers, emission analyzers. Analysis of engine performance data: BSFC, thermal efficiency, emissions. Factors affecting engine performance."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Engine Performance and Testing"
+      }
+    ]
+  }
+}

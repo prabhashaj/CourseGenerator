@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:34:07.542418",
+  "input": {
+    "course_topic": "Design of Steel Structures",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.45,
+    "max_tokens": 2048,
+    "top_k": 17,
+    "top_p": 0.66
+  },
+  "output": {
+    "conclusion": "This course provides an advanced understanding of steel structure design principles and practices, equipping engineers with the knowledge to tackle complex structural challenges.",
+    "courseTitle": "Design of Steel Structures (Advanced)",
+    "introduction": "Welcome to the advanced course on Design of Steel Structures. This course delves into advanced topics, building upon fundamental concepts to equip you with the skills to design complex and efficient steel structures. We will explore advanced analysis techniques, connection design, stability considerations, and design for specific loading conditions.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Steel Material Properties",
+            "description": "In-depth exploration of high-strength steels, their behavior under various loading conditions, and considerations for fatigue and fracture."
+          },
+          {
+            "chapterTitle": "Residual Stresses and Their Impact",
+            "description": "Understanding the origin and distribution of residual stresses in steel members and their influence on structural behavior and design."
+          },
+          {
+            "chapterTitle": "Advanced Connection Design Principles",
+            "description": "Detailed analysis and design of complex bolted and welded connections, including considerations for prying action and block shear."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Material Properties and Connection Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Buckling Analysis of Steel Members",
+            "description": "Advanced methods for determining the buckling capacity of columns and beams, including finite element analysis techniques."
+          },
+          {
+            "chapterTitle": "Lateral-Torsional Buckling of Beams",
+            "description": "Detailed analysis of lateral-torsional buckling behavior in beams, considering various loading and support conditions."
+          },
+          {
+            "chapterTitle": "Bracing Systems for Stability",
+            "description": "Design and analysis of bracing systems to enhance the stability of steel structures, including both lateral and torsional bracing."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Stability of Steel Structures"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Seismic Design of Steel Structures",
+            "description": "Principles of seismic design for steel structures, including ductility requirements, capacity design, and performance-based design approaches."
+          },
+          {
+            "chapterTitle": "Design for Wind Loads",
+            "description": "Advanced methods for determining wind loads on steel structures and designing for wind-induced vibrations and instability."
+          },
+          {
+            "chapterTitle": "Fatigue Design of Steel Structures",
+            "description": "Detailed analysis of fatigue behavior in steel structures and design considerations to prevent fatigue failure under cyclic loading."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Design for Special Loading Conditions"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Design of Steel Plate Girders",
+            "description": "Advanced design principles for steel plate girders, including web stiffener design and flange design considerations."
+          },
+          {
+            "chapterTitle": "Design of Steel Trusses",
+            "description": "Advanced analysis and design of steel trusses, including considerations for joint design and buckling stability."
+          },
+          {
+            "chapterTitle": "Case Studies in Steel Structure Design",
+            "description": "Analysis of real-world case studies involving the design of complex steel structures, highlighting practical considerations and challenges."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Steel Structure Design Applications"
+      }
+    ]
+  }
+}

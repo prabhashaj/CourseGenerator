@@ -1,0 +1,806 @@
+# # document_course_creator.py
+# from langchain_community.document_loaders import PyPDFLoader, TextLoader
+# from langchain.text_splitter import RecursiveCharacterTextSplitter
+# from langchain_google_genai import ChatGoogleGenerativeAI
+# from langchain.memory import ConversationBufferMemory
+# from langchain.chains import ConversationChain
+# import streamlit as st
+# import httpx
+# import json
+# import os
+# import asyncio
+
+# # --- API Key Setup ---
+# # API_KEY is expected to be set in appx.py or environment variables
+# # Keep this global check, but also ensure it's picked up within the function.
+# API_KEY = st.secrets.get("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+# if API_KEY:
+#     os.environ["GOOGLE_API_KEY"] = API_KEY # Ensure it's in os.environ
+
+# # --- Helper function to get or create an asyncio loop ---
+# def get_or_create_eventloop():
+#     """Gets the running event loop or creates a new one."""
+#     try:
+#         return asyncio.get_running_loop()
+#     except RuntimeError:
+#         loop = asyncio.new_event_loop()
+#         asyncio.set_event_loop(loop)
+#         return loop
+
+# # --- Gemini API Call Function ---
+# async def generate_content_with_gemini(prompt, response_schema=None):
+#     """Calls the Gemini API to generate content with a fallback for errors."""
+#     # Re-define API_KEY locally to ensure it's captured correctly at call time
+#     current_api_key = st.secrets.get("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+
+#     if not current_api_key:
+#         st.error("API Key is not configured. Please set it in Streamlit secrets or environment variables.")
+#         return None
+
+#     chat_history = [{"role": "user", "parts": [{"text": prompt}]}]
+#     generation_config = {
+#         "temperature": 0.7,
+#         "maxOutputTokens": 2048,
+#         "topK": 32,
+#         "topP": 1.0
+#     }
+#     payload = {"contents": chat_history, "generationConfig": generation_config}
+
+#     if response_schema:
+#         payload["generationConfig"]["responseMimeType"] = "application/json"
+#         payload["generationConfig"]["responseSchema"] = response_schema
+
+#     # Ensure api_url is correctly formatted using the locally captured API key
+#     api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={current_api_key}"
+#     st.write(f"DEBUG: API URL being used: {api_url}") # Debugging statement
+
+#     try:
+#         async with httpx.AsyncClient() as client:
+#             response = await client.post(api_url, json=payload, timeout=120)
+#             response.raise_for_status()
+#             result = response.json()
+
+#         text_response = result["candidates"][0]["content"]["parts"][0]["text"]
+#         if response_schema:
+#             return json.loads(text_response)
+#         return text_response
+#     except (httpx.RequestError, httpx.HTTPStatusError, KeyError, json.JSONDecodeError) as e:
+#         st.error(f"An API or parsing error occurred: {e}")
+#         if hasattr(e, 'response') and e.response is not None:
+#              st.json(e.response.text) # Display response body for debugging
+#         return None
+
+# def clear_doc_chat_history():
+#     """Clear chat history when switching documents"""
+#     if "doc_chat_history" in st.session_state:
+#         st.session_state.doc_chat_history = []
+#     if "doc_conversation" in st.session_state:
+#         st.session_state.doc_conversation.memory.clear()
+#     if "current_document" in st.session_state:
+#         st.session_state.current_document = None
+
+# def init_session_state():
+#     """Initialize session state variables for document course creator"""
+#     if "doc_chat_history" not in st.session_state:
+#         st.session_state.doc_chat_history = []
+#     if "doc_conversation" not in st.session_state:
+#         llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.7)
+#         memory = ConversationBufferMemory()
+#         st.session_state.doc_conversation = ConversationChain(llm=llm, memory=memory)
+#     if "current_document" not in st.session_state:
+#         st.session_state.current_document = None
+#     if "generated_course" not in st.session_state:
+#         st.session_state.generated_course = None
+#     if "document_content" not in st.session_state:
+#         st.session_state.document_content = None
+
+# def process_doc_chat_message(user_message, document_content):
+#     """Process chat messages with context about the document-based course"""
+#     if not user_message:
+#         return
+
+#     # Prepare context about the document course
+#     context = f"""You are a helpful course assistant for a document-based course. Use the following course content to answer questions:
+#     {document_content}
+    
+#     Only answer questions related to this course content. If the question is not related, politely redirect the user
+#     to ask course-related questions.
+    
+#     User question: {user_message}
+#     """
+    
+#     try:
+#         response = st.session_state.doc_conversation.predict(input=context)
+#         st.session_state.doc_chat_history.append({"user": user_message, "assistant": response})
+#         return response
+#     except Exception as e:
+#         st.error(f"Error processing message: {str(e)}")
+#         return "I apologize, but I encountered an error. Please try again."
+
+# def run_app():
+#     """Runs the Streamlit UI for the Document-based Course Creator."""
+#     init_session_state()
+    
+#     st.title("📄 Course Creation from Your Documents")
+#     st.markdown("Upload your PDF or TXT documents, and I'll generate a course outline based on their content!")
+
+#     # --- Document Upload ---
+#     st.header("Upload Documents")
+    
+#     # Clear button to reset the state
+#     if st.sidebar.button("Clear Current Document & Chat", type="secondary"):
+#         clear_doc_chat_history()
+#         st.rerun()
+    
+#     uploaded_files = st.file_uploader(
+#         "Choose PDF or TXT files to create a course from", 
+#         type=["pdf", "txt"], 
+#         accept_multiple_files=True,
+#         help="Upload your PDF or TXT files (max 200MB each)"
+#     )
+
+#     course_difficulty = st.selectbox("Desired Course Difficulty", ["Beginner", "Intermediate", "Advanced"], key="doc_course_difficulty")
+#     num_modules = st.number_input("Desired Number of Modules (for AI to create)", 1, 10, 5, key="doc_num_modules")
+
+
+#     if st.button("Generate Course from Documents", use_container_width=True, type="primary"):
+#         if uploaded_files:
+#             with st.spinner("Processing documents and generating course outline..."):
+#                 temp_dir = "temp_course_docs"
+#                 os.makedirs(temp_dir, exist_ok=True)
+                
+#                 all_docs_content = []
+#                 for f in uploaded_files:
+#                     path = os.path.join(temp_dir, f.name)
+#                     with open(path, "wb") as file:
+#                         file.write(f.getbuffer())
+                    
+#                     # Load content based on file type
+#                     ext = os.path.splitext(path)[1].lower()
+#                     try:
+#                         if ext == '.pdf':
+#                             loader = PyPDFLoader(path)
+#                         elif ext == '.txt':
+#                             loader = TextLoader(path)
+#                         else:
+#                             st.warning(f"Skipping unsupported file type: {f.name}")
+#                             continue
+                        
+#                         docs = loader.load()
+#                         # Join page contents if it's a PDF, or just append for TXT
+#                         all_docs_content.extend([d.page_content for d in docs])
+#                     except Exception as e:
+#                         st.error(f"Error loading {f.name}: {e}")
+                
+#                 if not all_docs_content:
+#                     st.error("No readable content found in the uploaded files. Please ensure they are valid PDF or TXT documents.")
+#                     return
+
+#                 # Combine all document content into a single string for the prompt
+#                 combined_text = "\n\n".join(all_docs_content)
+
+#                 # Use RecursiveCharacterTextSplitter to chunk the combined text if it's too long
+#                 # This helps in fitting the content into the LLM's context window.
+#                 splitter = RecursiveCharacterTextSplitter(chunk_size=4000, chunk_overlap=500) # Increased chunk size for better context
+#                 chunks = splitter.split_text(combined_text)
+                
+#                 # Take the first few chunks to avoid exceeding token limits for the prompt
+#                 # Adjust this number based on typical document sizes and LLM capabilities
+#                 content_for_prompt = "\n\n".join(chunks[:5]) # Use first 5 chunks or adjust as needed
+
+#                 if not content_for_prompt.strip():
+#                     st.error("Could not extract sufficient text content from the documents to generate a course.")
+#                     return
+
+#                 # Define the JSON schema for the course outline
+#                 course_schema = {
+#                     "type": "OBJECT",
+#                     "properties": {
+#                         "courseTitle": {"type": "STRING", "description": "A concise title for the course."},
+#                         "introduction": {"type": "STRING", "description": "An introduction to the course."},
+#                         "modules": {
+#                             "type": "ARRAY",
+#                             "description": "A list of modules for the course.",
+#                             "items": {
+#                                 "type": "OBJECT",
+#                                 "properties": {
+#                                     "moduleNumber": {"type": "INTEGER", "description": "The sequential number of the module."},
+#                                     "moduleTitle": {"type": "STRING", "description": "The title of the module."},
+#                                     "chapters": {
+#                                         "type": "ARRAY",
+#                                         "description": "A list of chapters within the module.",
+#                                         "items": {
+#                                             "type": "OBJECT",
+#                                             "properties": {
+#                                                 "chapterTitle": {"type": "STRING", "description": "The title of the chapter."},
+#                                                 "description": {"type": "STRING", "description": "A brief description of the chapter content."}
+#                                             },
+#                                             "required": ["chapterTitle", "description"]
+#                                         }
+#                                     }
+#                                 },
+#                                 "required": ["moduleNumber", "moduleTitle", "chapters"]
+#                             }
+#                         },
+#                         "conclusion": {"type": "STRING", "description": "A concluding summary for the course."}
+#                     },
+#                     "required": ["courseTitle", "introduction", "modules", "conclusion"]
+#                 }
+
+#                 # Craft the prompt for the LLM
+#                 course_prompt = f"""
+#                 Generate a detailed course outline in JSON format based on the following document content.
+#                 The course should be at a '{course_difficulty}' level and have exactly {num_modules} modules.
+#                 Each module must include a 'moduleNumber', 'moduleTitle', and a list of 'chapters', where each chapter has a 'chapterTitle' and 'description'.
+#                 The course should also have a 'courseTitle', 'introduction', and 'conclusion'.
+                
+#                 Document Content:
+#                 ---
+#                 {content_for_prompt}
+#                 ---
+
+#                 Ensure the JSON is valid and complete according to the provided schema. Do not include any text outside the JSON object.
+#                 """
+                
+#                 loop = get_or_create_eventloop()
+#                 course_data = loop.run_until_complete(
+#                     generate_content_with_gemini(course_prompt, response_schema=course_schema)
+#                 )
+
+#                 if course_data and "courseTitle" in course_data:
+#                     # Initialize completion status for all chapters in the new course
+#                     completion_status = {}
+#                     total_chapters_count = 0
+#                     for m_idx, mod in enumerate(course_data.get("modules", [])):
+#                         for c_idx, chap in enumerate(mod.get("chapters", [])):
+#                             chapter_unique_id = f"course_{len(st.session_state.courses)}_m{m_idx}_ch{c_idx}"
+#                             completion_status[chapter_unique_id] = False
+#                             total_chapters_count += 1
+
+#                     new_course = {
+#                         **course_data,
+#                         "completion_status": completion_status,
+#                         "total_chapters": total_chapters_count # Store total chapters
+#                     }
+#                     st.session_state.courses.append(new_course)
+#                     st.session_state.selected_course_index = len(st.session_state.courses) - 1
+#                     st.success("Course generated successfully from your documents!")
+#                     st.info("You can now navigate to 'Course Generator & Quizzes' to view and track your new course.")
+#                     st.rerun() # Rerun to update the main content area with the new course
+#                 else:
+#                     st.error("Failed to generate a valid course outline from your documents. Please check the document content and try again.")
+#         else:
+#             st.warning("Please upload at least one document to generate a course.")
+    
+#     # Add chat interface if document is loaded
+#     if "document_content" in st.session_state:
+#         st.divider()
+#         st.subheader("💬 Document Course Assistant")
+#         st.write("Ask questions about the document content!")
+        
+#         # Display chat history
+#         for message in st.session_state.doc_chat_history:
+#             with st.chat_message("user"):
+#                 st.write(message["user"])
+#             with st.chat_message("assistant"):
+#                 st.write(message["assistant"])
+        
+#         # Chat input
+#         if user_message := st.chat_input("Ask a question about the document..."):
+#             with st.chat_message("user"):
+#                 st.write(user_message)
+            
+#             with st.chat_message("assistant"):
+#                 response = process_doc_chat_message(user_message, st.session_state.document_content)
+#                 st.write(response)
+
+from langchain_community.document_loaders import PyPDFLoader, TextLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain.memory import ConversationBufferMemory
+from langchain.chains import ConversationChain
+import streamlit as st
+import httpx
+import json
+import os
+import asyncio
+import importlib # Import importlib to load quiz_utils
+
+# --- Import quiz_utils ---
+try:
+    quiz_utils = importlib.import_module("quiz_utils")
+except ImportError:
+    st.error("The 'quiz_utils.py' file was not found. Please make sure it's in the same directory.")
+    st.stop()
+
+
+# --- API Key Setup ---
+# API_KEY is expected to be set in appx.py or environment variables
+# Keep this global check, but also ensure it's picked up within the function.
+API_KEY = st.secrets.get("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+if API_KEY:
+    os.environ["GOOGLE_API_KEY"] = API_KEY # Ensure it's in os.environ
+
+# --- Helper function to get or create an asyncio loop ---
+def get_or_create_eventloop():
+    """Gets the running event loop or creates a new one."""
+    try:
+        return asyncio.get_running_loop()
+    except RuntimeError:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        return loop
+
+# --- Gemini API Call Function ---
+async def generate_content_with_gemini(prompt, response_schema=None, temperature=0.7, max_tokens=2048, top_k=32, top_p=1.0):
+    """Calls the Gemini API to generate content with a fallback for errors."""
+    # Re-define API_KEY locally to ensure it's captured correctly at call time
+    current_api_key = st.secrets.get("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+
+    if not current_api_key:
+        st.error("API Key is not configured. Please set it in Streamlit secrets or environment variables.")
+        return None
+
+    chat_history = [{"role": "user", "parts": [{"text": prompt}]}]
+    generation_config = {
+        "temperature": temperature,
+        "maxOutputTokens": max_tokens,
+        "topK": int(top_k),
+        "topP": top_p
+    }
+    payload = {"contents": chat_history, "generationConfig": generation_config}
+
+    if response_schema:
+        payload["generationConfig"]["responseMimeType"] = "application/json"
+        payload["generationConfig"]["responseSchema"] = response_schema
+
+    # Ensure api_url is correctly formatted using the locally captured API key
+    api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={current_api_key}"
+
+    try:
+        async with httpx.AsyncClient() as client:
+            response = await client.post(api_url, json=payload, timeout=120)
+            response.raise_for_status()
+            result = response.json()
+
+        if not result.get("candidates"):
+            st.error("No response generated by LLM. Please try again.")
+            if result.get("promptFeedback") and result["promptFeedback"].get("blockReason"):
+                st.error(f"LLM blocked the prompt due to: {result['promptFeedback']['blockReason']}")
+            return None
+
+        text_response = result["candidates"][0]["content"]["parts"][0].get("text", "")
+        if response_schema:
+            try:
+                return json.loads(text_response)
+            except json.JSONDecodeError as e:
+                st.error(f"Failed to parse JSON response: {e}. Raw response: {text_response}")
+                return None
+        return text_response
+    except (httpx.RequestError, httpx.HTTPStatusError, KeyError) as e:
+        st.error(f"An API or parsing error occurred: {e}")
+        if hasattr(e, 'response') and e.response is not None:
+             st.json(e.response.text) # Display response body for debugging
+        return None
+
+def clear_doc_chat_history():
+    """Clear chat history, document content, and reset selected course when clearing."""
+    if "doc_chat_history" in st.session_state:
+        st.session_state.doc_chat_history = []
+    if "doc_conversation" in st.session_state:
+        st.session_state.doc_conversation.memory.clear()
+    if "current_document" in st.session_state:
+        st.session_state.current_document = None
+    if "selected_doc_course" in st.session_state: # Reset selected document course
+        st.session_state.selected_doc_course = None
+    # Also clear related global states when starting fresh for document courses
+    if "chapter_contents" in st.session_state:
+        st.session_state.chapter_contents = {}
+    if "quiz_progress" in st.session_state:
+        st.session_state.quiz_progress = {}
+
+def init_session_state():
+    """Initialize session state variables for document course creator"""
+    if "doc_chat_history" not in st.session_state:
+        st.session_state.doc_chat_history = []
+    if "doc_conversation" not in st.session_state:
+        llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.7)
+        memory = ConversationBufferMemory()
+        st.session_state.doc_conversation = ConversationChain(llm=llm, memory=memory)
+    if "current_document" not in st.session_state:
+        st.session_state.current_document = None
+    if "document_content" not in st.session_state:
+        st.session_state.document_content = None
+    # Use doc_courses and selected_doc_course specific to this module
+    if "doc_courses" not in st.session_state:
+        st.session_state.doc_courses = []
+    if "selected_doc_course" not in st.session_state:
+        st.session_state.selected_doc_course = None
+    # Ensure chapter_contents and quiz_progress are initialized globally (from appx.py usually)
+    if "chapter_contents" not in st.session_state:
+        st.session_state.chapter_contents = {}
+    if "quiz_progress" not in st.session_state:
+        st.session_state.quiz_progress = {}
+
+def process_doc_chat_message(user_message, document_content):
+    """Process chat messages with context about the document-based course"""
+    if not user_message:
+        return
+
+    # Prepare context about the document course
+    context = f"""You are a helpful course assistant for a document-based course. Use the following course content to answer questions:
+    {document_content}
+    
+    Only answer questions related to this course content. If the question is not related, politely redirect the user
+    to ask course-related questions.
+    
+    User question: {user_message}
+    """
+    
+    try:
+        response = st.session_state.doc_conversation.predict(input=context)
+        st.session_state.doc_chat_history.append({"user": user_message, "assistant": response})
+        return response
+    except Exception as e:
+        st.error(f"Error processing message: {str(e)}")
+        return "I apologize, but I encountered an error. Please try again."
+
+def run_app():
+    """Runs the Streamlit UI for the Document-based Course Creator."""
+    init_session_state()
+    
+    st.title("📄 Course Creation from Your Documents")
+    st.markdown("Upload your PDF or TXT documents, and I'll generate a course outline based on their content!")
+
+    # --- Clear button in Main Content Area (moved from sidebar) ---
+    if st.button("Clear Current Document & Chat", type="secondary"):
+        clear_doc_chat_history()
+        st.rerun()
+    
+    st.markdown("---") # Separator
+
+    # --- Document Upload in Main Content Area ---
+    st.header("Upload Documents")
+    
+    uploaded_files = st.file_uploader(
+        "Choose PDF or TXT files to create a course from", 
+        type=["pdf", "txt"], 
+        accept_multiple_files=True,
+        help="Upload your PDF or TXT files (max 200MB each)"
+    )
+
+    course_difficulty = st.selectbox("Desired Course Difficulty", ["Beginner", "Intermediate", "Advanced"], key="doc_course_difficulty")
+    num_modules = st.number_input("Desired Number of Modules (for AI to create)", 1, 10, 3, key="doc_num_modules") # Default to 3 chapters as per request
+    read_time_per_module = st.radio(
+        "Approx. Read Time per Module",
+        ["2 minutes", "5 minutes", "10 minutes"],
+        index=1,
+        horizontal=True,
+        help="Estimate the reading time for each module.",
+        key="doc_course_read_time_input"
+    )
+
+    if st.button("Generate Course from Documents", use_container_width=True, type="primary"):
+        if uploaded_files:
+            with st.spinner("Processing documents and generating course outline..."):
+                temp_dir = "temp_course_docs"
+                os.makedirs(temp_dir, exist_ok=True)
+                
+                all_docs_content = []
+                for f in uploaded_files:
+                    path = os.path.join(temp_dir, f.name)
+                    with open(path, "wb") as file:
+                        file.write(f.getbuffer())
+                    
+                    ext = os.path.splitext(path)[1].lower()
+                    try:
+                        if ext == '.pdf':
+                            loader = PyPDFLoader(path)
+                        elif ext == '.txt':
+                            loader = TextLoader(path)
+                        else:
+                            st.warning(f"Skipping unsupported file type: {f.name}")
+                            continue
+                        
+                        docs = loader.load()
+                        all_docs_content.extend([d.page_content for d in docs])
+                    except Exception as e:
+                        st.error(f"Error loading {f.name}: {e}")
+                
+                if not all_docs_content:
+                    st.error("No readable content found in the uploaded files. Please ensure they are valid PDF or TXT documents.")
+                    return
+
+                combined_text = "\n\n".join(all_docs_content)
+                st.session_state.document_content = combined_text # Store for chat assistant
+
+                splitter = RecursiveCharacterTextSplitter(chunk_size=4000, chunk_overlap=500)
+                chunks = splitter.split_text(combined_text)
+                
+                content_for_prompt = "\n\n".join(chunks[:5])
+
+                if not content_for_prompt.strip():
+                    st.error("Could not extract sufficient text content from the documents to generate a course.")
+                    return
+
+                # Define the JSON schema for the course outline, matching course_generator.py
+                course_schema = {
+                    "type": "OBJECT",
+                    "properties": {
+                        "courseTitle": {"type": "STRING", "description": "The title of the course"},
+                        "introduction": {"type": "STRING", "description": "A comprehensive introduction to the course"},
+                        "prerequisites": {
+                            "type": "ARRAY",
+                            "items": {"type": "STRING"},
+                            "description": "List of prerequisites for the course"
+                        },
+                        "modules": {
+                            "type": "ARRAY",
+                            "description": "List of course modules",
+                            "items": {
+                                "type": "OBJECT",
+                                "properties": {
+                                    "moduleNumber": {"type": "INTEGER", "description": "The module number"},
+                                    "moduleTitle": {"type": "STRING", "description": "The title of the module"},
+                                    "moduleDescription": {"type": "STRING", "description": "Description of the module content"},
+                                    "learningObjectives": {
+                                        "type": "ARRAY",
+                                        "items": {"type": "STRING"},
+                                        "description": "Learning objectives for this module"
+                                    },
+                                    "chapters": {
+                                        "type": "ARRAY",
+                                        "description": "List of chapters in this module",
+                                        "items": {
+                                            "type": "OBJECT",
+                                            "properties": {
+                                                "chapterTitle": {"type": "STRING", "description": "Title of the chapter"},
+                                                "description": {"type": "STRING", "description": "A brief description of the chapter content."},
+                                                # Add 'content' and 'keyPoints' as per course_generator's schema, even if initially empty
+                                                "content": {"type": "STRING", "description": "Main content of the chapter"},
+                                                "keyPoints": {
+                                                    "type": "ARRAY",
+                                                    "items": {"type": "STRING"},
+                                                    "description": "Key learning points of the chapter"
+                                                }
+                                            },
+                                            "required": ["chapterTitle", "description", "content", "keyPoints"]
+                                        }
+                                    }
+                                },
+                                "required": ["moduleNumber", "moduleTitle", "moduleDescription", "learningObjectives", "chapters"]
+                            }
+                        },
+                        "conclusion": {"type": "STRING", "description": "A concluding summary of the course"}
+                    },
+                    "required": ["courseTitle", "introduction", "prerequisites", "modules", "conclusion"]
+                }
+
+
+                # Craft the prompt for the LLM
+                course_prompt = f"""
+                Generate a detailed course outline in JSON format based on the following document content.
+                The course should be titled '{uploaded_files[0].name.split('.')[0]} - {course_difficulty} Level' and be at a '{course_difficulty}' level.
+                It must have exactly {num_modules} modules.
+                Each module must contain 3 chapters, each with a 'chapterTitle', 'description', 'content' (which can be initially an empty string), and 'keyPoints' (which can be an empty array).
+                The course must also include an 'introduction', 'prerequisites' (as an array), and a 'conclusion'.
+                The estimated read time for each module's content should be approximately {read_time_per_module}.
+                
+                Document Content:
+                ---
+                {content_for_prompt}
+                ---
+
+                Ensure the JSON is valid and complete according to the provided schema. Do not include any text outside the JSON object.
+                """
+                
+                loop = get_or_create_eventloop()
+                course_data = loop.run_until_complete(
+                    generate_content_with_gemini(course_prompt, response_schema=course_schema)
+                )
+
+                if course_data and "courseTitle" in course_data:
+                    # Initialize completion status for all chapters in the new course
+                    completion_status = {}
+                    total_chapters_count = 0
+                    for m_idx, mod in enumerate(course_data.get("modules", [])):
+                        for c_idx, chap in enumerate(mod.get("chapters", [])):
+                            # Use doc_course_ prefix for chapter_unique_id
+                            chapter_unique_id = f"doc_course_{len(st.session_state.doc_courses)}_m{m_idx}_ch{c_idx}"
+                            completion_status[chapter_unique_id] = False
+                            total_chapters_count += 1
+
+                    new_course = {
+                        **course_data,
+                        "completion_status": completion_status,
+                        "total_chapters": total_chapters_count # Store total chapters
+                    }
+                    st.session_state.doc_courses.append(new_course) # Append to doc_courses
+                    st.session_state.selected_doc_course = len(st.session_state.doc_courses) - 1 # Select the newly created doc course
+                    st.success("Course generated successfully from your documents!")
+                    st.info("The new course is now available in the sidebar under 'My Document Courses'.")
+                    st.rerun() # Rerun to update the main content area with the new course
+                else:
+                    st.error("Failed to generate a valid course outline from your documents. Please check the document content and try again.")
+        else:
+            st.warning("Please upload at least one document to generate a course.")
+    
+    # --- Display Selected Course Details (for document-generated course) ---
+    if st.session_state.selected_doc_course is not None and st.session_state.doc_courses:
+        selected_course = st.session_state.doc_courses[st.session_state.selected_doc_course] # Use doc_courses
+        
+        st.subheader(f"📚 Course: {selected_course['courseTitle']}")
+        
+        # Course completion tracking
+        completed_chapters = sum(1 for status in selected_course.get("completion_status", {}).values() if status)
+        total_chapters = selected_course.get("total_chapters", 0)
+        completion_percentage = (completed_chapters / total_chapters) * 100 if total_chapters > 0 else 0
+        st.markdown("**Course Progress:**")
+        st.progress(completion_percentage / 100, text=f"{completion_percentage:.1f}% Completed ({completed_chapters}/{total_chapters} chapters)")
+        
+        # Course introduction
+        st.markdown(f"**Introduction:** {selected_course.get('introduction', '')}")
+        
+        # Prerequisites
+        if selected_course.get("prerequisites"):
+            st.markdown("**Prerequisites:**")
+            for prereq in selected_course["prerequisites"]:
+                st.markdown(f"- {prereq}")
+        
+        # Modules and Chapters
+        for m_idx, module in enumerate(selected_course.get("modules", [])):
+            st.markdown(f"### Module {module.get('moduleNumber', m_idx + 1)}: {module.get('moduleTitle', 'N/A')}")
+            st.markdown(f"*{module.get('moduleDescription', '')}*")
+            if module.get("learningObjectives"):
+                st.markdown("**Learning Objectives:**")
+                for obj in module.get("learningObjectives", []):
+                    st.markdown(f"- {obj}")
+
+            for c_idx, chapter in enumerate(module.get("chapters", [])):
+                # Use doc_course_ prefix for chapter_id
+                chapter_id = f"doc_course_{st.session_state.selected_doc_course}_m{m_idx}_ch{c_idx}"
+
+                st.markdown(f"**Chapter: {chapter['chapterTitle']}**")
+                st.markdown(f"*{chapter.get('description', '')}*")
+
+                # Checkbox for completion (using doc_course specific keying)
+                is_completed = st.checkbox(
+                    f"Mark as complete: **{chapter['chapterTitle']}**",
+                    value=selected_course['completion_status'].get(chapter_id, False),
+                    key=f"doc_checkbox_{chapter_id}" # Unique key for each checkbox
+                )
+                # Update completion status in session state if changed
+                if is_completed != selected_course['completion_status'].get(chapter_id, False):
+                    selected_course['completion_status'][chapter_id] = is_completed
+                    st.session_state.doc_courses[st.session_state.selected_doc_course] = selected_course # Update the course in session state
+                    st.rerun() # Rerun to update the progress bar immediately
+
+                # Generate detailed content button
+                if st.button(f"Generate Detailed Content for '{chapter['chapterTitle']}'", key=f"doc_gen_content_{chapter_id}"):
+                    with st.spinner("Generating detailed chapter content..."):
+                        content_prompt = f"""
+                        Generate detailed content for chapter '{chapter['chapterTitle']}' in the '{selected_course['courseTitle']}' course.
+                        This course is for a {selected_course.get('difficulty', 'Intermediate')} level audience.
+                        Chapter description: {chapter['description']}.
+                        Provide comprehensive, readable content with examples if relevant, aiming for a few paragraphs.
+                        """
+                        loop = get_or_create_eventloop()
+                        detailed_content = loop.run_until_complete(
+                            generate_content_with_gemini(content_prompt, temperature=0.7, max_tokens=2048, top_k=32, top_p=1.0)
+                        )
+                        loop.close() # Close the loop after use
+                        if detailed_content:
+                            st.session_state.chapter_contents[chapter_id] = detailed_content
+                            st.success("Detailed content generated!")
+                        else:
+                            st.error("Failed to generate detailed content.")
+                
+                # Display chapter content
+                if chapter_id in st.session_state.chapter_contents:
+                    st.markdown("---")
+                    st.info(st.session_state.chapter_contents[chapter_id])
+                    st.markdown("---")
+                else:
+                    st.info("Click 'Generate Detailed Content' to get more information for this chapter.")
+
+            # --- Quiz for this module (after chapters) ---
+            module_quiz_id = f"doc_quiz_c{st.session_state.selected_doc_course}_m{m_idx}"
+            if module_quiz_id not in st.session_state.quiz_progress:
+                st.session_state.quiz_progress[module_quiz_id] = {"completed": False, "score": 0, "answers": []}
+
+            # Button to take quiz for the module
+            if st.button(f"Take Quiz for Module {module['moduleNumber']} ({module['moduleTitle']})", key=f"doc_quiz_btn_{module_quiz_id}"):
+                with st.spinner("Generating quiz... This may take a moment."):
+                    # Collect content from all chapters in the module for quiz generation context
+                    module_content = "\n".join([chapter['description'] for chapter in module.get('chapters', [])])
+                    if not module_content.strip():
+                        st.warning("Cannot generate quiz: No content available for this module's chapters.")
+                    else:
+                        loop = get_or_create_eventloop()
+                        quiz_data = loop.run_until_complete(quiz_utils.generate_quiz_with_gemini(
+                            module_content, API_KEY, 0.5, 2048, 1, 1, num_questions=5 # Using default quiz params for now
+                        ))
+                        loop.close() # Close the loop after use
+                        if quiz_data and "questions" in quiz_data:
+                            st.session_state.quiz_progress[module_quiz_id] = {
+                                "questions": quiz_data["questions"],
+                                "completed": False,
+                                "answers": [None] * len(quiz_data["questions"]),
+                                "score": 0
+                            }
+                            st.success("Quiz generated! Scroll down to attempt it.")
+                        else:
+                            st.error("Failed to generate quiz for this module. Ensure enough content is available.")
+            
+            # Display quiz if available
+            quiz_obj = st.session_state.quiz_progress.get(module_quiz_id, {})
+            if quiz_obj.get("questions"):
+                st.markdown(f"#### Quiz for Module {module['moduleNumber']} ({module['moduleTitle']})")
+                
+                if not quiz_obj.get("completed"):
+                    with st.form(f"doc_quiz_form_{module_quiz_id}"):
+                        current_answers = []
+                        for i, q in enumerate(quiz_obj["questions"]):
+                            st.markdown(f"**Q{i+1}: {q['question']}**")
+                            options = q["options"]
+                            selected_option = st.radio(
+                                f"Select answer for Q{i+1}", # Use unique key for each radio button
+                                options,
+                                index=options.index(quiz_obj['answers'][i]) if quiz_obj['answers'][i] in options else 0, # Pre-select if already answered
+                                key=f"doc_quiz_q_{module_quiz_id}_{i}"
+                            )
+                            current_answers.append(selected_option)
+                        
+                        submit_quiz_button = st.form_submit_button("Submit Quiz", help="Submit your answers for this quiz.")
+                        if submit_quiz_button:
+                            correct_answers = [q["answer"] for q in quiz_obj["questions"]]
+                            quiz_utils.update_quiz_progress(st.session_state, module_quiz_id, current_answers, correct_answers)
+                            st.rerun() # Rerun to display quiz results (score, explanations)
+                else:
+                    st.success(f"Quiz completed! Score: {quiz_obj['score']}/{len(quiz_obj['questions'])}")
+                    if st.button("Retake Quiz", key=f"doc_retake_{module_quiz_id}"):
+                        del st.session_state.quiz_progress[module_quiz_id]
+                        st.rerun()
+                    for idx, q in enumerate(quiz_obj["questions"]):
+                        st.markdown(f"**Q{idx+1}: {q['question']}**")
+                        user_ans = quiz_obj['answers'][idx]
+                        correct_ans = q['answer']
+                        
+                        # Display user's answer and correctness
+                        if user_ans == correct_ans:
+                            st.markdown(f"> ✅ Your answer: **{user_ans}** (Correct)")
+                        else:
+                            st.markdown(f"> ❌ Your answer: **{user_ans}** (Incorrect, Correct was: **{correct_ans}**)")
+                        st.markdown(f"> *Explanation: {q['explanation']}*")
+                        st.markdown("---") # Separator between questions
+        
+        st.markdown(f"**Conclusion:** {selected_course.get('conclusion', 'N/A')}")
+    elif st.session_state.selected_doc_course is None and not st.session_state.doc_courses:
+        st.info("Please upload documents and generate a new course to get started!")
+    elif st.session_state.selected_doc_course is None and st.session_state.doc_courses:
+        st.info("Select an existing document-generated course from the sidebar to view its content.")
+
+
+    # Add chat interface if document content is loaded
+    # This chat interface is specific to the document content, not the generated course.
+    if st.session_state.document_content: # Check if document_content is present for chat context
+        st.divider()
+        st.subheader("💬 Document Course Assistant")
+        st.write("Ask questions about the original document content!")
+        
+        # Display chat history
+        for message in st.session_state.doc_chat_history:
+            with st.chat_message("user"):
+                st.write(message["user"])
+            with st.chat_message("assistant"):
+                st.write(message["assistant"])
+        
+        # Chat input
+        if user_message := st.chat_input("Ask a question about the document...", key="doc_chat_input"):
+            with st.chat_message("user"):
+                st.write(user_message)
+            
+            with st.chat_message("assistant"):
+                response = process_doc_chat_message(user_message, st.session_state.document_content)
+                st.write(response)
+

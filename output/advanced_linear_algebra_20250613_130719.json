@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-13 13:07:19.244615",
+  "input": {
+    "course_topic": "Linear Algebra",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.63,
+    "max_tokens": 1024,
+    "top_k": 20,
+    "top_p": 0.81
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of linear algebra, equipping students with the theoretical knowledge and practical skills to tackle advanced problems in various fields.",
+    "courseTitle": "Advanced Linear Algebra",
+    "introduction": "Welcome to Advanced Linear Algebra! This course delves into the core concepts of linear algebra, building upon foundational knowledge to explore more sophisticated topics and applications. We will cover vector spaces, linear transformations, eigenvalues, eigenvectors, and inner product spaces, with a focus on theoretical understanding and problem-solving skills.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Vector Spaces and Subspaces",
+            "description": "Axiomatic definition of vector spaces, examples, and properties. Subspaces, linear combinations, and span."
+          },
+          {
+            "chapterTitle": "Linear Independence and Bases",
+            "description": "Linear independence, spanning sets, bases, and dimension of vector spaces. Coordinates relative to a basis."
+          },
+          {
+            "chapterTitle": "Quotient Spaces",
+            "description": "Construction of quotient spaces, properties, and examples."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Abstract Vector Spaces"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Linear Transformations",
+            "description": "Definition and properties of linear transformations. Kernel and image of a linear transformation."
+          },
+          {
+            "chapterTitle": "Matrix Representation",
+            "description": "Matrix representation of linear transformations. Change of basis and similarity."
+          },
+          {
+            "chapterTitle": "Isomorphisms",
+            "description": "Isomorphisms between vector spaces and their properties."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Linear Transformations and Matrices"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Eigenvalues and Eigenvectors",
+            "description": "Eigenvalues, eigenvectors, and eigenspaces. Characteristic polynomial."
+          },
+          {
+            "chapterTitle": "Diagonalization",
+            "description": "Diagonalizability of matrices and linear transformations. Applications of diagonalization."
+          },
+          {
+            "chapterTitle": "Generalized Eigenvectors",
+            "description": "Generalized eigenvectors and Jordan canonical form."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Eigenvalue Problems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Inner Product Spaces",
+            "description": "Inner products, norms, and orthogonality. Gram-Schmidt process."
+          },
+          {
+            "chapterTitle": "Orthogonal Projections",
+            "description": "Orthogonal projections and the best approximation theorem."
+          },
+          {
+            "chapterTitle": "Adjoint Operators",
+            "description": "Adjoint operators and their properties. Self-adjoint operators."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Inner Product Spaces and Operators"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Singular Value Decomposition (SVD)",
+            "description": "Singular values and singular vectors. SVD theorem and its applications."
+          },
+          {
+            "chapterTitle": "Positive Definite Matrices",
+            "description": "Positive definite matrices and their properties. Cholesky decomposition."
+          },
+          {
+            "chapterTitle": "Applications to Linear Systems",
+            "description": "Applications of SVD and positive definite matrices to solving linear systems."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Advanced Topics and Applications"
+      }
+    ]
+  }
+}

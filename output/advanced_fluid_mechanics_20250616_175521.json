@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-16 17:55:21.900660",
+  "input": {
+    "course_topic": "Fluid Mechanics",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.31,
+    "max_tokens": 2048,
+    "top_k": 20,
+    "top_p": 0.57
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of fluid mechanics at an advanced level, equipping students with the knowledge and skills to analyze and solve complex fluid flow problems.",
+    "courseTitle": "Advanced Fluid Mechanics",
+    "introduction": "Welcome to Advanced Fluid Mechanics! This course delves into the fundamental principles governing fluid behavior, building upon introductory concepts to explore more complex phenomena and applications. We will cover topics ranging from advanced conservation laws to turbulence modeling and computational fluid dynamics.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Tensor Analysis and Kinematics",
+            "description": "Introduction to tensor notation and its application to fluid mechanics. Deformation rate tensor, vorticity tensor, and their physical interpretations."
+          },
+          {
+            "chapterTitle": "Reynolds Transport Theorem",
+            "description": "A detailed look at the Reynolds Transport Theorem and its applications to deriving conservation equations for mass, momentum, and energy in integral form."
+          },
+          {
+            "chapterTitle": "Constitutive Equations",
+            "description": "Discussion of Newtonian and non-Newtonian fluid models. Derivation and application of constitutive equations for various fluid types."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Mathematical Preliminaries and Fundamental Concepts"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Navier-Stokes Equations",
+            "description": "Derivation of the Navier-Stokes equations from first principles. Discussion of the assumptions and limitations of the equations."
+          },
+          {
+            "chapterTitle": "Exact Solutions of Navier-Stokes Equations",
+            "description": "Analysis of classic exact solutions, including Couette flow, Poiseuille flow, and Stokes' first and second problems."
+          },
+          {
+            "chapterTitle": "Vorticity Dynamics",
+            "description": "Study of vorticity transport equation. Vortex stretching, tilting, and diffusion. Kelvin's circulation theorem."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Governing Equations and Exact Solutions"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Boundary Layer Theory",
+            "description": "Introduction to boundary layer approximations. Derivation of the Prandtl boundary layer equations."
+          },
+          {
+            "chapterTitle": "Similarity Solutions",
+            "description": "Blasius solution for flow over a flat plate. Falkner-Skan solutions for wedge flows."
+          },
+          {
+            "chapterTitle": "Thermal Boundary Layers",
+            "description": "Analysis of heat transfer in boundary layers. Derivation of the energy equation and its solutions."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Boundary Layer Flows"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Turbulence",
+            "description": "Characteristics of turbulent flows. Reynolds decomposition and Reynolds-averaged Navier-Stokes (RANS) equations."
+          },
+          {
+            "chapterTitle": "Turbulence Modeling",
+            "description": "Overview of different turbulence models, including k-epsilon, k-omega, and Reynolds stress models."
+          },
+          {
+            "chapterTitle": "Turbulent Boundary Layers",
+            "description": "Analysis of turbulent boundary layers. Law of the wall and velocity profiles."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Turbulence"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to CFD",
+            "description": "Overview of computational fluid dynamics methods. Finite difference, finite volume, and finite element methods."
+          },
+          {
+            "chapterTitle": "Discretization Techniques",
+            "description": "Discussion of different discretization schemes for convection and diffusion terms. Stability and accuracy considerations."
+          },
+          {
+            "chapterTitle": "Applications of CFD",
+            "description": "Examples of CFD applications in various engineering fields, such as aerodynamics, heat transfer, and multiphase flows."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Computational Fluid Dynamics (CFD)"
+      }
+    ]
+  }
+}

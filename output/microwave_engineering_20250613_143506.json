@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 14:35:06.970428",
+  "input": {
+    "course_topic": "Microwave Engineering",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.48,
+    "max_tokens": 1024,
+    "top_k": 27,
+    "top_p": 0.74
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in microwave engineering principles and applications, preparing students for advanced studies and practical design challenges in the field.",
+    "courseTitle": "Microwave Engineering",
+    "introduction": "Welcome to Microwave Engineering! This course delves into the fascinating world of high-frequency electromagnetic waves and their applications. We will explore the fundamental concepts, components, and systems used in microwave engineering, equipping you with the knowledge to analyze, design, and implement microwave circuits and systems.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Microwaves",
+            "description": "Overview of the electromagnetic spectrum, defining the microwave region. Historical context and key applications of microwave technology in communication, radar, and sensing."
+          },
+          {
+            "chapterTitle": "Microwave Frequencies and Wavelengths",
+            "description": "Relationship between frequency and wavelength in the microwave region. Understanding the implications of wavelength on component size and circuit design."
+          },
+          {
+            "chapterTitle": "Transmission Line Theory",
+            "description": "Review of transmission line parameters (characteristic impedance, propagation constant). Introduction to different types of transmission lines (coaxial, microstrip, waveguide)."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Microwave Engineering"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Microwave Network Analysis",
+            "description": "Introduction to S-parameters and their significance in characterizing microwave components. Measurement and interpretation of S-parameters."
+          },
+          {
+            "chapterTitle": "Impedance Matching Techniques",
+            "description": "Importance of impedance matching for efficient power transfer. Techniques for impedance matching using stubs, quarter-wave transformers, and lumped elements."
+          },
+          {
+            "chapterTitle": "Smith Chart Applications",
+            "description": "Using the Smith chart for impedance matching, admittance calculations, and transmission line analysis. Practical examples of Smith chart usage."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Microwave Circuit Analysis and Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Microwave Components",
+            "description": "Overview of common microwave components such as attenuators, couplers, filters, and isolators. Understanding their characteristics and applications."
+          },
+          {
+            "chapterTitle": "Microwave Amplifiers",
+            "description": "Introduction to different types of microwave amplifiers (low-noise amplifiers, power amplifiers). Key performance parameters and design considerations."
+          },
+          {
+            "chapterTitle": "Microwave Oscillators and Mixers",
+            "description": "Principles of microwave oscillator operation. Introduction to mixer circuits and their role in frequency conversion."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Microwave Components and Systems"
+      }
+    ]
+  }
+}

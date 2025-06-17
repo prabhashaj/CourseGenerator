@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-06-13 13:21:11.147278",
+  "input": {
+    "course_topic": "Mechanical Engineering",
+    "difficulty_level": "Expert",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.56,
+    "max_tokens": 2048,
+    "top_k": 29,
+    "top_p": 0.94
+  },
+  "output": {
+    "conclusion": "This course has provided an in-depth exploration of advanced mechanical engineering concepts. You are now equipped with the knowledge to tackle complex engineering challenges and contribute to innovation in the field.",
+    "courseTitle": "Advanced Mechanical Engineering",
+    "introduction": "Welcome to Advanced Mechanical Engineering! This course is designed for expert-level engineers seeking to expand their knowledge and skills in specialized areas. We will delve into complex topics, focusing on theoretical understanding and practical applications.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Thermodynamics",
+            "description": "Exploration of non-equilibrium thermodynamics, irreversible processes, and advanced thermodynamic cycles. Focus on applications in energy systems and materials processing."
+          },
+          {
+            "chapterTitle": "Statistical Thermodynamics",
+            "description": "Introduction to statistical mechanics, ensemble theory, and applications to thermodynamic properties. Analysis of fluctuations and correlations in thermodynamic systems."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Thermodynamics and Heat Transfer"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Continuum Mechanics",
+            "description": "Advanced tensor analysis, constitutive modeling, and finite deformation theory. Applications in solid mechanics, fluid mechanics, and materials science."
+          },
+          {
+            "chapterTitle": "Fracture Mechanics",
+            "description": "Linear elastic fracture mechanics, elastic-plastic fracture mechanics, and fatigue crack growth. Analysis of crack tip stress fields and fracture toughness."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Mechanics of Materials"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Control Systems Design",
+            "description": "Advanced control techniques, including adaptive control, robust control, and optimal control. Design and analysis of complex control systems for mechanical systems."
+          },
+          {
+            "chapterTitle": "Robotics and Automation",
+            "description": "Kinematics, dynamics, and control of robotic manipulators. Path planning, trajectory generation, and sensor integration for automated systems."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Control Systems and Robotics"
+      }
+    ]
+  }
+}

@@ -1,2 +1,9 @@
 httpx
 streamlit
+PyPDF2
+langchain
+faiss-cpu
+google-generativeai
+langchain-community
+python-dotenv
+langchain-google-genai

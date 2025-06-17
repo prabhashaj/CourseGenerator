@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:32:14.106240",
+  "input": {
+    "course_topic": "Theory of Machines",
+    "difficulty_level": "Beginner",
+    "num_modules": 6,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.43,
+    "max_tokens": 1024,
+    "top_k": 23,
+    "top_p": 0.73
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of the principles governing the behavior of machines. Further study in specific areas like robotics, automation, or advanced mechanical design is highly recommended.",
+    "courseTitle": "Theory of Machines - Beginner Level",
+    "introduction": "Welcome to the Theory of Machines! This course will introduce you to the fundamental concepts behind how machines work, focusing on motion, forces, and energy transfer. No prior knowledge is assumed.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Mechanisms",
+            "description": "What is a mechanism? Definition and examples. Difference between machines and mechanisms. Basic components: links, joints, and frames."
+          },
+          {
+            "chapterTitle": "Kinematics vs. Kinetics",
+            "description": "Understanding the difference between kinematics (motion) and kinetics (forces causing motion). Examples illustrating each concept."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Mechanisms"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Types of Motion",
+            "description": "Introduction to different types of motion: translation, rotation, and complex motion. Examples of each in everyday machines."
+          },
+          {
+            "chapterTitle": "Degrees of Freedom",
+            "description": "What are degrees of freedom (DOF)? How to determine the DOF of a simple mechanism. Examples with one and two DOF."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Motion and Degrees of Freedom"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Four-Bar Linkages",
+            "description": "Introduction to the four-bar linkage: a fundamental mechanism. Identifying the links and joints. Applications of four-bar linkages."
+          },
+          {
+            "chapterTitle": "Crank-Rocker Mechanism",
+            "description": "Understanding the crank-rocker mechanism: a type of four-bar linkage. How it works and common applications."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Linkages"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Cams",
+            "description": "What is a cam? Basic cam terminology: cam profile, follower, base circle. Different types of cam followers."
+          },
+          {
+            "chapterTitle": "Cam Motion",
+            "description": "Understanding basic cam motion profiles: uniform motion, simple harmonic motion. Visualizing cam motion."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Cams and Followers"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Gears",
+            "description": "What are gears? Basic gear terminology: teeth, pitch, diameter. Different types of gears: spur, helical, bevel."
+          },
+          {
+            "chapterTitle": "Gear Ratios",
+            "description": "Understanding gear ratios and their importance. Calculating gear ratios for simple gear trains."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Gears and Gear Trains"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Power Transmission",
+            "description": "Introduction to power transmission in machines. How power is transferred through mechanisms."
+          },
+          {
+            "chapterTitle": "Efficiency of Machines",
+            "description": "Understanding the concept of efficiency in machines. Factors affecting efficiency."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Power and Efficiency"
+      }
+    ]
+  }
+}

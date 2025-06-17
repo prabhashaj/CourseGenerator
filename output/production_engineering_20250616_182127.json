@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:21:27.958929",
+  "input": {
+    "course_topic": "Production Engineering",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.35,
+    "max_tokens": 2048,
+    "top_k": 20,
+    "top_p": 0.78
+  },
+  "output": {
+    "conclusion": "This course provided a comprehensive overview of Production Engineering principles and practices. By understanding the concepts covered in each module, you are now equipped to optimize manufacturing processes, improve efficiency, and drive innovation in production environments.",
+    "courseTitle": "Production Engineering",
+    "introduction": "Welcome to the Production Engineering course! This course is designed for intermediate-level learners who want to gain a deeper understanding of how to optimize manufacturing processes, improve efficiency, and reduce costs. We will cover key concepts and techniques used in modern production environments.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Production Systems",
+            "description": "Overview of production systems, types of manufacturing processes (job shop, batch, mass production, continuous flow), and key performance indicators (KPIs)."
+          },
+          {
+            "chapterTitle": "Value Stream Mapping",
+            "description": "Introduction to Value Stream Mapping (VSM), symbols used in VSM, and steps to create a current state map."
+          },
+          {
+            "chapterTitle": "Identifying Waste (Muda)",
+            "description": "Understanding the 7 types of waste (TIMWOODS) in manufacturing: Transportation, Inventory, Motion, Waiting, Overproduction, Over-processing, Defects, and Skills."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Production Engineering"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Lean Manufacturing Principles",
+            "description": "Detailed explanation of Lean Manufacturing principles: Pull System, Continuous Improvement (Kaizen), and Standardized Work."
+          },
+          {
+            "chapterTitle": "5S Methodology",
+            "description": "Introduction to the 5S methodology: Sort, Set in Order, Shine, Standardize, and Sustain. Practical examples of implementing 5S in a manufacturing setting."
+          },
+          {
+            "chapterTitle": "Kanban Systems",
+            "description": "Understanding Kanban systems, types of Kanban cards, and implementing Kanban for inventory control and production flow."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Lean Manufacturing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Process Optimization Techniques",
+            "description": "Overview of process optimization techniques such as bottleneck analysis, cycle time reduction, and process flow improvement."
+          },
+          {
+            "chapterTitle": "Statistical Process Control (SPC)",
+            "description": "Introduction to SPC, control charts (X-bar, R-chart), and using SPC to monitor and control process variation."
+          },
+          {
+            "chapterTitle": "Six Sigma Methodology",
+            "description": "Introduction to Six Sigma, DMAIC (Define, Measure, Analyze, Improve, Control) methodology, and its application in production engineering."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Process Optimization"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Automation in Production",
+            "description": "Overview of automation in production, types of automation (fixed, flexible, and programmable), and benefits of automation."
+          },
+          {
+            "chapterTitle": "Robotics in Manufacturing",
+            "description": "Introduction to robotics in manufacturing, types of robots (articulated, SCARA, delta), and applications of robots in production processes."
+          },
+          {
+            "chapterTitle": "Industry 4.0 and Smart Manufacturing",
+            "description": "Introduction to Industry 4.0, Internet of Things (IoT), Big Data analytics, and their impact on production engineering and smart manufacturing."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Manufacturing Technologies"
+      }
+    ]
+  }
+}

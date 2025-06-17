@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:19:22.373427",
+  "input": {
+    "course_topic": "Construction Management",
+    "difficulty_level": "Beginner",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.52,
+    "max_tokens": 1024,
+    "top_k": 25,
+    "top_p": 0.74
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of construction management principles. Further study and practical experience are recommended for career advancement.",
+    "courseTitle": "Construction Management for Beginners",
+    "introduction": "Welcome to Construction Management for Beginners! This course will introduce you to the fundamental concepts and processes involved in managing construction projects.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Construction Management",
+            "description": "Overview of the construction industry, roles of construction managers, and project lifecycle stages."
+          },
+          {
+            "chapterTitle": "Project Stakeholders",
+            "description": "Identifying and understanding the roles and responsibilities of various project stakeholders (owners, architects, engineers, contractors, subcontractors)."
+          },
+          {
+            "chapterTitle": "Project Delivery Methods",
+            "description": "Introduction to different project delivery methods (Design-Bid-Build, Design-Build, Construction Management at Risk)."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Construction Management"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Project Planning Basics",
+            "description": "Introduction to project planning processes, including defining project scope, goals, and objectives."
+          },
+          {
+            "chapterTitle": "Work Breakdown Structure (WBS)",
+            "description": "Understanding and creating a WBS to break down project tasks into manageable components."
+          },
+          {
+            "chapterTitle": "Scheduling Fundamentals",
+            "description": "Introduction to project scheduling techniques (Gantt charts, critical path method) and their importance."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Project Planning"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Cost Estimating Basics",
+            "description": "Introduction to cost estimating principles and methods used in construction projects."
+          },
+          {
+            "chapterTitle": "Budgeting and Cost Control",
+            "description": "Developing project budgets and implementing cost control measures to manage project expenses."
+          },
+          {
+            "chapterTitle": "Earned Value Management (EVM)",
+            "description": "Overview of EVM as a technique for measuring project performance and tracking cost and schedule variances."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Project Cost Management"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Construction Safety Overview",
+            "description": "Importance of safety in construction and introduction to common safety hazards on construction sites."
+          },
+          {
+            "chapterTitle": "Quality Control Fundamentals",
+            "description": "Introduction to quality control processes and techniques for ensuring project quality."
+          },
+          {
+            "chapterTitle": "Communication and Documentation",
+            "description": "Importance of effective communication and documentation in construction projects."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Project Execution and Control"
+      }
+    ]
+  }
+}
