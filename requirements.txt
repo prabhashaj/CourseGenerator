@@ -1,6 +1,6 @@
 streamlit
 httpx
-PyPDF2
+PyPDF2==3.0.1
 langchain
 faiss-cpu
 google-generativeai
@@ -21,3 +21,7 @@ watchdog
 langchain_core
 python-dateutil
 protobuf
+pypdf
+pdfminer.six
+pdf2image
+poppler-utils
