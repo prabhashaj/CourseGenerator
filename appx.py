@@ -1,7 +1,8 @@
 import streamlit as st
 import course_generator
 import rag_chatbot
-import document_course_creator # Import the new module
+import document_course_creator
+import play_zone  # Import the new PlayZone module
 
 # --- Page Configuration ---
 st.set_page_config(
@@ -24,6 +25,8 @@ def init_global_session_state():
         st.session_state.chapter_contents = {}
     if "quiz_progress" not in st.session_state:
         st.session_state.quiz_progress = {}
+    if "current_card_idx" not in st.session_state:
+        st.session_state.current_card_idx = 0
     
     # Document Course Creator state
     if "doc_courses" not in st.session_state:
@@ -83,7 +86,36 @@ if mode_container.button(
     st.session_state.current_mode = "doc_creator"
     st.rerun()
 
+if mode_container.button(
+    "🎮 PlayZone",
+    type="primary" if st.session_state.current_mode == "play_zone" else "secondary",
+    use_container_width=True,
+    key="btn_play_zone"
+):
+    st.session_state.current_mode = "play_zone"
+    st.rerun()
+
 st.sidebar.divider()
+
+# --- App Routing ---
+try:
+    # Run the selected application mode
+    mode_handlers = {
+        "course_generator": course_generator.run_app,
+        "rag_chat": rag_chatbot.run_app,
+        "doc_creator": document_course_creator.run_app,
+        "play_zone": play_zone.show_play_zone,
+    }
+    
+    # Get and execute the appropriate handler
+    handler = mode_handlers.get(st.session_state.current_mode)
+    if handler:
+        handler()
+    else:
+        st.error("Invalid application mode selected.")
+except Exception as e:
+    st.error(f"An error occurred: {str(e)}")
+    st.info("Please refresh the page and try again.")
 
 # Show the relevant courses list based on mode
 if st.session_state.current_mode == "course_generator":
@@ -129,15 +161,8 @@ elif st.session_state.current_mode == "doc_creator":
 mode_messages = {
     "course_generator": "You are in the Course Generator mode.",
     "rag_chat": "You are in the RAG Chatbot mode.",
-    "doc_creator": "You are in the Document Course Creator mode."
+    "doc_creator": "You are in the Document Course Creator mode.",
+    "play_zone": "You are in the PlayZone mode."  # Add message for PlayZone
 }
 st.sidebar.info(mode_messages.get(st.session_state.current_mode, ""))
-
-# --- App Routing ---
-if st.session_state.current_mode == "course_generator":
-    course_generator.run_app()
-elif st.session_state.current_mode == "rag_chat":
-    rag_chatbot.run_app()
-elif st.session_state.current_mode == "doc_creator":
-    document_course_creator.run_app()
 
