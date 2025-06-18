@@ -68,6 +68,12 @@ def generate_flashcards(topic: str, num_cards: int) -> List[Dict]:
         end_idx = response.rfind("]") + 1
         if start_idx != -1 and end_idx != -1:
             json_str = response[start_idx:end_idx]
+            # Sanitize invalid backslashes before parsing
+            import re
+            def fix_json_escapes(s):
+                # Replace single backslashes not followed by valid escape chars with double backslash
+                return re.sub(r'\\(?!["\\/bfnrtu])', r'\\\\', s)
+            json_str = fix_json_escapes(json_str)
             return json.loads(json_str)
         else:
             st.error("Could not find valid JSON in the response")
@@ -77,11 +83,10 @@ def generate_flashcards(topic: str, num_cards: int) -> List[Dict]:
         return []
 
 def display_flashcard(flashcard: Dict, index: int, total: int):
-    """Display a single flashcard with Coursera-like design and score tracking"""
-    # Initialize session state for scoring
+    """Display a single flashcard with enhanced UI and score tracking"""
     init_session_state()
-    
-    # Custom CSS for flashcard design
+
+    # Enhanced CSS for flashcard design
     st.markdown("""
         <style>
         .score-value.correct {
@@ -118,15 +123,19 @@ def display_flashcard(flashcard: Dict, index: int, total: int):
         }
         .flashcard {
             background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+            padding: 36px 24px;
             min-height: 250px;
             position: relative;
             margin-bottom: 20px;
+            transition: box-shadow 0.2s;
+        }
+        .flashcard:hover {
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
         }
         .card-content {
-            font-size: 1.3em;
+            font-size: 1.4em;
             text-align: center;
             padding: 20px;
             margin: 20px 0;
@@ -139,6 +148,25 @@ def display_flashcard(flashcard: Dict, index: int, total: int):
             padding: 5px 15px;
             border-radius: 15px;
             font-size: 0.9em;
+        }
+        .difficulty-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            color: white;
+        }
+        .difficulty-easy {
+            background-color: #28a745;
+        }
+        .difficulty-medium {
+            background-color: #ffc107;
+            color: #333;
+        }
+        .difficulty-hard {
+            background-color: #dc3545;
         }
         .score-container {
             display: flex;
@@ -164,80 +192,63 @@ def display_flashcard(flashcard: Dict, index: int, total: int):
 
     # Card container
     st.markdown('<div class="flashcard-container">', unsafe_allow_html=True)
-    
-    # Header with progress and scores
-    st.markdown(f'''
-        <div class="card-header">
-            <div class="progress-text">Week 1 Flashcards</div>
-            <div class="progress-text">{index + 1} / {total}</div>
+
+    # Score tracking display (side by side, visually combined, above flashcard)
+    st.markdown('''
+        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 16px;">
+            <div style="background: #f8f9fa; border-radius: 10px 0 0 10px; padding: 12px 24px; text-align: center; min-width: 90px; border: 1px solid #e0e0e0; border-right: none;">
+                <div style="font-size: 0.9em; color: #666;">Correct</div>
+                <div style="font-size: 1.3em; font-weight: bold; color: #28a745;">{correct}</div>
+            </div>
+            <div style="width: 2px; height: 40px; background: #e0e0e0;"></div>
+            <div style="background: #f8f9fa; border-radius: 0 10px 10px 0; padding: 12px 24px; text-align: center; min-width: 90px; border: 1px solid #e0e0e0; border-left: none;">
+                <div style="font-size: 0.9em; color: #666;">Incorrect</div>
+                <div style="font-size: 1.3em; font-weight: bold; color: #dc3545;">{incorrect}</div>
+            </div>
         </div>
-    ''', unsafe_allow_html=True)
-    
-    # Score tracking display
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown(f'''
-            <div class="score-container">
-                <div class="score-box">
-                    <div class="score-label">Incorrect</div>
-                    <div class="score-value incorrect">{st.session_state.incorrect_count}</div>
-                </div>
-            </div>
-        ''', unsafe_allow_html=True)
-    with col2:
-        st.markdown(f'''
-            <div class="score-container">
-                <div class="score-box">
-                    <div class="score-label">Correct</div>
-                    <div class="score-value correct">{st.session_state.correct_count}</div>
-                </div>
-            </div>
-        ''', unsafe_allow_html=True)
+    '''.format(correct=st.session_state.correct_count, incorrect=st.session_state.incorrect_count), unsafe_allow_html=True)
+
+    # Difficulty badge color
+    diff = flashcard.get("difficulty", "medium").lower()
+    diff_class = {
+        "easy": "difficulty-badge difficulty-easy",
+        "medium": "difficulty-badge difficulty-medium",
+        "hard": "difficulty-badge difficulty-hard"
+    }.get(diff, "difficulty-badge difficulty-medium")
 
     # Flashcard content
     st.markdown(f'''
         <div class="flashcard">
             <div class="card-type">{"Back" if st.session_state.get(f"card_flipped_{index}", False) else "Front"}</div>
+            <div class="{diff_class}">{diff.capitalize()}</div>
             <div class="card-content">
                 {flashcard["back"] if st.session_state.get(f"card_flipped_{index}", False) else flashcard["front"]}
             </div>
         </div>
     ''', unsafe_allow_html=True)
-    
+
     # Flip button
     if st.button("↻ Flip Card", key=f"flip_{index}"):
         st.session_state[f"card_flipped_{index}"] = not st.session_state.get(f"card_flipped_{index}", False)
         st.rerun()
 
-    # Navigation and scoring buttons
-    col1, col2, col3 = st.columns([1, 2, 1])
-    
-    with col1:
-        if st.button("←", use_container_width=True) and index > 0:
-            st.session_state.current_card_idx = index - 1
-            st.rerun()
-    
-    with col2:
-        btn_col1, btn_col2 = st.columns(2)
-        with btn_col1:
-            if st.button("❌ Missed It", use_container_width=True):
-                if index not in st.session_state.cards_answered:
-                    st.session_state.incorrect_count += 1
-                    st.session_state.cards_answered.add(index)
-                st.session_state.current_card_idx = min(index + 1, total - 1)
-                st.rerun()
-        with btn_col2:
-            if st.button("✓ Knew It!", use_container_width=True):
-                if index not in st.session_state.cards_answered:
-                    st.session_state.correct_count += 1
-                    st.session_state.cards_answered.add(index)
-                st.session_state.current_card_idx = min(index + 1, total - 1)
-                st.rerun()
-    
-    with col3:
-        if st.button("→", use_container_width=True) and index < total - 1:
-            st.session_state.current_card_idx = index + 1
-            st.rerun()
+    # --- RETAIN ONLY THE HTML BUTTON ROW, REMOVE STREAMLIT BUTTON ROW ---
+    st.markdown('''
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin: 18px 0 10px 0;">
+            <form style="display:inline; margin:0; padding:0;">
+                <button type="submit" name="prev" style="padding:6px 14px; font-size:1em; border-radius:7px; border:1px solid #e0e0e0; background:#f8f9fa; cursor:pointer; min-width:36px;">←</button>
+            </form>
+            <form style="display:inline; margin:0; padding:0;">
+                <button type="submit" name="missed" style="padding:6px 14px; font-size:1em; border-radius:7px; border:1px solid #e0e0e0; background:#fff3f3; color:#dc3545; cursor:pointer; min-width:90px;">❌ Missed It</button>
+            </form>
+            <form style="display:inline; margin:0; padding:0;">
+                <button type="submit" name="knew" style="padding:6px 14px; font-size:1em; border-radius:7px; border:1px solid #e0e0e0; background:#f3fff3; color:#28a745; cursor:pointer; min-width:90px;">✓ Knew It!</button>
+            </form>
+            <form style="display:inline; margin:0; padding:0;">
+                <button type="submit" name="next" style="padding:6px 14px; font-size:1em; border-radius:7px; border:1px solid #e0e0e0; background:#f8f9fa; cursor:pointer; min-width:36px;">→</button>
+            </form>
+        </div>
+    ''', unsafe_allow_html=True)
 
     # Show final score if all cards are answered
     total_answered = len(st.session_state.cards_answered)
@@ -252,7 +263,6 @@ def display_flashcard(flashcard: Dict, index: int, total: int):
                 <p>• Incorrect: {st.session_state.incorrect_count}</p>
             </div>
         ''', unsafe_allow_html=True)
-        
         # Reset button
         if st.button("Start Over", use_container_width=True):
             st.session_state.correct_count = 0
@@ -260,7 +270,6 @@ def display_flashcard(flashcard: Dict, index: int, total: int):
             st.session_state.cards_answered = set()
             st.session_state.current_card_idx = 0
             st.rerun()
-
     st.markdown('</div>', unsafe_allow_html=True)
 
 def show_play_zone():

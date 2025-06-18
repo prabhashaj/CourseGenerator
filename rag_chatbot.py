@@ -4,7 +4,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmb
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import FAISS
 from langchain.chains import ConversationalRetrievalChain
-from langchain.memory import ConversationBufferMemory
+from langchain.memory import ConversationBufferMemory, CombinedMemory
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
 
 # --- API Key Setup ---
@@ -30,13 +30,31 @@ def get_vector_store(file_paths):
     return FAISS.from_documents(chunks, embeddings)
 
 @st.cache_resource
-def get_conversational_chain(_vector_store):
-    """Initializes the conversational chain."""
+def get_conversational_chain(_vector_store, doc_context=None):
+    """Initializes the conversational chain with advanced memory."""
     llm = ChatGoogleGenerativeAI(model="models/gemini-1.5-flash-latest", temperature=0.7)
-    memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
+    chat_memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
+    # Store document context in memory if provided
+    if doc_context:
+        doc_memory = ConversationBufferMemory(memory_key='doc_context', return_messages=True)
+        doc_memory.save_context({'input': ''}, {'output': doc_context})
+        memory = CombinedMemory(memories=[chat_memory, doc_memory])
+    else:
+        memory = chat_memory
     return ConversationalRetrievalChain.from_llm(
         llm=llm, retriever=_vector_store.as_retriever(), memory=memory
     )
+
+def generate_summary(docs):
+    """Generate a concise summary of the uploaded documents using the LLM."""
+    llm = ChatGoogleGenerativeAI(model="models/gemini-1.5-flash-latest", temperature=0.5)
+    # Use only the first 2 chunks for a shorter summary
+    text = "\n".join([doc.page_content for doc in docs[:2]])
+    prompt = (
+        "You are an expert assistant. Read the following document content and provide a concise summary "
+        "highlighting only the main topics and most important points. Limit the summary to 5-7 sentences.\n\nCONTENT:\n" + text
+    )
+    return llm.invoke(prompt).content
 
 def run_app():
     """Runs the Streamlit UI for the RAG Chatbot."""
@@ -52,6 +70,10 @@ def run_app():
         st.session_state.rag_conversation = None
     if "rag_chat_history" not in st.session_state:
         st.session_state.rag_chat_history = []
+    if "rag_summary" not in st.session_state:
+        st.session_state.rag_summary = None
+    if "rag_doc_context" not in st.session_state:
+        st.session_state.rag_doc_context = None
 
     # --- Sidebar for Document Upload ---
     with st.sidebar:
@@ -71,10 +93,18 @@ def run_app():
                         with open(path, "wb") as file:
                             file.write(f.getbuffer())
                         temp_paths.append(path)
-                    
                     vector_store = get_vector_store(temp_paths)
                     if vector_store:
-                        st.session_state.rag_conversation = get_conversational_chain(vector_store)
+                        # Generate and store summary
+                        docs = []
+                        for path in temp_paths:
+                            ext = os.path.splitext(path)[1].lower()
+                            loader = PyPDFLoader(path) if ext == '.pdf' else TextLoader(path)
+                            docs.extend(loader.load())
+                        summary = generate_summary(docs)
+                        st.session_state.rag_summary = summary
+                        st.session_state.rag_doc_context = summary  # Use summary as doc context
+                        st.session_state.rag_conversation = get_conversational_chain(vector_store, doc_context=summary)
                         st.success("Documents processed!")
                     else:
                         st.error("Failed to process documents.")
@@ -83,17 +113,23 @@ def run_app():
 
     # --- Main Chat Interface ---
     if st.session_state.rag_conversation:
+        # Show summary if available
+        if st.session_state.rag_summary:
+            st.subheader(":bookmark_tabs: Document Summary")
+            st.markdown(st.session_state.rag_summary)
         for message in st.session_state.rag_chat_history:
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
-
         if user_question := st.chat_input("Ask a question about your documents..."):
             st.session_state.rag_chat_history.append({"role": "user", "content": user_question})
             with st.chat_message("user"):
                 st.markdown(user_question)
-
             with st.spinner("Thinking..."):
-                response = st.session_state.rag_conversation({'question': user_question})
+                # Pass document context as part of the question for richer memory
+                question_with_context = user_question
+                if st.session_state.rag_doc_context:
+                    question_with_context += f"\n\n[Document Context]\n{st.session_state.rag_doc_context}"
+                response = st.session_state.rag_conversation({'question': question_with_context})
                 ai_response = response['chat_history'][-1].content
                 st.session_state.rag_chat_history.append({"role": "assistant", "content": ai_response})
                 with st.chat_message("assistant"):
