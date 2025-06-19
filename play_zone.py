@@ -120,9 +120,9 @@ def display_flashcard(flashcard: Dict, index: int, total: int):
         .progress-text {
             font-size: 1.2em;
             color: #333;
-        }
-        .flashcard {
-            background-color: white;
+        }        .flashcard {
+            background-color: var(--background-color, white);
+            color: var(--text-color, black);
             border-radius: 16px;
             box-shadow: 0 4px 24px rgba(0,0,0,0.12);
             padding: 36px 24px;
@@ -134,20 +134,35 @@ def display_flashcard(flashcard: Dict, index: int, total: int):
         .flashcard:hover {
             box-shadow: 0 8px 32px rgba(0,0,0,0.18);
         }
-        .card-content {
+        /* Dark mode styles */
+        [data-theme="dark"] .flashcard {
+            --background-color: #2e2e2e;
+            --text-color: white;
+            box-shadow: 0 4px 24px rgba(255,255,255,0.08);
+        }
+        [data-theme="dark"] .flashcard:hover {
+            box-shadow: 0 8px 32px rgba(255,255,255,0.12);
+        }        .card-content {
             font-size: 1.4em;
             text-align: center;
             padding: 20px;
             margin: 20px 0;
+            color: var(--text-color, black);
         }
         .card-type {
             position: absolute;
             top: 20px;
             left: 20px;
-            background-color: #f0f0f0;
+            background-color: var(--badge-bg-color, #f0f0f0);
+            color: var(--badge-text-color, black);
             padding: 5px 15px;
             border-radius: 15px;
             font-size: 0.9em;
+        }
+        /* Dark mode styles for badges */
+        [data-theme="dark"] .card-type {
+            --badge-bg-color: #404040;
+            --badge-text-color: white;
         }
         .difficulty-badge {
             position: absolute;
@@ -333,7 +348,7 @@ def show_play_zone():
         col1, col2 = st.columns([2, 1])
         with col1:
             topic = st.text_input("Enter a topic for flashcards", 
-                                placeholder="e.g., Python Programming, Machine Learning, etc.")
+                                placeholder="e.g., DBMS, Machine Learning, etc.")
         with col2:
             num_cards = st.number_input("Number of flashcards", 
                                       min_value=1, max_value=64, value=5)
