@@ -539,7 +539,7 @@ def run_app():
                             selected_option = st.radio(
                                 f"Select answer for Q{i+1}", # Use unique key for each radio button
                                 options,
-                                index=options.index(quiz_obj['answers'][i]) if quiz_obj['answers'][i] in options else 0, # Pre-select if already answered
+                                index=options.index(quiz_obj['answers'][i]) if quiz_obj['answers'][i] in options else None, # No default selection
                                 key=f"quiz_q_{module_quiz_id}_{i}"
                             )
                             current_answers.append(selected_option)
