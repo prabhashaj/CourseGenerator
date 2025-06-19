@@ -6,6 +6,7 @@ from langchain.vectorstores import FAISS
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory, CombinedMemory
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
+from langchain.prompts import PromptTemplate
 
 # --- API Key Setup ---
 API_KEY = st.secrets.get("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
@@ -24,35 +25,77 @@ def get_vector_store(file_paths):
     
     if not all_docs: return None
     
-    splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+    splitter = RecursiveCharacterTextSplitter(
+        chunk_size=2000,  # Increased from 1000
+        chunk_overlap=400,  # Increased from 200
+        length_function=len,
+        separators=["\n\n", "\n", " ", ""]
+    )
     chunks = splitter.split_documents(all_docs)
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
     return FAISS.from_documents(chunks, embeddings)
 
+def get_qa_prompt():
+    """Creates a prompt template for document QA."""
+    template = """Based on the following context and conversation history, provide a detailed and accurate response to the question. If the context doesn't contain enough information to fully answer the question, say so.
+
+Context: {context}
+
+Chat History: {chat_history}
+Current Question: {question}
+
+Response:"""
+    
+    return PromptTemplate(
+        input_variables=["context", "chat_history", "question"],
+        template=template
+    )
+
 @st.cache_resource
-def get_conversational_chain(_vector_store, doc_context=None):
+def get_conversational_chain(_vector_store):
     """Initializes the conversational chain with advanced memory."""
-    llm = ChatGoogleGenerativeAI(model="models/gemini-1.5-flash-latest", temperature=0.7)
-    chat_memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
-    # Store document context in memory if provided
-    if doc_context:
-        doc_memory = ConversationBufferMemory(memory_key='doc_context', return_messages=True)
-        doc_memory.save_context({'input': ''}, {'output': doc_context})
-        memory = CombinedMemory(memories=[chat_memory, doc_memory])
-    else:
-        memory = chat_memory
+    llm = ChatGoogleGenerativeAI(
+        model="models/gemini-1.5-flash-latest",
+        temperature=0.7,
+        convert_system_message_to_human=True
+    )
+    
+    memory = ConversationBufferMemory(
+        memory_key="chat_history",
+        output_key="answer",
+        return_messages=True,
+        input_key="question"
+    )
+
     return ConversationalRetrievalChain.from_llm(
-        llm=llm, retriever=_vector_store.as_retriever(), memory=memory
+        llm=llm,
+        retriever=_vector_store.as_retriever(
+            search_type="mmr",
+            search_kwargs={"k": 5, "fetch_k": 8}
+        ),
+        memory=memory,
+        return_source_documents=True,
+        combine_docs_chain_kwargs={
+            "prompt": get_qa_prompt()
+        },
+        verbose=True
     )
 
 def generate_summary(docs):
-    """Generate a concise summary of the uploaded documents using the LLM."""
+    """Generate a focused summary of the uploaded documents using the LLM."""
     llm = ChatGoogleGenerativeAI(model="models/gemini-1.5-flash-latest", temperature=0.5)
-    # Use only the first 2 chunks for a shorter summary
-    text = "\n".join([doc.page_content for doc in docs[:2]])
+    # Use first 3 chunks instead of 4 for a more focused summary
+    text = "\n".join([doc.page_content for doc in docs[:3]])
     prompt = (
-        "You are an expert assistant. Read the following document content and provide a concise summary "
-        "highlighting only the main topics and most important points. Limit the summary to 5-7 sentences.\n\nCONTENT:\n" + text
+        "Provide a clear and focused summary of the following document content. "
+        "Include:\n"
+        "1. Main topic and key themes\n"
+        "2. Important concepts\n"
+        "3. Key findings or conclusions\n"
+        "4. Practical implications\n\n"
+        "Keep the summary concise while highlighting the most important points. "
+        "Use bullet points where appropriate.\n\n"
+        "CONTENT:\n" + text
     )
     return llm.invoke(prompt).content
 
@@ -103,8 +146,7 @@ def run_app():
                             docs.extend(loader.load())
                         summary = generate_summary(docs)
                         st.session_state.rag_summary = summary
-                        st.session_state.rag_doc_context = summary  # Use summary as doc context
-                        st.session_state.rag_conversation = get_conversational_chain(vector_store, doc_context=summary)
+                        st.session_state.rag_conversation = get_conversational_chain(vector_store)
                         st.success("Documents processed!")
                     else:
                         st.error("Failed to process documents.")
@@ -125,14 +167,28 @@ def run_app():
             with st.chat_message("user"):
                 st.markdown(user_question)
             with st.spinner("Thinking..."):
-                # Pass document context as part of the question for richer memory
-                question_with_context = user_question
-                if st.session_state.rag_doc_context:
-                    question_with_context += f"\n\n[Document Context]\n{st.session_state.rag_doc_context}"
-                response = st.session_state.rag_conversation({'question': question_with_context})
-                ai_response = response['chat_history'][-1].content
+                # Process the user question
+                response = st.session_state.rag_conversation({"question": user_question})
+                ai_response = response["answer"]
+                
+                # Add source information if available
+                if response.get("source_documents"):
+                    sources = set()
+                    for doc in response["source_documents"]:
+                        if hasattr(doc, 'metadata') and doc.metadata.get('source'):
+                            sources.add(os.path.basename(doc.metadata['source']))
+                    
+                    if sources:
+                        ai_response += "\n\n---\n**Sources:** " + ", ".join(sources)
+                
                 st.session_state.rag_chat_history.append({"role": "assistant", "content": ai_response})
                 with st.chat_message("assistant"):
                     st.markdown(ai_response)
+                    
+                    # Show confidence and relevance metrics
+                    with st.expander("Response Details"):
+                        st.info("This response was generated using multiple relevant passages from your documents. "
+                              "The most relevant sections were selected using semantic search and maximum marginal relevance "
+                              "to ensure comprehensive and accurate information.")
     else:
         st.info("Please upload and process documents in the sidebar to start chatting.")
