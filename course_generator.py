@@ -267,6 +267,8 @@ def run_app():
     show_navigation() # Display navigation in sidebar
 
     st.title("🎓 Course Generator & Tracker")
+    # Add friendly message about sidebar features
+    st.info("👈 Open the sidebar to explore exciting features")
     st.markdown("Generate custom course outlines, track your progress, and get detailed chapter content!")
     
     # The AI Generation Settings are now in the sidebar, so remove them from the main area.
