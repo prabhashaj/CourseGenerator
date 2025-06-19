@@ -290,7 +290,7 @@ def run_app():
                 "Course Topic", 
                 key="new_course_topic",
                 help="Enter the main topic for your course",
-                placeholder="e.g., Machine Learning, Quantum computing"
+                placeholder="e.g., Machine Learning"
             )
             difficulty = st.selectbox(
                 "Difficulty Level",
