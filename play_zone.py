@@ -187,6 +187,28 @@ def display_flashcard(flashcard: Dict, index: int, total: int):
             font-weight: bold;
             color: #333;
         }
+        .action-btn-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0 20px 0;
+        }
+        .action-btn-row button {
+            font-size: 0.9em !important;
+            padding: 6px 12px !important;
+            border-radius: 8px !important;
+            min-width: 60px;
+            max-width: 80px;
+        }
+        @media (max-width: 600px) {
+            .action-btn-row button {
+                font-size: 0.8em !important;
+                padding: 4px 8px !important;
+                min-width: 40px;
+                max-width: 60px;
+            }
+        }
         </style>
     """, unsafe_allow_html=True)
 
@@ -232,24 +254,50 @@ def display_flashcard(flashcard: Dict, index: int, total: int):
         st.session_state[f"card_flipped_{index}"] = not st.session_state.get(f"card_flipped_{index}", False)
         st.rerun()
 
-    # --- RETAIN ONLY THE HTML BUTTON ROW, REMOVE STREAMLIT BUTTON ROW ---
-    st.markdown('''
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin: 18px 0 10px 0;">
-            <form style="display:inline; margin:0; padding:0;">
-                <button type="submit" name="prev" style="padding:6px 14px; font-size:1em; border-radius:7px; border:1px solid #e0e0e0; background:#f8f9fa; cursor:pointer; min-width:36px;">←</button>
-            </form>
-            <form style="display:inline; margin:0; padding:0;">
-                <button type="submit" name="missed" style="padding:6px 14px; font-size:1em; border-radius:7px; border:1px solid #e0e0e0; background:#fff3f3; color:#dc3545; cursor:pointer; min-width:90px;">❌ Missed It</button>
-            </form>
-            <form style="display:inline; margin:0; padding:0;">
-                <button type="submit" name="knew" style="padding:6px 14px; font-size:1em; border-radius:7px; border:1px solid #e0e0e0; background:#f3fff3; color:#28a745; cursor:pointer; min-width:90px;">✓ Knew It!</button>
-            </form>
-            <form style="display:inline; margin:0; padding:0;">
-                <button type="submit" name="next" style="padding:6px 14px; font-size:1em; border-radius:7px; border:1px solid #e0e0e0; background:#f8f9fa; cursor:pointer; min-width:36px;">→</button>
-            </form>
-        </div>
-    ''', unsafe_allow_html=True)
+    # --- Small, centered action buttons below the flashcard ---
+    st.markdown("""
+        <style>
+        .action-btn-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0 20px 0;
+        }
+        .action-btn-row button {
+            font-size: 0.9em !important;
+            padding: 6px 12px !important;
+            border-radius: 8px !important;
+            min-width: 60px;
+            max-width: 80px;
+        }
+        @media (max-width: 600px) {
+            .action-btn-row button {
+                font-size: 0.8em !important;
+                padding: 4px 8px !important;
+                min-width: 40px;
+                max-width: 60px;
+            }
+        }
+        </style>
+    """, unsafe_allow_html=True)
 
+    col_correct, col_incorrect = st.columns([1,1], gap="small")
+    with col_correct:
+        if st.button("✔️ Knew it", key=f"correct_{index}", help="Mark as correct", use_container_width=True, disabled=index in st.session_state.cards_answered):
+            st.session_state.correct_count += 1
+            st.session_state.cards_answered.add(index)
+            if index < total-1:
+                st.session_state.current_card_idx = index+1
+            st.rerun()
+    with col_incorrect:
+        if st.button("❌ missed it", key=f"incorrect_{index}", help="Mark as incorrect", use_container_width=True, disabled=index in st.session_state.cards_answered):
+            st.session_state.incorrect_count += 1
+            st.session_state.cards_answered.add(index)
+            if index < total-1:
+                st.session_state.current_card_idx = index+1
+            st.rerun()
+    
     # Show final score if all cards are answered
     total_answered = len(st.session_state.cards_answered)
     if total_answered == total:
