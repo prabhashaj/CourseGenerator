@@ -333,7 +333,7 @@ def show_play_zone():
         col1, col2 = st.columns([2, 1])
         with col1:
             topic = st.text_input("Enter a topic for flashcards", 
-                                placeholder="e.g., Python Programming, Machine Learning, etc.")
+                                placeholder="e.g., Quantum Computing, Machine Learning, etc.")
         with col2:
             num_cards = st.number_input("Number of flashcards", 
                                       min_value=1, max_value=64, value=5)
