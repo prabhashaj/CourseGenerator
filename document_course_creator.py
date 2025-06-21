@@ -39,7 +39,7 @@ def get_or_create_eventloop():
 async def generate_content_with_gemini(prompt, response_schema=None, temperature=0.7, max_tokens=2048, top_k=32, top_p=1.0):
     """Calls the Gemini API to generate content with a fallback for errors."""
     # Re-define API_KEY locally to ensure it's captured correctly at call time
-    current_api_key = st.secrets.get("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    current_api_key = os.getenv("GOOGLE_API_KEY")
 
     if not current_api_key:
         st.error("API Key is not configured. Please set it in Streamlit secrets or environment variables.")

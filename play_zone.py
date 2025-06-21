@@ -9,7 +9,7 @@ from langchain.chains import ConversationChain
 import os
 
 # --- API Key Setup ---
-API_KEY = st.secrets.get("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+API_KEY = os.getenv("GOOGLE_API_KEY")
 if not API_KEY:
     st.error("API Key is not configured. Please set it in Streamlit secrets or environment variables.")
     st.stop()
