@@ -9,7 +9,7 @@ from langchain_community.document_loaders import PyPDFLoader, TextLoader
 from langchain.prompts import PromptTemplate
 
 # --- API Key Setup ---
-API_KEY = st.secrets.get("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+API_KEY = st.secrets.get("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
 if API_KEY:
     os.environ["GOOGLE_API_KEY"] = API_KEY
 

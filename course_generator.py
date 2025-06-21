@@ -18,7 +18,7 @@ except ImportError:
 
 # --- API Key Setup ---
 # Use Streamlit secrets for deployment and fall back to environment variable
-API_KEY = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+API_KEY = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY") or st.secrets.get("GEMINI_API_KEY") or st.secrets.get("GOOGLE_API_KEY")
 if not API_KEY:
     st.error("API Key is not configured. Please set it in Streamlit secrets or environment variables (GEMINI_API_KEY or GOOGLE_API_KEY).")
     st.stop()
