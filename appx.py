@@ -1,8 +1,4 @@
 import streamlit as st
-import course_generator
-import rag_chatbot
-import document_course_creator
-import play_zone  # Import the new PlayZone module
 
 # --- Page Configuration ---
 st.set_page_config(
@@ -10,6 +6,12 @@ st.set_page_config(
     page_icon="🚀",
     layout="wide"
 )
+
+import course_generator
+import rag_chatbot
+import document_course_creator
+import play_zone  # Import the new PlayZone module
+import lang_news # Import the langchain news module
 
 # --- Session State Initialization (Centralized) ---
 # Initialize session state for the entire application,
@@ -95,6 +97,15 @@ if mode_container.button(
     st.session_state.current_mode = "play_zone"
     st.rerun()
 
+if mode_container.button(
+    "Knowledge Hub 📰",
+    type="primary" if st.session_state.current_mode == "lang_news" else "secondary",
+    use_container_width=True,
+    key="btn_lang_news"
+):
+    st.session_state.current_mode = "lang_news"
+    st.rerun()
+
 st.sidebar.divider()
 
 # --- App Routing ---
@@ -105,6 +116,7 @@ try:
         "rag_chat": rag_chatbot.run_app,
         "doc_creator": document_course_creator.run_app,
         "play_zone": play_zone.show_play_zone,
+        "lang_news": lang_news.main, # Add langchain news handler
     }
     
     # Get and execute the appropriate handler
@@ -155,14 +167,17 @@ elif st.session_state.current_mode == "doc_creator":
                     st.rerun()
     else:
         st.sidebar.info("No document-generated courses yet. Upload documents to create one!")
-
+elif st.session_state.current_mode == "lang_news":
+    st.sidebar.subheader("Knowledge Hub 📰")
+    st.sidebar.info("Ask questions about tech, news, or current events!")
 
 # Visual feedback for current mode
 mode_messages = {
     "course_generator": "You are in the Course Generator mode.",
     "rag_chat": "You are in the RAG Chatbot mode.",
     "doc_creator": "You are in the Document Course Creator mode.",
-    "play_zone": "You are in the PlayZone mode."  # Add message for PlayZone
+    "play_zone": "You are in the PlayZone mode.",
+    "lang_news": "You are in the Knowledge Hub 📰 mode. Ask me anything about tech or current events!"
 }
 st.sidebar.info(mode_messages.get(st.session_state.current_mode, ""))
 

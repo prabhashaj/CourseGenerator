@@ -25,3 +25,7 @@ pypdf
 pdfminer.six
 pdf2image
 poppler-utils
+newspaper3k
+pytrends
+lxml_html_clean
+duckduckgo-search
