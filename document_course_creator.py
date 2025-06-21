@@ -21,7 +21,7 @@ except ImportError:
 # --- API Key Setup ---
 # API_KEY is expected to be set in appx.py or environment variables
 # Keep this global check, but also ensure it's picked up within the function.
-API_KEY = st.secrets.get("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+API_KEY = os.getenv("GOOGLE_API_KEY")
 if API_KEY:
     os.environ["GOOGLE_API_KEY"] = API_KEY # Ensure it's in os.environ
 
