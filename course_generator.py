@@ -7,6 +7,7 @@ import json
 import os
 import importlib
 import asyncio  # Import asyncio for event loop management
+import time  # Import time for delays
 from datetime import datetime  # Import datetime for timestamping courses
 
 # --- Utility Import ---
@@ -49,7 +50,7 @@ def init_session_state():
     if "temperature" not in st.session_state:
         st.session_state.temperature = 0.7
     if "max_tokens" not in st.session_state:
-        st.session_state.max_tokens = 1024
+        st.session_state.max_tokens = 4096  # Increased for larger courses
     if "top_k" not in st.session_state: # Ensure top_k and top_p are initialized
         st.session_state.top_k = 32
     if "top_p" not in st.session_state:
@@ -57,6 +58,9 @@ def init_session_state():
     # Add a flag to ensure sidebar content is rendered only once
     if "sidebar_rendered" not in st.session_state:
         st.session_state.sidebar_rendered = False
+    # Track successful course generation
+    if "last_generation_successful" not in st.session_state:
+        st.session_state.last_generation_successful = False
 
 
 def clear_chat_history():
@@ -112,11 +116,11 @@ def show_navigation():
         )
         st.session_state.max_tokens = st.slider(
             "Max Output Tokens",
-            min_value=50,
-            max_value=2048,
+            min_value=1024,
+            max_value=8192,
             value=st.session_state.max_tokens, # Use session state value
-            step=50,
-            help="Maximum number of tokens to generate in the response."
+            step=512,
+            help="Maximum number of tokens to generate. Increase for larger courses (5-10 modules need 4096+ tokens)."
         )
         # top_k and top_p are not shown but still used in the API call, so keep their defaults in session_state.
 
@@ -156,22 +160,62 @@ def get_or_create_eventloop():
 def safe_json_parse(text_response):
     """Safely parse JSON, attempting to repair common issues."""
     import re
+    
+    # Clean the response
+    text_response = text_response.strip()
+    
     # Remove trailing commas before } or ]
     text_response = re.sub(r',([\s\n]*[}}\]])', r'\1', text_response)
+    
     # Remove any markdown code block markers
     text_response = re.sub(r'^```json|```$', '', text_response, flags=re.MULTILINE)
-    # Truncate to last closing curly brace if needed (for incomplete JSON)
-    last_brace = text_response.rfind('}')
-    if last_brace != -1:
-        text_response = text_response[:last_brace+1]
+    text_response = text_response.strip()
+    
+    # Handle incomplete JSON by finding the last complete object
+    if not text_response.endswith('}'):
+        # Find the last complete closing brace for the main object
+        brace_count = 0
+        last_complete_pos = -1
+        for i, char in enumerate(text_response):
+            if char == '{':
+                brace_count += 1
+            elif char == '}':
+                brace_count -= 1
+                if brace_count == 0:
+                    last_complete_pos = i
+        
+        if last_complete_pos != -1:
+            text_response = text_response[:last_complete_pos + 1]
     
     try:
         return json.loads(text_response)
     except json.JSONDecodeError as e:
-        st.warning(f"JSONDecodeError: {e}. Attempting to fix...")
-        # A more robust repair could be implemented here if needed.
-        # For now, just return with an error flag if it fails after basic cleaning.
-        return {"error": f"Invalid JSON after cleaning: {str(e)}", "raw": text_response}
+        st.warning(f"JSONDecodeError: {e}. Attempting advanced repair...")
+        
+        # Try to fix common JSON issues
+        try:
+            # Fix unescaped quotes in strings
+            text_response = re.sub(r'(?<!\\)"(?=.*")', '\\"', text_response)
+            
+            # Try again
+            return json.loads(text_response)
+        except json.JSONDecodeError:
+            # Last resort: try to extract partial valid JSON
+            try:
+                # Find the modules array and try to parse it separately
+                modules_match = re.search(r'"modules"\s*:\s*\[(.*?)\]', text_response, re.DOTALL)
+                if modules_match:
+                    # Create a minimal valid structure
+                    return {
+                        "courseTitle": "Generated Course",
+                        "introduction": "Course introduction",
+                        "modules": json.loads('[' + modules_match.group(1) + ']'),
+                        "conclusion": "Course conclusion"
+                    }
+            except:
+                pass
+                
+        return {"error": f"Invalid JSON after all repair attempts: {str(e)}", "raw": text_response}
 
 # --- Gemini API Call Function ---
 async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, top_p, response_schema=None):
@@ -199,11 +243,21 @@ async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, t
     
     try:
         async with httpx.AsyncClient() as client:
+            # Dynamic timeout based on token count and complexity
+            if max_tokens <= 1024:
+                timeout_duration = 60
+            elif max_tokens <= 2048:
+                timeout_duration = 120
+            elif max_tokens <= 4096:
+                timeout_duration = 180
+            else:
+                timeout_duration = 240
+                
             response = await client.post(
                 api_url,
                 headers={'Content-Type': 'application/json'},
                 json=payload,
-                timeout=120 # Increased timeout for potentially longer content generation
+                timeout=timeout_duration
             )
             response.raise_for_status()
             result = response.json()
@@ -329,7 +383,16 @@ def run_app():
             st.warning("⚠️ Please enter a course topic!")
             return
         
-        with st.spinner(f"🔄 Generating {difficulty} level course on {course_topic}..."):
+        # Reset generation success flag
+        st.session_state.last_generation_successful = False
+        
+        with st.spinner(f"🔄 Generating {difficulty} level course on {course_topic}... This may take a while for larger courses."):
+            # Show progress for larger courses
+            if num_modules >= 7:
+                progress_bar = st.progress(0)
+                status_text = st.empty()
+                status_text.text("Preparing course generation...")
+            
             try:
                 # Define the JSON schema for the expected course outline (Aligned with app (2).py structure)
                 course_schema = {
@@ -366,29 +429,135 @@ def run_app():
                     "required": ["courseTitle", "introduction", "modules", "conclusion"]
                 }
 
-                # Construct the prompt for the LLM
+                # Construct the prompt for the LLM with improved instructions for larger courses
+                chapters_per_module = 3  # Fixed to exactly 3 chapters per module
+                
+                # Dynamic token allocation based on number of modules
+                base_tokens = 1024
+                tokens_per_module = 400  # Approximate tokens needed per module (with 3 chapters each)
+                optimal_tokens = base_tokens + (num_modules * tokens_per_module)
+                
+                # Ensure we don't exceed the max_tokens setting but use efficient allocation
+                if optimal_tokens > max_tokens:
+                    # Use available max_tokens
+                    course_tokens = max_tokens
+                    st.info(f"🔧 Using {course_tokens} tokens for {num_modules} modules. Consider increasing max tokens in sidebar for better quality.")
+                else:
+                    # Use optimal allocation
+                    course_tokens = optimal_tokens
+                    st.info(f"🎯 Optimized token usage: {course_tokens} tokens for {num_modules} modules")
+                
                 course_prompt = f"""
-                Generate a detailed course outline in JSON format for a '{course_topic}' course.
-                The course should be designed for a '{difficulty}' level audience.
-                It must have exactly {num_modules} modules.
-                Each module should have chapters, and the content for each module should be designed to take approximately {read_time_per_module} to read.
-
-                The JSON output should strictly follow this schema. Do not include any additional text outside the JSON.
+                Generate a comprehensive course outline in JSON format for a '{course_topic}' course.
+                
+                REQUIREMENTS:
+                - Course level: {difficulty}
+                - Number of modules: EXACTLY {num_modules}
+                - Each module should have EXACTLY {chapters_per_module} chapters
+                - Target reading time per module: {read_time_per_module}
+                - Ensure all content is relevant and well-structured
+                
+                CHAPTER DESCRIPTION REQUIREMENTS:
+                - Each chapter description should be {3 if num_modules <= 5 else 2}-{4 if num_modules <= 3 else 3} sentences long
+                - Include specific topics, concepts, and learning outcomes covered in that chapter
+                - Mention key skills or knowledge the student will gain
+                - Be descriptive about the actual content, not just what the chapter is about
+                - Use actionable language (e.g., "Learn how to...", "Discover...", "Master...")
+                
+                IMPORTANT JSON FORMATTING RULES:
+                1. Return ONLY valid JSON, no additional text
+                2. Use proper JSON escaping for quotes and special characters
+                3. Ensure all arrays and objects are properly closed
+                4. Module numbers should be sequential starting from 1
+                
+                The JSON must strictly follow this structure:
+                {{
+                    "courseTitle": "Clear, descriptive title",
+                    "introduction": "Brief course overview and objectives",
+                    "modules": [
+                        {{
+                            "moduleNumber": 1,
+                            "moduleTitle": "Module title",
+                            "chapters": [
+                                {{
+                                    "chapterTitle": "Chapter title",
+                                    "description": "Comprehensive {3 if num_modules <= 5 else 2}-{4 if num_modules <= 3 else 3} sentence description explaining what topics are covered, what skills will be learned, and what specific concepts will be mastered in this chapter."
+                                }}
+                            ]
+                        }}
+                    ],
+                    "conclusion": "Course wrap-up and next steps"
+                }}
+                
+                {f'Example of good chapter descriptions for {num_modules} modules:' if num_modules <= 5 else 'Keep descriptions concise but informative:'}
+                - {"Learn the fundamental concepts of neural networks including perceptrons, activation functions, and forward propagation. Discover how neurons process information and understand the mathematical foundations behind network architecture. Master the basic building blocks that form the foundation of all deep learning models. Practice implementing simple neural networks from scratch." if num_modules <= 5 else "Learn fundamental neural network concepts including perceptrons and activation functions. Master the mathematical foundations behind network architecture and practice implementing basic networks."}
+                
+                Make sure to create exactly {num_modules} modules with substantive, detailed content.
                 """
 
                 loop = get_or_create_eventloop()
-                course_data = loop.run_until_complete(
-                    generate_content_with_gemini(
-                        course_prompt,
-                        temperature, # Use values from session state (updated by sidebar sliders)
-                        max_tokens,  # Use values from session state (updated by sidebar sliders)
-                        top_k,       # Use values from session state (updated by sidebar sliders)
-                        top_p,       # Use values from session state (updated by sidebar sliders)
-                        response_schema=course_schema
-                    )
-                )
+                
+                # Retry logic for course generation
+                max_retries = 3
+                course_data = None
+                
+                for attempt in range(max_retries):
+                    try:
+                        if attempt > 0:
+                            if num_modules >= 7:
+                                status_text.text(f"Retrying course generation (attempt {attempt + 1}/{max_retries})...")
+                                progress_bar.progress(attempt / max_retries)
+                            st.info(f"Retrying course generation (attempt {attempt + 1}/{max_retries})...")
+                        elif num_modules >= 7:
+                            status_text.text(f"Generating course... (attempt {attempt + 1}/{max_retries})")
+                            progress_bar.progress(0.3)
+                        
+                        course_data = loop.run_until_complete(
+                            generate_content_with_gemini(
+                                course_prompt,
+                                temperature, # Use values from session state (updated by sidebar sliders)
+                                course_tokens,  # Use optimized token allocation
+                                top_k,       # Use values from session state (updated by sidebar sliders)
+                                top_p,       # Use values from session state (updated by sidebar sliders)
+                                response_schema=course_schema
+                            )
+                        )
+                        
+                        # Validate the generated course data
+                        if course_data and isinstance(course_data, dict) and course_data.get("courseTitle"):
+                            modules = course_data.get("modules", [])
+                            if len(modules) == num_modules:
+                                # Additional validation: check if each module has exactly 3 chapters
+                                all_modules_valid = True
+                                for module in modules:
+                                    chapters = module.get("chapters", [])
+                                    if len(chapters) != 3:
+                                        all_modules_valid = False
+                                        break
+                                
+                                if all_modules_valid:
+                                    # Successful generation - break out of retry loop
+                                    break
+                                else:
+                                    st.warning(f"Some modules don't have exactly 3 chapters. Retrying...")
+                                    course_data = None
+                            else:
+                                st.warning(f"Generated {len(modules)} modules instead of {num_modules}. Retrying...")
+                                course_data = None
+                        else:
+                            course_data = None
+                            
+                    except Exception as e:
+                        st.warning(f"Attempt {attempt + 1} failed: {str(e)}")
+                        course_data = None
+                        
+                    if attempt < max_retries - 1:
+                        # Wait before retry
+                        time.sleep(2)
+                
                 loop.close() # Close the loop after use
 
+                # Check if course generation was successful
                 if course_data and isinstance(course_data, dict) and course_data.get("courseTitle"):
                     # Initialize completion status for chapters
                     completion_status = {}
@@ -412,14 +581,27 @@ def run_app():
                     st.session_state.courses.append(new_course)
                     st.session_state.selected_course_index = len(st.session_state.courses) - 1 # Select the newly created course
                     clear_chat_history() # Clear chat history for the new course
+                    
+                    # Update progress bar for larger courses
+                    if num_modules >= 7:
+                        progress_bar.progress(1.0)
+                        status_text.text("Course generated successfully!")
+                    
+                    # Mark as successfully generated in session state
+                    st.session_state.last_generation_successful = True
                     st.success(f"✨ Successfully generated course: {new_course['courseTitle']}")
                     st.rerun()                
                 else:
-                    st.warning("Unable to generate the course with the current number of modules. Try reducing the number of modules and try again.")
+                    # Only show error message if course generation actually failed
+                    st.session_state.last_generation_successful = False
+                    st.error("❌ Unable to generate the course after multiple attempts. Please try again with fewer modules or a different topic.")
+                    
             except Exception as e:
-                st.warning("We encountered some difficulty generating the course with this many modules. Consider reducing the number of modules and try again.")
-                # Log the actual error for debugging (not visible to users)
-                print(f"Course generation error: {str(e)}")
+                # Only show error if generation wasn't marked as successful
+                if not st.session_state.get('last_generation_successful', False):
+                    st.error("❌ We encountered an unexpected error during course generation. Please try again.")
+                    # Log the actual error for debugging (not visible to users)
+                    print(f"Course generation error: {str(e)}")
 
     # --- Display selected course and chat interface ---
     if st.session_state.selected_course_index is not None and st.session_state.selected_course_index < len(st.session_state.courses):
@@ -453,48 +635,81 @@ def run_app():
                 # Use the same chapter_id logic as app (2).py for consistency
                 chapter_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_chapter_{chapter['chapterTitle'].replace(' ', '_').replace('.', '').replace(',', '')}"
 
-                st.markdown(f"**Chapter: {chapter['chapterTitle']}**")
-                st.markdown(f"*{chapter.get('description', '')}*")
+                # Enhanced chapter display with better formatting
+                st.markdown(f"#### 📖 Chapter {c_idx + 1}: {chapter['chapterTitle']}")
+                
+                # Display chapter description in an info box for better visibility
+                with st.container():
+                    st.markdown("**📝 What you'll learn in this chapter:**")
+                    st.info(chapter.get('description', 'No description available'))
 
-                # Checkbox for completion
-                is_completed = st.checkbox(
-                    f"Mark as complete: **{chapter['chapterTitle']}**",
-                    value=course['completion_status'].get(chapter_id, False),
-                    key=f"checkbox_{chapter_id}" # Unique key for each checkbox
-                )
+                # Checkbox for completion with better spacing
+                col1, col2 = st.columns([3, 1])
+                with col1:
+                    is_completed = st.checkbox(
+                        f"✅ Mark chapter as completed",
+                        value=course['completion_status'].get(chapter_id, False),
+                        key=f"checkbox_{chapter_id}" # Unique key for each checkbox
+                    )
+                
+                with col2:
+                    # Generate detailed content button
+                    if st.button(f"📚 Get Details", key=f"gen_content_{chapter_id}", help=f"Generate detailed content for '{chapter['chapterTitle']}'"):
+                        with st.spinner("Generating detailed chapter content..."):
+                            # Optimize content tokens based on course size
+                            total_chapters = len(st.session_state.courses[st.session_state.selected_course_index].get('modules', [])) * 3
+                            if total_chapters <= 9:  # 3 modules or fewer
+                                content_tokens = min(max_tokens, 2048)
+                                content_depth = "comprehensive and detailed"
+                            elif total_chapters <= 18:  # 6 modules or fewer
+                                content_tokens = min(max_tokens, 1536)
+                                content_depth = "thorough but concise"
+                            else:  # 7+ modules
+                                content_tokens = min(max_tokens, 1024)
+                                content_depth = "focused and essential"
+                            
+                            content_prompt = f"""
+                            Generate {content_depth} content for chapter '{chapter['chapterTitle']}' in the '{course['courseTitle']}' course.
+                            This course is for a {difficulty} level audience.
+                            
+                            Chapter overview: {chapter['description']}
+                            
+                            Please provide:
+                            1. Detailed explanations of all topics mentioned in the chapter description
+                            2. Practical examples and use cases where relevant
+                            3. {'Step-by-step breakdowns of complex concepts' if total_chapters <= 18 else 'Clear explanations of key concepts'}
+                            4. Key takeaways and learning objectives
+                            5. {'Real-world applications or scenarios' if total_chapters <= 15 else 'Practical applications'}
+                            
+                            The content should be {content_depth}, educational, and engaging for a {difficulty} level learner.
+                            {'Aim for substantial content that thoroughly covers all aspects mentioned in the chapter description.' if total_chapters <= 12 else 'Focus on the most important aspects mentioned in the chapter description.'}
+                            """
+                            loop = get_or_create_eventloop()
+                            detailed_content = loop.run_until_complete(
+                                generate_content_with_gemini(content_prompt, temperature, content_tokens, top_k, top_p)
+                            )
+                            loop.close() # Close the loop after use
+                            if detailed_content:
+                                st.session_state.chapter_contents[chapter_id] = detailed_content
+                                st.success("Detailed content generated!")                        
+                            else:
+                                st.warning("We're having trouble generating detailed content at the moment. Try generating content for a different chapter first, or wait a moment before trying again.")
+                
                 # Update completion status in session state if changed
                 if is_completed != course['completion_status'].get(chapter_id, False):
                     course['completion_status'][chapter_id] = is_completed
                     st.session_state.courses[st.session_state.selected_course_index] = course # Update the course in session state
                     st.rerun() # Rerun to update the progress bar immediately
-
-                # Generate detailed content button
-                if st.button(f"Generate Detailed Content for '{chapter['chapterTitle']}'", key=f"gen_content_{chapter_id}"):
-                    with st.spinner("Generating detailed chapter content..."):
-                        content_prompt = f"""
-                        Generate detailed content for chapter '{chapter['chapterTitle']}' in the '{course['courseTitle']}' course.
-                        This course is for a {difficulty} level audience.
-                        Chapter description: {chapter['description']}.
-                        Provide comprehensive, readable content with examples if relevant, aiming for a few paragraphs.
-                        """
-                        loop = get_or_create_eventloop()
-                        detailed_content = loop.run_until_complete(
-                            generate_content_with_gemini(content_prompt, temperature, max_tokens, top_k, top_p)
-                        )
-                        loop.close() # Close the loop after use
-                        if detailed_content:
-                            st.session_state.chapter_contents[chapter_id] = detailed_content
-                            st.success("Detailed content generated!")                        
-                        else:
-                            st.warning("We're having trouble generating detailed content at the moment. Try generating content for a different chapter first, or wait a moment before trying again.")
                 
                 # Display chapter content
                 if chapter_id in st.session_state.chapter_contents:
                     st.markdown("---")
-                    st.info(st.session_state.chapter_contents[chapter_id])
+                    st.markdown("**📚 Detailed Chapter Content:**")
+                    with st.expander("Click to expand/collapse detailed content", expanded=True):
+                        st.markdown(st.session_state.chapter_contents[chapter_id])
                     st.markdown("---")
                 else:
-                    st.info("Click 'Generate Detailed Content' to get more information for this chapter.")
+                    st.info("Click 'Get Details' to generate comprehensive content for this chapter.")
 
             # --- Quiz for this module (after chapters) ---
             module_quiz_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_quiz"
@@ -509,9 +724,21 @@ def run_app():
                     if not module_content.strip():
                         st.warning("Cannot generate quiz: No content available for this module's chapters.")
                     else:
+                        # Optimize quiz tokens based on total course size
+                        total_modules = len(st.session_state.courses[st.session_state.selected_course_index].get('modules', []))
+                        if total_modules <= 3:
+                            quiz_tokens = min(max_tokens, 1536)
+                            num_questions = 5
+                        elif total_modules <= 6:
+                            quiz_tokens = min(max_tokens, 1024)
+                            num_questions = 4
+                        else:
+                            quiz_tokens = min(max_tokens, 768)
+                            num_questions = 3
+                            
                         loop = get_or_create_eventloop()
                         quiz_data = loop.run_until_complete(quiz_utils.generate_quiz_with_gemini(
-                            module_content, API_KEY, temperature, max_tokens, top_k, top_p, num_questions=5
+                            module_content, API_KEY, temperature, quiz_tokens, top_k, top_p, num_questions=num_questions
                         ))
                         loop.close() # Close the loop after use
                         if quiz_data and "questions" in quiz_data:
@@ -521,7 +748,7 @@ def run_app():
                                 "answers": [None] * len(quiz_data["questions"]),
                                 "score": 0
                             }
-                            st.success("Quiz generated! Scroll down to attempt it.")
+                            st.success(f"Quiz generated with {num_questions} questions! Scroll down to attempt it.")
                         else:
                             st.warning("We're having trouble generating the quiz right now. Try generating detailed content for more chapters in this module first, then attempt the quiz generation again.")
             
