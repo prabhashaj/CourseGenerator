@@ -13,49 +13,22 @@ from langchain.schema import OutputParserException, AgentAction, AgentFinish
 from langchain.agents.agent import AgentOutputParser
 
 def duckduckgo_search_tool(query, max_results=5):
-    """Enhanced DuckDuckGo search that returns content with sources, prioritizing recent results."""
+    """Enhanced DuckDuckGo search that returns content with sources."""
     retries = 3
     delay = 2
-    
-    # Add 2025 to query to prioritize recent results
-    enhanced_query = f"{query} 2025" if "2025" not in query else query
-    
     for attempt in range(1, retries + 1):
         try:
             with DDGS() as ddgs:
-                # Search with time filter for recent results
-                results = ddgs.text(enhanced_query, region='wt-wt', safesearch='off', max_results=max_results, timelimit='y')
-                
-                if not results:
-                    # If no recent results, try without time filter
-                    results = ddgs.text(query, region='wt-wt', safesearch='off', max_results=max_results)
+                results = ddgs.text(query, region='wt-wt', safesearch='off', max_results=max_results)
                 
                 if not results:
                     return f"No search results found for: {query}"
-                
-                # Sort results by relevance to 2025 (prioritize recent content)
-                sorted_results = []
-                recent_results = []
-                
-                for result in results:
-                    title = result.get('title', 'No title')
-                    body = result.get('body', 'No description')
-                    
-                    # Check if result contains 2025 or recent keywords
-                    if any(keyword in (title + body).lower() for keyword in ['2025', 'june 2025', 'recent', 'latest', 'breaking']):
-                        recent_results.append(result)
-                    else:
-                        sorted_results.append(result)
-                
-                # Prioritize recent results first
-                final_results = recent_results + sorted_results
-                final_results = final_results[:max_results]  # Limit to max_results
                 
                 # Format results with content and sources
                 formatted_results = []
                 sources = []
                 
-                for i, result in enumerate(final_results, 1):
+                for i, result in enumerate(results, 1):
                     title = result.get('title', 'No title')
                     href = result.get('href', 'No URL')
                     body = result.get('body', 'No description')
@@ -70,7 +43,7 @@ def duckduckgo_search_tool(query, max_results=5):
                 search_content = "\n".join(formatted_results)
                 sources_list = " | ".join(sources)
                 
-                return f"**Search Results (Prioritizing 2025/Recent):**\n\n{search_content}\n\n**Sources for further reading:**\n{sources_list}"
+                return f"**Search Results:**\n\n{search_content}\n\n**Sources for further reading:**\n{sources_list}"
                 
         except Exception as e:
             if attempt < retries:
@@ -102,19 +75,27 @@ def create_langchain_agent():
     # Tools list includes only search_tool
     tools = [search_tool]
 
-    # 3. Define the Prompt with FORCED search requirement
-    prompt_template = """You MUST search the web for EVERY question. Do NOT use your training data.
+    # 3. Define the Prompt with stricter format requirements
+    prompt_template = """You are a research assistant. You MUST use the exact format below.
 
-MANDATORY FORMAT - No exceptions:
+RULE: For ANY question about recent events, news, current data, or anything that might need up-to-date information, you MUST search the web first.
 
-Thought: I must search for current information about this topic.
+REQUIRED FORMAT:
+
+Step 1 - Decide if you need web search:
+Thought: [Analyze if this needs current information]
+
+Step 2A - If you need web search (USE THIS FOR MOST QUESTIONS):
 Action: duckduckgo_search
-Action Input: [exact search query for the topic]
-Observation: [search results will appear here]
-Thought: Now I have current information from the web search.
-Final Answer: [answer based ONLY on the search results above, not on my training data]
+Action Input: [your search query]
+Observation: [results will appear]
+Thought: Based on search results, I can answer.
+Final Answer: [answer with sources]
 
-CRITICAL: You MUST use the search tool. Never answer from memory.
+Step 2B - If you DON'T need web search (only for basic definitions):
+Final Answer: [answer from knowledge]
+
+IMPORTANT: Always start with "Thought:" and use web search for anything that could be current.
 
 Tools: {tools}
 Tool names: {tool_names}
@@ -273,7 +254,6 @@ class LiveAgentCallback:
                     break
                 self.progress_bar.progress(i)
                 time.sleep(0.02)  # Smooth animation
-            self.progress_bar.progress(100)  # Complete the bar
     
     def add_observation(self, observation):
         """Show observation and stop animation"""
@@ -350,9 +330,6 @@ def invoke_agent_with_live_updates(agent_executor, query, callback):
             intermediate_steps = agent_response["intermediate_steps"]
             print(f"DEBUG: Found {len(intermediate_steps)} intermediate steps")
             
-            if len(intermediate_steps) > 0:
-                callback.add_thought("I need to search for current information to provide an accurate answer.")
-            
             for i, step in enumerate(intermediate_steps):
                 print(f"DEBUG: Step {i}: {type(step)}")
                 if isinstance(step, tuple) and len(step) == 2:
@@ -363,10 +340,9 @@ def invoke_agent_with_live_updates(agent_executor, query, callback):
                         if action.tool == 'duckduckgo_search':
                             print(f"DEBUG: Detected web search with query: {action.tool_input}")
                             callback.add_action(action.tool, action.tool_input)
-                            time.sleep(2)  # Allow time for animation to show
-                            # Process observation
-                            callback.add_observation(str(observation)[:300] + "..." if len(str(observation)) > 300 else str(observation))
-                            callback.add_thought("Now analyzing the search results to provide you with an accurate answer...")
+                            time.sleep(3)  # Allow time for animation
+                            callback.add_observation(str(observation)[:200] + "...")
+                            callback.add_thought("Now I'll analyze these search results to provide you with an accurate answer.")
         else:
             # If no intermediate steps, it means the agent answered directly from knowledge
             callback.add_thought("I can answer this from my existing knowledge without needing to search.")
@@ -387,7 +363,7 @@ def invoke_agent_with_live_updates(agent_executor, query, callback):
 
 def direct_chat_fallback(query):
     """
-    Direct chat with DeepSeek model as a fallback, but emphasize current information.
+    Direct chat with DeepSeek model as a fallback when agent parsing fails.
     """
     try:
         llm = ChatOpenAI(
@@ -397,14 +373,7 @@ def direct_chat_fallback(query):
             temperature=0.0
         )
         
-        # Enhanced prompt for current information
-        enhanced_prompt = f"""Based on the current date being June 26, 2025, please provide the most up-to-date information about: {query}
-
-If this is about recent events (especially 2025), prioritize the most current information available. If you don't have recent information, clearly state that web search would be needed for the latest updates.
-
-Question: {query}"""
-        
-        response = llm.invoke(enhanced_prompt)
+        response = llm.invoke(f"Please provide a comprehensive answer to this question: {query}")
         return response.content if hasattr(response, 'content') else str(response)
     except Exception as e:
         print(f"DEBUG: Direct chat fallback failed: {e}")
@@ -468,104 +437,6 @@ def main():
         print(f"DEBUG: Type of raw_agent_response after invoke_agent_safely: {type(raw_agent_response)}")
         print(f"DEBUG: Raw agent response after invoke_agent_safely: {raw_agent_response}")
 
-        # Check if the agent actually performed a web search
-        search_was_performed = False
-        search_results_found = None
-        
-        if isinstance(raw_agent_response, dict) and "intermediate_steps" in raw_agent_response:
-            intermediate_steps = raw_agent_response["intermediate_steps"]
-            for step in intermediate_steps:
-                if isinstance(step, tuple) and len(step) == 2:
-                    action, observation = step
-                    if hasattr(action, 'tool') and action.tool == 'duckduckgo_search':
-                        search_was_performed = True
-                        search_results_found = observation
-                        print(f"DEBUG: Found search results: {search_results_found[:200]}...")
-                        break
-        
-        # If agent didn't search or gave old info, FORCE a web search
-        if not search_was_performed:
-            print("DEBUG: Agent didn't search! Forcing web search...")
-            status_placeholder.info("🔍 Agent didn't search - forcing web search for current information...")
-            
-            # Perform direct search
-            live_callback.add_thought("The agent failed to search. I'm now performing a direct web search.")
-            live_callback.add_action("duckduckgo_search", query)
-            
-            try:
-                forced_search_results = duckduckgo_search_tool(query, max_results=5)
-                live_callback.add_observation(forced_search_results[:300] + "...")
-                search_results_found = forced_search_results
-                search_was_performed = True
-                print(f"DEBUG: Forced search completed: {forced_search_results[:200]}...")
-            except Exception as e:
-                print(f"DEBUG: Forced search failed: {e}")
-                live_callback.add_thought(f"Search failed: {e}")
-        
-        # If we have search results, prioritize them over agent's old knowledge
-        if search_results_found and search_was_performed:
-            if "2025" in search_results_found or "June" in search_results_found or "recent" in search_results_found.lower():
-                print("DEBUG: Using prioritized search results from 2025")
-                status_placeholder.success("Query processed successfully with current information!")
-                
-                # Extract sources from search results
-                sources = extract_sources_from_response(search_results_found)
-                
-                # Create response with quick summary first
-                response_text = ""
-                
-                # Add quick summary/answer first
-                if "Air India Flight 171" in search_results_found and "241" in search_results_found:
-                    response_text += "## 📋 Quick Answer\n\n"
-                    response_text += "**Yes, there was a tragic flight crash in Ahmedabad in 2025.** Air India Flight 171 crashed on June 12, 2025, shortly after takeoff, killing 241 people initially (death toll later rose to 270+). Only one person survived this devastating accident.\n\n"
-                    response_text += "---\n\n"
-                elif "crash" in search_results_found.lower() and "ahmedabad" in search_results_found.lower():
-                    response_text += "## 📋 Quick Answer\n\n"
-                    response_text += "**Yes, there was a recent flight crash in Ahmedabad.** Based on current search results, there was a significant aviation accident involving an Air India flight. Details are provided below.\n\n"
-                    response_text += "---\n\n"
-                else:
-                    response_text += "## 📋 Quick Answer\n\n"
-                    response_text += "Based on the current search results from 2025, here's what I found about your query:\n\n"
-                    response_text += "---\n\n"
-                
-                response_text += "**Based on Current Search Results (2025):**\n\n"
-                
-                # Extract key information intelligently
-                if "Air India Flight 171" in search_results_found and "241" in search_results_found:
-                    response_text += "**Air India Flight 171 Crash - June 12, 2025**\n\n"
-                    response_text += "A tragic aviation accident occurred involving Air India Flight 171, a Boeing 787-8 Dreamliner, which crashed shortly after takeoff from Ahmedabad Airport on June 12, 2025. The flight was en route to London Gatwick.\n\n"
-                    response_text += "**Key Details:**\n"
-                    response_text += "- **Date**: June 12, 2025\n"
-                    response_text += "- **Flight**: Air India Flight 171 (AI171)\n"
-                    response_text += "- **Aircraft**: Boeing 787-8 Dreamliner\n"
-                    response_text += "- **Route**: Ahmedabad to London Gatwick\n"
-                    response_text += "- **Initial Death Toll**: 241 people on board confirmed dead\n"
-                    response_text += "- **Updated Death Toll**: Later reports indicated over 270 fatalities as more bodies were recovered\n"
-                    response_text += "- **Survivors**: One miraculous survivor reported\n"
-                    response_text += "- **Passenger Breakdown**: 169 Indian nationals, 53 British nationals, 7 Portuguese nationals, and 1 Canadian national\n"
-                    response_text += "- **Investigation**: Black box recovered within 28 hours to aid investigation\n"
-                    response_text += "- **Location**: Crash occurred near Meghaninagar area in Ahmedabad\n"
-                    response_text += "- **Time**: Around 2:00 PM local time (13:39 IST)\n"
-                    response_text += "- **Response**: Prime Minister Modi and aviation authorities actively involved in rescue and recovery operations\n\n"
-                    response_text += "This represents one of the most significant aviation disasters in India's recent history, with ongoing investigations into the cause of the crash.\n\n"
-                else:
-                    # For other topics, extract the first few search results
-                    lines = search_results_found.split('\n')
-                    for line in lines[:15]:  # First 15 lines usually contain the main info
-                        if line.strip() and not line.startswith('Source:') and '**Sources for further reading:**' not in line:
-                            response_text += line + "\n"
-                    response_text += "\n"
-                
-                # Add sources section
-                if sources:
-                    response_text += "---\n\n### 📚 Sources:\n\n"
-                    for i, (title, url) in enumerate(sources, 1):
-                        response_text += f"**{i}.** [{title}]({url})\n\n"
-                    response_text += "*💡 Click any source above to visit the original website for more information.*"
-                
-                response_placeholder.markdown(response_text)
-                st.stop()  # Stop here since we successfully processed the query
-
         if raw_agent_response is None:
             # If invoke_agent_safely returned None, try direct chat as fallback
             status_placeholder.info("Trying direct chat as fallback...")
@@ -579,58 +450,8 @@ def main():
         elif isinstance(raw_agent_response, dict) and "output" in raw_agent_response:
             full_agent_output = raw_agent_response["output"]
             
-            # Check if agent stopped due to iteration limit but we have search results
+            # Check if agent still returned the iteration limit message
             if full_agent_output == "Agent stopped due to iteration limit or time limit.":
-                print("DEBUG: Agent stopped due to iteration limit, checking for search results...")
-                
-                # Check if we have intermediate steps with search results
-                if "intermediate_steps" in raw_agent_response:
-                    intermediate_steps = raw_agent_response["intermediate_steps"]
-                    search_results = None
-                    
-                    # Find the search results from intermediate steps
-                    for step in intermediate_steps:
-                        if isinstance(step, tuple) and len(step) == 2:
-                            action, observation = step
-                            if hasattr(action, 'tool') and action.tool == 'duckduckgo_search':
-                                search_results = observation
-                                break
-                    
-                    if search_results:
-                        print("DEBUG: Found search results, using them directly")
-                        status_placeholder.success("Query processed successfully!")
-                        
-                        # Extract sources from search results
-                        sources = extract_sources_from_response(search_results)
-                        
-                        # Create a proper response from search results
-                        response_text = "Based on current search results:\n\n"
-                        
-                        # Extract key information from search results
-                        if "241 people on board dead" in search_results:
-                            response_text += "**Air India Flight 171 Crash - June 12, 2025**\n\n"
-                            response_text += "A tragic accident occurred involving Air India Flight 171, a Boeing 787-8 Dreamliner, which crashed shortly after takeoff from Ahmedabad Airport on June 12, 2025. The flight was bound for London Gatwick.\n\n"
-                            response_text += "**Key Details:**\n"
-                            response_text += "- **Initial reports**: 241 people on board died\n"
-                            response_text += "- **Updated death toll**: Rose to over 270 as more bodies were recovered\n"
-                            response_text += "- **Survivors**: One miracle survivor\n"
-                            response_text += "- **Passengers**: 169 Indian nationals, 53 British nationals, 7 Portuguese nationals, and 1 Canadian national\n"
-                            response_text += "- **Investigation**: Black box found within 28 hours\n"
-                            response_text += "- **Response**: Authorities including PM Modi and aviation officials actively involved in rescue efforts\n\n"
-                        else:
-                            response_text += search_results + "\n\n"
-                        
-                        # Add sources section
-                        if sources:
-                            response_text += "---\n\n### 📚 Sources:\n\n"
-                            for i, (title, url) in enumerate(sources, 1):
-                                response_text += f"**{i}.** [{title}]({url})\n\n"
-                            response_text += "*💡 Click any source above to visit the original website for more information.*"
-                        
-                        response_placeholder.markdown(response_text)
-                        st.stop()
-                
-                # If no search results found, fall back to direct chat
                 status_placeholder.info("Agent hit parsing limits, trying direct chat...")
                 direct_response = direct_chat_fallback(query)
                 if direct_response:

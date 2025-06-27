@@ -5,6 +5,7 @@ langchain
 faiss-cpu
 google-generativeai
 langchain-community
+langchain-openai
 python-dotenv
 langchain-google-genai
 tiktoken
