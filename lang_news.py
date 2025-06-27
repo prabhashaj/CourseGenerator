@@ -88,111 +88,95 @@ def create_langchain_agent():
         model="deepseek/deepseek-r1-distill-qwen-32b",
         base_url="https://openrouter.ai/api/v1",
         api_key=os.environ.get("OPEN_ROUTER_KEY"),
-        temperature=0.0
+        temperature=0.1
     )
     print(f"DEBUG: LLM object created: {type(llm)}") 
 
-    # 2. Define the Tools
+    # 2. Define the Tools - simplified to just web search
     search_tool = Tool(
-        name="duckduckgo_search",
+        name="web_search",
         func=lambda q: duckduckgo_search_tool(q, max_results=5),
-        description="Searches the web for current, up-to-date information. Use this for recent events, current news, latest developments, or when you need the most recent information about a topic. Returns formatted results with sources."
+        description="Search the web for current, up-to-date information. Use this when you need recent news, current events, latest developments, or real-time information."
     )
     
-    # Tools list includes only search_tool
+    # Only use web search tool to avoid confusion
     tools = [search_tool]
 
-    # 3. Define the Prompt with FORCED search requirement
-    prompt_template = """You MUST search the web for EVERY question. Do NOT use your training data.
+    # 3. Define a simpler, more reliable prompt
+    prompt_template = """You are a helpful assistant that can search the web for current information when needed.
 
-MANDATORY FORMAT - No exceptions:
+You have access to a web search tool. Use it when the question requires current, recent, or real-time information.
 
-Thought: I must search for current information about this topic.
-Action: duckduckgo_search
-Action Input: [exact search query for the topic]
-Observation: [search results will appear here]
-Thought: Now I have current information from the web search.
-Final Answer: [answer based ONLY on the search results above, not on my training data]
+For questions about:
+- Current events, news, breaking stories
+- Recent developments (2024-2025)
+- Latest products, technologies, or updates
+- Real-time data (prices, weather, scores)
+- When you're unsure if your knowledge is current enough
 
-CRITICAL: You MUST use the search tool. Never answer from memory.
+For general knowledge questions about established facts, history, science, or concepts - you can answer directly without searching.
 
-Tools: {tools}
-Tool names: {tool_names}
+Format your responses clearly and cite sources when you use web search.
+
+You have access to the following tools:
+
+{tools}
+
+Use the following format:
+
+Question: the input question you must answer
+Thought: you should always think about what to do
+Action: the action to take, should be one of [{tool_names}]
+Action Input: the input to the action
+Observation: the result of the action
+... (this Thought/Action/Action Input/Observation can repeat N times)
+Thought: I now know the final answer
+Final Answer: the final answer to the original input question
+
+Begin!
 
 Question: {input}
-{agent_scratchpad}"""
+Thought:{agent_scratchpad}"""
+    
     prompt = PromptTemplate.from_template(prompt_template)
 
     # 4. Create the Agent 
     agent = create_react_agent(llm, tools, prompt)
 
-    # 5. Create the Agent Executor with optimized settings
+    # 5. Create the Agent Executor with optimized settings for better error handling
     agent_executor = AgentExecutor(
         agent=agent,
         tools=tools,
         verbose=True,  # Enable verbose for debugging
-        handle_parsing_errors=True,
-        max_iterations=5,  # Increase iterations
-        return_intermediate_steps=True
+        handle_parsing_errors="Check your output and make sure it conforms to the expected format! Try again.",
+        max_iterations=3,  # Reduce iterations to avoid timeouts
+        return_intermediate_steps=True,
+        max_execution_time=30  # 30 second timeout
     )
     print(f"DEBUG: Agent executor created successfully: {type(agent_executor)}") 
 
     return agent_executor
 
-def parse_agent_steps(agent_output):
+def format_agent_response(agent_output):
     """
-    Parses the agent's output into steps for display.
-    Separates the main answer text from the sources.
+    Format the agent's response with proper brief answer and detailed information.
     """
-    if agent_output is None:
-        print("DEBUG: parse_agent_steps received None as agent_output. Returning empty.")
-        return [], "", [] # Return empty steps, answer, and sources
-
-    steps = []
-    # Regex to capture Thought, Action, Action Input, and Observation
-    action_pattern = r"Thought:(.*?)\n(?:Action:(.*?)\nAction Input:(.*?)\nObservation:(.*?)(?=\nThought:|\Z))"
-    matches = re.findall(action_pattern, agent_output, re.DOTALL)
-    for match in matches:
-        steps.append({
-            "thought": match[0].strip(),
-            "action": match[1].strip(),
-            "input": match[2].strip(),
-            "observation": match[3].strip()
-        })
+    if not agent_output or agent_output.strip() == "":
+        return "No response available", ""
     
-    main_answer_text = ""
-    extracted_links = []
-
-    # Find the "Final Answer:" header
-    final_answer_header_match = re.search(r"Final Answer:\s*", agent_output, re.DOTALL)
-
-    if final_answer_header_match:
-        # Get all content after "Final Answer:"
-        content_after_final_answer = agent_output[final_answer_header_match.end():].strip()
-
-        # Try to find "Sources:" within this content
-        sources_header_match = re.search(r"\nSources:\s*", content_after_final_answer, re.DOTALL)
-
-        if sources_header_match:
-            # Content before "Sources:" is the main answer
-            main_answer_text = content_after_final_answer[:sources_header_match.start()].strip()
-            # Content after "Sources:" is the potential sources block
-            sources_block = content_after_final_answer[sources_header_match.end():].strip()
-            
-            # Extract links from the sources_block
-            extracted_links = re.findall(r'\[([^\]]+)\]\((https?:\/\/[^)]+)\)', sources_block)
-        else:
-            # No "Sources:" header found, so the entire content after "Final Answer:" is the main answer.
-            main_answer_text = content_after_final_answer
-            # Still attempt to extract links from this main answer text, in case they are embedded without a "Sources:" header.
-            extracted_links = re.findall(r'\[([^\]]+)\]\((https?:\/\/[^)]+)\)', main_answer_text)
-    else:
-        # If "Final Answer:" header itself is not found, treat the whole output as the answer (fallback).
-        # This might happen if the agent's output format deviates significantly.
-        main_answer_text = agent_output
-        extracted_links = re.findall(r'\[([^\]]+)\]\((https?:\/\/[^)]+)\)', main_answer_text)
-
-    return steps, main_answer_text, extracted_links
+    # Clean up the response
+    clean_output = agent_output.strip()
+    
+    # Extract first meaningful sentence for brief answer
+    sentences = clean_output.split('.')
+    brief_sentence = ""
+    for sentence in sentences:
+        clean_sentence = sentence.strip()
+        if clean_sentence and len(clean_sentence) > 30 and not clean_sentence.startswith('DEBUG'):
+            brief_sentence = clean_sentence + "."
+            break
+    
+    return brief_sentence, clean_output
 
 def extract_sources_from_response(agent_output):
     """Extract sources from the agent's response for display"""
@@ -250,7 +234,7 @@ class LiveAgentCallback:
     
     def add_action(self, action, action_input):
         """Show action status with web search animation"""
-        if action == "duckduckgo_search":
+        if action == "web_search":
             self.is_searching = True
             self.status_placeholder.info(f"🌐 Searching the web: **{action_input}**")
             self.reasoning_steps.append(f"🌐 **Action:** Searching the web for '{action_input}'")
@@ -259,7 +243,6 @@ class LiveAgentCallback:
             # Create and run progress bar animation
             self.progress_bar = st.progress(0)
             self._animate_progress()
-                
         else:
             self.status_placeholder.info(f"⚡ Processing...")
             self.reasoning_steps.append(f"⚡ **Action:** {action}")
@@ -316,6 +299,30 @@ def invoke_agent_safely(agent_executor, query, callback=None):
             raw_response = agent_executor.invoke({"input": query})
             return raw_response
             
+    except OutputParserException as e:
+        print(f"DEBUG: OutputParserException occurred: {e}")
+        if callback:
+            callback.add_thought("Agent encountered parsing issues, switching to direct search approach...")
+        
+        # If parsing fails, try direct search as fallback
+        try:
+            search_results = duckduckgo_search_tool(query, max_results=5)
+            if callback:
+                callback.add_action("web_search", query)
+                callback.add_observation(search_results[:300] + "...")
+                callback.add_final_answer("Using search results")
+            
+            # Create a fake response structure to maintain consistency
+            return {
+                "output": f"Based on current web search results:\n\n{search_results}",
+                "intermediate_steps": [
+                    (type('Action', (), {'tool': 'web_search', 'tool_input': query})(), search_results)
+                ]
+            }
+        except Exception as search_error:
+            print(f"DEBUG: Fallback search also failed: {search_error}")
+            return None
+            
     except AttributeError as e:
         if "'NoneType' object has no attribute 'get'" in str(e):
             print(f"CRITICAL ERROR: Agent invocation returned None, leading to AttributeError: {e}")
@@ -328,6 +335,31 @@ def invoke_agent_safely(agent_executor, query, callback=None):
     except Exception as e:
         err_msg = str(e).lower()
         print(f"DEBUG: General exception during agent invocation: {e}")
+        
+        # Check for common parsing errors
+        if "output_parsing_failure" in err_msg or "could not parse" in err_msg or "invalid format" in err_msg:
+            print("DEBUG: Detected parsing failure, trying direct search fallback...")
+            if callback:
+                callback.add_thought("Agent encountered parsing issues, switching to direct search approach...")
+            
+            try:
+                search_results = duckduckgo_search_tool(query, max_results=5)
+                if callback:
+                    callback.add_action("web_search", query)
+                    callback.add_observation(search_results[:300] + "...")
+                    callback.add_final_answer("Using search results")
+                
+                # Create a fake response structure to maintain consistency
+                return {
+                    "output": f"Based on current web search results:\n\n{search_results}",
+                    "intermediate_steps": [
+                        (type('Action', (), {'tool': 'web_search', 'tool_input': query})(), search_results)
+                    ]
+                }
+            except Exception as search_error:
+                print(f"DEBUG: Fallback search also failed: {search_error}")
+                return None
+        
         if "rate limit" in err_msg or "quota" in err_msg:
             st.error("Sorry, the API service is temporarily rate-limited. Please try again in a few minutes.")
         else:
@@ -360,7 +392,7 @@ def invoke_agent_with_live_updates(agent_executor, query, callback):
                     print(f"DEBUG: Action: {action}, Observation type: {type(observation)}")
                     
                     if hasattr(action, 'tool') and hasattr(action, 'tool_input'):
-                        if action.tool == 'duckduckgo_search':
+                        if action.tool == 'web_search':
                             print(f"DEBUG: Detected web search with query: {action.tool_input}")
                             callback.add_action(action.tool, action.tool_input)
                             time.sleep(2)  # Allow time for animation to show
@@ -448,8 +480,6 @@ def main():
             st.stop()
 
         raw_agent_response = None
-        final_answer_for_display = "" # Will hold the main answer text
-        extracted_links = [] # Will hold parsed links
 
         # Display initial status
         status_placeholder.info("🚀 Getting ready to answer your question...")
@@ -477,20 +507,34 @@ def main():
             for step in intermediate_steps:
                 if isinstance(step, tuple) and len(step) == 2:
                     action, observation = step
-                    if hasattr(action, 'tool') and action.tool == 'duckduckgo_search':
+                    if hasattr(action, 'tool') and action.tool == 'web_search':
                         search_was_performed = True
                         search_results_found = observation
                         print(f"DEBUG: Found search results: {search_results_found[:200]}...")
                         break
         
-        # If agent didn't search or gave old info, FORCE a web search
-        if not search_was_performed:
-            print("DEBUG: Agent didn't search! Forcing web search...")
-            status_placeholder.info("🔍 Agent didn't search - forcing web search for current information...")
+        # Smart decision: Force search only for queries that clearly need current info
+        def should_force_search(query_text):
+            """Determine if a query likely needs web search based on keywords"""
+            current_keywords = [
+                'today', 'latest', 'recent', 'current', 'now', 'breaking', 'news', 
+                'happening', 'update', '2025', '2024', 'this year', 'latest', 
+                'new', 'price', 'stock', 'weather', 'live', 'real-time'
+            ]
+            news_keywords = ['ukraine', 'war', 'politics', 'election', 'covid', 'economy']
+            tech_keywords = ['ai model', 'openai', 'chatgpt', 'latest version', 'new release']
+            
+            query_lower = query_text.lower()
+            return any(keyword in query_lower for keyword in current_keywords + news_keywords + tech_keywords)
+        
+        # If agent didn't search and query seems to need current info, FORCE a search
+        if not search_was_performed and should_force_search(query):
+            print("DEBUG: Query needs current info but agent didn't search! Forcing web search...")
+            status_placeholder.info("🔍 This query needs current information - searching the web...")
             
             # Perform direct search
-            live_callback.add_thought("The agent failed to search. I'm now performing a direct web search.")
-            live_callback.add_action("duckduckgo_search", query)
+            live_callback.add_thought("This question needs current information, so I'm performing a web search.")
+            live_callback.add_action("web_search", query)
             
             try:
                 forced_search_results = duckduckgo_search_tool(query, max_results=5)
@@ -502,212 +546,128 @@ def main():
                 print(f"DEBUG: Forced search failed: {e}")
                 live_callback.add_thought(f"Search failed: {e}")
         
-        # If we have search results, prioritize them over agent's old knowledge
+        # Process the response based on what we have
         if search_results_found and search_was_performed:
-            if "2025" in search_results_found or "June" in search_results_found or "recent" in search_results_found.lower():
-                print("DEBUG: Using prioritized search results from 2025")
-                status_placeholder.success("Query processed successfully with current information!")
-                
-                # Extract sources from search results
-                sources = extract_sources_from_response(search_results_found)
-                
-                # Create response with quick summary first
-                response_text = ""
-                
-                # Add quick summary/answer first
-                if "Air India Flight 171" in search_results_found and "241" in search_results_found:
-                    response_text += "## 📋 Quick Answer\n\n"
-                    response_text += "**Yes, there was a tragic flight crash in Ahmedabad in 2025.** Air India Flight 171 crashed on June 12, 2025, shortly after takeoff, killing 241 people initially (death toll later rose to 270+). Only one person survived this devastating accident.\n\n"
-                    response_text += "---\n\n"
-                elif "crash" in search_results_found.lower() and "ahmedabad" in search_results_found.lower():
-                    response_text += "## 📋 Quick Answer\n\n"
-                    response_text += "**Yes, there was a recent flight crash in Ahmedabad.** Based on current search results, there was a significant aviation accident involving an Air India flight. Details are provided below.\n\n"
-                    response_text += "---\n\n"
-                else:
-                    response_text += "## 📋 Quick Answer\n\n"
-                    response_text += "Based on the current search results from 2025, here's what I found about your query:\n\n"
-                    response_text += "---\n\n"
-                
-                response_text += "**Based on Current Search Results (2025):**\n\n"
-                
-                # Extract key information intelligently
-                if "Air India Flight 171" in search_results_found and "241" in search_results_found:
-                    response_text += "**Air India Flight 171 Crash - June 12, 2025**\n\n"
-                    response_text += "A tragic aviation accident occurred involving Air India Flight 171, a Boeing 787-8 Dreamliner, which crashed shortly after takeoff from Ahmedabad Airport on June 12, 2025. The flight was en route to London Gatwick.\n\n"
-                    response_text += "**Key Details:**\n"
-                    response_text += "- **Date**: June 12, 2025\n"
-                    response_text += "- **Flight**: Air India Flight 171 (AI171)\n"
-                    response_text += "- **Aircraft**: Boeing 787-8 Dreamliner\n"
-                    response_text += "- **Route**: Ahmedabad to London Gatwick\n"
-                    response_text += "- **Initial Death Toll**: 241 people on board confirmed dead\n"
-                    response_text += "- **Updated Death Toll**: Later reports indicated over 270 fatalities as more bodies were recovered\n"
-                    response_text += "- **Survivors**: One miraculous survivor reported\n"
-                    response_text += "- **Passenger Breakdown**: 169 Indian nationals, 53 British nationals, 7 Portuguese nationals, and 1 Canadian national\n"
-                    response_text += "- **Investigation**: Black box recovered within 28 hours to aid investigation\n"
-                    response_text += "- **Location**: Crash occurred near Meghaninagar area in Ahmedabad\n"
-                    response_text += "- **Time**: Around 2:00 PM local time (13:39 IST)\n"
-                    response_text += "- **Response**: Prime Minister Modi and aviation authorities actively involved in rescue and recovery operations\n\n"
-                    response_text += "This represents one of the most significant aviation disasters in India's recent history, with ongoing investigations into the cause of the crash.\n\n"
-                else:
-                    # For other topics, extract the first few search results
-                    lines = search_results_found.split('\n')
-                    for line in lines[:15]:  # First 15 lines usually contain the main info
-                        if line.strip() and not line.startswith('Source:') and '**Sources for further reading:**' not in line:
-                            response_text += line + "\n"
-                    response_text += "\n"
-                
-                # Add sources section
-                if sources:
-                    response_text += "---\n\n### 📚 Sources:\n\n"
-                    for i, (title, url) in enumerate(sources, 1):
-                        response_text += f"**{i}.** [{title}]({url})\n\n"
-                    response_text += "*💡 Click any source above to visit the original website for more information.*"
-                
-                response_placeholder.markdown(response_text)
-                st.stop()  # Stop here since we successfully processed the query
-
-        if raw_agent_response is None:
-            # If invoke_agent_safely returned None, try direct chat as fallback
-            status_placeholder.info("Trying direct chat as fallback...")
-            direct_response = direct_chat_fallback(query)
-            if direct_response:
-                status_placeholder.success("Query processed successfully!")
-                response_placeholder.markdown(direct_response)
+            print("DEBUG: Processing search results")
+            status_placeholder.success("Query processed successfully with current information!")
+            
+            # Extract sources from search results
+            sources = extract_sources_from_response(search_results_found)
+            
+            # Create response with quick summary first
+            response_text = "## 📋 Quick Answer\n\n"
+            
+            # Extract brief answer from search results
+            search_lines = search_results_found.split('\n')
+            brief_content = ""
+            
+            for line in search_lines:
+                if line.strip() and not line.startswith('**Search Results') and not line.startswith('Source:') and '**Sources for further reading:**' not in line:
+                    clean_line = line.strip()
+                    if clean_line and len(clean_line) > 20:
+                        brief_content = clean_line
+                        break
+            
+            if brief_content:
+                brief_answer = re.sub(r'\*\*([^*]+)\*\*', r'\1', brief_content)
+                brief_answer = re.sub(r'^\d+\.\s*', '', brief_answer)
+                brief_answer = brief_answer[:200] + "..." if len(brief_answer) > 200 else brief_answer
+                response_text += f"**{brief_answer}**\n\n"
             else:
-                status_placeholder.error("Failed to get a response from the agent.")
-            st.stop()
-        elif isinstance(raw_agent_response, dict) and "output" in raw_agent_response:
+                response_text += "Based on current search results, here's what I found about your query.\n\n"
+            
+            response_text += "---\n\n"
+            response_text += "**Detailed Information:**\n\n"
+            
+            # Extract and format all search results generically
+            lines = search_results_found.split('\n')
+            for line in lines:
+                if line.strip() and not line.startswith('**Search Results') and not line.startswith('Source:') and '**Sources for further reading:**' not in line:
+                    clean_line = line.strip()
+                    if clean_line:
+                        response_text += clean_line + "\n"
+            response_text += "\n"
+            
+            # Add sources section
+            if sources:
+                response_text += "---\n\n### 📚 Sources:\n\n"
+                for i, (title, url) in enumerate(sources, 1):
+                    response_text += f"**{i}.** [{title}]({url})\n\n"
+                response_text += "*💡 Click any source above to visit the original website for more information.*"
+            
+            response_placeholder.markdown(response_text)
+            
+        elif raw_agent_response and isinstance(raw_agent_response, dict) and "output" in raw_agent_response:
+            # Agent provided a direct answer
             full_agent_output = raw_agent_response["output"]
             
-            # Check if agent stopped due to iteration limit but we have search results
-            if full_agent_output == "Agent stopped due to iteration limit or time limit.":
-                print("DEBUG: Agent stopped due to iteration limit, checking for search results...")
+            if full_agent_output and full_agent_output.strip() != "Agent stopped due to iteration limit or time limit.":
+                print("DEBUG: Processing agent's direct answer")
+                status_placeholder.success("Query processed successfully!")
                 
-                # Check if we have intermediate steps with search results
-                if "intermediate_steps" in raw_agent_response:
-                    intermediate_steps = raw_agent_response["intermediate_steps"]
-                    search_results = None
-                    
-                    # Find the search results from intermediate steps
-                    for step in intermediate_steps:
-                        if isinstance(step, tuple) and len(step) == 2:
-                            action, observation = step
-                            if hasattr(action, 'tool') and action.tool == 'duckduckgo_search':
-                                search_results = observation
-                                break
-                    
-                    if search_results:
-                        print("DEBUG: Found search results, using them directly")
-                        status_placeholder.success("Query processed successfully!")
-                        
-                        # Extract sources from search results
-                        sources = extract_sources_from_response(search_results)
-                        
-                        # Create a proper response from search results
-                        response_text = "Based on current search results:\n\n"
-                        
-                        # Extract key information from search results
-                        if "241 people on board dead" in search_results:
-                            response_text += "**Air India Flight 171 Crash - June 12, 2025**\n\n"
-                            response_text += "A tragic accident occurred involving Air India Flight 171, a Boeing 787-8 Dreamliner, which crashed shortly after takeoff from Ahmedabad Airport on June 12, 2025. The flight was bound for London Gatwick.\n\n"
-                            response_text += "**Key Details:**\n"
-                            response_text += "- **Initial reports**: 241 people on board died\n"
-                            response_text += "- **Updated death toll**: Rose to over 270 as more bodies were recovered\n"
-                            response_text += "- **Survivors**: One miracle survivor\n"
-                            response_text += "- **Passengers**: 169 Indian nationals, 53 British nationals, 7 Portuguese nationals, and 1 Canadian national\n"
-                            response_text += "- **Investigation**: Black box found within 28 hours\n"
-                            response_text += "- **Response**: Authorities including PM Modi and aviation officials actively involved in rescue efforts\n\n"
-                        else:
-                            response_text += search_results + "\n\n"
-                        
-                        # Add sources section
-                        if sources:
-                            response_text += "---\n\n### 📚 Sources:\n\n"
-                            for i, (title, url) in enumerate(sources, 1):
-                                response_text += f"**{i}.** [{title}]({url})\n\n"
-                            response_text += "*💡 Click any source above to visit the original website for more information.*"
-                        
-                        response_placeholder.markdown(response_text)
-                        st.stop()
-                
-                # If no search results found, fall back to direct chat
-                status_placeholder.info("Agent hit parsing limits, trying direct chat...")
-                direct_response = direct_chat_fallback(query)
-                if direct_response:
-                    status_placeholder.success("Query processed successfully!")
-                    response_placeholder.markdown(direct_response)
-                else:
-                    status_placeholder.error("Failed to get a response from both agent and direct chat.")
-                st.stop()
-            
-            # Update status message to indicate completion
-            status_placeholder.success("Query processed successfully!")
-
-            # Parse steps and the main final answer text
-            steps, final_answer_for_display, extracted_links = parse_agent_steps(full_agent_output)
-            
-            # Debugging: Print parsed results
-            print(f"DEBUG: main_final_answer_text (from parser): {repr(final_answer_for_display)}")
-            print(f"DEBUG: Extracted links (from parser): {extracted_links}")
-
-            # Deduplicate extracted links
-            unique_links = []
-            seen_urls = set()
-            for title, url in extracted_links:
-                if url not in seen_urls:
-                    unique_links.append((title, url))
-                    seen_urls.add(url)
-            extracted_links = unique_links
-
-            # Show the main final answer in response placeholder
-            if final_answer_for_display.strip():
                 # Extract and display sources if any
                 sources = extract_sources_from_response(full_agent_output)
                 
-                # Clean up the main answer text (remove source URLs that appear inline)
-                clean_answer = re.sub(r'Source:\s*https?://[^\s]+', '', final_answer_for_display)
-                clean_answer = re.sub(r'\n\s*\n', '\n\n', clean_answer)  # Clean up extra newlines
+                # Format the response properly
+                brief_answer, detailed_answer = format_agent_response(full_agent_output)
                 
-                # Prepare the complete response with sources
-                complete_response = clean_answer.strip()
+                # Prepare the complete response with brief answer first
+                complete_response = "## 📋 Quick Answer\n\n"
+                
+                if brief_answer:
+                    complete_response += f"**{brief_answer}**\n\n"
+                else:
+                    complete_response += "**Here's what I found about your query.**\n\n"
+                
+                complete_response += "---\n\n"
+                complete_response += "**Detailed Information:**\n\n"
+                complete_response += detailed_answer
                 
                 if sources:
                     complete_response += "\n\n---\n\n### 📚 Sources:\n\n"
                     for i, (title, url) in enumerate(sources, 1):
-                        # Create clickable numbered links
                         complete_response += f"**{i}.** [{title}]({url})\n\n"
                     complete_response += "*💡 Click any source above to visit the original website for more information.*"
                 
-                # Display the complete response with sources
                 response_placeholder.markdown(complete_response)
-                        
             else:
-                # If no final answer was parsed, show the raw output but try to extract sources
-                sources = extract_sources_from_response(full_agent_output)
-                display_text = full_agent_output
+                # Agent output was empty or stopped, use fallback
+                print("DEBUG: Agent output was empty, using direct chat fallback")
+                status_placeholder.info("Using direct chat as fallback...")
+                direct_response = direct_chat_fallback(query)
                 
-                if sources:
-                    display_text += "\n\n---\n\n### 📚 Sources:\n\n"
-                    for i, (title, url) in enumerate(sources, 1):
-                        display_text += f"**{i}.** [{title}]({url})\n\n"
-                    display_text += "*💡 Click any source above to visit the original website for more information.*"
-                
-                response_placeholder.markdown(display_text)
+                if direct_response:
+                    brief_answer, detailed_answer = format_agent_response(direct_response)
+                    
+                    formatted_response = "## 📋 Quick Answer\n\n"
+                    formatted_response += f"**{brief_answer}**\n\n" if brief_answer else "**Here's what I found about your query.**\n\n"
+                    formatted_response += "---\n\n**Detailed Information:**\n\n"
+                    formatted_response += detailed_answer
+                    
+                    response_placeholder.markdown(formatted_response)
+                    status_placeholder.success("Query processed successfully!")
+                else:
+                    response_placeholder.error("Failed to get a response from both agent and direct chat.")
+                    status_placeholder.error("Unable to process query")
         else:
-            final_display_output = f"The agent returned an unexpected response format: {raw_agent_response}. Please try again or refine your query."
-            status_placeholder.error(final_display_output)
-            st.stop() # Stop if format is unexpected, as further processing will likely fail
-
-        # Fallback: If parsing failed and no valid answer was found, use direct chat as a last resort
-        if not final_answer_for_display.strip():
-            st.warning("The agent's response could not be parsed into a valid answer. Trying direct chat fallback...")
-            with st.spinner("Chatting with the AI..."):
-                fallback_response = direct_chat_fallback(query)
+            # No valid response from agent, use direct chat fallback
+            print("DEBUG: No valid response from agent, using direct chat fallback")
+            status_placeholder.info("Using direct chat as fallback...")
+            direct_response = direct_chat_fallback(query)
             
-            if fallback_response:
-                response_placeholder.markdown(fallback_response)
+            if direct_response:
+                brief_answer, detailed_answer = format_agent_response(direct_response)
+                
+                formatted_response = "## 📋 Quick Answer\n\n"
+                formatted_response += f"**{brief_answer}**\n\n" if brief_answer else "**Here's what I found about your query.**\n\n"
+                formatted_response += "---\n\n**Detailed Information:**\n\n"
+                formatted_response += detailed_answer
+                
+                response_placeholder.markdown(formatted_response)
+                status_placeholder.success("Query processed successfully!")
             else:
-                response_placeholder.error("Direct chat fallback also failed. Please try again later.")
+                response_placeholder.error("Failed to get a response from both agent and direct chat.")
+                status_placeholder.error("Unable to process query")
 
 if __name__ == "__main__":
     main()
