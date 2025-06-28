@@ -38,6 +38,81 @@ except (AttributeError, FileNotFoundError):
 if API_KEY:
     os.environ["GOOGLE_API_KEY"] = API_KEY # Ensure it's in os.environ for other modules that might use it
 
+def build_chapter_content_prompt(chapter, course, difficulty, content_tokens, total_chapters, content_depth):
+    """Build chapter content prompt without complex f-string expressions to avoid syntax errors."""
+    # Build sections based on total chapters
+    core_concepts_section = ""
+    if total_chapters <= 12:
+        core_concepts_section = "Provide in-depth explanations of fundamental concepts, theoretical foundations, mathematical principles (where applicable), and detailed breakdowns of complex ideas. Use multiple examples and analogies to illustrate abstract concepts."
+    else:
+        core_concepts_section = "Explain key concepts thoroughly with clear examples and theoretical foundations."
+    
+    implementation_section = ""
+    if total_chapters <= 9:
+        implementation_section = "Include step-by-step processes, detailed methodologies, algorithms, formulas, and comprehensive explanations of how things work at a deeper level."
+    else:
+        implementation_section = "Cover essential principles, methodologies, and step-by-step processes."
+    
+    examples_section = ""
+    if total_chapters <= 12:
+        examples_section = "Provide multiple detailed examples, case studies, real-world applications, worked solutions, and practical scenarios. Show different approaches and variations to demonstrate versatility of concepts."
+    else:
+        examples_section = "Demonstrate practical applications with detailed examples and case studies."
+    
+    practice_section = ""
+    if total_chapters <= 12:
+        practice_section = "Include detailed practical examples, code snippets (if applicable), calculations, procedures, exercises, and hands-on applications. Provide troubleshooting tips and common pitfalls to avoid."
+    else:
+        practice_section = "Show practical implementations with examples and common applications."
+    
+    advanced_section = ""
+    if total_chapters <= 9:
+        advanced_section = "\n\n## Advanced Considerations\nDiscuss advanced topics, edge cases, limitations, best practices, optimization techniques, and connections to other related concepts or fields."
+    
+    # Build the complete prompt
+    prompt = f"""Create comprehensive, detailed educational content for this chapter. You have substantial token allocation - use it to provide thorough coverage while ensuring you complete with a full Summary section.
+
+**Chapter:** {chapter['chapterTitle']}
+**Course:** {course['courseTitle']} ({difficulty} level)
+**Token Allocation:** {content_tokens} tokens (Reserve 200-250 tokens for complete Summary)
+**Chapter Focus:** {chapter['description']}
+
+# {chapter['chapterTitle']}
+
+## Introduction
+Provide a comprehensive introduction explaining what this topic is, its significance, historical context (if relevant), and why it's important in the broader field. Include real-world relevance and motivation for learning this topic.
+
+## Core Concepts and Theory
+{core_concepts_section}
+
+{implementation_section}
+
+## Detailed Examples and Applications
+{examples_section}
+
+## Implementation and Practice
+{practice_section}{advanced_section}
+
+## Summary
+**[REQUIRED - MUST COMPLETE THIS SECTION]**
+Write a comprehensive summary covering:
+- Key concepts and principles learned in this chapter
+- Main theoretical and practical takeaways
+- How this knowledge connects to the broader course and field
+- Important formulas, processes, or methodologies to remember
+- Next steps or how this leads into subsequent topics
+
+**COMPLETION REQUIREMENTS:**
+1. Focus ONLY on: {chapter['chapterTitle']}
+2. Use the full token allocation to provide comprehensive coverage
+3. MUST finish with a complete Summary section - never stop mid-sentence
+4. Reserve 200-250 tokens for the Summary - ensure it's thorough but complete
+5. End with a natural, complete conclusion that reinforces learning
+
+Create detailed, {content_depth} educational content. Use your full token budget effectively while ensuring completion:
+"""
+    return prompt
+
 # --- Session State Initialization ---
 def init_session_state():
     """Initializes session state for the course generator."""
@@ -592,7 +667,7 @@ def run_app():
                                 temperature, # Use values from session state (updated by sidebar sliders)
                                 course_tokens,  # Use optimized token allocation
                                 top_k,       # Use values from session state (updated by sidebar sliders)
-                                top_p,       # Use values from session state (updated by sidebar sliders)
+                                top_p,       # Use values from session_state (updated by sidebar sliders)
                                 response_schema=course_schema
                             )
                         )
@@ -745,50 +820,10 @@ def run_app():
                                 content_depth = "focused but comprehensive"
                                 content_length = "comprehensive"
                             
-                            content_prompt = f"""
-Create comprehensive, detailed educational content for this chapter. You have substantial token allocation - use it to provide thorough coverage while ensuring you complete with a full Summary section.
-
-**Chapter:** {chapter['chapterTitle']}
-**Course:** {course['courseTitle']} ({difficulty} level)
-**Token Allocation:** {content_tokens} tokens (Reserve 200-250 tokens for complete Summary)
-**Chapter Focus:** {chapter['description']}
-
-# {chapter['chapterTitle']}
-
-## Introduction
-Provide a comprehensive introduction explaining what this topic is, its significance, historical context (if relevant), and why it's important in the broader field. Include real-world relevance and motivation for learning this topic.
-
-## Core Concepts and Theory
-{f"Provide in-depth explanations of fundamental concepts, theoretical foundations, mathematical principles (where applicable), and detailed breakdowns of complex ideas. Use multiple examples and analogies to illustrate abstract concepts." if total_chapters <= 12 else "Explain key concepts thoroughly with clear examples and theoretical foundations."}
-
-{f"Include step-by-step processes, detailed methodologies, algorithms, formulas, and comprehensive explanations of how things work at a deeper level." if total_chapters <= 9 else "Cover essential principles, methodologies, and step-by-step processes."}
-
-## Detailed Examples and Applications
-{f"Provide multiple detailed examples, case studies, real-world applications, worked solutions, and practical scenarios. Show different approaches and variations to demonstrate versatility of concepts." if total_chapters <= 12 else "Demonstrate practical applications with detailed examples and case studies."}
-
-## Implementation and Practice
-{f"Include detailed practical examples, code snippets (if applicable), calculations, procedures, exercises, and hands-on applications. Provide troubleshooting tips and common pitfalls to avoid." if total_chapters <= 12 else "Show practical implementations with examples and common applications."}
-
-{("## Advanced Considerations\nDiscuss advanced topics, edge cases, limitations, best practices, optimization techniques, and connections to other related concepts or fields.") if total_chapters <= 9 else ""}
-
-## Summary
-**[REQUIRED - MUST COMPLETE THIS SECTION]**
-Write a comprehensive summary covering:
-- Key concepts and principles learned in this chapter
-- Main theoretical and practical takeaways
-- How this knowledge connects to the broader course and field
-- Important formulas, processes, or methodologies to remember
-- Next steps or how this leads into subsequent topics
-
-**COMPLETION REQUIREMENTS:**
-1. Focus ONLY on: {chapter['chapterTitle']}
-2. Use the full token allocation to provide comprehensive coverage
-3. MUST finish with a complete Summary section - never stop mid-sentence
-4. Reserve 200-250 tokens for the Summary - ensure it's thorough but complete
-5. End with a natural, complete conclusion that reinforces learning
-
-Create detailed, {content_depth} educational content. Use your full token budget effectively while ensuring completion:
-                            """
+                            # Build content prompt without complex f-string expressions
+                            content_prompt = build_chapter_content_prompt(
+                                chapter, course, difficulty, content_tokens, total_chapters, content_depth
+                            )
                             
                             # Simplified retry logic for better performance
                             max_retries = 2  # Reduced from 3 to avoid excessive retries
