@@ -17,11 +17,23 @@ except ImportError:
     st.error("The 'quiz_utils.py' file was not found. Please make sure it's in the same directory.")
     st.stop()
 
+# Load environment variables from .env file
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    # If python-dotenv is not installed, continue without it
+    pass
 
 # --- API Key Setup ---
-# API_KEY is expected to be set in appx.py or environment variables
-# Keep this global check, but also ensure it's picked up within the function.
-API_KEY = os.getenv("GOOGLE_API_KEY")
+try:
+    # Try Streamlit secrets first (for deployment)
+    API_KEY = st.secrets.get("GEMINI_API_KEY") or st.secrets.get("GOOGLE_API_KEY")
+except (AttributeError, FileNotFoundError):
+    # Fall back to environment variables (for local development)
+    API_KEY = os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
+
+# Don't stop import if API key is missing - let the individual functions handle it
 if API_KEY:
     os.environ["GOOGLE_API_KEY"] = API_KEY # Ensure it's in os.environ
 
@@ -39,10 +51,11 @@ def get_or_create_eventloop():
 async def generate_content_with_gemini(prompt, response_schema=None, temperature=0.7, max_tokens=2048, top_k=32, top_p=1.0):
     """Calls the Gemini API to generate content with a fallback for errors."""
     # Re-define API_KEY locally to ensure it's captured correctly at call time
-    current_api_key = os.getenv("GOOGLE_API_KEY")
+    current_api_key = API_KEY or os.getenv("GOOGLE_API_KEY")
 
     if not current_api_key:
-        st.error("API Key is not configured. Please set it in Streamlit secrets or environment variables.")
+        st.error("🔑 API Key is not configured. Please set your Gemini API key in Streamlit secrets (GEMINI_API_KEY or GOOGLE_API_KEY) for deployment, or in environment variables for local development.")
+        st.info("💡 **For Streamlit Cloud:** Add your API key in the app settings under 'Secrets management'")
         return None
 
     chat_history = [{"role": "user", "parts": [{"text": prompt}]}]
@@ -420,21 +433,25 @@ def run_app():
                     if not module_content.strip():
                         st.warning("Cannot generate quiz: No content available for this module's chapters.")
                     else:
-                        loop = get_or_create_eventloop()
-                        quiz_data = loop.run_until_complete(quiz_utils.generate_quiz_with_gemini(
-                            module_content, API_KEY, 0.5, 2048, 1, 1, num_questions=5 # Using default quiz params for now
-                        ))
-                        loop.close() # Close the loop after use
-                        if quiz_data and "questions" in quiz_data:
-                            st.session_state.quiz_progress[module_quiz_id] = {
-                                "questions": quiz_data["questions"],
-                                "completed": False,
-                                "answers": [None] * len(quiz_data["questions"]),
-                                "score": 0
-                            }
-                            st.success("Quiz generated! Scroll down to attempt it.")
+                        if not API_KEY:
+                            st.error("🔑 API Key is required for quiz generation. Please configure your Gemini API key in Streamlit secrets.")
+                            st.info("💡 **For Streamlit Cloud:** Add your API key in the app settings under 'Secrets management'")
                         else:
-                            st.error("Failed to generate quiz for this module. Ensure enough content is available.")
+                            loop = get_or_create_eventloop()
+                            quiz_data = loop.run_until_complete(quiz_utils.generate_quiz_with_gemini(
+                                module_content, API_KEY, 0.5, 2048, 1, 1, num_questions=5 # Using default quiz params for now
+                            ))
+                            loop.close() # Close the loop after use
+                            if quiz_data and "questions" in quiz_data:
+                                st.session_state.quiz_progress[module_quiz_id] = {
+                                    "questions": quiz_data["questions"],
+                                    "completed": False,
+                                    "answers": [None] * len(quiz_data["questions"]),
+                                    "score": 0
+                                }
+                                st.success("Quiz generated! Scroll down to attempt it.")
+                            else:
+                                st.error("Failed to generate quiz for this module. Ensure enough content is available.")
             
             # Display quiz if available
             quiz_obj = st.session_state.quiz_progress.get(module_quiz_id, {})

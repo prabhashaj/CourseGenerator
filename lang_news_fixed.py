@@ -386,14 +386,19 @@ def main():
     st.title("Knowledge Hub 📰")
     st.write("Ask me anything! I'll answer directly if I know, or search the web and trusted sources if needed.")
 
-    # Load API key from .env or secrets.toml
+    # Load API key from Streamlit secrets or environment variables
     load_dotenv()
-    openrouter_api_key = (
-        os.getenv("OPEN_ROUTER_KEY")
-        # or st.secrets.get("OPEN_ROUTER_KEY", "")
-    )
+    
+    try:
+        # Try to get from Streamlit secrets first (for deployment)
+        openrouter_api_key = st.secrets.get("OPEN_ROUTER_KEY")
+    except:
+        # Fall back to environment variables (for local development)
+        openrouter_api_key = os.getenv("OPEN_ROUTER_KEY")
+    
     if not openrouter_api_key:
-        st.error("OpenRouter API key not found. Please set OPEN_ROUTER_KEY in your .env file or Streamlit secrets.")
+        st.error("🔑 OpenRouter API key not found. Please set OPEN_ROUTER_KEY in Streamlit secrets for deployment, or in environment variables for local development.")
+        st.info("💡 **For Streamlit Cloud:** Add your API key in the app settings under 'Secrets management'")
         st.stop()
     os.environ["OPEN_ROUTER_KEY"] = openrouter_api_key
 

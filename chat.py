@@ -7,9 +7,21 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory, CombinedMemory
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
 from langchain.prompts import PromptTemplate
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # --- API Key Setup ---
-API_KEY = st.secrets.get("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+# Use Streamlit secrets for deployment and fall back to environment variable
+try:
+    # Try to get from Streamlit secrets first (for deployment)
+    API_KEY = st.secrets.get("GEMINI_API_KEY") or st.secrets.get("GOOGLE_API_KEY")
+except:
+    # Fall back to environment variables (for local development)
+    API_KEY = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+
+# Only set os.environ if we have a key
 if API_KEY:
     os.environ["GOOGLE_API_KEY"] = API_KEY
 
@@ -106,7 +118,8 @@ def run_app():
     st.markdown("Upload your PDF or TXT documents, ask questions, and get answers based on their content.")
 
     if not API_KEY:
-        st.error("API Key is not configured. Please set it in Streamlit secrets.")
+        st.error("🔑 API Key is not configured. Please set your Gemini API key in Streamlit secrets (GEMINI_API_KEY or GOOGLE_API_KEY) for deployment, or in environment variables for local development.")
+        st.info("💡 **For Streamlit Cloud:** Add your API key in the app settings under 'Secrets management'")
         st.stop()
 
     # --- Session State for RAG ---

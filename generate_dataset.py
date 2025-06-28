@@ -6,8 +6,23 @@ import random
 import os
 import re
 from quiz_utils import get_or_create_eventloop
+from dotenv import load_dotenv
 
-API_KEY = "AIzaSyDv0Cc2_I6k4V-m1xAim_HG4jyu63b_qCc"
+# Load environment variables
+load_dotenv()
+
+# Try to get API key from environment variables or use fallback
+try:
+    # For Streamlit deployment, try secrets first
+    import streamlit as st
+    API_KEY = st.secrets.get("GEMINI_API_KEY") or st.secrets.get("GOOGLE_API_KEY")
+except ImportError:
+    # Not in Streamlit environment, use environment variables only
+    API_KEY = None
+
+if not API_KEY:
+    # Fall back to environment variables
+    API_KEY = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
 
 TOPICS = ["Python for Data Science",
         "Web Development Fundamentals",
@@ -265,7 +280,8 @@ async def main():
 
 if __name__ == "__main__":
     if not API_KEY:
-        print("Please set your API key in the script first!")
+        print("🔑 API Key is not configured. Please set your Gemini API key in environment variables (GEMINI_API_KEY or GOOGLE_API_KEY).")
+        print("💡 You can add it to your .env file for local development.")
     else:
         loop = get_or_create_eventloop()
         loop.run_until_complete(main())
