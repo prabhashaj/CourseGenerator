@@ -50,7 +50,7 @@ def init_session_state():
     if "temperature" not in st.session_state:
         st.session_state.temperature = 0.7
     if "max_tokens" not in st.session_state:
-        st.session_state.max_tokens = 4096  # Increased for larger courses
+        st.session_state.max_tokens = 6144  # Increased from 4096 for better chapter details
     if "top_k" not in st.session_state: # Ensure top_k and top_p are initialized
         st.session_state.top_k = 32
     if "top_p" not in st.session_state:
@@ -156,6 +156,65 @@ def get_or_create_eventloop():
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
         return loop
+
+def is_response_complete(content):
+    """Check if the generated content appears complete with emphasis on summary completion"""
+    if not content or len(content.strip()) < 100:
+        return False
+    
+    content_lower = content.lower().strip()
+    
+    # Check for obvious incomplete endings
+    incomplete_indicators = [
+        content.strip().endswith('...'),
+        content.strip().endswith('etc.'),
+        'continues...' in content_lower,
+        'to be continued' in content_lower,
+        len(content.split()) < 150,
+        # Mid-sentence endings
+        content.strip().endswith(':') and not any(word in content_lower[-50:] for word in ['example:', 'note:', 'summary:', 'conclusion:']),
+        content.strip().endswith('='),
+        content.strip().endswith('+'),
+        content.strip().endswith('('),
+        # Check for incomplete calculations
+        (content.strip().endswith('.') and 
+         any(pattern in content.strip()[-30:] for pattern in ['= 0.', '+ 0.', '- 0.', '* 0.', '/ 0.']))
+    ]
+    
+    # Special check for incomplete summary section
+    has_summary_section = 'summary' in content_lower or 'conclusion' in content_lower
+    if has_summary_section:
+        # Find the summary section
+        summary_start = -1
+        for keyword in ['## summary', '# summary', 'summary:', 'in summary', 'to summarize']:
+            idx = content_lower.find(keyword)
+            if idx != -1:
+                summary_start = idx
+                break
+        
+        if summary_start != -1:
+            summary_section = content[summary_start:].strip()
+            # Check if summary section is too short or ends abruptly
+            summary_words = summary_section.split()
+            if len(summary_words) < 20:  # Summary should have at least 20 words
+                return False
+            
+            # Check for incomplete sentence endings in summary
+            last_sentence = summary_section.strip()
+            if (last_sentence.endswith(',') or 
+                last_sentence.endswith('and') or 
+                last_sentence.endswith('the') or
+                last_sentence.endswith('of') or
+                last_sentence.endswith('in') or
+                last_sentence.endswith('to') or
+                last_sentence.endswith('for')):
+                return False
+    
+    # If content has reasonable length and structure, consider it complete
+    if len(content.split()) > 200 and has_summary_section:
+        return not any(incomplete_indicators)
+    
+    return not any(incomplete_indicators)
 
 def safe_json_parse(text_response):
     """Safely parse JSON, attempting to repair common issues."""
@@ -656,44 +715,122 @@ def run_app():
                     # Generate detailed content button
                     if st.button(f"📚 Get Details", key=f"gen_content_{chapter_id}", help=f"Generate detailed content for '{chapter['chapterTitle']}'"):
                         with st.spinner("Generating detailed chapter content..."):
-                            # Optimize content tokens based on course size
+                            # Increased token allocation for more detailed content while ensuring completion
                             total_chapters = len(st.session_state.courses[st.session_state.selected_course_index].get('modules', [])) * 3
                             if total_chapters <= 9:  # 3 modules or fewer
-                                content_tokens = min(max_tokens, 2048)
-                                content_depth = "comprehensive and detailed"
+                                content_tokens = min(max_tokens, 5120)  # Increased for more detailed content
+                                content_depth = "comprehensive and highly detailed"
+                                content_length = "extensive"
                             elif total_chapters <= 18:  # 6 modules or fewer
-                                content_tokens = min(max_tokens, 1536)
-                                content_depth = "thorough but concise"
+                                content_tokens = min(max_tokens, 4096)  # Increased for more detailed content
+                                content_depth = "thorough and detailed"
+                                content_length = "substantial"
                             else:  # 7+ modules
-                                content_tokens = min(max_tokens, 1024)
-                                content_depth = "focused and essential"
+                                content_tokens = min(max_tokens, 3072)  # Increased for more detailed content
+                                content_depth = "focused but comprehensive"
+                                content_length = "comprehensive"
                             
                             content_prompt = f"""
-                            Generate {content_depth} content for chapter '{chapter['chapterTitle']}' in the '{course['courseTitle']}' course.
-                            This course is for a {difficulty} level audience.
-                            
-                            Chapter overview: {chapter['description']}
-                            
-                            Please provide:
-                            1. Detailed explanations of all topics mentioned in the chapter description
-                            2. Practical examples and use cases where relevant
-                            3. {'Step-by-step breakdowns of complex concepts' if total_chapters <= 18 else 'Clear explanations of key concepts'}
-                            4. Key takeaways and learning objectives
-                            5. {'Real-world applications or scenarios' if total_chapters <= 15 else 'Practical applications'}
-                            
-                            The content should be {content_depth}, educational, and engaging for a {difficulty} level learner.
-                            {'Aim for substantial content that thoroughly covers all aspects mentioned in the chapter description.' if total_chapters <= 12 else 'Focus on the most important aspects mentioned in the chapter description.'}
+Create comprehensive, detailed educational content for this chapter. You have substantial token allocation - use it to provide thorough coverage while ensuring you complete with a full Summary section.
+
+**Chapter:** {chapter['chapterTitle']}
+**Course:** {course['courseTitle']} ({difficulty} level)
+**Token Allocation:** {content_tokens} tokens (Reserve 200-250 tokens for complete Summary)
+**Chapter Focus:** {chapter['description']}
+
+# {chapter['chapterTitle']}
+
+## Introduction
+Provide a comprehensive introduction explaining what this topic is, its significance, historical context (if relevant), and why it's important in the broader field. Include real-world relevance and motivation for learning this topic.
+
+## Core Concepts and Theory
+{f"Provide in-depth explanations of fundamental concepts, theoretical foundations, mathematical principles (where applicable), and detailed breakdowns of complex ideas. Use multiple examples and analogies to illustrate abstract concepts." if total_chapters <= 12 else "Explain key concepts thoroughly with clear examples and theoretical foundations."}
+
+{f"Include step-by-step processes, detailed methodologies, algorithms, formulas, and comprehensive explanations of how things work at a deeper level." if total_chapters <= 9 else "Cover essential principles, methodologies, and step-by-step processes."}
+
+## Detailed Examples and Applications
+{f"Provide multiple detailed examples, case studies, real-world applications, worked solutions, and practical scenarios. Show different approaches and variations to demonstrate versatility of concepts." if total_chapters <= 12 else "Demonstrate practical applications with detailed examples and case studies."}
+
+## Implementation and Practice
+{f"Include detailed practical examples, code snippets (if applicable), calculations, procedures, exercises, and hands-on applications. Provide troubleshooting tips and common pitfalls to avoid." if total_chapters <= 12 else "Show practical implementations with examples and common applications."}
+
+{f"## Advanced Considerations\nDiscuss advanced topics, edge cases, limitations, best practices, optimization techniques, and connections to other related concepts or fields." if total_chapters <= 9 else ""}
+
+## Summary
+**[REQUIRED - MUST COMPLETE THIS SECTION]**
+Write a comprehensive summary covering:
+- Key concepts and principles learned in this chapter
+- Main theoretical and practical takeaways
+- How this knowledge connects to the broader course and field
+- Important formulas, processes, or methodologies to remember
+- Next steps or how this leads into subsequent topics
+
+**COMPLETION REQUIREMENTS:**
+1. Focus ONLY on: {chapter['chapterTitle']}
+2. Use the full token allocation to provide comprehensive coverage
+3. MUST finish with a complete Summary section - never stop mid-sentence
+4. Reserve 200-250 tokens for the Summary - ensure it's thorough but complete
+5. End with a natural, complete conclusion that reinforces learning
+
+Create detailed, {content_depth} educational content. Use your full token budget effectively while ensuring completion:
                             """
-                            loop = get_or_create_eventloop()
-                            detailed_content = loop.run_until_complete(
-                                generate_content_with_gemini(content_prompt, temperature, content_tokens, top_k, top_p)
-                            )
-                            loop.close() # Close the loop after use
-                            if detailed_content:
+                            
+                            # Simplified retry logic for better performance
+                            max_retries = 2  # Reduced from 3 to avoid excessive retries
+                            detailed_content = None
+                            original_tokens = content_tokens
+                            
+                            for attempt in range(max_retries):
+                                try:
+                                    loop = get_or_create_eventloop()
+                                    detailed_content = loop.run_until_complete(
+                                        generate_content_with_gemini(content_prompt, temperature, content_tokens, top_k, top_p)
+                                    )
+                                    loop.close()
+                                    
+                                    # Strict completion check focused on proper endings
+                                    if detailed_content and len(detailed_content.strip()) > 200:
+                                        word_count = len(detailed_content.split())
+                                        has_summary = any(keyword in detailed_content.lower() for keyword in ['summary', 'conclusion', 'in summary', 'to conclude', 'key points'])
+                                        
+                                        # Check for complete summary section
+                                        is_complete = is_response_complete(detailed_content)
+                                        
+                                        # More conservative retry logic - expect longer content now
+                                        if word_count < 400 or not has_summary or not is_complete:
+                                            if attempt < max_retries - 1:
+                                                reason = []
+                                                if word_count < 400:
+                                                    reason.append(f"too short ({word_count} words, expected 400+)")
+                                                if not has_summary:
+                                                    reason.append("missing summary")
+                                                if not is_complete:
+                                                    reason.append("incomplete ending")
+                                                
+                                                st.warning(f"Content incomplete: {', '.join(reason)}. Retrying...")
+                                                # Moderate token increase for better coverage
+                                                content_tokens = min(max_tokens, content_tokens + 512)
+                                        else:
+                                            break  # Content is sufficiently complete
+                                    elif attempt < max_retries - 1:
+                                        st.warning(f"Content too short ({len(detailed_content.strip()) if detailed_content else 0} chars). Retrying...")
+                                        content_tokens = min(max_tokens, content_tokens + 768)
+                                        
+                                except Exception as e:
+                                    if attempt < max_retries - 1:
+                                        st.warning(f"Generation failed (attempt {attempt + 1}). Retrying...")
+                                    else:
+                                        st.error(f"Generation failed: {str(e)}")
+                                    
+                                if attempt < max_retries - 1:
+                                    time.sleep(1)  # Shorter wait time
+                            
+                            if detailed_content and len(detailed_content.strip()) > 100:
                                 st.session_state.chapter_contents[chapter_id] = detailed_content
-                                st.success("Detailed content generated!")                        
+                                word_count = len(detailed_content.split())
+                                st.success(f"📚 Comprehensive chapter content generated!")
                             else:
-                                st.warning("We're having trouble generating detailed content at the moment. Try generating content for a different chapter first, or wait a moment before trying again.")
+                                st.error("Unable to generate content. Try increasing max tokens in sidebar or try a different chapter.")
                 
                 # Update completion status in session state if changed
                 if is_completed != course['completion_status'].get(chapter_id, False):
