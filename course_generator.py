@@ -10,6 +10,14 @@ import asyncio  # Import asyncio for event loop management
 import time  # Import time for delays
 from datetime import datetime  # Import datetime for timestamping courses
 
+# Load environment variables from .env file
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    # If python-dotenv is not installed, continue without it
+    pass
+
 # --- Utility Import ---
 try:
     quiz_utils = importlib.import_module("quiz_utils")
@@ -23,7 +31,8 @@ API_KEY = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
 if not API_KEY:
     st.error("API Key is not configured. Please set it in Streamlit secrets or environment variables (GEMINI_API_KEY or GOOGLE_API_KEY).")
     st.stop()
-os.environ["GOOGLE_API_KEY"] = API_KEY # Ensure it's in os.environ for other modules that might use it
+else:
+    os.environ["GOOGLE_API_KEY"] = API_KEY # Ensure it's in os.environ for other modules that might use it
 
 # --- Session State Initialization ---
 def init_session_state():
