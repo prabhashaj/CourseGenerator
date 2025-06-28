@@ -769,7 +769,7 @@ Provide a comprehensive introduction explaining what this topic is, its signific
 ## Implementation and Practice
 {f"Include detailed practical examples, code snippets (if applicable), calculations, procedures, exercises, and hands-on applications. Provide troubleshooting tips and common pitfalls to avoid." if total_chapters <= 12 else "Show practical implementations with examples and common applications."}
 
-{f"## Advanced Considerations\nDiscuss advanced topics, edge cases, limitations, best practices, optimization techniques, and connections to other related concepts or fields." if total_chapters <= 9 else ""}
+{("## Advanced Considerations\nDiscuss advanced topics, edge cases, limitations, best practices, optimization techniques, and connections to other related concepts or fields.") if total_chapters <= 9 else ""}
 
 ## Summary
 **[REQUIRED - MUST COMPLETE THIS SECTION]**
