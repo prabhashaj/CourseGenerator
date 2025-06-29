@@ -1,5 +1,5 @@
 import streamlit as st
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.agents import AgentExecutor, create_react_agent, Tool
 from langchain_community.agent_toolkits.load_tools import load_tools 
 from langchain.prompts import PromptTemplate
@@ -11,6 +11,7 @@ import threading
 from duckduckgo_search import DDGS
 from langchain.schema import OutputParserException, AgentAction, AgentFinish
 from langchain.agents.agent import AgentOutputParser
+import google.generativeai as genai
 
 def duckduckgo_search_tool(query, max_results=5):
     """Enhanced DuckDuckGo search that returns content with sources, prioritizing recent results."""
@@ -81,16 +82,26 @@ def duckduckgo_search_tool(query, max_results=5):
 
 def create_langchain_agent():
     """
-    Creates and returns a LangChain agent executor powered by DeepSeek via OpenRouter.
+    Creates and returns a LangChain agent executor powered by Google Gemini.
     """
-    # 1. Define the LLM using OpenRouter
-    llm = ChatOpenAI(
-        model="deepseek/deepseek-r1-distill-qwen-32b",
-        base_url="https://openrouter.ai/api/v1",
-        api_key=os.environ.get("OPEN_ROUTER_KEY"),
-        temperature=0.1
+    # Use Gemini
+    api_key = os.environ.get("GOOGLE_API_KEY")
+    if not api_key:
+        raise ValueError("GOOGLE_API_KEY environment variable is required")
+    
+    print(f"DEBUG: Creating LLM with Gemini API key: {api_key[:8]}...{api_key[-4:]}")
+    print(f"DEBUG: API key length: {len(api_key)}")
+    
+    # Configure Gemini
+    genai.configure(api_key=api_key)
+    
+    llm = ChatGoogleGenerativeAI(
+        model="gemini-1.5-flash",
+        google_api_key=api_key,
+        temperature=0.1,
+        convert_system_message_to_human=True
     )
-    print(f"DEBUG: LLM object created: {type(llm)}") 
+    print(f"DEBUG: Using Gemini LLM: {type(llm)}") 
 
     # 2. Define the Tools - simplified to just web search
     search_tool = Tool(
@@ -116,7 +127,13 @@ For questions about:
 
 For general knowledge questions about established facts, history, science, or concepts - you can answer directly without searching.
 
-Format your responses clearly and cite sources when you use web search.
+IMPORTANT: When you use web search, don't just repeat the search results. Instead:
+1. Analyze and synthesize the information from multiple sources
+2. Create a comprehensive, well-structured answer in your own words
+3. Present the information in a natural, readable format
+4. Include key statistics, facts, and findings
+5. Provide context and explanation
+6. Mention sources naturally within your response at end
 
 You have access to the following tools:
 
@@ -178,259 +195,87 @@ def format_agent_response(agent_output):
     
     return brief_sentence, clean_output
 
-def extract_sources_from_response(agent_output):
-    """Extract sources from the agent's response for display"""
-    sources = []
-    
-    print(f"DEBUG: Extracting sources from: {agent_output[:200]}...")
-    
-    # Look for markdown links in the format [title](url) throughout the text
-    markdown_links = re.findall(r'\[([^\]]+)\]\((https?://[^\s)]+)\)', agent_output)
-    print(f"DEBUG: Found {len(markdown_links)} markdown links")
-    sources.extend(markdown_links)
-    
-    # Look for "Sources for further reading:" section
-    sources_match = re.search(r'Sources for further reading:\s*(.+)', agent_output, re.DOTALL | re.IGNORECASE)
-    if sources_match:
-        print("DEBUG: Found 'Sources for further reading' section")
-        sources_text = sources_match.group(1)
-        additional_links = re.findall(r'\[([^\]]+)\]\((https?://[^\s)]+)\)', sources_text)
-        sources.extend(additional_links)
-    
-    # Look for "Source:" patterns (from search results)
-    source_lines = re.findall(r'Source:\s*(https?://[^\s]+)', agent_output)
-    print(f"DEBUG: Found {len(source_lines)} source lines")
-    for i, url in enumerate(source_lines):
-        # Extract domain name as title if no proper title found
-        domain = re.search(r'https?://(?:www\.)?([^/]+)', url)
-        title = domain.group(1) if domain else f"Source {i+1}"
-        sources.append((title, url))
-    
-    # Remove duplicates while preserving order
-    unique_sources = []
-    seen_urls = set()
-    for title, url in sources:
-        if url not in seen_urls:
-            unique_sources.append((title, url))
-            seen_urls.add(url)
-    
-    print(f"DEBUG: Final unique sources: {len(unique_sources)}")
-    return unique_sources
-
-class LiveAgentCallback:
-    """Enhanced callback handler with web search animation and reasoning display"""
-    def __init__(self, steps_placeholder, status_placeholder):
-        self.steps_placeholder = steps_placeholder
-        self.status_placeholder = status_placeholder
-        self.is_searching = False
-        self.progress_bar = None
-        self.reasoning_steps = []
-        
-    def add_thought(self, thought):
-        """Show thinking status and capture reasoning"""
-        self.status_placeholder.info("🤔 Thinking...")
-        self.reasoning_steps.append(f"🤔 **Thought:** {thought}")
-        self._update_reasoning_display()
-    
-    def add_action(self, action, action_input):
-        """Show action status with web search animation"""
-        if action == "web_search":
-            self.is_searching = True
-            self.status_placeholder.info(f"🌐 Searching the web: **{action_input}**")
-            self.reasoning_steps.append(f"🌐 **Action:** Searching the web for '{action_input}'")
-            self._update_reasoning_display()
-            
-            # Create and run progress bar animation
-            self.progress_bar = st.progress(0)
-            self._animate_progress()
-        else:
-            self.status_placeholder.info(f"⚡ Processing...")
-            self.reasoning_steps.append(f"⚡ **Action:** {action}")
-            self._update_reasoning_display()
-    
-    def _animate_progress(self):
-        """Animate the progress bar"""
-        if self.progress_bar:
-            for i in range(1, 101):
-                if not self.is_searching:  # Stop if search is done
-                    break
-                self.progress_bar.progress(i)
-                time.sleep(0.02)  # Smooth animation
-            self.progress_bar.progress(100)  # Complete the bar
-    
-    def add_observation(self, observation):
-        """Show observation and stop animation"""
-        self.is_searching = False  # Stop animation
-        if self.progress_bar:
-            self.progress_bar.empty()  # Remove progress bar
-        self.status_placeholder.success("📊 Found web results, analyzing...")
-        
-        # Add truncated observation to reasoning
-        obs_preview = observation[:200] + "..." if len(observation) > 200 else observation
-        self.reasoning_steps.append(f"📊 **Found Results:** {obs_preview}")
-        self._update_reasoning_display()
-    
-    def add_final_answer(self, answer):
-        """Show completion status"""
-        self.is_searching = False  # Ensure animation stops
-        if self.progress_bar:
-            self.progress_bar.empty()  # Clean up progress bar
-        self.status_placeholder.success("✅ Answer ready!")
-        self.reasoning_steps.append("✅ **Completed:** Answer ready!")
-        self._update_reasoning_display()
-    
-    def _update_reasoning_display(self):
-        """Update the reasoning display in the UI"""
-        if self.steps_placeholder:
-            reasoning_text = "\n\n".join(self.reasoning_steps)
-            self.steps_placeholder.markdown(reasoning_text)
-
-def invoke_agent_safely(agent_executor, query, callback=None):
+def synthesize_search_results(query, search_results):
     """
-    Invokes the agent executor with live updates and robust error handling.
+    Use Gemini AI to synthesize search results into a comprehensive, natural answer.
     """
     try:
-        # If we have a callback, we'll monitor the agent's progress
-        if callback:
-            # Create a custom invoke that monitors intermediate steps
-            return invoke_agent_with_live_updates(agent_executor, query, callback)
-        else:
-            # Standard invoke
-            raw_response = agent_executor.invoke({"input": query})
-            return raw_response
+        # Use Gemini
+        api_key = os.environ.get("GOOGLE_API_KEY")
+        if not api_key:
+            raise ValueError("GOOGLE_API_KEY environment variable is required")
             
-    except OutputParserException as e:
-        print(f"DEBUG: OutputParserException occurred: {e}")
-        if callback:
-            callback.add_thought("Agent encountered parsing issues, switching to direct search approach...")
+        print(f"DEBUG: Synthesis using Gemini API key: {api_key[:8]}...{api_key[-4:]}")
         
-        # If parsing fails, try direct search as fallback
-        try:
-            search_results = duckduckgo_search_tool(query, max_results=5)
-            if callback:
-                callback.add_action("web_search", query)
-                callback.add_observation(search_results[:300] + "...")
-                callback.add_final_answer("Using search results")
-            
-            # Create a fake response structure to maintain consistency
-            return {
-                "output": f"Based on current web search results:\n\n{search_results}",
-                "intermediate_steps": [
-                    (type('Action', (), {'tool': 'web_search', 'tool_input': query})(), search_results)
-                ]
-            }
-        except Exception as search_error:
-            print(f"DEBUG: Fallback search also failed: {search_error}")
-            return None
-            
-    except AttributeError as e:
-        if "'NoneType' object has no attribute 'get'" in str(e):
-            print(f"CRITICAL ERROR: Agent invocation returned None, leading to AttributeError: {e}")
-            st.error("A critical internal error occurred: The agent's response was unexpectedly empty.")
-            return None
-        else:
-            print(f"DEBUG: Unexpected AttributeError during invoke: {e}")
-            st.error(f"An unexpected error occurred during agent execution: {e}")
-            return None
-    except Exception as e:
-        err_msg = str(e).lower()
-        print(f"DEBUG: General exception during agent invocation: {e}")
+        # Configure Gemini
+        genai.configure(api_key=api_key)
         
-        # Check for common parsing errors
-        if "output_parsing_failure" in err_msg or "could not parse" in err_msg or "invalid format" in err_msg:
-            print("DEBUG: Detected parsing failure, trying direct search fallback...")
-            if callback:
-                callback.add_thought("Agent encountered parsing issues, switching to direct search approach...")
-            
-            try:
-                search_results = duckduckgo_search_tool(query, max_results=5)
-                if callback:
-                    callback.add_action("web_search", query)
-                    callback.add_observation(search_results[:300] + "...")
-                    callback.add_final_answer("Using search results")
-                
-                # Create a fake response structure to maintain consistency
-                return {
-                    "output": f"Based on current web search results:\n\n{search_results}",
-                    "intermediate_steps": [
-                        (type('Action', (), {'tool': 'web_search', 'tool_input': query})(), search_results)
-                    ]
-                }
-            except Exception as search_error:
-                print(f"DEBUG: Fallback search also failed: {search_error}")
-                return None
+        llm = ChatGoogleGenerativeAI(
+            model="gemini-1.5-flash",
+            google_api_key=api_key,
+            temperature=0.3,
+            convert_system_message_to_human=True
+        )
         
-        if "rate limit" in err_msg or "quota" in err_msg:
-            st.error("Sorry, the API service is temporarily rate-limited. Please try again in a few minutes.")
-        else:
-            st.error(f"An unexpected error occurred during agent execution: {e}")
-        return None
+        synthesis_prompt = f"""Based on the following web search results, provide a comprehensive, well-structured answer to the question: "{query}"
 
-def invoke_agent_with_live_updates(agent_executor, query, callback):
-    """
-    Agent invocation with proper live UI updates and reasoning display
-    """
-    try:
-        # Show initial thinking status
-        callback.add_thought("Analyzing your question and deciding on the best approach...")
+Web Search Results:
+{search_results}
+
+Instructions:
+1. Analyze and synthesize the information from the search results
+2. Create a natural, readable response in your own words
+3. Include key statistics, facts, and findings where relevant
+4. Provide context and explanations to make the information clear
+5. Structure your answer logically with proper flow
+6. Don't just copy-paste from the search results - interpret and explain
+7. Keep the tone informative but conversational
+8. If there are conflicting information, mention different perspectives
+9. Focus on the most important and relevant information to answer the question
+
+Write a comprehensive answer that someone could easily read and understand:"""
         
-        # Execute agent and capture intermediate steps
-        agent_response = agent_executor.invoke({"input": query})
+        response = llm.invoke(synthesis_prompt)
+        synthesized_content = response.content if hasattr(response, 'content') else str(response)
         
-        # Process intermediate steps to detect and display actions
-        if isinstance(agent_response, dict) and "intermediate_steps" in agent_response:
-            intermediate_steps = agent_response["intermediate_steps"]
-            print(f"DEBUG: Found {len(intermediate_steps)} intermediate steps")
-            
-            if len(intermediate_steps) > 0:
-                callback.add_thought("I need to search for current information to provide an accurate answer.")
-            
-            for i, step in enumerate(intermediate_steps):
-                print(f"DEBUG: Step {i}: {type(step)}")
-                if isinstance(step, tuple) and len(step) == 2:
-                    action, observation = step
-                    print(f"DEBUG: Action: {action}, Observation type: {type(observation)}")
-                    
-                    if hasattr(action, 'tool') and hasattr(action, 'tool_input'):
-                        if action.tool == 'web_search':
-                            print(f"DEBUG: Detected web search with query: {action.tool_input}")
-                            callback.add_action(action.tool, action.tool_input)
-                            time.sleep(2)  # Allow time for animation to show
-                            # Process observation
-                            callback.add_observation(str(observation)[:300] + "..." if len(str(observation)) > 300 else str(observation))
-                            callback.add_thought("Now analyzing the search results to provide you with an accurate answer...")
-        else:
-            # If no intermediate steps, it means the agent answered directly from knowledge
-            callback.add_thought("I can answer this from my existing knowledge without needing to search.")
-        
-        # Show completion
-        if isinstance(agent_response, dict) and "output" in agent_response:
-            output = agent_response["output"]
-            if output and output != "Agent stopped due to iteration limit or time limit.":
-                callback.add_final_answer(output)
-        
-        return agent_response
+        return synthesized_content
         
     except Exception as e:
-        print(f"DEBUG: Error in live agent invocation: {e}")
-        # Fallback to direct execution
-        callback.add_thought("Switching to fallback processing method...")
-        return agent_executor.invoke({"input": query})
+        print(f"DEBUG: Synthesis failed: {e}")
+        
+        # Check for authentication errors
+        if "401" in str(e) or "unauthorized" in str(e).lower():
+            print("DEBUG: Authentication error in synthesis!")
+            st.error("🔑 **Authentication Error in AI Synthesis**: Please check your Google API key.")
+            return f"**Search Results Found** (AI synthesis failed due to authentication error):\n\n{search_results}"
+        
+        # Fallback to basic formatting if synthesis fails
+        return f"Based on current web search results:\n\n{search_results}"
 
 def direct_chat_fallback(query):
     """
-    Direct chat with DeepSeek model as a fallback, but emphasize current information.
+    Direct chat with Gemini AI model as a fallback, but emphasize current information.
     """
     try:
-        llm = ChatOpenAI(
-            model="deepseek/deepseek-r1-distill-qwen-32b",
-            base_url="https://openrouter.ai/api/v1",
-            api_key=os.environ.get("OPEN_ROUTER_KEY"),
-            temperature=0.0
+        # Use Gemini
+        api_key = os.environ.get("GOOGLE_API_KEY")
+        if not api_key:
+            raise ValueError("GOOGLE_API_KEY environment variable is required")
+            
+        print(f"DEBUG: Direct chat using Gemini API key: {api_key[:8]}...{api_key[-4:]}")
+        
+        # Configure Gemini
+        genai.configure(api_key=api_key)
+        
+        llm = ChatGoogleGenerativeAI(
+            model="gemini-1.5-flash",
+            google_api_key=api_key,
+            temperature=0.0,
+            convert_system_message_to_human=True
         )
         
         # Enhanced prompt for current information
-        enhanced_prompt = f"""Based on the current date being June 26, 2025, please provide the most up-to-date information about: {query}
+        enhanced_prompt = f"""Based on the current date being June 29, 2025, please provide the most up-to-date information about: {query}
 
 If this is about recent events (especially 2025), prioritize the most current information available. If you don't have recent information, clearly state that web search would be needed for the latest updates.
 
@@ -440,6 +285,12 @@ Question: {query}"""
         return response.content if hasattr(response, 'content') else str(response)
     except Exception as e:
         print(f"DEBUG: Direct chat fallback failed: {e}")
+        
+        # Check for authentication errors
+        if "401" in str(e) or "unauthorized" in str(e).lower():
+            print("DEBUG: Authentication error in direct chat!")
+            st.error("🔑 **Authentication Error**: Cannot access Google Gemini API. Please check your API key configuration.")
+        
         return None
 
 def main():
@@ -449,21 +300,91 @@ def main():
     st.title("Knowledge Hub 📰")
     st.write("Ask me anything! I'll answer directly if I know, or search the web and trusted sources if needed.")
 
-    # Load API key from Streamlit secrets or environment variables
+    # Load API key from Streamlit secrets or environment
     load_dotenv()
     
-    try:
-        # Try to get from Streamlit secrets first (for deployment)
-        openrouter_api_key = st.secrets.get("OPEN_ROUTER_KEY")
-    except:
-        # Fall back to environment variables (for local development)
-        openrouter_api_key = os.getenv("OPEN_ROUTER_KEY")
+    # Get Google API key from Streamlit secrets or environment
+    google_api_key = None
     
-    if not openrouter_api_key:
-        st.error("🔑 OpenRouter API key not found. Please set OPEN_ROUTER_KEY in Streamlit secrets for deployment, or in environment variables for local development.")
-        st.info("💡 **For Streamlit Cloud:** Add your API key in the app settings under 'Secrets management'")
+    # Try Streamlit secrets first (for deployment)
+    try:
+        google_api_key = st.secrets["GOOGLE_API_KEY"]
+        print("DEBUG: Google API key loaded from Streamlit secrets")
+    except Exception as e:
+        print(f"DEBUG: Failed to load from st.secrets['GOOGLE_API_KEY']: {e}")
+        
+        # Try environment variable (for local development)
+        try:
+            google_api_key = os.environ.get("GOOGLE_API_KEY")
+            if google_api_key:
+                print("DEBUG: Google API key loaded from environment")
+            else:
+                print("DEBUG: No Google API key found in environment")
+        except Exception as e2:
+            print(f"DEBUG: Failed to load from environment: {e2}")
+    
+    # Check if we have the required API key
+    if not google_api_key:
+        st.error("🔑 **Google API key not found!**")
+        
+        st.markdown("### ☁️ **For Streamlit Cloud Deployment:**")
+        st.info("""1. Go to your Streamlit Cloud app dashboard
+2. Click on your app settings (⚙️)
+3. Go to 'Secrets' section  
+4. Add this content:
+```toml
+GOOGLE_API_KEY = "your-google-api-key-here"
+```""")
+        
+        st.markdown("### 🏠 **For Local Development:**")
+        st.info("""Create a `.env` file in your project directory with:
+```
+GOOGLE_API_KEY=your-google-api-key-here
+```""")
+        
+        st.markdown("### 🔑 **Get Your API Key:**")
+        st.info("Visit https://aistudio.google.com/app/apikey to get your Google AI API key")
+        
+        # Show debug info
+        with st.expander("🔍 Debug Information"):
+            try:
+                st.write(f"- Streamlit secrets accessible: {bool(st.secrets)}")
+                st.write(f"- Available secrets keys: {list(st.secrets.keys()) if st.secrets else 'None'}")
+                st.write(f"- GOOGLE_API_KEY in secrets: {'GOOGLE_API_KEY' in st.secrets}")
+                st.write(f"- Environment GOOGLE_API_KEY: {bool(os.environ.get('GOOGLE_API_KEY'))}")
+            except Exception as debug_error:
+                st.write(f"- Debug error: {debug_error}")
+        
+        st.warning("⚠️ The app cannot function without a valid Google API key.")
         st.stop()
-    os.environ["OPEN_ROUTER_KEY"] = openrouter_api_key
+    
+    # Set the API key in environment
+    os.environ["GOOGLE_API_KEY"] = google_api_key
+    print(f"DEBUG: Set environment variable GOOGLE_API_KEY to: {google_api_key[:8]}...{google_api_key[-4:]}")
+    
+    # Verify it was set correctly
+    verification_key = os.environ.get("GOOGLE_API_KEY")
+    print(f"DEBUG: Verification - environment variable now contains: {verification_key[:8]}...{verification_key[-4:] if verification_key else 'None'}")
+    
+    # Validate API key format
+    api_key_valid = False
+    if google_api_key:
+        # Google API keys typically start with "AIza" and are about 39 characters long
+        if google_api_key.startswith('AIza') and len(google_api_key) > 30:
+            api_key_valid = True
+            print("DEBUG: Google API key format validation passed")
+        else:
+            print(f"DEBUG: Google API key format validation failed. Key starts with: {google_api_key[:10]}...")
+    
+    # Show API key status (masked for security)
+    if google_api_key and api_key_valid:
+        masked_key = google_api_key[:8] + "..." + google_api_key[-4:] if len(google_api_key) > 12 else "***"
+        st.success(f"✅ Google Gemini API connected (Key: {masked_key})")
+    elif google_api_key:
+        masked_key = google_api_key[:8] + "..." + google_api_key[-4:] if len(google_api_key) > 12 else "***"
+        st.warning(f"⚠️ API key format may be incorrect (Key: {masked_key})")
+    else:
+        st.error("❌ No API key available!")
 
     # Main input field and button stacked vertically
     query = st.text_input("Enter your query:", placeholder="e.g., What is Google's latest AI model?", key="news_query")
@@ -484,160 +405,55 @@ def main():
             st.error(f"Failed to initialize the agent: {e}. Please check your environment and dependencies.")
             st.stop()
 
-        raw_agent_response = None
-
-        # Display initial status
-        status_placeholder.info("🚀 Getting ready to answer your question...")
+        # Process query
+        status_placeholder.info("🚀 Processing your question...")
         
-        # Create an expandable section for agent reasoning
-        with st.expander("🤖 Agent's Actions & Reasoning", expanded=True):
-            steps_placeholder = st.empty()
-
-        # Create live callback for real-time updates
-        live_callback = LiveAgentCallback(steps_placeholder, status_placeholder)
-
-        # Process query with live updates
-        raw_agent_response = invoke_agent_safely(agent_executor, query, live_callback)
-
-        # Debugging: Print the type and content of raw_agent_response
-        print(f"DEBUG: Type of raw_agent_response after invoke_agent_safely: {type(raw_agent_response)}")
-        print(f"DEBUG: Raw agent response after invoke_agent_safely: {raw_agent_response}")
-
-        # Check if the agent actually performed a web search
-        search_was_performed = False
-        search_results_found = None
-        
-        if isinstance(raw_agent_response, dict) and "intermediate_steps" in raw_agent_response:
-            intermediate_steps = raw_agent_response["intermediate_steps"]
-            for step in intermediate_steps:
-                if isinstance(step, tuple) and len(step) == 2:
-                    action, observation = step
-                    if hasattr(action, 'tool') and action.tool == 'web_search':
-                        search_was_performed = True
-                        search_results_found = observation
-                        print(f"DEBUG: Found search results: {search_results_found[:200]}...")
-                        break
-        
-        # Smart decision: Force search only for queries that clearly need current info
-        def should_force_search(query_text):
-            """Determine if a query likely needs web search based on keywords"""
-            current_keywords = [
-                'today', 'latest', 'recent', 'current', 'now', 'breaking', 'news', 
-                'happening', 'update', '2025', '2024', 'this year', 'latest', 
-                'new', 'price', 'stock', 'weather', 'live', 'real-time'
-            ]
-            news_keywords = ['ukraine', 'war', 'politics', 'election', 'covid', 'economy']
-            tech_keywords = ['ai model', 'openai', 'chatgpt', 'latest version', 'new release']
+        try:
+            # Try to get response from agent
+            agent_response = agent_executor.invoke({"input": query})
             
-            query_lower = query_text.lower()
-            return any(keyword in query_lower for keyword in current_keywords + news_keywords + tech_keywords)
-        
-        # If agent didn't search and query seems to need current info, FORCE a search
-        if not search_was_performed and should_force_search(query):
-            print("DEBUG: Query needs current info but agent didn't search! Forcing web search...")
-            status_placeholder.info("🔍 This query needs current information - searching the web...")
-            
-            # Perform direct search
-            live_callback.add_thought("This question needs current information, so I'm performing a web search.")
-            live_callback.add_action("web_search", query)
-            
-            try:
-                forced_search_results = duckduckgo_search_tool(query, max_results=5)
-                live_callback.add_observation(forced_search_results[:300] + "...")
-                search_results_found = forced_search_results
-                search_was_performed = True
-                print(f"DEBUG: Forced search completed: {forced_search_results[:200]}...")
-            except Exception as e:
-                print(f"DEBUG: Forced search failed: {e}")
-                live_callback.add_thought(f"Search failed: {e}")
-        
-        # Process the response based on what we have
-        if search_results_found and search_was_performed:
-            print("DEBUG: Processing search results")
-            status_placeholder.success("Query processed successfully with current information!")
-            
-            # Extract sources from search results
-            sources = extract_sources_from_response(search_results_found)
-            
-            # Create response with quick summary first
-            response_text = "## 📋 Quick Answer\n\n"
-            
-            # Extract brief answer from search results
-            search_lines = search_results_found.split('\n')
-            brief_content = ""
-            
-            for line in search_lines:
-                if line.strip() and not line.startswith('**Search Results') and not line.startswith('Source:') and '**Sources for further reading:**' not in line:
-                    clean_line = line.strip()
-                    if clean_line and len(clean_line) > 20:
-                        brief_content = clean_line
-                        break
-            
-            if brief_content:
-                brief_answer = re.sub(r'\*\*([^*]+)\*\*', r'\1', brief_content)
-                brief_answer = re.sub(r'^\d+\.\s*', '', brief_answer)
-                brief_answer = brief_answer[:200] + "..." if len(brief_answer) > 200 else brief_answer
-                response_text += f"**{brief_answer}**\n\n"
-            else:
-                response_text += "Based on current search results, here's what I found about your query.\n\n"
-            
-            response_text += "---\n\n"
-            response_text += "**Detailed Information:**\n\n"
-            
-            # Extract and format all search results generically
-            lines = search_results_found.split('\n')
-            for line in lines:
-                if line.strip() and not line.startswith('**Search Results') and not line.startswith('Source:') and '**Sources for further reading:**' not in line:
-                    clean_line = line.strip()
-                    if clean_line:
-                        response_text += clean_line + "\n"
-            response_text += "\n"
-            
-            # Add sources section
-            if sources:
-                response_text += "---\n\n### 📚 Sources:\n\n"
-                for i, (title, url) in enumerate(sources, 1):
-                    response_text += f"**{i}.** [{title}]({url})\n\n"
-                response_text += "*💡 Click any source above to visit the original website for more information.*"
-            
-            response_placeholder.markdown(response_text)
-            
-        elif raw_agent_response and isinstance(raw_agent_response, dict) and "output" in raw_agent_response:
-            # Agent provided a direct answer
-            full_agent_output = raw_agent_response["output"]
-            
-            if full_agent_output and full_agent_output.strip() != "Agent stopped due to iteration limit or time limit.":
-                print("DEBUG: Processing agent's direct answer")
-                status_placeholder.success("Query processed successfully!")
+            if isinstance(agent_response, dict) and "output" in agent_response:
+                full_agent_output = agent_response["output"]
                 
-                # Extract and display sources if any
-                sources = extract_sources_from_response(full_agent_output)
-                
-                # Format the response properly
-                brief_answer, detailed_answer = format_agent_response(full_agent_output)
-                
-                # Prepare the complete response with brief answer first
-                complete_response = "## 📋 Quick Answer\n\n"
-                
-                if brief_answer:
-                    complete_response += f"**{brief_answer}**\n\n"
+                if full_agent_output and full_agent_output.strip() != "Agent stopped due to iteration limit or time limit.":
+                    status_placeholder.success("Query processed successfully!")
+                    
+                    # Format the response properly
+                    brief_answer, detailed_answer = format_agent_response(full_agent_output)
+                    
+                    # Prepare the complete response with brief answer first
+                    complete_response = "## 📋 Quick Answer\n\n"
+                    
+                    if brief_answer:
+                        complete_response += f"**{brief_answer}**\n\n"
+                    else:
+                        complete_response += "**Here's what I found about your query.**\n\n"
+                    
+                    complete_response += "---\n\n"
+                    complete_response += "**Detailed Information:**\n\n"
+                    complete_response += detailed_answer
+                    
+                    response_placeholder.markdown(complete_response)
                 else:
-                    complete_response += "**Here's what I found about your query.**\n\n"
-                
-                complete_response += "---\n\n"
-                complete_response += "**Detailed Information:**\n\n"
-                complete_response += detailed_answer
-                
-                if sources:
-                    complete_response += "\n\n---\n\n### 📚 Sources:\n\n"
-                    for i, (title, url) in enumerate(sources, 1):
-                        complete_response += f"**{i}.** [{title}]({url})\n\n"
-                    complete_response += "*💡 Click any source above to visit the original website for more information.*"
-                
-                response_placeholder.markdown(complete_response)
+                    # Agent output was empty, use fallback
+                    status_placeholder.info("Using direct chat as fallback...")
+                    direct_response = direct_chat_fallback(query)
+                    
+                    if direct_response:
+                        brief_answer, detailed_answer = format_agent_response(direct_response)
+                        
+                        formatted_response = "## 📋 Quick Answer\n\n"
+                        formatted_response += f"**{brief_answer}**\n\n" if brief_answer else "**Here's what I found about your query.**\n\n"
+                        formatted_response += "---\n\n**Detailed Information:**\n\n"
+                        formatted_response += detailed_answer
+                        
+                        response_placeholder.markdown(formatted_response)
+                        status_placeholder.success("Query processed successfully!")
+                    else:
+                        response_placeholder.error("Failed to get a response from both agent and direct chat.")
+                        status_placeholder.error("Unable to process query")
             else:
-                # Agent output was empty or stopped, use fallback
-                print("DEBUG: Agent output was empty, using direct chat fallback")
+                # No valid response from agent, use direct chat fallback
                 status_placeholder.info("Using direct chat as fallback...")
                 direct_response = direct_chat_fallback(query)
                 
@@ -654,25 +470,33 @@ def main():
                 else:
                     response_placeholder.error("Failed to get a response from both agent and direct chat.")
                     status_placeholder.error("Unable to process query")
-        else:
-            # No valid response from agent, use direct chat fallback
-            print("DEBUG: No valid response from agent, using direct chat fallback")
-            status_placeholder.info("Using direct chat as fallback...")
-            direct_response = direct_chat_fallback(query)
+                    
+        except Exception as e:
+            print(f"DEBUG: Error during agent execution: {e}")
             
-            if direct_response:
-                brief_answer, detailed_answer = format_agent_response(direct_response)
-                
-                formatted_response = "## 📋 Quick Answer\n\n"
-                formatted_response += f"**{brief_answer}**\n\n" if brief_answer else "**Here's what I found about your query.**\n\n"
-                formatted_response += "---\n\n**Detailed Information:**\n\n"
-                formatted_response += detailed_answer
-                
-                response_placeholder.markdown(formatted_response)
-                status_placeholder.success("Query processed successfully!")
+            # Check for authentication errors
+            if "401" in str(e) or "unauthorized" in str(e).lower():
+                st.error("🔑 **Authentication Error**: There's an issue with the Google API key.")
+                st.info("Please check that your API key is correctly set in Streamlit secrets and is valid.")
             else:
-                response_placeholder.error("Failed to get a response from both agent and direct chat.")
-                status_placeholder.error("Unable to process query")
+                st.error(f"An error occurred: {e}")
+                
+                # Try direct fallback
+                status_placeholder.info("Trying direct chat fallback...")
+                direct_response = direct_chat_fallback(query)
+                
+                if direct_response:
+                    brief_answer, detailed_answer = format_agent_response(direct_response)
+                    
+                    formatted_response = "## 📋 Quick Answer\n\n"
+                    formatted_response += f"**{brief_answer}**\n\n" if brief_answer else "**Here's what I found about your query.**\n\n"
+                    formatted_response += "---\n\n**Detailed Information:**\n\n"
+                    formatted_response += detailed_answer
+                    
+                    response_placeholder.markdown(formatted_response)
+                    status_placeholder.success("Query processed successfully!")
+                else:
+                    status_placeholder.error("Unable to process query")
 
 if __name__ == "__main__":
     main()

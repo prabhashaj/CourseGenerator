@@ -11,7 +11,7 @@ import course_generator
 import rag_chatbot
 import document_course_creator
 import play_zone  # Import the new PlayZone module
-import lang_news # Import the langchain news module
+import lang_news_enhanced # Import the enhanced langchain news module
 
 # --- Session State Initialization (Centralized) ---
 # Initialize session state for the entire application,
@@ -98,7 +98,7 @@ if mode_container.button(
     st.rerun()
 
 if mode_container.button(
-    "Knowledge Hub 📰",
+    "🤖 Knowledge Hub (Enhanced)",
     type="primary" if st.session_state.current_mode == "lang_news" else "secondary",
     use_container_width=True,
     key="btn_lang_news"
@@ -116,7 +116,7 @@ try:
         "rag_chat": rag_chatbot.run_app,
         "doc_creator": document_course_creator.run_app,
         "play_zone": play_zone.show_play_zone,
-        "lang_news": lang_news.main, # Add langchain news handler
+        "lang_news": lang_news_enhanced.main, # Add enhanced langchain news handler
     }
     
     # Get and execute the appropriate handler
@@ -168,8 +168,8 @@ elif st.session_state.current_mode == "doc_creator":
     else:
         st.sidebar.info("No document-generated courses yet. Upload documents to create one!")
 elif st.session_state.current_mode == "lang_news":
-    st.sidebar.subheader("Knowledge Hub 📰")
-    st.sidebar.info("Ask questions about tech, news, or current events!")
+    st.sidebar.subheader("🤖 Knowledge Hub (Enhanced)")
+    st.sidebar.info("Dynamic AI agent with step-by-step reasoning! Ask questions about tech, news, or current events!")
 
 # Visual feedback for current mode
 mode_messages = {
@@ -177,7 +177,7 @@ mode_messages = {
     "rag_chat": "You are in the RAG Chatbot mode.",
     "doc_creator": "You are in the Document Course Creator mode.",
     "play_zone": "You are in the PlayZone mode.",
-    "lang_news": "You are in the Knowledge Hub 📰 mode. Ask me anything about tech or current events!"
+    "lang_news": "You are in the Enhanced Knowledge Hub mode. Watch the AI agent think and reason step-by-step!"
 }
 st.sidebar.info(mode_messages.get(st.session_state.current_mode, ""))
 
