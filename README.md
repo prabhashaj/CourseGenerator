@@ -1,7 +1,8 @@
 #  VidhyAI - Course Generator
 
 A comprehensive AI-powered learning platform that creates custom courses, enables document-based learning, provides intelligent chat assistance, and offers interactive study tools.
-
+# Try it out
+link: https://ajscoursegenerator.streamlit.app/
 ## ✨ Features
 
 ###  Course Generator & Tracker
