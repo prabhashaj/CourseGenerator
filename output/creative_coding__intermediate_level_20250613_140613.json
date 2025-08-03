@@ -1,0 +1,86 @@
+{
+  "timestamp": "2025-06-13 14:06:13.013930",
+  "input": {
+    "course_topic": "Creative Coding",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.65,
+    "max_tokens": 2048,
+    "top_k": 13,
+    "top_p": 0.96
+  },
+  "output": {
+    "conclusion": "By the end of this course, you will have a strong foundation in creative coding principles and be able to create interactive and visually engaging projects using code.",
+    "courseTitle": "Creative Coding: Intermediate Level",
+    "introduction": "Welcome to the Intermediate Creative Coding course! This course builds upon basic programming concepts and introduces you to the exciting world of creating art, visuals, and interactive experiences through code. We'll explore various tools and techniques to bring your creative ideas to life.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Module 1: Introduction to Generative Art",
+            "description": "Overview of generative art principles and its applications in various fields."
+          },
+          {
+            "chapterTitle": "Setting up Processing IDE",
+            "description": "Installing and configuring the Processing development environment."
+          },
+          {
+            "chapterTitle": "Basic Shapes and Drawing",
+            "description": "Learning to draw basic shapes (rectangles, circles, lines) using Processing code."
+          },
+          {
+            "chapterTitle": "Color Theory and Application",
+            "description": "Understanding color models and applying them to create visually appealing art."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Generative Art Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to p5.js",
+            "description": "Overview of p5.js and its capabilities for web-based creative coding."
+          },
+          {
+            "chapterTitle": "Setting up p5.js Environment",
+            "description": "Setting up a local development environment and including p5.js in your HTML file."
+          },
+          {
+            "chapterTitle": "Interactivity with Mouse and Keyboard",
+            "description": "Adding interactivity to your sketches using mouse and keyboard input."
+          },
+          {
+            "chapterTitle": "Working with Images and Sound",
+            "description": "Loading and manipulating images and sound files in p5.js."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Interactive Art with p5.js"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Data Visualization",
+            "description": "Understanding the principles of data visualization and its importance."
+          },
+          {
+            "chapterTitle": "Fetching Data from APIs",
+            "description": "Learning to fetch data from external APIs using JavaScript."
+          },
+          {
+            "chapterTitle": "Visualizing Data with Charts and Graphs",
+            "description": "Creating different types of charts and graphs (bar charts, line graphs, scatter plots) using p5.js."
+          },
+          {
+            "chapterTitle": "Interactive Data Exploration",
+            "description": "Adding interactivity to data visualizations for better data exploration."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Data Visualization"
+      }
+    ]
+  }
+}

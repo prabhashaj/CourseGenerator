@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-13 14:19:46.529312",
+  "input": {
+    "course_topic": "Technomeditation",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.66,
+    "max_tokens": 2048,
+    "top_k": 26,
+    "top_p": 0.84
+  },
+  "output": {
+    "conclusion": "By integrating technology with mindfulness practices, you can cultivate a deeper sense of presence and well-being in the digital age. Continue to explore and adapt these techniques to your individual needs and preferences.",
+    "courseTitle": "Technomeditation: Intermediate Practices for Digital Well-being",
+    "introduction": "Welcome to Technomeditation! This course builds upon foundational mindfulness skills, integrating technology to enhance your practice and navigate the digital world with greater awareness. We'll explore advanced techniques for using technology mindfully and mitigating its potential negative impacts.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Biofeedback Techniques",
+            "description": "Explore advanced biofeedback methods using wearable sensors to monitor physiological responses during meditation. Learn to interpret data and personalize your practice for optimal results."
+          },
+          {
+            "chapterTitle": "Neurofeedback for Enhanced Focus",
+            "description": "Introduction to neurofeedback technology and its application in meditation. Understand how neurofeedback can train brainwave activity to improve focus and reduce mind-wandering during practice."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Harnessing Technology for Deeper Meditation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Mindful Social Media Consumption",
+            "description": "Develop strategies for mindful engagement with social media platforms. Learn to identify triggers, set boundaries, and cultivate a healthier relationship with online interactions."
+          },
+          {
+            "chapterTitle": "Digital Detox Strategies",
+            "description": "Explore advanced techniques for digital detox, including creating tech-free zones, establishing time limits, and finding alternative activities to reduce screen time."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Mindful Technology Consumption"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Virtual Reality Meditation Environments",
+            "description": "Experience guided meditations in immersive virtual reality environments designed to promote relaxation and focus. Learn how VR can enhance the meditative experience."
+          },
+          {
+            "chapterTitle": "Augmented Reality Mindfulness Prompts",
+            "description": "Explore the use of augmented reality to create mindfulness prompts in your everyday environment. Discover how AR can help you stay present and aware throughout the day."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Immersive Meditation Technologies"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "AI-Powered Meditation Guidance",
+            "description": "Discover how AI algorithms can personalize meditation guidance based on your individual needs and preferences. Learn about the benefits and limitations of AI-driven meditation tools."
+          },
+          {
+            "chapterTitle": "Data-Driven Mindfulness Practices",
+            "description": "Explore how data collected from wearable devices and meditation apps can provide insights into your practice. Learn to analyze data and adjust your techniques for optimal effectiveness."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "AI and Data in Meditation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Ethical Considerations in Technomeditation",
+            "description": "Discuss the ethical implications of using technology in meditation, including privacy concerns, data security, and the potential for dependence on technological aids."
+          },
+          {
+            "chapterTitle": "Integrating Technomeditation into Daily Life",
+            "description": "Develop a personalized plan for integrating technomeditation techniques into your daily routine. Learn to adapt these practices to your individual needs and preferences."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Advanced Integration and Ethics"
+      }
+    ]
+  }
+}

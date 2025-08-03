@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-16 18:26:17.235607",
+  "input": {
+    "course_topic": "Drawing Fundamentals",
+    "difficulty_level": "Beginner",
+    "num_modules": 5,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.34,
+    "max_tokens": 1024,
+    "top_k": 20,
+    "top_p": 0.53
+  },
+  "output": {
+    "conclusion": "By completing this course, you've established a solid foundation in drawing fundamentals. Continue practicing and exploring different techniques to further develop your artistic skills!",
+    "courseTitle": "Drawing Fundamentals for Beginners",
+    "introduction": "Welcome to Drawing Fundamentals! This course will guide you through the essential concepts and techniques to start your drawing journey. No prior experience is necessary.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Drawing Tools",
+            "description": "Overview of pencils (HB, 2B, etc.), erasers, paper types, and other essential drawing tools. Understanding their uses and differences."
+          },
+          {
+            "chapterTitle": "Holding the Pencil Correctly",
+            "description": "Learn the proper grip for sketching and shading. Explore different grips for varying line weights and control."
+          },
+          {
+            "chapterTitle": "Basic Line Exercises",
+            "description": "Practice drawing straight lines, curved lines, and circles. Focus on control and consistency."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Getting Started: Tools and Basic Lines"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding Basic Shapes",
+            "description": "Learn to identify and draw basic shapes like circles, squares, triangles, and rectangles."
+          },
+          {
+            "chapterTitle": "Combining Shapes",
+            "description": "Practice combining basic shapes to create more complex forms. Examples: houses, trees, simple objects."
+          },
+          {
+            "chapterTitle": "Negative Space",
+            "description": "Introduction to negative space and how it can help improve your drawing accuracy."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Shapes and Forms"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Perspective",
+            "description": "Understanding one-point perspective and its basic principles."
+          },
+          {
+            "chapterTitle": "Drawing Simple Objects in Perspective",
+            "description": "Practice drawing cubes and cylinders in one-point perspective."
+          },
+          {
+            "chapterTitle": "Horizon Line and Vanishing Point",
+            "description": "Understanding the horizon line and vanishing point and their role in creating depth."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Basic Perspective"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding Light and Shadow",
+            "description": "Introduction to light sources, highlights, shadows, and reflected light."
+          },
+          {
+            "chapterTitle": "Basic Shading Techniques",
+            "description": "Learn basic shading techniques like hatching, cross-hatching, and blending."
+          },
+          {
+            "chapterTitle": "Applying Shading to Simple Forms",
+            "description": "Practice applying shading techniques to basic shapes to create the illusion of depth and volume."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Light and Shadow"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Drawing Simple Objects: Still Life",
+            "description": "Practice drawing a simple still life arrangement using the techniques learned in previous modules."
+          },
+          {
+            "chapterTitle": "Review of Key Concepts",
+            "description": "A quick recap of the fundamental concepts covered in the course."
+          },
+          {
+            "chapterTitle": "Next Steps and Resources",
+            "description": "Suggestions for further learning and resources to continue your drawing journey."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Putting it All Together"
+      }
+    ]
+  }
+}

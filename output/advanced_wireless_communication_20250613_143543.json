@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 14:35:43.026069",
+  "input": {
+    "course_topic": "Wireless Communication",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.3,
+    "max_tokens": 1024,
+    "top_k": 13,
+    "top_p": 0.82
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of advanced wireless communication concepts, enabling students to design and analyze modern wireless systems.",
+    "courseTitle": "Advanced Wireless Communication",
+    "introduction": "Welcome to Advanced Wireless Communication! This course delves into the intricacies of modern wireless systems, covering advanced modulation techniques, channel coding, multiple access schemes, and emerging wireless technologies.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Modulation Techniques",
+            "description": "Explore advanced modulation techniques like OFDM, MIMO-OFDM, and FBMC. Analyze their performance in terms of spectral efficiency, power efficiency, and robustness to channel impairments."
+          },
+          {
+            "chapterTitle": "OFDM System Design",
+            "description": "Delve into the practical aspects of OFDM system design, including synchronization, channel estimation, and PAPR reduction techniques."
+          },
+          {
+            "chapterTitle": "MIMO Systems",
+            "description": "Understand the principles of Multiple-Input Multiple-Output (MIMO) systems. Explore spatial multiplexing, beamforming, and space-time coding techniques."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Modulation and MIMO"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Channel Coding Techniques",
+            "description": "Study advanced channel coding techniques such as Turbo codes, LDPC codes, and Polar codes. Analyze their performance in terms of error correction capability and decoding complexity."
+          },
+          {
+            "chapterTitle": "Turbo Code Design",
+            "description": "Understand the design and implementation of Turbo codes, including interleaver design and iterative decoding algorithms."
+          },
+          {
+            "chapterTitle": "LDPC Code Analysis",
+            "description": "Analyze the properties of LDPC codes, including their Tanner graph representation and decoding algorithms such as belief propagation."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Channel Coding"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Multiple Access Techniques",
+            "description": "Explore advanced multiple access techniques such as NOMA, SCMA, and massive MIMO. Analyze their performance in terms of spectral efficiency, user fairness, and complexity."
+          },
+          {
+            "chapterTitle": "NOMA Principles",
+            "description": "Understand the principles of Non-Orthogonal Multiple Access (NOMA), including power allocation and successive interference cancellation (SIC)."
+          },
+          {
+            "chapterTitle": "Massive MIMO Systems",
+            "description": "Explore the architecture and performance of massive MIMO systems, including channel estimation and precoding techniques."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Multiple Access"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Emerging Wireless Technologies",
+            "description": "Explore emerging wireless technologies such as 5G and beyond, including millimeter wave communication, ultra-reliable low-latency communication (URLLC), and massive machine-type communication (mMTC)."
+          },
+          {
+            "chapterTitle": "5G NR Architecture",
+            "description": "Understand the architecture of 5G New Radio (NR), including its key features and functionalities."
+          },
+          {
+            "chapterTitle": "Millimeter Wave Communication",
+            "description": "Explore the challenges and opportunities of millimeter wave communication, including channel modeling and beamforming techniques."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Emerging Technologies"
+      }
+    ]
+  }
+}

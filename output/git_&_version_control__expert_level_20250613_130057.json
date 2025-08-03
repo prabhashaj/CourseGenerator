@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 13:00:57.096590",
+  "input": {
+    "course_topic": "Git & Version Control",
+    "difficulty_level": "Expert",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.49,
+    "max_tokens": 1024,
+    "top_k": 16,
+    "top_p": 0.58
+  },
+  "output": {
+    "conclusion": "By completing this course, you've mastered advanced Git techniques, enabling you to efficiently manage complex projects, collaborate effectively, and contribute to open-source initiatives with confidence.",
+    "courseTitle": "Git & Version Control: Expert Level",
+    "introduction": "Welcome to the Expert Level Git & Version Control course! This course is designed for experienced developers and DevOps professionals who want to master advanced Git techniques for complex project management, collaboration, and open-source contributions. We'll delve into advanced workflows, internals, and best practices.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Branching Strategies",
+            "description": "Explore complex branching models like Gitflow, GitHub Flow, and GitLab Flow. Understand the benefits and drawbacks of each model and learn how to implement them effectively in your projects. Discuss branching strategies for feature development, hotfixes, and releases."
+          },
+          {
+            "chapterTitle": "Customizing Git Configuration",
+            "description": "Dive deep into Git configuration options. Learn how to customize Git behavior using local, global, and system-level configurations. Explore advanced configuration settings for aliases, diff tools, merge tools, and more. Optimize your Git environment for maximum productivity."
+          },
+          {
+            "chapterTitle": "Git Hooks for Automation",
+            "description": "Master Git hooks for automating tasks and enforcing policies. Learn how to use pre-commit, pre-push, and other hooks to validate code, run tests, and enforce coding standards. Implement custom hooks for specific project requirements. Explore server-side hooks for centralized control."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Git Workflows and Configuration"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Git Internals: The .git Directory",
+            "description": "Explore the inner workings of Git by examining the .git directory. Understand the structure and contents of the objects, refs, and index. Learn how Git stores and manages data internally. Gain insights into Git's performance and optimization techniques."
+          },
+          {
+            "chapterTitle": "Garbage Collection and Repository Maintenance",
+            "description": "Learn how to perform garbage collection and repository maintenance to optimize Git repository size and performance. Understand the concepts of loose objects, packfiles, and reflogs. Use Git commands like 'git gc' and 'git prune' to clean up your repository."
+          },
+          {
+            "chapterTitle": "Bisecting for Bug Hunting",
+            "description": "Master the 'git bisect' command for efficiently identifying the commit that introduced a bug. Learn how to automate the bisecting process using scripts and custom test cases. Use bisecting to pinpoint the root cause of regressions and performance issues."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Git Internals and Optimization"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Contributing to Open Source Projects",
+            "description": "Learn the best practices for contributing to open-source projects using Git. Understand the fork-and-pull request workflow. Write clear and concise commit messages. Follow the project's coding standards and contribution guidelines. Collaborate effectively with other contributors."
+          },
+          {
+            "chapterTitle": "Resolving Complex Merge Conflicts",
+            "description": "Master advanced techniques for resolving complex merge conflicts. Use Git's conflict resolution tools to identify and resolve conflicting changes. Understand the different types of merge conflicts and how to handle them effectively. Prevent merge conflicts by using proper branching strategies."
+          },
+          {
+            "chapterTitle": "Git Security Best Practices",
+            "description": "Explore Git security best practices to protect your repositories from unauthorized access and data breaches. Learn how to use SSH keys for authentication. Implement access control policies using Git hosting platforms. Secure your Git configuration and prevent accidental exposure of sensitive information."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Collaboration and Security"
+      }
+    ]
+  }
+}

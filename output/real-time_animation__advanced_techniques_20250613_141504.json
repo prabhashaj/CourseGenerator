@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-06-13 14:15:04.682038",
+  "input": {
+    "course_topic": "Real-Time Animation",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.6,
+    "max_tokens": 2048,
+    "top_k": 21,
+    "top_p": 0.72
+  },
+  "output": {
+    "conclusion": "By the end of this course, you will have a comprehensive understanding of real-time animation techniques and their applications in various interactive media.",
+    "courseTitle": "Real-Time Animation: Advanced Techniques",
+    "introduction": "Welcome to the advanced course on Real-Time Animation! This course delves into the sophisticated techniques and tools used to create interactive and dynamic animations in real-time environments. We will explore advanced topics such as skeletal animation, physics-based simulation, and optimization strategies for performance.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Skeletal Animation",
+            "description": "Explore techniques like inverse kinematics (IK) and forward kinematics (FK) blending for realistic character movement. Learn about motion capture data integration and advanced rigging methods."
+          },
+          {
+            "chapterTitle": "Procedural Animation",
+            "description": "Dive into creating animations using algorithms and mathematical functions. Cover topics such as noise functions, fractals, and particle systems for dynamic effects."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Animation Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Physics-Based Simulation",
+            "description": "Learn to integrate physics engines into real-time animation pipelines. Cover topics like rigid body dynamics, collision detection, and cloth simulation."
+          },
+          {
+            "chapterTitle": "Particle Systems and Effects",
+            "description": "Explore advanced particle system techniques for creating realistic effects like fire, smoke, and water. Cover topics like particle emitters, forces, and collision handling."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Physics and Particle Effects"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Optimization Strategies",
+            "description": "Learn techniques for optimizing real-time animations for performance. Cover topics like level of detail (LOD), animation compression, and GPU instancing."
+          },
+          {
+            "chapterTitle": "Memory Management",
+            "description": "Explore memory management techniques specific to real-time animation. Cover topics like object pooling, data structures, and garbage collection."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Performance Optimization"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Real-Time Animation in Game Engines",
+            "description": "Explore the integration of real-time animation techniques in popular game engines like Unity and Unreal Engine. Cover topics like animation controllers, state machines, and scripting."
+          },
+          {
+            "chapterTitle": "Interactive Animation Systems",
+            "description": "Learn to create interactive animation systems that respond to user input. Cover topics like event handling, scripting, and UI integration."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Integration and Interactivity"
+      }
+    ]
+  }
+}

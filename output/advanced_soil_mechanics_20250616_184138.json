@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:41:38.393970",
+  "input": {
+    "course_topic": "Soil Mechanics",
+    "difficulty_level": "Advanced",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.62,
+    "max_tokens": 2048,
+    "top_k": 26,
+    "top_p": 0.97
+  },
+  "output": {
+    "conclusion": "This course provides an advanced understanding of soil mechanics principles, enabling engineers to tackle complex geotechnical challenges.",
+    "courseTitle": "Advanced Soil Mechanics",
+    "introduction": "Welcome to Advanced Soil Mechanics! This course delves into the intricacies of soil behavior, building upon fundamental concepts to explore advanced topics relevant to geotechnical engineering practice.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Soil Composition and Index Properties",
+            "description": "In-depth analysis of soil mineralogy, specific surface area, and the influence of clay minerals on soil behavior. Advanced techniques for determining index properties and their limitations."
+          },
+          {
+            "chapterTitle": "Soil Classification Systems - A Critical Review",
+            "description": "A critical evaluation of different soil classification systems (USCS, AASHTO) and their applicability to various geotechnical problems. Introduction to advanced classification methods for problematic soils."
+          },
+          {
+            "chapterTitle": "Effective Stress Principle in Saturated and Unsaturated Soils",
+            "description": "A rigorous treatment of the effective stress principle, considering the effects of capillarity and matric suction in unsaturated soils. Discussion of the limitations of the effective stress concept."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Soil Properties and Classification"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Permeability and Seepage Analysis",
+            "description": "Advanced techniques for determining permeability in anisotropic soils. Finite element methods for seepage analysis in complex geometries and heterogeneous soil profiles."
+          },
+          {
+            "chapterTitle": "Consolidation Theory - Beyond Terzaghi",
+            "description": "Critical evaluation of Terzaghi's consolidation theory and its limitations. Introduction to advanced consolidation models that account for secondary compression and soil disturbance."
+          },
+          {
+            "chapterTitle": "Settlement Analysis - Advanced Techniques",
+            "description": "Advanced methods for predicting settlements of structures on compressible soils, including consideration of creep and nonlinear soil behavior. Probabilistic settlement analysis."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Flow and Consolidation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Shear Strength of Soils - Advanced Concepts",
+            "description": "Advanced concepts in soil shear strength, including the critical state framework and the influence of stress history and drainage conditions. Constitutive models for soil shear strength."
+          },
+          {
+            "chapterTitle": "Slope Stability Analysis - Advanced Methods",
+            "description": "Advanced methods for slope stability analysis, including finite element methods and probabilistic approaches. Consideration of unsaturated soil conditions and seismic loading."
+          },
+          {
+            "chapterTitle": "Earth Pressure Theories - Beyond Rankine and Coulomb",
+            "description": "A critical review of Rankine and Coulomb earth pressure theories. Introduction to advanced earth pressure theories that account for soil arching and wall movement."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Shear Strength and Stability"
+      }
+    ]
+  }
+}

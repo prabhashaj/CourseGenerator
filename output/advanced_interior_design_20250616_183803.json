@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:38:03.002704",
+  "input": {
+    "course_topic": "Interior Design",
+    "difficulty_level": "Advanced",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.4,
+    "max_tokens": 2048,
+    "top_k": 25,
+    "top_p": 0.96
+  },
+  "output": {
+    "conclusion": "This course has provided an in-depth exploration of advanced interior design principles, techniques, and emerging trends. By mastering these concepts, you are well-equipped to create innovative and impactful interior spaces.",
+    "courseTitle": "Advanced Interior Design",
+    "introduction": "Welcome to Advanced Interior Design! This course delves into the complexities of creating sophisticated and functional interior spaces. We will explore advanced concepts, techniques, and emerging trends to elevate your design skills.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Space Planning",
+            "description": "Explore complex spatial relationships, circulation patterns, and accessibility considerations for diverse interior environments."
+          },
+          {
+            "chapterTitle": "Ergonomics and Human Factors",
+            "description": "Delve into the principles of ergonomics and human factors to optimize comfort, safety, and productivity in interior spaces."
+          },
+          {
+            "chapterTitle": "Sustainable Design Strategies",
+            "description": "Examine advanced sustainable design strategies, including material selection, energy efficiency, and waste reduction."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Design Principles"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Lighting Design for Mood and Function",
+            "description": "Master advanced lighting techniques to create specific moods, enhance architectural features, and optimize functionality."
+          },
+          {
+            "chapterTitle": "Acoustic Design for Interior Spaces",
+            "description": "Explore the principles of acoustic design to control sound reverberation, reduce noise pollution, and enhance speech intelligibility."
+          },
+          {
+            "chapterTitle": "Material Science and Application",
+            "description": "Examine the properties, performance characteristics, and sustainable applications of advanced interior design materials."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Technical Design and Materials"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Emerging Trends in Interior Design",
+            "description": "Explore the latest trends in interior design, including biophilic design, smart home technology, and adaptive reuse."
+          },
+          {
+            "chapterTitle": "Designing for Specific Populations",
+            "description": "Address the unique needs and considerations for designing interior spaces for diverse populations, such as children, seniors, and people with disabilities."
+          },
+          {
+            "chapterTitle": "Professional Practice and Ethics",
+            "description": "Understand the ethical considerations, legal requirements, and professional practices for interior designers."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Specialized Design and Professionalism"
+      }
+    ]
+  }
+}

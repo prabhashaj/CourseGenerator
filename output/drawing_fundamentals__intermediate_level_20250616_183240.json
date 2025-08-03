@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-16 18:32:40.970043",
+  "input": {
+    "course_topic": "Drawing Fundamentals",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.61,
+    "max_tokens": 2048,
+    "top_k": 16,
+    "top_p": 0.53
+  },
+  "output": {
+    "conclusion": "By completing this course, you've solidified your understanding of drawing fundamentals, enabling you to create more compelling and accurate artwork. Continue practicing and experimenting to further develop your skills.",
+    "courseTitle": "Drawing Fundamentals: Intermediate Level",
+    "introduction": "Welcome to Drawing Fundamentals: Intermediate Level! This course builds upon basic drawing skills, focusing on advanced techniques and concepts to elevate your artwork. We'll explore topics like perspective, shading, composition, and figure drawing in detail.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Review of Basic Shapes and Forms",
+            "description": "A quick refresher on drawing basic shapes (cubes, spheres, cylinders, cones) and how they form the foundation of more complex objects. Practice exercises included."
+          },
+          {
+            "chapterTitle": "Understanding Positive and Negative Space",
+            "description": "Learn how to effectively use positive and negative space to create balanced and visually appealing compositions. Examples and exercises provided."
+          },
+          {
+            "chapterTitle": "Line Weight and Its Impact",
+            "description": "Explore the use of varying line weights to create depth, emphasis, and visual interest in your drawings. Practice exercises included."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Review of Essential Concepts"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "One-Point Perspective: Advanced Techniques",
+            "description": "Delve deeper into one-point perspective, focusing on creating complex scenes and environments. Practice drawing interiors and street scenes."
+          },
+          {
+            "chapterTitle": "Two-Point Perspective: Mastering Angles",
+            "description": "Learn to accurately represent objects and scenes using two-point perspective, paying close attention to vanishing points and angles. Exercises included."
+          },
+          {
+            "chapterTitle": "Three-Point Perspective: Drawing Tall Structures",
+            "description": "Explore three-point perspective for drawing tall buildings and creating dramatic viewpoints. Practice drawing skyscrapers and other architectural structures."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Perspective Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding Light and Shadow",
+            "description": "A detailed exploration of light and shadow principles, including highlights, midtones, shadows, and reflected light. Practice shading simple forms."
+          },
+          {
+            "chapterTitle": "Rendering Different Materials",
+            "description": "Learn how to render various materials (metal, glass, fabric, wood) using different shading techniques. Examples and exercises provided."
+          },
+          {
+            "chapterTitle": "Creating Depth with Value",
+            "description": "Explore the use of value to create depth and atmosphere in your drawings. Practice exercises included."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Shading and Rendering"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Compositional Principles: Rule of Thirds",
+            "description": "Learn how to apply the rule of thirds to create balanced and visually engaging compositions. Examples and exercises provided."
+          },
+          {
+            "chapterTitle": "Leading Lines and Focal Points",
+            "description": "Explore the use of leading lines and focal points to guide the viewer's eye and create a sense of depth. Practice exercises included."
+          },
+          {
+            "chapterTitle": "Creating Dynamic Compositions",
+            "description": "Learn how to create dynamic and visually interesting compositions using various techniques. Examples and exercises provided."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Composition and Visual Storytelling"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Figure Drawing: Proportions and Anatomy",
+            "description": "A review of human proportions and basic anatomy for figure drawing. Practice drawing simplified figures."
+          },
+          {
+            "chapterTitle": "Gesture Drawing: Capturing Movement",
+            "description": "Learn how to capture the essence of a pose through gesture drawing. Practice drawing quick gesture sketches."
+          },
+          {
+            "chapterTitle": "Drawing the Human Face: Features and Expressions",
+            "description": "Explore the anatomy of the human face and learn how to draw realistic features and expressions. Practice drawing portraits."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Introduction to Figure Drawing"
+      }
+    ]
+  }
+}

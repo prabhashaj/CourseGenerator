@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-13 12:58:26.619832",
+  "input": {
+    "course_topic": "Mechanical Engineering",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.51,
+    "max_tokens": 2048,
+    "top_k": 21,
+    "top_p": 0.84
+  },
+  "output": {
+    "conclusion": "This course provides an advanced understanding of key mechanical engineering principles and their applications. Students will be equipped with the knowledge and skills necessary to tackle complex engineering challenges and contribute to innovation in the field.",
+    "courseTitle": "Advanced Mechanical Engineering",
+    "introduction": "Welcome to Advanced Mechanical Engineering! This course delves into advanced topics in mechanical engineering, building upon foundational knowledge to explore complex systems, analysis techniques, and design methodologies. Each module is designed to provide a comprehensive understanding of specific areas within mechanical engineering, preparing students for advanced research and professional practice.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Thermodynamics",
+            "description": "Review of fundamental thermodynamic principles. Introduction to advanced concepts such as exergy analysis, chemical thermodynamics, and non-equilibrium thermodynamics. Application to complex systems like power plants and refrigeration cycles."
+          },
+          {
+            "chapterTitle": "Computational Fluid Dynamics (CFD)",
+            "description": "Introduction to CFD methods, including finite volume method. Mesh generation techniques. Turbulence modeling. Application of CFD to analyze fluid flow in complex geometries and systems. Validation and verification of CFD results."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Thermodynamics and Fluid Mechanics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Finite Element Analysis (FEA)",
+            "description": "Introduction to FEA theory and methods. Element types and formulations. Static, dynamic, and thermal analysis using FEA software. Mesh refinement and convergence studies. Application to structural analysis, heat transfer, and vibration problems."
+          },
+          {
+            "chapterTitle": "Advanced Mechanics of Materials",
+            "description": "Stress and strain tensors. Failure theories for ductile and brittle materials. Fatigue analysis and fracture mechanics. Creep behavior of materials. Application to design of machine elements and structures under complex loading conditions."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Mechanics of Materials and FEA"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Control Systems Design",
+            "description": "Review of classical control techniques. Introduction to modern control methods, including state-space representation, pole placement, and optimal control. Digital control systems. Application to design of control systems for mechanical systems."
+          },
+          {
+            "chapterTitle": "Robotics and Automation",
+            "description": "Robot kinematics and dynamics. Trajectory planning and control. Sensor integration and perception. Robot programming and simulation. Application to industrial automation and robotics."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Control Systems and Robotics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Manufacturing Processes",
+            "description": "Advanced machining processes, including non-traditional machining. Additive manufacturing (3D printing) techniques. Surface engineering and coating technologies. Process optimization and control. Application to manufacturing of complex components."
+          },
+          {
+            "chapterTitle": "Materials Science and Engineering",
+            "description": "Advanced materials, including composites, ceramics, and polymers. Material selection for specific applications. Material characterization techniques. Failure analysis. Application to design of materials for mechanical systems."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Manufacturing and Materials"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Energy Systems",
+            "description": "Renewable energy technologies, including solar, wind, and geothermal. Energy storage systems. Energy efficiency and conservation. Sustainable energy solutions. Application to design of energy-efficient mechanical systems."
+          },
+          {
+            "chapterTitle": "Mechatronics",
+            "description": "Integration of mechanical, electrical, and computer engineering principles. Sensor and actuator selection. Microcontroller programming. System modeling and simulation. Application to design of mechatronic systems."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Energy Systems and Mechatronics"
+      }
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:26:43.202688",
+  "input": {
+    "course_topic": "Entrepreneurship Basics",
+    "difficulty_level": "Beginner",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.44,
+    "max_tokens": 2048,
+    "top_k": 21,
+    "top_p": 0.52
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a foundational understanding of entrepreneurship. You're now equipped to explore your business ideas further and take the first steps towards building your own venture. Remember to continuously learn, adapt, and never give up on your entrepreneurial dreams!",
+    "courseTitle": "Entrepreneurship Basics",
+    "introduction": "Welcome to Entrepreneurship Basics! This course is designed for beginners with little to no prior knowledge of business. We'll cover fundamental concepts to help you understand what it takes to start and run a successful business.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is Entrepreneurship?",
+            "description": "Defining entrepreneurship, its importance, and the role of entrepreneurs in the economy."
+          },
+          {
+            "chapterTitle": "Traits of Successful Entrepreneurs",
+            "description": "Exploring key characteristics like passion, resilience, and adaptability."
+          },
+          {
+            "chapterTitle": "Identifying Opportunities",
+            "description": "Learning how to spot unmet needs and potential business ideas."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Understanding Entrepreneurship"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Generating Business Ideas",
+            "description": "Brainstorming techniques and methods for coming up with innovative ideas."
+          },
+          {
+            "chapterTitle": "Evaluating Your Ideas",
+            "description": "Assessing the feasibility and potential of your business ideas."
+          },
+          {
+            "chapterTitle": "Choosing the Right Idea",
+            "description": "Selecting the best idea based on your skills, interests, and market demand."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Developing Your Business Idea"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is a Business Plan?",
+            "description": "Understanding the purpose and key components of a business plan."
+          },
+          {
+            "chapterTitle": "Market Research Basics",
+            "description": "Conducting basic market research to understand your target audience and competition."
+          },
+          {
+            "chapterTitle": "Basic Financial Projections",
+            "description": "Creating simple financial forecasts to estimate revenue and expenses."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Planning Your Business"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Funding Options for Startups",
+            "description": "Exploring different funding sources like bootstrapping, loans, and investors."
+          },
+          {
+            "chapterTitle": "Legal Structures for Businesses",
+            "description": "Understanding different business structures (sole proprietorship, LLC, etc.)."
+          },
+          {
+            "chapterTitle": "Taking the First Steps",
+            "description": "Practical advice on launching your business and overcoming initial challenges."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Launching Your Business"
+      }
+    ]
+  }
+}

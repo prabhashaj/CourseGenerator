@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 14:33:57.125901",
+  "input": {
+    "course_topic": "Electric Circuits",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.42,
+    "max_tokens": 2048,
+    "top_k": 12,
+    "top_p": 0.57
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of electric circuits, equipping students with the knowledge and skills necessary for advanced applications in electrical engineering.",
+    "courseTitle": "Advanced Electric Circuits",
+    "introduction": "Welcome to Advanced Electric Circuits! This course delves into the intricacies of circuit analysis and design, building upon foundational knowledge to explore complex concepts and practical applications.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Nodal Analysis Techniques",
+            "description": "Explore modified nodal analysis (MNA) and its application to circuits with dependent sources and operational amplifiers. Learn about sparse matrix techniques for efficient circuit simulation."
+          },
+          {
+            "chapterTitle": "Superposition Theorem Extensions",
+            "description": "Apply superposition to circuits with multiple independent and dependent sources. Analyze circuits with non-linear elements using piecewise linear approximations."
+          },
+          {
+            "chapterTitle": "Thevenin's and Norton's Theorems Revisited",
+            "description": "Determine Thevenin and Norton equivalents for complex circuits with dependent sources and operational amplifiers. Apply these theorems to simplify circuit analysis and design."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Circuit Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transient Response of Second-Order Circuits",
+            "description": "Analyze the transient response of RLC circuits with different damping conditions (overdamped, critically damped, underdamped). Determine the step response and impulse response of these circuits."
+          },
+          {
+            "chapterTitle": "State-Space Representation of Circuits",
+            "description": "Develop state-space models for electric circuits. Analyze the stability and controllability of circuits using state-space techniques."
+          },
+          {
+            "chapterTitle": "Laplace Transform Techniques in Circuit Analysis",
+            "description": "Apply Laplace transforms to solve circuit problems in the s-domain. Analyze the frequency response of circuits using Laplace transforms."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Transient Analysis and Laplace Transforms"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Two-Port Network Parameters",
+            "description": "Define and calculate two-port network parameters (Z, Y, H, T). Analyze the interconnection of two-port networks."
+          },
+          {
+            "chapterTitle": "Filter Design Fundamentals",
+            "description": "Design passive and active filters (low-pass, high-pass, band-pass, band-stop) using Butterworth, Chebyshev, and Bessel approximations."
+          },
+          {
+            "chapterTitle": "Advanced Filter Topologies",
+            "description": "Explore advanced filter topologies such as switched-capacitor filters and active-RC filters. Analyze the performance of these filters."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Two-Port Networks and Filter Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Non-Ideal Op-Amp Characteristics",
+            "description": "Analyze the effects of non-ideal op-amp characteristics (input bias current, input offset voltage, finite gain) on circuit performance."
+          },
+          {
+            "chapterTitle": "Advanced Op-Amp Applications",
+            "description": "Design and analyze circuits using op-amps for instrumentation amplifiers, active filters, and precision rectifiers."
+          },
+          {
+            "chapterTitle": "Stability Analysis of Feedback Amplifiers",
+            "description": "Analyze the stability of feedback amplifiers using Bode plots and Nyquist plots. Design compensation techniques to improve amplifier stability."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Op-Amp Circuits and Feedback"
+      }
+    ]
+  }
+}

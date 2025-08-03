@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-13 13:04:04.849111",
+  "input": {
+    "course_topic": "Chemical Engineering",
+    "difficulty_level": "Beginner",
+    "num_modules": 5,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.45,
+    "max_tokens": 1024,
+    "top_k": 20,
+    "top_p": 0.88
+  },
+  "output": {
+    "conclusion": "This introductory course provides a foundational understanding of chemical engineering principles. Further study and practical experience are necessary for advanced applications.",
+    "courseTitle": "Introduction to Chemical Engineering",
+    "introduction": "Welcome to the world of Chemical Engineering! This course will provide a beginner-friendly overview of the core concepts and principles that underpin this fascinating field.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is Chemical Engineering?",
+            "description": "An overview of the field, its applications, and its impact on society. Includes examples of chemical engineers at work."
+          },
+          {
+            "chapterTitle": "The Role of Chemical Engineers",
+            "description": "Discusses the various roles chemical engineers play in different industries, from pharmaceuticals to energy."
+          },
+          {
+            "chapterTitle": "Basic Concepts",
+            "description": "Introduces fundamental concepts like mass balance, energy balance, and transport phenomena."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Chemical Engineering"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Units and Dimensions",
+            "description": "Explanation of the importance of units and dimensions in chemical engineering calculations."
+          },
+          {
+            "chapterTitle": "SI Units",
+            "description": "Introduction to the International System of Units (SI) and their usage in chemical engineering."
+          },
+          {
+            "chapterTitle": "Conversion Factors",
+            "description": "Guidance on converting between different units using conversion factors."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Units and Dimensions"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Mole Concept",
+            "description": "Introduction to the concept of the mole and its importance in chemical reactions."
+          },
+          {
+            "chapterTitle": "Molecular Weight",
+            "description": "Explanation of molecular weight and how to calculate it."
+          },
+          {
+            "chapterTitle": "Stoichiometry",
+            "description": "Basic principles of stoichiometry and how to use it to balance chemical equations."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Basic Chemistry for Chemical Engineers"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Fluid Mechanics",
+            "description": "Overview of fluid properties such as density, viscosity, and pressure."
+          },
+          {
+            "chapterTitle": "Fluid Statics",
+            "description": "Introduction to fluid statics and the concept of hydrostatic pressure."
+          },
+          {
+            "chapterTitle": "Fluid Dynamics",
+            "description": "Basic concepts of fluid flow, including laminar and turbulent flow."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Introduction to Fluid Mechanics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Heat Transfer Basics",
+            "description": "Introduction to the modes of heat transfer: conduction, convection, and radiation."
+          },
+          {
+            "chapterTitle": "Conduction",
+            "description": "Explanation of heat transfer by conduction and Fourier's Law."
+          },
+          {
+            "chapterTitle": "Convection",
+            "description": "Overview of heat transfer by convection and Newton's Law of Cooling."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Introduction to Heat Transfer"
+      }
+    ]
+  }
+}

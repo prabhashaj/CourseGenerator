@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-16 18:33:23.010905",
+  "input": {
+    "course_topic": "Telecommunication Switching",
+    "difficulty_level": "Beginner",
+    "num_modules": 5,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.63,
+    "max_tokens": 2048,
+    "top_k": 23,
+    "top_p": 0.84
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of telecommunication switching principles, preparing you for more advanced topics in telecommunications.",
+    "courseTitle": "Telecommunication Switching Fundamentals",
+    "introduction": "Welcome to the Telecommunication Switching course! This course introduces the fundamental concepts of telecommunication switching systems. We'll explore different switching techniques and their applications in modern communication networks.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Switching",
+            "description": "Overview of telecommunication networks and the role of switching. Basic definitions: switching node, link, circuit, packet. Historical perspective of switching systems."
+          },
+          {
+            "chapterTitle": "Types of Switching",
+            "description": "Circuit switching vs. packet switching. Comparison of advantages and disadvantages. Applications of each type of switching."
+          },
+          {
+            "chapterTitle": "Basic Switching Functions",
+            "description": "Call establishment, call maintenance, and call termination. Signaling protocols overview. Addressing and routing concepts."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Telecommunication Switching"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Space Division Switching",
+            "description": "Principle of space division switching. Crossbar switches and their limitations. Blocking probability in space division switches."
+          },
+          {
+            "chapterTitle": "Time Division Switching",
+            "description": "Principle of time division switching. Time slot interchange (TSI). Time multiplexed switching (TMS)."
+          },
+          {
+            "chapterTitle": "Combination Switching",
+            "description": "Combining space and time division switching. Multistage switches. Advantages and disadvantages of multistage switches."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Switching Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Signaling Basics",
+            "description": "Definition of signaling. In-band vs. out-of-band signaling. Common signaling protocols: SS7, SIP."
+          },
+          {
+            "chapterTitle": "SS7 Signaling",
+            "description": "Overview of SS7 architecture. Message Transfer Part (MTP). Signaling Connection Control Part (SCCP)."
+          },
+          {
+            "chapterTitle": "SIP Signaling",
+            "description": "Overview of SIP protocol. SIP messages: INVITE, ACK, BYE. SIP architecture and components."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Signaling in Telecommunication Networks"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Telephone Network Structure",
+            "description": "Hierarchical structure of the telephone network. Local exchange, tandem exchange, toll exchange. Numbering plan."
+          },
+          {
+            "chapterTitle": "Switching in the PSTN",
+            "description": "Call routing in the PSTN. Trunk groups and their role. Call setup and teardown process."
+          },
+          {
+            "chapterTitle": "Modern PSTN Evolution",
+            "description": "Introduction to VoIP and its impact on the PSTN. Migration from circuit switching to packet switching."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Switching in the PSTN"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Packet Switching Principles",
+            "description": "Principles of packet switching. Packet formats and headers. Routing algorithms in packet switched networks."
+          },
+          {
+            "chapterTitle": "Switching in IP Networks",
+            "description": "IP addressing and routing. Routers and their functions. Quality of Service (QoS) in IP networks."
+          },
+          {
+            "chapterTitle": "MPLS Switching",
+            "description": "Introduction to MPLS. Label switching. MPLS architecture and benefits."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Packet Switching in Modern Networks"
+      }
+    ]
+  }
+}

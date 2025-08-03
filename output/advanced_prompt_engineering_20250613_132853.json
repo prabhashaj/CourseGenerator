@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 13:28:53.331263",
+  "input": {
+    "course_topic": "Prompt Engineering",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.51,
+    "max_tokens": 2048,
+    "top_k": 15,
+    "top_p": 0.76
+  },
+  "output": {
+    "conclusion": "By the end of this course, you will be equipped with advanced prompt engineering techniques to effectively interact with and leverage large language models for a wide range of complex tasks.",
+    "courseTitle": "Advanced Prompt Engineering",
+    "introduction": "Welcome to Advanced Prompt Engineering! This course is designed for individuals with a foundational understanding of prompt engineering who are looking to master advanced techniques for eliciting optimal responses from large language models. We will delve into complex prompting strategies, explore methods for handling ambiguity, and examine techniques for controlling model behavior to achieve specific outcomes.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Prompting Techniques: Chain-of-Thought Mastery",
+            "description": "Explore the nuances of Chain-of-Thought prompting. Learn how to design prompts that guide the model to break down complex problems into smaller, manageable steps, leading to more accurate and reliable results. We'll cover variations like Zero-shot CoT and strategies for improving reasoning."
+          },
+          {
+            "chapterTitle": "Few-Shot Learning: Optimizing Examples for Performance",
+            "description": "Dive deeper into few-shot learning. Understand how the selection and formatting of examples significantly impact model performance. Learn techniques for crafting effective examples that maximize the model's ability to generalize and adapt to new tasks."
+          },
+          {
+            "chapterTitle": "Prompt Ensembling: Combining Prompts for Robustness",
+            "description": "Discover the power of prompt ensembling. Learn how to create multiple prompts that target different aspects of a problem and combine their outputs to achieve more robust and accurate results. Explore different ensembling methods and their applications."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Prompting Strategies"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Handling Ambiguity: Clarification and Context Injection",
+            "description": "Learn techniques for addressing ambiguity in user queries. Explore methods for prompting the model to ask clarifying questions and for injecting contextual information to resolve ambiguity and ensure accurate responses."
+          },
+          {
+            "chapterTitle": "Prompt Decomposition: Breaking Down Complex Tasks",
+            "description": "Master the art of prompt decomposition. Learn how to break down complex tasks into smaller, more manageable sub-prompts that can be processed sequentially or in parallel. Explore different decomposition strategies and their applications."
+          },
+          {
+            "chapterTitle": "Constraint-Based Prompting: Guiding Model Behavior",
+            "description": "Explore constraint-based prompting techniques. Learn how to incorporate constraints into your prompts to guide the model's behavior and ensure that the generated output adheres to specific requirements and limitations."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Managing Ambiguity and Complexity"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Controlling Model Output: Temperature and Top-P Sampling",
+            "description": "Gain a deeper understanding of temperature and top-p sampling. Learn how to adjust these parameters to control the randomness and creativity of the model's output. Explore the trade-offs between exploration and exploitation."
+          },
+          {
+            "chapterTitle": "Output Formatting: Structuring Responses for Consumption",
+            "description": "Master techniques for formatting model output to meet specific requirements. Learn how to use prompts to guide the model to generate structured data, such as JSON or XML, that can be easily consumed by other applications."
+          },
+          {
+            "chapterTitle": "Bias Mitigation: Identifying and Reducing Bias in Prompts",
+            "description": "Learn how to identify and mitigate bias in prompts. Explore techniques for crafting prompts that are fair, unbiased, and inclusive. Understand the ethical considerations involved in prompt engineering and the importance of responsible AI development."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Controlling Model Behavior and Output"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Prompt Engineering for Code Generation: Advanced Techniques",
+            "description": "Explore advanced prompt engineering techniques specifically for code generation tasks. Learn how to use prompts to guide the model to generate efficient, accurate, and well-documented code in various programming languages."
+          },
+          {
+            "chapterTitle": "Prompt Engineering for Creative Writing: Storytelling and Content Creation",
+            "description": "Discover how to leverage prompt engineering for creative writing tasks. Learn how to use prompts to generate compelling stories, poems, and other forms of creative content. Explore techniques for controlling style, tone, and narrative structure."
+          },
+          {
+            "chapterTitle": "Prompt Engineering for Data Analysis: Extracting Insights and Generating Reports",
+            "description": "Learn how to use prompt engineering for data analysis tasks. Explore techniques for extracting insights from data, generating reports, and creating visualizations using prompts. Understand the limitations and potential of prompt engineering in data analysis."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Applications of Advanced Prompt Engineering"
+      }
+    ]
+  }
+}

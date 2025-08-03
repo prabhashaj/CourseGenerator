@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 14:28:41.754468",
+  "input": {
+    "course_topic": "Evolution",
+    "difficulty_level": "Advanced",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.41,
+    "max_tokens": 1024,
+    "top_k": 32,
+    "top_p": 0.71
+  },
+  "output": {
+    "conclusion": "Evolution is a complex and ongoing process, shaping the diversity of life on Earth. Understanding its mechanisms and implications is crucial for addressing contemporary challenges in medicine, conservation, and agriculture.",
+    "courseTitle": "Advanced Evolutionary Biology",
+    "introduction": "This advanced course delves into the intricacies of evolutionary processes, exploring the genetic, ecological, and historical factors that drive adaptation and diversification. We will examine cutting-edge research and theoretical frameworks to gain a comprehensive understanding of evolution's role in shaping the natural world.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Modern Synthesis Revisited",
+            "description": "A critical examination of the Modern Synthesis, its strengths, and its limitations in light of recent discoveries in genomics and developmental biology. Focus on the integration of Mendelian genetics with Darwinian evolution and the challenges posed by non-Mendelian inheritance."
+          },
+          {
+            "chapterTitle": "Mutation and Variation",
+            "description": "An in-depth look at the sources of genetic variation, including mutation, recombination, and gene flow. Discussion of mutation rates, types of mutations, and their impact on fitness. Exploration of the role of standing genetic variation in adaptation."
+          },
+          {
+            "chapterTitle": "Selection in Complex Environments",
+            "description": "Analysis of natural selection in spatially and temporally varying environments. Consideration of different forms of selection (directional, stabilizing, disruptive) and their effects on allele frequencies. Examination of the evolution of phenotypic plasticity and reaction norms."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Mechanisms of Evolutionary Change"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Phylogenetic Methods",
+            "description": "Advanced techniques for reconstructing evolutionary relationships, including Bayesian inference and maximum likelihood methods. Discussion of the challenges of phylogenetic inference, such as long-branch attraction and incomplete lineage sorting."
+          },
+          {
+            "chapterTitle": "Molecular Clocks and Dating",
+            "description": "Calibration of molecular clocks using fossil data and biogeographic information. Examination of the assumptions and limitations of molecular dating methods. Application of molecular clocks to estimate divergence times and rates of evolution."
+          },
+          {
+            "chapterTitle": "Comparative Genomics",
+            "description": "Using genomic data to study evolutionary patterns and processes across different species. Analysis of gene duplication, gene loss, and horizontal gene transfer. Exploration of the evolution of genome size and organization."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Reconstructing Evolutionary History"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Evolution of Development",
+            "description": "The role of developmental genes in shaping evolutionary change. Examination of the evolution of body plans, segmentation, and limb development. Discussion of the concept of homology and the evolution of novel structures."
+          },
+          {
+            "chapterTitle": "Evolution of Behavior",
+            "description": "Genetic and environmental influences on animal behavior. Focus on the evolution of social behavior, communication, and mating systems. Examination of the role of kin selection, reciprocal altruism, and sexual selection in shaping behavior."
+          },
+          {
+            "chapterTitle": "Human Evolution",
+            "description": "A detailed overview of human evolution, including the fossil record, genetic evidence, and cultural evolution. Discussion of the origins of bipedalism, language, and tool use. Exploration of the genetic basis of human adaptation to different environments."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Evolutionary Applications and Implications"
+      }
+    ]
+  }
+}

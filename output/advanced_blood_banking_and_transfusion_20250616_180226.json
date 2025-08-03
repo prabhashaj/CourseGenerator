@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-16 18:02:26.529293",
+  "input": {
+    "course_topic": "Blood Banking and Transfusion",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.55,
+    "max_tokens": 2048,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, participants will possess a comprehensive understanding of advanced blood banking and transfusion principles, enabling them to contribute effectively to safe and efficient transfusion practices.",
+    "courseTitle": "Advanced Blood Banking and Transfusion",
+    "introduction": "This advanced course delves into the complexities of blood banking and transfusion medicine, building upon foundational knowledge to explore advanced techniques, challenging cases, and emerging trends in the field. It is designed for experienced laboratory professionals, physicians, and other healthcare providers involved in transfusion services.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Immunohematology Techniques",
+            "description": "Explore advanced techniques like elution, adsorption, and complex antibody identification panels. Discuss troubleshooting strategies for resolving complex serological reactions."
+          },
+          {
+            "chapterTitle": "Molecular Blood Grouping",
+            "description": "Introduction to molecular techniques for blood group genotyping. Explore applications in resolving discrepancies, predicting phenotypes, and managing alloimmunized patients."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Immunohematology"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transfusion-Related Acute Lung Injury (TRALI)",
+            "description": "In-depth review of TRALI pathophysiology, risk factors, diagnosis, and management strategies. Discuss preventative measures and current research."
+          },
+          {
+            "chapterTitle": "Transfusion-Associated Circulatory Overload (TACO)",
+            "description": "Detailed discussion of TACO, including risk factors, clinical presentation, diagnostic criteria, and strategies for prevention and management."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Transfusion Reactions: Advanced Concepts"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Massive Transfusion Protocols",
+            "description": "Review of massive transfusion protocols (MTPs). Discuss component ratios, goal-directed therapy, and monitoring strategies in trauma and surgical settings."
+          },
+          {
+            "chapterTitle": "Transfusion in Special Populations",
+            "description": "Examine transfusion considerations in specific patient populations, including neonates, pregnant women, and patients with hematological malignancies."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Special Transfusion Situations"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Quality Assurance in Transfusion Medicine",
+            "description": "Review quality assurance principles and practices in transfusion services. Discuss key performance indicators, audit processes, and continuous improvement strategies."
+          },
+          {
+            "chapterTitle": "Regulatory Compliance and Accreditation",
+            "description": "Overview of relevant regulatory requirements and accreditation standards for blood banks and transfusion services (e.g., FDA, AABB). Discuss compliance strategies and inspection preparedness."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Quality and Regulatory Aspects"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Emerging Infectious Threats to the Blood Supply",
+            "description": "Discussion of emerging infectious diseases that pose a threat to blood safety. Review screening strategies, pathogen reduction technologies, and risk mitigation approaches."
+          },
+          {
+            "chapterTitle": "Advances in Blood Component Therapy",
+            "description": "Explore recent advancements in blood component processing, storage, and utilization. Discuss new technologies and their impact on transfusion practice."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Future Trends in Transfusion Medicine"
+      }
+    ]
+  }
+}

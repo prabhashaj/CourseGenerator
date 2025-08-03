@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 14:37:37.515642",
+  "input": {
+    "course_topic": "Utilization of Electrical Energy",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.4,
+    "max_tokens": 2048,
+    "top_k": 32,
+    "top_p": 0.62
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, you will have a foundational understanding of electrical energy utilization, enabling you to make informed decisions about energy consumption and efficiency.",
+    "courseTitle": "Utilization of Electrical Energy",
+    "introduction": "Welcome to the 'Utilization of Electrical Energy' course! This course provides a beginner-friendly introduction to the principles and applications of electrical energy in various sectors. We will explore fundamental concepts, practical applications, and energy-saving techniques.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Electrical Energy",
+            "description": "What is electrical energy? Forms of energy. Importance of electrical energy in modern life. Basic units of electrical energy (Watt, Kilowatt, Kilowatt-hour)."
+          },
+          {
+            "chapterTitle": "Sources of Electrical Energy",
+            "description": "Overview of different sources: Renewable (solar, wind, hydro) and Non-Renewable (coal, natural gas, nuclear). Brief discussion on energy conversion processes."
+          },
+          {
+            "chapterTitle": "Electrical Circuits Basics",
+            "description": "Introduction to circuits: series and parallel. Voltage, current, and resistance. Ohm's Law (V=IR) and its applications. Simple circuit calculations."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Electrical Energy"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Electrical Appliances and Devices",
+            "description": "Common electrical appliances in homes and industries. Power ratings of appliances. Understanding energy consumption labels."
+          },
+          {
+            "chapterTitle": "Lighting Systems",
+            "description": "Different types of lighting: Incandescent, Fluorescent, LED. Energy efficiency of different lighting technologies. Choosing the right lighting for different applications."
+          },
+          {
+            "chapterTitle": "Electric Motors",
+            "description": "Introduction to electric motors. Types of motors (AC and DC). Applications of electric motors in various industries."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Applications of Electrical Energy"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Energy Conservation Techniques",
+            "description": "Simple ways to save energy at home and in the workplace. Turning off lights, unplugging devices, using energy-efficient appliances."
+          },
+          {
+            "chapterTitle": "Energy Auditing",
+            "description": "What is an energy audit? Identifying energy wastage. Basic steps in conducting an energy audit."
+          },
+          {
+            "chapterTitle": "Renewable Energy Integration",
+            "description": "Integrating renewable energy sources into homes and businesses. Solar panels, wind turbines, and their applications. Government incentives for renewable energy adoption."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Energy Efficiency and Conservation"
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-13 12:58:51.532082",
+  "input": {
+    "course_topic": "3D Modeling",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.34,
+    "max_tokens": 1024,
+    "top_k": 27,
+    "top_p": 0.68
+  },
+  "output": {
+    "conclusion": "By the end of this course, you will have mastered advanced 3D modeling techniques, enabling you to create complex and visually stunning models for various applications.",
+    "courseTitle": "Advanced 3D Modeling",
+    "introduction": "Welcome to Advanced 3D Modeling! This course is designed for experienced 3D modelers looking to elevate their skills. We will delve into complex techniques, advanced software features, and industry best practices.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Subdivision Modeling Techniques",
+            "description": "Explore advanced subdivision modeling techniques for creating smooth, organic shapes with intricate details. Learn to optimize topology for animation and rendering."
+          },
+          {
+            "chapterTitle": "Sculpting High-Resolution Details",
+            "description": "Master digital sculpting tools to add fine details and textures to your models. Learn about brushes, layers, and advanced sculpting workflows."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Modeling Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding UV Mapping Principles",
+            "description": "Delve into the principles of UV mapping and unwrapping complex models. Learn to minimize distortion and optimize UV layouts for efficient texturing."
+          },
+          {
+            "chapterTitle": "Creating Custom UV Layouts",
+            "description": "Explore advanced techniques for creating custom UV layouts, including using seams, projections, and specialized UV editing tools."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced UV Mapping"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "PBR Texturing Workflows",
+            "description": "Learn about Physically Based Rendering (PBR) and how to create realistic textures using PBR workflows. Explore different material properties and their impact on rendering."
+          },
+          {
+            "chapterTitle": "Creating Custom Materials and Shaders",
+            "description": "Dive into creating custom materials and shaders using node-based editors. Learn to control material properties and create unique visual effects."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Texturing and Shading"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Rigging Complex Characters",
+            "description": "Explore advanced rigging techniques for creating complex character rigs with realistic deformation. Learn about bone constraints, IK solvers, and custom controls."
+          },
+          {
+            "chapterTitle": "Creating Custom Animation Rigs",
+            "description": "Learn to create custom animation rigs with advanced features such as procedural animation and dynamic simulations."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Rigging and Animation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Optimizing Models for Real-Time Rendering",
+            "description": "Learn techniques for optimizing 3D models for real-time rendering in game engines and other applications. Explore polygon reduction, LOD generation, and texture optimization."
+          },
+          {
+            "chapterTitle": "Advanced Rendering Techniques",
+            "description": "Explore advanced rendering techniques such as ray tracing, global illumination, and ambient occlusion. Learn to create photorealistic renders with advanced lighting and shading effects."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Optimization and Rendering"
+      }
+    ]
+  }
+}

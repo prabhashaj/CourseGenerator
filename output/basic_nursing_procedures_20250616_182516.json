@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:25:16.286673",
+  "input": {
+    "course_topic": "Basic Nursing Procedures",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.62,
+    "max_tokens": 1024,
+    "top_k": 15,
+    "top_p": 0.57
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, you will have a foundational understanding of basic nursing procedures, enabling you to assist in patient care under supervision.",
+    "courseTitle": "Basic Nursing Procedures",
+    "introduction": "Welcome to Basic Nursing Procedures! This course is designed for beginners and will introduce you to essential skills for assisting in patient care. Each module is designed to take approximately 10 minutes to read.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Nursing",
+            "description": "Overview of the nursing profession, roles and responsibilities of a nurse, ethical considerations, and patient rights."
+          },
+          {
+            "chapterTitle": "Basic Hygiene Practices",
+            "description": "Handwashing techniques, personal protective equipment (PPE) usage, and maintaining a clean environment."
+          },
+          {
+            "chapterTitle": "Vital Signs: Temperature",
+            "description": "Understanding body temperature, methods of measurement (oral, axillary, tympanic), and normal ranges."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Nursing and Basic Hygiene"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Vital Signs: Pulse and Respiration",
+            "description": "Measuring pulse rate and rhythm, assessing respiratory rate and depth, and normal ranges."
+          },
+          {
+            "chapterTitle": "Vital Signs: Blood Pressure",
+            "description": "Understanding blood pressure, using a sphygmomanometer, and normal ranges."
+          },
+          {
+            "chapterTitle": "Patient Positioning",
+            "description": "Common patient positions (supine, prone, lateral, Fowler's), and their uses."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Vital Signs and Patient Positioning"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Assisting with Feeding",
+            "description": "Preparing patients for meals, assisting with feeding, and documenting intake."
+          },
+          {
+            "chapterTitle": "Measuring Intake and Output",
+            "description": "Recording fluid intake and output, and understanding its importance."
+          },
+          {
+            "chapterTitle": "Basic Bed Making",
+            "description": "Techniques for making an unoccupied bed and occupied bed."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Nutrition and Basic Bed Making"
+      }
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-06-16 18:29:26.860324",
+  "input": {
+    "course_topic": "Machine Design",
+    "difficulty_level": "Advanced",
+    "num_modules": 6,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.54,
+    "max_tokens": 2048,
+    "top_k": 24,
+    "top_p": 0.8
+  },
+  "output": {
+    "conclusion": "This course provides an advanced understanding of machine design principles, enabling you to design and analyze complex mechanical systems effectively.",
+    "courseTitle": "Advanced Machine Design",
+    "introduction": "Welcome to Advanced Machine Design! This course delves into the intricacies of designing robust and efficient mechanical systems, building upon fundamental concepts to tackle complex engineering challenges.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Stress Analysis Techniques",
+            "description": "Explore advanced stress concentration factors, residual stresses, and their impact on component life."
+          },
+          {
+            "chapterTitle": "Finite Element Analysis (FEA) Refresher",
+            "description": "A quick recap of FEA principles and its application in machine design, focusing on meshing strategies and boundary conditions."
+          },
+          {
+            "chapterTitle": "Failure Theories for Ductile and Brittle Materials",
+            "description": "In-depth analysis of various failure theories like Von Mises, Tresca, and Modified Mohr, and their applicability based on material properties."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Stress and Failure Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fatigue Life Prediction Models",
+            "description": "Detailed study of S-N curves, Basquin's equation, and various fatigue life prediction models considering mean stress effects."
+          },
+          {
+            "chapterTitle": "Surface Treatments and Fatigue Resistance",
+            "description": "Investigate the influence of surface treatments like shot peening, carburizing, and nitriding on improving fatigue life."
+          },
+          {
+            "chapterTitle": "Crack Propagation and Fracture Mechanics",
+            "description": "Introduction to fracture mechanics concepts, stress intensity factors, and crack growth rate analysis using Paris' law."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Fatigue and Fracture Mechanics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Gear Geometry and Kinematics",
+            "description": "Advanced topics in gear design, including non-standard gear tooth profiles and gear train analysis."
+          },
+          {
+            "chapterTitle": "Gear Material Selection and Heat Treatment",
+            "description": "Criteria for selecting appropriate gear materials and heat treatment processes to achieve desired strength and durability."
+          },
+          {
+            "chapterTitle": "Gearbox Design Considerations",
+            "description": "Overview of gearbox design principles, including lubrication, cooling, and vibration analysis."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Gear Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Bearing Types and Selection Criteria",
+            "description": "Detailed classification of bearing types and the factors influencing bearing selection for specific applications."
+          },
+          {
+            "chapterTitle": "Lubrication Systems for Bearings",
+            "description": "Explore different lubrication methods and their impact on bearing performance and lifespan."
+          },
+          {
+            "chapterTitle": "Bearing Failure Analysis",
+            "description": "Common bearing failure modes and diagnostic techniques for identifying the root cause of failure."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Bearing Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Vibration Analysis of Rotating Machinery",
+            "description": "Fundamentals of vibration analysis, including natural frequencies, mode shapes, and resonance."
+          },
+          {
+            "chapterTitle": "Balancing Techniques for Rotating Components",
+            "description": "Static and dynamic balancing methods for reducing vibration in rotating machinery."
+          },
+          {
+            "chapterTitle": "Vibration Isolation and Damping",
+            "description": "Techniques for isolating vibration sources and implementing damping mechanisms to reduce vibration amplitudes."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Vibration Analysis and Control"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Design Optimization Techniques",
+            "description": "Introduction to optimization algorithms and their application in machine design for improving performance and reducing weight."
+          },
+          {
+            "chapterTitle": "Design for Manufacturing (DFM) Principles",
+            "description": "Guidelines for designing components that are easy to manufacture and assemble, reducing production costs."
+          },
+          {
+            "chapterTitle": "Case Studies in Machine Design",
+            "description": "Real-world examples of machine design projects, highlighting the application of advanced concepts and problem-solving strategies."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Design Optimization and Case Studies"
+      }
+    ]
+  }
+}

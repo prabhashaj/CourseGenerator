@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 17:59:10.290322",
+  "input": {
+    "course_topic": "Control Systems",
+    "difficulty_level": "Advanced",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.6,
+    "max_tokens": 2048,
+    "top_k": 18,
+    "top_p": 0.78
+  },
+  "output": {
+    "conclusion": "This course provides an advanced understanding of control systems, equipping students with the knowledge and skills to analyze, design, and implement sophisticated control strategies for complex systems.",
+    "courseTitle": "Advanced Control Systems",
+    "introduction": "Welcome to Advanced Control Systems! This course delves into the intricacies of control system design and analysis, building upon foundational knowledge to explore advanced topics such as nonlinear control, optimal control, and adaptive control. We will use mathematical modeling and simulation tools to understand and implement control systems.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Nonlinear System Analysis",
+            "description": "Introduction to nonlinear systems, describing functions, phase plane analysis, limit cycles, and stability analysis using Lyapunov's methods. Examples of common nonlinearities in control systems."
+          },
+          {
+            "chapterTitle": "Feedback Linearization",
+            "description": "Exact and input-output linearization techniques for nonlinear systems. Application of feedback linearization to control design. Case studies and examples."
+          },
+          {
+            "chapterTitle": "Sliding Mode Control",
+            "description": "Introduction to sliding mode control, design of sliding surfaces, chattering phenomenon, and methods for chattering reduction. Applications in robotics and aerospace."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Nonlinear Control Systems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Optimal Control Theory",
+            "description": "Introduction to optimal control problems, performance indices, Pontryagin's minimum principle, and Hamilton-Jacobi-Bellman equation. Examples of optimal control problems."
+          },
+          {
+            "chapterTitle": "Linear Quadratic Regulator (LQR)",
+            "description": "LQR design for continuous-time and discrete-time systems. Selection of weighting matrices, stability analysis, and robustness considerations. Practical implementation of LQR."
+          },
+          {
+            "chapterTitle": "Model Predictive Control (MPC)",
+            "description": "Introduction to MPC, prediction models, cost functions, constraints, and optimization algorithms. Applications of MPC in process control and automotive systems."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Optimal Control"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Adaptive Control Systems",
+            "description": "Introduction to adaptive control, direct and indirect adaptive control schemes, parameter estimation techniques, and stability analysis of adaptive systems."
+          },
+          {
+            "chapterTitle": "Model Reference Adaptive Control (MRAC)",
+            "description": "MRAC design for linear and nonlinear systems. MIT rule, Lyapunov redesign, and stability augmentation techniques. Applications of MRAC in aerospace and robotics."
+          },
+          {
+            "chapterTitle": "Self-Tuning Regulators (STR)",
+            "description": "Introduction to STR, recursive parameter estimation, pole placement design, and robustness considerations. Applications of STR in process control and automotive systems."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Adaptive Control"
+      }
+    ]
+  }
+}

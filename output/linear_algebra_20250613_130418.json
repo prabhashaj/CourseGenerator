@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-06-13 13:04:18.554928",
+  "input": {
+    "course_topic": "Linear Algebra",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.36,
+    "max_tokens": 2048,
+    "top_k": 26,
+    "top_p": 0.75
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in linear algebra, equipping you with the essential tools and techniques for various applications in mathematics, science, and engineering.",
+    "courseTitle": "Linear Algebra",
+    "introduction": "Welcome to Linear Algebra! This course will cover fundamental concepts such as vectors, matrices, linear transformations, and eigenvalues. Designed for intermediate learners, we will delve into both the theoretical underpinnings and practical applications of these concepts.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Vectors and Vector Spaces",
+            "description": "Introduction to vectors, vector spaces, subspaces, linear combinations, and span. Examples of vector spaces."
+          },
+          {
+            "chapterTitle": "Linear Independence and Basis",
+            "description": "Linear independence, basis, dimension of a vector space, and coordinates with respect to a basis."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Vector Spaces"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Matrix Operations",
+            "description": "Matrix addition, scalar multiplication, matrix multiplication, transpose, and inverse of a matrix."
+          },
+          {
+            "chapterTitle": "Special Matrices",
+            "description": "Identity matrix, diagonal matrix, triangular matrices, symmetric matrices, and skew-symmetric matrices."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Matrices"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Linear Transformations",
+            "description": "Definition of linear transformations, examples, kernel and range of a linear transformation."
+          },
+          {
+            "chapterTitle": "Matrix Representation",
+            "description": "Matrix representation of a linear transformation, change of basis, and similarity transformations."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Linear Transformations"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Eigenvalues and Eigenvectors",
+            "description": "Definition of eigenvalues and eigenvectors, characteristic polynomial, and eigenspaces."
+          },
+          {
+            "chapterTitle": "Diagonalization",
+            "description": "Diagonalization of matrices, applications of diagonalization, and Cayley-Hamilton theorem."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Eigenvalues and Eigenvectors"
+      }
+    ]
+  }
+}

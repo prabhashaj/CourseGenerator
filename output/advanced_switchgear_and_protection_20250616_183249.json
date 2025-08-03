@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:32:49.111682",
+  "input": {
+    "course_topic": "Switchgear and Protection",
+    "difficulty_level": "Advanced",
+    "num_modules": 6,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.32,
+    "max_tokens": 1024,
+    "top_k": 18,
+    "top_p": 0.57
+  },
+  "output": {
+    "conclusion": "Upon completion of this advanced course, participants will possess a comprehensive understanding of switchgear and protection principles, enabling them to effectively analyze, design, and maintain electrical power systems with enhanced reliability and safety.",
+    "courseTitle": "Advanced Switchgear and Protection",
+    "introduction": "This advanced course delves into the intricacies of switchgear and protection systems, building upon fundamental concepts to explore advanced techniques and technologies used in modern power systems. It is designed for experienced engineers and technical professionals seeking to enhance their expertise in this critical area.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Power System Fault Analysis",
+            "description": "In-depth analysis of symmetrical and unsymmetrical faults, including sequence networks and fault current calculations for complex power system configurations."
+          },
+          {
+            "chapterTitle": "Transient Stability Analysis",
+            "description": "Understanding transient stability phenomena, factors affecting stability, and methods for improving transient stability performance."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Power System Faults and Stability"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Circuit Breaker Technologies",
+            "description": "Detailed examination of various circuit breaker technologies, including SF6, vacuum, and air-blast circuit breakers, focusing on their operating principles and applications."
+          },
+          {
+            "chapterTitle": "Circuit Breaker Selection and Application",
+            "description": "Criteria for selecting appropriate circuit breakers based on voltage level, fault current rating, and application requirements."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Circuit Breaker Technologies"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Protection Relay Characteristics",
+            "description": "Advanced analysis of protection relay characteristics, including time-current curves, operating principles, and relay coordination techniques."
+          },
+          {
+            "chapterTitle": "Digital Relay Algorithms",
+            "description": "Exploration of digital relay algorithms, such as Fourier analysis, wavelet transforms, and adaptive protection schemes."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Protection Relaying"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transformer Protection",
+            "description": "Comprehensive coverage of transformer protection schemes, including differential protection, overcurrent protection, and restricted earth fault protection."
+          },
+          {
+            "chapterTitle": "Generator Protection",
+            "description": "Detailed analysis of generator protection schemes, including differential protection, loss of excitation protection, and overvoltage protection."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Protection of Power System Equipment"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Busbar Protection",
+            "description": "Advanced techniques for busbar protection, including differential protection, high impedance differential protection, and frame leakage protection."
+          },
+          {
+            "chapterTitle": "Transmission Line Protection",
+            "description": "In-depth analysis of transmission line protection schemes, including distance protection, pilot protection, and directional comparison protection."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Protection of Power System Networks"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "IEC 61850 Standard",
+            "description": "Detailed overview of the IEC 61850 standard for communication networks and systems in substations, including its architecture, protocols, and applications."
+          },
+          {
+            "chapterTitle": "Smart Grid Protection",
+            "description": "Exploration of protection challenges and solutions in smart grid environments, including distributed generation, microgrids, and wide-area protection systems."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Emerging Trends in Switchgear and Protection"
+      }
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-06-16 18:29:53.193423",
+  "input": {
+    "course_topic": "Basic Electrical Engineering",
+    "difficulty_level": "Advanced",
+    "num_modules": 6,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.37,
+    "max_tokens": 2048,
+    "top_k": 14,
+    "top_p": 0.56
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of basic electrical engineering principles, equipping you with the knowledge to analyze and design simple electrical circuits and systems.",
+    "courseTitle": "Basic Electrical Engineering",
+    "introduction": "Welcome to Basic Electrical Engineering! This course is designed for advanced learners and provides a comprehensive overview of fundamental electrical concepts, circuit analysis techniques, and basic electrical components. Each module is designed to be concise and informative, allowing you to grasp key concepts quickly.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Electrical Quantities",
+            "description": "Definition of voltage, current, charge, power, and energy. Units of measurement (Volts, Amperes, Coulombs, Watts, Joules). Introduction to conventional current flow."
+          },
+          {
+            "chapterTitle": "Ohm's Law",
+            "description": "Statement of Ohm's Law (V = IR). Applications of Ohm's Law in simple circuits. Calculating voltage, current, or resistance given the other two."
+          },
+          {
+            "chapterTitle": "Electrical Power and Energy",
+            "description": "Calculating electrical power (P = VI = I^2R = V^2/R). Calculating electrical energy consumption (E = Pt). Practical examples of power and energy calculations."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamental Electrical Concepts"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Series Circuits",
+            "description": "Characteristics of series circuits: current is the same throughout, voltage divides. Calculating total resistance in series. Voltage divider rule."
+          },
+          {
+            "chapterTitle": "Parallel Circuits",
+            "description": "Characteristics of parallel circuits: voltage is the same across all branches, current divides. Calculating total resistance in parallel. Current divider rule."
+          },
+          {
+            "chapterTitle": "Series-Parallel Circuits",
+            "description": "Analyzing circuits with both series and parallel combinations. Step-by-step reduction techniques. Applying Ohm's Law and Kirchhoff's Laws."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Basic Circuit Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Kirchhoff's Current Law (KCL)",
+            "description": "Statement of KCL: the sum of currents entering a node equals the sum of currents leaving the node. Applying KCL to solve for unknown currents."
+          },
+          {
+            "chapterTitle": "Kirchhoff's Voltage Law (KVL)",
+            "description": "Statement of KVL: the sum of voltage drops around a closed loop equals zero. Applying KVL to solve for unknown voltages."
+          },
+          {
+            "chapterTitle": "Applications of KCL and KVL",
+            "description": "Solving more complex circuits using KCL and KVL. Choosing appropriate loops and nodes for analysis. Examples with multiple voltage and current sources."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Kirchhoff's Laws"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Resistors",
+            "description": "Types of resistors: carbon film, metal film, wirewound. Resistor color codes and tolerance. Power ratings of resistors."
+          },
+          {
+            "chapterTitle": "Capacitors",
+            "description": "Types of capacitors: ceramic, electrolytic, film. Capacitance, voltage rating, and tolerance. Capacitor charging and discharging."
+          },
+          {
+            "chapterTitle": "Inductors",
+            "description": "Types of inductors: air core, iron core, ferrite core. Inductance, current rating, and tolerance. Energy storage in inductors."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Basic Electrical Components"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to AC Waveforms",
+            "description": "Definition of alternating current (AC). Sinusoidal waveforms: amplitude, frequency, period, and phase. RMS value of AC voltage and current."
+          },
+          {
+            "chapterTitle": "AC Circuit Analysis",
+            "description": "Introduction to impedance (Z). Reactance of capacitors and inductors. AC Ohm's Law (V = IZ). Phasor representation of AC quantities."
+          },
+          {
+            "chapterTitle": "Power in AC Circuits",
+            "description": "Instantaneous power, average power, and reactive power. Power factor. Power triangle."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Introduction to AC Circuits"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Diodes",
+            "description": "Semiconductor materials: silicon and germanium. P-type and N-type semiconductors. PN junction diode characteristics."
+          },
+          {
+            "chapterTitle": "Diode Applications",
+            "description": "Rectifier circuits: half-wave and full-wave rectifiers. Diode clipping and clamping circuits. Introduction to Zener diodes."
+          },
+          {
+            "chapterTitle": "Introduction to Transistors",
+            "description": "Bipolar Junction Transistors (BJTs): NPN and PNP transistors. Transistor biasing. Transistor as a switch and amplifier."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Introduction to Semiconductor Devices"
+      }
+    ]
+  }
+}

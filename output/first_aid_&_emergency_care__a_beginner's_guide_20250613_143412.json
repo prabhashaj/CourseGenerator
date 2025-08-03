@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 14:34:12.069948",
+  "input": {
+    "course_topic": "First Aid & Emergency Care",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.31,
+    "max_tokens": 1024,
+    "top_k": 27,
+    "top_p": 0.53
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, you will be equipped with the fundamental knowledge and skills to provide initial assistance in various emergency situations. Remember to always prioritize safety and seek professional medical help when necessary.",
+    "courseTitle": "First Aid & Emergency Care: A Beginner's Guide",
+    "introduction": "Welcome to the First Aid & Emergency Care course! This course is designed for beginners and will provide you with essential knowledge and skills to respond effectively in emergency situations. You will learn how to assess situations, provide basic first aid, and ensure the safety of yourself and others.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to First Aid",
+            "description": "What is first aid? Importance of first aid. Legal considerations and Good Samaritan laws. Basic principles: Preserve Life, Prevent Deterioration, Promote Recovery."
+          },
+          {
+            "chapterTitle": "Emergency Scene Assessment",
+            "description": "Assessing the scene for safety. Identifying hazards. Determining the nature of the emergency. Calling for help (911/Emergency Services)."
+          },
+          {
+            "chapterTitle": "Basic Hygiene and Safety",
+            "description": "Importance of personal protective equipment (PPE). Handwashing techniques. Preventing the spread of infection. Safe disposal of contaminated materials."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Module 1: Foundations of First Aid"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "CPR Basics",
+            "description": "Introduction to Cardiopulmonary Resuscitation (CPR). Recognizing signs of cardiac arrest. Hands-only CPR technique for adults."
+          },
+          {
+            "chapterTitle": "Choking",
+            "description": "Recognizing signs of choking. First aid for choking adults and children. Heimlich maneuver demonstration."
+          },
+          {
+            "chapterTitle": "Recovery Position",
+            "description": "When and how to place someone in the recovery position. Maintaining an open airway. Monitoring the person's condition."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Module 2: Life-Saving Interventions"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Wound Care",
+            "description": "Types of wounds (abrasions, lacerations, punctures). Cleaning and dressing minor wounds. Controlling bleeding."
+          },
+          {
+            "chapterTitle": "Burns",
+            "description": "Types of burns (first, second, third degree). First aid for minor burns. Cooling the burn area."
+          },
+          {
+            "chapterTitle": "Sprains and Strains",
+            "description": "Recognizing signs of sprains and strains. RICE method (Rest, Ice, Compression, Elevation). Immobilizing the injured area."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Module 3: Common Injuries and Illnesses"
+      }
+    ]
+  }
+}

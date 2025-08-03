@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-13 13:09:34.734993",
+  "input": {
+    "course_topic": "Data Statistics",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.34,
+    "max_tokens": 1024,
+    "top_k": 20,
+    "top_p": 0.97
+  },
+  "output": {
+    "conclusion": "By completing this course, you will have a strong foundation in data statistics, enabling you to analyze data effectively and make informed decisions.",
+    "courseTitle": "Data Statistics",
+    "introduction": "Welcome to Data Statistics! This course is designed for intermediate learners who want to deepen their understanding of statistical concepts and apply them to real-world data analysis.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Descriptive Statistics Overview",
+            "description": "Introduction to descriptive statistics: measures of central tendency (mean, median, mode) and dispersion (variance, standard deviation, range)."
+          },
+          {
+            "chapterTitle": "Data Visualization Techniques",
+            "description": "Exploring data visualization methods: histograms, box plots, scatter plots, and their interpretations."
+          },
+          {
+            "chapterTitle": "Understanding Distributions",
+            "description": "Overview of common distributions: normal, binomial, Poisson, and their properties."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Statistics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Sampling Methods",
+            "description": "Different sampling techniques: simple random sampling, stratified sampling, cluster sampling."
+          },
+          {
+            "chapterTitle": "Central Limit Theorem",
+            "description": "Understanding the Central Limit Theorem and its importance in statistical inference."
+          },
+          {
+            "chapterTitle": "Confidence Intervals",
+            "description": "Constructing and interpreting confidence intervals for population parameters."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Sampling and Inference"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Hypothesis Testing Basics",
+            "description": "Introduction to hypothesis testing: null and alternative hypotheses, p-values, significance level."
+          },
+          {
+            "chapterTitle": "T-tests",
+            "description": "Performing t-tests for comparing means of one or two samples."
+          },
+          {
+            "chapterTitle": "ANOVA",
+            "description": "Analysis of Variance (ANOVA) for comparing means of multiple groups."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Hypothesis Testing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Correlation Analysis",
+            "description": "Measuring the strength and direction of linear relationships between variables."
+          },
+          {
+            "chapterTitle": "Simple Linear Regression",
+            "description": "Building and interpreting simple linear regression models."
+          },
+          {
+            "chapterTitle": "Multiple Linear Regression",
+            "description": "Extending linear regression to multiple predictor variables."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Regression Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Chi-Square Tests",
+            "description": "Using chi-square tests for categorical data analysis: goodness-of-fit and independence tests."
+          },
+          {
+            "chapterTitle": "Non-parametric Tests",
+            "description": "Introduction to non-parametric tests: when to use them and examples like Mann-Whitney U test."
+          },
+          {
+            "chapterTitle": "Statistical Power",
+            "description": "Understanding statistical power and its importance in hypothesis testing."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Advanced Statistical Methods"
+      }
+    ]
+  }
+}

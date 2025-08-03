@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 14:36:14.319204",
+  "input": {
+    "course_topic": "Soil Mechanics",
+    "difficulty_level": "Expert",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.58,
+    "max_tokens": 2048,
+    "top_k": 25,
+    "top_p": 0.6
+  },
+  "output": {
+    "conclusion": "This course provides an expert-level understanding of soil mechanics principles, enabling you to tackle complex geotechnical engineering challenges.",
+    "courseTitle": "Advanced Soil Mechanics",
+    "introduction": "Welcome to Advanced Soil Mechanics! This course delves into the intricacies of soil behavior, building upon fundamental concepts to explore advanced topics relevant to geotechnical engineering practice. Designed for experts, this course assumes a strong foundation in basic soil mechanics and aims to enhance your problem-solving capabilities in real-world scenarios.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Soil Composition and Index Properties",
+            "description": "A deep dive into the mineralogical composition of soils, focusing on the influence of clay minerals on soil behavior. We will explore advanced index properties, including specific surface area, cation exchange capacity, and their correlation with soil plasticity and strength."
+          },
+          {
+            "chapterTitle": "Soil Fabric and Microstructure Analysis",
+            "description": "Introduction to techniques for analyzing soil fabric and microstructure, such as scanning electron microscopy (SEM) and X-ray diffraction (XRD). Understanding the arrangement of soil particles and its impact on macroscopic soil properties."
+          },
+          {
+            "chapterTitle": "Advanced Soil Classification Systems",
+            "description": "Beyond the Unified Soil Classification System (USCS), we will explore other classification systems like the AASHTO system and discuss their applicability in different engineering contexts. Focus on classifying problematic soils such as expansive clays and collapsible soils."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Soil Properties and Characterization"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Effective Stress Principle in Unsaturated Soils",
+            "description": "Expanding the effective stress principle to unsaturated soils, considering the influence of matric suction and its impact on soil strength and deformation. Discussion of different effective stress parameters for unsaturated soils."
+          },
+          {
+            "chapterTitle": "Advanced Theories of Soil Consolidation",
+            "description": "Beyond Terzaghi's consolidation theory, we will explore more advanced theories that account for non-linear soil behavior, variable permeability, and three-dimensional flow conditions. Focus on numerical methods for solving consolidation problems."
+          },
+          {
+            "chapterTitle": "Secondary Compression and Creep",
+            "description": "A detailed analysis of secondary compression (creep) in soils, including its mechanisms, influencing factors, and methods for predicting long-term settlement. Discussion of constitutive models that incorporate creep behavior."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Soil Behavior and Consolidation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Shear Strength Theories",
+            "description": "Exploring advanced shear strength theories, such as the critical state soil mechanics framework and its application to different soil types. Discussion of the influence of stress history and drainage conditions on soil strength."
+          },
+          {
+            "chapterTitle": "Constitutive Modeling of Soil Behavior",
+            "description": "Introduction to constitutive models for soils, including elasto-plastic models, hypoplastic models, and their ability to capture complex soil behavior under various loading conditions. Focus on model calibration and validation."
+          },
+          {
+            "chapterTitle": "Slope Stability Analysis: Advanced Techniques",
+            "description": "Advanced techniques for slope stability analysis, including finite element methods and probabilistic approaches. Consideration of the influence of groundwater flow, seismic loading, and vegetation on slope stability."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Soil Strength and Slope Stability"
+      }
+    ]
+  }
+}

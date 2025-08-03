@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-06-13 13:04:38.455794",
+  "input": {
+    "course_topic": "Linear Algebra",
+    "difficulty_level": "Intermediate",
+    "num_modules": 6,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.58,
+    "max_tokens": 2048,
+    "top_k": 17,
+    "top_p": 0.91
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in linear algebra, equipping you with the tools and knowledge to tackle more advanced topics in mathematics, computer science, and engineering.",
+    "courseTitle": "Linear Algebra - Intermediate Level",
+    "introduction": "Welcome to Linear Algebra! This course builds upon basic linear algebra concepts and delves into more advanced topics, focusing on both theoretical understanding and practical applications. We will explore vector spaces, linear transformations, eigenvalues, eigenvectors, and more.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Vector Spaces: Axioms and Examples",
+            "description": "Axiomatic definition of a vector space. Examples: Euclidean space, function spaces, polynomial spaces. Subspaces and their properties."
+          },
+          {
+            "chapterTitle": "Linear Independence and Span",
+            "description": "Linear independence, spanning sets, basis, and dimension of vector spaces. Examples and exercises."
+          },
+          {
+            "chapterTitle": "Coordinates and Change of Basis",
+            "description": "Representing vectors in different bases. Change of basis matrices and their applications."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Vector Spaces"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Linear Transformations: Definition and Properties",
+            "description": "Definition of linear transformations, kernel, and range. Examples of linear transformations."
+          },
+          {
+            "chapterTitle": "Matrix Representation of Linear Transformations",
+            "description": "Representing linear transformations with matrices. Composition of linear transformations and matrix multiplication."
+          },
+          {
+            "chapterTitle": "Isomorphisms and Invertible Transformations",
+            "description": "Isomorphisms between vector spaces. Invertible linear transformations and their properties."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Linear Transformations"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Eigenvalues and Eigenvectors: Definitions and Computation",
+            "description": "Definition of eigenvalues and eigenvectors. Characteristic polynomial and its roots."
+          },
+          {
+            "chapterTitle": "Diagonalization",
+            "description": "Diagonalizable matrices and their properties. Conditions for diagonalizability."
+          },
+          {
+            "chapterTitle": "Applications of Eigenvalues and Eigenvectors",
+            "description": "Applications in differential equations, Markov chains, and other areas."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Eigenvalues and Eigenvectors"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Inner Product Spaces: Definition and Examples",
+            "description": "Definition of inner product spaces. Examples: Euclidean space, function spaces with integrals."
+          },
+          {
+            "chapterTitle": "Orthogonality and Orthonormal Bases",
+            "description": "Orthogonal vectors, orthonormal bases, Gram-Schmidt process."
+          },
+          {
+            "chapterTitle": "Orthogonal Projections",
+            "description": "Orthogonal projections onto subspaces. Applications in least squares problems."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Inner Product Spaces"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Singular Value Decomposition (SVD): Introduction",
+            "description": "Introduction to the singular value decomposition. Definition and properties."
+          },
+          {
+            "chapterTitle": "Computing the SVD",
+            "description": "Steps for computing the SVD of a matrix."
+          },
+          {
+            "chapterTitle": "Applications of SVD",
+            "description": "Applications in image compression, data analysis, and recommendation systems."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Singular Value Decomposition"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Canonical Forms: Jordan Form",
+            "description": "Introduction to Jordan canonical form. Definition and properties."
+          },
+          {
+            "chapterTitle": "Computing Jordan Form",
+            "description": "Steps for computing the Jordan form of a matrix."
+          },
+          {
+            "chapterTitle": "Applications of Jordan Form",
+            "description": "Applications in solving systems of differential equations."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Canonical Forms"
+      }
+    ]
+  }
+}

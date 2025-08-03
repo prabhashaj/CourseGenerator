@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-16 18:43:19.127856",
+  "input": {
+    "course_topic": "Evolution",
+    "difficulty_level": "Beginner",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.69,
+    "max_tokens": 1024,
+    "top_k": 10,
+    "top_p": 0.6
+  },
+  "output": {
+    "conclusion": "Evolution is a continuous process that shapes the diversity of life on Earth. Understanding its principles is crucial for comprehending the natural world and our place within it.",
+    "courseTitle": "Evolution: A Beginner's Guide",
+    "introduction": "Welcome to the fascinating world of evolution! This course will introduce you to the fundamental concepts of how life on Earth has changed over millions of years. No prior knowledge is required.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is Evolution?",
+            "description": "An introduction to the basic definition of evolution as a change in the heritable characteristics of biological populations over successive generations."
+          },
+          {
+            "chapterTitle": "Micro vs. Macro Evolution",
+            "description": "Understanding the difference between small-scale changes within a species (microevolution) and large-scale changes that result in new species (macroevolution)."
+          },
+          {
+            "chapterTitle": "The Tree of Life",
+            "description": "A brief overview of how all living organisms are related through a common ancestor, visualized as a branching tree."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Evolution"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Darwin and Natural Selection",
+            "description": "Exploring Charles Darwin's contribution to evolutionary theory and the concept of natural selection."
+          },
+          {
+            "chapterTitle": "The Principles of Natural Selection",
+            "description": "A detailed look at the four principles of natural selection: variation, inheritance, selection, and time."
+          },
+          {
+            "chapterTitle": "Adaptation",
+            "description": "Understanding how natural selection leads to adaptations that enhance an organism's survival and reproduction."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Natural Selection"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Evidence from Fossils",
+            "description": "How fossils provide a record of past life and demonstrate evolutionary transitions."
+          },
+          {
+            "chapterTitle": "Comparative Anatomy",
+            "description": "Using similarities and differences in the anatomy of different species to infer evolutionary relationships."
+          },
+          {
+            "chapterTitle": "DNA and Molecular Evidence",
+            "description": "How DNA sequencing and molecular biology provide strong evidence for evolution and common ancestry."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Evidence for Evolution"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Genetic Variation",
+            "description": "The role of genetic variation within populations as the raw material for evolution."
+          },
+          {
+            "chapterTitle": "Mutation",
+            "description": "Understanding how mutations introduce new genetic variation into populations."
+          },
+          {
+            "chapterTitle": "Gene Flow and Genetic Drift",
+            "description": "Exploring other mechanisms of evolutionary change, including gene flow and genetic drift."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Mechanisms of Evolution"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Speciation",
+            "description": "The process by which new species arise from existing ones."
+          },
+          {
+            "chapterTitle": "Patterns of Evolution",
+            "description": "An overview of different patterns of evolution, such as adaptive radiation and convergent evolution."
+          },
+          {
+            "chapterTitle": "Evolution and You",
+            "description": "How understanding evolution is relevant to everyday life, including medicine and conservation."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Speciation and Evolutionary Patterns"
+      }
+    ]
+  }
+}

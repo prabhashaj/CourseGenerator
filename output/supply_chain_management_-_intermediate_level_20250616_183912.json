@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-16 18:39:12.425198",
+  "input": {
+    "course_topic": "Supply Chain Management",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.44,
+    "max_tokens": 1024,
+    "top_k": 21,
+    "top_p": 0.52
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, you will have a comprehensive understanding of supply chain management principles and practices, enabling you to contribute effectively to optimizing supply chain performance in various organizational settings.",
+    "courseTitle": "Supply Chain Management - Intermediate Level",
+    "introduction": "Welcome to the Intermediate Supply Chain Management course! This course builds upon foundational knowledge and delves into more advanced concepts and techniques used in modern supply chain operations. We will explore key areas such as demand forecasting, inventory management, logistics optimization, and supply chain risk management.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Demand Forecasting Techniques",
+            "description": "Explore various demand forecasting methods, including time series analysis, regression analysis, and qualitative forecasting. Learn how to select the appropriate forecasting technique based on data availability and business context."
+          },
+          {
+            "chapterTitle": "Forecast Accuracy and Error Measurement",
+            "description": "Understand the importance of forecast accuracy and learn how to measure forecast error using metrics such as Mean Absolute Deviation (MAD), Mean Squared Error (MSE), and Mean Absolute Percentage Error (MAPE)."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Demand Forecasting and Planning"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Inventory Control Models",
+            "description": "Examine different inventory control models, including Economic Order Quantity (EOQ), Reorder Point (ROP), and Periodic Review systems. Learn how to calculate optimal order quantities and safety stock levels."
+          },
+          {
+            "chapterTitle": "Inventory Management Strategies",
+            "description": "Explore advanced inventory management strategies such as Vendor-Managed Inventory (VMI), Just-in-Time (JIT), and ABC analysis. Understand the benefits and challenges of each strategy."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Inventory Management and Control"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transportation Modes and Selection",
+            "description": "Overview of different transportation modes (truck, rail, air, ocean) and factors influencing mode selection, including cost, speed, reliability, and capacity."
+          },
+          {
+            "chapterTitle": "Warehouse Management Systems (WMS)",
+            "description": "Introduction to Warehouse Management Systems (WMS) and their role in optimizing warehouse operations, including receiving, storage, picking, packing, and shipping."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Logistics and Transportation Management"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Supplier Selection and Evaluation",
+            "description": "Learn about the supplier selection process, including identifying potential suppliers, evaluating their capabilities, and negotiating contracts. Explore different supplier evaluation criteria."
+          },
+          {
+            "chapterTitle": "Supplier Relationship Management (SRM)",
+            "description": "Understand the principles of Supplier Relationship Management (SRM) and its importance in building strong, collaborative relationships with key suppliers. Discuss strategies for improving supplier performance."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Sourcing and Procurement"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Identifying Supply Chain Risks",
+            "description": "Learn how to identify potential risks in the supply chain, including disruptions caused by natural disasters, geopolitical events, supplier failures, and cyberattacks."
+          },
+          {
+            "chapterTitle": "Risk Mitigation Strategies",
+            "description": "Explore various risk mitigation strategies, such as diversification of suppliers, building inventory buffers, developing contingency plans, and implementing business continuity programs."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Supply Chain Risk Management"
+      }
+    ]
+  }
+}

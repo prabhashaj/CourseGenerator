@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-13 14:33:26.096102",
+  "input": {
+    "course_topic": "AutoCAD for Civil",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.4,
+    "max_tokens": 1024,
+    "top_k": 27,
+    "top_p": 0.89
+  },
+  "output": {
+    "conclusion": "Upon completion of this advanced AutoCAD for Civil course, participants will possess the expertise to efficiently manage and execute complex civil engineering projects using AutoCAD, leveraging advanced techniques for design, analysis, and documentation.",
+    "courseTitle": "Advanced AutoCAD for Civil Engineering",
+    "introduction": "This advanced course is designed for civil engineers and designers who have a solid foundation in AutoCAD and are looking to enhance their skills in using AutoCAD for civil engineering projects. The course covers advanced techniques for creating and managing civil engineering drawings, including surface modeling, alignment design, corridor modeling, and quantity takeoff.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Surface Modeling Techniques",
+            "description": "Explore TIN surface creation from various data sources (LiDAR, survey data). Learn advanced editing techniques like breaklines, boundaries, and smoothing. Understand surface analysis tools (contours, slope analysis, drainage analysis)."
+          },
+          {
+            "chapterTitle": "Working with Point Clouds",
+            "description": "Import and manage large point cloud datasets. Extract features from point clouds for surface creation and object recognition. Optimize point cloud display and performance."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Surface Modeling"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Alignment Design",
+            "description": "Explore advanced alignment creation methods (best fit, PI-based). Design complex horizontal and vertical curves. Implement design standards and criteria."
+          },
+          {
+            "chapterTitle": "Superelevation Design",
+            "description": "Calculate and apply superelevation to alignments. Understand superelevation design standards and best practices. Visualize superelevation diagrams."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Alignment Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Corridor Modeling",
+            "description": "Create complex corridor models with multiple baselines and regions. Customize subassemblies and assemblies. Implement conditional subassemblies."
+          },
+          {
+            "chapterTitle": "Corridor Targeting and Feature Line Management",
+            "description": "Use targets to control corridor geometry. Extract feature lines from corridors for design and documentation. Manage feature line styles and properties."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Corridor Modeling"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Grading Optimization",
+            "description": "Utilize grading optimization tools to minimize earthwork quantities. Define grading criteria and constraints. Analyze grading results and refine the design."
+          },
+          {
+            "chapterTitle": "Site Design Tools",
+            "description": "Design parking lots, building pads, and other site features. Use site grading tools to create a cohesive site design. Integrate site design with corridor modeling."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Grading and Site Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Quantity Takeoff and Reporting",
+            "description": "Generate quantity takeoff reports from surfaces, corridors, and other objects. Customize quantity takeoff criteria and calculations. Export quantity takeoff data to other applications."
+          },
+          {
+            "chapterTitle": "Advanced Plan Production",
+            "description": "Create plan and profile sheets using sheet set manager. Automate plan production using data shortcuts and xrefs. Customize plan sheet templates and styles."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Quantity Takeoff and Plan Production"
+      }
+    ]
+  }
+}

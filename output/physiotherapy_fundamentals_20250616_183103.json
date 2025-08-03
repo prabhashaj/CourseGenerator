@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-16 18:31:02.999241",
+  "input": {
+    "course_topic": "Physiotherapy Fundamentals",
+    "difficulty_level": "Beginner",
+    "num_modules": 5,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.32,
+    "max_tokens": 1024,
+    "top_k": 24,
+    "top_p": 0.68
+  },
+  "output": {
+    "conclusion": "This course has provided a foundational understanding of physiotherapy principles and practices. Further study and practical experience are essential for developing proficiency in this field.",
+    "courseTitle": "Physiotherapy Fundamentals",
+    "introduction": "Welcome to Physiotherapy Fundamentals! This course will introduce you to the core concepts and principles of physiotherapy, providing a solid foundation for further learning and practice.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Physiotherapy",
+            "description": "Overview of physiotherapy: definition, scope of practice, and historical context. The role of a physiotherapist in healthcare."
+          },
+          {
+            "chapterTitle": "Core Values and Ethics",
+            "description": "Ethical principles in physiotherapy practice: patient autonomy, beneficence, non-maleficence, and justice. Professional conduct and responsibilities."
+          },
+          {
+            "chapterTitle": "The Patient-Centered Approach",
+            "description": "Understanding the importance of patient-centered care. Building rapport and effective communication skills."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Physiotherapy"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Basic Anatomy and Physiology",
+            "description": "Review of basic human anatomy: skeletal system, muscular system, and nervous system. Introduction to physiological processes relevant to movement."
+          },
+          {
+            "chapterTitle": "Biomechanics Fundamentals",
+            "description": "Introduction to biomechanical principles: levers, forces, and motion. Understanding how these principles apply to human movement."
+          },
+          {
+            "chapterTitle": "Posture and Body Mechanics",
+            "description": "Understanding posture and its importance. Principles of proper body mechanics for therapists and patients."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Anatomy, Physiology, and Biomechanics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Assessment",
+            "description": "Overview of the physiotherapy assessment process: subjective examination, objective examination, and evaluation."
+          },
+          {
+            "chapterTitle": "Observation and Palpation",
+            "description": "Developing skills in observation and palpation. Identifying key anatomical landmarks and movement patterns."
+          },
+          {
+            "chapterTitle": "Range of Motion Testing",
+            "description": "Introduction to range of motion (ROM) testing: goniometry and visual estimation. Normal ROM values for major joints."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Basic Assessment Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Therapeutic Exercise",
+            "description": "Overview of therapeutic exercise: goals, principles, and types of exercises. Importance of exercise prescription."
+          },
+          {
+            "chapterTitle": "Stretching Techniques",
+            "description": "Introduction to different stretching techniques: static, dynamic, and PNF. Indications and contraindications for stretching."
+          },
+          {
+            "chapterTitle": "Strengthening Exercises",
+            "description": "Introduction to strengthening exercises: isometric, isotonic, and isokinetic. Proper form and progression."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Introduction to Therapeutic Exercise"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Pain Management Principles",
+            "description": "Understanding pain mechanisms: nociception, pain pathways, and pain modulation. Introduction to pain assessment tools."
+          },
+          {
+            "chapterTitle": "Basic Modalities",
+            "description": "Introduction to common physiotherapy modalities: heat, cold, and TENS. Indications and contraindications for each modality."
+          },
+          {
+            "chapterTitle": "Manual Therapy Basics",
+            "description": "Introduction to manual therapy techniques: massage, mobilization, and manipulation. Safety considerations and ethical practice."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Pain Management and Modalities"
+      }
+    ]
+  }
+}

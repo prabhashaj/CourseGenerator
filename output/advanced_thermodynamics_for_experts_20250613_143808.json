@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-06-13 14:38:08.880086",
+  "input": {
+    "course_topic": "Thermodynamics",
+    "difficulty_level": "Expert",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.49,
+    "max_tokens": 1024,
+    "top_k": 25,
+    "top_p": 0.62
+  },
+  "output": {
+    "conclusion": "This course has provided an in-depth exploration of advanced thermodynamics, equipping you with the knowledge and tools to tackle complex engineering challenges. You are now prepared to apply these principles to real-world applications and contribute to advancements in the field.",
+    "courseTitle": "Advanced Thermodynamics for Experts",
+    "introduction": "Welcome to Advanced Thermodynamics, a course designed for experts seeking a deeper understanding of thermodynamic principles and their applications. This course will delve into complex concepts, advanced problem-solving techniques, and cutting-edge research in the field.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Review of Fundamental Concepts",
+            "description": "A rapid review of the fundamental laws of thermodynamics, including the zeroth, first, second, and third laws. Emphasis on energy, entropy, and exergy concepts."
+          },
+          {
+            "chapterTitle": "Thermodynamic Properties of Pure Substances",
+            "description": "In-depth analysis of thermodynamic properties, including equations of state, compressibility factors, and property relations for real gases and liquids."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Thermodynamic Fundamentals Revisited"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Exergy Analysis",
+            "description": "Detailed exploration of exergy analysis techniques, including exergoeconomics and environmental impact assessments. Focus on system optimization and sustainability."
+          },
+          {
+            "chapterTitle": "Chemical Thermodynamics",
+            "description": "Application of thermodynamic principles to chemical reactions, including equilibrium calculations, phase diagrams, and reaction kinetics."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Thermodynamic Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Irreversible Thermodynamics",
+            "description": "Introduction to irreversible thermodynamics, including Onsager's reciprocal relations, entropy production, and transport phenomena."
+          },
+          {
+            "chapterTitle": "Statistical Thermodynamics",
+            "description": "Overview of statistical thermodynamics, including Boltzmann distribution, partition functions, and applications to ideal gases and solids."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Non-Equilibrium Thermodynamics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Thermodynamics of Materials",
+            "description": "Application of thermodynamic principles to materials science, including phase transformations, diffusion, and surface phenomena."
+          },
+          {
+            "chapterTitle": "Emerging Trends in Thermodynamics",
+            "description": "Discussion of current research and emerging trends in thermodynamics, including nanoscale thermodynamics, bio-thermodynamics, and energy storage."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Applications and Future Directions"
+      }
+    ]
+  }
+}

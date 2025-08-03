@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-06-16 18:26:35.720685",
+  "input": {
+    "course_topic": "Machine Learning Fundamentals",
+    "difficulty_level": "Intermediate",
+    "num_modules": 6,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.69,
+    "max_tokens": 2048,
+    "top_k": 32,
+    "top_p": 0.51
+  },
+  "output": {
+    "conclusion": "This course provided a foundational understanding of machine learning concepts and techniques. You are now equipped to explore more advanced topics and apply these skills to real-world problems.",
+    "courseTitle": "Machine Learning Fundamentals",
+    "introduction": "Welcome to Machine Learning Fundamentals! This course is designed for individuals with an intermediate understanding of programming and mathematics who are eager to delve into the world of machine learning. We will cover essential concepts, algorithms, and practical applications.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Machine Learning",
+            "description": "What is Machine Learning? Types of Machine Learning (Supervised, Unsupervised, Reinforcement). Applications of Machine Learning."
+          },
+          {
+            "chapterTitle": "Key Concepts",
+            "description": "Features, Labels, Models, Training, Testing, Evaluation Metrics."
+          },
+          {
+            "chapterTitle": "The Machine Learning Process",
+            "description": "Data Collection, Data Preprocessing, Model Selection, Training, Evaluation, Deployment."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Machine Learning"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Data Preprocessing Techniques",
+            "description": "Handling Missing Values, Feature Scaling (Normalization, Standardization)."
+          },
+          {
+            "chapterTitle": "Data Cleaning",
+            "description": "Removing Duplicates, Handling Outliers, Correcting Inconsistent Data."
+          },
+          {
+            "chapterTitle": "Feature Engineering",
+            "description": "Creating New Features, Feature Selection (Filter, Wrapper, Embedded methods)."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Data Preprocessing and Feature Engineering"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Linear Regression",
+            "description": "Simple Linear Regression, Multiple Linear Regression, Model Evaluation (R-squared, MSE)."
+          },
+          {
+            "chapterTitle": "Logistic Regression",
+            "description": "Binary Classification, Sigmoid Function, Model Evaluation (Accuracy, Precision, Recall, F1-score)."
+          },
+          {
+            "chapterTitle": "Model Selection",
+            "description": "Bias-Variance Tradeoff, Overfitting, Underfitting, Regularization (L1, L2)."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Supervised Learning: Regression"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "K-Nearest Neighbors (KNN)",
+            "description": "Classification using KNN, Distance Metrics (Euclidean, Manhattan), Choosing the optimal K."
+          },
+          {
+            "chapterTitle": "Support Vector Machines (SVM)",
+            "description": "Linear SVM, Kernel SVM (RBF, Polynomial), Hyperparameter Tuning."
+          },
+          {
+            "chapterTitle": "Decision Trees",
+            "description": "Decision Tree Algorithm, Entropy, Information Gain, Tree Pruning."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Supervised Learning: Classification"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Clustering Algorithms",
+            "description": "K-Means Clustering, Hierarchical Clustering, DBSCAN."
+          },
+          {
+            "chapterTitle": "Dimensionality Reduction",
+            "description": "Principal Component Analysis (PCA), t-distributed Stochastic Neighbor Embedding (t-SNE)."
+          },
+          {
+            "chapterTitle": "Applications of Unsupervised Learning",
+            "description": "Anomaly Detection, Customer Segmentation, Recommendation Systems."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Unsupervised Learning"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Model Evaluation Techniques",
+            "description": "Cross-Validation (K-Fold, Stratified K-Fold), Confusion Matrix, ROC Curve."
+          },
+          {
+            "chapterTitle": "Hyperparameter Tuning",
+            "description": "Grid Search, Random Search, Bayesian Optimization."
+          },
+          {
+            "chapterTitle": "Model Deployment",
+            "description": "Saving and Loading Models, Introduction to Model Serving."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Model Evaluation, Tuning, and Deployment"
+      }
+    ]
+  }
+}

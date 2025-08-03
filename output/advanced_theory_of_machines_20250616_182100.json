@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:21:00.737003",
+  "input": {
+    "course_topic": "Theory of Machines",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.43,
+    "max_tokens": 2048,
+    "top_k": 10,
+    "top_p": 0.71
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of the principles and applications of the Theory of Machines, equipping students with the knowledge and skills necessary for advanced analysis and design of mechanical systems.",
+    "courseTitle": "Advanced Theory of Machines",
+    "introduction": "Welcome to Advanced Theory of Machines! This course delves into the kinematics and dynamics of machinery, focusing on advanced concepts and analytical techniques. We will explore topics such as vibration analysis, balancing of rotating and reciprocating masses, and the dynamics of cam-follower systems.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Kinematic Analysis of Mechanisms",
+            "description": "Advanced methods for determining displacement, velocity, and acceleration of linkages. Focus on analytical techniques and computer-aided analysis."
+          },
+          {
+            "chapterTitle": "Mobility and Structural Analysis",
+            "description": "Gruebler's criterion, Kutzbach criterion, and their applications. Analysis of redundant constraints and overconstrained mechanisms."
+          },
+          {
+            "chapterTitle": "Synthesis of Mechanisms",
+            "description": "Type, number, and dimensional synthesis. Precision point approximation and graphical methods for linkage design."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Kinematics of Mechanisms"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Static Force Analysis",
+            "description": "Equilibrium of mechanisms, free-body diagrams, and superposition methods. Consideration of friction and external forces."
+          },
+          {
+            "chapterTitle": "Dynamic Force Analysis",
+            "description": "Inertia forces and torques, D'Alembert's principle, and dynamic equilibrium. Analysis of shaking forces and moments."
+          },
+          {
+            "chapterTitle": "Balancing of Rotating Masses",
+            "description": "Static and dynamic balancing, balancing machines, and multi-plane balancing techniques."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Dynamics of Machines"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Balancing of Reciprocating Masses",
+            "description": "Primary and secondary unbalanced forces, balancing methods for single and multi-cylinder engines."
+          },
+          {
+            "chapterTitle": "Engine Turning Moment Diagrams and Flywheel Design",
+            "description": "Fluctuation of energy, coefficient of fluctuation, and flywheel design for speed regulation."
+          },
+          {
+            "chapterTitle": "Vibration Isolation and Control",
+            "description": "Principles of vibration isolation, transmissibility, and design of vibration isolators."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Balancing and Vibration"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Cam Dynamics",
+            "description": "Analysis of cam-follower systems, jerk analysis, and design of cam profiles for high-speed applications."
+          },
+          {
+            "chapterTitle": "Gears and Gear Trains",
+            "description": "Advanced gear geometry, helical gears, bevel gears, and worm gears. Analysis of gear forces and stresses."
+          },
+          {
+            "chapterTitle": "Dynamics of Belt and Chain Drives",
+            "description": "Analysis of belt tension, power transmission, and efficiency. Dynamics of chain drives and sprocket design."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Machine Elements"
+      }
+    ]
+  }
+}

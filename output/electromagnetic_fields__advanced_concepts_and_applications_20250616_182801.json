@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-16 18:28:01.258732",
+  "input": {
+    "course_topic": "Electromagnetic Fields",
+    "difficulty_level": "Expert",
+    "num_modules": 5,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.6,
+    "max_tokens": 2048,
+    "top_k": 24,
+    "top_p": 0.51
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of electromagnetic fields, equipping experts with the knowledge and tools to tackle advanced problems in electromagnetics and related fields.",
+    "courseTitle": "Electromagnetic Fields: Advanced Concepts and Applications",
+    "introduction": "Welcome to the advanced course on Electromagnetic Fields. This course delves into the intricacies of electromagnetism, building upon foundational knowledge to explore advanced concepts and real-world applications. Designed for experts, this course will challenge your understanding and enhance your problem-solving skills in this critical area of physics and engineering.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Module 1: Review of Vector Calculus and Coordinate Systems",
+            "description": "A concise review of vector algebra, vector calculus (gradient, divergence, curl), and orthogonal coordinate systems (Cartesian, cylindrical, spherical). Emphasis on applications in electromagnetics."
+          },
+          {
+            "chapterTitle": "Module 1: Electrostatics: Coulomb's Law and Electric Field",
+            "description": "Revisiting Coulomb's Law, electric field intensity, electric flux density, Gauss's Law, and applications to charge distributions."
+          },
+          {
+            "chapterTitle": "Module 1: Electrostatics: Electric Potential and Energy",
+            "description": "Electric potential, potential gradient, equipotential surfaces, energy density in electrostatic fields, and capacitance calculations."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Module 1: Review of Electrostatics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Module 2: Magnetostatics: Biot-Savart Law and Ampere's Law",
+            "description": "Biot-Savart Law, magnetic field intensity, Ampere's Law, magnetic flux density, and applications to current distributions."
+          },
+          {
+            "chapterTitle": "Module 2: Magnetostatics: Magnetic Vector Potential and Inductance",
+            "description": "Magnetic vector potential, Stokes' Theorem, inductance calculations for various geometries, and energy stored in magnetic fields."
+          },
+          {
+            "chapterTitle": "Module 2: Magnetic Materials and Boundary Conditions",
+            "description": "Magnetization, magnetic susceptibility, permeability, magnetic boundary conditions, and applications in magnetic circuits."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Module 2: Review of Magnetostatics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Module 3: Maxwell's Equations: Time-Varying Fields",
+            "description": "Faraday's Law, displacement current, Maxwell's equations in differential and integral forms, and their physical significance."
+          },
+          {
+            "chapterTitle": "Module 3: Electromagnetic Waves: Wave Propagation in Free Space",
+            "description": "Wave equation, plane wave solutions, polarization, energy and momentum of electromagnetic waves, and Poynting vector."
+          },
+          {
+            "chapterTitle": "Module 3: Electromagnetic Waves: Wave Propagation in Materials",
+            "description": "Wave propagation in lossy dielectrics, conductors, skin depth, and wave impedance."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Module 3: Electromagnetic Waves"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Module 4: Transmission Lines: Theory and Applications",
+            "description": "Transmission line parameters, characteristic impedance, reflection coefficient, standing wave ratio, and impedance matching techniques."
+          },
+          {
+            "chapterTitle": "Module 4: Transmission Lines: Smith Chart and Applications",
+            "description": "Smith chart, impedance transformation, admittance calculations, and applications in microwave circuits."
+          },
+          {
+            "chapterTitle": "Module 4: Waveguides: Rectangular and Circular Waveguides",
+            "description": "Waveguide modes, cutoff frequencies, wave impedance, power transmission, and applications in microwave systems."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Module 4: Transmission Lines and Waveguides"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Module 5: Antennas: Radiation Principles and Characteristics",
+            "description": "Antenna parameters (radiation pattern, gain, directivity, impedance), dipole antennas, and antenna arrays."
+          },
+          {
+            "chapterTitle": "Module 5: Antennas: Antenna Arrays and Applications",
+            "description": "Array factor, beam steering, pattern synthesis, and applications in wireless communication systems."
+          },
+          {
+            "chapterTitle": "Module 5: Computational Electromagnetics: Introduction to Numerical Methods",
+            "description": "Introduction to Finite Difference Time Domain (FDTD) and Finite Element Method (FEM) for solving electromagnetic problems."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Module 5: Antennas and Computational Electromagnetics"
+      }
+    ]
+  }
+}

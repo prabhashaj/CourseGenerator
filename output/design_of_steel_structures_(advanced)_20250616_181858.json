@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:18:58.719752",
+  "input": {
+    "course_topic": "Design of Steel Structures",
+    "difficulty_level": "Advanced",
+    "num_modules": 6,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.38,
+    "max_tokens": 2048,
+    "top_k": 13,
+    "top_p": 0.88
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of advanced steel structure design principles and practices, enabling engineers to confidently tackle complex structural challenges.",
+    "courseTitle": "Design of Steel Structures (Advanced)",
+    "introduction": "Welcome to the advanced course on Design of Steel Structures! This course builds upon fundamental concepts and delves into advanced topics relevant to complex steel structures. It is designed for engineers and students with a solid foundation in structural analysis and basic steel design principles.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Concepts in Material Behavior",
+            "description": "Explore the behavior of steel under complex loading conditions, including cyclic loading, creep, and fatigue. Discuss material models for advanced analysis."
+          },
+          {
+            "chapterTitle": "Fracture Mechanics and Fatigue",
+            "description": "Introduction to fracture mechanics principles and their application to steel structures. Fatigue analysis and design considerations for cyclically loaded structures."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Material Properties and Failure Modes"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Stability of Steel Members",
+            "description": "In-depth analysis of buckling behavior in columns, beams, and beam-columns. Discuss advanced methods for stability analysis, including finite element methods."
+          },
+          {
+            "chapterTitle": "Torsional and Flexural-Torsional Buckling",
+            "description": "Detailed examination of torsional and flexural-torsional buckling phenomena in steel members. Design considerations to prevent these failure modes."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Stability Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Connections under Complex Loading",
+            "description": "Design of bolted and welded connections subjected to combined axial, shear, and moment loads. Considerations for prying action and connection flexibility."
+          },
+          {
+            "chapterTitle": "Fatigue Design of Connections",
+            "description": "Fatigue analysis and design of steel connections. Detailing practices to improve fatigue resistance."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Connection Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Seismic Design Principles",
+            "description": "Introduction to seismic design philosophy and performance-based design. Ductility requirements and energy dissipation mechanisms in steel structures."
+          },
+          {
+            "chapterTitle": "Seismic Design of Steel Frames",
+            "description": "Design of moment-resisting frames, braced frames, and other steel structural systems for seismic loads. Detailing requirements for seismic resistance."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Seismic Design of Steel Structures"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Design of Plate Girders",
+            "description": "Advanced design considerations for plate girders, including web buckling, flange buckling, and stiffener design."
+          },
+          {
+            "chapterTitle": "Design of Composite Steel-Concrete Structures",
+            "description": "Design of composite beams, columns, and slabs. Shear connector design and analysis of composite action."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Special Steel Structures"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Finite Element Analysis (FEA)",
+            "description": "Overview of FEA principles and their application to steel structure design. Modeling techniques and interpretation of results."
+          },
+          {
+            "chapterTitle": "Advanced Modeling Techniques",
+            "description": "Advanced FEA modeling techniques for complex steel structures, including nonlinear analysis and dynamic analysis."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Advanced Analysis Techniques"
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-16 18:21:46.562531",
+  "input": {
+    "course_topic": "Human Anatomy",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.53,
+    "max_tokens": 2048,
+    "top_k": 21,
+    "top_p": 0.54
+  },
+  "output": {
+    "conclusion": "By completing this advanced human anatomy course, you will have gained a comprehensive understanding of the human body's intricate structures and their functions. This knowledge will serve as a strong foundation for further studies in medicine, research, or related fields.",
+    "courseTitle": "Advanced Human Anatomy",
+    "introduction": "Welcome to Advanced Human Anatomy! This course delves into the complexities of the human body, building upon foundational knowledge to explore intricate anatomical details and functional relationships. Designed for advanced learners, this course will challenge you to think critically and apply your understanding to real-world scenarios.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Skeletal System: Microscopic Bone Structure",
+            "description": "Explore the detailed microscopic structure of bone tissue, including osteons, Haversian canals, and the different types of bone cells (osteoblasts, osteocytes, osteoclasts). Understand the processes of bone remodeling and repair at the cellular level."
+          },
+          {
+            "chapterTitle": "Skeletal System: Advanced Joint Biomechanics",
+            "description": "Analyze the biomechanics of complex joints like the shoulder and hip, focusing on the interplay of ligaments, tendons, and muscles. Investigate joint stability, range of motion, and common injuries related to these joints."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Skeletal System"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Muscular System: Muscle Fiber Types and Recruitment",
+            "description": "Examine the different types of muscle fibers (Type I, Type IIa, Type IIx) and their metabolic characteristics. Understand the principles of motor unit recruitment and how the nervous system controls muscle force production."
+          },
+          {
+            "chapterTitle": "Muscular System: Muscle Biomechanics and Levers",
+            "description": "Analyze the biomechanics of muscle contraction, including force-velocity relationships and length-tension relationships. Investigate the role of muscles as levers and how they contribute to movement efficiency."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Muscular System"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Nervous System: Neural Pathways and Synaptic Transmission",
+            "description": "Trace the major neural pathways in the brain and spinal cord, focusing on sensory and motor pathways. Explore the mechanisms of synaptic transmission, including neurotransmitter release, receptor binding, and signal transduction."
+          },
+          {
+            "chapterTitle": "Nervous System: Brain Anatomy and Function",
+            "description": "Delve into the detailed anatomy of the brain, including the cerebral cortex, cerebellum, and brainstem. Understand the functions of different brain regions and their roles in cognition, emotion, and motor control."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Nervous System"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Cardiovascular System: Cardiac Physiology and Hemodynamics",
+            "description": "Explore the detailed physiology of the heart, including the cardiac cycle, electrophysiology, and regulation of heart rate and contractility. Understand the principles of hemodynamics, including blood pressure, blood flow, and vascular resistance."
+          },
+          {
+            "chapterTitle": "Cardiovascular System: Microcirculation and Lymphatics",
+            "description": "Investigate the microcirculation, including the structure and function of capillaries, arterioles, and venules. Understand the role of the lymphatic system in fluid balance, immune function, and lipid absorption."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Cardiovascular System"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Respiratory System: Gas Exchange and Lung Mechanics",
+            "description": "Examine the mechanisms of gas exchange in the lungs, including diffusion, ventilation-perfusion matching, and oxygen transport. Understand the mechanics of breathing, including lung volumes, pressures, and airway resistance."
+          },
+          {
+            "chapterTitle": "Respiratory System: Control of Breathing",
+            "description": "Explore the neural and chemical control of breathing, including the roles of chemoreceptors, mechanoreceptors, and the respiratory centers in the brainstem."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Advanced Respiratory System"
+      }
+    ]
+  }
+}

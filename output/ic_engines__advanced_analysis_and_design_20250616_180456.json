@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:04:56.400444",
+  "input": {
+    "course_topic": "IC Engines",
+    "difficulty_level": "Expert",
+    "num_modules": 6,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.53,
+    "max_tokens": 2048,
+    "top_k": 22,
+    "top_p": 0.9
+  },
+  "output": {
+    "conclusion": "This course provides an expert-level understanding of IC Engines, equipping learners with the knowledge to analyze, design, and optimize engine performance for various applications.",
+    "courseTitle": "IC Engines: Advanced Analysis and Design",
+    "introduction": "Welcome to the advanced IC Engines course! This course delves into the intricate details of internal combustion engine operation, focusing on advanced thermodynamic cycles, combustion phenomena, and engine design optimization techniques. It is designed for engineers and researchers seeking in-depth knowledge and practical skills in this field.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Thermodynamic Cycles",
+            "description": "Explore advanced thermodynamic cycles beyond the ideal Otto, Diesel, and Dual cycles. Analyze the effects of variable specific heats, dissociation, and real gas behavior on cycle performance."
+          },
+          {
+            "chapterTitle": "Cycle Simulation Techniques",
+            "description": "Learn to use computational tools to simulate IC engine cycles. Implement models for combustion, heat transfer, and friction to predict engine performance under various operating conditions."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Thermodynamics of IC Engines"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Combustion Chemistry and Kinetics",
+            "description": "Delve into the chemical kinetics of combustion processes in IC engines. Understand the formation and oxidation of pollutants, and explore strategies for emissions reduction."
+          },
+          {
+            "chapterTitle": "Flame Propagation and Turbulence",
+            "description": "Study the mechanisms of flame propagation in turbulent flows. Analyze the effects of turbulence intensity, swirl, and squish on combustion rate and efficiency."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Combustion Phenomena in IC Engines"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fuel Injection Systems",
+            "description": "Examine advanced fuel injection systems for gasoline and diesel engines. Analyze the effects of injection timing, pressure, and spray characteristics on combustion and emissions."
+          },
+          {
+            "chapterTitle": "Alternative Fuels and Combustion",
+            "description": "Explore the use of alternative fuels, such as biofuels, hydrogen, and natural gas, in IC engines. Investigate their combustion characteristics and potential for emissions reduction."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Fuel Injection and Alternative Fuels"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Engine Friction and Lubrication",
+            "description": "Analyze the sources of friction in IC engines and explore strategies for friction reduction. Study the properties and behavior of lubricants, and their role in engine durability."
+          },
+          {
+            "chapterTitle": "Engine Cooling Systems",
+            "description": "Design and analyze advanced engine cooling systems. Optimize coolant flow, heat exchanger performance, and temperature distribution to prevent engine overheating."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Engine Friction, Lubrication, and Cooling"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Engine Design Optimization",
+            "description": "Apply optimization techniques to improve engine performance, fuel economy, and emissions. Explore the use of computational tools for engine design and analysis."
+          },
+          {
+            "chapterTitle": "Variable Valve Timing and Lift",
+            "description": "Analyze the effects of variable valve timing and lift on engine performance. Design valve train systems to optimize engine breathing and volumetric efficiency."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Engine Design and Optimization"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Engine Control Systems",
+            "description": "Study advanced engine control strategies for optimizing performance, fuel economy, and emissions. Explore the use of sensors, actuators, and microprocessors in engine control systems."
+          },
+          {
+            "chapterTitle": "Hybrid and Electric Powertrains",
+            "description": "Investigate the integration of IC engines with electric motors and batteries in hybrid and electric powertrains. Analyze the performance and emissions characteristics of hybrid vehicles."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Engine Control and Hybrid Powertrains"
+      }
+    ]
+  }
+}

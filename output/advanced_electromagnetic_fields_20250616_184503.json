@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:45:03.510918",
+  "input": {
+    "course_topic": "Electromagnetic Fields",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.31,
+    "max_tokens": 1024,
+    "top_k": 28,
+    "top_p": 0.67
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of electromagnetic fields, equipping students with the knowledge and skills necessary for advanced applications in electromagnetics and related fields.",
+    "courseTitle": "Advanced Electromagnetic Fields",
+    "introduction": "Welcome to Advanced Electromagnetic Fields! This course delves into the fundamental principles and advanced concepts of electromagnetism, building upon prior knowledge of basic electromagnetics. We will explore static and dynamic fields, wave propagation, and advanced techniques for solving electromagnetic problems.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Review of Vector Calculus and Coordinate Systems",
+            "description": "A quick refresher on vector algebra, vector calculus (gradient, divergence, curl), and orthogonal coordinate systems (Cartesian, cylindrical, spherical). Emphasis on applying these concepts to electromagnetic problems."
+          },
+          {
+            "chapterTitle": "Electrostatics: Advanced Concepts",
+            "description": "In-depth analysis of electric fields and potentials due to various charge distributions. Introduction to boundary value problems and uniqueness theorems."
+          },
+          {
+            "chapterTitle": "Magnetostatics: Advanced Concepts",
+            "description": "Detailed study of magnetic fields due to current distributions. Exploration of magnetic materials and boundary conditions."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Review and Advanced Static Fields"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Time-Varying Fields and Maxwell's Equations",
+            "description": "Comprehensive derivation and discussion of Maxwell's equations in integral and differential forms. Displacement current and its significance."
+          },
+          {
+            "chapterTitle": "Electromagnetic Potentials",
+            "description": "Introduction to scalar and vector potentials in time-varying fields. Gauge transformations and their implications."
+          },
+          {
+            "chapterTitle": "Power and Energy in Electromagnetic Fields",
+            "description": "Poynting's theorem and its application to energy flow in electromagnetic fields. Energy density and power dissipation."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Maxwell's Equations and Time-Varying Fields"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Electromagnetic Wave Propagation in Free Space",
+            "description": "Plane wave solutions to Maxwell's equations. Polarization, energy, and momentum of electromagnetic waves."
+          },
+          {
+            "chapterTitle": "Wave Propagation in Dielectric and Conducting Media",
+            "description": "Effects of material properties on wave propagation. Skin depth, attenuation, and dispersion."
+          },
+          {
+            "chapterTitle": "Wave Reflection and Transmission",
+            "description": "Reflection and transmission of electromagnetic waves at interfaces. Fresnel equations and Brewster's angle."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Electromagnetic Wave Propagation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transmission Lines",
+            "description": "Transmission line theory, including characteristic impedance, reflection coefficient, and standing wave ratio."
+          },
+          {
+            "chapterTitle": "Waveguides",
+            "description": "Analysis of wave propagation in rectangular and circular waveguides. Modes and cutoff frequencies."
+          },
+          {
+            "chapterTitle": "Antennas",
+            "description": "Fundamentals of antenna theory, including radiation patterns, gain, and directivity. Introduction to different types of antennas."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Guided Waves and Antennas"
+      }
+    ]
+  }
+}

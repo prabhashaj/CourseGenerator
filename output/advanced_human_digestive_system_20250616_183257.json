@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-16 18:32:57.916609",
+  "input": {
+    "course_topic": "Human Digestive System",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.38,
+    "max_tokens": 2048,
+    "top_k": 24,
+    "top_p": 0.81
+  },
+  "output": {
+    "conclusion": "By completing this course, you have gained an advanced understanding of the human digestive system, from the initial breakdown of food to the absorption of nutrients and the elimination of waste. This knowledge provides a strong foundation for further study in related fields such as nutrition, gastroenterology, and physiology.",
+    "courseTitle": "Advanced Human Digestive System",
+    "introduction": "Welcome to the Advanced Human Digestive System course! This course provides an in-depth exploration of the anatomy, physiology, and biochemistry of the digestive system. We will delve into the intricate processes involved in digestion, absorption, and metabolism, examining the roles of various organs, enzymes, and hormones. This course is designed for advanced learners with a background in biology or related fields.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Overview of the Digestive System",
+            "description": "A comprehensive look at the organs involved in digestion, their primary functions, and their coordinated action. Includes sections on the mouth, esophagus, stomach, small intestine, large intestine, liver, pancreas, and gallbladder."
+          },
+          {
+            "chapterTitle": "Regulation of Digestive Processes",
+            "description": "Explores the neural and hormonal mechanisms that control digestive motility, secretion, and absorption. Focuses on the roles of the enteric nervous system, gastrin, secretin, cholecystokinin (CCK), and other key regulators."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Anatomy and Basic Functions"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Mechanical Digestion",
+            "description": "Detailed examination of the physical breakdown of food, including mastication, deglutition, peristalsis, and segmentation. Discusses the importance of mechanical digestion in increasing surface area for enzymatic action."
+          },
+          {
+            "chapterTitle": "Chemical Digestion: Carbohydrates",
+            "description": "In-depth analysis of carbohydrate digestion, including the enzymes involved (amylase, maltase, sucrase, lactase), the breakdown of complex carbohydrates into monosaccharides, and the regulation of carbohydrate digestion."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Digestive Processes: Mechanical and Chemical"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Chemical Digestion: Proteins",
+            "description": "Detailed analysis of protein digestion, including the enzymes involved (pepsin, trypsin, chymotrypsin, carboxypeptidase), the breakdown of proteins into amino acids, and the regulation of protein digestion."
+          },
+          {
+            "chapterTitle": "Chemical Digestion: Lipids",
+            "description": "In-depth analysis of lipid digestion, including the enzymes involved (lipase, phospholipase), the role of bile in emulsification, the formation of micelles, and the regulation of lipid digestion."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Digestive Processes: Chemical (Continued)"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Absorption in the Small Intestine",
+            "description": "Detailed examination of the absorption of nutrients (monosaccharides, amino acids, fatty acids, vitamins, minerals) in the small intestine. Includes discussions of the roles of villi, microvilli, and transport mechanisms."
+          },
+          {
+            "chapterTitle": "Absorption in the Large Intestine",
+            "description": "Detailed examination of the absorption of water, electrolytes, and vitamins in the large intestine. Discusses the role of the gut microbiome in nutrient absorption and overall health."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Absorption of Nutrients"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Metabolism of Absorbed Nutrients",
+            "description": "Overview of the metabolic pathways involved in the utilization of absorbed nutrients, including glycolysis, gluconeogenesis, lipogenesis, lipolysis, and protein synthesis. Focuses on the roles of the liver and other organs in nutrient metabolism."
+          },
+          {
+            "chapterTitle": "Elimination of Waste Products",
+            "description": "Detailed examination of the formation and elimination of feces. Includes discussions of the roles of the large intestine, rectum, and anus in waste disposal, as well as the factors that influence bowel movements."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Metabolism and Elimination"
+      }
+    ]
+  }
+}

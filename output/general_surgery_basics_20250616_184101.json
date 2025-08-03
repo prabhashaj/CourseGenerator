@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-16 18:41:01.823645",
+  "input": {
+    "course_topic": "General Surgery Basics",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.64,
+    "max_tokens": 2048,
+    "top_k": 12,
+    "top_p": 0.96
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of general surgery principles, equipping advanced learners with the knowledge necessary for further specialization and practice.",
+    "courseTitle": "General Surgery Basics",
+    "introduction": "Welcome to General Surgery Basics, an advanced-level course designed to provide a comprehensive overview of the fundamental principles and practices in general surgery. This course is designed for medical students, residents, and other healthcare professionals seeking to enhance their understanding of surgical concepts.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to General Surgery",
+            "description": "Overview of the history, scope, and subspecialties within general surgery. Discussion of the role of a general surgeon and the types of procedures commonly performed."
+          },
+          {
+            "chapterTitle": "Surgical Ethics and Patient Safety",
+            "description": "Ethical considerations in surgical practice, including informed consent, patient confidentiality, and conflict resolution. Introduction to patient safety protocols and risk management in the surgical setting."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of General Surgery"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Basic Surgical Techniques",
+            "description": "Introduction to essential surgical skills such as instrument handling, knot tying, suturing, and basic tissue dissection techniques."
+          },
+          {
+            "chapterTitle": "Wound Healing and Management",
+            "description": "The physiology of wound healing, including the inflammatory, proliferative, and remodeling phases. Discussion of different types of wounds and their management strategies."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Surgical Techniques and Wound Management"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Anesthesia and Perioperative Care",
+            "description": "Overview of different types of anesthesia used in general surgery, including general, regional, and local anesthesia. Discussion of pre-operative patient evaluation and post-operative care principles."
+          },
+          {
+            "chapterTitle": "Fluid and Electrolyte Management",
+            "description": "Principles of fluid and electrolyte balance in surgical patients. Management of common fluid and electrolyte disorders in the perioperative period."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Anesthesia and Perioperative Management"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Abdominal Wall and Hernias",
+            "description": "Anatomy of the abdominal wall and pathophysiology of hernias. Discussion of different types of hernias and their surgical management."
+          },
+          {
+            "chapterTitle": "Gastrointestinal Surgery Basics",
+            "description": "Introduction to common gastrointestinal surgical procedures, including appendectomy, cholecystectomy, and bowel resection. Overview of pre-operative and post-operative management considerations."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Common Surgical Procedures"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Surgical Infections and Antibiotics",
+            "description": "Pathophysiology of surgical site infections and principles of antibiotic use in surgical practice. Discussion of common surgical infections and their management strategies."
+          },
+          {
+            "chapterTitle": "Surgical Oncology Basics",
+            "description": "Introduction to the principles of surgical oncology, including tumor staging, surgical resection, and adjuvant therapies. Overview of common surgical oncology procedures."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Surgical Infections and Oncology"
+      }
+    ]
+  }
+}

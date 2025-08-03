@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:39:25.608423",
+  "input": {
+    "course_topic": "Digital Signal Processing",
+    "difficulty_level": "Expert",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.35,
+    "max_tokens": 2048,
+    "top_k": 32,
+    "top_p": 0.52
+  },
+  "output": {
+    "conclusion": "This course provides an expert-level understanding of Digital Signal Processing, equipping you with the knowledge and skills to tackle complex signal processing challenges in various domains.",
+    "courseTitle": "Digital Signal Processing: Advanced Techniques and Applications",
+    "introduction": "Welcome to the advanced Digital Signal Processing course! This course delves into sophisticated DSP techniques, building upon foundational knowledge to address real-world signal processing problems. We will explore advanced filtering, spectral estimation, adaptive signal processing, and multi-rate signal processing, emphasizing practical applications and implementation considerations.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Filter Design Techniques",
+            "description": "Explore advanced FIR and IIR filter design methods, including Parks-McClellan algorithm, frequency transformations, and optimization techniques for meeting stringent filter specifications."
+          },
+          {
+            "chapterTitle": "Multirate Filter Banks",
+            "description": "Delve into the theory and design of multirate filter banks, including perfect reconstruction filter banks, quadrature mirror filters (QMF), and wavelet transforms for efficient signal decomposition and reconstruction."
+          },
+          {
+            "chapterTitle": "Fractional Delay Filters",
+            "description": "Understand the principles and design of fractional delay filters, enabling precise time alignment and interpolation of signals in various applications."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Filtering Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Parametric Spectral Estimation",
+            "description": "Study parametric spectral estimation methods, such as AR, MA, and ARMA models, for high-resolution spectral analysis and signal parameter estimation."
+          },
+          {
+            "chapterTitle": "Subspace-Based Spectral Estimation",
+            "description": "Explore subspace-based spectral estimation techniques, including MUSIC and ESPRIT algorithms, for detecting and estimating the frequencies of multiple signals in noise."
+          },
+          {
+            "chapterTitle": "Time-Frequency Analysis",
+            "description": "Investigate time-frequency analysis methods, such as the Short-Time Fourier Transform (STFT) and wavelet transform, for analyzing non-stationary signals and extracting time-varying spectral features."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Spectral Estimation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Adaptive Filtering Algorithms",
+            "description": "Study advanced adaptive filtering algorithms, such as Recursive Least Squares (RLS) and Kalman filtering, for tracking time-varying signals and mitigating noise and interference."
+          },
+          {
+            "chapterTitle": "Adaptive Beamforming",
+            "description": "Explore adaptive beamforming techniques for spatial filtering and signal enhancement in array processing applications, including minimum variance distortionless response (MVDR) beamforming."
+          },
+          {
+            "chapterTitle": "Blind Source Separation",
+            "description": "Understand the principles and algorithms for blind source separation (BSS), enabling the recovery of independent source signals from their mixtures without prior knowledge of the mixing process."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Adaptive Signal Processing"
+      }
+    ]
+  }
+}

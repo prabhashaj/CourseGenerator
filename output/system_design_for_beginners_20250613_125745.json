@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-13 12:57:45.127908",
+  "input": {
+    "course_topic": "System Design",
+    "difficulty_level": "Beginner",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.57,
+    "max_tokens": 1024,
+    "top_k": 25,
+    "top_p": 0.61
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a foundational understanding of system design principles and are equipped to approach basic system design challenges. Remember to practice and continue learning to refine your skills.",
+    "courseTitle": "System Design for Beginners",
+    "introduction": "Welcome to System Design for Beginners! This course will introduce you to the fundamental concepts and principles of system design, providing you with a solid foundation for building scalable and reliable systems. We'll cover key topics in a simplified manner, focusing on practical applications and real-world examples.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to System Design",
+            "description": "What is System Design? Understanding scalability, reliability, and maintainability. Key components of a system."
+          },
+          {
+            "chapterTitle": "Basic System Architectures",
+            "description": "Monolithic vs. Microservices. Understanding the trade-offs. Simple examples of each architecture."
+          },
+          {
+            "chapterTitle": "Core Concepts: Load Balancing",
+            "description": "What is load balancing? Different load balancing algorithms (Round Robin, Least Connections). Introduction to HAProxy/NGINX."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to System Design and Architectures"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding Databases",
+            "description": "Relational vs. NoSQL databases. Key differences and use cases. Introduction to ACID properties."
+          },
+          {
+            "chapterTitle": "Choosing the Right Database",
+            "description": "When to use SQL (MySQL, PostgreSQL) vs. NoSQL (MongoDB, Cassandra). Considerations for data modeling."
+          },
+          {
+            "chapterTitle": "Basic Database Design",
+            "description": "Designing a simple database schema for a blog application. Tables, relationships, and basic queries."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Databases and Data Modeling"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Caching",
+            "description": "What is caching? Why is it important? Different types of caches (browser, server-side, CDN)."
+          },
+          {
+            "chapterTitle": "Cache Strategies",
+            "description": "Cache-aside, Write-through, Write-back. Understanding the trade-offs of each strategy."
+          },
+          {
+            "chapterTitle": "Using Redis for Caching",
+            "description": "Introduction to Redis. Setting up a simple Redis cache. Basic commands and use cases."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Caching Strategies"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Message Queues",
+            "description": "What are message queues? Why are they useful? Asynchronous communication and decoupling."
+          },
+          {
+            "chapterTitle": "Common Message Queue Systems",
+            "description": "Introduction to RabbitMQ and Kafka. Key differences and use cases."
+          },
+          {
+            "chapterTitle": "Simple Message Queue Example",
+            "description": "Using a message queue to process image uploads. Producer and consumer concepts."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Message Queues and Asynchronous Communication"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "API Design Principles",
+            "description": "RESTful APIs. Understanding HTTP methods (GET, POST, PUT, DELETE). API versioning."
+          },
+          {
+            "chapterTitle": "API Security",
+            "description": "Authentication and authorization. API keys, OAuth. Basic security considerations."
+          },
+          {
+            "chapterTitle": "Monitoring and Logging",
+            "description": "Importance of monitoring and logging. Basic metrics to track. Tools for monitoring and logging (e.g., Prometheus, Grafana, ELK stack)."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "API Design, Security, and Monitoring"
+      }
+    ]
+  }
+}

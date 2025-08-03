@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 12:59:34.059960",
+  "input": {
+    "course_topic": "Wellness Coaching",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.44,
+    "max_tokens": 2048,
+    "top_k": 24,
+    "top_p": 0.82
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained valuable insights and practical tools to excel as a wellness coach. Continue practicing, learning, and refining your skills to make a positive impact on the lives of others.",
+    "courseTitle": "Wellness Coaching: Intermediate Level",
+    "introduction": "Welcome to the Intermediate Wellness Coaching course! This course builds upon foundational knowledge and equips you with advanced techniques to guide clients towards sustainable well-being. Get ready to deepen your understanding of behavior change, motivational interviewing, and personalized wellness planning.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Communication Skills",
+            "description": "Explore advanced communication techniques, including active listening, empathy, and powerful questioning, to build deeper rapport with clients and facilitate meaningful conversations."
+          },
+          {
+            "chapterTitle": "Motivational Interviewing Deep Dive",
+            "description": "Delve deeper into motivational interviewing techniques, focusing on strategies to help clients explore ambivalence, build confidence, and commit to positive change."
+          },
+          {
+            "chapterTitle": "Identifying Client Values and Strengths",
+            "description": "Learn how to effectively identify client values and strengths, and how to leverage these insights to create personalized wellness plans that align with their core beliefs and aspirations."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Mastering Coaching Communication"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding Behavior Change Models",
+            "description": "Examine various behavior change models, such as the Transtheoretical Model (Stages of Change) and Social Cognitive Theory, to understand the psychological processes involved in adopting and maintaining healthy habits."
+          },
+          {
+            "chapterTitle": "Goal Setting and Action Planning",
+            "description": "Develop expertise in guiding clients through the goal-setting process, creating SMART goals, and developing realistic action plans that promote accountability and progress."
+          },
+          {
+            "chapterTitle": "Overcoming Barriers to Change",
+            "description": "Identify common barriers to change, such as lack of motivation, self-doubt, and environmental constraints, and learn strategies to help clients overcome these obstacles."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "The Science of Behavior Change"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Personalized Nutrition Coaching",
+            "description": "Explore the principles of personalized nutrition and learn how to guide clients in making informed food choices based on their individual needs, preferences, and health goals."
+          },
+          {
+            "chapterTitle": "Fitness and Movement Strategies",
+            "description": "Discover strategies for promoting physical activity and movement, taking into account client fitness levels, interests, and limitations, to create sustainable exercise habits."
+          },
+          {
+            "chapterTitle": "Stress Management Techniques",
+            "description": "Learn various stress management techniques, such as mindfulness, meditation, and relaxation exercises, to help clients reduce stress and improve their overall well-being."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Creating Personalized Wellness Plans"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Ethical Considerations in Wellness Coaching",
+            "description": "Understand the ethical considerations involved in wellness coaching, including confidentiality, boundaries, and scope of practice, to ensure responsible and professional conduct."
+          },
+          {
+            "chapterTitle": "Building a Successful Coaching Practice",
+            "description": "Explore strategies for building a successful wellness coaching practice, including marketing, client acquisition, and business management."
+          },
+          {
+            "chapterTitle": "Self-Care for Wellness Coaches",
+            "description": "Recognize the importance of self-care for wellness coaches and learn techniques to maintain your own well-being while supporting others on their wellness journeys."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Professional Development and Ethics"
+      }
+    ]
+  }
+}

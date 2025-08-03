@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-16 18:22:13.737636",
+  "input": {
+    "course_topic": "Electricity and Magnetism",
+    "difficulty_level": "Expert",
+    "num_modules": 5,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.36,
+    "max_tokens": 2048,
+    "top_k": 21,
+    "top_p": 0.76
+  },
+  "output": {
+    "conclusion": "This course has provided an in-depth exploration of electricity and magnetism, covering advanced concepts and applications. You are now equipped with the knowledge to tackle complex problems in electromagnetism.",
+    "courseTitle": "Advanced Electricity and Magnetism",
+    "introduction": "Welcome to Advanced Electricity and Magnetism! This course delves into the intricacies of electromagnetic theory, building upon foundational knowledge to explore advanced topics relevant to modern physics and engineering.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Electrostatics Revisited: Multipole Expansion",
+            "description": "Review of electrostatics, focusing on the multipole expansion of the electric potential. Understanding dipole, quadrupole, and higher-order moments."
+          },
+          {
+            "chapterTitle": "Electrostatic Energy and Capacitance",
+            "description": "Detailed analysis of electrostatic energy, energy density, and capacitance calculations for complex geometries."
+          },
+          {
+            "chapterTitle": "Electric Fields in Matter: Polarization",
+            "description": "深入探讨电介质中的电场，包括极化机制、电位移矢量以及介电常数。"
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Electrostatics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Magnetostatics: Vector Potential",
+            "description": "In-depth study of the vector potential, its properties, and applications in solving magnetostatic problems."
+          },
+          {
+            "chapterTitle": "Magnetic Fields in Matter: Magnetization",
+            "description": "Exploration of magnetic materials, magnetization, magnetic susceptibility, and the auxiliary field H."
+          },
+          {
+            "chapterTitle": "Electromagnetic Induction: Faraday's Law",
+            "description": "Advanced treatment of Faraday's law, including motional EMF and induced electric fields."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Magnetostatics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Maxwell's Equations: Displacement Current",
+            "description": "Complete formulation of Maxwell's equations, including the displacement current and its implications."
+          },
+          {
+            "chapterTitle": "Electromagnetic Waves in Vacuum",
+            "description": "Detailed analysis of electromagnetic wave propagation in vacuum, including energy and momentum transport."
+          },
+          {
+            "chapterTitle": "Electromagnetic Waves in Matter",
+            "description": "Study of electromagnetic wave propagation in different media, including dispersion, absorption, and reflection."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Electrodynamics and Maxwell's Equations"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Electromagnetic Potentials and Gauge Transformations",
+            "description": "深入研究电磁势，包括库仑规范和洛伦兹规范，以及规范变换的不变性。"
+          },
+          {
+            "chapterTitle": "Retarded Potentials and Radiation",
+            "description": "Calculation of retarded potentials and their application to understanding electromagnetic radiation from accelerated charges."
+          },
+          {
+            "chapterTitle": "Antennas and Waveguides",
+            "description": "Introduction to antenna theory and waveguide principles, including radiation patterns and mode analysis."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Electromagnetic Radiation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Special Relativity: Lorentz Transformations",
+            "description": "Review of special relativity, focusing on Lorentz transformations and their implications for electromagnetism."
+          },
+          {
+            "chapterTitle": "Relativistic Electrodynamics",
+            "description": "Formulation of electrodynamics in a relativistic framework, including the transformation of electric and magnetic fields."
+          },
+          {
+            "chapterTitle": "Applications of Electromagnetism",
+            "description": "Discussion of advanced applications of electromagnetism in areas such as particle physics, plasma physics, and cosmology."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Relativistic Electrodynamics and Applications"
+      }
+    ]
+  }
+}

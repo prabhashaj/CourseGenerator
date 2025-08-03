@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 14:26:30.629019",
+  "input": {
+    "course_topic": "Digital Signal Processing",
+    "difficulty_level": "Beginner",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.64,
+    "max_tokens": 2048,
+    "top_k": 23,
+    "top_p": 0.79
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of Digital Signal Processing, equipping you with the necessary knowledge to explore more advanced topics and real-world applications.",
+    "courseTitle": "Digital Signal Processing for Beginners",
+    "introduction": "Welcome to Digital Signal Processing! This course will introduce you to the fundamental concepts and techniques used to process signals in the digital domain. No prior knowledge of signal processing is required.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Signals",
+            "description": "What are signals? Types of signals (continuous, discrete, digital). Examples of signals in real life (audio, images, sensor data)."
+          },
+          {
+            "chapterTitle": "Basic Signal Properties",
+            "description": "Amplitude, frequency, and phase. Understanding these fundamental properties is crucial for signal analysis."
+          },
+          {
+            "chapterTitle": "Time Domain Representation",
+            "description": "Visualizing signals in the time domain. Understanding the relationship between signal shape and its properties."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Signals and Their Properties"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Systems",
+            "description": "What are systems? Linear Time-Invariant (LTI) systems. Examples of systems (filters, amplifiers)."
+          },
+          {
+            "chapterTitle": "Impulse Response",
+            "description": "Understanding the impulse response of a system. The impulse response characterizes the system's behavior."
+          },
+          {
+            "chapterTitle": "Convolution",
+            "description": "Introduction to convolution. How to convolve two signals. Convolution is the fundamental operation for LTI systems."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Introduction to Systems and Convolution"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to the Frequency Domain",
+            "description": "Why use the frequency domain? Understanding the frequency content of signals."
+          },
+          {
+            "chapterTitle": "The Fourier Transform",
+            "description": "Introduction to the Fourier Transform. Transforming signals from the time domain to the frequency domain."
+          },
+          {
+            "chapterTitle": "Frequency Domain Representation",
+            "description": "Visualizing signals in the frequency domain. Understanding the relationship between signal shape and its frequency content."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Introduction to the Frequency Domain and Fourier Transform"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Digital Filters",
+            "description": "What are digital filters? Types of digital filters (low-pass, high-pass, band-pass, band-stop)."
+          },
+          {
+            "chapterTitle": "Filter Design Basics",
+            "description": "Basic concepts of filter design. Understanding filter specifications (cutoff frequency, passband ripple, stopband attenuation)."
+          },
+          {
+            "chapterTitle": "Filter Applications",
+            "description": "Examples of filter applications (noise reduction, signal enhancement, equalization)."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Introduction to Digital Filters"
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:44:10.193871",
+  "input": {
+    "course_topic": "First Aid & Emergency Care",
+    "difficulty_level": "Intermediate",
+    "num_modules": 6,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.43,
+    "max_tokens": 1024,
+    "top_k": 23,
+    "top_p": 0.9
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, participants will be equipped with the knowledge and skills necessary to provide effective first aid and emergency care in a variety of situations, bridging the gap between an incident and professional medical help.",
+    "courseTitle": "First Aid & Emergency Care (Intermediate Level)",
+    "introduction": "This course provides intermediate-level training in first aid and emergency care. It is designed for individuals who want to expand their knowledge and skills beyond basic first aid to handle more complex situations and provide a higher level of care until professional help arrives. The course covers a range of topics, from advanced wound care to managing medical emergencies.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Scene Assessment & Safety",
+            "description": "Assessing the scene for hazards, ensuring personal safety, and protecting the victim. Includes identifying potential dangers and implementing safety protocols."
+          },
+          {
+            "chapterTitle": "Initial Assessment & Triage",
+            "description": "Performing a rapid assessment of the victim's condition, prioritizing care based on the severity of injuries or illnesses, and implementing triage principles."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Emergency Scene Management"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Airway Management",
+            "description": "Techniques for opening and maintaining a patent airway, including the use of airway adjuncts like oropharyngeal and nasopharyngeal airways."
+          },
+          {
+            "chapterTitle": "Breathing Support Techniques",
+            "description": "Assisting ventilation with bag-valve-mask (BVM) devices, recognizing signs of respiratory distress, and providing supplemental oxygen."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Airway & Breathing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Circulation Assessment & Control",
+            "description": "Assessing circulation by checking pulse, skin color, and capillary refill. Techniques for controlling severe bleeding, including direct pressure, tourniquets, and hemostatic agents."
+          },
+          {
+            "chapterTitle": "Shock Management",
+            "description": "Recognizing the signs and symptoms of shock, understanding different types of shock, and implementing appropriate interventions to improve circulation."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Circulation & Shock"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fracture Management & Splinting",
+            "description": "Recognizing signs and symptoms of fractures, immobilizing fractures with splints, and providing pain management."
+          },
+          {
+            "chapterTitle": "Spinal Injury Management",
+            "description": "Recognizing potential spinal injuries, immobilizing the spine with cervical collars and backboards, and preventing further injury during transport."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Musculoskeletal Injuries"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Medical Emergencies: Cardiac",
+            "description": "Recognizing signs and symptoms of heart attack, angina, and stroke. Implementing basic life support measures and coordinating with emergency medical services."
+          },
+          {
+            "chapterTitle": "Medical Emergencies: Diabetic & Seizures",
+            "description": "Managing diabetic emergencies (hypoglycemia and hyperglycemia), recognizing and managing seizures, and providing post-seizure care."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Medical Emergencies"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Environmental Emergencies: Heat & Cold",
+            "description": "Recognizing and managing heatstroke, heat exhaustion, hypothermia, and frostbite. Implementing cooling or warming measures."
+          },
+          {
+            "chapterTitle": "Poisoning & Overdose",
+            "description": "Identifying signs and symptoms of poisoning and overdose, contacting poison control centers, and providing supportive care."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Environmental Emergencies & Poisoning"
+      }
+    ]
+  }
+}

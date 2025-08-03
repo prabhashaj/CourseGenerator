@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:01:32.476257",
+  "input": {
+    "course_topic": "Fluid Mechanics",
+    "difficulty_level": "Expert",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.61,
+    "max_tokens": 1024,
+    "top_k": 32,
+    "top_p": 0.94
+  },
+  "output": {
+    "conclusion": "This course has provided an in-depth exploration of advanced fluid mechanics principles, equipping you with the knowledge and tools to tackle complex fluid flow problems in diverse engineering applications. Further study in specialized areas like turbulence modeling, multiphase flows, and computational fluid dynamics is highly recommended.",
+    "courseTitle": "Advanced Fluid Mechanics",
+    "introduction": "Welcome to Advanced Fluid Mechanics! This course is designed for experts seeking a deep dive into the intricacies of fluid behavior. We will explore advanced concepts, analytical techniques, and real-world applications, building upon a solid foundation of fundamental fluid mechanics principles.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Tensor Analysis for Fluid Mechanics",
+            "description": "Review of tensor algebra and calculus. Application of tensors to represent stress, strain, and rate of deformation in fluids. Coordinate transformations and invariant properties."
+          },
+          {
+            "chapterTitle": "Generalized Continuum Hypothesis",
+            "description": "Discussion of the limitations of the continuum hypothesis. Introduction to generalized continuum theories, such as micropolar fluids and granular flows. Applications in microfluidics and materials science."
+          },
+          {
+            "chapterTitle": "Non-Newtonian Fluid Mechanics",
+            "description": "Classification of non-Newtonian fluids (viscoelastic, shear-thinning, shear-thickening). Constitutive equations for non-Newtonian fluids. Applications in polymer processing, biofluids, and food science."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Mathematical Foundations and Non-Newtonian Fluids"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Stability Theory and Bifurcation Analysis",
+            "description": "Linear and nonlinear stability analysis of fluid flows. Introduction to bifurcation theory and its application to flow transitions. Examples of hydrodynamic instabilities (e.g., Benard convection, Taylor-Couette flow)."
+          },
+          {
+            "chapterTitle": "Transition to Turbulence",
+            "description": "Mechanisms of transition from laminar to turbulent flow. The role of coherent structures in turbulence generation. Experimental and numerical studies of transition."
+          },
+          {
+            "chapterTitle": "Advanced Turbulence Modeling",
+            "description": "Reynolds-averaged Navier-Stokes (RANS) equations and turbulence closure models (k-epsilon, k-omega SST). Large eddy simulation (LES) and direct numerical simulation (DNS) of turbulent flows. Assessment of model accuracy and limitations."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Stability and Turbulence"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Compressible Flow Equations",
+            "description": "Derivation of the compressible Navier-Stokes equations. Equation of state for ideal gases. Thermodynamic properties of compressible flows."
+          },
+          {
+            "chapterTitle": "Shock Wave Dynamics",
+            "description": "Normal and oblique shock waves. Rankine-Hugoniot relations. Shock wave reflection and interaction. Applications in supersonic and hypersonic flows."
+          },
+          {
+            "chapterTitle": "High-Speed Aerodynamics",
+            "description": "Airfoil theory for compressible flows. Prandtl-Glauert singularity. Transonic flow phenomena (shock-induced separation, buffet). Design of high-speed aircraft and missiles."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Compressible Flow"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Multiphase Flow Regimes",
+            "description": "Classification of multiphase flows (gas-liquid, liquid-liquid, gas-solid). Flow regimes and flow maps. Interfacial phenomena (surface tension, wetting)."
+          },
+          {
+            "chapterTitle": "Mixture Theory and Homogenization Techniques",
+            "description": "Volume averaging and ensemble averaging techniques. Effective properties of multiphase mixtures. Applications in porous media flow and fluidized beds."
+          },
+          {
+            "chapterTitle": "Computational Multiphase Flow",
+            "description": "Eulerian-Eulerian and Eulerian-Lagrangian approaches. Interface tracking and capturing methods. Modeling of mass and heat transfer in multiphase flows. Applications in chemical engineering and environmental science."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Multiphase Flow"
+      }
+    ]
+  }
+}

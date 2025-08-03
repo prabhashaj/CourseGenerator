@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 14:08:04.973454",
+  "input": {
+    "course_topic": "Self-healing Systems",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.51,
+    "max_tokens": 1024,
+    "top_k": 11,
+    "top_p": 0.8
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a foundational understanding of self-healing systems, their design principles, and practical implementation strategies. You are now equipped to build more resilient and robust software applications.",
+    "courseTitle": "Self-Healing Systems",
+    "introduction": "This course provides an intermediate-level exploration of self-healing systems, focusing on the principles, architectures, and practical techniques for building resilient and fault-tolerant software applications. We will cover various strategies for detecting, diagnosing, and recovering from failures automatically.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Self-Healing Systems",
+            "description": "Overview of self-healing concepts, benefits, and challenges. Defining key terms like fault tolerance, resilience, and recovery. Examples of self-healing systems in various domains."
+          },
+          {
+            "chapterTitle": "Types of Failures",
+            "description": "Categorizing different types of failures: hardware, software, network, and human errors. Understanding the impact of each failure type on system availability and performance."
+          },
+          {
+            "chapterTitle": "Self-Healing Strategies",
+            "description": "Introduction to common self-healing strategies: redundancy, replication, monitoring, and automated recovery. High-level comparison of different approaches."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Self-Healing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Monitoring and Detection",
+            "description": "Implementing health checks and monitoring tools to detect anomalies and failures. Setting up alerts and notifications for critical events."
+          },
+          {
+            "chapterTitle": "Diagnosis and Root Cause Analysis",
+            "description": "Techniques for identifying the root cause of failures: logging, tracing, and debugging. Using diagnostic tools to analyze system behavior."
+          },
+          {
+            "chapterTitle": "Automated Recovery Mechanisms",
+            "description": "Implementing automated recovery procedures: restarting services, rolling back deployments, and scaling resources. Ensuring minimal downtime and data loss."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Detection and Diagnosis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Redundancy and Replication",
+            "description": "Implementing redundancy to ensure high availability: active-passive and active-active configurations. Replicating data and services across multiple nodes."
+          },
+          {
+            "chapterTitle": "Checkpoints and Rollback",
+            "description": "Using checkpoints to save system state and rollback to a previous known good state in case of failure. Implementing transactional rollback mechanisms."
+          },
+          {
+            "chapterTitle": "Circuit Breakers",
+            "description": "Implementing circuit breakers to prevent cascading failures and protect downstream services. Monitoring service health and automatically opening/closing the circuit."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Recovery Strategies"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Self-Healing Architectures",
+            "description": "Designing self-healing architectures: microservices, cloud-native applications, and distributed systems. Integrating self-healing capabilities into the system design."
+          },
+          {
+            "chapterTitle": "Implementing Self-Healing in the Cloud",
+            "description": "Leveraging cloud services for self-healing: auto-scaling, load balancing, and managed services. Using cloud-native tools for monitoring and recovery."
+          },
+          {
+            "chapterTitle": "Testing and Validation",
+            "description": "Testing self-healing capabilities: fault injection, chaos engineering, and disaster recovery drills. Validating the effectiveness of recovery mechanisms."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Architectures and Implementation"
+      }
+    ]
+  }
+}

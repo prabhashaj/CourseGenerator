@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:23:15.550902",
+  "input": {
+    "course_topic": "Signals and Systems",
+    "difficulty_level": "Beginner",
+    "num_modules": 6,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.57,
+    "max_tokens": 1024,
+    "top_k": 21,
+    "top_p": 1.0
+  },
+  "output": {
+    "conclusion": "This course provided a foundational understanding of signals and systems, equipping you with the necessary tools to analyze and manipulate signals in various applications. Further exploration into advanced topics like digital signal processing and control systems is highly recommended.",
+    "courseTitle": "Signals and Systems: A Beginner's Guide",
+    "introduction": "Welcome to Signals and Systems! This course provides a gentle introduction to the fundamental concepts of signals and systems, focusing on building a strong foundation for further studies. We will explore various types of signals, learn how to analyze systems, and understand their interactions.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Signals",
+            "description": "What are signals? Examples of signals in real life (audio, images, sensor data). Continuous-time vs. Discrete-time signals. Basic signal operations (amplitude scaling, time shifting)."
+          },
+          {
+            "chapterTitle": "Basic Signal Types",
+            "description": "Unit impulse function. Unit step function. Ramp function. Exponential signals. Sinusoidal signals."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Signals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Systems",
+            "description": "What is a system? Examples of systems (amplifiers, filters, control systems). System representation using block diagrams."
+          },
+          {
+            "chapterTitle": "System Properties",
+            "description": "Linearity. Time-invariance. Causality. Stability."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Introduction to Systems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Convolution: Introduction",
+            "description": "Understanding convolution as a system's response to an input.  Graphical interpretation of convolution."
+          },
+          {
+            "chapterTitle": "Convolution: Example 1",
+            "description": "Simple example of convolving two rectangular pulses. Step-by-step demonstration."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Convolution Basics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fourier Series: Introduction",
+            "description": "Representing periodic signals as a sum of sinusoids.  The concept of frequency components."
+          },
+          {
+            "chapterTitle": "Fourier Series: Example",
+            "description": "Fourier series representation of a square wave.  Visualizing the frequency spectrum."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Fourier Series Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Fourier Transform: Introduction",
+            "description": "Extending Fourier Series to non-periodic signals. Definition of the Fourier Transform."
+          },
+          {
+            "chapterTitle": "Fourier Transform: Simple Example",
+            "description": "Fourier Transform of a simple exponential signal. Understanding the frequency spectrum."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Fourier Transform Basics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Filtering: Introduction",
+            "description": "What is filtering? Ideal filters (low-pass, high-pass, band-pass). Frequency response of filters."
+          },
+          {
+            "chapterTitle": "Filtering: Example",
+            "description": "Applying a simple low-pass filter to a signal. Observing the effect on the frequency spectrum."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Introduction to Filtering"
+      }
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-06-16 18:07:52.361532",
+  "input": {
+    "course_topic": "Electromagnetic Fields",
+    "difficulty_level": "Expert",
+    "num_modules": 6,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.35,
+    "max_tokens": 2048,
+    "top_k": 12,
+    "top_p": 0.77
+  },
+  "output": {
+    "conclusion": "This course has provided an in-depth exploration of electromagnetic fields, equipping you with the advanced knowledge and analytical skills necessary to tackle complex problems in electromagnetics. You are now prepared to contribute to cutting-edge research and development in this fascinating field.",
+    "courseTitle": "Electromagnetic Fields: Advanced Concepts and Applications",
+    "introduction": "Welcome to Electromagnetic Fields: Advanced Concepts and Applications. This course is designed for individuals with a strong foundation in electromagnetics seeking to deepen their understanding and explore advanced topics. We will delve into complex mathematical formulations, explore real-world applications, and challenge your problem-solving abilities.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Review of Maxwell's Equations and Constitutive Relations",
+            "description": "A concise review of Maxwell's equations in both differential and integral forms. Discussion of constitutive relations for various materials (linear, nonlinear, anisotropic) and their impact on electromagnetic field behavior."
+          },
+          {
+            "chapterTitle": "Electromagnetic Potentials: Scalar and Vector Potentials",
+            "description": "In-depth analysis of scalar and vector potentials. Gauge transformations (Coulomb and Lorenz gauges) and their implications. Retarded potentials and their application to time-varying fields."
+          },
+          {
+            "chapterTitle": "Uniqueness Theorem and Boundary Conditions",
+            "description": "Proof and application of the uniqueness theorem for electromagnetic fields. Detailed discussion of boundary conditions at interfaces between different materials. Applications to solving electromagnetic problems."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Module 1: Foundations and Review"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Plane Wave Propagation in Lossy Media",
+            "description": "Analysis of plane wave propagation in lossy dielectrics and conductors. Skin depth and its frequency dependence. Polarization effects and Brewster's angle."
+          },
+          {
+            "chapterTitle": "Waveguides: Rectangular and Circular Waveguides",
+            "description": "Detailed analysis of wave propagation in rectangular and circular waveguides. TE, TM, and TEM modes. Cutoff frequencies and mode excitation."
+          },
+          {
+            "chapterTitle": "Optical Fibers: Mode Analysis and Dispersion",
+            "description": "Introduction to optical fiber waveguides. Mode analysis in step-index and graded-index fibers. Dispersion mechanisms and their impact on signal propagation."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Module 2: Wave Propagation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Antenna Fundamentals: Radiation Patterns and Gain",
+            "description": "Basic antenna parameters: radiation pattern, directivity, gain, and impedance. Friis transmission equation and link budget analysis."
+          },
+          {
+            "chapterTitle": "Antenna Arrays: Phased Arrays and Beamforming",
+            "description": "Analysis of antenna arrays. Phased array concepts and beamforming techniques. Applications in radar and communication systems."
+          },
+          {
+            "chapterTitle": "Specialized Antennas: Microstrip and Dielectric Resonator Antennas",
+            "description": "Introduction to microstrip and dielectric resonator antennas. Design considerations and applications in wireless communication."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Module 3: Antennas and Radiation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Finite Element Method (FEM) for Electromagnetics",
+            "description": "Introduction to the Finite Element Method (FEM) for solving electromagnetic problems. Formulation of the FEM equations and application to static and dynamic fields."
+          },
+          {
+            "chapterTitle": "Method of Moments (MoM) for Electromagnetics",
+            "description": "Introduction to the Method of Moments (MoM) for solving electromagnetic problems. Application to antenna analysis and scattering problems."
+          },
+          {
+            "chapterTitle": "Finite-Difference Time-Domain (FDTD) Method",
+            "description": "Introduction to the Finite-Difference Time-Domain (FDTD) method. Implementation and application to wave propagation and scattering problems."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Module 4: Computational Electromagnetics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Electromagnetic Compatibility (EMC) Fundamentals",
+            "description": "Introduction to Electromagnetic Compatibility (EMC) and Electromagnetic Interference (EMI). Sources of EMI and coupling mechanisms."
+          },
+          {
+            "chapterTitle": "Shielding and Grounding Techniques",
+            "description": "Detailed discussion of shielding and grounding techniques for EMC compliance. Design considerations for effective shielding and grounding."
+          },
+          {
+            "chapterTitle": "EMC Standards and Regulations",
+            "description": "Overview of EMC standards and regulations (e.g., FCC, CISPR). Compliance testing and certification procedures."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Module 5: Electromagnetic Compatibility (EMC)"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Metamaterials: Properties and Applications",
+            "description": "Introduction to metamaterials and their unique electromagnetic properties (e.g., negative refractive index). Applications in cloaking, superlensing, and perfect absorbers."
+          },
+          {
+            "chapterTitle": "Plasmonics: Surface Plasmons and Applications",
+            "description": "Introduction to plasmonics and surface plasmon polaritons. Applications in sensing, imaging, and energy harvesting."
+          },
+          {
+            "chapterTitle": "Advanced Topics in Electromagnetic Theory",
+            "description": "Discussion of current research topics in electromagnetics, such as topological electromagnetics, non-reciprocal devices, and quantum electromagnetics."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Module 6: Advanced Topics and Emerging Technologies"
+      }
+    ]
+  }
+}

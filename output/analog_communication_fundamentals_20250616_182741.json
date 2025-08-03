@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:27:41.326261",
+  "input": {
+    "course_topic": "Analog Communication",
+    "difficulty_level": "Beginner",
+    "num_modules": 6,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.34,
+    "max_tokens": 1024,
+    "top_k": 29,
+    "top_p": 0.68
+  },
+  "output": {
+    "conclusion": "This course provided a foundational understanding of analog communication principles. Further exploration into digital communication and advanced modulation techniques is recommended.",
+    "courseTitle": "Analog Communication Fundamentals",
+    "introduction": "Welcome to Analog Communication Fundamentals! This course will introduce you to the basic concepts of analog communication systems, including modulation techniques, noise, and receiver design. No prior knowledge of communication systems is required.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Communication Systems",
+            "description": "Overview of communication systems, components of a communication system (transmitter, channel, receiver), types of communication (analog vs. digital), and the electromagnetic spectrum."
+          },
+          {
+            "chapterTitle": "Signals and Spectra",
+            "description": "Introduction to signals, signal representation in time and frequency domains, Fourier series and Fourier transform, signal bandwidth, and power spectral density."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Analog Communication"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Amplitude Modulation (AM)",
+            "description": "Introduction to Amplitude Modulation (AM), modulation index, power distribution in AM signals, and generation of AM signals using square law modulator."
+          },
+          {
+            "chapterTitle": "Demodulation of AM Signals",
+            "description": "Demodulation of AM signals using envelope detector, synchronous detection, and advantages and disadvantages of AM."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Amplitude Modulation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Frequency Modulation (FM)",
+            "description": "Introduction to Frequency Modulation (FM), frequency deviation, modulation index, bandwidth of FM signals (Carson's rule), and generation of FM signals using varactor diode modulator."
+          },
+          {
+            "chapterTitle": "Demodulation of FM Signals",
+            "description": "Demodulation of FM signals using slope detector, Foster-Seeley discriminator, ratio detector, and advantages and disadvantages of FM."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Frequency Modulation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Phase Modulation (PM)",
+            "description": "Introduction to Phase Modulation (PM), phase deviation, modulation index, relationship between FM and PM, and generation of PM signals."
+          },
+          {
+            "chapterTitle": "Demodulation of PM Signals",
+            "description": "Demodulation of PM signals using phase detectors, comparison of FM and PM, and applications of PM."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Phase Modulation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Noise in Communication Systems",
+            "description": "Introduction to noise, types of noise (thermal noise, shot noise, flicker noise), signal-to-noise ratio (SNR), and noise figure."
+          },
+          {
+            "chapterTitle": "Effect of Noise on Analog Modulation",
+            "description": "Effect of noise on AM, FM, and PM signals, SNR in AM and FM receivers, and noise reduction techniques."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Noise in Analog Communication"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Analog Communication Receivers",
+            "description": "Introduction to receiver architectures (superheterodyne receiver), receiver components (RF amplifier, mixer, local oscillator, IF amplifier, detector), and receiver performance parameters (sensitivity, selectivity, fidelity)."
+          },
+          {
+            "chapterTitle": "Receiver Design Considerations",
+            "description": "Design considerations for analog communication receivers, image frequency rejection, automatic gain control (AGC), and receiver testing and measurement."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Analog Communication Receivers"
+      }
+    ]
+  }
+}

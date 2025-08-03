@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:21:20.810193",
+  "input": {
+    "course_topic": "Web Development Fundamentals",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.63,
+    "max_tokens": 1024,
+    "top_k": 20,
+    "top_p": 0.57
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a solid foundation in web development fundamentals. You are now equipped to build interactive and dynamic web applications. Continue practicing and exploring advanced topics to further enhance your skills.",
+    "courseTitle": "Web Development Fundamentals",
+    "introduction": "Welcome to Web Development Fundamentals! This advanced-level course will provide you with a comprehensive understanding of the core technologies and concepts used in modern web development. We'll cover HTML, CSS, JavaScript, and essential tools to build interactive and dynamic web applications.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "HTML5 Structure and Semantics",
+            "description": "Deep dive into HTML5 semantic elements (article, aside, nav, section). Learn about accessibility best practices (ARIA attributes). Explore advanced form elements and validation techniques."
+          },
+          {
+            "chapterTitle": "Advanced HTML5 APIs",
+            "description": "Introduction to the Geolocation API, Canvas API for drawing graphics, and the Web Storage API (localStorage and sessionStorage) for client-side data storage. Practical examples of implementing these APIs."
+          },
+          {
+            "chapterTitle": "HTML5 Performance Optimization",
+            "description": "Techniques for optimizing HTML structure for faster loading times. Image optimization strategies (responsive images, lazy loading). Browser caching mechanisms and how to leverage them."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced HTML5"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "CSS3 Selectors and Specificity",
+            "description": "Mastering advanced CSS selectors (attribute selectors, pseudo-classes, pseudo-elements). Understanding CSS specificity and how to resolve conflicts. Best practices for CSS organization and maintainability."
+          },
+          {
+            "chapterTitle": "CSS3 Layout Techniques",
+            "description": "In-depth exploration of Flexbox and Grid layout systems. Creating complex and responsive layouts. Understanding the differences and use cases for each layout technique."
+          },
+          {
+            "chapterTitle": "CSS3 Animations and Transitions",
+            "description": "Creating advanced CSS animations and transitions. Understanding keyframes and timing functions. Optimizing animations for performance. Using CSS transforms for visual effects."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced CSS3"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "JavaScript DOM Manipulation",
+            "description": "Advanced DOM manipulation techniques. Working with events and event listeners. Creating dynamic and interactive user interfaces. Optimizing DOM manipulation for performance."
+          },
+          {
+            "chapterTitle": "Asynchronous JavaScript and AJAX",
+            "description": "Understanding asynchronous JavaScript programming. Working with Promises and async/await. Making AJAX requests to fetch data from APIs. Handling errors and loading states."
+          },
+          {
+            "chapterTitle": "JavaScript Design Patterns",
+            "description": "Introduction to common JavaScript design patterns (Module, Observer, Singleton). Applying design patterns to create maintainable and scalable code. Understanding the benefits of using design patterns."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced JavaScript"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Web Development Tooling",
+            "description": "Using package managers (npm, yarn) to manage dependencies. Introduction to build tools (Webpack, Parcel) for bundling and optimizing code. Setting up a development environment with linters and formatters."
+          },
+          {
+            "chapterTitle": "Version Control with Git",
+            "description": "Advanced Git commands and workflows. Branching strategies for collaborative development. Resolving merge conflicts. Using Git for deployment and continuous integration."
+          },
+          {
+            "chapterTitle": "Testing and Debugging",
+            "description": "Writing unit tests and integration tests. Using browser developer tools for debugging. Identifying and fixing performance bottlenecks. Best practices for testing and debugging web applications."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Web Development Tools and Workflow"
+      }
+    ]
+  }
+}

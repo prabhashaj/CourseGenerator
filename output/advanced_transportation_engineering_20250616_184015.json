@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:40:15.523993",
+  "input": {
+    "course_topic": "Transportation Engineering",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.33,
+    "max_tokens": 2048,
+    "top_k": 29,
+    "top_p": 0.55
+  },
+  "output": {
+    "conclusion": "This course provides an advanced understanding of transportation engineering principles and practices, equipping students with the knowledge and skills to address complex transportation challenges.",
+    "courseTitle": "Advanced Transportation Engineering",
+    "introduction": "Welcome to Advanced Transportation Engineering! This course delves into the complexities of modern transportation systems, focusing on advanced concepts and practical applications for experienced engineers and researchers.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Traffic Flow Theory: Advanced Models",
+            "description": "Explore advanced traffic flow models, including higher-order models and their applications in simulating complex traffic phenomena."
+          },
+          {
+            "chapterTitle": "Queueing Theory in Transportation",
+            "description": "Apply queueing theory to analyze and optimize transportation systems, focusing on advanced queueing models and their limitations."
+          },
+          {
+            "chapterTitle": "Traffic Simulation: Microscopic Modeling",
+            "description": "Delve into microscopic traffic simulation, covering car-following models, lane-changing models, and calibration techniques."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Traffic Flow Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Pavement Materials: Advanced Characterization",
+            "description": "Examine advanced characterization techniques for pavement materials, including dynamic modulus testing and fatigue analysis."
+          },
+          {
+            "chapterTitle": "Pavement Design: Mechanistic-Empirical Methods",
+            "description": "Apply mechanistic-empirical pavement design methods, focusing on the AASHTOWare Pavement ME Design software."
+          },
+          {
+            "chapterTitle": "Pavement Management Systems: Optimization Techniques",
+            "description": "Explore optimization techniques for pavement management systems, including life-cycle cost analysis and network-level planning."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Pavement Engineering"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transportation Planning: Activity-Based Modeling",
+            "description": "Learn about activity-based modeling for transportation planning, covering model development, calibration, and validation."
+          },
+          {
+            "chapterTitle": "Travel Demand Forecasting: Advanced Techniques",
+            "description": "Explore advanced travel demand forecasting techniques, including microsimulation and agent-based modeling."
+          },
+          {
+            "chapterTitle": "Transportation Economics: Cost-Benefit Analysis",
+            "description": "Apply cost-benefit analysis to evaluate transportation projects, considering social, environmental, and economic impacts."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Transportation Planning and Economics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Intelligent Transportation Systems: Connected Vehicles",
+            "description": "Examine connected vehicle technology and its applications in improving safety, mobility, and efficiency."
+          },
+          {
+            "chapterTitle": "Autonomous Vehicles: Technology and Policy",
+            "description": "Explore autonomous vehicle technology, including sensing, perception, and control algorithms, as well as policy implications."
+          },
+          {
+            "chapterTitle": "Sustainable Transportation: Life Cycle Assessment",
+            "description": "Apply life cycle assessment to evaluate the environmental impacts of transportation systems and promote sustainable practices."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Emerging Trends in Transportation Engineering"
+      }
+    ]
+  }
+}

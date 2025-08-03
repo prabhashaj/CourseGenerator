@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-13 13:28:09.215558",
+  "input": {
+    "course_topic": "Digital Detox",
+    "difficulty_level": "Beginner",
+    "num_modules": 6,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.64,
+    "max_tokens": 2048,
+    "top_k": 18,
+    "top_p": 0.96
+  },
+  "output": {
+    "conclusion": "By completing this course, you've taken the first steps towards a healthier relationship with technology. Remember to apply these strategies gradually and consistently to experience the full benefits of a digital detox.",
+    "courseTitle": "Digital Detox for Beginners",
+    "introduction": "Welcome to the Digital Detox for Beginners course! In today's hyper-connected world, it's easy to feel overwhelmed by screens and notifications. This course will guide you through simple, practical steps to reduce your digital dependence and reclaim your time and attention.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding Digital Overload",
+            "description": "Explore the signs and symptoms of digital overload, such as increased stress, sleep disturbances, and difficulty concentrating. Learn how constant connectivity affects your brain and well-being."
+          },
+          {
+            "chapterTitle": "Identifying Your Digital Habits",
+            "description": "Take a personal inventory of your daily digital usage. Identify the apps, websites, and activities that consume the most time and attention. Recognize the triggers that lead to excessive use."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Recognizing the Need for a Detox"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Setting Realistic Goals",
+            "description": "Define specific, measurable, achievable, relevant, and time-bound (SMART) goals for your digital detox. Focus on small, manageable changes rather than drastic restrictions."
+          },
+          {
+            "chapterTitle": "Choosing Your Detox Method",
+            "description": "Explore different approaches to digital detox, such as cold turkey, gradual reduction, or focused usage. Select the method that best suits your lifestyle and personality."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Planning Your Detox"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Turning Off Notifications",
+            "description": "Disable non-essential notifications on your phone, tablet, and computer. Reduce interruptions and regain control over your attention."
+          },
+          {
+            "chapterTitle": "Creating Tech-Free Zones",
+            "description": "Designate specific areas in your home or workspace as tech-free zones. Examples include the bedroom, dining table, or reading nook."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Implementing Simple Changes"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Time Blocking for Digital Activities",
+            "description": "Allocate specific time slots for checking email, social media, and other digital activities. Avoid constantly switching between tasks and distractions."
+          },
+          {
+            "chapterTitle": "Using Website Blockers",
+            "description": "Install website blockers or browser extensions to limit access to distracting websites during work hours or designated detox periods."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Using Tools and Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Rediscovering Offline Activities",
+            "description": "Engage in hobbies, interests, and activities that don't involve screens. Examples include reading, exercising, spending time in nature, or pursuing creative pursuits."
+          },
+          {
+            "chapterTitle": "Connecting with Others in Person",
+            "description": "Prioritize face-to-face interactions with friends and family. Schedule regular social activities that don't revolve around technology."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Finding Replacements for Screen Time"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Tracking Your Progress",
+            "description": "Monitor your digital usage and track your progress towards your detox goals. Use apps, journals, or spreadsheets to visualize your data and identify areas for improvement."
+          },
+          {
+            "chapterTitle": "Adjusting Your Strategy",
+            "description": "Evaluate the effectiveness of your detox strategy and make adjustments as needed. Be flexible and adaptable to find what works best for you."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Maintaining a Healthy Balance"
+      }
+    ]
+  }
+}

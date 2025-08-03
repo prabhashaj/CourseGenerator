@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:02:00.751485",
+  "input": {
+    "course_topic": "Kinematics",
+    "difficulty_level": "Advanced",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.57,
+    "max_tokens": 1024,
+    "top_k": 26,
+    "top_p": 0.8
+  },
+  "output": {
+    "conclusion": "By the end of this course, you will have a strong understanding of advanced kinematics concepts and be able to apply them to solve complex problems in physics and engineering.",
+    "courseTitle": "Advanced Kinematics",
+    "introduction": "Welcome to Advanced Kinematics! This course builds upon your existing knowledge of kinematics and delves into more complex topics such as non-inertial frames of reference, generalized coordinates, and advanced problem-solving techniques. Get ready to expand your understanding of motion!",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Review of Basic Kinematics",
+            "description": "A quick recap of displacement, velocity, acceleration, and their relationships in one and two dimensions. Emphasis on vector notation and calculus-based definitions."
+          },
+          {
+            "chapterTitle": "Projectile Motion with Air Resistance",
+            "description": "Analyzing projectile motion considering air resistance. Introduction to drag forces and their impact on trajectory, range, and time of flight. Numerical methods for solving complex trajectories."
+          },
+          {
+            "chapterTitle": "Curvilinear Motion: Tangential and Normal Components",
+            "description": "Describing motion along curved paths using tangential and normal components of velocity and acceleration. Applications to circular motion and other curved trajectories."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Foundations of Kinematics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Non-Inertial Frames of Reference",
+            "description": "Introduction to non-inertial frames and fictitious forces (e.g., Coriolis force, centrifugal force). Analyzing motion from the perspective of accelerating frames."
+          },
+          {
+            "chapterTitle": "Coriolis Effect",
+            "description": "Detailed explanation of the Coriolis effect and its applications in meteorology, oceanography, and ballistics. Mathematical derivation and examples."
+          },
+          {
+            "chapterTitle": "Rotating Frames of Reference",
+            "description": "Kinematics in rotating frames. Transformation of velocity and acceleration between inertial and rotating frames. Applications to rotating machinery and celestial mechanics."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Non-Inertial Frames"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Generalized Coordinates",
+            "description": "Introduction to generalized coordinates and their use in describing complex systems. Examples include pendulum motion and constrained systems."
+          },
+          {
+            "chapterTitle": "Kinematic Constraints",
+            "description": "Analyzing systems with kinematic constraints (e.g., rolling without slipping). Application of constraint equations to reduce the number of degrees of freedom."
+          },
+          {
+            "chapterTitle": "Advanced Problem-Solving Techniques",
+            "description": "Application of advanced kinematic concepts to solve challenging problems. Examples include robotic arm kinematics and vehicle dynamics."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Topics in Kinematics"
+      }
+    ]
+  }
+}

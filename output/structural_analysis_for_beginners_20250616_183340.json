@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-06-16 18:33:40.159544",
+  "input": {
+    "course_topic": "Structural Analysis",
+    "difficulty_level": "Beginner",
+    "num_modules": 6,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.61,
+    "max_tokens": 1024,
+    "top_k": 23,
+    "top_p": 0.99
+  },
+  "output": {
+    "conclusion": "This course provided a foundational understanding of structural analysis principles. Further study and practical application are essential for mastery.",
+    "courseTitle": "Structural Analysis for Beginners",
+    "introduction": "Welcome to Structural Analysis! This course introduces fundamental concepts for analyzing structures under various loads.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Structures",
+            "description": "Overview of structural elements (beams, columns, trusses) and their functions."
+          },
+          {
+            "chapterTitle": "Types of Loads",
+            "description": "Explanation of different load types (dead, live, wind, seismic) and their characteristics."
+          },
+          {
+            "chapterTitle": "Support Conditions",
+            "description": "Discussion on different support types (hinged, roller, fixed) and their reactions."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Structural Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Equilibrium Equations",
+            "description": "Understanding and applying the equations of static equilibrium (sum of forces and moments)."
+          },
+          {
+            "chapterTitle": "Free Body Diagrams",
+            "description": "Creating free body diagrams to represent structures and their loads."
+          },
+          {
+            "chapterTitle": "Reactions at Supports",
+            "description": "Calculating support reactions using equilibrium equations."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Equilibrium and Support Reactions"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Axial Force",
+            "description": "Introduction to axial forces in structural members."
+          },
+          {
+            "chapterTitle": "Shear Force",
+            "description": "Introduction to shear forces in structural members."
+          },
+          {
+            "chapterTitle": "Bending Moment",
+            "description": "Introduction to bending moments in structural members."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Internal Forces"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Shear and Moment Diagrams",
+            "description": "Constructing shear and moment diagrams for simple beams."
+          },
+          {
+            "chapterTitle": "Relationship Between Load, Shear, and Moment",
+            "description": "Understanding the relationships between load, shear force, and bending moment."
+          },
+          {
+            "chapterTitle": "Sign Conventions",
+            "description": "Understanding the sign conventions used in drawing shear and moment diagrams"
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Shear and Moment Diagrams"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Stress",
+            "description": "Basic concepts of stress (normal and shear)."
+          },
+          {
+            "chapterTitle": "Introduction to Strain",
+            "description": "Basic concepts of strain (normal and shear)."
+          },
+          {
+            "chapterTitle": "Stress-Strain Relationship",
+            "description": "Understanding the relationship between stress and strain (Hooke's Law)."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Stress and Strain"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Deflection",
+            "description": "Understanding the concept of deflection in beams."
+          },
+          {
+            "chapterTitle": "Factors Affecting Deflection",
+            "description": "Discussion on factors influencing beam deflection (load, material, geometry)."
+          },
+          {
+            "chapterTitle": "Qualitative Deflection",
+            "description": "Estimating Deflection Shape"
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Introduction to Beam Deflection"
+      }
+    ]
+  }
+}

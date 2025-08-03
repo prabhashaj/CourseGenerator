@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 14:29:10.460486",
+  "input": {
+    "course_topic": "Theory of Machines",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.58,
+    "max_tokens": 2048,
+    "top_k": 30,
+    "top_p": 0.5
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of the fundamental principles and advanced concepts in the Theory of Machines, equipping students with the knowledge and skills necessary for analyzing and designing mechanical systems.",
+    "courseTitle": "Advanced Theory of Machines",
+    "introduction": "Welcome to Advanced Theory of Machines! This course delves into the intricacies of machine dynamics, kinematics, and mechanisms, building upon foundational knowledge to explore advanced topics and applications.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Kinematic Analysis of Mechanisms",
+            "description": "Introduction to kinematic chains, degrees of freedom, Gruebler's criterion, Kutzbach criterion, kinematic inversions, and mobility analysis of complex mechanisms."
+          },
+          {
+            "chapterTitle": "Velocity Analysis",
+            "description": "Instantaneous center of rotation, Kennedy's theorem, graphical and analytical methods for velocity analysis of linkages and mechanisms."
+          },
+          {
+            "chapterTitle": "Acceleration Analysis",
+            "description": "Coriolis acceleration, graphical and analytical methods for acceleration analysis of linkages and mechanisms, including four-bar linkages and slider-crank mechanisms."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Kinematics of Mechanisms"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Static Force Analysis",
+            "description": "Static equilibrium of mechanisms, free-body diagrams, principle of virtual work, static force analysis of linkages with and without friction."
+          },
+          {
+            "chapterTitle": "Dynamic Force Analysis",
+            "description": "Inertia forces and torques, D'Alembert's principle, dynamic force analysis of linkages, balancing of rotating and reciprocating masses."
+          },
+          {
+            "chapterTitle": "Flywheel Design",
+            "description": "Energy fluctuation in machines, turning moment diagrams, flywheel design for speed regulation, coefficient of fluctuation of speed."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Dynamics of Machines"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Vibration Fundamentals",
+            "description": "Free, damped, and forced vibrations, single degree of freedom systems, natural frequency, damping ratio, resonance, vibration isolation."
+          },
+          {
+            "chapterTitle": "Multi-Degree of Freedom Systems",
+            "description": "Equations of motion, natural frequencies and mode shapes, vibration absorbers, vibration isolation techniques for multi-degree of freedom systems."
+          },
+          {
+            "chapterTitle": "Continuous Systems",
+            "description": "Vibration of strings, rods, and beams, wave equation, natural frequencies and mode shapes of continuous systems."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Mechanical Vibrations"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Gear Trains",
+            "description": "Simple, compound, and epicyclic gear trains, velocity ratio calculations, torque and power transmission in gear trains."
+          },
+          {
+            "chapterTitle": "Cams and Followers",
+            "description": "Cam profile design, displacement diagrams, velocity and acceleration analysis of cam-follower systems, types of followers."
+          },
+          {
+            "chapterTitle": "Balancing of Rotating Machinery",
+            "description": "Static and dynamic balancing, balancing machines, influence coefficient method, balancing of multi-cylinder engines."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Machine Elements"
+      }
+    ]
+  }
+}

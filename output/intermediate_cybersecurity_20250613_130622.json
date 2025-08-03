@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-13 13:06:22.847974",
+  "input": {
+    "course_topic": "Cybersecurity",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.55,
+    "max_tokens": 2048,
+    "top_k": 12,
+    "top_p": 0.58
+  },
+  "output": {
+    "conclusion": "By completing this course, you will have a strong understanding of key cybersecurity concepts and be prepared to tackle intermediate-level security challenges.",
+    "courseTitle": "Intermediate Cybersecurity",
+    "introduction": "Welcome to Intermediate Cybersecurity! This course builds upon foundational knowledge and delves into more complex security topics. Each module is designed to take approximately 10 minutes to read, providing a concise yet comprehensive learning experience.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Network Security Fundamentals",
+            "description": "Review of network protocols (TCP/IP, UDP), common network devices (routers, switches, firewalls), and basic network security principles."
+          },
+          {
+            "chapterTitle": "Network Segmentation",
+            "description": "Understanding the importance of network segmentation, VLANs, and subnetting for security."
+          },
+          {
+            "chapterTitle": "Firewall Configuration",
+            "description": "Hands-on practice with configuring firewall rules and access control lists (ACLs)."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Network Security"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Common Web Vulnerabilities",
+            "description": "Overview of OWASP Top 10 vulnerabilities, including SQL injection, XSS, and CSRF."
+          },
+          {
+            "chapterTitle": "Secure Coding Practices",
+            "description": "Best practices for writing secure code, input validation, and output encoding."
+          },
+          {
+            "chapterTitle": "Web Application Firewalls (WAFs)",
+            "description": "Introduction to WAFs and their role in protecting web applications."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Web Application Security"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Cryptography Basics",
+            "description": "Introduction to encryption algorithms (AES, RSA), hashing functions (SHA-256), and digital signatures."
+          },
+          {
+            "chapterTitle": "Key Management",
+            "description": "Best practices for generating, storing, and managing cryptographic keys."
+          },
+          {
+            "chapterTitle": "TLS/SSL Protocol",
+            "description": "Understanding the TLS/SSL protocol and its role in securing communication over the internet."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Cryptography"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Incident Response Planning",
+            "description": "Developing an incident response plan, including roles, responsibilities, and communication protocols."
+          },
+          {
+            "chapterTitle": "Malware Analysis Fundamentals",
+            "description": "Basic techniques for analyzing malware samples, including static and dynamic analysis."
+          },
+          {
+            "chapterTitle": "Digital Forensics Overview",
+            "description": "Introduction to digital forensics principles and techniques for collecting and analyzing digital evidence."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Incident Response and Forensics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Security Auditing",
+            "description": "Understanding the purpose and process of security audits, including internal and external audits."
+          },
+          {
+            "chapterTitle": "Vulnerability Scanning",
+            "description": "Using vulnerability scanners to identify security weaknesses in systems and applications."
+          },
+          {
+            "chapterTitle": "Penetration Testing Basics",
+            "description": "Introduction to penetration testing methodologies and ethical hacking principles."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Security Assessment"
+      }
+    ]
+  }
+}

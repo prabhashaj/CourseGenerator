@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-13 13:25:20.513504",
+  "input": {
+    "course_topic": "Ethical Hacking",
+    "difficulty_level": "Beginner",
+    "num_modules": 5,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.33,
+    "max_tokens": 2048,
+    "top_k": 27,
+    "top_p": 0.78
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a foundational understanding of ethical hacking principles and techniques. You are now equipped to pursue further learning and contribute to a more secure digital world.",
+    "courseTitle": "Ethical Hacking for Beginners",
+    "introduction": "Welcome to the Ethical Hacking for Beginners course! This course will introduce you to the world of cybersecurity and ethical hacking, providing you with the fundamental knowledge and skills to understand and defend against cyber threats.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Cybersecurity",
+            "description": "Overview of cybersecurity concepts, threats, and vulnerabilities."
+          },
+          {
+            "chapterTitle": "What is Ethical Hacking?",
+            "description": "Defining ethical hacking, its purpose, and its role in cybersecurity."
+          },
+          {
+            "chapterTitle": "The Hacker Mindset",
+            "description": "Understanding the thought process and motivations of hackers."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Ethical Hacking"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Basic Networking Concepts",
+            "description": "Introduction to networking protocols, IP addresses, and network topologies."
+          },
+          {
+            "chapterTitle": "The OSI Model",
+            "description": "Understanding the layers of the OSI model and their functions."
+          },
+          {
+            "chapterTitle": "Network Security Fundamentals",
+            "description": "Basic network security principles and common network vulnerabilities."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Networking Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Linux",
+            "description": "Overview of the Linux operating system and its importance in ethical hacking."
+          },
+          {
+            "chapterTitle": "Basic Linux Commands",
+            "description": "Essential Linux commands for navigation, file manipulation, and system administration."
+          },
+          {
+            "chapterTitle": "Setting up a Virtual Environment",
+            "description": "Creating a virtual environment for safe and isolated ethical hacking practice."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Linux Basics for Hackers"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Information Gathering Techniques",
+            "description": "Introduction to reconnaissance and information gathering methods."
+          },
+          {
+            "chapterTitle": "Using Search Engines for Reconnaissance",
+            "description": "Leveraging search engines to gather information about targets."
+          },
+          {
+            "chapterTitle": "Whois and DNS Lookups",
+            "description": "Performing Whois and DNS lookups to gather domain and network information."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Reconnaissance and Information Gathering"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Vulnerability Scanning",
+            "description": "Understanding vulnerability scanning and its role in identifying security weaknesses."
+          },
+          {
+            "chapterTitle": "Using Nmap for Port Scanning",
+            "description": "Introduction to Nmap and performing basic port scanning techniques."
+          },
+          {
+            "chapterTitle": "Interpreting Scan Results",
+            "description": "Analyzing scan results to identify potential vulnerabilities."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Vulnerability Scanning Basics"
+      }
+    ]
+  }
+}

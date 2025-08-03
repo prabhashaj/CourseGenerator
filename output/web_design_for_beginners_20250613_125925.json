@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 12:59:25.629253",
+  "input": {
+    "course_topic": "Web Design",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.68,
+    "max_tokens": 2048,
+    "top_k": 22,
+    "top_p": 0.89
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a foundational understanding of web design principles and practical skills to build your own websites. Continue practicing and exploring advanced techniques to become a proficient web designer!",
+    "courseTitle": "Web Design for Beginners",
+    "introduction": "Welcome to the world of web design! This course is designed for absolute beginners with no prior experience. We'll guide you through the fundamental concepts and practical skills needed to create your own beautiful and functional websites.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to HTML",
+            "description": "Learn about HTML's role in structuring web content. Understand basic HTML tags like headings, paragraphs, and lists. Practice writing simple HTML documents."
+          },
+          {
+            "chapterTitle": "HTML Elements and Attributes",
+            "description": "Explore different HTML elements such as images, links, and tables. Learn how to use attributes to modify element behavior and appearance. Practice adding images and links to your web pages."
+          },
+          {
+            "chapterTitle": "HTML Structure and Semantics",
+            "description": "Understand the importance of proper HTML structure for accessibility and SEO. Learn about semantic HTML5 elements like <header>, <nav>, <article>, and <footer>. Practice structuring your web pages semantically."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "HTML Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to CSS",
+            "description": "Learn about CSS's role in styling web content. Understand basic CSS syntax, selectors, and properties. Practice applying CSS styles to HTML elements."
+          },
+          {
+            "chapterTitle": "CSS Selectors and Properties",
+            "description": "Explore different CSS selectors such as element selectors, class selectors, and ID selectors. Learn about common CSS properties for text, colors, and backgrounds. Practice styling your web pages with CSS."
+          },
+          {
+            "chapterTitle": "CSS Box Model",
+            "description": "Understand the CSS box model and its components: content, padding, border, and margin. Learn how to control the spacing and layout of elements using the box model. Practice adjusting the box model properties of your elements."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "CSS Basics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Web Design Principles",
+            "description": "Learn about essential web design principles such as visual hierarchy, balance, contrast, and typography. Understand how to create visually appealing and user-friendly websites."
+          },
+          {
+            "chapterTitle": "Responsive Web Design",
+            "description": "Understand the importance of responsive web design for different devices. Learn about viewport meta tag and media queries. Practice creating responsive layouts using CSS."
+          },
+          {
+            "chapterTitle": "Introduction to Web Accessibility",
+            "description": "Learn about web accessibility and its importance for users with disabilities. Understand basic accessibility guidelines such as providing alternative text for images and using semantic HTML. Practice making your web pages more accessible."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Web Design Principles and Accessibility"
+      }
+    ]
+  }
+}

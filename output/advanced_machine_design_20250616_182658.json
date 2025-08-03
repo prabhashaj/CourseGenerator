@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:26:58.640561",
+  "input": {
+    "course_topic": "Machine Design",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.63,
+    "max_tokens": 2048,
+    "top_k": 28,
+    "top_p": 0.66
+  },
+  "output": {
+    "conclusion": "This course provides an advanced understanding of machine design principles, enabling engineers to create robust and efficient mechanical systems.",
+    "courseTitle": "Advanced Machine Design",
+    "introduction": "Welcome to Advanced Machine Design! This course delves into the intricacies of designing complex mechanical systems, focusing on advanced analysis techniques and optimization strategies.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Stress Analysis",
+            "description": "In-depth analysis of stress concentration factors, residual stresses, and their impact on component life."
+          },
+          {
+            "chapterTitle": "Failure Theories",
+            "description": "Detailed examination of various failure theories, including distortion energy theory, maximum shear stress theory, and modified Mohr theory."
+          },
+          {
+            "chapterTitle": "Fatigue Analysis",
+            "description": "Advanced concepts in fatigue analysis, including S-N curves, fatigue life prediction, and crack growth analysis."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Stress and Failure Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Surface Engineering",
+            "description": "Techniques for modifying surface properties to enhance wear resistance, corrosion resistance, and fatigue life."
+          },
+          {
+            "chapterTitle": "Tribology",
+            "description": "Study of friction, wear, and lubrication in mechanical systems, including hydrodynamic and elastohydrodynamic lubrication."
+          },
+          {
+            "chapterTitle": "Bearing Design",
+            "description": "Advanced design considerations for rolling element bearings and journal bearings, including load distribution and lubrication."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Tribology and Surface Engineering"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Gear Design",
+            "description": "Advanced gear design principles, including helical gears, bevel gears, and worm gears, with a focus on stress analysis and optimization."
+          },
+          {
+            "chapterTitle": "Shaft Design",
+            "description": "Detailed analysis of shaft design, including stress concentration, fatigue, and critical speed calculations."
+          },
+          {
+            "chapterTitle": "Coupling Design",
+            "description": "Design and selection of various types of couplings, including rigid couplings, flexible couplings, and fluid couplings."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Power Transmission Components"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Finite Element Analysis (FEA)",
+            "description": "Application of FEA to machine design problems, including stress analysis, thermal analysis, and vibration analysis."
+          },
+          {
+            "chapterTitle": "Optimization Techniques",
+            "description": "Introduction to optimization techniques for machine design, including gradient-based methods and genetic algorithms."
+          },
+          {
+            "chapterTitle": "Design for Manufacturing (DFM)",
+            "description": "Principles of DFM, including material selection, manufacturing processes, and assembly considerations."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Design Tools and Techniques"
+      }
+    ]
+  }
+}

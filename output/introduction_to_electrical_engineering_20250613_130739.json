@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-13 13:07:39.660069",
+  "input": {
+    "course_topic": "Electrical Engineering",
+    "difficulty_level": "Beginner",
+    "num_modules": 5,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.49,
+    "max_tokens": 2048,
+    "top_k": 10,
+    "top_p": 0.95
+  },
+  "output": {
+    "conclusion": "This course has provided a foundational understanding of electrical engineering principles. Further exploration and practical application are encouraged to deepen your knowledge.",
+    "courseTitle": "Introduction to Electrical Engineering",
+    "introduction": "Welcome to the world of Electrical Engineering! This course will provide a beginner-friendly introduction to the fundamental concepts and principles that govern the field.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is Electrical Engineering?",
+            "description": "An overview of the field, its applications, and its impact on society."
+          },
+          {
+            "chapterTitle": "Basic Electrical Quantities",
+            "description": "Introduction to voltage, current, resistance, and power."
+          },
+          {
+            "chapterTitle": "Units and Measurement",
+            "description": "Understanding the standard units used in electrical engineering (Volts, Amps, Ohms, Watts)."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Electricity"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Ohm's Law",
+            "description": "Understanding the relationship between voltage, current, and resistance."
+          },
+          {
+            "chapterTitle": "Series Circuits",
+            "description": "Analyzing circuits with components connected in series."
+          },
+          {
+            "chapterTitle": "Parallel Circuits",
+            "description": "Analyzing circuits with components connected in parallel."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Basic Circuit Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Resistors",
+            "description": "Types of resistors and their applications."
+          },
+          {
+            "chapterTitle": "Introduction to Capacitors",
+            "description": "Types of capacitors and their applications."
+          },
+          {
+            "chapterTitle": "Introduction to Inductors",
+            "description": "Types of inductors and their applications."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Passive Components"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is AC?",
+            "description": "Introduction to alternating current (AC) and its properties."
+          },
+          {
+            "chapterTitle": "What is DC?",
+            "description": "Introduction to direct current (DC) and its properties."
+          },
+          {
+            "chapterTitle": "AC vs DC",
+            "description": "Comparing and contrasting AC and DC power."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "AC and DC Circuits"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Semiconductors",
+            "description": "Overview of semiconductor materials and their importance."
+          },
+          {
+            "chapterTitle": "Diodes",
+            "description": "Introduction to diodes and their basic function."
+          },
+          {
+            "chapterTitle": "Transistors",
+            "description": "Introduction to transistors and their basic function."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Introduction to Semiconductor Devices"
+      }
+    ]
+  }
+}

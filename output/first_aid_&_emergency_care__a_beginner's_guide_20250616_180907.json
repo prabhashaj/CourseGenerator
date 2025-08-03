@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:09:07.771229",
+  "input": {
+    "course_topic": "First Aid & Emergency Care",
+    "difficulty_level": "Beginner",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.7,
+    "max_tokens": 1024,
+    "top_k": 13,
+    "top_p": 0.88
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, you will be equipped with the essential knowledge and skills to provide initial assistance in various emergency situations. Remember to always prioritize safety and seek professional medical help when necessary.",
+    "courseTitle": "First Aid & Emergency Care: A Beginner's Guide",
+    "introduction": "Welcome to the First Aid & Emergency Care course! This course is designed for beginners with no prior medical experience. You will learn fundamental first aid techniques and how to respond effectively in emergency situations. This course aims to empower you to provide initial assistance and potentially save lives.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to First Aid",
+            "description": "What is first aid? Importance of first aid. Legal and ethical considerations. Basic principles of first aid."
+          },
+          {
+            "chapterTitle": "Assessing the Situation",
+            "description": "Scene safety. Initial assessment of the casualty. Determining the mechanism of injury or nature of illness."
+          },
+          {
+            "chapterTitle": "Calling for Help",
+            "description": "When and how to call emergency services. Providing accurate information to the dispatcher."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of First Aid"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "CPR Basics",
+            "description": "Introduction to CPR. Recognizing cardiac arrest. Hands-only CPR technique."
+          },
+          {
+            "chapterTitle": "Choking",
+            "description": "Recognizing choking in adults and children. Performing abdominal thrusts (Heimlich maneuver)."
+          },
+          {
+            "chapterTitle": "Recovery Position",
+            "description": "Placing an unconscious but breathing casualty in the recovery position."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Life-Saving Interventions"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Wound Care",
+            "description": "Types of wounds (abrasions, lacerations, punctures). Cleaning and dressing wounds. Controlling bleeding."
+          },
+          {
+            "chapterTitle": "Burns",
+            "description": "Types of burns (thermal, chemical, electrical). First aid for minor and major burns."
+          },
+          {
+            "chapterTitle": "Sprains and Strains",
+            "description": "Recognizing sprains and strains. RICE (Rest, Ice, Compression, Elevation) treatment."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Managing Injuries"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Allergic Reactions",
+            "description": "Recognizing signs and symptoms of allergic reactions. Using an epinephrine auto-injector (EpiPen)."
+          },
+          {
+            "chapterTitle": "Fainting",
+            "description": "Causes of fainting. First aid for fainting."
+          },
+          {
+            "chapterTitle": "Seizures",
+            "description": "Recognizing seizures. Protecting the casualty during a seizure. Post-seizure care."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Responding to Medical Emergencies"
+      }
+    ]
+  }
+}

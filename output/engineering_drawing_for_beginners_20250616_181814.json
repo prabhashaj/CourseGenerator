@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:18:14.776242",
+  "input": {
+    "course_topic": "Engineering Drawing",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.65,
+    "max_tokens": 1024,
+    "top_k": 32,
+    "top_p": 0.62
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a foundational understanding of engineering drawing principles and techniques. You are now equipped to interpret and create basic engineering drawings, setting you on the path to further exploration in design and engineering fields.",
+    "courseTitle": "Engineering Drawing for Beginners",
+    "introduction": "Welcome to Engineering Drawing for Beginners! This course will introduce you to the fundamental principles and techniques used in creating and interpreting engineering drawings. No prior experience is necessary. We'll cover basic concepts, tools, and conventions to help you understand and create technical drawings.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Engineering Drawing",
+            "description": "What is engineering drawing? Its importance in engineering and manufacturing. Types of engineering drawings. Overview of the course content."
+          },
+          {
+            "chapterTitle": "Drawing Instruments and Materials",
+            "description": "Introduction to essential drawing instruments: pencils, erasers, rulers, compasses, protractors, and drawing boards. Selecting the right materials for different drawing tasks."
+          },
+          {
+            "chapterTitle": "Basic Line Types and Lettering",
+            "description": "Understanding different line types used in engineering drawings (e.g., visible lines, hidden lines, center lines). Importance of proper lettering and numbering for clarity."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Engineering Drawing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Geometric Constructions",
+            "description": "Constructing basic geometric shapes: lines, angles, triangles, squares, circles, and arcs. Using compasses and rulers for accurate constructions."
+          },
+          {
+            "chapterTitle": "Orthographic Projection - Introduction",
+            "description": "Understanding the principles of orthographic projection. Creating front, top, and side views of simple objects."
+          },
+          {
+            "chapterTitle": "Orthographic Projection - Practice",
+            "description": "Practice creating orthographic projections of various 3D objects. Identifying visible and hidden lines in different views."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Basic Drawing Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Dimensioning Basics",
+            "description": "Introduction to dimensioning: placing dimensions on drawings. Dimensioning rules and conventions."
+          },
+          {
+            "chapterTitle": "Sectional Views - Introduction",
+            "description": "Understanding the purpose of sectional views. Identifying cutting planes and section lines."
+          },
+          {
+            "chapterTitle": "Introduction to CAD Software",
+            "description": "Brief overview of Computer-Aided Design (CAD) software. Advantages of using CAD for engineering drawing. Examples of popular CAD software."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Drawing Concepts"
+      }
+    ]
+  }
+}

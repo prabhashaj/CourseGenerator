@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 17:55:12.449372",
+  "input": {
+    "course_topic": "Transformers and Induction Motors",
+    "difficulty_level": "Advanced",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.65,
+    "max_tokens": 2048,
+    "top_k": 13,
+    "top_p": 0.72
+  },
+  "output": {
+    "conclusion": "This course provided an in-depth exploration of transformers and induction motors, covering advanced concepts and practical applications. Students should now be equipped with the knowledge and skills to analyze, design, and troubleshoot these essential electrical machines.",
+    "courseTitle": "Transformers and Induction Motors - Advanced Level",
+    "introduction": "Welcome to the advanced course on Transformers and Induction Motors! This course delves into the intricate details of these essential electrical machines, building upon foundational knowledge to explore advanced concepts, analysis techniques, and practical applications. Get ready to enhance your expertise in power systems and electrical engineering.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transformer Equivalent Circuit Refinement",
+            "description": "Detailed analysis of the transformer equivalent circuit, including core loss representation and parameter determination using open-circuit and short-circuit tests. Focus on the impact of non-ideal components."
+          },
+          {
+            "chapterTitle": "Transformer Voltage Regulation and Efficiency",
+            "description": "Advanced calculations of voltage regulation under varying load conditions and power factors. Efficiency optimization techniques, including minimizing core and copper losses. Consideration of temperature effects."
+          },
+          {
+            "chapterTitle": "Transformer Inrush Current and Harmonics",
+            "description": "In-depth study of transformer inrush current phenomena during energization. Analysis of harmonic generation due to core saturation and non-linear loads. Mitigation strategies for harmonic distortion."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Transformer Theory and Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Induction Motor Equivalent Circuit and Performance",
+            "description": "Advanced analysis of the induction motor equivalent circuit, including deep-bar and double-cage rotor effects. Performance characteristics under varying voltage and frequency conditions."
+          },
+          {
+            "chapterTitle": "Induction Motor Speed Control Techniques",
+            "description": "Detailed examination of advanced speed control methods, such as vector control, direct torque control (DTC), and field-oriented control (FOC). Implementation considerations and performance evaluation."
+          },
+          {
+            "chapterTitle": "Induction Motor Starting Methods and Protection",
+            "description": "Advanced starting methods, including autotransformer starting, part-winding starting, and solid-state starters. Comprehensive protection schemes against overcurrent, overvoltage, and thermal overload."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Induction Motor Theory and Control"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transformer Paralleling and Load Sharing",
+            "description": "Conditions for parallel operation of transformers. Analysis of load sharing between transformers with different ratings and impedances. Circulating current calculations and mitigation strategies."
+          },
+          {
+            "chapterTitle": "Induction Motor Drives and Applications",
+            "description": "Application of induction motors in various industrial drives, including pumps, fans, compressors, and conveyors. Selection criteria based on load characteristics and performance requirements."
+          },
+          {
+            "chapterTitle": "Power Quality Issues and Mitigation Techniques",
+            "description": "Analysis of power quality problems associated with transformers and induction motors, such as voltage sags, voltage swells, and harmonic distortion. Mitigation techniques using filters, power factor correction, and active power control."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Applications and Power Quality Considerations"
+      }
+    ]
+  }
+}

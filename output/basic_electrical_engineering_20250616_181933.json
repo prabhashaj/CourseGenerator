@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-16 18:19:33.654408",
+  "input": {
+    "course_topic": "Basic Electrical Engineering",
+    "difficulty_level": "Expert",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.6,
+    "max_tokens": 2048,
+    "top_k": 26,
+    "top_p": 0.55
+  },
+  "output": {
+    "conclusion": "This course has provided a comprehensive overview of basic electrical engineering principles. You should now be equipped with the knowledge to analyze and design simple electrical circuits and systems.",
+    "courseTitle": "Basic Electrical Engineering",
+    "introduction": "Welcome to Basic Electrical Engineering! This course is designed for individuals with a strong technical background seeking a deep dive into the fundamentals of electrical circuits, components, and systems. We will cover circuit analysis techniques, electromagnetism, and basic electrical machines.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fundamental Electrical Quantities",
+            "description": "Delve into the definitions and relationships between voltage, current, resistance, and power. Explore the units of measurement and their practical significance in electrical circuits. Advanced concepts like complex power will be touched upon."
+          },
+          {
+            "chapterTitle": "Ohm's Law and Kirchhoff's Laws",
+            "description": "A rigorous examination of Ohm's Law and its limitations. Detailed analysis of Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL) with advanced circuit examples and applications."
+          },
+          {
+            "chapterTitle": "Series and Parallel Circuits",
+            "description": "In-depth analysis of series and parallel resistor combinations. Calculation of equivalent resistance and voltage/current distribution in complex series-parallel networks. Includes practical design considerations."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Circuit Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Mesh Analysis",
+            "description": "Advanced application of Mesh Analysis for solving complex circuits with multiple voltage and current sources. Includes dealing with dependent sources and supermeshes."
+          },
+          {
+            "chapterTitle": "Nodal Analysis",
+            "description": "Detailed exploration of Nodal Analysis techniques for solving circuits with multiple nodes. Includes handling voltage sources and supernodes. Comparison of Mesh and Nodal analysis for optimal circuit solving."
+          },
+          {
+            "chapterTitle": "Source Transformations",
+            "description": "Mastering source transformation techniques to simplify complex circuits. Converting voltage sources to current sources and vice versa. Applications in circuit simplification and analysis."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Circuit Analysis Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Capacitors and Inductors",
+            "description": "In-depth study of capacitors and inductors, including their behavior in DC and AC circuits. Explore energy storage mechanisms and time-domain analysis of RC and RL circuits."
+          },
+          {
+            "chapterTitle": "Transient Response of RC and RL Circuits",
+            "description": "Detailed analysis of the transient response of RC and RL circuits to step inputs. Calculation of time constants and understanding the charging/discharging behavior. Includes practical applications in switching circuits."
+          },
+          {
+            "chapterTitle": "Sinusoidal Steady-State Analysis",
+            "description": "Introduction to sinusoidal steady-state analysis using phasors. Application of phasors to solve AC circuits with resistors, capacitors, and inductors. Includes impedance and admittance concepts."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Energy Storage Elements and AC Circuits"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Magnetic Fields and Circuits",
+            "description": "Exploration of magnetic fields produced by currents. Introduction to magnetic circuits and their analysis. Includes concepts like permeability, reluctance, and magnetomotive force (MMF)."
+          },
+          {
+            "chapterTitle": "Electromagnetic Induction",
+            "description": "Detailed study of Faraday's Law of Electromagnetic Induction. Understanding the principles of transformers and their applications in power systems."
+          },
+          {
+            "chapterTitle": "Basic Transformer Principles",
+            "description": "In-depth analysis of transformer operation, including voltage and current ratios, impedance transformation, and efficiency calculations. Includes practical considerations for transformer selection and application."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Electromagnetism"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "DC Machines",
+            "description": "Detailed analysis of DC motor and generator operation. Understanding the construction, characteristics, and control methods for DC machines. Includes applications in various industries."
+          },
+          {
+            "chapterTitle": "AC Machines",
+            "description": "Introduction to AC machines, including synchronous and induction motors. Exploration of their operating principles, characteristics, and applications in power systems and industrial drives."
+          },
+          {
+            "chapterTitle": "Basic Power Electronics",
+            "description": "Overview of basic power electronic devices and circuits, including diodes, transistors, and thyristors. Introduction to rectifiers, inverters, and converters. Includes applications in power supplies and motor control."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Electrical Machines"
+      }
+    ]
+  }
+}

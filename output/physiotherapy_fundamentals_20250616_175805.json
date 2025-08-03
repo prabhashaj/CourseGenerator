@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 17:58:05.013372",
+  "input": {
+    "course_topic": "Physiotherapy Fundamentals",
+    "difficulty_level": "Expert",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.44,
+    "max_tokens": 1024,
+    "top_k": 18,
+    "top_p": 0.58
+  },
+  "output": {
+    "conclusion": "This course has provided a comprehensive overview of fundamental physiotherapy principles and techniques. By understanding these concepts, you are well-equipped to advance your expertise in physiotherapy practice.",
+    "courseTitle": "Physiotherapy Fundamentals",
+    "introduction": "Welcome to Physiotherapy Fundamentals! This course is designed for expert-level practitioners seeking to reinforce their foundational knowledge and explore advanced applications of core physiotherapy principles. Each module is designed to take approximately 10 minutes to read.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Biomechanics Review",
+            "description": "A rapid review of essential biomechanical principles, including kinematics, kinetics, and the lever systems of the body. Focus on clinical applications for advanced assessment and treatment planning."
+          },
+          {
+            "chapterTitle": "Neuroplasticity and Motor Control",
+            "description": "Exploring the latest research on neuroplasticity and its implications for motor control rehabilitation. Emphasis on advanced techniques to facilitate neural reorganization and optimize motor learning."
+          },
+          {
+            "chapterTitle": "Pain Mechanisms: Advanced Concepts",
+            "description": "Delving into complex pain mechanisms, including central sensitization, neuropathic pain, and the biopsychosocial model of pain. Focus on advanced assessment and management strategies for chronic pain conditions."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Foundational Principles Revisited"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Manual Therapy Techniques",
+            "description": "A concise overview of advanced manual therapy techniques, including mobilization, manipulation, and soft tissue release. Emphasis on precise application and clinical reasoning for optimal outcomes."
+          },
+          {
+            "chapterTitle": "Therapeutic Exercise Prescription: Expert Level",
+            "description": "Review of advanced therapeutic exercise prescription principles, including periodization, progressive overload, and specificity of training. Focus on designing individualized exercise programs for complex patient presentations."
+          },
+          {
+            "chapterTitle": "Electrotherapeutic Modalities: Evidence-Based Practice",
+            "description": "A critical appraisal of electrotherapeutic modalities, including ultrasound, electrical stimulation, and laser therapy. Emphasis on evidence-based practice and appropriate application for specific clinical conditions."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Core Physiotherapy Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Differential Diagnosis in Physiotherapy",
+            "description": "A review of differential diagnosis principles, focusing on the ability to distinguish between various musculoskeletal, neurological, and cardiopulmonary conditions. Emphasis on advanced clinical reasoning and diagnostic accuracy."
+          },
+          {
+            "chapterTitle": "Outcome Measures and Clinical Decision-Making",
+            "description": "Exploring the use of outcome measures to inform clinical decision-making and track patient progress. Focus on selecting appropriate outcome measures and interpreting results for optimal treatment planning."
+          },
+          {
+            "chapterTitle": "Ethical Considerations in Physiotherapy Practice",
+            "description": "A discussion of ethical considerations in physiotherapy practice, including informed consent, confidentiality, and professional boundaries. Emphasis on ethical decision-making in complex clinical scenarios."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Clinical Reasoning and Practice"
+      }
+    ]
+  }
+}

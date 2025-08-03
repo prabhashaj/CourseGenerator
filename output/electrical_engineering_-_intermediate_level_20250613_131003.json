@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-13 13:10:03.371262",
+  "input": {
+    "course_topic": "Electrical Engineering",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.6,
+    "max_tokens": 1024,
+    "top_k": 30,
+    "top_p": 0.54
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in advanced electrical engineering concepts, preparing you for more specialized studies and practical applications in the field.",
+    "courseTitle": "Electrical Engineering - Intermediate Level",
+    "introduction": "Welcome to the Intermediate Electrical Engineering course! This course builds upon your existing knowledge of basic electrical principles and delves into more complex topics. Each module is designed to be concise and informative, with an estimated reading time of 2 minutes per module.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Circuit Analysis Techniques",
+            "description": "Advanced techniques for analyzing complex circuits, including nodal analysis, mesh analysis, and superposition theorem."
+          },
+          {
+            "chapterTitle": "Thevenin and Norton Equivalents",
+            "description": "Understanding and applying Thevenin's and Norton's theorems to simplify circuit analysis."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Circuit Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Operational Amplifiers (Op-Amps)",
+            "description": "Introduction to operational amplifiers, their characteristics, and basic configurations."
+          },
+          {
+            "chapterTitle": "Op-Amp Applications",
+            "description": "Applications of op-amps in amplifiers, filters, and other signal processing circuits."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Operational Amplifiers"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Semiconductor Devices",
+            "description": "Detailed study of diodes, transistors (BJTs and MOSFETs), and their characteristics."
+          },
+          {
+            "chapterTitle": "Transistor Biasing",
+            "description": "Understanding and implementing different biasing techniques for transistors."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Semiconductor Devices and Circuits"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Digital Logic Gates",
+            "description": "Introduction to digital logic gates (AND, OR, NOT, NAND, NOR, XOR) and their truth tables."
+          },
+          {
+            "chapterTitle": "Boolean Algebra",
+            "description": "Simplifying digital circuits using Boolean algebra and Karnaugh maps."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Digital Logic Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "AC Power Analysis",
+            "description": "Analyzing AC power circuits, including power factor, reactive power, and power factor correction."
+          },
+          {
+            "chapterTitle": "Three-Phase Systems",
+            "description": "Introduction to three-phase power systems and their advantages."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "AC Power Systems"
+      }
+    ]
+  }
+}

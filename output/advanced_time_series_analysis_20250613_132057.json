@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 13:20:57.955545",
+  "input": {
+    "course_topic": "Time Series Analysis",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.61,
+    "max_tokens": 1024,
+    "top_k": 30,
+    "top_p": 1.0
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of time series analysis techniques, enabling you to effectively model, forecast, and interpret time-dependent data.",
+    "courseTitle": "Advanced Time Series Analysis",
+    "introduction": "Welcome to Advanced Time Series Analysis! This course delves into sophisticated methods for analyzing and forecasting time series data, building upon foundational knowledge. We will explore advanced models, spectral analysis, and state-space models, equipping you with the tools to tackle complex real-world problems.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Advanced Time Series Concepts",
+            "description": "Review of basic time series concepts (stationarity, autocorrelation). Introduction to advanced topics: non-linear models, multivariate time series, and state-space representations."
+          },
+          {
+            "chapterTitle": "Stationarity Tests and Transformations",
+            "description": "Advanced stationarity tests (KPSS, ADF-GLS). Techniques for variance stabilization (Box-Cox transformations) and trend removal (differencing, detrending)."
+          },
+          {
+            "chapterTitle": "Model Selection Criteria",
+            "description": "Information criteria (AIC, BIC, HQIC) for model selection. Cross-validation techniques for time series data. Model diagnostics and residual analysis."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Foundations and Advanced Concepts"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "ARIMA Model Extensions",
+            "description": "Seasonal ARIMA (SARIMA) models. ARIMA models with exogenous variables (ARIMAX). Intervention analysis and outlier detection."
+          },
+          {
+            "chapterTitle": "Non-Linear Time Series Models",
+            "description": "Introduction to non-linear models: Threshold Autoregressive (TAR) models, Smooth Transition Autoregressive (STAR) models. Neural network models for time series."
+          },
+          {
+            "chapterTitle": "Volatility Modeling",
+            "description": "Introduction to volatility modeling: ARCH and GARCH models. Extensions of GARCH models: EGARCH, GJR-GARCH. Applications in finance."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced ARIMA and Non-Linear Models"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Spectral Analysis Fundamentals",
+            "description": "Introduction to spectral analysis: Fourier transform, periodogram. Windowing techniques for spectral estimation."
+          },
+          {
+            "chapterTitle": "Advanced Spectral Estimation",
+            "description": "Parametric spectral estimation methods (AR, MA, ARMA). Applications of spectral analysis: signal processing, climate analysis."
+          },
+          {
+            "chapterTitle": "Wavelet Analysis",
+            "description": "Introduction to wavelet analysis: continuous and discrete wavelet transforms. Applications of wavelet analysis: denoising, feature extraction."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Spectral Analysis and Wavelets"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "State-Space Models",
+            "description": "Introduction to state-space models: Kalman filter, Kalman smoother. Model formulation and estimation."
+          },
+          {
+            "chapterTitle": "Applications of State-Space Models",
+            "description": "Applications in time series forecasting, signal extraction, and parameter estimation. Dynamic linear models."
+          },
+          {
+            "chapterTitle": "Multivariate Time Series Analysis",
+            "description": "Vector Autoregression (VAR) models. Cointegration and error correction models. Applications in economics and finance."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "State-Space Models and Multivariate Analysis"
+      }
+    ]
+  }
+}

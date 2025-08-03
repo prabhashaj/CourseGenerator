@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 13:10:32.146259",
+  "input": {
+    "course_topic": "Calculus",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.55,
+    "max_tokens": 2048,
+    "top_k": 25,
+    "top_p": 0.69
+  },
+  "output": {
+    "conclusion": "This Calculus course provides a solid foundation for further studies in mathematics, physics, engineering, and other related fields. By mastering the concepts and techniques presented, you will be well-equipped to tackle more advanced problems and applications.",
+    "courseTitle": "Calculus",
+    "introduction": "Welcome to Calculus! This course is designed for intermediate-level learners who have a basic understanding of algebra and trigonometry. We will explore the fundamental concepts of calculus, including limits, derivatives, and integrals, and their applications.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Limits: An Introduction",
+            "description": "Explore the concept of limits and how they form the foundation of calculus. Learn about graphical and numerical approaches to finding limits."
+          },
+          {
+            "chapterTitle": "Calculating Limits Algebraically",
+            "description": "Master algebraic techniques for evaluating limits, including factoring, rationalizing, and using limit laws."
+          },
+          {
+            "chapterTitle": "One-Sided Limits and Continuity",
+            "description": "Understand one-sided limits and their relationship to continuity. Learn about different types of discontinuities."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Limits and Continuity"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Derivative: Definition and Notation",
+            "description": "Introduce the concept of the derivative as the slope of a tangent line. Learn different notations for the derivative."
+          },
+          {
+            "chapterTitle": "Basic Differentiation Rules",
+            "description": "Master the power rule, constant multiple rule, sum/difference rule, and other basic differentiation rules."
+          },
+          {
+            "chapterTitle": "Derivatives of Trigonometric Functions",
+            "description": "Learn how to differentiate trigonometric functions such as sine, cosine, tangent, and their inverses."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Differentiation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Chain Rule",
+            "description": "Learn the chain rule for differentiating composite functions and apply it to various examples."
+          },
+          {
+            "chapterTitle": "Implicit Differentiation",
+            "description": "Understand implicit differentiation and use it to find derivatives of implicitly defined functions."
+          },
+          {
+            "chapterTitle": "Related Rates",
+            "description": "Solve related rates problems involving rates of change of related quantities."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Differentiation Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Indefinite Integral",
+            "description": "Introduce the concept of the indefinite integral as the antiderivative of a function. Learn basic integration rules."
+          },
+          {
+            "chapterTitle": "The Definite Integral",
+            "description": "Define the definite integral as the area under a curve. Learn about Riemann sums and the Fundamental Theorem of Calculus."
+          },
+          {
+            "chapterTitle": "Integration by Substitution",
+            "description": "Master the technique of u-substitution for evaluating integrals."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Integration"
+      }
+    ]
+  }
+}

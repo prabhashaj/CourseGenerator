@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-16 18:37:37.870333",
+  "input": {
+    "course_topic": "Electromagnetic Fields",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.41,
+    "max_tokens": 2048,
+    "top_k": 29,
+    "top_p": 0.57
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in electromagnetic field theory, preparing students for advanced topics in electromagnetics, antenna design, microwave engineering, and related fields.",
+    "courseTitle": "Electromagnetic Fields",
+    "introduction": "Welcome to Electromagnetic Fields! This course will delve into the fundamental principles governing electric and magnetic fields, their interactions, and applications. We will explore vector calculus, electrostatics, magnetostatics, and Maxwell's equations, providing you with the tools to analyze and design electromagnetic systems.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Vector Calculus Review",
+            "description": "Brief review of vector algebra, coordinate systems (Cartesian, cylindrical, spherical), scalar and vector fields, gradient, divergence, and curl."
+          },
+          {
+            "chapterTitle": "Line, Surface, and Volume Integrals",
+            "description": "Understanding line, surface, and volume integrals. Application of the Divergence Theorem and Stokes' Theorem."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Mathematical Preliminaries"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Coulomb's Law and Electric Field Intensity",
+            "description": "Introduction to Coulomb's Law, electric field intensity, electric field due to point charges, line charges, surface charges, and volume charges."
+          },
+          {
+            "chapterTitle": "Electric Flux Density and Gauss's Law",
+            "description": "Electric flux density, Gauss's Law, applications of Gauss's Law to various charge distributions."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Electrostatics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Electric Potential",
+            "description": "Electric potential, potential difference, potential due to point charges, line charges, surface charges, and volume charges. Potential gradient."
+          },
+          {
+            "chapterTitle": "Conductors, Dielectrics, and Capacitance",
+            "description": "Behavior of conductors and dielectrics in electric fields, boundary conditions, capacitance, parallel-plate capacitor, energy density in electrostatic fields."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Electric Potential and Dielectrics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Biot-Savart Law and Ampere's Law",
+            "description": "Introduction to Biot-Savart Law, magnetic field intensity, magnetic field due to current elements, line currents, and surface currents. Ampere's Law and its applications."
+          },
+          {
+            "chapterTitle": "Magnetic Flux Density and Magnetic Materials",
+            "description": "Magnetic flux density, magnetic flux, magnetic materials, magnetization, boundary conditions for magnetic fields."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Magnetostatics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Faraday's Law and Inductance",
+            "description": "Faraday's Law of electromagnetic induction, motional EMF, transformer EMF, inductance, self-inductance, mutual inductance."
+          },
+          {
+            "chapterTitle": "Maxwell's Equations",
+            "description": "Introduction to Maxwell's equations in integral and differential forms, displacement current, time-harmonic fields."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Electromagnetic Induction and Maxwell's Equations"
+      }
+    ]
+  }
+}

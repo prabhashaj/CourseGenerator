@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 13:32:11.784054",
+  "input": {
+    "course_topic": "Space Propulsion Systems",
+    "difficulty_level": "Expert",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.53,
+    "max_tokens": 1024,
+    "top_k": 20,
+    "top_p": 0.85
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of advanced space propulsion systems, equipping participants with the knowledge to contribute to the design and development of future space missions.",
+    "courseTitle": "Space Propulsion Systems",
+    "introduction": "Welcome to Space Propulsion Systems, an expert-level course designed to delve into the intricacies of various propulsion technologies used in space exploration. This course assumes a strong foundation in physics, thermodynamics, and fluid mechanics. We will explore the theoretical underpinnings, practical applications, and future trends in space propulsion.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fundamentals of Rocket Propulsion",
+            "description": "Review of basic rocket principles: Newton's laws, thrust equation, specific impulse, and characteristic velocity. Ideal rocket equation and its limitations. Introduction to different types of rocket engines (chemical, electric, nuclear)."
+          },
+          {
+            "chapterTitle": "Thermodynamics and Nozzle Theory",
+            "description": "Thermodynamic analysis of rocket engines: combustion chamber processes, nozzle expansion. Isentropic flow relations, nozzle performance parameters (thrust coefficient, area ratio). Nozzle design considerations for optimal performance."
+          },
+          {
+            "chapterTitle": "Chemical Rocket Propellants",
+            "description": "Classification of chemical propellants: liquid, solid, and hybrid. Properties of ideal propellants: high energy density, stability, and storability. Common propellant combinations and their performance characteristics. Environmental considerations and green propellants."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Chemical Propulsion Systems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Electric Propulsion Fundamentals",
+            "description": "Introduction to electric propulsion: principles of operation, advantages, and disadvantages. Types of electric propulsion systems: electrothermal, electrostatic, and electromagnetic. Performance parameters: thrust, specific impulse, and power consumption."
+          },
+          {
+            "chapterTitle": "Electrothermal Thrusters",
+            "description": "Resistojets and arcjets: operating principles, design considerations, and performance characteristics. Applications of electrothermal thrusters in satellite station-keeping and orbit raising. Advanced electrothermal thruster concepts."
+          },
+          {
+            "chapterTitle": "Electrostatic Thrusters",
+            "description": "Ion thrusters: operating principles, ion generation, acceleration, and neutralization. Gridded ion thrusters and Hall thrusters: design features and performance comparison. Applications of ion thrusters in deep-space missions."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Electric Propulsion Systems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Propulsion Concepts",
+            "description": "Introduction to advanced propulsion concepts: nuclear propulsion, fusion propulsion, and beamed energy propulsion. Challenges and opportunities in developing these technologies."
+          },
+          {
+            "chapterTitle": "Nuclear Thermal Propulsion",
+            "description": "Operating principles of nuclear thermal rockets (NTR): reactor design, propellant heating, and nozzle expansion. Performance potential of NTR systems for interplanetary travel. Safety and environmental considerations."
+          },
+          {
+            "chapterTitle": "Fusion Propulsion",
+            "description": "Concepts for fusion-powered rockets: magnetic confinement fusion and inertial confinement fusion. Challenges in achieving sustained fusion reactions in space. Potential performance benefits of fusion propulsion for interstellar missions."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced and Future Propulsion"
+      }
+    ]
+  }
+}

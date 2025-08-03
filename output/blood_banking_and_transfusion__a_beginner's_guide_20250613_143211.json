@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-13 14:32:11.773596",
+  "input": {
+    "course_topic": "Blood Banking and Transfusion",
+    "difficulty_level": "Beginner",
+    "num_modules": 5,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.33,
+    "max_tokens": 2048,
+    "top_k": 10,
+    "top_p": 0.64
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of blood banking and transfusion practices. Further study and practical experience are essential for competent practice in this field.",
+    "courseTitle": "Blood Banking and Transfusion: A Beginner's Guide",
+    "introduction": "Welcome to the Blood Banking and Transfusion course! This course provides a basic introduction to the principles and practices of blood banking, including blood group systems, compatibility testing, and transfusion therapy.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Blood Banking",
+            "description": "Overview of blood banking history, organization, and the role of blood banks in healthcare."
+          },
+          {
+            "chapterTitle": "Ethical and Legal Considerations",
+            "description": "Discussion of ethical principles and legal regulations governing blood donation and transfusion."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Blood Banking and Transfusion"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "ABO Blood Group System",
+            "description": "Detailed explanation of the ABO blood group system, including antigens, antibodies, and inheritance."
+          },
+          {
+            "chapterTitle": "Rh Blood Group System",
+            "description": "Detailed explanation of the Rh blood group system, including antigens, antibodies, and clinical significance."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Blood Group Systems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Blood Collection and Processing",
+            "description": "Overview of the blood donation process, including donor screening, collection methods, and component preparation."
+          },
+          {
+            "chapterTitle": "Blood Components",
+            "description": "Description of various blood components, including red blood cells, platelets, plasma, and cryoprecipitate."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Blood Collection and Processing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Pre-Transfusion Testing",
+            "description": "Explanation of pre-transfusion testing procedures, including blood typing, antibody screening, and crossmatching."
+          },
+          {
+            "chapterTitle": "Compatibility Testing",
+            "description": "Detailed explanation of compatibility testing methods and their importance in preventing transfusion reactions."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Pre-Transfusion Testing and Compatibility"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transfusion Therapy",
+            "description": "Overview of transfusion indications, administration procedures, and monitoring of patients during transfusion."
+          },
+          {
+            "chapterTitle": "Transfusion Reactions",
+            "description": "Introduction to common transfusion reactions, including signs, symptoms, and management strategies."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Transfusion Therapy and Reactions"
+      }
+    ]
+  }
+}

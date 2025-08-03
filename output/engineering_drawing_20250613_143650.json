@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-13 14:36:50.120220",
+  "input": {
+    "course_topic": "Engineering Drawing",
+    "difficulty_level": "Intermediate",
+    "num_modules": 6,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.53,
+    "max_tokens": 2048,
+    "top_k": 17,
+    "top_p": 0.54
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in engineering drawing, equipping you with the skills to create and interpret technical drawings effectively.",
+    "courseTitle": "Engineering Drawing",
+    "introduction": "Welcome to Engineering Drawing! This intermediate-level course builds upon basic drafting principles, focusing on advanced techniques and industry standards.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Review of Basic Principles",
+            "description": "Revisit fundamental concepts like line types, lettering, and basic geometric constructions. Emphasize accuracy and clarity."
+          },
+          {
+            "chapterTitle": "Orthographic Projection Refresher",
+            "description": "Quick review of multi-view drawings, including front, top, and side views. Focus on proper alignment and projection techniques."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals Review"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Auxiliary Views: Introduction",
+            "description": "Introduction to auxiliary views and their purpose in representing inclined surfaces accurately."
+          },
+          {
+            "chapterTitle": "Primary Auxiliary Views",
+            "description": "Creating primary auxiliary views to show true shape and size of inclined surfaces. Examples and practice problems."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Auxiliary Views"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Section Views: Cutting Plane Lines",
+            "description": "Understanding cutting plane lines and their representation in section views."
+          },
+          {
+            "chapterTitle": "Full and Half Sections",
+            "description": "Creating full and half section views to reveal internal features of objects. Proper hatching techniques."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Section Views"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Dimensioning: Advanced Techniques",
+            "description": "Advanced dimensioning practices, including chain dimensioning, baseline dimensioning, and coordinate dimensioning."
+          },
+          {
+            "chapterTitle": "Tolerancing Basics",
+            "description": "Introduction to tolerancing concepts and their importance in manufacturing. Understanding basic tolerance symbols."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Dimensioning and Tolerancing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fasteners: Types and Representation",
+            "description": "Overview of common fasteners (bolts, nuts, screws, rivets) and their simplified representation in engineering drawings."
+          },
+          {
+            "chapterTitle": "Assembly Drawings",
+            "description": "Creating assembly drawings showing how different parts fit together. Bill of Materials (BOM) introduction."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Fasteners and Assembly Drawings"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Surface Finish Symbols",
+            "description": "Understanding and applying surface finish symbols to indicate desired surface texture."
+          },
+          {
+            "chapterTitle": "Welding Symbols",
+            "description": "Introduction to welding symbols and their use in specifying weld types and sizes."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Surface Finish and Welding Symbols"
+      }
+    ]
+  }
+}

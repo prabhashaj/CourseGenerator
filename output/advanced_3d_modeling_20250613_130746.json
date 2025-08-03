@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-13 13:07:46.912698",
+  "input": {
+    "course_topic": "3D Modeling",
+    "difficulty_level": "Intermediate",
+    "num_modules": 6,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.65,
+    "max_tokens": 2048,
+    "top_k": 11,
+    "top_p": 0.5
+  },
+  "output": {
+    "conclusion": "By the end of this course, you will have a strong understanding of advanced 3D modeling techniques and be able to create complex and visually appealing 3D models for various applications.",
+    "courseTitle": "Advanced 3D Modeling",
+    "introduction": "Welcome to the Advanced 3D Modeling course! This course is designed for individuals with a foundational understanding of 3D modeling principles and software. We will delve into advanced techniques to elevate your modeling skills and create professional-quality 3D assets.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Subdivision Modeling",
+            "description": "Explore advanced techniques for subdivision modeling, including edge flow control, creasing, and creating organic shapes with precision."
+          },
+          {
+            "chapterTitle": "Working with Multi-Resolution Meshes",
+            "description": "Learn how to effectively manage and work with multi-resolution meshes for detailed sculpting and efficient rendering."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Subdivision Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding Displacement Maps",
+            "description": "Learn how to create and apply displacement maps to add intricate surface details to your models."
+          },
+          {
+            "chapterTitle": "Sculpting High-Resolution Details",
+            "description": "Explore advanced sculpting techniques for adding fine details such as wrinkles, pores, and textures to your models."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Sculpting and Detailing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to UV Unwrapping Principles",
+            "description": "Review the core principles of UV unwrapping and its importance in texturing 3D models."
+          },
+          {
+            "chapterTitle": "Advanced UV Unwrapping Techniques",
+            "description": "Learn advanced techniques for unwrapping complex models, minimizing distortion, and optimizing UV layouts."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced UV Unwrapping"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding PBR Materials",
+            "description": "Explore the principles of Physically Based Rendering (PBR) and how it affects material creation."
+          },
+          {
+            "chapterTitle": "Creating Realistic Textures",
+            "description": "Learn how to create realistic textures using software like Substance Painter or Quixel Mixer, focusing on albedo, roughness, and normal maps."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Texturing and Materials"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Rigging Concepts",
+            "description": "Learn the basic concepts of rigging, including joints, bones, and control systems."
+          },
+          {
+            "chapterTitle": "Creating Simple Rigs",
+            "description": "Create simple rigs for basic character animation, focusing on joint placement and creating control handles."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Introduction to Rigging"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Optimizing Models for Real-Time",
+            "description": "Learn techniques for optimizing 3D models for real-time applications, such as game engines and VR/AR experiences."
+          },
+          {
+            "chapterTitle": "Baking Textures for Performance",
+            "description": "Explore texture baking techniques to reduce the performance impact of complex materials and lighting."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Optimization for Real-Time"
+      }
+    ]
+  }
+}

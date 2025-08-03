@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-16 18:28:10.518020",
+  "input": {
+    "course_topic": "Video Editing",
+    "difficulty_level": "Beginner",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.34,
+    "max_tokens": 1024,
+    "top_k": 11,
+    "top_p": 0.7
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a foundational understanding of video editing principles and techniques. You are now equipped to create engaging video content for various platforms. Continue practicing and exploring advanced features to further enhance your skills.",
+    "courseTitle": "Video Editing for Beginners",
+    "introduction": "Welcome to the world of video editing! This course is designed for absolute beginners with no prior experience. We'll cover the fundamental concepts and techniques you need to start creating your own videos.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Video Editing",
+            "description": "What is video editing? Understanding the basics of video editing and its importance. Different types of video editing applications and their uses."
+          },
+          {
+            "chapterTitle": "Understanding Video Formats",
+            "description": "Exploring different video formats (MP4, MOV, AVI) and codecs. Understanding resolution (720p, 1080p, 4K) and frame rates (24fps, 30fps, 60fps)."
+          },
+          {
+            "chapterTitle": "Setting Up Your Workspace",
+            "description": "Choosing the right video editing software for your needs. Setting up your project and organizing your media files."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Getting Started with Video Editing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Importing and Organizing Media",
+            "description": "Importing video and audio files into your editing software. Organizing your media using bins or folders."
+          },
+          {
+            "chapterTitle": "Basic Editing Techniques",
+            "description": "Cutting, trimming, and arranging clips on the timeline. Understanding the timeline interface."
+          },
+          {
+            "chapterTitle": "Adding Transitions",
+            "description": "Using transitions to smoothly connect clips. Exploring different types of transitions (fade, dissolve, wipe)."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Basic Editing Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Working with Audio",
+            "description": "Importing and editing audio tracks. Adjusting audio levels and adding background music."
+          },
+          {
+            "chapterTitle": "Adding Text and Titles",
+            "description": "Creating and customizing text overlays. Adding titles and lower thirds to your videos."
+          },
+          {
+            "chapterTitle": "Color Correction Basics",
+            "description": "Understanding basic color correction principles. Adjusting brightness, contrast, and saturation."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Enhancing Your Video"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Adding Visual Effects",
+            "description": "Exploring basic visual effects (e.g., blur, sharpen). Using effects to enhance your video's visual appeal."
+          },
+          {
+            "chapterTitle": "Working with Keyframes",
+            "description": "Understanding keyframes and their use in animation. Animating text, graphics, and effects."
+          },
+          {
+            "chapterTitle": "Stabilizing Shaky Footage",
+            "description": "Using stabilization tools to reduce camera shake. Improving the smoothness of your videos."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Editing Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Exporting Your Video",
+            "description": "Choosing the right export settings for different platforms (YouTube, Vimeo, social media). Understanding different video codecs and resolutions."
+          },
+          {
+            "chapterTitle": "Sharing Your Video",
+            "description": "Uploading your video to online platforms. Optimizing your video for search engines."
+          },
+          {
+            "chapterTitle": "Best Practices for Video Editing",
+            "description": "Tips and tricks for efficient video editing. Avoiding common mistakes and improving your workflow."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Exporting and Sharing"
+      }
+    ]
+  }
+}

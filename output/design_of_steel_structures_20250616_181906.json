@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:19:06.386507",
+  "input": {
+    "course_topic": "Design of Steel Structures",
+    "difficulty_level": "Expert",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.33,
+    "max_tokens": 2048,
+    "top_k": 16,
+    "top_p": 0.82
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of advanced steel structure design principles and practices, equipping participants with the expertise to tackle complex engineering challenges.",
+    "courseTitle": "Design of Steel Structures",
+    "introduction": "Welcome to the 'Design of Steel Structures' course. This advanced-level course is tailored for experienced engineers and professionals seeking to deepen their knowledge and skills in the design, analysis, and behavior of steel structures. We will delve into advanced topics, industry best practices, and cutting-edge research to enhance your expertise in this critical field.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Concepts in Steel Material Behavior",
+            "description": "Explore the advanced material properties of steel, including strain hardening, Bauschinger effect, and temperature-dependent behavior. Discuss the impact of these properties on structural performance."
+          },
+          {
+            "chapterTitle": "Fracture Mechanics and Fatigue Analysis",
+            "description": "Delve into the principles of fracture mechanics and fatigue analysis in steel structures. Learn about crack initiation, propagation, and failure criteria. Cover fatigue design considerations and mitigation strategies."
+          },
+          {
+            "chapterTitle": "Advanced Connection Design",
+            "description": "Examine advanced connection types, including welded and bolted connections under complex loading conditions. Analyze connection behavior using finite element methods and explore innovative connection details."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Material Behavior and Connection Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Stability Analysis of Steel Structures",
+            "description": "Explore advanced stability concepts, including buckling, lateral-torsional buckling, and local buckling. Discuss methods for stability analysis, such as eigenvalue analysis and nonlinear analysis."
+          },
+          {
+            "chapterTitle": "Seismic Design of Steel Structures",
+            "description": "Focus on advanced seismic design principles for steel structures. Cover performance-based design, ductility considerations, and seismic detailing requirements. Discuss the behavior of steel structures under earthquake loading."
+          },
+          {
+            "chapterTitle": "Blast Resistant Design",
+            "description": "Introduction to blast-resistant design of steel structures. Learn about blast loading characteristics, structural response, and design strategies to mitigate blast effects."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Stability, Seismic, and Blast Resistant Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Nonlinear Analysis of Steel Structures",
+            "description": "Explore nonlinear analysis techniques for steel structures, including geometric nonlinearity, material nonlinearity, and contact nonlinearity. Discuss the application of nonlinear analysis in structural design."
+          },
+          {
+            "chapterTitle": "Finite Element Modeling and Simulation",
+            "description": "Focus on advanced finite element modeling techniques for steel structures. Cover mesh generation, material modeling, and boundary conditions. Discuss the interpretation of finite element results."
+          },
+          {
+            "chapterTitle": "Case Studies in Steel Structure Design",
+            "description": "Analyze real-world case studies of complex steel structure designs. Discuss the challenges faced, the solutions implemented, and the lessons learned. Explore innovative design approaches and technologies."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Analysis and Case Studies"
+      }
+    ]
+  }
+}

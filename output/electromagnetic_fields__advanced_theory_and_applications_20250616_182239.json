@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:22:39.179361",
+  "input": {
+    "course_topic": "Electromagnetic Fields",
+    "difficulty_level": "Expert",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.67,
+    "max_tokens": 2048,
+    "top_k": 10,
+    "top_p": 0.58
+  },
+  "output": {
+    "conclusion": "This course has provided an in-depth exploration of advanced electromagnetic field theory, equipping you with the knowledge and skills to tackle complex problems in electromagnetics. Further research and application of these principles will be crucial for continued growth in this field.",
+    "courseTitle": "Electromagnetic Fields: Advanced Theory and Applications",
+    "introduction": "Welcome to the advanced course on Electromagnetic Fields. This course is designed for experts and will delve into the intricacies of electromagnetic theory, building upon foundational knowledge to explore advanced concepts and applications. We will explore topics such as advanced vector calculus, electromagnetic wave propagation in complex media, and advanced techniques for solving electromagnetic problems.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Vector Calculus and Coordinate Systems",
+            "description": "Review of vector algebra, curvilinear coordinate systems (cylindrical, spherical), gradient, divergence, curl, Laplacian in different coordinate systems. Emphasis on applying these concepts to electromagnetic problems."
+          },
+          {
+            "chapterTitle": "Electrostatics: Advanced Techniques",
+            "description": "Method of images for complex geometries, boundary value problems using Green's functions, conformal mapping techniques for solving 2D electrostatic problems."
+          },
+          {
+            "chapterTitle": "Magnetostatics: Advanced Techniques",
+            "description": "Vector potential formulation, magnetic scalar potential, boundary value problems in magnetostatics, applications to magnetic shielding and magnetic circuits."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Module 1: Advanced Electrostatics and Magnetostatics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Electromagnetic Waves in Complex Media",
+            "description": "Wave propagation in anisotropic media, metamaterials, and chiral media. Polarization effects, birefringence, and applications in optical devices."
+          },
+          {
+            "chapterTitle": "Waveguides and Resonators: Advanced Analysis",
+            "description": "Modal analysis of waveguides with complex geometries, resonant cavities with lossy materials, perturbation theory for resonators, applications in microwave and optical devices."
+          },
+          {
+            "chapterTitle": "Antenna Theory: Advanced Concepts",
+            "description": "Advanced antenna arrays, adaptive beamforming, MIMO antenna systems, analysis of antennas in complex environments, computational electromagnetics for antenna design."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Module 2: Electromagnetic Waves and Guided Waves"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Computational Electromagnetics: Finite Element Method",
+            "description": "Introduction to the finite element method (FEM) for solving electromagnetic problems, formulation of FEM equations, mesh generation, boundary conditions, and error analysis."
+          },
+          {
+            "chapterTitle": "Computational Electromagnetics: Finite-Difference Time-Domain Method",
+            "description": "Introduction to the finite-difference time-domain (FDTD) method, Yee's algorithm, absorbing boundary conditions, stability analysis, and applications to wave propagation problems."
+          },
+          {
+            "chapterTitle": "Advanced Topics in Electromagnetics",
+            "description": "Scattering theory, radar cross-section (RCS) calculations, inverse scattering problems, electromagnetic compatibility (EMC) and electromagnetic interference (EMI) analysis."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Module 3: Computational Electromagnetics and Advanced Topics"
+      }
+    ]
+  }
+}

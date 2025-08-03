@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-13 14:15:55.227918",
+  "input": {
+    "course_topic": "Causal Inference",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.42,
+    "max_tokens": 1024,
+    "top_k": 24,
+    "top_p": 0.51
+  },
+  "output": {
+    "conclusion": "By completing this course, you will have a strong foundation in causal inference methods, enabling you to critically evaluate research and design your own causal studies.",
+    "courseTitle": "Advanced Causal Inference",
+    "introduction": "This advanced course delves into the complexities of causal inference, equipping you with the tools to move beyond correlation and uncover true causal relationships. We will explore various methods, assumptions, and challenges in identifying and estimating causal effects.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Potential Outcomes Framework",
+            "description": "Introduction to the potential outcomes framework, also known as the Rubin Causal Model. Defining causal effects using potential outcomes. The fundamental problem of causal inference."
+          },
+          {
+            "chapterTitle": "Assumptions in Causal Inference",
+            "description": "Discussing key assumptions: ignorability/exchangeability, positivity/overlap, and consistency. Understanding the implications of violating these assumptions."
+          },
+          {
+            "chapterTitle": "Identification Strategies",
+            "description": "Overview of different strategies for identifying causal effects: randomization, conditioning, instrumental variables, regression discontinuity, and difference-in-differences."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Foundations of Causal Inference"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Randomized Experiments",
+            "description": "Review of randomized controlled trials (RCTs) as the gold standard for causal inference. Advantages and limitations of RCTs. Practical considerations in designing and analyzing RCTs."
+          },
+          {
+            "chapterTitle": "Observational Studies",
+            "description": "Challenges of causal inference in observational studies. Confounding and selection bias. Strategies for addressing confounding: matching, stratification, and weighting."
+          },
+          {
+            "chapterTitle": "Propensity Score Methods",
+            "description": "Introduction to propensity scores. Propensity score matching, weighting, and stratification. Assessing balance after propensity score adjustment."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Causal Inference in Experimental and Observational Settings"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Instrumental Variables (IV)",
+            "description": "Introduction to instrumental variables. Conditions for a valid instrument: relevance, exclusion restriction, and independence. Two-stage least squares (2SLS) estimation."
+          },
+          {
+            "chapterTitle": "Regression Discontinuity (RD)",
+            "description": "Sharp and fuzzy regression discontinuity designs. Identifying causal effects at the threshold. Assumptions and limitations of RD."
+          },
+          {
+            "chapterTitle": "Difference-in-Differences (DID)",
+            "description": "The difference-in-differences approach for estimating causal effects. Parallel trends assumption. Extensions of DID: multiple groups and time periods."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Causal Inference Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Mediation Analysis",
+            "description": "Understanding mediation pathways. Direct and indirect effects. Causal mediation analysis using potential outcomes."
+          },
+          {
+            "chapterTitle": "Causal Interactions",
+            "description": "Examining effect modification and causal interactions. Identifying and estimating heterogeneous treatment effects."
+          },
+          {
+            "chapterTitle": "Time-Varying Treatments",
+            "description": "Challenges of causal inference with time-varying treatments and confounders. Marginal structural models (MSMs) and g-estimation."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Causal Mechanisms and Complex Interventions"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Sensitivity Analysis",
+            "description": "Assessing the robustness of causal inferences to unmeasured confounding. Sensitivity analysis techniques for different causal methods."
+          },
+          {
+            "chapterTitle": "Causal Discovery",
+            "description": "Introduction to causal discovery algorithms. Learning causal structures from observational data. Limitations of causal discovery methods."
+          },
+          {
+            "chapterTitle": "Causal Inference in Machine Learning",
+            "description": "Integrating causal inference with machine learning. Using machine learning for causal effect estimation. Causal machine learning algorithms."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Advanced Topics and Future Directions"
+      }
+    ]
+  }
+}

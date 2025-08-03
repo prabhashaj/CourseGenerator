@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 13:30:43.680865",
+  "input": {
+    "course_topic": "Bioinformatics",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.48,
+    "max_tokens": 2048,
+    "top_k": 29,
+    "top_p": 0.78
+  },
+  "output": {
+    "conclusion": "This course provides a strong foundation in bioinformatics, equipping you with the skills to analyze biological data and contribute to advancements in the field.",
+    "courseTitle": "Bioinformatics for Intermediate Learners",
+    "introduction": "Welcome to Bioinformatics! This course builds upon basic biological and computational concepts, diving into the practical applications of bioinformatics tools and techniques.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Sequence Alignment Algorithms",
+            "description": "Explore dynamic programming algorithms like Needleman-Wunsch and Smith-Waterman for global and local sequence alignment."
+          },
+          {
+            "chapterTitle": "BLAST and FASTA",
+            "description": "Learn about heuristic algorithms used in BLAST and FASTA for rapid sequence database searching."
+          },
+          {
+            "chapterTitle": "Multiple Sequence Alignment",
+            "description": "Understand the principles and applications of multiple sequence alignment using tools like ClustalW and MUSCLE."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Sequence Alignment"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Phylogenetic Tree Construction",
+            "description": "Learn about different methods for constructing phylogenetic trees, including distance-based and character-based approaches."
+          },
+          {
+            "chapterTitle": "Tree Evaluation and Interpretation",
+            "description": "Understand how to evaluate the reliability of phylogenetic trees and interpret their evolutionary implications."
+          },
+          {
+            "chapterTitle": "Applications of Phylogenetics",
+            "description": "Explore the applications of phylogenetics in areas such as disease tracing and evolutionary biology."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Phylogenetic Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Genome Assembly",
+            "description": "Learn about the process of assembling short DNA sequences into a complete genome."
+          },
+          {
+            "chapterTitle": "Genome Annotation",
+            "description": "Understand the methods used to identify genes and other functional elements within a genome."
+          },
+          {
+            "chapterTitle": "Comparative Genomics",
+            "description": "Explore the use of comparative genomics to study evolutionary relationships and identify conserved regions in different genomes."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Genomics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "RNA-Seq Data Analysis",
+            "description": "Learn how to analyze RNA-Seq data to quantify gene expression levels."
+          },
+          {
+            "chapterTitle": "Differential Gene Expression Analysis",
+            "description": "Understand how to identify genes that are differentially expressed between different experimental conditions."
+          },
+          {
+            "chapterTitle": "Functional Enrichment Analysis",
+            "description": "Explore how to use functional enrichment analysis to identify biological pathways that are enriched in a set of differentially expressed genes."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Transcriptomics"
+      }
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-13 13:02:02.423398",
+  "input": {
+    "course_topic": "Computer Vision",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.32,
+    "max_tokens": 1024,
+    "top_k": 24,
+    "top_p": 0.58
+  },
+  "output": {
+    "conclusion": "By completing this course, you will have a solid foundation in computer vision, enabling you to tackle real-world problems and build innovative applications.",
+    "courseTitle": "Intermediate Computer Vision",
+    "introduction": "Welcome to Intermediate Computer Vision! This course builds upon your existing knowledge of image processing and machine learning to delve deeper into the fascinating world of computer vision. We will explore advanced techniques for image understanding, object detection, and scene analysis.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Image Formation and Camera Models",
+            "description": "Review of camera geometry, intrinsic and extrinsic parameters, and different camera models (pinhole, perspective)."
+          },
+          {
+            "chapterTitle": "Image Transformations",
+            "description": "Homographies, affine transformations, and projective transformations. Applications in image warping and alignment."
+          },
+          {
+            "chapterTitle": "Stereo Vision",
+            "description": "Epipolar geometry, stereo correspondence, and depth estimation from stereo images."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Camera Models and Geometry"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Feature Detectors and Descriptors",
+            "description": "In-depth analysis of SIFT, SURF, and ORB. Understanding their strengths and weaknesses."
+          },
+          {
+            "chapterTitle": "Feature Matching",
+            "description": "Techniques for robust feature matching, including RANSAC and other outlier rejection methods."
+          },
+          {
+            "chapterTitle": "Image Stitching and Panorama Creation",
+            "description": "Applying feature detection and matching to create seamless panoramas from multiple images."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Feature Extraction and Matching"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Object Detection with Deep Learning",
+            "description": "Introduction to object detection frameworks like YOLO, SSD, and Faster R-CNN."
+          },
+          {
+            "chapterTitle": "Region Proposal Networks",
+            "description": "Understanding how region proposal networks (RPNs) work in object detection pipelines."
+          },
+          {
+            "chapterTitle": "Non-Maximum Suppression",
+            "description": "Techniques for filtering redundant bounding box detections."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Object Detection"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Semantic Segmentation",
+            "description": "Pixel-level image classification using deep learning techniques."
+          },
+          {
+            "chapterTitle": "Fully Convolutional Networks",
+            "description": "Architecture and training of fully convolutional networks for semantic segmentation."
+          },
+          {
+            "chapterTitle": "U-Net Architecture",
+            "description": "Understanding the U-Net architecture and its applications in medical image segmentation."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Semantic Segmentation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Optical Flow",
+            "description": "Techniques for estimating motion between consecutive frames in a video."
+          },
+          {
+            "chapterTitle": "Video Stabilization",
+            "description": "Applying optical flow to stabilize shaky video footage."
+          },
+          {
+            "chapterTitle": "Action Recognition",
+            "description": "Introduction to action recognition in videos using deep learning."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Video Analysis"
+      }
+    ]
+  }
+}

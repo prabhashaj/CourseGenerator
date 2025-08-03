@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-16 18:34:17.539629",
+  "input": {
+    "course_topic": "IC Engines",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.34,
+    "max_tokens": 2048,
+    "top_k": 22,
+    "top_p": 0.61
+  },
+  "output": {
+    "conclusion": "This course provides an advanced understanding of IC Engines, equipping students with the knowledge to analyze, design, and optimize engine performance for various applications.",
+    "courseTitle": "Advanced IC Engines",
+    "introduction": "Welcome to Advanced IC Engines! This course delves into the intricate details of internal combustion engines, covering advanced thermodynamics, combustion phenomena, engine design, and modern control strategies. It is designed for students and professionals with a foundational understanding of IC engine principles.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Thermodynamic Cycles Revisited",
+            "description": "Review of ideal cycles (Otto, Diesel, Dual) and their limitations. Introduction to real engine cycles and deviations from ideal behavior."
+          },
+          {
+            "chapterTitle": "Advanced Air-Standard Cycle Analysis",
+            "description": "Accounting for variable specific heats, dissociation, and chemical equilibrium in air-standard cycle analysis. Effects on cycle efficiency and performance."
+          },
+          {
+            "chapterTitle": "Exergy Analysis of IC Engines",
+            "description": "Applying exergy analysis to identify and quantify irreversibilities in IC engines. Strategies for minimizing exergy destruction and improving efficiency."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Thermodynamics of IC Engines"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Combustion Stoichiometry and Chemical Kinetics",
+            "description": "Detailed analysis of combustion stoichiometry, including air-fuel ratio, equivalence ratio, and exhaust gas composition. Introduction to chemical kinetics and reaction mechanisms."
+          },
+          {
+            "chapterTitle": "Laminar and Turbulent Flame Propagation",
+            "description": "Understanding the fundamentals of laminar and turbulent flame propagation in premixed and non-premixed mixtures. Factors affecting flame speed and stability."
+          },
+          {
+            "chapterTitle": "Combustion Modeling Techniques",
+            "description": "Overview of different combustion modeling approaches, including zero-dimensional, multi-zone, and computational fluid dynamics (CFD) models."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Combustion Phenomena in IC Engines"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Engine Design Parameters and Performance Metrics",
+            "description": "Detailed discussion of engine design parameters (bore, stroke, compression ratio) and their impact on engine performance metrics (power, torque, efficiency)."
+          },
+          {
+            "chapterTitle": "Intake and Exhaust System Design",
+            "description": "Principles of intake and exhaust system design for optimizing volumetric efficiency and reducing pumping losses. Wave action and tuning effects."
+          },
+          {
+            "chapterTitle": "Engine Balancing and Vibration Analysis",
+            "description": "Techniques for balancing reciprocating engines to minimize vibration and noise. Analysis of engine vibration modes and frequencies."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Engine Design and Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fuel Injection Systems: Gasoline and Diesel",
+            "description": "Detailed analysis of gasoline and diesel fuel injection systems, including injector design, spray characteristics, and injection timing strategies."
+          },
+          {
+            "chapterTitle": "Alternative Fuels and Combustion Strategies",
+            "description": "Overview of alternative fuels (biofuels, hydrogen, natural gas) and their impact on engine performance and emissions. Advanced combustion strategies (HCCI, RCCI)."
+          },
+          {
+            "chapterTitle": "Engine Lubrication and Cooling Systems",
+            "description": "Principles of engine lubrication and cooling systems for maintaining engine durability and preventing overheating. Oil pump design and coolant flow management."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Engine Components and Systems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Engine Control Strategies and Algorithms",
+            "description": "Introduction to engine control strategies for optimizing engine performance, fuel economy, and emissions. Feedback control algorithms and sensor integration."
+          },
+          {
+            "chapterTitle": "Engine Management Systems (EMS)",
+            "description": "Overview of engine management systems (EMS) architecture, components, and functions. Calibration and tuning of EMS parameters."
+          },
+          {
+            "chapterTitle": "Diagnostics and Fault Detection",
+            "description": "Techniques for diagnosing engine problems and detecting faults using diagnostic codes and sensor data. Troubleshooting procedures and repair strategies."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Engine Control and Diagnostics"
+      }
+    ]
+  }
+}

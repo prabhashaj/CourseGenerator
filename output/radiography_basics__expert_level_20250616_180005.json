@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-06-16 18:00:05.241482",
+  "input": {
+    "course_topic": "Radiography Basics",
+    "difficulty_level": "Expert",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.46,
+    "max_tokens": 2048,
+    "top_k": 16,
+    "top_p": 0.6
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, you will have a comprehensive understanding of the fundamental principles of radiography, enabling you to optimize image quality, minimize radiation exposure, and contribute effectively to diagnostic imaging teams.",
+    "courseTitle": "Radiography Basics: Expert Level",
+    "introduction": "Welcome to Radiography Basics: Expert Level. This course is designed for experienced radiographers seeking to deepen their understanding of the underlying principles and advanced techniques in radiographic imaging. We will explore the physics of radiation, image formation, and quality control, equipping you with the knowledge to optimize your practice and contribute to advancements in the field.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "X-ray Production and Interactions",
+            "description": "Delve into the intricacies of x-ray generation, including target materials, tube design, and the factors influencing x-ray spectrum. Explore the various interactions of x-rays with matter, such as photoelectric effect, Compton scattering, and pair production, and their impact on image contrast and patient dose."
+          },
+          {
+            "chapterTitle": "Radiation Physics",
+            "description": "Examine the fundamental principles of radiation physics, including electromagnetic radiation, wave-particle duality, and the inverse square law. Investigate the properties of x-rays, such as energy, wavelength, and frequency, and their relationship to image quality and radiation safety."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of X-ray Physics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Image Receptor Technology",
+            "description": "Explore the principles and technologies behind various image receptors, including film-screen radiography, computed radiography (CR), and digital radiography (DR). Analyze the advantages and disadvantages of each system in terms of image quality, dose efficiency, and workflow."
+          },
+          {
+            "chapterTitle": "Image Formation and Processing",
+            "description": "Investigate the process of image formation, including the role of attenuation, scatter, and contrast. Examine the various image processing techniques used to enhance image quality, such as windowing, leveling, and edge enhancement."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Image Formation and Receptors"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Radiation Protection Principles",
+            "description": "Review the fundamental principles of radiation protection, including justification, optimization, and dose limitation. Explore the ALARA (As Low As Reasonably Achievable) principle and its application in radiographic practice."
+          },
+          {
+            "chapterTitle": "Quality Control and Assurance",
+            "description": "Examine the importance of quality control and assurance programs in radiography. Investigate the various QC tests performed on x-ray equipment and image receptors to ensure optimal image quality and patient safety."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Radiation Safety and Quality Control"
+      }
+    ]
+  }
+}

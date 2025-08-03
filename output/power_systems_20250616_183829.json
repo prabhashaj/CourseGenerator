@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:38:29.977012",
+  "input": {
+    "course_topic": "Power Systems",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.64,
+    "max_tokens": 2048,
+    "top_k": 27,
+    "top_p": 0.57
+  },
+  "output": {
+    "conclusion": "This course provided an intermediate-level overview of power systems, covering generation, transmission, distribution, and protection. Further study is recommended for specialized areas.",
+    "courseTitle": "Power Systems",
+    "introduction": "Welcome to Power Systems! This course provides an intermediate-level understanding of the fundamental principles and components of modern power systems. We will explore generation, transmission, distribution, and protection aspects.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Power Generation Overview",
+            "description": "Introduction to various power generation methods: thermal, hydro, nuclear, and renewable energy sources. Basic principles and efficiency considerations."
+          },
+          {
+            "chapterTitle": "Synchronous Generators",
+            "description": "Construction, operation, and equivalent circuit of synchronous generators. Voltage regulation and power angle characteristics."
+          },
+          {
+            "chapterTitle": "Power Plant Control",
+            "description": "Overview of power plant control systems, including automatic generation control (AGC) and load frequency control (LFC)."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Power Generation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transmission Line Parameters",
+            "description": "Calculation of resistance, inductance, and capacitance of transmission lines. Effects of conductor geometry and transposition."
+          },
+          {
+            "chapterTitle": "Transmission Line Models",
+            "description": "Short, medium, and long transmission line models. ABCD parameters and their significance."
+          },
+          {
+            "chapterTitle": "Power Flow Analysis",
+            "description": "Introduction to power flow studies. Gauss-Seidel and Newton-Raphson methods for solving power flow equations."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Power Transmission"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Distribution System Components",
+            "description": "Overview of distribution transformers, feeders, and protective devices. Radial and loop distribution systems."
+          },
+          {
+            "chapterTitle": "Voltage Drop and Power Loss",
+            "description": "Calculation of voltage drop and power loss in distribution systems. Techniques for voltage regulation and loss reduction."
+          },
+          {
+            "chapterTitle": "Distribution System Automation",
+            "description": "Introduction to SCADA systems and smart grid technologies for distribution system monitoring and control."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Power Distribution"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fault Analysis",
+            "description": "Symmetrical and unsymmetrical faults in power systems. Calculation of fault currents using symmetrical components."
+          },
+          {
+            "chapterTitle": "Protective Relaying",
+            "description": "Principles of overcurrent, distance, and differential relays. Coordination of protective devices."
+          },
+          {
+            "chapterTitle": "Circuit Breakers",
+            "description": "Types of circuit breakers and their operating characteristics. Arc interruption techniques."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Power System Protection"
+      }
+    ]
+  }
+}

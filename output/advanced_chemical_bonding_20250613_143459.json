@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-13 14:34:59.570759",
+  "input": {
+    "course_topic": "Chemical Bonding",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.38,
+    "max_tokens": 1024,
+    "top_k": 10,
+    "top_p": 0.53
+  },
+  "output": {
+    "conclusion": "By completing this course, you will have a strong understanding of chemical bonding principles and their applications in various chemical systems.",
+    "courseTitle": "Advanced Chemical Bonding",
+    "introduction": "Welcome to Advanced Chemical Bonding! This course delves into the intricacies of chemical bonds, exploring advanced theories and applications relevant to modern chemistry.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Lewis Structures and Formal Charge",
+            "description": "Review of Lewis structures, resonance, and formal charge calculations. Advanced examples and exceptions to the octet rule."
+          },
+          {
+            "chapterTitle": "VSEPR Theory and Molecular Geometry",
+            "description": "Advanced applications of VSEPR theory to predict molecular shapes. Consideration of lone pair effects and distortions."
+          },
+          {
+            "chapterTitle": "Dipole Moments and Molecular Polarity",
+            "description": "Calculating dipole moments from bond dipoles. Predicting molecular polarity based on geometry and electronegativity."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Review of Basic Bonding Concepts"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Valence Bond Theory",
+            "description": "Introduction to valence bond theory and its limitations. Hybridization of atomic orbitals and sigma/pi bonding."
+          },
+          {
+            "chapterTitle": "Hybridization Schemes",
+            "description": "Detailed analysis of sp, sp2, sp3, sp3d, and sp3d2 hybridization. Predicting hybridization based on molecular geometry."
+          },
+          {
+            "chapterTitle": "Resonance and Delocalization",
+            "description": "Advanced treatment of resonance structures and electron delocalization. Molecular orbital perspective on resonance."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Valence Bond Theory and Hybridization"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Molecular Orbital Theory: Diatomic Molecules",
+            "description": "Introduction to molecular orbital theory. Constructing MO diagrams for diatomic molecules (H2, O2, N2, etc.)."
+          },
+          {
+            "chapterTitle": "Bond Order and Magnetic Properties",
+            "description": "Calculating bond order from MO diagrams. Predicting magnetic properties (paramagnetism, diamagnetism)."
+          },
+          {
+            "chapterTitle": "Heteronuclear Diatomic Molecules",
+            "description": "MO diagrams for heteronuclear diatomic molecules (CO, NO, HF). Effects of electronegativity differences."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Molecular Orbital Theory"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Band Theory of Solids",
+            "description": "Introduction to band theory. Formation of energy bands in solids. Conductors, semiconductors, and insulators."
+          },
+          {
+            "chapterTitle": "Doping of Semiconductors",
+            "description": "n-type and p-type semiconductors. Effects of doping on conductivity."
+          },
+          {
+            "chapterTitle": "Metallic Bonding",
+            "description": "The electron sea model. Properties of metals (conductivity, malleability, ductility)."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Bonding in Solids"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Intermolecular Forces",
+            "description": "Dipole-dipole interactions, hydrogen bonding, and London dispersion forces. Effects on physical properties."
+          },
+          {
+            "chapterTitle": "Hydrogen Bonding",
+            "description": "Detailed analysis of hydrogen bonding. Importance in biological systems (DNA, proteins)."
+          },
+          {
+            "chapterTitle": "Applications of Bonding Theories",
+            "description": "Examples of how bonding theories are used to explain chemical reactivity and material properties."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Intermolecular Forces and Applications"
+      }
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 13:09:20.728635",
+  "input": {
+    "course_topic": "Wellness Coaching",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.47,
+    "max_tokens": 2048,
+    "top_k": 12,
+    "top_p": 0.53
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained valuable tools and knowledge to effectively guide others on their wellness journeys. Remember to practice empathy, active listening, and evidence-based strategies to empower your clients to achieve sustainable well-being.",
+    "courseTitle": "Wellness Coaching: Intermediate Level",
+    "introduction": "Welcome to the Intermediate Wellness Coaching course! Building upon foundational knowledge, this course delves into advanced coaching techniques, behavior change models, and strategies for addressing complex wellness challenges. Get ready to elevate your coaching skills and make a profound impact on your clients' lives.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Communication Skills",
+            "description": "Explore advanced communication techniques such as motivational interviewing, reflective listening, and powerful questioning to facilitate deeper client engagement and self-discovery."
+          },
+          {
+            "chapterTitle": "Building Rapport and Trust",
+            "description": "Learn strategies for establishing strong rapport and trust with clients, creating a safe and supportive coaching environment conducive to vulnerability and growth."
+          },
+          {
+            "chapterTitle": "Identifying Values and Strengths",
+            "description": "Discover methods for helping clients identify their core values and strengths, aligning their wellness goals with their authentic selves for increased motivation and fulfillment."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Mastering Coaching Communication"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Transtheoretical Model (Stages of Change)",
+            "description": "Deep dive into the Transtheoretical Model, understanding the different stages of change and tailoring coaching interventions to meet clients where they are in their wellness journey."
+          },
+          {
+            "chapterTitle": "Cognitive Behavioral Techniques",
+            "description": "Learn how to apply cognitive behavioral techniques (CBT) to help clients identify and challenge negative thought patterns and behaviors that hinder their wellness goals."
+          },
+          {
+            "chapterTitle": "Goal Setting and Action Planning",
+            "description": "Master the art of collaborative goal setting and action planning, ensuring that goals are SMART (Specific, Measurable, Achievable, Relevant, Time-bound) and aligned with clients' values and aspirations."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Behavior Change Models and Strategies"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Stress Management Techniques",
+            "description": "Explore various stress management techniques such as mindfulness, meditation, and relaxation exercises, empowering clients to cope with stress effectively and improve their overall well-being."
+          },
+          {
+            "chapterTitle": "Nutrition and Healthy Eating",
+            "description": "Gain insights into nutrition principles and strategies for promoting healthy eating habits, guiding clients towards making informed food choices and achieving their nutritional goals."
+          },
+          {
+            "chapterTitle": "Physical Activity and Exercise",
+            "description": "Learn how to encourage and support clients in incorporating regular physical activity and exercise into their lifestyles, promoting physical fitness, mental well-being, and disease prevention."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Addressing Key Wellness Areas"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Ethical Considerations in Coaching",
+            "description": "Understand the ethical principles and guidelines that govern wellness coaching practice, ensuring that you provide ethical and responsible support to your clients."
+          },
+          {
+            "chapterTitle": "Scope of Practice and Referrals",
+            "description": "Define the scope of practice for wellness coaches and learn when and how to make appropriate referrals to other healthcare professionals or specialists."
+          },
+          {
+            "chapterTitle": "Building a Successful Coaching Practice",
+            "description": "Explore strategies for building a thriving wellness coaching practice, including marketing, client acquisition, and business management."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Professionalism and Practice Development"
+      }
+    ]
+  }
+}

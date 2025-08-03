@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 17:58:30.792880",
+  "input": {
+    "course_topic": "Heat Transfer",
+    "difficulty_level": "Expert",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.37,
+    "max_tokens": 2048,
+    "top_k": 27,
+    "top_p": 0.87
+  },
+  "output": {
+    "conclusion": "This course has provided an in-depth exploration of advanced heat transfer concepts. By mastering these principles, you are well-equipped to tackle complex thermal engineering challenges and contribute to innovative solutions in various industries.",
+    "courseTitle": "Advanced Heat Transfer",
+    "introduction": "Welcome to Advanced Heat Transfer! This course delves into the intricacies of heat transfer phenomena, building upon fundamental principles to explore advanced topics relevant to expert-level engineers and researchers. We will cover conduction, convection, and radiation in detail, with a focus on analytical and numerical techniques for solving complex heat transfer problems.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Conduction Theory",
+            "description": "Explore multi-dimensional conduction, transient heat transfer in complex geometries, and the use of Green's functions. Analyze heat transfer in anisotropic materials and composite structures."
+          },
+          {
+            "chapterTitle": "Numerical Methods for Conduction",
+            "description": "Implement finite element and finite difference methods for solving conduction problems. Focus on meshing techniques, boundary condition implementation, and convergence criteria."
+          },
+          {
+            "chapterTitle": "Microscale Heat Transfer",
+            "description": "Investigate heat transfer phenomena at the micro and nanoscale, including ballistic transport, size effects, and applications in microelectronics and nanotechnology."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Conduction"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Convection Theory",
+            "description": "Delve into turbulent flow heat transfer, including Reynolds-averaged Navier-Stokes (RANS) models, large eddy simulation (LES), and direct numerical simulation (DNS)."
+          },
+          {
+            "chapterTitle": "Boiling and Condensation",
+            "description": "Examine the fundamentals of boiling and condensation heat transfer, including nucleate boiling, film boiling, dropwise condensation, and film condensation. Analyze heat transfer enhancement techniques."
+          },
+          {
+            "chapterTitle": "Natural Convection",
+            "description": "Study natural convection in enclosures and external flows, including stability analysis, boundary layer theory, and applications in electronic cooling and solar energy."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Convection"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Radiation Heat Transfer",
+            "description": "Explore radiative properties of surfaces and participating media. Analyze view factor calculations, radiative exchange in enclosures, and the discrete ordinates method (DOM)."
+          },
+          {
+            "chapterTitle": "Combined Mode Heat Transfer",
+            "description": "Investigate problems involving simultaneous conduction, convection, and radiation. Focus on solution techniques and applications in combustion, furnaces, and solar collectors."
+          },
+          {
+            "chapterTitle": "Non-Equilibrium Radiation",
+            "description": "Study non-equilibrium radiation phenomena, including laser-material interactions, short-pulse laser heating, and applications in materials processing and biomedical engineering."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Radiation"
+      }
+    ]
+  }
+}

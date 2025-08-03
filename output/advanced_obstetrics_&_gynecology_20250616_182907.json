@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:29:07.006794",
+  "input": {
+    "course_topic": "OBG (Obstetrics & Gynecology)",
+    "difficulty_level": "Expert",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.4,
+    "max_tokens": 1024,
+    "top_k": 29,
+    "top_p": 0.78
+  },
+  "output": {
+    "conclusion": "This course provides an expert-level overview of Obstetrics and Gynecology, equipping participants with advanced knowledge and skills for complex clinical scenarios and research endeavors.",
+    "courseTitle": "Advanced Obstetrics & Gynecology",
+    "introduction": "Welcome to the Advanced Obstetrics & Gynecology course. This program is designed for experienced practitioners seeking to deepen their understanding of complex topics in women's health. Each module is crafted to provide concise, impactful learning within a 5-minute reading timeframe.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Fetal Monitoring Techniques",
+            "description": "Comprehensive analysis of advanced fetal heart rate monitoring patterns, including interpretation of complex decelerations and the application of adjunctive technologies like fetal ECG."
+          },
+          {
+            "chapterTitle": "Management of Complex Pregnancies",
+            "description": "Strategies for managing pregnancies complicated by multiple gestations, maternal cardiac disease, renal disorders, and autoimmune conditions."
+          },
+          {
+            "chapterTitle": "Intrapartum Emergencies: Advanced Protocols",
+            "description": "Advanced protocols for managing shoulder dystocia, postpartum hemorrhage, amniotic fluid embolism, and uterine rupture, including simulation-based training scenarios."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "High-Risk Obstetrics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Minimally Invasive Gynecologic Surgery",
+            "description": "Advanced techniques in laparoscopic and robotic surgery for hysterectomy, myomectomy, and adnexal surgery, including management of complications."
+          },
+          {
+            "chapterTitle": "Management of Advanced Endometriosis",
+            "description": "Surgical and medical management of severe endometriosis, including bowel and bladder involvement, and strategies for pain management."
+          },
+          {
+            "chapterTitle": "Urogynecology: Complex Pelvic Floor Reconstruction",
+            "description": "Advanced surgical techniques for pelvic organ prolapse repair, including mesh-based and native tissue repairs, and management of urinary incontinence."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Gynecologic Surgery"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Oncologic Management of Ovarian Cancer",
+            "description": "Advanced surgical and chemotherapeutic approaches to ovarian cancer, including debulking surgery, targeted therapies, and immunotherapy."
+          },
+          {
+            "chapterTitle": "Cervical Cancer Screening and Prevention",
+            "description": "Advanced strategies for cervical cancer screening, including HPV testing, colposcopy, and management of abnormal Pap smears, as well as HPV vaccination updates."
+          },
+          {
+            "chapterTitle": "Endometrial Cancer: Diagnosis and Treatment",
+            "description": "Diagnosis and management of endometrial cancer, including staging, surgical approaches, radiation therapy, and hormonal therapy."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Gynecologic Oncology"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Reproductive Technologies",
+            "description": "Advanced techniques in in-vitro fertilization (IVF), including preimplantation genetic testing (PGT), oocyte cryopreservation, and management of recurrent implantation failure."
+          },
+          {
+            "chapterTitle": "Management of Complex Infertility Cases",
+            "description": "Strategies for managing infertility related to advanced maternal age, diminished ovarian reserve, male factor infertility, and unexplained infertility."
+          },
+          {
+            "chapterTitle": "Endocrine Disorders and Infertility",
+            "description": "The impact of endocrine disorders such as PCOS, thyroid dysfunction, and hyperprolactinemia on fertility, and their management strategies."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Reproductive Endocrinology and Infertility"
+      }
+    ]
+  }
+}

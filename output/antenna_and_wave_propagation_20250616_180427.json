@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:04:27.350517",
+  "input": {
+    "course_topic": "Antenna and Wave Propagation",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.53,
+    "max_tokens": 2048,
+    "top_k": 10,
+    "top_p": 0.99
+  },
+  "output": {
+    "conclusion": "This course provided a comprehensive overview of antenna theory and wave propagation, equipping you with the knowledge to analyze, design, and implement antenna systems for various applications.",
+    "courseTitle": "Antenna and Wave Propagation",
+    "introduction": "Welcome to the Antenna and Wave Propagation course! This intermediate-level course will delve into the fundamental principles of antennas and how electromagnetic waves propagate through different media. We will explore antenna parameters, various antenna types, and the factors influencing wave propagation.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Antenna Fundamentals",
+            "description": "Introduction to antennas, radiation mechanism, antenna parameters (radiation pattern, gain, directivity, polarization, impedance, bandwidth), Friis Transmission Equation."
+          },
+          {
+            "chapterTitle": "Antenna Types - Wire Antennas",
+            "description": "Detailed analysis of wire antennas: Dipole antenna (half-wave, short dipole), monopole antenna, folded dipole antenna. Current distribution and radiation characteristics."
+          },
+          {
+            "chapterTitle": "Antenna Arrays",
+            "description": "Introduction to antenna arrays: array factor, broadside array, end-fire array, binomial array. Beam steering and array synthesis techniques."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Antenna Basics and Wire Antennas"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Aperture Antennas",
+            "description": "Introduction to aperture antennas: Horn antennas (E-plane, H-plane, pyramidal), reflector antennas (parabolic, Cassegrain). Aperture efficiency and beamwidth."
+          },
+          {
+            "chapterTitle": "Microstrip Antennas",
+            "description": "Introduction to microstrip antennas: patch antenna, substrate selection, feeding techniques, advantages and disadvantages. Design considerations for microstrip antennas."
+          },
+          {
+            "chapterTitle": "Special Antennas",
+            "description": "Overview of special antennas: Yagi-Uda antenna, log-periodic antenna, dielectric resonator antenna. Applications and characteristics of each antenna type."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Aperture and Advanced Antenna Types"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Wave Propagation Fundamentals",
+            "description": "Introduction to wave propagation: electromagnetic spectrum, plane wave propagation, polarization, reflection, refraction, diffraction."
+          },
+          {
+            "chapterTitle": "Ground Wave Propagation",
+            "description": "Ground wave propagation: surface wave, space wave, factors affecting ground wave propagation (conductivity, permittivity, frequency). Applications of ground wave propagation."
+          },
+          {
+            "chapterTitle": "Sky Wave Propagation",
+            "description": "Sky wave propagation: ionospheric layers, critical frequency, maximum usable frequency (MUF), skip distance, fading. Applications of sky wave propagation."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Wave Propagation"
+      }
+    ]
+  }
+}

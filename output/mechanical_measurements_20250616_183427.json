@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:34:27.615365",
+  "input": {
+    "course_topic": "Mechanical Measurements",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.42,
+    "max_tokens": 1024,
+    "top_k": 30,
+    "top_p": 0.72
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in mechanical measurements, equipping you with the knowledge and skills to effectively analyze and interpret experimental data in various engineering applications.",
+    "courseTitle": "Mechanical Measurements",
+    "introduction": "Welcome to Mechanical Measurements! This course will cover the fundamental principles and techniques used to measure mechanical quantities such as displacement, strain, pressure, and temperature. We will explore various sensors, instrumentation, and data acquisition methods commonly employed in mechanical engineering.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Measurement Systems",
+            "description": "Overview of measurement systems, their components, and characteristics. Discussion of accuracy, precision, resolution, and sensitivity. Introduction to error analysis and uncertainty estimation."
+          },
+          {
+            "chapterTitle": "Units and Standards",
+            "description": "Review of SI units and their importance in mechanical measurements. Discussion of measurement standards and traceability. Conversion of units and dimensional analysis."
+          },
+          {
+            "chapterTitle": "Statistical Analysis of Data",
+            "description": "Introduction to statistical concepts such as mean, standard deviation, and variance. Application of statistical methods to analyze measurement data and identify outliers. Confidence intervals and hypothesis testing."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Mechanical Measurements"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Displacement Measurement",
+            "description": "Introduction to displacement sensors such as potentiometers, LVDTs, and encoders. Principles of operation, advantages, and limitations of each sensor type. Applications of displacement measurement in mechanical systems."
+          },
+          {
+            "chapterTitle": "Strain Measurement",
+            "description": "Introduction to strain gauges and their application in measuring strain in mechanical components. Gauge factor, Wheatstone bridge circuits, and temperature compensation techniques. Measurement of stress using strain gauges."
+          },
+          {
+            "chapterTitle": "Vibration Measurement",
+            "description": "Introduction to accelerometers and their use in measuring vibration. Piezoelectric and MEMS accelerometers. Frequency analysis of vibration signals. Applications of vibration measurement in machine health monitoring."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Measurement of Kinematic Quantities"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Pressure Measurement",
+            "description": "Introduction to pressure sensors such as Bourdon tubes, diaphragms, and piezoelectric transducers. Pressure scales and units. Calibration of pressure sensors. Applications of pressure measurement in fluid mechanics and thermodynamics."
+          },
+          {
+            "chapterTitle": "Temperature Measurement",
+            "description": "Introduction to temperature sensors such as thermocouples, RTDs, and thermistors. Temperature scales and units. Calibration of temperature sensors. Applications of temperature measurement in heat transfer and process control."
+          },
+          {
+            "chapterTitle": "Flow Measurement",
+            "description": "Introduction to flow meters such as orifice meters, venturi meters, and turbine flow meters. Volumetric and mass flow rate. Calibration of flow meters. Applications of flow measurement in fluid mechanics and chemical engineering."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Measurement of Thermodynamic Quantities"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Data Acquisition Systems",
+            "description": "Introduction to data acquisition systems (DAS) and their components. Analog-to-digital converters (ADCs), signal conditioning, and data logging. Sampling rate and Nyquist theorem."
+          },
+          {
+            "chapterTitle": "Signal Processing Techniques",
+            "description": "Introduction to signal processing techniques such as filtering, Fourier analysis, and windowing. Application of signal processing to improve the quality of measurement data. Noise reduction techniques."
+          },
+          {
+            "chapterTitle": "Uncertainty Analysis",
+            "description": "Detailed discussion of uncertainty analysis in mechanical measurements. Propagation of uncertainty, error budgets, and reporting of measurement results. Minimizing uncertainty in experimental design."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Data Acquisition and Analysis"
+      }
+    ]
+  }
+}

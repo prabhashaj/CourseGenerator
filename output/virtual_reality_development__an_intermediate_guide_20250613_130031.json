@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 13:00:31.591084",
+  "input": {
+    "course_topic": "Virtual Reality",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.64,
+    "max_tokens": 1024,
+    "top_k": 18,
+    "top_p": 0.88
+  },
+  "output": {
+    "conclusion": "By the end of this course, you will have a solid understanding of virtual reality development principles and be able to create your own interactive VR experiences.",
+    "courseTitle": "Virtual Reality Development: An Intermediate Guide",
+    "introduction": "Welcome to the Intermediate Virtual Reality Development course! This course builds upon basic VR concepts and dives into more advanced topics, focusing on practical application and development techniques. Get ready to create immersive and interactive VR experiences!",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced VR Hardware",
+            "description": "Explore the specifications and capabilities of high-end VR headsets like Valve Index, HTC Vive Pro, and Varjo. Discuss inside-out tracking, eye-tracking, and hand tracking technologies."
+          },
+          {
+            "chapterTitle": "Optimizing VR Performance",
+            "description": "Learn techniques for optimizing VR applications for smooth performance, including reducing polygon count, using occlusion culling, and optimizing shaders."
+          },
+          {
+            "chapterTitle": "Advanced VR Interactions",
+            "description": "Implement complex interactions like grabbing, throwing, and manipulating objects in VR using physics engines and custom scripting."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced VR Hardware and Optimization"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Unity XR Interaction Toolkit",
+            "description": "Learn about the Unity XR Interaction Toolkit and how it simplifies the creation of interactive VR experiences."
+          },
+          {
+            "chapterTitle": "Customizing XR Interaction Components",
+            "description": "Explore how to customize the XR Interaction Toolkit's components to create unique and engaging interactions."
+          },
+          {
+            "chapterTitle": "Creating Advanced XR Interactions",
+            "description": "Implement advanced interactions like object highlighting, menu systems, and teleportation using the XR Interaction Toolkit."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Unity XR Interaction Toolkit"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Unreal Engine VR Development",
+            "description": "Get familiar with Unreal Engine's VR development tools and features, including the VR Template and motion controller support."
+          },
+          {
+            "chapterTitle": "Creating VR Interactions in Unreal Engine",
+            "description": "Implement interactions like grabbing, teleporting, and interacting with UI elements using Unreal Engine's Blueprints and C++."
+          },
+          {
+            "chapterTitle": "Optimizing VR Projects in Unreal Engine",
+            "description": "Learn techniques for optimizing VR projects in Unreal Engine, including using level streaming, optimizing materials, and using the profiling tools."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Unreal Engine VR Development"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Multiplayer VR Development",
+            "description": "Explore the concepts of multiplayer VR development and how to create shared VR experiences."
+          },
+          {
+            "chapterTitle": "Networking VR Interactions",
+            "description": "Learn how to network VR interactions like grabbing, throwing, and manipulating objects in a multiplayer environment."
+          },
+          {
+            "chapterTitle": "Advanced Multiplayer VR Techniques",
+            "description": "Implement advanced multiplayer VR techniques like avatar customization, voice chat integration, and creating shared virtual spaces."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Multiplayer VR Development"
+      }
+    ]
+  }
+}

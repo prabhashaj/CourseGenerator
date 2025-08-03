@@ -1,0 +1,108 @@
+{
+  "timestamp": "2025-06-16 17:56:21.225969",
+  "input": {
+    "course_topic": "Basic Nursing Procedures",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.46,
+    "max_tokens": 2048,
+    "top_k": 32,
+    "top_p": 0.88
+  },
+  "output": {
+    "conclusion": "Upon completion of this course, students will be equipped with a foundational understanding of basic nursing procedures, enabling them to provide safe and effective patient care under supervision.",
+    "courseTitle": "Basic Nursing Procedures",
+    "introduction": "Welcome to Basic Nursing Procedures! This course is designed for intermediate-level learners and provides a comprehensive overview of essential nursing skills. Each module is designed to take approximately 10 minutes to read.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Vital Signs: Temperature",
+            "description": "Learn how to accurately measure body temperature using oral, axillary, tympanic, and rectal methods. Understand normal ranges and factors influencing temperature."
+          },
+          {
+            "chapterTitle": "Vital Signs: Pulse",
+            "description": "Master the technique of assessing pulse rate, rhythm, and strength. Identify different pulse sites and understand the significance of abnormal findings."
+          },
+          {
+            "chapterTitle": "Vital Signs: Respiration",
+            "description": "Learn to observe and count respiratory rate, depth, and pattern. Recognize signs of respiratory distress and understand common respiratory abnormalities."
+          },
+          {
+            "chapterTitle": "Vital Signs: Blood Pressure",
+            "description": "Understand the principles of blood pressure measurement using a sphygmomanometer. Learn proper technique and identify factors affecting blood pressure readings."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Vital Signs"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Hand Hygiene",
+            "description": "Understand the importance of hand hygiene in preventing infection. Learn the proper techniques for handwashing and using alcohol-based hand rubs."
+          },
+          {
+            "chapterTitle": "Personal Protective Equipment (PPE)",
+            "description": "Learn how to select and use appropriate PPE, including gloves, masks, gowns, and eye protection, to protect yourself and patients from infection."
+          },
+          {
+            "chapterTitle": "Safe Handling of Sharps",
+            "description": "Understand the risks associated with sharps injuries and learn safe practices for handling and disposing of needles and other sharp instruments."
+          },
+          {
+            "chapterTitle": "Environmental Safety",
+            "description": "Learn how to maintain a clean and safe patient environment, including proper disposal of waste and disinfection of surfaces."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Infection Control Principles"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Patient Positioning",
+            "description": "Learn common patient positions, such as supine, prone, lateral, and Fowler's, and their indications. Understand how to safely assist patients with positioning."
+          },
+          {
+            "chapterTitle": "Moving and Lifting Patients",
+            "description": "Learn proper body mechanics and techniques for safely moving and lifting patients to prevent injury to yourself and the patient."
+          },
+          {
+            "chapterTitle": "Assisting with Ambulation",
+            "description": "Learn how to assist patients with walking, using assistive devices such as walkers and canes, and ensuring patient safety."
+          },
+          {
+            "chapterTitle": "Range of Motion Exercises",
+            "description": "Understand the importance of range of motion exercises and learn how to assist patients with active and passive range of motion exercises."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Patient Mobility and Safety"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Oral Hygiene",
+            "description": "Learn how to assist patients with oral hygiene, including brushing teeth, flossing, and using mouthwash. Understand the importance of oral hygiene for patient health."
+          },
+          {
+            "chapterTitle": "Bathing and Skin Care",
+            "description": "Learn how to assist patients with bathing, providing skin care, and preventing skin breakdown. Understand the importance of hygiene for patient comfort and well-being."
+          },
+          {
+            "chapterTitle": "Dressing and Grooming",
+            "description": "Learn how to assist patients with dressing and grooming, respecting their preferences and promoting their independence."
+          },
+          {
+            "chapterTitle": "Feeding Patients",
+            "description": "Learn how to assist patients with feeding, ensuring proper positioning, and monitoring for swallowing difficulties. Understand dietary considerations for different patient populations."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Assisting with Activities of Daily Living (ADLs)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 12:57:51.899084",
+  "input": {
+    "course_topic": "Business Intelligence",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.56,
+    "max_tokens": 1024,
+    "top_k": 27,
+    "top_p": 0.84
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a solid foundation in Business Intelligence principles and techniques. You are now equipped to contribute to data-driven decision-making within your organization.",
+    "courseTitle": "Business Intelligence: Intermediate Level",
+    "introduction": "Welcome to the Intermediate Business Intelligence course! This course builds upon foundational BI knowledge, diving deeper into advanced techniques and tools for data analysis, visualization, and reporting. We'll explore real-world scenarios and practical applications to enhance your BI skillset.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Data Warehousing Fundamentals",
+            "description": "Review of data warehousing concepts: schemas (star, snowflake), ETL processes, and the importance of data quality. Focus on dimensional modeling techniques."
+          },
+          {
+            "chapterTitle": "Advanced SQL for BI",
+            "description": "Mastering advanced SQL queries for data aggregation, window functions, and performance optimization. Using SQL for data transformation and reporting."
+          },
+          {
+            "chapterTitle": "Data Integration Strategies",
+            "description": "Exploring different data integration approaches: real-time vs. batch processing, data virtualization, and cloud-based data integration solutions."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Data Warehousing and Integration"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Data Visualization Best Practices",
+            "description": "Principles of effective data visualization: choosing the right chart type, color palettes, and storytelling with data. Avoiding common visualization pitfalls."
+          },
+          {
+            "chapterTitle": "Advanced Dashboard Design",
+            "description": "Designing interactive and insightful dashboards: incorporating key performance indicators (KPIs), user experience (UX) considerations, and mobile optimization."
+          },
+          {
+            "chapterTitle": "Data Storytelling Techniques",
+            "description": "Crafting compelling narratives with data: using visuals, annotations, and context to communicate insights effectively to stakeholders."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Data Visualization and Reporting"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Data Mining",
+            "description": "Overview of data mining techniques: classification, clustering, regression, and association rule mining. Understanding the applications of data mining in business."
+          },
+          {
+            "chapterTitle": "Predictive Analytics Fundamentals",
+            "description": "Building predictive models using statistical techniques: linear regression, logistic regression, and time series analysis. Evaluating model performance and accuracy."
+          },
+          {
+            "chapterTitle": "BI Trends and Future Directions",
+            "description": "Exploring emerging trends in BI: artificial intelligence (AI), machine learning (ML), natural language processing (NLP), and the impact of these technologies on the future of BI."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Data Mining and Future Trends in BI"
+      }
+    ]
+  }
+}

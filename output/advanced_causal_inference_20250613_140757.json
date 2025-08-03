@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 14:07:57.753140",
+  "input": {
+    "course_topic": "Causal Inference",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.48,
+    "max_tokens": 1024,
+    "top_k": 11,
+    "top_p": 0.66
+  },
+  "output": {
+    "conclusion": "By the end of this course, students will be equipped with a strong understanding of causal inference methods and their applications in various fields. They will be able to critically evaluate causal claims, design causal studies, and apply appropriate techniques to estimate causal effects from observational and experimental data.",
+    "courseTitle": "Advanced Causal Inference",
+    "introduction": "This advanced course provides a comprehensive overview of causal inference methods, focusing on both theoretical foundations and practical applications. It is designed for students and researchers with a strong background in statistics and econometrics who are interested in learning how to estimate causal effects from observational and experimental data. The course covers a range of topics, including potential outcomes, causal graphs, identification strategies, and estimation techniques.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Potential Outcomes Framework",
+            "description": "Introduction to the potential outcomes framework for defining causal effects. Covers the fundamental problem of causal inference and the Stable Unit Treatment Value Assumption (SUTVA)."
+          },
+          {
+            "chapterTitle": "Causal Effects and Identification",
+            "description": "Defining different types of causal effects (ATE, ATT, ATU) and discussing identification strategies. Covers the concept of ignorability and its implications."
+          },
+          {
+            "chapterTitle": "Graphical Models and Causal Diagrams",
+            "description": "Introduction to causal diagrams (DAGs) and their use in representing causal relationships. Covers concepts like d-separation and backdoor paths."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Foundations of Causal Inference"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Regression Adjustment",
+            "description": "Using regression models to adjust for confounding variables. Discusses the assumptions required for regression adjustment to yield unbiased estimates."
+          },
+          {
+            "chapterTitle": "Propensity Score Methods",
+            "description": "Introduction to propensity scores and their use in causal inference. Covers propensity score matching, weighting, and stratification."
+          },
+          {
+            "chapterTitle": "Inverse Probability of Treatment Weighting (IPTW)",
+            "description": "Detailed explanation of IPTW and its properties. Discusses the importance of positivity and overlap assumptions."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Confounding Adjustment Methods"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Instrumental Variables (IV)",
+            "description": "Introduction to instrumental variables and their use in addressing endogeneity. Covers the assumptions required for valid IV estimation."
+          },
+          {
+            "chapterTitle": "Two-Stage Least Squares (2SLS)",
+            "description": "Detailed explanation of the 2SLS estimation procedure. Discusses the interpretation of IV estimates."
+          },
+          {
+            "chapterTitle": "Regression Discontinuity Design (RDD)",
+            "description": "Introduction to RDD and its application in causal inference. Covers sharp and fuzzy RDD designs."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Instrumental Variables and Regression Discontinuity"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Mediation Analysis",
+            "description": "Introduction to mediation analysis and its use in understanding causal mechanisms. Covers the concepts of direct and indirect effects."
+          },
+          {
+            "chapterTitle": "Causal Mediation Analysis",
+            "description": "Formalizing mediation analysis within the potential outcomes framework. Covers identification assumptions and estimation methods."
+          },
+          {
+            "chapterTitle": "Sensitivity Analysis",
+            "description": "Methods for assessing the sensitivity of causal inferences to unmeasured confounding. Covers Rosenbaum sensitivity analysis and E-value."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Mediation and Sensitivity Analysis"
+      }
+    ]
+  }
+}

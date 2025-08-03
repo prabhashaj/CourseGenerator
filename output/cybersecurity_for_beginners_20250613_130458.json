@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 13:04:58.507856",
+  "input": {
+    "course_topic": "Cybersecurity",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.48,
+    "max_tokens": 1024,
+    "top_k": 14,
+    "top_p": 0.98
+  },
+  "output": {
+    "conclusion": "By completing this course, you've taken your first steps into the world of cybersecurity. Remember to stay curious, keep learning, and practice safe online habits!",
+    "courseTitle": "Cybersecurity for Beginners",
+    "introduction": "Welcome to Cybersecurity for Beginners! This course will introduce you to the fundamental concepts of cybersecurity and equip you with the knowledge to protect yourself online.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding Cybersecurity",
+            "description": "What is cybersecurity? Why is it important? An overview of threats and vulnerabilities."
+          },
+          {
+            "chapterTitle": "Common Cyber Threats",
+            "description": "Learn about malware, phishing, ransomware, and other common threats."
+          },
+          {
+            "chapterTitle": "Protecting Your Devices",
+            "description": "Basic security measures for computers, smartphones, and tablets."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Cybersecurity"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Password Security",
+            "description": "Creating strong passwords and using password managers."
+          },
+          {
+            "chapterTitle": "Email Security",
+            "description": "Identifying phishing emails and avoiding email scams."
+          },
+          {
+            "chapterTitle": "Safe Browsing Habits",
+            "description": "Tips for browsing the internet safely and avoiding malicious websites."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Online Safety Basics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Social Media Security",
+            "description": "Protecting your privacy on social media platforms."
+          },
+          {
+            "chapterTitle": "Wi-Fi Security",
+            "description": "Securing your Wi-Fi network and using public Wi-Fi safely."
+          },
+          {
+            "chapterTitle": "Data Backup and Recovery",
+            "description": "Backing up your data and preparing for data loss."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Security Practices"
+      }
+    ]
+  }
+}

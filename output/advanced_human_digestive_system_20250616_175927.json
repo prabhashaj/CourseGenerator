@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-06-16 17:59:27.847078",
+  "input": {
+    "course_topic": "Human Digestive System",
+    "difficulty_level": "Advanced",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.34,
+    "max_tokens": 2048,
+    "top_k": 15,
+    "top_p": 0.5
+  },
+  "output": {
+    "conclusion": "By completing this course, you will have gained an in-depth understanding of the human digestive system, from the molecular mechanisms of digestion to the clinical implications of digestive disorders. You will be equipped to critically analyze research in gastroenterology and apply your knowledge to real-world scenarios.",
+    "courseTitle": "Advanced Human Digestive System",
+    "introduction": "Welcome to the Advanced Human Digestive System course! This course is designed for students and professionals with a strong foundation in biology and biochemistry. We will delve into the intricate details of the digestive process, exploring the anatomy, physiology, and regulation of each component of the system. Get ready to explore the fascinating world of digestion!",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Overview of Digestive Anatomy",
+            "description": "A detailed exploration of the anatomical structures involved in digestion, including the oral cavity, esophagus, stomach, small intestine, large intestine, liver, pancreas, and gallbladder. Emphasis on the histological organization of each organ."
+          },
+          {
+            "chapterTitle": "Regulation of Gastric Emptying",
+            "description": "Examine the neural and hormonal control mechanisms that regulate the rate at which chyme is released from the stomach into the small intestine. Focus on the roles of gastrin, secretin, and cholecystokinin (CCK)."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Anatomy and Regulation"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Carbohydrate Digestion and Absorption",
+            "description": "A deep dive into the enzymatic breakdown of complex carbohydrates into monosaccharides, followed by the mechanisms of glucose and fructose absorption in the small intestine. Includes discussion of SGLT1 and GLUT5 transporters."
+          },
+          {
+            "chapterTitle": "Protein Digestion and Absorption",
+            "description": "Detailed analysis of the proteases involved in protein digestion (pepsin, trypsin, chymotrypsin, carboxypeptidases) and the transport of amino acids and peptides across the intestinal epithelium."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Macronutrient Digestion"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Lipid Digestion and Absorption",
+            "description": "An in-depth look at the emulsification of fats by bile salts, the action of pancreatic lipase, and the formation of micelles. Focus on the absorption of fatty acids, monoglycerides, and cholesterol, and the synthesis of chylomicrons."
+          },
+          {
+            "chapterTitle": "Vitamin and Mineral Absorption",
+            "description": "Explore the mechanisms of absorption for fat-soluble and water-soluble vitamins, as well as essential minerals like iron and calcium. Includes discussion of vitamin deficiencies and related disorders."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Lipids, Vitamins, and Minerals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Gut Microbiome",
+            "description": "An overview of the composition and function of the gut microbiome, including its role in nutrient metabolism, immune system development, and protection against pathogens. Discuss the impact of diet and antibiotics on the microbiome."
+          },
+          {
+            "chapterTitle": "Gut-Brain Axis",
+            "description": "Explore the bidirectional communication between the gut and the brain, including the role of the vagus nerve, neurotransmitters, and microbial metabolites in influencing mood, behavior, and cognitive function."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Microbiome and Gut-Brain Axis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Inflammatory Bowel Disease (IBD)",
+            "description": "A detailed discussion of the pathogenesis, diagnosis, and treatment of Crohn's disease and ulcerative colitis. Focus on the role of genetics, immune dysregulation, and the gut microbiome in IBD."
+          },
+          {
+            "chapterTitle": "Celiac Disease",
+            "description": "Explore the immunological mechanisms underlying celiac disease, including the role of gluten, tissue transglutaminase, and HLA-DQ2/DQ8. Discuss the diagnosis and management of celiac disease."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Digestive Disorders"
+      }
+    ]
+  }
+}

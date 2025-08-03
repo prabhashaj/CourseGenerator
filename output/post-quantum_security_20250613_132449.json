@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-13 13:24:49.066451",
+  "input": {
+    "course_topic": "Post-Quantum Security",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.51,
+    "max_tokens": 2048,
+    "top_k": 31,
+    "top_p": 0.78
+  },
+  "output": {
+    "conclusion": "By completing this course, students will gain a solid understanding of the threats posed by quantum computers to existing cryptographic systems and the potential solutions offered by post-quantum cryptography. They will be equipped to participate in the ongoing transition to a more secure, quantum-resistant future.",
+    "courseTitle": "Post-Quantum Security",
+    "introduction": "This course provides an intermediate-level introduction to the field of post-quantum cryptography (PQC). It covers the fundamental concepts, algorithms, and challenges associated with securing cryptographic systems against attacks from quantum computers. The course assumes a basic understanding of cryptography and linear algebra.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Quantum Computing",
+            "description": "A brief overview of quantum computing principles, including qubits, superposition, and entanglement. Explains how quantum computers can break existing cryptographic algorithms."
+          },
+          {
+            "chapterTitle": "Shor's Algorithm",
+            "description": "A detailed explanation of Shor's algorithm and its implications for factoring large numbers and computing discrete logarithms, the basis of RSA and ECC."
+          },
+          {
+            "chapterTitle": "Grover's Algorithm",
+            "description": "An introduction to Grover's algorithm and its impact on symmetric-key cryptography and hash functions. Discusses the quadratic speedup it provides."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Quantum Computing Threat"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "NIST's PQC Standardization Process",
+            "description": "An overview of the NIST's Post-Quantum Cryptography Standardization process, its goals, and the different rounds of evaluation."
+          },
+          {
+            "chapterTitle": "PQC Algorithm Families",
+            "description": "Introduction to the main families of post-quantum algorithms: Lattice-based, Code-based, Multivariate, Hash-based, and Isogeny-based cryptography."
+          },
+          {
+            "chapterTitle": "Security Considerations",
+            "description": "Discussion on the different security models and attack vectors relevant to post-quantum cryptography."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Post-Quantum Cryptography Landscape"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Lattice-Based Cryptography",
+            "description": "Introduction to lattices and their properties. Explanation of the Learning With Errors (LWE) and Ring-LWE problems."
+          },
+          {
+            "chapterTitle": "NTRU",
+            "description": "Detailed explanation of the NTRU cryptosystem, its advantages, and its security analysis."
+          },
+          {
+            "chapterTitle": "Kyber",
+            "description": "Overview of the Kyber key encapsulation mechanism (KEM) and its role in the NIST standardization process."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Lattice-Based Cryptography in Detail"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Code-Based Cryptography",
+            "description": "Introduction to error-correcting codes and their application in cryptography. Explanation of the McEliece cryptosystem."
+          },
+          {
+            "chapterTitle": "McEliece",
+            "description": "Detailed explanation of the McEliece cryptosystem, its advantages, and its security analysis."
+          },
+          {
+            "chapterTitle": "Classic McEliece",
+            "description": "Overview of the Classic McEliece key encapsulation mechanism (KEM) and its role in the NIST standardization process."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Code-Based Cryptography in Detail"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Hash-Based Signatures",
+            "description": "Introduction to hash-based signatures and their security properties. Explanation of the Merkle signature scheme."
+          },
+          {
+            "chapterTitle": "SPHINCS+",
+            "description": "Detailed explanation of the SPHINCS+ signature scheme, its advantages, and its security analysis."
+          },
+          {
+            "chapterTitle": "Transition Strategies",
+            "description": "Discussion on the challenges and strategies for transitioning to post-quantum cryptography in real-world systems."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Hash-Based Signatures and Transition Strategies"
+      }
+    ]
+  }
+}

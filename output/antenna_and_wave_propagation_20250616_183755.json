@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-16 18:37:55.839483",
+  "input": {
+    "course_topic": "Antenna and Wave Propagation",
+    "difficulty_level": "Intermediate",
+    "num_modules": 6,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.69,
+    "max_tokens": 1024,
+    "top_k": 18,
+    "top_p": 0.85
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in antenna theory and wave propagation, equipping students with the knowledge and skills necessary for designing and analyzing antenna systems in various applications.",
+    "courseTitle": "Antenna and Wave Propagation",
+    "introduction": "Welcome to the 'Antenna and Wave Propagation' course. This course delves into the fundamental principles of antenna theory and wave propagation, covering antenna parameters, types, and the behavior of electromagnetic waves in different media. It is designed for intermediate-level learners with a basic understanding of electromagnetics.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Antennas",
+            "description": "Overview of antenna systems, antenna types (wire, aperture, array), antenna parameters (radiation pattern, gain, directivity, impedance, polarization)."
+          },
+          {
+            "chapterTitle": "Antenna Parameters",
+            "description": "Detailed explanation of radiation pattern, gain, directivity, input impedance, bandwidth, polarization, and radiation efficiency."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Antenna Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Wire Antennas",
+            "description": "Analysis and design of dipole, monopole, and folded dipole antennas. Current distribution, radiation resistance, and input impedance."
+          },
+          {
+            "chapterTitle": "Small Antennas",
+            "description": "Characteristics of electrically small antennas, radiation resistance and reactance, matching techniques."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Wire Antenna Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Aperture Antennas",
+            "description": "Introduction to aperture antennas, including horn antennas, reflector antennas, and slot antennas."
+          },
+          {
+            "chapterTitle": "Horn Antennas",
+            "description": "Types of horn antennas (E-plane, H-plane, pyramidal), gain and beamwidth calculations, and design considerations."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Aperture Antennas"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Antenna Arrays",
+            "description": "Introduction to antenna arrays, array factor, uniform and non-uniform arrays, beam steering, and null placement."
+          },
+          {
+            "chapterTitle": "Linear Arrays",
+            "description": "Analysis and design of linear antenna arrays, broadside and end-fire arrays, grating lobes, and beamwidth control."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Antenna Arrays and Synthesis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Wave Propagation Fundamentals",
+            "description": "Introduction to wave propagation, types of propagation (ground wave, sky wave, space wave), and factors affecting propagation."
+          },
+          {
+            "chapterTitle": "Ground Wave Propagation",
+            "description": "Characteristics of ground wave propagation, surface wave and space wave components, and attenuation factors."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Wave Propagation Basics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Sky Wave Propagation",
+            "description": "Ionospheric layers, critical frequency, maximum usable frequency (MUF), skip distance, and effects of solar activity."
+          },
+          {
+            "chapterTitle": "Space Wave Propagation",
+            "description": "Line-of-sight (LOS) propagation, free-space path loss, Fresnel zone clearance, and effects of atmospheric refraction."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Sky and Space Wave Propagation"
+      }
+    ]
+  }
+}

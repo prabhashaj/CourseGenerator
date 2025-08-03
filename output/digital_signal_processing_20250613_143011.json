@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-13 14:30:11.087041",
+  "input": {
+    "course_topic": "Digital Signal Processing",
+    "difficulty_level": "Intermediate",
+    "num_modules": 5,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.61,
+    "max_tokens": 2048,
+    "top_k": 31,
+    "top_p": 0.55
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in Digital Signal Processing, equipping you with the knowledge and skills to analyze, design, and implement DSP systems in various applications.",
+    "courseTitle": "Digital Signal Processing",
+    "introduction": "Welcome to Digital Signal Processing! This course will delve into the fundamental concepts and techniques used to process signals in the digital domain. We will explore topics such as signal representation, discrete-time systems, frequency analysis, filter design, and practical applications of DSP.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Signals and Systems",
+            "description": "Overview of continuous-time and discrete-time signals. Basic signal operations (scaling, shifting, time reversal). Introduction to systems and their properties (linearity, time-invariance, causality, stability)."
+          },
+          {
+            "chapterTitle": "Discrete-Time Signals",
+            "description": "Representation of discrete-time signals. Common discrete-time signals (unit impulse, unit step, exponential). Signal energy and power."
+          },
+          {
+            "chapterTitle": "Discrete-Time Systems",
+            "description": "Representation of discrete-time systems. Linear Time-Invariant (LTI) systems. Convolution sum."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Signals and Systems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Z-Transform",
+            "description": "Definition of the Z-transform. Region of convergence (ROC). Properties of the Z-transform."
+          },
+          {
+            "chapterTitle": "Inverse Z-Transform",
+            "description": "Methods for finding the inverse Z-transform (partial fraction expansion, power series expansion)."
+          },
+          {
+            "chapterTitle": "Z-Transform Analysis of LTI Systems",
+            "description": "System function. Stability analysis using the Z-transform. Frequency response from the Z-transform."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "The Z-Transform"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Discrete Fourier Transform (DFT)",
+            "description": "Definition of the DFT. Properties of the DFT. Circular convolution."
+          },
+          {
+            "chapterTitle": "Fast Fourier Transform (FFT)",
+            "description": "Radix-2 FFT algorithms (Decimation-in-Time, Decimation-in-Frequency). Computational complexity of the FFT."
+          },
+          {
+            "chapterTitle": "Applications of the DFT",
+            "description": "Spectral analysis using the DFT. Filtering using the DFT."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Frequency Analysis: The Discrete Fourier Transform"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "FIR Filter Design",
+            "description": "Introduction to FIR filters. Linear phase FIR filters. Windowing method for FIR filter design."
+          },
+          {
+            "chapterTitle": "IIR Filter Design",
+            "description": "Introduction to IIR filters. Impulse invariance method. Bilinear transformation method."
+          },
+          {
+            "chapterTitle": "Filter Structures",
+            "description": "Direct form, cascade form, and parallel form filter structures."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Digital Filter Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Sampling Rate Conversion",
+            "description": "Decimation and interpolation. Polyphase filter structures for sampling rate conversion."
+          },
+          {
+            "chapterTitle": "Applications of DSP",
+            "description": "Audio processing (equalization, noise reduction). Image processing (filtering, edge detection)."
+          },
+          {
+            "chapterTitle": "DSP Hardware and Software",
+            "description": "Introduction to DSP processors. Overview of DSP software tools (MATLAB, Python)."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Advanced Topics and Applications"
+      }
+    ]
+  }
+}

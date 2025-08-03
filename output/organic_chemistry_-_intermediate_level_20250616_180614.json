@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:06:14.791637",
+  "input": {
+    "course_topic": "Organic Chemistry",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.35,
+    "max_tokens": 1024,
+    "top_k": 17,
+    "top_p": 0.65
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a solid foundation in organic chemistry, equipping you with the knowledge to understand complex reactions and molecular structures. This knowledge will be invaluable in various scientific fields.",
+    "courseTitle": "Organic Chemistry - Intermediate Level",
+    "introduction": "Welcome to Intermediate Organic Chemistry! This course builds upon your existing knowledge of basic organic principles, delving deeper into reaction mechanisms, stereochemistry, and spectroscopic analysis. Get ready to explore the fascinating world of carbon compounds!",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Nomenclature and Structure",
+            "description": "Review of IUPAC nomenclature rules for alkanes, alkenes, alkynes, alcohols, ethers, and halides. Focus on complex structures and functional group identification."
+          },
+          {
+            "chapterTitle": "Isomerism and Chirality",
+            "description": "Detailed exploration of structural isomers, stereoisomers (enantiomers and diastereomers), and chirality centers. Introduction to R/S configuration and optical activity."
+          },
+          {
+            "chapterTitle": "Conformations of Alkanes and Cycloalkanes",
+            "description": "Analysis of Newman projections and conformational analysis of alkanes. Discussion of chair conformations of cyclohexane and substituent effects."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Organic Chemistry"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "SN1 and SN2 Reactions",
+            "description": "In-depth study of SN1 and SN2 reaction mechanisms, including factors affecting reaction rates (substrate structure, nucleophile strength, leaving group ability, solvent effects)."
+          },
+          {
+            "chapterTitle": "E1 and E2 Reactions",
+            "description": "Detailed analysis of E1 and E2 elimination reaction mechanisms, including Zaitsev's rule and Hofmann's rule. Comparison of SN1/E1 and SN2/E2 reactions."
+          },
+          {
+            "chapterTitle": "Addition Reactions to Alkenes and Alkynes",
+            "description": "Exploration of electrophilic addition reactions to alkenes and alkynes (e.g., hydrohalogenation, hydration, halogenation, hydroboration-oxidation). Markovnikov's rule and anti-Markovnikov addition."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Reaction Mechanisms"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Spectroscopy - Introduction",
+            "description": "Introduction to spectroscopic techniques used in organic chemistry (NMR, IR, Mass Spectrometry). Basic principles and instrumentation."
+          },
+          {
+            "chapterTitle": "Infrared (IR) Spectroscopy",
+            "description": "Interpretation of IR spectra: characteristic absorption bands for different functional groups (e.g., alcohols, carbonyls, amines). Correlation of IR spectra with molecular structure."
+          },
+          {
+            "chapterTitle": "Nuclear Magnetic Resonance (NMR) Spectroscopy",
+            "description": "Introduction to NMR spectroscopy (1H NMR and 13C NMR). Chemical shift, spin-spin splitting, and integration. Using NMR data to determine molecular structure."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Spectroscopic Analysis"
+      }
+    ]
+  }
+}

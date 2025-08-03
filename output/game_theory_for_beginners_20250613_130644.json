@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 13:06:44.158973",
+  "input": {
+    "course_topic": "Game Theory",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.48,
+    "max_tokens": 1024,
+    "top_k": 15,
+    "top_p": 0.82
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a foundational understanding of game theory and its applications. You can now identify strategic situations, analyze potential outcomes, and make more informed decisions in various aspects of your life.",
+    "courseTitle": "Game Theory for Beginners",
+    "introduction": "Welcome to Game Theory for Beginners! This course will introduce you to the fundamental concepts of game theory, a powerful tool for analyzing strategic interactions. We'll explore how individuals and organizations make decisions when their outcomes depend on the choices of others. No prior knowledge is required!",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is Game Theory?",
+            "description": "Introduction to the basic concepts of Game Theory. Definition of a game, players, strategies, and payoffs. Real-world examples of strategic interactions."
+          },
+          {
+            "chapterTitle": "Types of Games",
+            "description": "Overview of different types of games: cooperative vs. non-cooperative, simultaneous vs. sequential, zero-sum vs. non-zero-sum."
+          },
+          {
+            "chapterTitle": "Representing Games",
+            "description": "Learn how to represent games using normal form (matrix) and extensive form (game tree) representations."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Game Theory"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Dominant Strategies",
+            "description": "Understanding dominant strategies and how to identify them. Examples of games with dominant strategies."
+          },
+          {
+            "chapterTitle": "Nash Equilibrium",
+            "description": "Introduction to the concept of Nash Equilibrium: a stable state where no player can benefit by unilaterally changing their strategy."
+          },
+          {
+            "chapterTitle": "Finding Nash Equilibria",
+            "description": "Methods for finding Nash Equilibria in simple games. Examples and practice problems."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Basic Solution Concepts"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Prisoner's Dilemma",
+            "description": "A classic example of a game with a dominant strategy that leads to a suboptimal outcome. Discussion of cooperation vs. defection."
+          },
+          {
+            "chapterTitle": "Applications of Game Theory",
+            "description": "Exploring real-world applications of game theory in economics, politics, business, and everyday life."
+          },
+          {
+            "chapterTitle": "Limitations of Game Theory",
+            "description": "Discussion of the assumptions and limitations of game theory. Introduction to behavioral game theory."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Applications and Limitations"
+      }
+    ]
+  }
+}

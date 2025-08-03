@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 13:08:57.681142",
+  "input": {
+    "course_topic": "Digital Art",
+    "difficulty_level": "Beginner",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.38,
+    "max_tokens": 1024,
+    "top_k": 16,
+    "top_p": 0.81
+  },
+  "output": {
+    "conclusion": "By completing this course, you've gained a foundational understanding of digital art principles and tools. Continue practicing and exploring to develop your unique artistic style!",
+    "courseTitle": "Digital Art for Beginners",
+    "introduction": "Welcome to the exciting world of digital art! This course will guide you through the basics, equipping you with the skills to create your own digital masterpieces.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Digital Art",
+            "description": "What is digital art? Exploring the different types of digital art and the tools used. Brief history and evolution of digital art."
+          },
+          {
+            "chapterTitle": "Understanding Digital Art Software",
+            "description": "Overview of popular digital art software (e.g., Krita, Procreate, Adobe Photoshop). Interface and basic functionalities."
+          },
+          {
+            "chapterTitle": "Setting Up Your Workspace",
+            "description": "Choosing the right hardware (tablets, stylus). Configuring your software for optimal performance. Creating a comfortable workspace."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Getting Started with Digital Art"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Understanding Basic Art Principles",
+            "description": "Introduction to fundamental art principles: line, shape, color, value, texture, space, and form."
+          },
+          {
+            "chapterTitle": "Color Theory Basics",
+            "description": "Understanding the color wheel. Primary, secondary, and tertiary colors. Color harmonies and color schemes."
+          },
+          {
+            "chapterTitle": "Introduction to Layering",
+            "description": "What are layers and why are they important? How to create, organize, and manage layers in digital art software."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Fundamental Art Principles"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Basic Brush Techniques",
+            "description": "Exploring different brush types and their uses. Experimenting with brush size, opacity, and flow."
+          },
+          {
+            "chapterTitle": "Creating Simple Shapes and Forms",
+            "description": "Using basic shapes to build complex objects. Understanding perspective and creating depth."
+          },
+          {
+            "chapterTitle": "Simple Shading Techniques",
+            "description": "Introduction to shading and highlights. Using value to create form and dimension. Basic rendering techniques."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Basic Drawing Techniques"
+      }
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:06:57.315353",
+  "input": {
+    "course_topic": "Engineering Drawing",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.7,
+    "max_tokens": 1024,
+    "top_k": 25,
+    "top_p": 0.57
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in engineering drawing, equipping you with the skills to interpret and create technical drawings effectively. Continued practice and exploration of advanced topics will further enhance your expertise.",
+    "courseTitle": "Engineering Drawing",
+    "introduction": "Welcome to Engineering Drawing! This intermediate-level course builds upon basic drafting principles, focusing on advanced techniques and industry standards for creating accurate and detailed technical drawings. Each module is designed to take approximately 10 minutes to read.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Review of Basic Principles",
+            "description": "A quick recap of fundamental concepts like line types, lettering, dimensioning, and geometric constructions. Emphasis on accuracy and clarity."
+          },
+          {
+            "chapterTitle": "Orthographic Projection Refresher",
+            "description": "Reinforcing the principles of multi-view drawings, including front, top, and side views. Practice exercises for visualizing 3D objects in 2D."
+          },
+          {
+            "chapterTitle": "Sectional Views Introduction",
+            "description": "Understanding the purpose and types of sectional views (full, half, offset). Learning how to create sectional views to reveal internal features."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals Review and Sectional Views"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Auxiliary Views: Introduction",
+            "description": "Understanding the need for auxiliary views to represent inclined surfaces accurately. Introduction to primary auxiliary views."
+          },
+          {
+            "chapterTitle": "Creating Primary Auxiliary Views",
+            "description": "Step-by-step guide to constructing primary auxiliary views to show true shape and size of inclined surfaces."
+          },
+          {
+            "chapterTitle": "Applications of Auxiliary Views",
+            "description": "Examples of how auxiliary views are used in various engineering disciplines to represent complex geometries."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Auxiliary Views"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Tolerancing",
+            "description": "Understanding the importance of tolerances in manufacturing. Defining basic tolerance terms and concepts."
+          },
+          {
+            "chapterTitle": "Types of Tolerances",
+            "description": "Exploring different types of tolerances, including dimensional tolerances, geometric tolerances, and surface finish requirements."
+          },
+          {
+            "chapterTitle": "Tolerance Stack-Up Analysis",
+            "description": "Introduction to tolerance stack-up analysis to ensure proper fit and function of assembled parts."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Tolerancing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to CAD Software",
+            "description": "Overview of common CAD software used in engineering drawing. Familiarization with the user interface and basic commands."
+          },
+          {
+            "chapterTitle": "Creating Basic Drawings in CAD",
+            "description": "Step-by-step tutorial on creating simple 2D drawings using CAD software. Focus on drawing lines, circles, and arcs."
+          },
+          {
+            "chapterTitle": "Dimensioning and Annotating in CAD",
+            "description": "Learning how to add dimensions, notes, and symbols to CAD drawings. Introduction to CAD standards and best practices."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Introduction to CAD"
+      }
+    ]
+  }
+}

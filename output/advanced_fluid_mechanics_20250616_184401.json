@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:44:01.091998",
+  "input": {
+    "course_topic": "Fluid Mechanics",
+    "difficulty_level": "Expert",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.49,
+    "max_tokens": 2048,
+    "top_k": 17,
+    "top_p": 0.77
+  },
+  "output": {
+    "conclusion": "This course has provided an in-depth exploration of advanced fluid mechanics concepts, equipping you with the tools to analyze and solve complex fluid flow problems. Further research and application of these principles will solidify your expertise in this field.",
+    "courseTitle": "Advanced Fluid Mechanics",
+    "introduction": "Welcome to Advanced Fluid Mechanics! This course delves into complex fluid phenomena, building upon foundational knowledge to explore advanced concepts and analytical techniques. Designed for experts, this course assumes a strong understanding of basic fluid mechanics principles.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Tensor Analysis in Fluid Mechanics",
+            "description": "Review of tensor algebra and calculus. Application of tensors to represent stress, strain, and rate of deformation in fluids. Introduction to constitutive equations in tensor form."
+          },
+          {
+            "chapterTitle": "Navier-Stokes Equations: Advanced Topics",
+            "description": "Detailed derivation of the Navier-Stokes equations in curvilinear coordinates. Discussion of boundary conditions for complex geometries. Introduction to the concept of turbulence modeling."
+          },
+          {
+            "chapterTitle": "Exact Solutions of Navier-Stokes Equations",
+            "description": "Exploration of advanced exact solutions, including those for unsteady flows and flows with complex boundary conditions. Analysis of the stability of these solutions."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Mathematical Foundations and Governing Equations"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Turbulence: Statistical Description",
+            "description": "Introduction to the statistical theory of turbulence. Reynolds decomposition and Reynolds-averaged Navier-Stokes (RANS) equations. Discussion of turbulence kinetic energy and dissipation rate."
+          },
+          {
+            "chapterTitle": "Turbulence Modeling: RANS Models",
+            "description": "Detailed analysis of various RANS turbulence models, including k-epsilon, k-omega, and Reynolds stress models. Assessment of their strengths and limitations."
+          },
+          {
+            "chapterTitle": "Large Eddy Simulation (LES)",
+            "description": "Introduction to LES as a turbulence modeling approach. Subgrid-scale modeling and its impact on simulation accuracy. Comparison of LES with RANS models."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Turbulence Modeling"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Compressible Flow: Governing Equations",
+            "description": "Derivation of the governing equations for compressible flow, including the energy equation and equation of state. Introduction to the concept of Mach number and its significance."
+          },
+          {
+            "chapterTitle": "Shock Waves",
+            "description": "Detailed analysis of shock waves, including normal and oblique shocks. Rankine-Hugoniot relations and their application to shock wave analysis."
+          },
+          {
+            "chapterTitle": "Computational Fluid Dynamics (CFD) for Compressible Flows",
+            "description": "Discussion of numerical methods for solving compressible flow equations. Introduction to shock-capturing and shock-fitting techniques. Application of CFD to supersonic and hypersonic flows."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Compressible Flow"
+      }
+    ]
+  }
+}

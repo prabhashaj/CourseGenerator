@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:04:05.274245",
+  "input": {
+    "course_topic": "Electrical Machines",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.34,
+    "max_tokens": 1024,
+    "top_k": 17,
+    "top_p": 0.78
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in electrical machines, equipping you with the knowledge to analyze and design basic motor and generator systems.",
+    "courseTitle": "Electrical Machines",
+    "introduction": "Welcome to Electrical Machines! This course will delve into the principles, operation, and applications of various electrical machines, including transformers, DC machines, and AC machines. We will focus on understanding the underlying physics and developing practical problem-solving skills.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Electrical Machines",
+            "description": "Overview of electrical machines, types, applications, and energy conversion principles. Basic electromagnetic concepts review."
+          },
+          {
+            "chapterTitle": "Magnetic Circuits",
+            "description": "Magnetic circuits, concepts of mmf, flux, reluctance, and permeability. Analysis of simple magnetic circuits."
+          },
+          {
+            "chapterTitle": "Transformers - Basic Principles",
+            "description": "Transformer construction, working principle, EMF equation, and ideal transformer model."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals and Transformers"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transformer Equivalent Circuit",
+            "description": "Transformer equivalent circuit, parameters determination, and performance analysis."
+          },
+          {
+            "chapterTitle": "Transformer Testing",
+            "description": "Open-circuit and short-circuit tests for transformer parameter determination."
+          },
+          {
+            "chapterTitle": "Autotransformers",
+            "description": "Autotransformer construction, operation, advantages, and disadvantages compared to two-winding transformers."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Transformers - Analysis and Testing"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "DC Machine Construction and Operation",
+            "description": "DC machine construction, working principle, EMF equation, and torque equation."
+          },
+          {
+            "chapterTitle": "DC Machine Types",
+            "description": "Types of DC machines: separately excited, shunt, series, and compound. Characteristics and applications."
+          },
+          {
+            "chapterTitle": "DC Motor Speed Control",
+            "description": "Speed control methods for DC motors: armature voltage control, field flux control, and armature resistance control."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "DC Machines"
+      }
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 14:38:16.233549",
+  "input": {
+    "course_topic": "Design of Steel Structures",
+    "difficulty_level": "Beginner",
+    "num_modules": 4,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.5,
+    "max_tokens": 2048,
+    "top_k": 15,
+    "top_p": 0.91
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of steel structure design principles. Further study and practical experience are necessary for professional application.",
+    "courseTitle": "Design of Steel Structures (Beginner Level)",
+    "introduction": "Welcome to the 'Design of Steel Structures' course! This course provides a beginner-friendly introduction to the fundamentals of steel design. We will cover basic concepts, material properties, and design considerations for common steel elements.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Steel Structures",
+            "description": "Overview of steel as a structural material, its advantages and disadvantages, and common applications in buildings and bridges."
+          },
+          {
+            "chapterTitle": "Types of Steel",
+            "description": "Discussion of different types of structural steel (e.g., A36, A572), their properties, and selection criteria."
+          },
+          {
+            "chapterTitle": "Loads on Steel Structures",
+            "description": "Introduction to different types of loads (dead, live, wind, seismic) and their impact on steel structure design."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Steel and Loads"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Tension Members",
+            "description": "Introduction to tension members, their behavior under tensile loads, and design considerations for connections."
+          },
+          {
+            "chapterTitle": "Compression Members",
+            "description": "Introduction to compression members (columns), buckling phenomenon, and basic design principles."
+          },
+          {
+            "chapterTitle": "Beam Basics",
+            "description": "Introduction to beams, bending moment and shear force diagrams, and basic beam design concepts."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Basic Steel Elements"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Bolted Connections",
+            "description": "Introduction to bolted connections, types of bolts, and basic design considerations for shear and tension."
+          },
+          {
+            "chapterTitle": "Welded Connections",
+            "description": "Introduction to welded connections, types of welds, and basic design considerations for strength and ductility."
+          },
+          {
+            "chapterTitle": "Connection Details",
+            "description": "Overview of common connection details in steel structures and their design considerations."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Steel Connections"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Design Codes and Standards",
+            "description": "Introduction to relevant design codes and standards (e.g., AISC, Eurocode) and their importance in steel design."
+          },
+          {
+            "chapterTitle": "Design Process Overview",
+            "description": "Overview of the steel structure design process, from conceptual design to detailing and fabrication."
+          },
+          {
+            "chapterTitle": "Practical Considerations",
+            "description": "Discussion of practical considerations in steel design, such as constructability, durability, and sustainability."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Design Codes and Practical Considerations"
+      }
+    ]
+  }
+}

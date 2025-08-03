@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 14:30:40.269425",
+  "input": {
+    "course_topic": "Optics",
+    "difficulty_level": "Advanced",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.62,
+    "max_tokens": 1024,
+    "top_k": 32,
+    "top_p": 0.83
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of advanced optics, equipping students with the knowledge and skills necessary for research and development in related fields.",
+    "courseTitle": "Advanced Optics",
+    "introduction": "Welcome to Advanced Optics! This course delves into the fascinating world of light and its interaction with matter, covering advanced topics in wave optics, quantum optics, and nonlinear optics. Designed for students with a strong foundation in physics and mathematics, this course will equip you with the theoretical tools and practical knowledge to tackle cutting-edge research challenges.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Wave Propagation in Anisotropic Media",
+            "description": "Explore the behavior of light in anisotropic materials, including birefringence, polarization, and wave plates. Learn about the mathematical formalism for describing wave propagation in these media."
+          },
+          {
+            "chapterTitle": "Crystal Optics",
+            "description": "Delve into the optical properties of crystals, including uniaxial and biaxial crystals. Understand how crystal symmetry affects optical properties and applications."
+          },
+          {
+            "chapterTitle": "Jones Calculus and Mueller Calculus",
+            "description": "Master the Jones calculus for describing polarized light and its manipulation using optical elements. Learn the Mueller calculus for handling depolarized light and complex optical systems."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Wave Optics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Quantization of the Electromagnetic Field",
+            "description": "Understand the quantum nature of light and the concept of photons. Explore the quantization of the electromagnetic field and its implications for light-matter interactions."
+          },
+          {
+            "chapterTitle": "Coherent States and Squeezed States",
+            "description": "Learn about coherent states, which are the closest quantum analog to classical electromagnetic waves. Explore squeezed states, which exhibit reduced noise in one quadrature at the expense of increased noise in the other."
+          },
+          {
+            "chapterTitle": "Quantum Electrodynamics (QED) Basics",
+            "description": "Get an introduction to the fundamental theory of light-matter interactions: Quantum Electrodynamics. Understand the basic principles and applications of QED."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Quantum Optics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Nonlinear Optical Susceptibilities",
+            "description": "Explore the nonlinear response of materials to intense light fields. Learn about the different orders of nonlinear susceptibility and their physical origins."
+          },
+          {
+            "chapterTitle": "Second Harmonic Generation (SHG)",
+            "description": "Understand the process of second harmonic generation, where light at one frequency is converted into light at twice the frequency. Learn about phase matching conditions for efficient SHG."
+          },
+          {
+            "chapterTitle": "Third Harmonic Generation (THG) and Four-Wave Mixing",
+            "description": "Explore higher-order nonlinear optical processes, including third harmonic generation and four-wave mixing. Understand their applications in nonlinear spectroscopy and optical signal processing."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Nonlinear Optics"
+      }
+    ]
+  }
+}

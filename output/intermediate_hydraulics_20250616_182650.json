@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-06-16 18:26:50.984866",
+  "input": {
+    "course_topic": "Hydraulics",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.4,
+    "max_tokens": 1024,
+    "top_k": 19,
+    "top_p": 0.88
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of hydraulics, equipping you with the knowledge and skills to analyze and design hydraulic systems effectively.",
+    "courseTitle": "Intermediate Hydraulics",
+    "introduction": "Welcome to Intermediate Hydraulics! This course builds upon fundamental fluid mechanics principles to explore the behavior of liquids in engineering applications. We will delve into topics such as pressure, flow, and energy within hydraulic systems, with a focus on practical applications and problem-solving.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Fluid Properties and Statics",
+            "description": "Review of key fluid properties: density, viscosity, compressibility. Hydrostatic pressure distribution and measurement. Buoyancy and stability of floating bodies."
+          },
+          {
+            "chapterTitle": "Pressure Measurement Techniques",
+            "description": "Different types of pressure gauges. Piezometers and manometers. Differential pressure measurement. Calibration and error analysis."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Fluid Mechanics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Control Valves",
+            "description": "Types of control valves: directional, pressure, and flow control valves. Valve characteristics and selection criteria. Valve sizing and performance analysis."
+          },
+          {
+            "chapterTitle": "Hydraulic Actuators",
+            "description": "Linear and rotary actuators. Cylinder design and selection. Motor characteristics and performance. Actuator control and positioning."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Hydraulic Components"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Energy Losses in Pipes",
+            "description": "Major and minor losses in pipe systems. Friction factors and Moody diagram. Equivalent length method. System head curves."
+          },
+          {
+            "chapterTitle": "Pipe Network Analysis",
+            "description": "Series and parallel pipe systems. Hardy-Cross method. Computer-aided pipe network analysis. Optimization of pipe network design."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Hydraulic System Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Hydraulic System Design",
+            "description": "Design considerations for hydraulic systems. Component selection and sizing. System layout and piping design. Safety and reliability considerations."
+          },
+          {
+            "chapterTitle": "Troubleshooting Hydraulic Systems",
+            "description": "Common hydraulic system problems and their causes. Diagnostic techniques and tools. Preventive maintenance and repair procedures. Case studies of hydraulic system failures."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Hydraulic System Design and Troubleshooting"
+      }
+    ]
+  }
+}

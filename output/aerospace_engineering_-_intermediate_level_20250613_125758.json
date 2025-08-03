@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-13 12:57:58.188004",
+  "input": {
+    "course_topic": "Aerospace Engineering",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.41,
+    "max_tokens": 2048,
+    "top_k": 18,
+    "top_p": 0.73
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation for intermediate-level aerospace engineering concepts. Further exploration in specialized areas is highly recommended.",
+    "courseTitle": "Aerospace Engineering - Intermediate Level",
+    "introduction": "Welcome to the intermediate-level Aerospace Engineering course! This course builds upon fundamental principles and delves into more complex topics relevant to the design, analysis, and operation of aerospace vehicles.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Aerodynamics of Airfoils",
+            "description": "Review of basic airfoil theory, lift and drag coefficients, pressure distribution, and stall characteristics. Introduction to different airfoil families and their applications."
+          },
+          {
+            "chapterTitle": "Wing Theory",
+            "description": "Finite wing theory, induced drag, aspect ratio effects, wingtip vortices, and lift distribution. Introduction to wing design considerations for different flight regimes."
+          },
+          {
+            "chapterTitle": "High-Lift Devices",
+            "description": "Analysis of flaps, slats, and other high-lift devices. Impact on lift and drag characteristics. Design considerations for takeoff and landing performance."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Aerodynamics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Rocket Propulsion Fundamentals",
+            "description": "Review of rocket propulsion principles, thrust equation, specific impulse, and nozzle design. Introduction to different types of rocket engines."
+          },
+          {
+            "chapterTitle": "Liquid Rocket Engines",
+            "description": "Components and operation of liquid rocket engines, propellant feed systems, combustion chambers, and nozzle design. Introduction to different propellant combinations."
+          },
+          {
+            "chapterTitle": "Solid Rocket Motors",
+            "description": "Components and operation of solid rocket motors, propellant grain design, ignition systems, and nozzle design. Introduction to different solid propellant formulations."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Rocket Propulsion"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Orbital Mechanics Basics",
+            "description": "Review of Kepler's laws of planetary motion, orbital elements, and coordinate systems. Introduction to orbital maneuvers and trajectory design."
+          },
+          {
+            "chapterTitle": "Orbital Maneuvers",
+            "description": "Hohmann transfer, bi-elliptic transfer, and other orbital maneuvers. Calculation of delta-V requirements and maneuver durations."
+          },
+          {
+            "chapterTitle": "Atmospheric Entry",
+            "description": "Aerodynamic heating, deceleration profiles, and trajectory design for atmospheric entry. Introduction to thermal protection systems."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Spacecraft Dynamics and Control"
+      }
+    ]
+  }
+}

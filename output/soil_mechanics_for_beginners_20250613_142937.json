@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-06-13 14:29:37.318651",
+  "input": {
+    "course_topic": "Soil Mechanics",
+    "difficulty_level": "Beginner",
+    "num_modules": 6,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.4,
+    "max_tokens": 2048,
+    "top_k": 27,
+    "top_p": 0.78
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of soil mechanics, equipping you with the knowledge to analyze soil behavior and its implications in various engineering applications.",
+    "courseTitle": "Soil Mechanics for Beginners",
+    "introduction": "Welcome to Soil Mechanics! This course introduces the fundamental principles governing soil behavior and its relevance in civil engineering. We'll explore soil composition, properties, and how they influence structural stability.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Soil Mechanics",
+            "description": "Overview of soil mechanics, its importance in civil engineering, and the types of problems it addresses."
+          },
+          {
+            "chapterTitle": "Soil Formation and Types",
+            "description": "Processes of soil formation (weathering, transportation, deposition) and classification of major soil types (sand, silt, clay, organic soils)."
+          },
+          {
+            "chapterTitle": "Basic Soil Properties",
+            "description": "Introduction to key soil properties like particle size distribution, void ratio, porosity, and degree of saturation."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Soil"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Grain Size Analysis",
+            "description": "Methods for determining particle size distribution (sieve analysis, hydrometer analysis)."
+          },
+          {
+            "chapterTitle": "Atterberg Limits",
+            "description": "Understanding liquid limit, plastic limit, and shrinkage limit and their significance in soil classification."
+          },
+          {
+            "chapterTitle": "Soil Classification Systems",
+            "description": "Overview of common soil classification systems (e.g., USCS, AASHTO)."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Soil Properties and Classification"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Permeability",
+            "description": "Definition of permeability and its importance in groundwater flow and drainage."
+          },
+          {
+            "chapterTitle": "Darcy's Law",
+            "description": "Introduction to Darcy's Law for quantifying groundwater flow through soils."
+          },
+          {
+            "chapterTitle": "Factors Affecting Permeability",
+            "description": "Discussion of factors influencing permeability, such as particle size, void ratio, and fluid viscosity."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Soil Permeability and Groundwater Flow"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Effective Stress Principle",
+            "description": "Introduction to the concept of effective stress and its role in soil behavior."
+          },
+          {
+            "chapterTitle": "Total Stress, Pore Water Pressure, and Effective Stress",
+            "description": "Relationship between total stress, pore water pressure, and effective stress."
+          },
+          {
+            "chapterTitle": "Importance of Effective Stress",
+            "description": "Explanation of how effective stress governs soil strength and deformation."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Effective Stress"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Compaction Fundamentals",
+            "description": "Principles of soil compaction and its objectives."
+          },
+          {
+            "chapterTitle": "Compaction Methods",
+            "description": "Overview of different compaction methods (e.g., rolling, tamping, vibration)."
+          },
+          {
+            "chapterTitle": "Factors Affecting Compaction",
+            "description": "Discussion of factors influencing compaction, such as moisture content and compactive effort."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Soil Compaction"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Shear Strength of Soils",
+            "description": "Introduction to the concept of shear strength and its importance in slope stability and foundation design."
+          },
+          {
+            "chapterTitle": "Mohr-Coulomb Failure Criterion",
+            "description": "Explanation of the Mohr-Coulomb failure criterion for determining soil shear strength."
+          },
+          {
+            "chapterTitle": "Factors Affecting Shear Strength",
+            "description": "Discussion of factors influencing shear strength, such as effective stress and soil type."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "Soil Shear Strength"
+      }
+    ]
+  }
+}

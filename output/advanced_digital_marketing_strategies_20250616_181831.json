@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:18:31.230381",
+  "input": {
+    "course_topic": "Digital Marketing",
+    "difficulty_level": "Expert",
+    "num_modules": 3,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.34,
+    "max_tokens": 2048,
+    "top_k": 20,
+    "top_p": 0.58
+  },
+  "output": {
+    "conclusion": "By the end of this course, you will have a comprehensive understanding of advanced digital marketing strategies and be equipped to lead and innovate in the ever-evolving digital landscape.",
+    "courseTitle": "Advanced Digital Marketing Strategies",
+    "introduction": "Welcome to Advanced Digital Marketing Strategies! This course is designed for experienced marketers looking to deepen their expertise and stay ahead of the curve. We'll explore cutting-edge techniques and emerging trends to help you drive significant results.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced SEO Techniques",
+            "description": "Deep dive into advanced on-page and off-page SEO strategies, including schema markup, core web vitals optimization, and E-A-T principles."
+          },
+          {
+            "chapterTitle": "Link Building Mastery",
+            "description": "Explore advanced link building tactics, including broken link building, guest posting on high-authority sites, and resource page link building."
+          },
+          {
+            "chapterTitle": "Technical SEO Audits",
+            "description": "Learn how to conduct comprehensive technical SEO audits to identify and fix website issues that impact search engine rankings."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Search Engine Optimization (SEO) Mastery"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Programmatic Advertising",
+            "description": "Understand the intricacies of programmatic advertising, including real-time bidding (RTB), demand-side platforms (DSPs), and data management platforms (DMPs)."
+          },
+          {
+            "chapterTitle": "Attribution Modeling",
+            "description": "Explore advanced attribution models beyond last-click, such as time decay, linear, and algorithmic attribution, to accurately measure campaign performance."
+          },
+          {
+            "chapterTitle": "AI-Powered Advertising",
+            "description": "Discover how artificial intelligence (AI) and machine learning (ML) are transforming digital advertising, including automated bidding, creative optimization, and audience targeting."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Digital Advertising"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Marketing Automation Mastery",
+            "description": "Master advanced marketing automation techniques, including lead scoring, behavioral segmentation, and personalized email marketing."
+          },
+          {
+            "chapterTitle": "Customer Relationship Management (CRM) Integration",
+            "description": "Learn how to integrate CRM systems with marketing automation platforms to create seamless customer experiences and drive sales."
+          },
+          {
+            "chapterTitle": "Data-Driven Personalization",
+            "description": "Explore advanced personalization strategies based on customer data, including website personalization, product recommendations, and dynamic content."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Marketing Automation and Personalization"
+      }
+    ]
+  }
+}

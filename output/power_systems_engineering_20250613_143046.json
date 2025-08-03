@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-13 14:30:46.768271",
+  "input": {
+    "course_topic": "Power Systems",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.55,
+    "max_tokens": 2048,
+    "top_k": 17,
+    "top_p": 0.65
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of power systems, equipping you with the knowledge to analyze, design, and operate modern power grids effectively.",
+    "courseTitle": "Power Systems Engineering",
+    "introduction": "Welcome to Power Systems Engineering! This course delves into the core principles and practical applications of electrical power systems, covering generation, transmission, distribution, and protection. Designed for intermediate learners, this course builds upon fundamental electrical engineering concepts.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Power Systems",
+            "description": "Overview of power system components, structure, and operation.  Introduction to single-line diagrams and per-unit system."
+          },
+          {
+            "chapterTitle": "Power System Representation",
+            "description": "Modeling of generators, transformers, and transmission lines for power flow studies."
+          },
+          {
+            "chapterTitle": "Power Flow Analysis Fundamentals",
+            "description": "Introduction to power flow equations and iterative solution methods (Gauss-Seidel, Newton-Raphson)."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Power System Fundamentals"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Symmetrical Fault Analysis",
+            "description": "Calculation of fault currents and voltages during balanced three-phase faults."
+          },
+          {
+            "chapterTitle": "Unsymmetrical Fault Analysis",
+            "description": "Analysis of single-line-to-ground, line-to-line, and double-line-to-ground faults using symmetrical components."
+          },
+          {
+            "chapterTitle": "Protective Relaying Principles",
+            "description": "Overview of protective relaying schemes and their application in power systems."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Fault Analysis and Protection"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Power System Stability Concepts",
+            "description": "Introduction to steady-state, transient, and dynamic stability."
+          },
+          {
+            "chapterTitle": "Equal Area Criterion",
+            "description": "Application of the equal area criterion for assessing transient stability."
+          },
+          {
+            "chapterTitle": "Voltage Stability",
+            "description": "Understanding voltage collapse phenomena and methods for voltage stability improvement."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Power System Stability"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Power System Control",
+            "description": "Automatic Generation Control (AGC) and its role in frequency regulation."
+          },
+          {
+            "chapterTitle": "Economic Dispatch",
+            "description": "Optimal allocation of generation resources to minimize operating costs."
+          },
+          {
+            "chapterTitle": "Smart Grid Technologies",
+            "description": "Introduction to smart grid concepts, including advanced metering infrastructure (AMI) and demand response."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Power System Operation and Control"
+      }
+    ]
+  }
+}

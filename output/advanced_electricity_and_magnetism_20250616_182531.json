@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-06-16 18:25:31.055915",
+  "input": {
+    "course_topic": "Electricity and Magnetism",
+    "difficulty_level": "Advanced",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.57,
+    "max_tokens": 1024,
+    "top_k": 12,
+    "top_p": 0.97
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of electricity and magnetism, equipping students with the advanced knowledge and problem-solving skills necessary for further study and research in physics and related fields.",
+    "courseTitle": "Advanced Electricity and Magnetism",
+    "introduction": "Welcome to Advanced Electricity and Magnetism! This course delves into the fundamental principles governing electric and magnetic phenomena, building upon introductory concepts to explore more complex and nuanced aspects. We will cover topics ranging from electrostatics and magnetostatics to electrodynamics and electromagnetic waves, using mathematical rigor and real-world examples to foster a deep understanding.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Electrostatics: Advanced Concepts",
+            "description": "Review of Coulomb's Law and Electric Field; Electric Potential and Energy; Conductors and Dielectrics in Electrostatic Fields; Multipole Expansion; Boundary Value Problems (Poisson's and Laplace's Equations)."
+          },
+          {
+            "chapterTitle": "Magnetostatics: Advanced Concepts",
+            "description": "Review of Biot-Savart Law and Ampere's Law; Vector Potential; Magnetic Materials; Magnetization and Bound Currents; Boundary Value Problems in Magnetostatics."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Electrostatics and Magnetostatics"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Electrodynamics: Maxwell's Equations",
+            "description": "Faraday's Law of Induction; Displacement Current; Maxwell's Equations in Integral and Differential Form; Electromagnetic Energy and Momentum; Poynting Theorem."
+          },
+          {
+            "chapterTitle": "Electromagnetic Waves",
+            "description": "Electromagnetic Waves in Vacuum; Electromagnetic Waves in Matter; Polarization; Reflection and Refraction; Waveguides."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Electrodynamics and Electromagnetic Waves"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Radiation",
+            "description": "Liénard-Wiechert Potentials; Radiation from Accelerated Charges; Dipole Radiation; Synchrotron Radiation."
+          },
+          {
+            "chapterTitle": "Relativistic Electrodynamics",
+            "description": "Special Relativity; Lorentz Transformations; Electromagnetism and Relativity; Transformation of Electric and Magnetic Fields; Covariant Formulation of Electrodynamics."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Radiation and Relativistic Electrodynamics"
+      }
+    ]
+  }
+}

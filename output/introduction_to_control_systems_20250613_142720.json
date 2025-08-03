@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-06-13 14:27:20.940954",
+  "input": {
+    "course_topic": "Control Systems",
+    "difficulty_level": "Beginner",
+    "num_modules": 6,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.66,
+    "max_tokens": 2048,
+    "top_k": 26,
+    "top_p": 0.67
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of control systems, equipping you with the knowledge to analyze and design basic control loops. Further study and practical experience are recommended to deepen your expertise.",
+    "courseTitle": "Introduction to Control Systems",
+    "introduction": "Welcome to the world of Control Systems! This course will guide you through the fundamental concepts, providing a beginner-friendly introduction to the principles and applications of control engineering.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "What is a Control System?",
+            "description": "Definition of a control system, open-loop vs. closed-loop systems, examples in everyday life."
+          },
+          {
+            "chapterTitle": "Basic Components of a Control System",
+            "description": "Sensors, actuators, controllers, and the plant. Understanding their roles and interactions."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Introduction to Control Systems"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Transfer Functions: The Basics",
+            "description": "Introduction to transfer functions as a mathematical representation of a system's input-output relationship."
+          },
+          {
+            "chapterTitle": "Block Diagram Representation",
+            "description": "Using block diagrams to visualize and simplify complex control systems."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Mathematical Modeling"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Open-Loop vs. Closed-Loop Response",
+            "description": "Comparing the behavior of open-loop and closed-loop systems to different inputs."
+          },
+          {
+            "chapterTitle": "Transient Response Parameters",
+            "description": "Understanding terms like rise time, settling time, and overshoot."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "System Response"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "The Concept of Stability",
+            "description": "Defining stability in control systems and its importance."
+          },
+          {
+            "chapterTitle": "Introduction to Stability Analysis",
+            "description": "Brief overview of methods for determining system stability (e.g., Routh-Hurwitz criterion)."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Stability Analysis"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Proportional (P) Control",
+            "description": "Understanding the basics of proportional control and its effect on system response."
+          },
+          {
+            "chapterTitle": "Integral (I) Control",
+            "description": "Introduction to integral control and its role in eliminating steady-state error."
+          }
+        ],
+        "moduleNumber": 5,
+        "moduleTitle": "Basic Control Actions"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to PID Control",
+            "description": "Combining P, I, and D control actions for improved performance."
+          },
+          {
+            "chapterTitle": "Tuning PID Controllers: An Overview",
+            "description": "Brief introduction to methods for tuning PID controllers (e.g., trial and error)."
+          }
+        ],
+        "moduleNumber": 6,
+        "moduleTitle": "PID Control"
+      }
+    ]
+  }
+}

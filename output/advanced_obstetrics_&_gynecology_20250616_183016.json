@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-06-16 18:30:16.659975",
+  "input": {
+    "course_topic": "OBG (Obstetrics & Gynecology)",
+    "difficulty_level": "Advanced",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.3,
+    "max_tokens": 1024,
+    "top_k": 19,
+    "top_p": 0.52
+  },
+  "output": {
+    "conclusion": "This course has provided an advanced overview of key topics in Obstetrics and Gynecology. Further study and clinical experience are essential for continued learning and expertise in this field.",
+    "courseTitle": "Advanced Obstetrics & Gynecology",
+    "introduction": "Welcome to the Advanced Obstetrics & Gynecology course. This course is designed for advanced learners and will cover complex topics in OBG, focusing on the latest research and clinical practices.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Fetal Monitoring Techniques",
+            "description": "In-depth analysis of electronic fetal monitoring (EFM), including interpretation of complex patterns and application of advanced techniques like fetal ECG."
+          },
+          {
+            "chapterTitle": "Management of High-Risk Pregnancies",
+            "description": "Strategies for managing pregnancies complicated by maternal medical conditions (e.g., cardiac disease, diabetes) and fetal anomalies."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Advanced Fetal Assessment and High-Risk Pregnancy"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Surgical Management of Endometriosis",
+            "description": "Advanced surgical techniques for the treatment of severe endometriosis, including laparoscopic and robotic approaches."
+          },
+          {
+            "chapterTitle": "Complex Hysterectomy Procedures",
+            "description": "Detailed review of complex hysterectomy procedures, including management of adhesions and anatomical variations."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Advanced Gynecologic Surgery"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Oncologic Management of Ovarian Cancer",
+            "description": "Latest advancements in the surgical and chemotherapeutic management of advanced-stage ovarian cancer."
+          },
+          {
+            "chapterTitle": "Targeted Therapies in Gynecologic Oncology",
+            "description": "Overview of targeted therapies and immunotherapies for gynecologic cancers, including mechanisms of action and clinical applications."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Advanced Gynecologic Oncology"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Advanced Assisted Reproductive Technologies (ART)",
+            "description": "Exploration of advanced ART techniques, including preimplantation genetic testing (PGT) and mitochondrial replacement therapy."
+          },
+          {
+            "chapterTitle": "Management of Recurrent Pregnancy Loss",
+            "description": "Comprehensive approach to the evaluation and management of recurrent pregnancy loss, including genetic and immunological factors."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Advanced Reproductive Endocrinology and Infertility"
+      }
+    ]
+  }
+}

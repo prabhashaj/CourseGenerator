@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:25:24.273591",
+  "input": {
+    "course_topic": "Machine Design",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "10 minutes",
+    "temperature": 0.64,
+    "max_tokens": 1024,
+    "top_k": 12,
+    "top_p": 0.7
+  },
+  "output": {
+    "conclusion": "This course provides a solid foundation in machine design principles, enabling you to analyze, design, and optimize mechanical components and systems. You are now equipped to tackle real-world engineering challenges with confidence.",
+    "courseTitle": "Machine Design",
+    "introduction": "Welcome to Machine Design! This intermediate-level course builds upon fundamental engineering principles to provide a comprehensive understanding of the design process for machines and mechanical components. We will cover topics ranging from material selection and stress analysis to failure theories and design optimization.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Machine Design",
+            "description": "Overview of the machine design process, design considerations (function, strength, cost, reliability), engineering ethics, and the role of codes and standards."
+          },
+          {
+            "chapterTitle": "Material Properties and Selection",
+            "description": "Review of material properties (strength, stiffness, toughness, fatigue resistance), material selection charts, common engineering materials (metals, polymers, ceramics, composites), and material processing methods."
+          },
+          {
+            "chapterTitle": "Stress Analysis Fundamentals",
+            "description": "Review of stress and strain concepts, stress concentration factors, stress transformation, principal stresses, Mohr's circle, and introduction to finite element analysis (FEA)."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Machine Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Failure Theories",
+            "description": "Introduction to different failure theories (Maximum Shear Stress Theory, Distortion Energy Theory, Modified Mohr Theory), application of failure theories to design, and safety factors."
+          },
+          {
+            "chapterTitle": "Fatigue Design",
+            "description": "S-N curves, fatigue life estimation, factors affecting fatigue life (surface finish, stress concentration, mean stress), fatigue strength reduction factor, and design for infinite life."
+          },
+          {
+            "chapterTitle": "Design of Shafts",
+            "description": "Shaft design considerations (torque transmission, bending moments, axial loads), stress analysis of shafts, critical speed of shafts, and shaft materials."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Failure Analysis and Shaft Design"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Design of Bolted Joints",
+            "description": "Types of bolted joints, preload, bolt materials, bolt strength, joint stiffness, fatigue loading of bolted joints, and design considerations for bolted connections."
+          },
+          {
+            "chapterTitle": "Design of Welded Joints",
+            "description": "Types of welded joints, weld symbols, weld strength, stress concentration in welds, fatigue loading of welded joints, and design considerations for welded connections."
+          },
+          {
+            "chapterTitle": "Design Optimization",
+            "description": "Introduction to optimization techniques, design variables, objective functions, constraints, optimization algorithms, and application of optimization to machine design problems."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Joint Design and Optimization"
+      }
+    ]
+  }
+}

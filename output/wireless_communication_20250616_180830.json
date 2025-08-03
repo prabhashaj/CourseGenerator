@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-06-16 18:08:30.198600",
+  "input": {
+    "course_topic": "Wireless Communication",
+    "difficulty_level": "Intermediate",
+    "num_modules": 4,
+    "read_time_per_module": "2 minutes",
+    "temperature": 0.31,
+    "max_tokens": 1024,
+    "top_k": 20,
+    "top_p": 0.65
+  },
+  "output": {
+    "conclusion": "This course provides a comprehensive understanding of wireless communication principles and technologies, equipping students with the knowledge to analyze, design, and implement wireless systems.",
+    "courseTitle": "Wireless Communication",
+    "introduction": "Welcome to Wireless Communication! This course delves into the fundamental concepts and technologies behind modern wireless systems. We will explore modulation techniques, channel characteristics, multiple access methods, and network protocols.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Introduction to Wireless Communication",
+            "description": "Overview of wireless communication systems, history, applications, and challenges. Frequency spectrum allocation and regulations."
+          },
+          {
+            "chapterTitle": "Wireless Channel Characteristics",
+            "description": "Path loss, shadowing, fading (multipath propagation), and Doppler shift. Channel models for different wireless environments."
+          },
+          {
+            "chapterTitle": "Signal Propagation",
+            "description": "Free space propagation, reflection, refraction, diffraction, and scattering. Impact of terrain and obstacles on signal strength."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Wireless Communication"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Analog Modulation Techniques",
+            "description": "Amplitude Modulation (AM), Frequency Modulation (FM), and Phase Modulation (PM). Performance analysis and applications."
+          },
+          {
+            "chapterTitle": "Digital Modulation Techniques",
+            "description": "Amplitude Shift Keying (ASK), Frequency Shift Keying (FSK), Phase Shift Keying (PSK), and Quadrature Amplitude Modulation (QAM). Constellation diagrams and bit error rate (BER) analysis."
+          },
+          {
+            "chapterTitle": "Advanced Modulation Techniques",
+            "description": "Orthogonal Frequency Division Multiplexing (OFDM) and its applications in wireless systems. Introduction to MIMO modulation."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Modulation Techniques"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Multiple Access Techniques",
+            "description": "Frequency Division Multiple Access (FDMA), Time Division Multiple Access (TDMA), Code Division Multiple Access (CDMA), and Space Division Multiple Access (SDMA)."
+          },
+          {
+            "chapterTitle": "Random Access Protocols",
+            "description": "Aloha, Slotted Aloha, Carrier Sense Multiple Access (CSMA), and CSMA with Collision Avoidance (CSMA/CA)."
+          },
+          {
+            "chapterTitle": "OFDMA and SC-FDMA",
+            "description": "Orthogonal Frequency Division Multiple Access and Single-Carrier Frequency-Division Multiple Access. Their applications in 4G and 5G networks."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Multiple Access Methods"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Wireless Network Topologies",
+            "description": "Cellular networks, ad hoc networks, mesh networks, and sensor networks. Characteristics and applications of each topology."
+          },
+          {
+            "chapterTitle": "Wireless Network Protocols",
+            "description": "IEEE 802.11 (Wi-Fi), Bluetooth, Zigbee, and cellular protocols (GSM, CDMA, LTE, 5G). Protocol architectures and functionalities."
+          },
+          {
+            "chapterTitle": "Wireless Security",
+            "description": "Security threats and vulnerabilities in wireless networks. Encryption techniques (WEP, WPA, WPA2, WPA3) and authentication protocols."
+          }
+        ],
+        "moduleNumber": 4,
+        "moduleTitle": "Wireless Networks and Protocols"
+      }
+    ]
+  }
+}

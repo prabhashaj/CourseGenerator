@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-06-16 18:20:09.856461",
+  "input": {
+    "course_topic": "Pharmaceutical Chemistry",
+    "difficulty_level": "Intermediate",
+    "num_modules": 3,
+    "read_time_per_module": "5 minutes",
+    "temperature": 0.37,
+    "max_tokens": 2048,
+    "top_k": 12,
+    "top_p": 0.52
+  },
+  "output": {
+    "conclusion": "This course provides a foundational understanding of pharmaceutical chemistry, equipping you with the knowledge to understand drug action and development.",
+    "courseTitle": "Pharmaceutical Chemistry",
+    "introduction": "Welcome to Pharmaceutical Chemistry! This course will explore the chemical principles underlying drug design, action, and metabolism.",
+    "modules": [
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Drug Nomenclature and Classification",
+            "description": "Learn the different naming conventions for drugs (chemical, generic, brand) and how drugs are classified based on their therapeutic action and chemical structure."
+          },
+          {
+            "chapterTitle": "Drug-Target Interactions",
+            "description": "Explore the fundamental forces involved in drug-target binding, including hydrogen bonding, hydrophobic interactions, and electrostatic interactions."
+          },
+          {
+            "chapterTitle": "Pharmacokinetics: Absorption",
+            "description": "Understand the processes involved in drug absorption, including routes of administration, membrane permeability, and factors affecting absorption rates."
+          }
+        ],
+        "moduleNumber": 1,
+        "moduleTitle": "Fundamentals of Pharmaceutical Chemistry"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Pharmacokinetics: Distribution",
+            "description": "Learn about drug distribution within the body, including factors affecting distribution such as blood flow, tissue binding, and physiological barriers."
+          },
+          {
+            "chapterTitle": "Pharmacokinetics: Metabolism",
+            "description": "Explore the metabolic pathways involved in drug metabolism (biotransformation), focusing on Phase I and Phase II reactions and the enzymes involved."
+          },
+          {
+            "chapterTitle": "Pharmacokinetics: Excretion",
+            "description": "Understand the different routes of drug excretion, including renal excretion, biliary excretion, and pulmonary excretion, and factors affecting excretion rates."
+          }
+        ],
+        "moduleNumber": 2,
+        "moduleTitle": "Pharmacokinetics and Drug Metabolism"
+      },
+      {
+        "chapters": [
+          {
+            "chapterTitle": "Drug Design Principles",
+            "description": "Learn about the principles of drug design, including structure-activity relationships (SAR), lead optimization, and the use of computational tools."
+          },
+          {
+            "chapterTitle": "Prodrugs",
+            "description": "Understand the concept of prodrugs and their applications in improving drug bioavailability, targeting, and reducing toxicity."
+          },
+          {
+            "chapterTitle": "Drug Stability and Formulation",
+            "description": "Explore the factors affecting drug stability and the principles of drug formulation to ensure drug efficacy and shelf-life."
+          }
+        ],
+        "moduleNumber": 3,
+        "moduleTitle": "Drug Design and Development"
+      }
+    ]
+  }
+}
