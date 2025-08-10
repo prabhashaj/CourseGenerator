@@ -813,16 +813,11 @@ def run_app():
         view_percentage = (viewed_chapters / total_chapters) * 100 if total_chapters > 0 else 0
         
         # Progress display with multiple metrics
-        col1, col2, col3 = st.columns(3)
+        col1, col2 = st.columns(2)
         with col1:
             st.metric("📖 Chapters Viewed", f"{viewed_chapters}/{total_chapters}", f"{view_percentage:.0f}%")
         with col2:
             st.metric("✅ Chapters Completed", f"{completed_chapters}/{total_chapters}", f"{completion_percentage:.0f}%")
-        with col3:
-            if completed_chapters > 0:
-                avg_time = "~5 min/chapter"  # Simple estimation
-                remaining_time = (total_chapters - completed_chapters) * 5
-                st.metric("⏱️ Est. Time Left", f"{remaining_time} min", f"{avg_time}")
         
         # Progress bar
         st.markdown("**Learning Progress:**")
