@@ -504,8 +504,6 @@ def run_app():
             
             **Note:** Make sure to keep your API key secure and never commit it to version control!
             """)
-    else:
-        st.success("🔑 API Key configured successfully!")
     
     st.info("👈 Open the sidebar to explore exciting features")
     st.markdown("Generate custom course outlines, track your progress, and get detailed chapter content!")
@@ -835,40 +833,9 @@ def run_app():
             else:
                 st.metric("⏱️ Est. Total Time", f"{total_chapters * 5} min", "~5 min/chapter")
         
-        # Progress bar with dual tracking
+        # Progress bar
         st.markdown("**Learning Progress:**")
-        progress_col1, progress_col2 = st.columns([4, 1])
-        with progress_col1:
-            st.progress(completion_percentage / 100, text=f"Completion: {completion_percentage:.1f}%")
-        with progress_col2:
-            # Quick actions dropdown
-            with st.popover("⚙️ Quick Actions"):
-                if st.button("📋 Mark All as Viewed", use_container_width=True):
-                    for m_idx, module in enumerate(course.get("modules", [])):
-                        for chapter in module.get("chapters", []):
-                            chapter_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_chapter_{chapter['chapterTitle'].replace(' ', '_').replace('.', '').replace(',', '')}"
-                            if chapter_id not in course.get("chapter_viewed", {}):
-                                course["chapter_viewed"][chapter_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                    st.session_state.courses[st.session_state.selected_course_index] = course
-                    st.rerun()
-                
-                if st.button("✅ Mark All as Completed", use_container_width=True):
-                    for m_idx, module in enumerate(course.get("modules", [])):
-                        for chapter in module.get("chapters", []):
-                            chapter_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_chapter_{chapter['chapterTitle'].replace(' ', '_').replace('.', '').replace(',', '')}"
-                            if not course['completion_status'].get(chapter_id, False):
-                                course['completion_status'][chapter_id] = True
-                                course["chapter_completed_at"][chapter_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                    st.session_state.courses[st.session_state.selected_course_index] = course
-                    st.rerun()
-                
-                if st.button("🔄 Reset All Progress", use_container_width=True):
-                    for chapter_id in course.get("completion_status", {}):
-                        course['completion_status'][chapter_id] = False
-                    course["chapter_viewed"] = {}
-                    course["chapter_completed_at"] = {}
-                    st.session_state.courses[st.session_state.selected_course_index] = course
-                    st.rerun()
+        st.progress(completion_percentage / 100, text=f"Completion: {completion_percentage:.1f}%")
         
         # Course introduction
         st.markdown(f"**Introduction:** {course.get('introduction', '')}")
@@ -911,19 +878,8 @@ def run_app():
                     st.markdown("**📝 What you'll learn in this chapter:**")
                     st.info(chapter.get('description', 'No description available'))
 
-                # Enhanced completion tracking with smart checkboxes
-                col1, col2, col3 = st.columns([2, 1, 1])
-                with col1:
-                    new_completed_status = st.checkbox(
-                        f"Mark as completed",
-                        value=is_completed,
-                        key=f"checkbox_{chapter_id}",
-                        help="Check this when you've finished studying this chapter"
-                    )
-                
-                with col2:
-                    # Generate detailed content button
-                    if st.button(f"📚 Study", key=f"gen_content_{chapter_id}", help=f"Generate detailed content for '{chapter['chapterTitle']}'"):
+                # Generate detailed content button
+                if st.button(f"📚 Study", key=f"gen_content_{chapter_id}", help=f"Generate detailed content for '{chapter['chapterTitle']}'", use_container_width=True):
                         with st.spinner("Generating detailed chapter content..."):
                             # Increased token allocation for more detailed content while ensuring completion
                             total_chapters = len(st.session_state.courses[st.session_state.selected_course_index].get('modules', [])) * 3
@@ -992,26 +948,6 @@ def run_app():
                                 st.success(f"📚 Comprehensive chapter content generated! Auto-marked as viewed.")
                             else:
                                 st.error("Unable to generate content. Try increasing max tokens in sidebar or try a different chapter.")
-                
-                with col3:
-                    if not is_completed and st.button("✅ Quick Complete", key=f"quick_complete_{chapter_id}", help="Quickly mark as completed"):
-                        course['completion_status'][chapter_id] = True
-                        course["chapter_completed_at"][chapter_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                        if chapter_id not in course.get("chapter_viewed", {}):
-                            course["chapter_viewed"][chapter_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                        st.session_state.courses[st.session_state.selected_course_index] = course
-                        st.rerun()
-                
-                if new_completed_status != is_completed:
-                    course['completion_status'][chapter_id] = new_completed_status
-                    if new_completed_status:
-                        course["chapter_completed_at"][chapter_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                        if chapter_id not in course.get("chapter_viewed", {}):
-                            course["chapter_viewed"][chapter_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                    else:
-                        course["chapter_completed_at"].pop(chapter_id, None)
-                    st.session_state.courses[st.session_state.selected_course_index] = course
-                    st.rerun()
                 
                 # Display chapter content
                 if chapter_id in st.session_state.chapter_contents:
