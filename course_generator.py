@@ -812,16 +812,32 @@ def run_app():
         completion_percentage = (completed_chapters / total_chapters) * 100 if total_chapters > 0 else 0
         view_percentage = (viewed_chapters / total_chapters) * 100 if total_chapters > 0 else 0
         
+        # Calculate quiz completion
+        total_modules = len(course.get("modules", []))
+        completed_quizzes = 0
+        for module in course.get("modules", []):
+            module_quiz_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_quiz"
+            quiz_obj = st.session_state.quiz_progress.get(module_quiz_id, {})
+            if quiz_obj.get("completed", False):
+                completed_quizzes += 1
+        
+        quiz_completion_percentage = (completed_quizzes / total_modules) * 100 if total_modules > 0 else 0
+        
+        # Calculate overall progress (chapters 70% weight, quizzes 30% weight)
+        overall_progress = (completion_percentage * 0.7) + (quiz_completion_percentage * 0.3) if total_chapters > 0 and total_modules > 0 else completion_percentage
+        
         # Progress display with multiple metrics
-        col1, col2 = st.columns(2)
+        col1, col2, col3 = st.columns(3)
         with col1:
             st.metric("📖 Chapters Viewed", f"{viewed_chapters}/{total_chapters}", f"{view_percentage:.0f}%")
         with col2:
             st.metric("✅ Chapters Completed", f"{completed_chapters}/{total_chapters}", f"{completion_percentage:.0f}%")
-        
-        # Progress bar
+        with col3:
+            st.metric("Quizzes Completed", f"{completed_quizzes}/{total_modules}", f"{quiz_completion_percentage:.0f}%")
+
+        # Progress bar with overall progress
         st.markdown("**Learning Progress:**")
-        st.progress(completion_percentage / 100, text=f"Completion: {completion_percentage:.1f}%")
+        st.progress(overall_progress / 100, text=f"Overall Progress: {overall_progress:.1f}% (Chapters: {completion_percentage:.0f}% + Quizzes: {quiz_completion_percentage:.0f}%)")
         
         # Course introduction
         st.markdown(f"**Introduction:** {course.get('introduction', '')}")
