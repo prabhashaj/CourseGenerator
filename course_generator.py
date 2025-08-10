@@ -961,8 +961,7 @@ def run_app():
                                 }
                                 st.session_state.courses[st.session_state.selected_course_index] = course
                                 
-                                # Generate success message without internal details
-                                st.success(f"� Chapter content generated and ready to read!")
+                                # Content generated successfully - no message needed
                             else:
                                 st.error("Unable to generate content. Try increasing max tokens in sidebar or try a different chapter.")
                 
