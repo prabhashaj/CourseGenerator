@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Run Streamlit app",
+			"command": "streamlit run lang_news.py",
+			"group": "build",
+			"isBackground": false
+		}
+	]
+}

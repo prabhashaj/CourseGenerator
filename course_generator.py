@@ -34,9 +34,9 @@ except (AttributeError, FileNotFoundError):
     # Fall back to environment variables (for local development)
     API_KEY = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
 
-# Don't stop import if API key is missing - let the individual functions handle it
+# Ensure we have a valid API key
 if API_KEY:
-    os.environ["GOOGLE_API_KEY"] = API_KEY # Ensure it's in os.environ for other modules that might use it
+    os.environ["GOOGLE_API_KEY"] = API_KEY
 
 def build_chapter_content_prompt(chapter, course, difficulty, content_tokens, total_chapters, content_depth):
     """Build chapter content prompt without complex f-string expressions to avoid syntax errors."""
@@ -139,16 +139,23 @@ def init_session_state():
         st.session_state.temperature = 0.7
     if "max_tokens" not in st.session_state:
         st.session_state.max_tokens = 6144  # Increased from 4096 for better chapter details
-    if "top_k" not in st.session_state: # Ensure top_k and top_p are initialized
+    if "top_k" not in st.session_state:
         st.session_state.top_k = 32
     if "top_p" not in st.session_state:
         st.session_state.top_p = 1.0
-    # Add a flag to ensure sidebar content is rendered only once
     if "sidebar_rendered" not in st.session_state:
         st.session_state.sidebar_rendered = False
-    # Track successful course generation
     if "last_generation_successful" not in st.session_state:
         st.session_state.last_generation_successful = False
+    
+    # Initialize enhanced tracking for existing courses
+    for course in st.session_state.courses:
+        if "chapter_viewed" not in course:
+            course["chapter_viewed"] = {}
+        if "chapter_completed_at" not in course:
+            course["chapter_completed_at"] = {}
+        if "study_sessions" not in course:
+            course["study_sessions"] = []
 
 
 def clear_chat_history():
@@ -157,48 +164,19 @@ def clear_chat_history():
         st.session_state.chat_history = []
     if "conversation" in st.session_state:
         st.session_state.conversation.memory.clear()
-    # Reset sidebar_rendered flag when clearing chat history (e.g., switching modes)
-    # This allows the sidebar to redraw its dynamic content if necessary
     st.session_state.sidebar_rendered = False
 
 
 def show_navigation():
     """Display the navigation menu and AI settings in the sidebar."""
     with st.sidebar:
-    #     # Check if sidebar content has already been rendered in this session
-    #     # This prevents duplicate rendering on reruns unless explicitly reset (e.g., by clear_chat_history)
-    #     if st.session_state.sidebar_rendered:
-    #         return 
-
-    #     st.title("Navigation")
-    #     st.subheader("Choose Application Mode")
-    #     # Re-added all intended modes as per user clarification
-    #     modes = {
-    #         "course_generator": "Course Generator & Quizzes",
-    #         "rag_chat": "Chat with Your Documents (RAG)",
-    #         "doc_creator": "Course Creation from Documents"
-    #     }
-        
-    #     for mode, label in modes.items():
-    #         if st.button(
-    #             label,
-    #             use_container_width=True,
-    #             type="primary" if st.session_state.current_mode == mode else "secondary"
-    #         ):
-    #             if st.session_state.current_mode != mode:
-    #                 clear_chat_history() # This will now also reset sidebar_rendered
-    #                 st.session_state.current_mode = mode
-    #                 st.rerun()
-
-    #     st.markdown("---") # Separator between navigation and AI settings
-
-        # AI Generation Settings in sidebar (only temperature and max_tokens)
+        # AI Generation Settings in sidebar
         st.header("⚙️ AI Generation Settings")
         st.session_state.temperature = st.slider(
             "Temperature",
             min_value=0.0,
             max_value=1.0,
-            value=st.session_state.temperature, # Use session state value
+            value=st.session_state.temperature,
             step=0.01,
             help="Controls the randomness of the output. Higher values mean more creative."
         )
@@ -206,27 +184,35 @@ def show_navigation():
             "Max Output Tokens",
             min_value=1024,
             max_value=8192,
-            value=st.session_state.max_tokens, # Use session state value
+            value=st.session_state.max_tokens,
             step=512,
             help="Maximum number of tokens to generate. Increase for larger courses (5-10 modules need 4096+ tokens)."
         )
-        # top_k and top_p are not shown but still used in the API call, so keep their defaults in session_state.
 
-        st.markdown("---") # Separator between AI settings and saved courses
+        st.markdown("---")
 
-        # Show saved courses section (at the very end of sidebar)
+        # Show saved courses section with progress indicators
         if st.session_state.courses:
             st.subheader("My Saved Courses")
             for idx, course in enumerate(st.session_state.courses):
+                # Calculate progress for display
+                completed = sum(1 for status in course.get("completion_status", {}).values() if status)
+                total = course.get("total_chapters", 0)
+                progress_percent = int((completed / total) * 100) if total > 0 else 0
+                
+                # Progress indicator emoji
+                progress_emoji = "🎯" if progress_percent == 100 else "📈" if progress_percent > 50 else "📚" if progress_percent > 0 else "📖"
+                
                 # Use a consistent key for course selection buttons
                 if st.button(
-                    f"📚 {course.get('courseTitle', 'Untitled Course')} ({course.get('created_at', 'N/A').split(' ')[0]})",
+                    f"{progress_emoji} {course.get('courseTitle', 'Untitled Course')} ({progress_percent}%)",
                     key=f"sidebar_course_{idx}",
                     use_container_width=True,
-                    type="primary" if st.session_state.selected_course_index == idx else "secondary"
+                    type="primary" if st.session_state.selected_course_index == idx else "secondary",
+                    help=f"Progress: {completed}/{total} chapters completed"
                 ):
                     if st.session_state.selected_course_index != idx:
-                        clear_chat_history() # Clear chat history when switching courses
+                        clear_chat_history()
                         st.session_state.selected_course_index = idx
                         st.rerun()
         else:
@@ -369,17 +355,17 @@ async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, t
     """
     Calls the Gemini API to generate content with specified parameters and an optional schema.
     """
-    # Check API key at runtime, not import time
-    if not API_KEY:
-        st.error("🔑 API Key is not configured. Please set your Gemini API key in Streamlit secrets (GEMINI_API_KEY or GOOGLE_API_KEY) for deployment, or in environment variables for local development.")
-        st.info("💡 **For Streamlit Cloud:** Add your API key in the app settings under 'Secrets management'")
+    # Check API key at runtime
+    if not API_KEY or API_KEY == "your_api_key_here":
+        st.error("🔑 API Key is not configured properly. Please set your Gemini API key.")
+        st.info("Get your API key from: https://aistudio.google.com/app/apikey")
         return None
 
     chat_history = [{"role": "user", "parts": [{"text": prompt}]}]
     generation_config = {
         "temperature": temperature,
         "maxOutputTokens": max_tokens,
-        "topK": int(top_k), # Ensure integer
+        "topK": int(top_k),
         "topP": top_p
     }
     payload = {"contents": chat_history, "generationConfig": generation_config}
@@ -392,7 +378,6 @@ async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, t
     
     try:
         async with httpx.AsyncClient() as client:
-            # Dynamic timeout based on token count and complexity
             if max_tokens <= 1024:
                 timeout_duration = 60
             elif max_tokens <= 2048:
@@ -408,6 +393,18 @@ async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, t
                 json=payload,
                 timeout=timeout_duration
             )
+            
+            if response.status_code == 400:
+                st.error("🔑 **Invalid API Key!** Please check your Gemini API key is correct.")
+                st.info("Get a new API key from: https://aistudio.google.com/app/apikey")
+                return None
+            elif response.status_code == 403:
+                st.error("🚫 **API Access Forbidden!** Your API key may not have permission or quota exceeded.")
+                return None
+            elif response.status_code == 429:
+                st.error("⏰ **Rate Limited!** Too many requests. Please wait a moment and try again.")
+                return None
+                
             response.raise_for_status()
             result = response.json()
 
@@ -423,17 +420,26 @@ async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, t
                 parsed_response = safe_json_parse(text_response)
                 if isinstance(parsed_response, dict) and "error" in parsed_response:
                     st.error(f"Failed to parse response as JSON: {parsed_response['error']}")
-                    st.json(parsed_response["raw"]) # Show raw response for debugging
+                    st.json(parsed_response["raw"])
                     return None
-                # Validate required fields if a schema was used and parsing was successful
-                # (This can be more rigorous if needed, comparing parsed_response keys to schema's required)
                 return parsed_response
             return text_response
     except httpx.RequestError as e:
-        st.error(f"API request error: {str(e)}. Check your internet connection or API key.")
+        st.error(f"🌐 **Network Error:** {str(e)}")
+        st.info("Please check your internet connection and try again.")
+        return None
+    except httpx.HTTPStatusError as e:
+        if e.response.status_code == 400:
+            st.error("🔑 **Invalid API Key!** Please verify your Gemini API key is correct.")
+        elif e.response.status_code == 403:
+            st.error("🚫 **Access Forbidden!** Check your API key permissions.")
+        elif e.response.status_code == 429:
+            st.error("⏰ **Too Many Requests!** Please wait and try again.")
+        else:
+            st.error(f"🔴 **API Error:** HTTP {e.response.status_code}")
         return None
     except Exception as e:
-        st.error(f"An unexpected error occurred during API call: {str(e)}")
+        st.error(f"❌ **Unexpected Error:** {str(e)}")
         return None
 
 # --- Course Assistant Chat Function ---
@@ -469,19 +475,47 @@ def run_app():
     init_session_state()
     show_navigation() # Display navigation in sidebar
 
-    st.title("🎓 Course Generator & Tracker")
-    # Add friendly message about sidebar features
+    st.title("🎓 Course Generator")
+    
+    # Show API key status
+    if not API_KEY or API_KEY == "your_api_key_here":
+        st.error("🔑 **API Key Required!** Please set up your Gemini API key to use this application.")
+        with st.expander("📋 **How to Set Up Your API Key**", expanded=True):
+            st.markdown("""
+            ### For Streamlit Cloud Deployment:
+            1. Go to your Streamlit app settings
+            2. Click on "Secrets"
+            3. Add: `GEMINI_API_KEY = "your_actual_api_key_here"`
+            
+            ### For Local Development:
+            **Option 1 - Environment Variable:**
+            ```bash
+            export GEMINI_API_KEY="your_actual_api_key_here"
+            ```
+            
+            **Option 2 - .env file:**
+            Create a `.env` file in your project directory:
+            ```
+            GEMINI_API_KEY=your_actual_api_key_here
+            ```
+            
+            ### Get Your API Key:
+            🔗 [Get Gemini API Key](https://aistudio.google.com/app/apikey)
+            
+            **Note:** Make sure to keep your API key secure and never commit it to version control!
+            """)
+    else:
+        st.success("🔑 API Key configured successfully!")
+    
     st.info("👈 Open the sidebar to explore exciting features")
     st.markdown("Generate custom course outlines, track your progress, and get detailed chapter content!")
     
-    # The AI Generation Settings are now in the sidebar, so remove them from the main area.
-    # The parameters are accessed from st.session_state because they are updated in the sidebar.
     temperature = st.session_state.temperature
     max_tokens = st.session_state.max_tokens
     top_k = st.session_state.top_k 
     top_p = st.session_state.top_p 
     
-    st.markdown("---") # Separator
+    st.markdown("---")
 
     # Course generation form
     with st.form(key="new_course_form"):
@@ -526,10 +560,29 @@ def run_app():
             use_container_width=True
         )
         
-    # --- Course Generation Logic (Unified) ---
+    # Course Generation Logic
     if generate_button:
         if not course_topic.strip():
             st.warning("⚠️ Please enter a course topic!")
+            return
+        
+        # Check API key before proceeding
+        if not API_KEY or API_KEY == "your_api_key_here":
+            st.error("🔑 **API Key Required!** Please configure your Gemini API key to generate courses.")
+            st.info("""
+            **How to set up your API key:**
+            
+            **For Streamlit Cloud:**
+            1. Go to your app settings
+            2. Add a secret called `GEMINI_API_KEY` or `GOOGLE_API_KEY`
+            3. Paste your Gemini API key as the value
+            
+            **For Local Development:**
+            1. Set environment variable: `GEMINI_API_KEY=your_actual_api_key`
+            2. Or create a `.env` file with: `GEMINI_API_KEY=your_actual_api_key`
+            
+            **Get your API key from:** https://aistudio.google.com/app/apikey
+            """)
             return
         
         # Reset generation success flag
@@ -719,12 +772,15 @@ def run_app():
                             completion_status[chapter_id] = False
                             total_chapters += 1
 
-                    # Create new course with tracking data
+                    # Create new course with enhanced tracking data
                     new_course = {
                         **course_data,
                         "completion_status": completion_status,
                         "total_chapters": total_chapters,
-                        "created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        "created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                        "chapter_viewed": {},  # Track when chapters were viewed
+                        "chapter_completed_at": {},  # Track completion timestamps
+                        "study_sessions": []  # Track study sessions
                     }
                     
                     st.session_state.courses.append(new_course)
@@ -758,12 +814,61 @@ def run_app():
         
         st.subheader(f"📚 Course: {course.get('courseTitle', 'Course Content')}")
         
-        # Course completion tracking
+        # Enhanced course completion tracking with better visuals
         completed_chapters = sum(1 for status in course.get("completion_status", {}).values() if status)
+        viewed_chapters = len(course.get("chapter_viewed", {}))
         total_chapters = course.get("total_chapters", 0)
         completion_percentage = (completed_chapters / total_chapters) * 100 if total_chapters > 0 else 0
-        st.markdown("**Course Progress:**")
-        st.progress(completion_percentage / 100, text=f"{completion_percentage:.1f}% Completed ({completed_chapters}/{total_chapters} chapters)")
+        view_percentage = (viewed_chapters / total_chapters) * 100 if total_chapters > 0 else 0
+        
+        # Progress display with multiple metrics
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric("📖 Chapters Viewed", f"{viewed_chapters}/{total_chapters}", f"{view_percentage:.0f}%")
+        with col2:
+            st.metric("✅ Chapters Completed", f"{completed_chapters}/{total_chapters}", f"{completion_percentage:.0f}%")
+        with col3:
+            if completed_chapters > 0:
+                avg_time = "~5 min/chapter"  # Simple estimation
+                remaining_time = (total_chapters - completed_chapters) * 5
+                st.metric("⏱️ Est. Time Left", f"{remaining_time} min", f"{avg_time}")
+            else:
+                st.metric("⏱️ Est. Total Time", f"{total_chapters * 5} min", "~5 min/chapter")
+        
+        # Progress bar with dual tracking
+        st.markdown("**Learning Progress:**")
+        progress_col1, progress_col2 = st.columns([4, 1])
+        with progress_col1:
+            st.progress(completion_percentage / 100, text=f"Completion: {completion_percentage:.1f}%")
+        with progress_col2:
+            # Quick actions dropdown
+            with st.popover("⚙️ Quick Actions"):
+                if st.button("📋 Mark All as Viewed", use_container_width=True):
+                    for m_idx, module in enumerate(course.get("modules", [])):
+                        for chapter in module.get("chapters", []):
+                            chapter_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_chapter_{chapter['chapterTitle'].replace(' ', '_').replace('.', '').replace(',', '')}"
+                            if chapter_id not in course.get("chapter_viewed", {}):
+                                course["chapter_viewed"][chapter_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    st.session_state.courses[st.session_state.selected_course_index] = course
+                    st.rerun()
+                
+                if st.button("✅ Mark All as Completed", use_container_width=True):
+                    for m_idx, module in enumerate(course.get("modules", [])):
+                        for chapter in module.get("chapters", []):
+                            chapter_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_chapter_{chapter['chapterTitle'].replace(' ', '_').replace('.', '').replace(',', '')}"
+                            if not course['completion_status'].get(chapter_id, False):
+                                course['completion_status'][chapter_id] = True
+                                course["chapter_completed_at"][chapter_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    st.session_state.courses[st.session_state.selected_course_index] = course
+                    st.rerun()
+                
+                if st.button("🔄 Reset All Progress", use_container_width=True):
+                    for chapter_id in course.get("completion_status", {}):
+                        course['completion_status'][chapter_id] = False
+                    course["chapter_viewed"] = {}
+                    course["chapter_completed_at"] = {}
+                    st.session_state.courses[st.session_state.selected_course_index] = course
+                    st.rerun()
         
         # Course introduction
         st.markdown(f"**Introduction:** {course.get('introduction', '')}")
@@ -771,64 +876,73 @@ def run_app():
         # Modules and Chapters
         for m_idx, module in enumerate(course.get("modules", [])):
             st.markdown(f"### Module {module.get('moduleNumber', m_idx + 1)}: {module.get('moduleTitle', 'N/A')}")
-            # The new schema does not have moduleDescription or learningObjectives in the same way.
-            # If the original schema's fields are desired, they need to be added to the course_schema dictionary.
-            # For now, I'm removing these lines to align with the new schema's structure.
-            # st.markdown(f"*{module.get('moduleDescription', '')}*")
-            # if module.get("learningObjectives"):
-            #     st.markdown("**Learning Objectives:**")
-            #     for obj in module.get("learningObjectives", []):
-            #         st.markdown(f"- {obj}")
 
             for c_idx, chapter in enumerate(module.get("chapters", [])):
-                # Use the same chapter_id logic as app (2).py for consistency
+                # Use the same chapter_id logic for consistency
                 chapter_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_chapter_{chapter['chapterTitle'].replace(' ', '_').replace('.', '').replace(',', '')}"
 
-                # Enhanced chapter display with better formatting
-                st.markdown(f"#### 📖 Chapter {c_idx + 1}: {chapter['chapterTitle']}")
+                # Get tracking status
+                is_completed = course['completion_status'].get(chapter_id, False)
+                is_viewed = chapter_id in course.get("chapter_viewed", {})
+                completion_time = course.get("chapter_completed_at", {}).get(chapter_id)
+                view_time = course.get("chapter_viewed", {}).get(chapter_id)
+
+                # Enhanced chapter display with status indicators
+                status_icon = "✅" if is_completed else "👁️" if is_viewed else "📖"
+                status_text = "Completed" if is_completed else "Viewed" if is_viewed else "Not Started"
+                
+                st.markdown(f"#### {status_icon} Chapter {c_idx + 1}: {chapter['chapterTitle']}")
+                
+                # Status and timing info
+                status_col1, status_col2 = st.columns([3, 1])
+                with status_col1:
+                    if is_completed and completion_time:
+                        st.caption(f"✅ Completed on {completion_time}")
+                    elif is_viewed and view_time:
+                        st.caption(f"👁️ Viewed on {view_time}")
+                    else:
+                        st.caption(f"📖 Status: {status_text}")
+                
+                with status_col2:
+                    st.caption("~5 min read")
                 
                 # Display chapter description in an info box for better visibility
                 with st.container():
                     st.markdown("**📝 What you'll learn in this chapter:**")
                     st.info(chapter.get('description', 'No description available'))
 
-                # Checkbox for completion with better spacing
-                col1, col2 = st.columns([3, 1])
+                # Enhanced completion tracking with smart checkboxes
+                col1, col2, col3 = st.columns([2, 1, 1])
                 with col1:
-                    is_completed = st.checkbox(
-                        f"✅ Mark chapter as completed",
-                        value=course['completion_status'].get(chapter_id, False),
-                        key=f"checkbox_{chapter_id}" # Unique key for each checkbox
+                    new_completed_status = st.checkbox(
+                        f"Mark as completed",
+                        value=is_completed,
+                        key=f"checkbox_{chapter_id}",
+                        help="Check this when you've finished studying this chapter"
                     )
                 
                 with col2:
                     # Generate detailed content button
-                    if st.button(f"📚 Get Details", key=f"gen_content_{chapter_id}", help=f"Generate detailed content for '{chapter['chapterTitle']}'"):
+                    if st.button(f"📚 Study", key=f"gen_content_{chapter_id}", help=f"Generate detailed content for '{chapter['chapterTitle']}'"):
                         with st.spinner("Generating detailed chapter content..."):
                             # Increased token allocation for more detailed content while ensuring completion
                             total_chapters = len(st.session_state.courses[st.session_state.selected_course_index].get('modules', [])) * 3
-                            if total_chapters <= 9:  # 3 modules or fewer
-                                content_tokens = min(max_tokens, 5120)  # Increased for more detailed content
+                            if total_chapters <= 9:
+                                content_tokens = min(max_tokens, 5120)
                                 content_depth = "comprehensive and highly detailed"
-                                content_length = "extensive"
-                            elif total_chapters <= 18:  # 6 modules or fewer
-                                content_tokens = min(max_tokens, 4096)  # Increased for more detailed content
+                            elif total_chapters <= 18:
+                                content_tokens = min(max_tokens, 4096)
                                 content_depth = "thorough and detailed"
-                                content_length = "substantial"
-                            else:  # 7+ modules
-                                content_tokens = min(max_tokens, 3072)  # Increased for more detailed content
+                            else:
+                                content_tokens = min(max_tokens, 3072)
                                 content_depth = "focused but comprehensive"
-                                content_length = "comprehensive"
                             
-                            # Build content prompt without complex f-string expressions
                             content_prompt = build_chapter_content_prompt(
                                 chapter, course, difficulty, content_tokens, total_chapters, content_depth
                             )
                             
-                            # Simplified retry logic for better performance
-                            max_retries = 2  # Reduced from 3 to avoid excessive retries
+                            max_retries = 2
                             detailed_content = None
-                            original_tokens = content_tokens
                             
                             for attempt in range(max_retries):
                                 try:
@@ -838,15 +952,11 @@ def run_app():
                                     )
                                     loop.close()
                                     
-                                    # Strict completion check focused on proper endings
                                     if detailed_content and len(detailed_content.strip()) > 200:
                                         word_count = len(detailed_content.split())
                                         has_summary = any(keyword in detailed_content.lower() for keyword in ['summary', 'conclusion', 'in summary', 'to conclude', 'key points'])
-                                        
-                                        # Check for complete summary section
                                         is_complete = is_response_complete(detailed_content)
                                         
-                                        # More conservative retry logic - expect longer content now
                                         if word_count < 400 or not has_summary or not is_complete:
                                             if attempt < max_retries - 1:
                                                 reason = []
@@ -858,10 +968,9 @@ def run_app():
                                                     reason.append("incomplete ending")
                                                 
                                                 st.warning(f"Content incomplete: {', '.join(reason)}. Retrying...")
-                                                # Moderate token increase for better coverage
                                                 content_tokens = min(max_tokens, content_tokens + 512)
                                         else:
-                                            break  # Content is sufficiently complete
+                                            break
                                     elif attempt < max_retries - 1:
                                         st.warning(f"Content too short ({len(detailed_content.strip()) if detailed_content else 0} chars). Retrying...")
                                         content_tokens = min(max_tokens, content_tokens + 768)
@@ -873,20 +982,36 @@ def run_app():
                                         st.error(f"Generation failed: {str(e)}")
                                     
                                 if attempt < max_retries - 1:
-                                    time.sleep(1)  # Shorter wait time
+                                    time.sleep(1)
                             
                             if detailed_content and len(detailed_content.strip()) > 100:
                                 st.session_state.chapter_contents[chapter_id] = detailed_content
-                                word_count = len(detailed_content.split())
-                                st.success(f"📚 Comprehensive chapter content generated!")
+                                if chapter_id not in course.get("chapter_viewed", {}):
+                                    course["chapter_viewed"][chapter_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                                    st.session_state.courses[st.session_state.selected_course_index] = course
+                                st.success(f"📚 Comprehensive chapter content generated! Auto-marked as viewed.")
                             else:
                                 st.error("Unable to generate content. Try increasing max tokens in sidebar or try a different chapter.")
                 
-                # Update completion status in session state if changed
-                if is_completed != course['completion_status'].get(chapter_id, False):
-                    course['completion_status'][chapter_id] = is_completed
-                    st.session_state.courses[st.session_state.selected_course_index] = course # Update the course in session state
-                    st.rerun() # Rerun to update the progress bar immediately
+                with col3:
+                    if not is_completed and st.button("✅ Quick Complete", key=f"quick_complete_{chapter_id}", help="Quickly mark as completed"):
+                        course['completion_status'][chapter_id] = True
+                        course["chapter_completed_at"][chapter_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        if chapter_id not in course.get("chapter_viewed", {}):
+                            course["chapter_viewed"][chapter_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        st.session_state.courses[st.session_state.selected_course_index] = course
+                        st.rerun()
+                
+                if new_completed_status != is_completed:
+                    course['completion_status'][chapter_id] = new_completed_status
+                    if new_completed_status:
+                        course["chapter_completed_at"][chapter_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        if chapter_id not in course.get("chapter_viewed", {}):
+                            course["chapter_viewed"][chapter_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    else:
+                        course["chapter_completed_at"].pop(chapter_id, None)
+                    st.session_state.courses[st.session_state.selected_course_index] = course
+                    st.rerun()
                 
                 # Display chapter content
                 if chapter_id in st.session_state.chapter_contents:
@@ -896,22 +1021,19 @@ def run_app():
                         st.markdown(st.session_state.chapter_contents[chapter_id])
                     st.markdown("---")
                 else:
-                    st.info("Click 'Get Details' to generate comprehensive content for this chapter.")
+                    st.info("Click 'Study' to generate comprehensive content for this chapter.")
 
-            # --- Quiz for this module (after chapters) ---
+            # Quiz for this module
             module_quiz_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_quiz"
             if module_quiz_id not in st.session_state.quiz_progress:
                 st.session_state.quiz_progress[module_quiz_id] = {"completed": False, "score": 0, "answers": []}
 
-            # Button to take quiz for the module
             if st.button(f"Take Quiz for Module {module['moduleNumber']} ({module['moduleTitle']})", key=f"quiz_btn_{module_quiz_id}"):
                 with st.spinner("Generating quiz... This may take a moment."):
-                    # Collect content from all chapters in the module for quiz generation context
                     module_content = "\n".join([chapter['description'] for chapter in module.get('chapters', [])])
                     if not module_content.strip():
                         st.warning("Cannot generate quiz: No content available for this module's chapters.")
                     else:
-                        # Optimize quiz tokens based on total course size
                         total_modules = len(st.session_state.courses[st.session_state.selected_course_index].get('modules', []))
                         if total_modules <= 3:
                             quiz_tokens = min(max_tokens, 1536)
@@ -931,7 +1053,7 @@ def run_app():
                             quiz_data = loop.run_until_complete(quiz_utils.generate_quiz_with_gemini(
                                 module_content, API_KEY, temperature, quiz_tokens, top_k, top_p, num_questions=num_questions
                             ))
-                            loop.close() # Close the loop after use
+                            loop.close()
                             if quiz_data and "questions" in quiz_data:
                                 st.session_state.quiz_progress[module_quiz_id] = {
                                     "questions": quiz_data["questions"],
@@ -943,7 +1065,6 @@ def run_app():
                             else:
                                 st.warning("We're having trouble generating the quiz right now. Try generating detailed content for more chapters in this module first, then attempt the quiz generation again.")
             
-            # Display quiz if available
             quiz_obj = st.session_state.quiz_progress.get(module_quiz_id, {})
             if quiz_obj.get("questions"):
                 st.markdown(f"#### Quiz for Module {module['moduleNumber']} ({module['moduleTitle']})")
@@ -955,9 +1076,9 @@ def run_app():
                             st.markdown(f"**Q{i+1}: {q['question']}**")
                             options = q["options"]
                             selected_option = st.radio(
-                                f"Select answer for Q{i+1}", # Use unique key for each radio button
+                                f"Select answer for Q{i+1}",
                                 options,
-                                index=options.index(quiz_obj['answers'][i]) if quiz_obj['answers'][i] in options else None, # No default selection
+                                index=options.index(quiz_obj['answers'][i]) if quiz_obj['answers'][i] in options else None,
                                 key=f"quiz_q_{module_quiz_id}_{i}"
                             )
                             current_answers.append(selected_option)
@@ -966,7 +1087,7 @@ def run_app():
                         if submit_quiz_button:
                             correct_answers = [q["answer"] for q in quiz_obj["questions"]]
                             quiz_utils.update_quiz_progress(st.session_state, module_quiz_id, current_answers, correct_answers)
-                            st.rerun() # Rerun to display quiz results (score, explanations)
+                            st.rerun()
                 else:
                     st.success(f"Quiz completed! Score: {quiz_obj['score']}/{len(quiz_obj['questions'])}")
                     if st.button("Retake Quiz", key=f"retake_{module_quiz_id}"):
@@ -983,7 +1104,7 @@ def run_app():
                         else:
                             st.markdown(f"> ❌ Your answer: **{user_ans}** (Incorrect, Correct was: **{correct_ans}**)")
                         st.markdown(f"> *Explanation: {q['explanation']}*")
-                        st.markdown("---") # Separator between questions
+                        st.markdown("---")
         
         st.markdown(f"**Conclusion:** {course.get('conclusion', 'N/A')}")
     elif st.session_state.selected_course_index is None and not st.session_state.courses:
@@ -991,23 +1112,19 @@ def run_app():
     elif st.session_state.selected_course_index is None and st.session_state.courses:
         st.info("Select an existing course from the sidebar to view its content.")
 
-
-    # --- Chatbot Section ---
+    # Chatbot Section
     if st.session_state.selected_course_index is not None:
         st.divider()
         st.subheader("💬 Course Assistant")
         st.write("Ask questions about the currently displayed course content!")
         
-        # Display chat history
         for message in st.session_state.chat_history:
             with st.chat_message("user"):
                 st.write(message["user"])
             with st.chat_message("assistant"):
                 st.write(message["assistant"])
         
-        # Chat input
         if user_message := st.chat_input("Ask a question about the course..."):
-            # Get current course content as JSON string for context
             course = st.session_state.courses[st.session_state.selected_course_index]
             course_content = json.dumps(course)  
             
