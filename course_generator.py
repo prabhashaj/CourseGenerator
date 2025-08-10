@@ -545,14 +545,6 @@ def run_app():
                 key="new_course_modules",
                 help="Choose how many modules you want"
             )
-            read_time_per_module = st.radio(
-                "Approx. Read Time per Module",
-                ["2 minutes", "5 minutes", "10 minutes"],
-                index=1,
-                horizontal=True,
-                help="Estimate the reading time for each module.",
-                key="new_course_read_time_input"
-            )
         
         generate_button = st.form_submit_button(
             "Generate New Course Outline",
@@ -656,7 +648,6 @@ def run_app():
                 - Course level: {difficulty}
                 - Number of modules: EXACTLY {num_modules}
                 - Each module should have EXACTLY {chapters_per_module} chapters
-                - Target reading time per module: {read_time_per_module}
                 - Ensure all content is relevant and well-structured
                 
                 CHAPTER DESCRIPTION REQUIREMENTS:
