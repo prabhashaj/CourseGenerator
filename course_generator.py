@@ -863,7 +863,7 @@ def run_app():
                     elif is_viewed and view_time:
                         st.caption(f"👁️ Viewed on {view_time}")
                     else:
-                        st.caption(f"📖 Status: {status_text}")
+                        st.caption("📖 Ready to study")
                 
                 with status_col2:
                     # Show estimated reading time if content exists
@@ -961,8 +961,8 @@ def run_app():
                                 }
                                 st.session_state.courses[st.session_state.selected_course_index] = course
                                 
-                                st.success(f"📚 Comprehensive chapter content generated! Auto-marked as viewed.")
-                                st.info(f"📖 Estimated reading time: {round(estimated_time_minutes, 1)} minutes ({word_count:,} words)")
+                                # Generate success message without internal details
+                                st.success(f"� Chapter content generated and ready to read!")
                             else:
                                 st.error("Unable to generate content. Try increasing max tokens in sidebar or try a different chapter.")
                 
@@ -985,8 +985,6 @@ def run_app():
                     with col1:
                         st.caption(f"📖 Est. time: {estimated_minutes} min")
                     with col2:
-                        st.caption(f"📝 Words: {word_count:,}")
-                    with col3:
                         # Calculate time spent in current session
                         current_session_time = (datetime.now() - st.session_state[f"reading_start_{chapter_id}"]).total_seconds() / 60
                         total_time_spent = reading_info.get("time_spent", 0) + current_session_time
@@ -995,6 +993,10 @@ def run_app():
                             st.caption("⏰ Reading time met!")
                         else:
                             st.caption(f"⏰ Read: {total_time_spent:.1f}min")
+                    with col3:
+                        # Show progress indicator
+                        progress_percentage = min(100, (total_time_spent / estimated_minutes) * 100)
+                        st.caption(f"📊 Progress: {progress_percentage:.0f}%")
                     
                     with st.expander("Click to expand/collapse detailed content", expanded=True):
                         st.markdown(st.session_state.chapter_contents[chapter_id])
