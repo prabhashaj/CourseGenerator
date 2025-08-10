@@ -823,8 +823,6 @@ def run_app():
                 avg_time = "~5 min/chapter"  # Simple estimation
                 remaining_time = (total_chapters - completed_chapters) * 5
                 st.metric("⏱️ Est. Time Left", f"{remaining_time} min", f"{avg_time}")
-            else:
-                st.metric("⏱️ Est. Total Time", f"{total_chapters * 5} min", "~5 min/chapter")
         
         # Progress bar
         st.markdown("**Learning Progress:**")
