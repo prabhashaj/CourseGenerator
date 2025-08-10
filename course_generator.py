@@ -156,6 +156,8 @@ def init_session_state():
             course["chapter_completed_at"] = {}
         if "study_sessions" not in course:
             course["study_sessions"] = []
+        if "reading_times" not in course:
+            course["reading_times"] = {}
 
 
 def clear_chat_history():
@@ -864,14 +866,22 @@ def run_app():
                 status_col1, status_col2 = st.columns([3, 1])
                 with status_col1:
                     if is_completed and completion_time:
-                        st.caption(f"✅ Completed on {completion_time}")
+                        reading_info = course.get("reading_times", {}).get(chapter_id, {})
+                        time_spent = reading_info.get("time_spent", 0)
+                        st.caption(f"✅ Completed on {completion_time} (Read: {time_spent:.1f}min)")
                     elif is_viewed and view_time:
                         st.caption(f"👁️ Viewed on {view_time}")
                     else:
                         st.caption(f"📖 Status: {status_text}")
                 
                 with status_col2:
-                    st.caption("~5 min read")
+                    # Show estimated reading time if content exists
+                    reading_info = course.get("reading_times", {}).get(chapter_id, {})
+                    if reading_info:
+                        est_time = reading_info.get("estimated_minutes", 5)
+                        st.caption(f"~{est_time} min read")
+                    else:
+                        st.caption("~5 min read")
                 
                 # Display chapter description in an info box for better visibility
                 with st.container():
@@ -945,7 +955,23 @@ def run_app():
                                 if chapter_id not in course.get("chapter_viewed", {}):
                                     course["chapter_viewed"][chapter_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                                     st.session_state.courses[st.session_state.selected_course_index] = course
+                                
+                                # Calculate and store estimated reading time
+                                word_count = len(detailed_content.split())
+                                estimated_time_minutes = max(2, word_count / 200)  # Average reading speed: 200 words per minute, minimum 2 minutes
+                                
+                                if "reading_times" not in course:
+                                    course["reading_times"] = {}
+                                course["reading_times"][chapter_id] = {
+                                    "estimated_minutes": round(estimated_time_minutes, 1),
+                                    "word_count": word_count,
+                                    "start_time": None,
+                                    "time_spent": 0
+                                }
+                                st.session_state.courses[st.session_state.selected_course_index] = course
+                                
                                 st.success(f"📚 Comprehensive chapter content generated! Auto-marked as viewed.")
+                                st.info(f"📖 Estimated reading time: {round(estimated_time_minutes, 1)} minutes ({word_count:,} words)")
                             else:
                                 st.error("Unable to generate content. Try increasing max tokens in sidebar or try a different chapter.")
                 
@@ -953,8 +979,79 @@ def run_app():
                 if chapter_id in st.session_state.chapter_contents:
                     st.markdown("---")
                     st.markdown("**📚 Detailed Chapter Content:**")
+                    
+                    # Get reading time information
+                    reading_info = course.get("reading_times", {}).get(chapter_id, {})
+                    estimated_minutes = reading_info.get("estimated_minutes", 5)
+                    word_count = reading_info.get("word_count", 0)
+                    
+                    # Initialize reading session tracking
+                    if f"reading_start_{chapter_id}" not in st.session_state:
+                        st.session_state[f"reading_start_{chapter_id}"] = datetime.now()
+                    
+                    # Display reading information
+                    col1, col2, col3 = st.columns(3)
+                    with col1:
+                        st.caption(f"📖 Est. time: {estimated_minutes} min")
+                    with col2:
+                        st.caption(f"📝 Words: {word_count:,}")
+                    with col3:
+                        # Calculate time spent in current session
+                        current_session_time = (datetime.now() - st.session_state[f"reading_start_{chapter_id}"]).total_seconds() / 60
+                        total_time_spent = reading_info.get("time_spent", 0) + current_session_time
+                        
+                        if total_time_spent >= estimated_minutes * 0.8:  # 80% of estimated time
+                            st.caption("⏰ Reading time met!")
+                        else:
+                            st.caption(f"⏰ Read: {total_time_spent:.1f}min")
+                    
                     with st.expander("Click to expand/collapse detailed content", expanded=True):
                         st.markdown(st.session_state.chapter_contents[chapter_id])
+                    
+                    # Auto-completion logic based on time spent
+                    if not is_completed and total_time_spent >= estimated_minutes * 0.8:
+                        # Auto-complete if user has spent 80% of estimated reading time
+                        course['completion_status'][chapter_id] = True
+                        course["chapter_completed_at"][chapter_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        
+                        # Update time spent in reading_times
+                        if "reading_times" in course and chapter_id in course["reading_times"]:
+                            course["reading_times"][chapter_id]["time_spent"] = total_time_spent
+                        
+                        st.session_state.courses[st.session_state.selected_course_index] = course
+                        st.success("🎉 Chapter automatically completed based on reading time!")
+                        st.balloons()
+                        st.rerun()
+                    
+                    # Manual completion option for chapters not auto-completed yet
+                    if not is_completed:
+                        progress_percentage = min(100, (total_time_spent / estimated_minutes) * 100)
+                        st.progress(progress_percentage / 100, text=f"Reading Progress: {progress_percentage:.0f}%")
+                        
+                        if st.button(f"✅ Mark as Complete Manually", key=f"manual_complete_{chapter_id}", 
+                                   help="Complete this chapter manually without waiting for reading time"):
+                            course['completion_status'][chapter_id] = True
+                            course["chapter_completed_at"][chapter_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                            
+                            # Update time spent
+                            if "reading_times" in course and chapter_id in course["reading_times"]:
+                                course["reading_times"][chapter_id]["time_spent"] = total_time_spent
+                            
+                            st.session_state.courses[st.session_state.selected_course_index] = course
+                            st.success("Chapter marked as completed!")
+                            st.rerun()
+                    else:
+                        st.success(f"✅ Chapter completed! (Read for {reading_info.get('time_spent', total_time_spent):.1f} minutes)")
+                        if st.button(f"↩️ Mark as Incomplete", key=f"uncomplete_{chapter_id}"):
+                            course['completion_status'][chapter_id] = False
+                            course["chapter_completed_at"].pop(chapter_id, None)
+                            # Reset reading time tracking
+                            if "reading_times" in course and chapter_id in course["reading_times"]:
+                                course["reading_times"][chapter_id]["time_spent"] = 0
+                            st.session_state.courses[st.session_state.selected_course_index] = course
+                            st.info("Chapter marked as incomplete.")
+                            st.rerun()
+                    
                     st.markdown("---")
                 else:
                     st.info("Click 'Study' to generate comprehensive content for this chapter.")
