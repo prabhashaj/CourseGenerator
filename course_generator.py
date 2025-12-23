@@ -1,5 +1,4 @@
-from langchain_community.chat_message_histories import ChatMessageHistory
-from langchain_community.memory import ConversationBufferMemory
+from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
 import streamlit as st
 import httpx
