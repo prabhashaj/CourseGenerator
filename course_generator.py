@@ -1,4 +1,4 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
 import streamlit as st
@@ -25,18 +25,11 @@ except ImportError:
     st.error("The 'quiz_utils.py' file was not found. Please make sure it's in the same directory.")
     st.stop()
 
-# --- API Key Setup ---
-# Use Streamlit secrets for deployment and fall back to environment variable
-try:
-    # Try Streamlit secrets first (for deployment)
-    API_KEY = st.secrets.get("GEMINI_API_KEY") or st.secrets.get("GOOGLE_API_KEY")
-except (AttributeError, FileNotFoundError):
-    # Fall back to environment variables (for local development)
-    API_KEY = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
-
-# Ensure we have a valid API key
-if API_KEY:
-    os.environ["GOOGLE_API_KEY"] = API_KEY
+# --- vLLM Local Server Configuration ---
+# Local vLLM server settings
+VLLM_BASE_URL = "http://127.0.0.1:8000/v1"
+VLLM_MODEL = "deepseek-r1-distill"  # This matches the served-model-name in vLLM
+VLLM_API_KEY = "dummy-key"  # vLLM doesn't require real API key for local server
 
 def build_chapter_content_prompt(chapter, course, difficulty, content_tokens, total_chapters, content_depth):
     """Build chapter content prompt without complex f-string expressions to avoid syntax errors."""
@@ -127,9 +120,9 @@ def init_session_state():
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
     if "conversation" not in st.session_state:
-        llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.7)
+        # We don't need ConversationChain since we're using OpenRouter directly
         memory = ConversationBufferMemory()
-        st.session_state.conversation = ConversationChain(llm=llm, memory=memory)
+        st.session_state.conversation = {"memory": memory}
     if "current_mode" not in st.session_state:
         st.session_state.current_mode = "course_generator"
     if "previous_course_index" not in st.session_state:
@@ -164,8 +157,8 @@ def clear_chat_history():
     """Clear chat history when switching courses or generating a new one"""
     if "chat_history" in st.session_state:
         st.session_state.chat_history = []
-    if "conversation" in st.session_state:
-        st.session_state.conversation.memory.clear()
+    if "conversation" in st.session_state and "memory" in st.session_state.conversation:
+        st.session_state.conversation["memory"].clear()
     st.session_state.sidebar_rendered = False
 
 
@@ -173,7 +166,8 @@ def show_navigation():
     """Display the navigation menu and AI settings in the sidebar."""
     with st.sidebar:
         # AI Generation Settings in sidebar
-        st.header("⚙️ AI Generation Settings")
+        st.header("⚙️ vLLM DeepSeek R1 Settings")
+        st.caption("Powered by local vLLM server")
         st.session_state.temperature = st.slider(
             "Temperature",
             min_value=0.0,
@@ -188,7 +182,7 @@ def show_navigation():
             max_value=8192,
             value=st.session_state.max_tokens,
             step=512,
-            help="Maximum number of tokens to generate. Increase for larger courses (5-10 modules need 4096+ tokens)."
+            help="Maximum number of tokens to generate. DeepSeek R1 Distill supports up to 8K tokens."
         )
 
         st.markdown("---")
@@ -352,31 +346,62 @@ def safe_json_parse(text_response):
                 
         return {"error": f"Invalid JSON after all repair attempts: {str(e)}", "raw": text_response}
 
-# --- Gemini API Call Function ---
-async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, top_p, response_schema=None):
+# --- vLLM Server Health Check ---
+def check_vllm_server():
     """
-    Calls the Gemini API to generate content with specified parameters and an optional schema.
+    Check if the vLLM server is running and healthy.
+    Returns dict with 'healthy' status and optional 'error' message.
     """
-    # Check API key at runtime
-    if not API_KEY or API_KEY == "your_api_key_here":
-        st.error("🔑 API Key is not configured properly. Please set your Gemini API key.")
-        st.info("Get your API key from: https://aistudio.google.com/app/apikey")
+    try:
+        import httpx
+        with httpx.Client(timeout=5) as client:
+            # Try to connect to health endpoint
+            health_url = f"{VLLM_BASE_URL.replace('/v1', '')}/health"
+            response = client.get(health_url)
+            if response.status_code == 200:
+                return {"healthy": True}
+            else:
+                return {"healthy": False, "error": f"Server responded with status {response.status_code}"}
+    except Exception as e:
+        return {"healthy": False, "error": str(e)}
+
+# --- vLLM API Call Function ---
+async def generate_content_with_vllm(prompt, temperature, max_tokens, top_k, top_p, response_schema=None):
+    """
+    Calls the local vLLM server to generate content using DeepSeek R1 Distill model.
+    """
+    # Check if vLLM server is accessible
+    try:
+        async with httpx.AsyncClient() as client:
+            health_response = await client.get(f"{VLLM_BASE_URL.replace('/v1', '')}/health", timeout=5)
+            if health_response.status_code != 200:
+                st.error("� **vLLM Server Not Running!** Please start the vLLM server first.")
+                st.info("Run: `python start_vllm_server.py` or `start_vllm_server.bat`")
+                return None
+    except Exception as e:
+        st.error("🔧 **vLLM Server Not Running!** Please start the vLLM server first.")
+        st.info("Run the batch file: `start_vllm_server.bat` to start the server")
+        st.code("The server should be running on http://127.0.0.1:8000")
         return None
 
-    chat_history = [{"role": "user", "parts": [{"text": prompt}]}]
-    generation_config = {
-        "temperature": temperature,
-        "maxOutputTokens": max_tokens,
-        "topK": int(top_k),
-        "topP": top_p
-    }
-    payload = {"contents": chat_history, "generationConfig": generation_config}
-
+    # Prepare messages for vLLM (OpenAI-compatible format)
+    messages = [{"role": "user", "content": prompt}]
+    
+    # Add JSON formatting instruction if schema is required
     if response_schema:
-        payload["generationConfig"]["responseMimeType"] = "application/json"
-        payload["generationConfig"]["responseSchema"] = response_schema
+        schema_instruction = f"\n\nPlease format your response as valid JSON according to this schema: {json.dumps(response_schema, indent=2)}"
+        messages[0]["content"] += schema_instruction
 
-    api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={API_KEY}"
+    payload = {
+        "model": VLLM_MODEL,
+        "messages": messages,
+        "temperature": temperature,
+        "max_tokens": max_tokens,
+        "top_p": top_p,
+        "stream": False
+    }
+
+    api_url = f"{VLLM_BASE_URL}/chat/completions"
     
     try:
         async with httpx.AsyncClient() as client:
@@ -391,32 +416,30 @@ async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, t
                 
             response = await client.post(
                 api_url,
-                headers={'Content-Type': 'application/json'},
+                headers={
+                    'Content-Type': 'application/json',
+                    'Authorization': f'Bearer {VLLM_API_KEY}'
+                },
                 json=payload,
                 timeout=timeout_duration
             )
             
-            if response.status_code == 400:
-                st.error("🔑 **Invalid API Key!** Please check your Gemini API key is correct.")
-                st.info("Get a new API key from: https://aistudio.google.com/app/apikey")
+            if response.status_code == 422:
+                st.error("� **vLLM Server Error!** The model may still be loading. Please wait a moment and try again.")
                 return None
-            elif response.status_code == 403:
-                st.error("🚫 **API Access Forbidden!** Your API key may not have permission or quota exceeded.")
-                return None
-            elif response.status_code == 429:
-                st.error("⏰ **Rate Limited!** Too many requests. Please wait a moment and try again.")
+            elif response.status_code == 500:
+                st.error("� **vLLM Internal Error!** Check the vLLM server logs for details.")
                 return None
                 
             response.raise_for_status()
             result = response.json()
 
-            if not result.get("candidates"):
-                st.error("No response generated by LLM. Please try again.")
-                if result.get("promptFeedback") and result["promptFeedback"].get("blockReason"):
-                    st.error(f"LLM blocked the prompt due to: {result['promptFeedback']['blockReason']}")
+            # vLLM uses OpenAI-compatible response format
+            if not result.get("choices"):
+                st.error("No response generated by DeepSeek R1 Distill. Please try again.")
                 return None
 
-            text_response = result["candidates"][0]["content"]["parts"][0].get("text", "")
+            text_response = result["choices"][0]["message"]["content"]
 
             if response_schema:
                 parsed_response = safe_json_parse(text_response)
@@ -428,17 +451,15 @@ async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, t
             return text_response
     except httpx.RequestError as e:
         st.error(f"🌐 **Network Error:** {str(e)}")
-        st.info("Please check your internet connection and try again.")
+        st.info("Please check if the vLLM server is running and accessible.")
         return None
     except httpx.HTTPStatusError as e:
-        if e.response.status_code == 400:
-            st.error("🔑 **Invalid API Key!** Please verify your Gemini API key is correct.")
-        elif e.response.status_code == 403:
-            st.error("🚫 **Access Forbidden!** Check your API key permissions.")
-        elif e.response.status_code == 429:
-            st.error("⏰ **Too Many Requests!** Please wait and try again.")
+        if e.response.status_code == 422:
+            st.error("� **vLLM Server Error!** The model may still be loading.")
+        elif e.response.status_code == 500:
+            st.error("� **vLLM Internal Error!** Check server logs.")
         else:
-            st.error(f"🔴 **API Error:** HTTP {e.response.status_code}")
+            st.error(f"🔴 **vLLM API Error:** HTTP {e.response.status_code}")
         return None
     except Exception as e:
         st.error(f"❌ **Unexpected Error:** {str(e)}")
@@ -446,7 +467,7 @@ async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, t
 
 # --- Course Assistant Chat Function ---
 def process_chat_message(user_message, course_content):
-    """Process chat messages with context about the course"""
+    """Process chat messages with context about the course using vLLM"""
     if not user_message:
         return ""
 
@@ -457,15 +478,26 @@ def process_chat_message(user_message, course_content):
         
         Only answer questions directly related to this course content. If the question is not related,
         politely redirect the user to ask course-related questions.
-        If you encounter any errors or cannot answer, provide a clear explanation.
         
         User question: {user_message}
         """
         
-        # Use the pre-initialized ConversationChain for context-aware chat
-        response = st.session_state.conversation.predict(input=context)
-        st.session_state.chat_history.append({"user": user_message, "assistant": response})
-        return response
+        # Use asyncio to run the vLLM API call
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        response = loop.run_until_complete(
+            generate_content_with_vllm(context, 0.7, 1024, 32, 1.0)
+        )
+        loop.close()
+        
+        if response:
+            st.session_state.chat_history.append({"user": user_message, "assistant": response})
+            return response
+        else:
+            error_message = "I'm sorry, I couldn't process your question right now. Please try again."
+            st.session_state.chat_history.append({"user": user_message, "assistant": error_message})
+            return error_message
+            
     except Exception as e:
         error_message = f"I apologize, but I encountered an error while processing your chat: {str(e)}"
         st.error(error_message)
@@ -477,36 +509,33 @@ def run_app():
     init_session_state()
     show_navigation() # Display navigation in sidebar
 
-    st.title("🎓 Course Generator")
+    st.title("🎓 Course Generator (Powered by DeepSeek R1 Distill)")
     
-    # Show API key status
-    if not API_KEY or API_KEY == "your_api_key_here":
-        st.error("🔑 **API Key Required!** Please set up your Gemini API key to use this application.")
-        with st.expander("📋 **How to Set Up Your API Key**", expanded=True):
+    # Show vLLM server status
+    if True:  # We'll always show the info since we can't easily check server status here
+        st.info("� **Using local vLLM server** - Make sure to start the vLLM server before generating courses!")
+        with st.expander("📋 **How to Start vLLM Server**", expanded=False):
             st.markdown("""
-            ### For Streamlit Cloud Deployment:
-            1. Go to your Streamlit app settings
-            2. Click on "Secrets"
-            3. Add: `GEMINI_API_KEY = "your_actual_api_key_here"`
-            
-            ### For Local Development:
-            **Option 1 - Environment Variable:**
+            ### Start the vLLM Server:
+            1. **Windows**: Double-click `start_vllm_server.bat`
+            2. **Command Line**: Run `vllm serve "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"`
+            3. **Manual**: 
             ```bash
-            export GEMINI_API_KEY="your_actual_api_key_here"
+            vllm serve "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B" --host 127.0.0.1 --port 8000 --served-model-name deepseek-r1-distill
             ```
             
-            **Option 2 - .env file:**
-            Create a `.env` file in your project directory:
-            ```
-            GEMINI_API_KEY=your_actual_api_key_here
-            ```
+            ### Server Status:
+            - **URL**: http://127.0.0.1:8000
+            - **Model**: DeepSeek R1 Distill Qwen 1.5B
+            - **First run**: Will download the model (may take time)
             
-            ### Get Your API Key:
-            🔗 [Get Gemini API Key](https://aistudio.google.com/app/apikey)
-            
-            **Note:** Make sure to keep your API key secure and never commit it to version control!
+            ### Requirements:
+            - GPU recommended for better performance
+            - At least 4GB VRAM or 8GB RAM
+            - Internet connection for first-time model download
             """)
     
+    # Continue with the rest of the function
     st.info("👈 Open the sidebar to explore exciting features")
     st.markdown("Generate custom course outlines, track your progress, and get detailed chapter content!")
     
@@ -558,22 +587,28 @@ def run_app():
             st.warning("⚠️ Please enter a course topic!")
             return
         
-        # Check API key before proceeding
-        if not API_KEY or API_KEY == "your_api_key_here":
-            st.error("🔑 **API Key Required!** Please configure your Gemini API key to generate courses.")
+        # Check vLLM server before proceeding
+        server_status = check_vllm_server()
+        if not server_status["healthy"]:
+            st.error("� **Local vLLM Server Required!** Please start the vLLM server to generate courses.")
             st.info("""
-            **How to set up your API key:**
+            **How to start the vLLM server:**
             
-            **For Streamlit Cloud:**
-            1. Go to your app settings
-            2. Add a secret called `GEMINI_API_KEY` or `GOOGLE_API_KEY`
-            3. Paste your Gemini API key as the value
+            **Windows**: Double-click `start_vllm_server.bat`
             
-            **For Local Development:**
-            1. Set environment variable: `GEMINI_API_KEY=your_actual_api_key`
-            2. Or create a `.env` file with: `GEMINI_API_KEY=your_actual_api_key`
+            **Command Line**: Run `python deepseek_server.py`
             
-            **Get your API key from:** https://aistudio.google.com/app/apikey
+            **Manual**: 
+            ```
+            vllm serve "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B" --host 127.0.0.1 --port 8000
+            ```
+            
+            **Requirements:**
+            - At least 4GB VRAM or 8GB RAM
+            - Internet connection for first-time model download
+            - GPU recommended for better performance
+            
+            **Server will be available at:** http://127.0.0.1:8000
             """)
             return
         
@@ -706,7 +741,7 @@ def run_app():
                             progress_bar.progress(0.3)
                         
                         course_data = loop.run_until_complete(
-                            generate_content_with_gemini(
+                            generate_content_with_vllm(
                                 course_prompt,
                                 temperature, # Use values from session state (updated by sidebar sliders)
                                 course_tokens,  # Use optimized token allocation
@@ -914,7 +949,7 @@ def run_app():
                                 try:
                                     loop = get_or_create_eventloop()
                                     detailed_content = loop.run_until_complete(
-                                        generate_content_with_gemini(content_prompt, temperature, content_tokens, top_k, top_p)
+                                        generate_content_with_vllm(content_prompt, temperature, content_tokens, top_k, top_p)
                                     )
                                     loop.close()
                                     
@@ -1079,25 +1114,25 @@ def run_app():
                             quiz_tokens = min(max_tokens, 768)
                             num_questions = 3
                             
-                        if not API_KEY:
-                            st.error("🔑 API Key is required for quiz generation. Please configure your Gemini API key in Streamlit secrets.")
-                            st.info("💡 **For Streamlit Cloud:** Add your API key in the app settings under 'Secrets management'")
-                        else:
-                            loop = get_or_create_eventloop()
-                            quiz_data = loop.run_until_complete(quiz_utils.generate_quiz_with_gemini(
-                                module_content, API_KEY, temperature, quiz_tokens, top_k, top_p, num_questions=num_questions
-                            ))
-                            loop.close()
-                            if quiz_data and "questions" in quiz_data:
-                                st.session_state.quiz_progress[module_quiz_id] = {
-                                    "questions": quiz_data["questions"],
-                                    "completed": False,
-                                    "answers": [None] * len(quiz_data["questions"]),
-                                    "score": 0
-                                }
-                                st.success(f"Quiz generated with {num_questions} questions! Scroll down to attempt it.")
-                            else:
-                                st.warning("We're having trouble generating the quiz right now. Try generating detailed content for more chapters in this module first, then attempt the quiz generation again.")
+                        if True:  # vLLM server check happens in the API function
+                            # Quiz generation disabled for now
+                            st.info("📝 Quiz generation is temporarily disabled. The course content is complete and ready for learning!")
+                            # Future: Implement quiz generation with vLLM
+                            # loop = get_or_create_eventloop()
+                            # quiz_data = loop.run_until_complete(quiz_utils.generate_quiz_with_gemini(
+                            #     module_content, OPENROUTER_API_KEY, temperature, quiz_tokens, top_k, top_p, num_questions=num_questions
+                            # ))
+                            # loop.close()
+                            # if quiz_data and "questions" in quiz_data:
+                            #     st.session_state.quiz_progress[module_quiz_id] = {
+                            #         "questions": quiz_data["questions"],
+                            #         "completed": False,
+                            #         "answers": [None] * len(quiz_data["questions"]),
+                            #         "score": 0
+                            #     }
+                            #     st.success(f"Quiz generated with {num_questions} questions! Scroll down to attempt it.")
+                            # else:
+                            #     st.warning("We're having trouble generating the quiz right now. Try generating detailed content for more chapters in this module first, then attempt the quiz generation again.")
             
             quiz_obj = st.session_state.quiz_progress.get(module_quiz_id, {})
             if quiz_obj.get("questions"):
