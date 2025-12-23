@@ -1,4 +1,11 @@
-from langchain.memory import ConversationBufferMemory
+try:
+    from langchain_core.memory import ConversationBufferMemory
+except ImportError:
+    try:
+        from langchain.memory import ConversationBufferMemory
+    except ImportError:
+        from langchain_community.chat_memory import ConversationBufferMemory
+
 from langchain.chains import ConversationChain
 import streamlit as st
 import httpx
