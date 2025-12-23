@@ -2,7 +2,7 @@ streamlit
 httpx
 PyPDF2==3.0.1
 langchain>=0.1.0
-langchain-memory
+langchain-core
 faiss-cpu
 google-generativeai
 langchain-community
