@@ -170,8 +170,7 @@ def show_navigation():
     """Display the navigation menu and AI settings in the sidebar."""
     with st.sidebar:
         # AI Generation Settings in sidebar
-        st.header("⚙️ Gemini AI Settings")
-        st.caption("Powered by Google Gemini API")
+        st.header("⚙️ Model Configuration")
         st.session_state.temperature = st.slider(
             "Temperature",
             min_value=0.0,
@@ -186,7 +185,7 @@ def show_navigation():
             max_value=8192,
             value=st.session_state.max_tokens,
             step=512,
-            help="Maximum number of tokens to generate. Gemini supports up to 8K tokens."
+            help="Maximum number of tokens to generate."
         )
 
         st.markdown("---")
