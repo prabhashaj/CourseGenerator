@@ -33,19 +33,13 @@ link: https://ajscoursegenerator.streamlit.app/
 - **Interactive Interface**: Flip cards, mark answers, and track progress
 - **Beautiful UI**: Enhanced visual design with dark mode support
 
-### 📰 Knowledge Hub
-- **Real-time Information**: Get current news and information using web search
-- **AI-Powered Research**: Uses Google Gemini AI for intelligent responses
-- **Source Verification**: Provides sources for all web-searched information
-- **Current Events**: Stay updated with the latest developments in any field
-
 ## 🛠️ Technology Stack
 
 - **Frontend**: Streamlit
 - **AI Model**: Google Gemini 2.0 Flash
 - **Vector Database**: FAISS for document embeddings
 - **Document Processing**: PyPDF2, LangChain document loaders
-- **Web Search**: DuckDuckGo Search API
+- **Image Search**: Tavily Search API
 - **Language Framework**: LangChain for AI orchestration
 
 ## 📋 Prerequisites
@@ -103,7 +97,6 @@ CourseGenerator/
 ├── document_course_creator.py  # Document-based course creation
 ├── rag_chatbot.py             # RAG chatbot implementation
 ├── play_zone.py               # Interactive flashcards and games
-├── lang_news.py               # Knowledge hub with web search
 ├── quiz_utils.py              # Quiz generation utilities
 ├── requirements.txt           # Python dependencies
 ├── Procfile                   # Deployment configuration
@@ -145,13 +138,6 @@ CourseGenerator/
 2. **Choose Topic**: Enter any subject for flashcard generation
 3. **Set Quantity**: Choose number of flashcards (1-20)
 4. **Study**: Flip cards, test yourself, and track your score
-
-### Research & Current Info
-
-1. **Knowledge Hub**: Select "Knowledge Hub 📰"
-2. **Ask Questions**: Enter queries about current events, tech, or any topic
-3. **Get Answers**: Receive AI-powered responses with web sources
-4. **Verify Sources**: Check provided links for additional information
 
 ## ⚙️ Configuration
 

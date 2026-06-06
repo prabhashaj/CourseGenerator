@@ -21,8 +21,4 @@ watchdog
 python-dateutil
 protobuf
 pypdf
-newspaper3k
-pytrends
-lxml_html_clean
-duckduckgo-search
 torchvision
