@@ -52,7 +52,7 @@ def get_chapter_images_from_tavily(query: str):
         "api_key": TAVILY_API_KEY,
         "query": query,
         "include_images": True,
-        "max_results": 3
+        "max_results": 2
     }
     
     import requests
@@ -81,77 +81,33 @@ def get_chapter_images_from_tavily(query: str):
 
 
 def build_chapter_content_prompt(chapter, course, difficulty, content_tokens, total_chapters, content_depth):
-    """Build chapter content prompt without complex f-string expressions to avoid syntax errors."""
-    # Build sections based on total chapters
-    core_concepts_section = ""
-    if total_chapters <= 12:
-        core_concepts_section = "Provide in-depth explanations of fundamental concepts, theoretical foundations, mathematical principles (where applicable), and detailed breakdowns of complex ideas. Use multiple examples and analogies to illustrate abstract concepts."
-    else:
-        core_concepts_section = "Explain key concepts thoroughly with clear examples and theoretical foundations."
+    """Build a concise, focused chapter content prompt to reduce latency and prevent truncation."""
+    prompt = f"""Create focused, high-quality educational content for this chapter. The response should be substantive but concise enough to prevent truncation or excessive latency, and must conclude with a complete Summary section.
     
-    implementation_section = ""
-    if total_chapters <= 9:
-        implementation_section = "Include step-by-step processes, detailed methodologies, algorithms, formulas, and comprehensive explanations of how things work at a deeper level."
-    else:
-        implementation_section = "Cover essential principles, methodologies, and step-by-step processes."
-    
-    examples_section = ""
-    if total_chapters <= 12:
-        examples_section = "Provide multiple detailed examples, case studies, real-world applications, worked solutions, and practical scenarios. Show different approaches and variations to demonstrate versatility of concepts."
-    else:
-        examples_section = "Demonstrate practical applications with detailed examples and case studies."
-    
-    practice_section = ""
-    if total_chapters <= 12:
-        practice_section = "Include detailed practical examples, code snippets (if applicable), calculations, procedures, exercises, and hands-on applications. Provide troubleshooting tips and common pitfalls to avoid."
-    else:
-        practice_section = "Show practical implementations with examples and common applications."
-    
-    advanced_section = ""
-    if total_chapters <= 9:
-        advanced_section = "\n\n## Advanced Considerations\nDiscuss advanced topics, edge cases, limitations, best practices, optimization techniques, and connections to other related concepts or fields."
-    
-    # Build the complete prompt
-    prompt = f"""Create comprehensive, detailed educational content for this chapter. You have substantial token allocation - use it to provide thorough coverage while ensuring you complete with a full Summary section.
-
 **Chapter:** {chapter['chapterTitle']}
 **Course:** {course['courseTitle']} ({difficulty} level)
-**Token Allocation:** {content_tokens} tokens (Reserve 200-250 tokens for complete Summary)
 **Chapter Focus:** {chapter['description']}
+
+Format your response strictly using these Markdown sections:
 
 # {chapter['chapterTitle']}
 
 ## Introduction
-Provide a comprehensive introduction explaining what this topic is, its significance, historical context (if relevant), and why it's important in the broader field. Include real-world relevance and motivation for learning this topic.
+Provide a clear, engaging introduction explaining what this topic is and why it is important.
 
 ## Core Concepts and Theory
-{core_concepts_section}
+Explain the main concepts and theoretical foundations clearly with examples.
 
-{implementation_section}
-
-## Detailed Examples and Applications
-{examples_section}
-
-## Implementation and Practice
-{practice_section}{advanced_section}
+## Practical Examples and Applications
+Provide 1 or 2 clear real-world examples or implementation details demonstrating the concepts.
 
 ## Summary
-**[REQUIRED - MUST COMPLETE THIS SECTION]**
-Write a comprehensive summary covering:
-- Key concepts and principles learned in this chapter
-- Main theoretical and practical takeaways
-- How this knowledge connects to the broader course and field
-- Important formulas, processes, or methodologies to remember
-- Next steps or how this leads into subsequent topics
+Write a comprehensive summary of key takeaways, main principles to remember, and how this connects to subsequent topics.
 
 **COMPLETION REQUIREMENTS:**
 1. Focus ONLY on: {chapter['chapterTitle']}
-2. Use the full token allocation to provide comprehensive coverage
-3. MUST finish with a complete Summary section - never stop mid-sentence
-4. Reserve 200-250 tokens for the Summary - ensure it's thorough but complete
-5. End with a natural, complete conclusion that reinforces learning
-
-Create detailed, {content_depth} educational content. Use your full token budget effectively while ensuring completion:
+2. Write approximately 400-600 words of substantive content.
+3. You MUST end with a complete Summary section - never cut off or end mid-sentence.
 """
     return prompt
 
@@ -936,11 +892,11 @@ def run_app():
                                         has_summary = any(keyword in detailed_content.lower() for keyword in ['summary', 'conclusion', 'in summary', 'to conclude', 'key points', 'takeaway', 'takeaways', 'wrap-up', 'wrap up', 'recap', 'final thoughts'])
                                         is_complete = is_response_complete(detailed_content)
                                         
-                                        if word_count < 400 or not has_summary or not is_complete:
+                                        if word_count < 250 or not has_summary or not is_complete:
                                             if attempt < max_retries - 1:
                                                 reason = []
-                                                if word_count < 400:
-                                                    reason.append(f"too short ({word_count} words, expected 400+)")
+                                                if word_count < 250:
+                                                    reason.append(f"too short ({word_count} words, expected 250+)")
                                                 if not has_summary:
                                                     reason.append("missing summary")
                                                 if not is_complete:
@@ -999,6 +955,40 @@ def run_app():
                 # Display chapter content
                 if chapter_id in st.session_state.chapter_contents:
                     st.markdown("---")
+                    
+                    # Display Tavily search images if available under a side heading
+                    images = st.session_state.chapter_images.get(chapter_id, [])
+                    if images:
+                        st.markdown("#### 🖼️ Relevant Images")
+                        cols = st.columns(min(2, len(images)))
+                        for idx, img in enumerate(images[:2]):
+                            with cols[idx]:
+                                try:
+                                    caption = img.get("description") or f"Image {idx+1}"
+                                    st.image(img["url"], caption=caption, use_container_width=True)
+                                except Exception as img_render_err:
+                                    st.caption(f"Error rendering image: {img_render_err}")
+                        
+                        # Image Search Settings for custom query
+                        if TAVILY_API_KEY:
+                            with st.expander("🖼️ Image Search Settings", expanded=False):
+                                default_query = f"{course.get('courseTitle', '')} {chapter.get('chapterTitle', '')} diagram illustration"
+                                custom_query = st.text_input(
+                                    "Custom Image Search Query", 
+                                    value=default_query,
+                                    key=f"custom_query_{chapter_id}"
+                                )
+                                if st.button("Search & Update Images", key=f"btn_search_img_{chapter_id}"):
+                                    with st.spinner("Searching for images..."):
+                                        new_images = get_chapter_images_from_tavily(custom_query)
+                                        if new_images:
+                                            st.session_state.chapter_images[chapter_id] = new_images
+                                            st.success(f"Found {len(new_images)} images!")
+                                            st.rerun()
+                                        else:
+                                            st.warning("No images found.")
+                        st.markdown("---")
+                    
                     st.markdown("**📚 Detailed Chapter Content:**")
                     
                     # Get reading time information
@@ -1030,40 +1020,6 @@ def run_app():
                     
                     with st.expander("Click to expand/collapse detailed content", expanded=True):
                         st.markdown(st.session_state.chapter_contents[chapter_id])
-                        
-                        # Display Tavily search images if available
-                        images = st.session_state.chapter_images.get(chapter_id, [])
-                        if images:
-                            st.markdown("---")
-                            st.markdown("#### 🖼️ Visual References & Illustrations")
-                            cols = st.columns(len(images))
-                            for idx, img in enumerate(images):
-                                with cols[idx]:
-                                    try:
-                                        caption = img.get("description") or f"Illustration {idx+1}"
-                                        st.image(img["url"], caption=caption, use_container_width=True)
-                                    except Exception as img_render_err:
-                                        st.caption(f"Error rendering image: {img_render_err}")
-                        
-                        # Image Search Settings for custom query
-                        if TAVILY_API_KEY:
-                            st.markdown("---")
-                            with st.expander("🖼️ Image Search Settings", expanded=False):
-                                default_query = f"{course.get('courseTitle', '')} {chapter.get('chapterTitle', '')} diagram illustration"
-                                custom_query = st.text_input(
-                                    "Custom Image Search Query", 
-                                    value=default_query,
-                                    key=f"custom_query_{chapter_id}"
-                                )
-                                if st.button("Search & Update Images", key=f"btn_search_img_{chapter_id}"):
-                                    with st.spinner("Searching for images..."):
-                                        new_images = get_chapter_images_from_tavily(custom_query)
-                                        if new_images:
-                                            st.session_state.chapter_images[chapter_id] = new_images
-                                            st.success(f"Found {len(new_images)} images!")
-                                            st.rerun()
-                                        else:
-                                            st.warning("No images found.")
                     
                     # Auto-completion logic based on time spent
                     if not is_completed and total_time_spent >= estimated_minutes * 0.8:
