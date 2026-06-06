@@ -1,6 +1,4 @@
 import streamlit as st
-import sys
-import os
 
 # --- Page Configuration ---
 st.set_page_config(
@@ -9,41 +7,10 @@ st.set_page_config(
     layout="wide"
 )
 
-st.write("### Streamlit Cloud Environment Diagnostics")
-st.write(f"Python executable: `{sys.executable}`")
-st.write(f"Python path: `{sys.path}`")
-
-try:
-    import pkg_resources
-    packages = [f"{d.project_name}=={d.version}" for d in pkg_resources.working_set]
-    st.write("Installed packages:", sorted(packages))
-except Exception as debug_err:
-    st.write(f"Debug error: `{debug_err}`")
-
-try:
-    import langchain
-    st.write(f"LangChain version: `{langchain.__version__}` Path: `{langchain.__file__}`")
-    st.write("LangChain path list:", langchain.__path__)
-    st.write("LangChain package contents (dir):", dir(langchain))
-    # List files in the langchain directory
-    import os
-    langchain_dir = os.path.dirname(langchain.__file__)
-    st.write("langchain directory files:", os.listdir(langchain_dir))
-    if os.path.exists(os.path.join(langchain_dir, 'memory')):
-        st.write("memory folder exists! files inside:", os.listdir(os.path.join(langchain_dir, 'memory')))
-    else:
-        st.write("memory folder DOES NOT exist in langchain directory.")
-except Exception as debug_err:
-    st.write(f"LangChain import/inspect error: `{debug_err}`")
-
-try:
-    import course_generator
-    import rag_chatbot
-    import document_course_creator
-    import play_zone  # Import the new PlayZone module
-except Exception as import_err:
-    st.error(f"Import Error: {import_err}")
-    st.stop()
+import course_generator
+import rag_chatbot
+import document_course_creator
+import play_zone  # Import the new PlayZone module
 import lang_news_enhanced # Import the enhanced langchain news module
 
 # --- Session State Initialization (Centralized) ---
