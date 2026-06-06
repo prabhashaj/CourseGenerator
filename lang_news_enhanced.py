@@ -1,5 +1,5 @@
 import streamlit as st
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_mistralai import ChatMistralAI
 from langchain.agents import AgentExecutor, create_react_agent, Tool
 from langchain.prompts import PromptTemplate
 import os
@@ -7,9 +7,20 @@ import re
 from dotenv import load_dotenv
 import time
 from duckduckgo_search import DDGS
-import google.generativeai as genai
 import asyncio
 from typing import List, Dict, Any
+
+# Load environment variables from .env file
+load_dotenv()
+
+# --- API Key Setup ---
+try:
+    MISTRAL_API_KEY = st.secrets.get("MISTRAL_API_KEY") or os.getenv("MISTRAL_API_KEY") or "a9jVQQfE1QKrhhpuVTPrs78IdpL4anhW"
+except:
+    MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY") or "a9jVQQfE1QKrhhpuVTPrs78IdpL4anhW"
+
+if MISTRAL_API_KEY:
+    os.environ["MISTRAL_API_KEY"] = MISTRAL_API_KEY
 
 class LiveAgentCallback:
     """Enhanced callback handler that simulates intelligent agent behavior"""
@@ -312,6 +323,7 @@ class IntelligentWebSearch:
     def __init__(self, callback: LiveAgentCallback = None):
         self.callback = callback
         self.search_strategies = [
+            self._tavily_search,
             self._duckduckgo_search,
             self._ai_knowledge_search,
             self._fallback_guidance
@@ -340,6 +352,57 @@ class IntelligentWebSearch:
                 continue
         
         return self._emergency_fallback(query)
+    
+    def _tavily_search(self, query: str, max_results: int) -> Dict[str, Any]:
+        """Primary Tavily Search API"""
+        tavily_api_key = st.secrets.get("TAVILY_API_KEY") or os.getenv("TAVILY_API_KEY") or "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"
+        if not tavily_api_key:
+            raise Exception("Tavily API key not configured")
+            
+        payload = {
+            "api_key": tavily_api_key,
+            "query": query,
+            "search_depth": "advanced",
+            "max_results": max_results
+        }
+        
+        headers = {
+            "Content-Type": "application/json"
+        }
+        
+        import requests
+        response = requests.post("https://api.tavily.com/search", json=payload, timeout=15)
+        response.raise_for_status()
+        res_json = response.json()
+        
+        results = res_json.get("results", [])
+        if not results:
+            raise Exception("No search results found from Tavily")
+            
+        formatted_results = []
+        sources = []
+        
+        for i, result in enumerate(results, 1):
+            title = result.get('title', 'No title')
+            url = result.get('url', 'No URL')
+            content = result.get('content', 'No description')
+            
+            if len(content) > 300:
+                content = content[:300] + "..."
+                
+            formatted_results.append({
+                'title': title,
+                'url': url,
+                'snippet': content
+            })
+            sources.append(f"[{title}]({url})")
+            
+        return {
+            'success': True,
+            'results': formatted_results,
+            'sources': sources,
+            'content': self._format_search_content(formatted_results)
+        }
     
     def _duckduckgo_search(self, query: str, max_results: int) -> Dict[str, Any]:
         """Primary DuckDuckGo search"""
@@ -381,16 +444,13 @@ class IntelligentWebSearch:
     
     def _ai_knowledge_search(self, query: str, max_results: int) -> Dict[str, Any]:
         """AI knowledge-based response with comprehensive analysis"""
-        api_key = os.environ.get("GOOGLE_API_KEY")
-        if not api_key:
+        if not MISTRAL_API_KEY:
             raise Exception("No API key available")
         
-        genai.configure(api_key=api_key)
-        llm = ChatGoogleGenerativeAI(
-            model="gemini-1.5-flash",
-            google_api_key=api_key,
-            temperature=0.3,
-            convert_system_message_to_human=True
+        llm = ChatMistralAI(
+            model="mistral-large-latest",
+            api_key=MISTRAL_API_KEY,
+            temperature=0.3
         )
         
         prompt = f"""Current date: June 29, 2025
@@ -449,12 +509,10 @@ While I cannot access real-time web data currently, I can help you understand th
             }
         
         # Use AI to synthesize answer when API is available
-        genai.configure(api_key=api_key)
-        llm = ChatGoogleGenerativeAI(
-            model="gemini-1.5-flash",
-            google_api_key=api_key,
-            temperature=0.3,
-            convert_system_message_to_human=True
+        llm = ChatMistralAI(
+            model="mistral-large-latest",
+            api_key=MISTRAL_API_KEY,
+            temperature=0.3
         )
         
         prompt = f"""Query: {query}
@@ -563,16 +621,13 @@ class ReActAgent:
     
     def _initialize_llm(self):
         """Initialize the language model"""
-        api_key = os.environ.get("GOOGLE_API_KEY")
-        if not api_key:
-            raise ValueError("GOOGLE_API_KEY environment variable is required")
+        if not MISTRAL_API_KEY:
+            raise ValueError("MISTRAL_API_KEY environment variable is required")
         
-        genai.configure(api_key=api_key)
-        return ChatGoogleGenerativeAI(
-            model="gemini-1.5-flash",
-            google_api_key=api_key,
-            temperature=0.1,
-            convert_system_message_to_human=True
+        return ChatMistralAI(
+            model="mistral-large-latest",
+            api_key=MISTRAL_API_KEY,
+            temperature=0.1
         )
     
     def process_query(self, query: str) -> Dict[str, Any]:
@@ -722,18 +777,9 @@ def main():
     # Load environment
     load_dotenv()
     
-    # Get API key
-    google_api_key = None
-    try:
-        google_api_key = st.secrets.get("GOOGLE_API_KEY")
-    except:
-        google_api_key = os.environ.get("GOOGLE_API_KEY")
-    
-    if not google_api_key:
+    if not MISTRAL_API_KEY:
         st.error("❌ No API key available!")
         st.stop()
-    
-    os.environ["GOOGLE_API_KEY"] = google_api_key
     
     # Title and description
     st.title("Knowledge Hub 📰")

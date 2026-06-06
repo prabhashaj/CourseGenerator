@@ -1,6 +1,6 @@
 import streamlit as st
 import os
-from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
+from langchain_mistralai import ChatMistralAI, MistralAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain.chains import ConversationalRetrievalChain
@@ -16,14 +16,14 @@ load_dotenv()
 # Use Streamlit secrets for deployment and fall back to environment variable
 try:
     # Try to get from Streamlit secrets first (for deployment)
-    API_KEY = st.secrets.get("GEMINI_API_KEY") or st.secrets.get("GOOGLE_API_KEY")
+    MISTRAL_API_KEY = st.secrets.get("MISTRAL_API_KEY") or os.getenv("MISTRAL_API_KEY") or "a9jVQQfE1QKrhhpuVTPrs78IdpL4anhW"
 except:
     # Fall back to environment variables (for local development)
-    API_KEY = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY") or "a9jVQQfE1QKrhhpuVTPrs78IdpL4anhW"
 
-# Only set os.environ if we have a key
-if API_KEY:
-    os.environ["GOOGLE_API_KEY"] = API_KEY
+# Set API key environment variable for Mistral if needed by LangChain
+if MISTRAL_API_KEY:
+    os.environ["MISTRAL_API_KEY"] = MISTRAL_API_KEY
 
 # --- RAG Helper Functions ---
 @st.cache_resource
@@ -44,7 +44,7 @@ def get_vector_store(file_paths):
         separators=["\n\n", "\n", " ", ""]
     )
     chunks = splitter.split_documents(all_docs)
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+    embeddings = MistralAIEmbeddings(api_key=MISTRAL_API_KEY, model="mistral-embed")
     return FAISS.from_documents(chunks, embeddings)
 
 def get_qa_prompt():
@@ -66,10 +66,10 @@ Response:"""
 @st.cache_resource
 def get_conversational_chain(_vector_store):
     """Initializes the conversational chain with advanced memory."""
-    llm = ChatGoogleGenerativeAI(
-        model="models/gemini-1.5-flash-latest",
-        temperature=0.7,
-        convert_system_message_to_human=True
+    llm = ChatMistralAI(
+        api_key=MISTRAL_API_KEY,
+        model="mistral-large-latest",
+        temperature=0.7
     )
     
     memory = ConversationBufferMemory(
@@ -95,7 +95,7 @@ def get_conversational_chain(_vector_store):
 
 def generate_summary(docs):
     """Generate a comprehensive summary of the uploaded documents using the LLM."""
-    llm = ChatGoogleGenerativeAI(model="models/gemini-1.5-flash-latest", temperature=0.5)
+    llm = ChatMistralAI(api_key=MISTRAL_API_KEY, model="mistral-large-latest", temperature=0.5)
     # Use more chunks for a comprehensive summary
     text = "\n".join([doc.page_content for doc in docs[:4]])
     prompt = (
@@ -117,9 +117,9 @@ def run_app():
     st.title("📄 RAG Chatbot: Chat with your Documents")
     st.markdown("Upload your PDF or TXT documents, ask questions, and get answers based on their content.")
 
-    if not API_KEY:
-        st.error("🔑 API Key is not configured. Please set your Gemini API key in Streamlit secrets (GEMINI_API_KEY or GOOGLE_API_KEY) for deployment, or in environment variables for local development.")
-        st.info("💡 **For Streamlit Cloud:** Add your API key in the app settings under 'Secrets management'")
+    if not MISTRAL_API_KEY:
+        st.error("🔑 Mistral API Key is not configured. Please set your Mistral API key in Streamlit secrets (MISTRAL_API_KEY) for deployment, or in environment variables for local development.")
+        st.markdown("> 💡 **For Streamlit Cloud:** Add your API key in the app settings under 'Secrets management'")
         st.stop()
 
     # --- Session State for RAG ---
@@ -201,8 +201,8 @@ def run_app():
                     
                     # Show confidence and relevance metrics
                     with st.expander("Response Details"):
-                        st.info("This response was generated using multiple relevant passages from your documents. "
-                              "The most relevant sections were selected using semantic search and maximum marginal relevance "
-                              "to ensure comprehensive and accurate information.")
+                        st.markdown("> This response was generated using multiple relevant passages from your documents. "
+                                  "The most relevant sections were selected using semantic search and maximum marginal relevance "
+                                  "to ensure comprehensive and accurate information.")
     else:
-        st.info("Please upload and process documents in the sidebar to start chatting.")
+        st.markdown("> 📖 **Please upload and process documents in the sidebar to start chatting.**")

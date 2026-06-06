@@ -1,5 +1,5 @@
 import streamlit as st
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_mistralai import ChatMistralAI
 from langchain.agents import AgentExecutor, create_react_agent, Tool
 from langchain_community.agent_toolkits.load_tools import load_tools 
 from langchain.prompts import PromptTemplate
@@ -11,7 +11,6 @@ import threading
 from duckduckgo_search import DDGS
 from langchain.schema import OutputParserException, AgentAction, AgentFinish
 from langchain.agents.agent import AgentOutputParser
-import google.generativeai as genai
 
 def duckduckgo_search_tool(query, max_results=5):
     """Enhanced DuckDuckGo search that returns content with sources, prioritizing recent results."""
@@ -80,33 +79,68 @@ def duckduckgo_search_tool(query, max_results=5):
             else:
                 return f"[DuckDuckGo search failed after {retries} attempts. Error: {e}]"
 
+def tavily_search(query, max_results=5):
+    tavily_api_key = st.secrets.get("TAVILY_API_KEY") or os.getenv("TAVILY_API_KEY") or "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"
+    if not tavily_api_key:
+        raise Exception("Tavily API key not configured")
+        
+    payload = {
+        "api_key": tavily_api_key,
+        "query": query,
+        "search_depth": "advanced",
+        "max_results": max_results
+    }
+    
+    import requests
+    response = requests.post("https://api.tavily.com/search", json=payload, timeout=15)
+    response.raise_for_status()
+    res_json = response.json()
+    
+    results = res_json.get("results", [])
+    if not results:
+        raise Exception("No search results found from Tavily")
+        
+    formatted_results = []
+    sources = []
+    
+    for i, result in enumerate(results, 1):
+        title = result.get('title', 'No title')
+        url = result.get('url', 'No URL')
+        content = result.get('content', 'No description')
+        
+        formatted_results.append(f"{i}. **{title}**\n   {content}\n   Source: {url}\n")
+        sources.append(f"[{title}]({url})")
+        
+    search_content = "\n".join(formatted_results)
+    sources_list = " | ".join(sources)
+    
+    return f"**Search Results (Tavily):**\n\n{search_content}\n\n**Sources for further reading:**\n{sources_list}"
+
+def web_search_tool_with_fallback(query, max_results=5):
+    try:
+        print("DEBUG: Executing Tavily search...")
+        return tavily_search(query, max_results)
+    except Exception as e:
+        print(f"DEBUG: Tavily search failed, falling back to DuckDuckGo: {e}")
+        return duckduckgo_search_tool(query, max_results)
+
 def create_langchain_agent():
     """
-    Creates and returns a LangChain agent executor powered by Google Gemini.
+    Creates and returns a LangChain agent executor powered by Mistral.
     """
-    # Use Gemini
-    api_key = os.environ.get("GOOGLE_API_KEY")
-    if not api_key:
-        raise ValueError("GOOGLE_API_KEY environment variable is required")
+    # Use Mistral
+    api_key = os.environ.get("MISTRAL_API_KEY") or "a9jVQQfE1QKrhhpuVTPrs78IdpL4anhW"
     
-    print(f"DEBUG: Creating LLM with Gemini API key: {api_key[:8]}...{api_key[-4:]}")
-    print(f"DEBUG: API key length: {len(api_key)}")
-    
-    # Configure Gemini
-    genai.configure(api_key=api_key)
-    
-    llm = ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash",
-        google_api_key=api_key,
-        temperature=0.1,
-        convert_system_message_to_human=True
-    )
-    print(f"DEBUG: Using Gemini LLM: {type(llm)}") 
+    llm = ChatMistralAI(
+        model="mistral-large-latest",
+        api_key=api_key,
+        temperature=0.1
+    ) 
 
     # 2. Define the Tools - simplified to just web search
     search_tool = Tool(
         name="web_search",
-        func=lambda q: duckduckgo_search_tool(q, max_results=5),
+        func=lambda q: web_search_tool_with_fallback(q, max_results=5),
         description="Search the web for current, up-to-date information. Use this when you need recent news, current events, latest developments, or real-time information."
     )
     
@@ -197,24 +231,16 @@ def format_agent_response(agent_output):
 
 def synthesize_search_results(query, search_results):
     """
-    Use Gemini AI to synthesize search results into a comprehensive, natural answer.
+    Use Mistral AI to synthesize search results into a comprehensive, natural answer.
     """
     try:
-        # Use Gemini
-        api_key = os.environ.get("GOOGLE_API_KEY")
-        if not api_key:
-            raise ValueError("GOOGLE_API_KEY environment variable is required")
-            
-        print(f"DEBUG: Synthesis using Gemini API key: {api_key[:8]}...{api_key[-4:]}")
+        # Use Mistral
+        api_key = os.environ.get("MISTRAL_API_KEY") or "a9jVQQfE1QKrhhpuVTPrs78IdpL4anhW"
         
-        # Configure Gemini
-        genai.configure(api_key=api_key)
-        
-        llm = ChatGoogleGenerativeAI(
-            model="gemini-1.5-flash",
-            google_api_key=api_key,
-            temperature=0.3,
-            convert_system_message_to_human=True
+        llm = ChatMistralAI(
+            model="mistral-large-latest",
+            api_key=api_key,
+            temperature=0.3
         )
         
         synthesis_prompt = f"""Based on the following web search results, provide a comprehensive, well-structured answer to the question: "{query}"
@@ -246,7 +272,7 @@ Write a comprehensive answer that someone could easily read and understand:"""
         # Check for authentication errors
         if "401" in str(e) or "unauthorized" in str(e).lower():
             print("DEBUG: Authentication error in synthesis!")
-            st.error("🔑 **Authentication Error in AI Synthesis**: Please check your Google API key.")
+            st.error("🔑 **Authentication Error in AI Synthesis**: Please check your Mistral API key.")
             return f"**Search Results Found** (AI synthesis failed due to authentication error):\n\n{search_results}"
         
         # Fallback to basic formatting if synthesis fails
@@ -254,24 +280,16 @@ Write a comprehensive answer that someone could easily read and understand:"""
 
 def direct_chat_fallback(query):
     """
-    Direct chat with Gemini AI model as a fallback, but emphasize current information.
+    Direct chat with Mistral AI model as a fallback, but emphasize current information.
     """
     try:
-        # Use Gemini
-        api_key = os.environ.get("GOOGLE_API_KEY")
-        if not api_key:
-            raise ValueError("GOOGLE_API_KEY environment variable is required")
-            
-        print(f"DEBUG: Direct chat using Gemini API key: {api_key[:8]}...{api_key[-4:]}")
+        # Use Mistral
+        api_key = os.environ.get("MISTRAL_API_KEY") or "a9jVQQfE1QKrhhpuVTPrs78IdpL4anhW"
         
-        # Configure Gemini
-        genai.configure(api_key=api_key)
-        
-        llm = ChatGoogleGenerativeAI(
-            model="gemini-1.5-flash",
-            google_api_key=api_key,
-            temperature=0.0,
-            convert_system_message_to_human=True
+        llm = ChatMistralAI(
+            model="mistral-large-latest",
+            api_key=api_key,
+            temperature=0.0
         )
         
         # Enhanced prompt for current information
@@ -289,7 +307,7 @@ Question: {query}"""
         # Check for authentication errors
         if "401" in str(e) or "unauthorized" in str(e).lower():
             print("DEBUG: Authentication error in direct chat!")
-            st.error("🔑 **Authentication Error**: Cannot access Google Gemini API. Please check your API key configuration.")
+            st.error("🔑 **Authentication Error**: Cannot access Mistral API. Please check your API key configuration.")
         
         return None
 
@@ -303,88 +321,25 @@ def main():
     # Load API key from Streamlit secrets or environment
     load_dotenv()
     
-    # Get Google API key from Streamlit secrets or environment
-    google_api_key = None
+    # Get Mistral API key from Streamlit secrets or environment
+    mistral_api_key = None
     
     # Try Streamlit secrets first (for deployment)
     try:
-        google_api_key = st.secrets["GOOGLE_API_KEY"]
-        print("DEBUG: Google API key loaded from Streamlit secrets")
+        mistral_api_key = st.secrets.get("MISTRAL_API_KEY") or os.environ.get("MISTRAL_API_KEY") or "a9jVQQfE1QKrhhpuVTPrs78IdpL4anhW"
     except Exception as e:
-        print(f"DEBUG: Failed to load from st.secrets['GOOGLE_API_KEY']: {e}")
-        
-        # Try environment variable (for local development)
-        try:
-            google_api_key = os.environ.get("GOOGLE_API_KEY")
-            if google_api_key:
-                print("DEBUG: Google API key loaded from environment")
-            else:
-                print("DEBUG: No Google API key found in environment")
-        except Exception as e2:
-            print(f"DEBUG: Failed to load from environment: {e2}")
+        mistral_api_key = os.environ.get("MISTRAL_API_KEY") or "a9jVQQfE1QKrhhpuVTPrs78IdpL4anhW"
     
     # Check if we have the required API key
-    if not google_api_key:
-        st.error("🔑 **Google API key not found!**")
-        
-        st.markdown("### ☁️ **For Streamlit Cloud Deployment:**")
-        st.info("""1. Go to your Streamlit Cloud app dashboard
-2. Click on your app settings (⚙️)
-3. Go to 'Secrets' section  
-4. Add this content:
-```toml
-GOOGLE_API_KEY = "your-google-api-key-here"
-```""")
-        
-        st.markdown("### 🏠 **For Local Development:**")
-        st.info("""Create a `.env` file in your project directory with:
-```
-GOOGLE_API_KEY=your-google-api-key-here
-```""")
-        
-        st.markdown("### 🔑 **Get Your API Key:**")
-        st.info("Visit https://aistudio.google.com/app/apikey to get your Google AI API key")
-        
-        # Show debug info
-        with st.expander("🔍 Debug Information"):
-            try:
-                st.write(f"- Streamlit secrets accessible: {bool(st.secrets)}")
-                st.write(f"- Available secrets keys: {list(st.secrets.keys()) if st.secrets else 'None'}")
-                st.write(f"- GOOGLE_API_KEY in secrets: {'GOOGLE_API_KEY' in st.secrets}")
-                st.write(f"- Environment GOOGLE_API_KEY: {bool(os.environ.get('GOOGLE_API_KEY'))}")
-            except Exception as debug_error:
-                st.write(f"- Debug error: {debug_error}")
-        
-        st.warning("⚠️ The app cannot function without a valid Google API key.")
+    if not mistral_api_key:
+        st.error("🔑 **Mistral API key not found!**")
         st.stop()
     
     # Set the API key in environment
-    os.environ["GOOGLE_API_KEY"] = google_api_key
-    print(f"DEBUG: Set environment variable GOOGLE_API_KEY to: {google_api_key[:8]}...{google_api_key[-4:]}")
+    os.environ["MISTRAL_API_KEY"] = mistral_api_key
     
-    # Verify it was set correctly
-    verification_key = os.environ.get("GOOGLE_API_KEY")
-    print(f"DEBUG: Verification - environment variable now contains: {verification_key[:8]}...{verification_key[-4:] if verification_key else 'None'}")
-    
-    # Validate API key format
-    api_key_valid = False
-    if google_api_key:
-        # Google API keys typically start with "AIza" and are about 39 characters long
-        if google_api_key.startswith('AIza') and len(google_api_key) > 30:
-            api_key_valid = True
-            print("DEBUG: Google API key format validation passed")
-        else:
-            print(f"DEBUG: Google API key format validation failed. Key starts with: {google_api_key[:10]}...")
-    
-    # Show API key status (masked for security)
-    if google_api_key and api_key_valid:
-        masked_key = google_api_key[:8] + "..." + google_api_key[-4:] if len(google_api_key) > 12 else "***"
-        st.success(f"✅ Google Gemini API connected (Key: {masked_key})")
-    elif google_api_key:
-        masked_key = google_api_key[:8] + "..." + google_api_key[-4:] if len(google_api_key) > 12 else "***"
-        st.warning(f"⚠️ API key format may be incorrect (Key: {masked_key})")
-    else:
-        st.error("❌ No API key available!")
+    masked_key = mistral_api_key[:8] + "..." + mistral_api_key[-4:] if len(mistral_api_key) > 12 else "***"
+    st.markdown(f"> ✅ **Mistral API connected** (Key: {masked_key})")
 
     # Main input field and button stacked vertically
     query = st.text_input("Enter your query:", placeholder="e.g., What is Google's latest AI model?", key="news_query")
@@ -476,7 +431,7 @@ GOOGLE_API_KEY=your-google-api-key-here
             
             # Check for authentication errors
             if "401" in str(e) or "unauthorized" in str(e).lower():
-                st.error("🔑 **Authentication Error**: There's an issue with the Google API key.")
+                st.error("🔑 **Authentication Error**: There's an issue with the Mistral API key.")
                 st.info("Please check that your API key is correctly set in Streamlit secrets and is valid.")
             else:
                 st.error(f"An error occurred: {e}")

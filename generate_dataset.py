@@ -15,14 +15,14 @@ load_dotenv()
 try:
     # For Streamlit deployment, try secrets first
     import streamlit as st
-    API_KEY = st.secrets.get("GEMINI_API_KEY") or st.secrets.get("GOOGLE_API_KEY")
+    MISTRAL_API_KEY = st.secrets.get("MISTRAL_API_KEY") or os.getenv("MISTRAL_API_KEY") or "a9jVQQfE1QKrhhpuVTPrs78IdpL4anhW"
 except ImportError:
     # Not in Streamlit environment, use environment variables only
-    API_KEY = None
+    MISTRAL_API_KEY = None
 
-if not API_KEY:
+if not MISTRAL_API_KEY:
     # Fall back to environment variables
-    API_KEY = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY") or "a9jVQQfE1QKrhhpuVTPrs78IdpL4anhW"
 
 TOPICS = ["Python for Data Science",
         "Web Development Fundamentals",
@@ -124,38 +124,37 @@ COURSE_SCHEMA = {
     "required": ["courseTitle", "introduction", "modules", "conclusion"]
 }
 
-async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, top_p, response_schema=None):
-    chat_history = [{"role": "user", "parts": [{"text": prompt}]}]
-    generation_config = {
-        "temperature": temperature,
-        "maxOutputTokens": max_tokens,
-        "topK": int(top_k),
-        "topP": top_p
-    }
+async def generate_content_with_mistral(prompt, temperature, max_tokens, top_k, top_p, response_schema=None):
+    messages = [{"role": "user", "content": prompt}]
     payload = {
-        "contents": chat_history,
-        "generationConfig": generation_config
+        "model": "mistral-large-latest",
+        "messages": messages,
+        "temperature": temperature,
+        "max_tokens": max_tokens
     }
     if response_schema:
-        payload["generationConfig"]["responseMimeType"] = "application/json"
-        payload["generationConfig"]["responseSchema"] = response_schema
+        json_instruction = f"\n\nIMPORTANT: Return ONLY valid JSON matching this structure: {json.dumps(response_schema, indent=2)}"
+        messages[0]["content"] += json_instruction
+        payload["response_format"] = {"type": "json_object"}
 
-    api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={API_KEY}"
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {MISTRAL_API_KEY}"
+    }
+    api_url = "https://api.mistral.ai/v1/chat/completions"
     try:
         async with httpx.AsyncClient() as client:
             response = await client.post(
                 api_url,
-                headers={'Content-Type': 'application/json'},
+                headers=headers,
                 json=payload,
                 timeout=120
             )
             response.raise_for_status()
             result = response.json()
 
-        if result.get("candidates") and result["candidates"][0].get("content") and \
-           result["candidates"][0]["content"].get("parts") and \
-           result["candidates"][0]["content"]["parts"][0].get("text"):
-            text_response = result["candidates"][0]["content"]["parts"][0]["text"]
+        if result.get("choices") and result["choices"][0].get("message"):
+            text_response = result["choices"][0]["message"].get("content")
             text_response = text_response.strip()
             if text_response.startswith("```"):
                 text_response = re.sub(r"^```(\w+)?", "", text_response).strip()
@@ -231,7 +230,7 @@ async def generate_random_course():
     It must have exactly {num_modules} modules.
     Each module should have chapters, and the content for each module should be designed to take approximately {read_time} to read.
     """
-    course_data = await generate_content_with_gemini(
+    course_data = await generate_content_with_mistral(
         course_prompt, temperature, max_tokens, top_k, top_p, response_schema=COURSE_SCHEMA)
     if course_data and isinstance(course_data, dict) and "courseTitle" in course_data:
         dataset_entry = {
@@ -279,8 +278,8 @@ async def main():
     print(f"Total courses in dataset: {existing_courses}")
 
 if __name__ == "__main__":
-    if not API_KEY:
-        print("🔑 API Key is not configured. Please set your Gemini API key in environment variables (GEMINI_API_KEY or GOOGLE_API_KEY).")
+    if not MISTRAL_API_KEY:
+        print("🔑 API Key is not configured. Please set your Mistral API key in environment variables (MISTRAL_API_KEY).")
         print("💡 You can add it to your .env file for local development.")
     else:
         loop = get_or_create_eventloop()

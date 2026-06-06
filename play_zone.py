@@ -3,9 +3,7 @@ from typing import Dict, List
 import json
 import random
 from datetime import datetime
-from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain.memory import ConversationBufferMemory
-from langchain.chains import ConversationChain
+from langchain_mistralai import ChatMistralAI
 import os
 from dotenv import load_dotenv
 
@@ -16,14 +14,14 @@ load_dotenv()
 # Use Streamlit secrets for deployment and fall back to environment variable
 try:
     # Try to get from Streamlit secrets first (for deployment)
-    API_KEY = st.secrets.get("GEMINI_API_KEY") or st.secrets.get("GOOGLE_API_KEY")
+    MISTRAL_API_KEY = st.secrets.get("MISTRAL_API_KEY") or os.getenv("MISTRAL_API_KEY") or "a9jVQQfE1QKrhhpuVTPrs78IdpL4anhW"
 except:
     # Fall back to environment variables (for local development)
-    API_KEY = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY") or "a9jVQQfE1QKrhhpuVTPrs78IdpL4anhW"
 
-# Only set os.environ if we have a key
-if API_KEY:
-    os.environ["GOOGLE_API_KEY"] = API_KEY # Ensure it's in os.environ for other modules that might use it
+# Set API key environment variable for Mistral if needed by LangChain
+if MISTRAL_API_KEY:
+    os.environ["MISTRAL_API_KEY"] = MISTRAL_API_KEY
 
 def init_session_state():
     """Initialize session state for score tracking"""
@@ -35,27 +33,23 @@ def init_session_state():
         st.session_state.cards_answered = set()
 
 def init_llm():
-    """Initialize the Gemini 2.0 Flash model"""
+    """Initialize the Mistral model"""
     # Check for API key at runtime
-    if not API_KEY:
-        st.error("🔑 API Key is not configured. Please set your Gemini API key in Streamlit secrets (GEMINI_API_KEY or GOOGLE_API_KEY) for deployment, or in environment variables for local development.")
+    if not MISTRAL_API_KEY:
+        st.error("🔑 Mistral API Key is not configured. Please set your Mistral API key in Streamlit secrets (MISTRAL_API_KEY) or in environment variables.")
         st.stop()
         
     if "llm" not in st.session_state:
-        llm = ChatGoogleGenerativeAI(
-            model="gemini-2.0-flash",
-            temperature=0.7,
-            top_k=40,
-            top_p=0.8,
-            max_output_tokens=2048
+        st.session_state.llm = ChatMistralAI(
+            api_key=MISTRAL_API_KEY,
+            model="mistral-large-latest",
+            temperature=0.7
         )
-        memory = ConversationBufferMemory()
-        st.session_state.conversation = ConversationChain(llm=llm, memory=memory)
-    return st.session_state.conversation
+    return st.session_state.llm
 
 def generate_flashcards(topic: str, num_cards: int) -> List[Dict]:
-    """Generate flashcards using Gemini 2.0 Flash"""
-    conversation = init_llm()
+    """Generate flashcards using Mistral"""
+    llm = init_llm()
     
     prompt = f"""Generate {num_cards} educational flashcards for studying {topic}.
     Each flashcard should be clear, concise, and test the user's knowledge.
@@ -77,7 +71,7 @@ def generate_flashcards(topic: str, num_cards: int) -> List[Dict]:
     Return ONLY the JSON array, no other text."""
     
     try:
-        response = conversation.predict(input=prompt)
+        response = llm.invoke(prompt).content
         # Extract JSON from response
         start_idx = response.find("[")
         end_idx = response.rfind("]") + 1
@@ -383,12 +377,12 @@ def show_play_zone():
 
         # Show intro message if no flashcards
         if not hasattr(st.session_state, 'flashcards'):
-            st.info("""
-            ### Flash Cards
-            These are auto-generated flash cards! You can...
-            - Swipe between cards
-            - Flip and track which questions you got right or wrong
-            - Quickly refresh your memory on the content!
+            st.markdown("""
+            > ### Flash Cards
+            > These are auto-generated flash cards! You can...
+            > - Swipe between cards
+            > - Flip and track which questions you got right or wrong
+            > - Quickly refresh your memory on the content!
             """)
         
         # Display flashcards if they exist
@@ -400,10 +394,10 @@ def show_play_zone():
             )
 
     with tab2:
-        st.info("🚧 Mind Maps feature coming soon!")
+        st.markdown("> 🚧 Mind Maps feature coming soon!")
     
     with tab3:
-        st.info("🚧 Learning Games feature coming soon!")
+        st.markdown("> 🚧 Learning Games feature coming soon!")
 
 def run_app():
     """Main entry point for the PlayZone application"""
