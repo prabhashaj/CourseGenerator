@@ -25,6 +25,8 @@ def init_global_session_state():
         st.session_state.selected_course_index = None
     if "chapter_contents" not in st.session_state:
         st.session_state.chapter_contents = {}
+    if "chapter_images" not in st.session_state:
+        st.session_state.chapter_images = {}
     if "quiz_progress" not in st.session_state:
         st.session_state.quiz_progress = {}
     if "current_card_idx" not in st.session_state:

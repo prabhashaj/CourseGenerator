@@ -1,5 +1,6 @@
-from langchain.memory import ConversationBufferMemory
-from langchain.chains import ConversationChain
+class DummyMemory:
+    def clear(self):
+        pass
 import streamlit as st
 import httpx
 import json
@@ -34,6 +35,50 @@ except:
 if not MISTRAL_API_KEY:
     st.error("🔑 Mistral API Key is required! Please set MISTRAL_API_KEY in your .env file or environment variables.")
     st.stop()
+
+# --- Tavily API Configuration ---
+try:
+    TAVILY_API_KEY = st.secrets.get("TAVILY_API_KEY") or os.getenv("TAVILY_API_KEY") or "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"
+except:
+    TAVILY_API_KEY = os.getenv("TAVILY_API_KEY") or "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"
+
+def get_chapter_images_from_tavily(query: str):
+    """Retrieves relevant images for a topic using Tavily Search API (synchronous)."""
+    if not TAVILY_API_KEY:
+        return []
+    
+    url = "https://api.tavily.com/search"
+    payload = {
+        "api_key": TAVILY_API_KEY,
+        "query": query,
+        "include_images": True,
+        "max_results": 3
+    }
+    
+    import requests
+    try:
+        response = requests.post(url, json=payload, timeout=15)
+        response.raise_for_status()
+        data = response.json()
+        
+        images = data.get("images", [])
+        formatted_images = []
+        for img in images:
+            if isinstance(img, dict) and "url" in img:
+                formatted_images.append({
+                    "url": img["url"],
+                    "description": img.get("description", "")
+                })
+            elif isinstance(img, str):
+                formatted_images.append({
+                    "url": img,
+                    "description": ""
+                })
+        return formatted_images
+    except Exception as e:
+        print(f"Error fetching images from Tavily: {str(e)}")
+        return []
+
 
 def build_chapter_content_prompt(chapter, course, difficulty, content_tokens, total_chapters, content_depth):
     """Build chapter content prompt without complex f-string expressions to avoid syntax errors."""
@@ -119,13 +164,15 @@ def init_session_state():
         st.session_state.selected_course_index = None
     if "chapter_contents" not in st.session_state:
         st.session_state.chapter_contents = {}
+    if "chapter_images" not in st.session_state:
+        st.session_state.chapter_images = {}
     if "quiz_progress" not in st.session_state:
         st.session_state.quiz_progress = {}
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
     if "conversation" not in st.session_state:
         # We don't need ConversationChain since we're using OpenRouter directly
-        memory = ConversationBufferMemory()
+        memory = DummyMemory()
         st.session_state.conversation = {"memory": memory}
     if "current_mode" not in st.session_state:
         st.session_state.current_mode = "course_generator"
@@ -255,11 +302,11 @@ def is_response_complete(content):
     ]
     
     # Special check for incomplete summary section
-    has_summary_section = 'summary' in content_lower or 'conclusion' in content_lower
+    has_summary_section = any(k in content_lower for k in ['summary', 'conclusion', 'takeaway', 'takeaways', 'wrap-up', 'wrap up', 'recap', 'final thoughts', 'conclude'])
     if has_summary_section:
         # Find the summary section
         summary_start = -1
-        for keyword in ['## summary', '# summary', 'summary:', 'in summary', 'to summarize']:
+        for keyword in ['## summary', '# summary', 'summary:', 'in summary', 'to summarize', 'takeaways', 'takeaway', 'wrap-up', 'wrap up', 'recap', 'final thoughts', 'conclusion']:
             idx = content_lower.find(keyword)
             if idx != -1:
                 summary_start = idx
@@ -886,7 +933,7 @@ def run_app():
                                     
                                     if detailed_content and len(detailed_content.strip()) > 200:
                                         word_count = len(detailed_content.split())
-                                        has_summary = any(keyword in detailed_content.lower() for keyword in ['summary', 'conclusion', 'in summary', 'to conclude', 'key points'])
+                                        has_summary = any(keyword in detailed_content.lower() for keyword in ['summary', 'conclusion', 'in summary', 'to conclude', 'key points', 'takeaway', 'takeaways', 'wrap-up', 'wrap up', 'recap', 'final thoughts'])
                                         is_complete = is_response_complete(detailed_content)
                                         
                                         if word_count < 400 or not has_summary or not is_complete:
@@ -918,6 +965,15 @@ def run_app():
                             
                             if detailed_content and len(detailed_content.strip()) > 100:
                                 st.session_state.chapter_contents[chapter_id] = detailed_content
+                                
+                                # Automatically fetch relevant images using Tavily search
+                                try:
+                                    search_query = f"{course['courseTitle']} {chapter['chapterTitle']} diagram illustration"
+                                    images = get_chapter_images_from_tavily(search_query)
+                                    if images:
+                                        st.session_state.chapter_images[chapter_id] = images
+                                except Exception as img_err:
+                                    print(f"Error auto-fetching chapter images: {str(img_err)}")
                                 if chapter_id not in course.get("chapter_viewed", {}):
                                     course["chapter_viewed"][chapter_id] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                                     st.session_state.courses[st.session_state.selected_course_index] = course
@@ -974,6 +1030,40 @@ def run_app():
                     
                     with st.expander("Click to expand/collapse detailed content", expanded=True):
                         st.markdown(st.session_state.chapter_contents[chapter_id])
+                        
+                        # Display Tavily search images if available
+                        images = st.session_state.chapter_images.get(chapter_id, [])
+                        if images:
+                            st.markdown("---")
+                            st.markdown("#### 🖼️ Visual References & Illustrations")
+                            cols = st.columns(len(images))
+                            for idx, img in enumerate(images):
+                                with cols[idx]:
+                                    try:
+                                        caption = img.get("description") or f"Illustration {idx+1}"
+                                        st.image(img["url"], caption=caption, use_container_width=True)
+                                    except Exception as img_render_err:
+                                        st.caption(f"Error rendering image: {img_render_err}")
+                        
+                        # Image Search Settings for custom query
+                        if TAVILY_API_KEY:
+                            st.markdown("---")
+                            with st.expander("🖼️ Image Search Settings", expanded=False):
+                                default_query = f"{course.get('courseTitle', '')} {chapter.get('chapterTitle', '')} diagram illustration"
+                                custom_query = st.text_input(
+                                    "Custom Image Search Query", 
+                                    value=default_query,
+                                    key=f"custom_query_{chapter_id}"
+                                )
+                                if st.button("Search & Update Images", key=f"btn_search_img_{chapter_id}"):
+                                    with st.spinner("Searching for images..."):
+                                        new_images = get_chapter_images_from_tavily(custom_query)
+                                        if new_images:
+                                            st.session_state.chapter_images[chapter_id] = new_images
+                                            st.success(f"Found {len(new_images)} images!")
+                                            st.rerun()
+                                        else:
+                                            st.warning("No images found.")
                     
                     # Auto-completion logic based on time spent
                     if not is_completed and total_time_spent >= estimated_minutes * 0.8:
