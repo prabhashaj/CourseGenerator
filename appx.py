@@ -1,4 +1,6 @@
 import streamlit as st
+import sys
+import os
 
 # --- Page Configuration ---
 st.set_page_config(
@@ -7,10 +9,31 @@ st.set_page_config(
     layout="wide"
 )
 
-import course_generator
-import rag_chatbot
-import document_course_creator
-import play_zone  # Import the new PlayZone module
+st.write("### Streamlit Cloud Environment Diagnostics")
+st.write(f"Python executable: `{sys.executable}`")
+st.write(f"Python path: `{sys.path}`")
+
+try:
+    import pkg_resources
+    packages = [f"{d.project_name}=={d.version}" for d in pkg_resources.working_set]
+    st.write("Installed packages:", sorted(packages))
+except Exception as debug_err:
+    st.write(f"Debug error: `{debug_err}`")
+
+try:
+    import langchain
+    st.write(f"LangChain is installed! Version: `{langchain.__version__}` Path: `{langchain.__file__}`")
+except Exception as debug_err:
+    st.write(f"LangChain import error: `{debug_err}`")
+
+try:
+    import course_generator
+    import rag_chatbot
+    import document_course_creator
+    import play_zone  # Import the new PlayZone module
+except Exception as import_err:
+    st.error(f"Import Error: {import_err}")
+    st.stop()
 import lang_news_enhanced # Import the enhanced langchain news module
 
 # --- Session State Initialization (Centralized) ---
