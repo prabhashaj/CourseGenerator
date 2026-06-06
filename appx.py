@@ -22,9 +22,19 @@ except Exception as debug_err:
 
 try:
     import langchain
-    st.write(f"LangChain is installed! Version: `{langchain.__version__}` Path: `{langchain.__file__}`")
+    st.write(f"LangChain version: `{langchain.__version__}` Path: `{langchain.__file__}`")
+    st.write("LangChain path list:", langchain.__path__)
+    st.write("LangChain package contents (dir):", dir(langchain))
+    # List files in the langchain directory
+    import os
+    langchain_dir = os.path.dirname(langchain.__file__)
+    st.write("langchain directory files:", os.listdir(langchain_dir))
+    if os.path.exists(os.path.join(langchain_dir, 'memory')):
+        st.write("memory folder exists! files inside:", os.listdir(os.path.join(langchain_dir, 'memory')))
+    else:
+        st.write("memory folder DOES NOT exist in langchain directory.")
 except Exception as debug_err:
-    st.write(f"LangChain import error: `{debug_err}`")
+    st.write(f"LangChain import/inspect error: `{debug_err}`")
 
 try:
     import course_generator
