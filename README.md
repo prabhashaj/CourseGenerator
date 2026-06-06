@@ -35,16 +35,14 @@ link: https://ajscoursegenerator.streamlit.app/
 
 ### 📰 Knowledge Hub
 - **Real-time Information**: Get current news and information using web search
-- **AI-Powered Research**: Uses DeepSeek AI model via OpenRouter for intelligent responses
+- **AI-Powered Research**: Uses Google Gemini AI for intelligent responses
 - **Source Verification**: Provides sources for all web-searched information
 - **Current Events**: Stay updated with the latest developments in any field
 
 ## 🛠️ Technology Stack
 
 - **Frontend**: Streamlit
-- **AI Models**: 
-  - Google Gemini 2.0 Flash (Primary)
-  - DeepSeek R1 Distill (Knowledge Hub)
+- **AI Model**: Google Gemini 2.0 Flash
 - **Vector Database**: FAISS for document embeddings
 - **Document Processing**: PyPDF2, LangChain document loaders
 - **Web Search**: DuckDuckGo Search API
@@ -54,7 +52,6 @@ link: https://ajscoursegenerator.streamlit.app/
 
 - Python 3.8 or higher
 - Google Gemini API key
-- OpenRouter API key (for Knowledge Hub feature)
 
 ## 🚀 Quick Start
 
@@ -74,8 +71,6 @@ pip install -r requirements.txt
 Create a `.env` file in the project root:
 ```env
 GEMINI_API_KEY=your_gemini_api_key_here
-GOOGLE_API_KEY=your_gemini_api_key_here
-OPEN_ROUTER_KEY=your_openrouter_api_key_here
 ```
 
 ### 4. Run the Application
@@ -89,11 +84,9 @@ streamlit run appx.py
 Ensure your code is in a GitHub repository.
 
 ### 2. Configure Secrets
-In Streamlit Cloud, add these secrets:
+In Streamlit Cloud, add this secret:
 ```toml
 GEMINI_API_KEY = "your_gemini_api_key_here"
-GOOGLE_API_KEY = "your_gemini_api_key_here"  
-OPEN_ROUTER_KEY = "your_openrouter_api_key_here"
 ```
 
 ### 3. Deploy
@@ -180,12 +173,7 @@ Adjust these parameters in the sidebar:
 ### Google Gemini API
 1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
 2. Create a new API key
-3. Add to your environment variables
-
-### OpenRouter API (Optional - for Knowledge Hub)
-1. Visit [OpenRouter](https://openrouter.ai/)
-2. Sign up and get API key
-3. Add to your environment variables
+3. Add to your environment variables as `GEMINI_API_KEY`
 
 ## 🎨 Features in Detail
 

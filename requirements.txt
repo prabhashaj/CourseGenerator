@@ -1,6 +1,5 @@
 streamlit
 httpx
-PyPDF2==3.0.1
 langchain>=0.1.0
 langchain-core
 faiss-cpu
@@ -13,20 +12,14 @@ tiktoken
 aiohttp
 openai
 nltk
-transformers
-torch
 numpy
 pandas
 requests
 beautifulsoup4
 watchdog
-langchain_core
 python-dateutil
 protobuf
 pypdf
-pdfminer.six
-pdf2image
-poppler-utils
 newspaper3k
 pytrends
 lxml_html_clean

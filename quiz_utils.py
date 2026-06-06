@@ -128,22 +128,22 @@ async def generate_quiz_with_gemini(prompt, api_key, temperature, max_tokens, to
     """
     # Define the JSON schema for the quiz
     quiz_schema = {
-        "type": "OBJECT",
+        "type": "object",
         "properties": {
             "questions": {
-                "type": "ARRAY",
+                "type": "array",
                 "description": "A list of quiz questions.",
                 "items": {
-                    "type": "OBJECT",
+                    "type": "object",
                     "properties": {
-                        "question": {"type": "STRING", "description": "The question text."},
+                        "question": {"type": "string", "description": "The question text."},
                         "options": {
-                            "type": "ARRAY",
+                            "type": "array",
                             "description": "A list of 4 multiple-choice options.",
-                            "items": {"type": "STRING"}
+                            "items": {"type": "string"}
                         },
-                        "answer": {"type": "STRING", "description": "The correct answer from the options list."},
-                        "explanation": {"type": "STRING", "description": "A brief explanation for the correct answer."}
+                        "answer": {"type": "string", "description": "The correct answer from the options list."},
+                        "explanation": {"type": "string", "description": "A brief explanation for the correct answer."}
                     },
                     "required": ["question", "options", "answer", "explanation"]
                 }
@@ -182,11 +182,14 @@ async def generate_quiz_with_gemini(prompt, api_key, temperature, max_tokens, to
         "maxOutputTokens": max_tokens,
         "topK": int(top_k),
         "topP": top_p,
-        "responseMimeType": "application/json",
-        "responseSchema": quiz_schema
     }
+    
+    # Add JSON instruction to prompt instead of using schema
+    quiz_prompt += f"\n\nIMPORTANT: Return ONLY valid JSON matching this structure: {json.dumps(quiz_schema, indent=2)}"
+    chat_history = [{"role": "user", "parts": [{"text": quiz_prompt}]}]
+    
     payload = {"contents": chat_history, "generationConfig": generation_config}
-    api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
+    api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
 
     try:
         async with httpx.AsyncClient() as client:
