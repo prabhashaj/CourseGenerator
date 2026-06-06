@@ -850,10 +850,10 @@ def run_app():
                     else:
                         st.caption("~5 min read")
                 
-                # Display chapter description in an info box for better visibility
+                # Display chapter description
                 with st.container():
                     st.markdown("**📝 What you'll learn in this chapter:**")
-                    st.info(chapter.get('description', 'No description available'))
+                    st.markdown(f"> {chapter.get('description', 'No description available')}")
 
                 # Generate detailed content button
                 if st.button(f"📚 Study", key=f"gen_content_{chapter_id}", help=f"Generate detailed content for '{chapter['chapterTitle']}'", use_container_width=True):
@@ -1017,12 +1017,12 @@ def run_app():
                             if "reading_times" in course and chapter_id in course["reading_times"]:
                                 course["reading_times"][chapter_id]["time_spent"] = 0
                             st.session_state.courses[st.session_state.selected_course_index] = course
-                            st.info("Chapter marked as incomplete.")
+                            st.toast("Chapter marked as incomplete.")
                             st.rerun()
                     
                     st.markdown("---")
                 else:
-                    st.info("Click 'Study' to generate comprehensive content for this chapter.")
+                    st.caption("Click 'Study' to generate comprehensive content for this chapter.")
 
             # Quiz for this module
             module_quiz_id = f"course_{st.session_state.selected_course_index}_module_{module['moduleNumber']}_quiz"
@@ -1106,9 +1106,9 @@ def run_app():
         
         st.markdown(f"**Conclusion:** {course.get('conclusion', 'N/A')}")
     elif st.session_state.selected_course_index is None and not st.session_state.courses:
-        st.info("Please generate a new course using the form above to get started!")
+        st.markdown("> **Please generate a new course using the form above to get started!**")
     elif st.session_state.selected_course_index is None and st.session_state.courses:
-        st.info("Select an existing course from the sidebar to view its content.")
+        st.markdown("> **Select an existing course from the sidebar to view its content.**")
 
     # Chatbot Section
     if st.session_state.selected_course_index is not None:
