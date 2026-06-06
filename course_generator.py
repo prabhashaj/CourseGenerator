@@ -379,7 +379,7 @@ async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, t
     }
     
     # Use v1beta API with correct model path
-    api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
+    api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_API_KEY}"
     
     try:
         async with httpx.AsyncClient() as client:
@@ -493,17 +493,14 @@ def run_app():
     init_session_state()
     show_navigation() # Display navigation in sidebar
 
-    st.title("🎓 Course Generator (Powered by Google Gemini)")
+    st.title("🎓 Course Generator")
     
     # Show API status
-    if GEMINI_API_KEY:
-        st.success("✅ Gemini API Key configured")
-    else:
+    if not GEMINI_API_KEY:
         st.error("❌ Gemini API Key not found. Please set GEMINI_API_KEY in your .env file.")
         st.stop()
     
     # Continue with the rest of the function
-    st.info("👈 Open the sidebar to explore exciting features")
     st.markdown("Generate custom course outlines, track your progress, and get detailed chapter content!")
     
     temperature = st.session_state.temperature

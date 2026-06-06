@@ -189,7 +189,7 @@ async def generate_quiz_with_gemini(prompt, api_key, temperature, max_tokens, to
     chat_history = [{"role": "user", "parts": [{"text": quiz_prompt}]}]
     
     payload = {"contents": chat_history, "generationConfig": generation_config}
-    api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+    api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
 
     try:
         async with httpx.AsyncClient() as client:
