@@ -24,16 +24,15 @@ except ImportError:
     st.error("The 'quiz_utils.py' file was not found. Please make sure it's in the same directory.")
     st.stop()
 
-# --- Gemini API Configuration ---
-# Get Gemini API key from environment variables or Streamlit secrets
+# --- Mistral API Configuration ---
+# Get Mistral API key from environment variables, Streamlit secrets, or use default fallback
 try:
-    GEMINI_API_KEY = st.secrets.get("GEMINI_API_KEY") or st.secrets.get("GOOGLE_API_KEY")
+    MISTRAL_API_KEY = st.secrets.get("MISTRAL_API_KEY") or os.getenv("MISTRAL_API_KEY") or "a9jVQQfE1QKrhhpuVTPrs78IdpL4anhW"
 except:
-    # Fallback to environment variables
-    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY") or "a9jVQQfE1QKrhhpuVTPrs78IdpL4anhW"
 
-if not GEMINI_API_KEY:
-    st.error("🔑 Gemini API Key is required! Please set GEMINI_API_KEY in your .env file or environment variables.")
+if not MISTRAL_API_KEY:
+    st.error("🔑 Mistral API Key is required! Please set MISTRAL_API_KEY in your .env file or environment variables.")
     st.stop()
 
 def build_chapter_content_prompt(chapter, course, difficulty, content_tokens, total_chapters, content_depth):
@@ -352,34 +351,30 @@ def safe_json_parse(text_response):
         return {"error": f"Invalid JSON after all repair attempts: {str(e)}", "raw": text_response}
 
 # --- Gemini API Call Function ---
-async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, top_p, response_schema=None):
+async def generate_content_with_mistral(prompt, temperature, max_tokens, top_k, top_p, response_schema=None):
     """
-    Calls the Gemini API to generate content.
+    Calls the Mistral API to generate content.
     """
-    # Prepare request for Gemini API
-    chat_history = [{"role": "user", "parts": [{"text": prompt}]}]
+    messages = [{"role": "user", "content": prompt}]
     
-    generation_config = {
-        "temperature": temperature,
-        "maxOutputTokens": max_tokens,
-        "topK": int(top_k),
-        "topP": top_p,
-    }
-    
-    # Add JSON mode if requested (simplified approach - just ask for JSON in text)
-    if response_schema:
-        # Add JSON request to the prompt
-        json_instruction = f"\n\nIMPORTANT: Return ONLY valid JSON matching this structure: {json.dumps(response_schema, indent=2)}"
-        chat_history[0]["parts"][0]["text"] += json_instruction
-    
-    # Prepare Gemini API payload
     payload = {
-        "contents": chat_history,
-        "generationConfig": generation_config
+        "model": "mistral-large-latest",
+        "messages": messages,
+        "temperature": temperature,
+        "max_tokens": max_tokens
     }
     
-    # Use v1beta API with correct model path
-    api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_API_KEY}"
+    if response_schema:
+        json_instruction = f"\n\nIMPORTANT: Return ONLY valid JSON matching this structure: {json.dumps(response_schema, indent=2)}"
+        messages[0]["content"] += json_instruction
+        payload["response_format"] = {"type": "json_object"}
+        
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {MISTRAL_API_KEY}"
+    }
+    
+    api_url = "https://api.mistral.ai/v1/chat/completions"
     
     try:
         async with httpx.AsyncClient() as client:
@@ -394,7 +389,7 @@ async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, t
                 
             response = await client.post(
                 api_url,
-                headers={'Content-Type': 'application/json'},
+                headers=headers,
                 json=payload,
                 timeout=timeout_duration
             )
@@ -402,35 +397,29 @@ async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, t
             response.raise_for_status()
             result = response.json()
             
-            # Extract response from Gemini format
-            if result.get("candidates") and result["candidates"][0].get("content"):
-                parts = result["candidates"][0]["content"].get("parts", [])
-                if parts and parts[0].get("text"):
-                    text_response = parts[0]["text"]
-                    
-                    if response_schema:
-                        # Response is already JSON when schema is provided
-                        try:
-                            return json.loads(text_response)
-                        except json.JSONDecodeError:
-                            parsed_response = safe_json_parse(text_response)
-                            if isinstance(parsed_response, dict) and "error" in parsed_response:
-                                st.error(f"Failed to parse response as JSON: {parsed_response['error']}")
-                                return None
-                            return parsed_response
-                    return text_response
-                else:
-                    st.error("No content generated by Gemini. Please try again.")
-                    return None
+            # Extract response from Mistral format
+            if result.get("choices") and result["choices"][0].get("message"):
+                text_response = result["choices"][0]["message"].get("content")
+                
+                if response_schema:
+                    try:
+                        return json.loads(text_response)
+                    except json.JSONDecodeError:
+                        parsed_response = safe_json_parse(text_response)
+                        if isinstance(parsed_response, dict) and "error" in parsed_response:
+                            st.error(f"Failed to parse response as JSON: {parsed_response['error']}")
+                            return None
+                        return parsed_response
+                return text_response
             else:
-                st.error("Unexpected response format from Gemini API.")
+                st.error("Unexpected response format from Mistral API.")
                 return None
                 
     except httpx.RequestError as e:
         st.error(f"🌐 **Network Error:** {str(e)}")
         return None
     except httpx.HTTPStatusError as e:
-        st.error(f"🔴 **Gemini API Error:** HTTP {e.response.status_code}")
+        st.error(f"🔴 **Mistral API Error:** HTTP {e.response.status_code}")
         # Show detailed error response
         try:
             error_detail = e.response.json()
@@ -441,7 +430,7 @@ async def generate_content_with_gemini(prompt, temperature, max_tokens, top_k, t
         if e.response.status_code == 429:
             st.info("Rate limit exceeded. Please wait a moment and try again.")
         elif e.response.status_code == 401:
-            st.info("Invalid API key. Please check your GEMINI_API_KEY in .env file.")
+            st.info("Invalid API key. Please check your MISTRAL_API_KEY in .env file.")
         elif e.response.status_code == 400:
             st.info("Bad request. This may be due to an invalid schema format or API endpoint issue.")
         return None
@@ -466,11 +455,11 @@ def process_chat_message(user_message, course_content):
         User question: {user_message}
         """
         
-        # Use asyncio to run the Gemini API call
+        # Use asyncio to run the Mistral API call
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
         response = loop.run_until_complete(
-            generate_content_with_gemini(context, 0.7, 1024, 32, 1.0)
+            generate_content_with_mistral(context, 0.7, 1024, 32, 1.0)
         )
         loop.close()
         
@@ -496,8 +485,8 @@ def run_app():
     st.title("🎓 Course Generator")
     
     # Show API status
-    if not GEMINI_API_KEY:
-        st.error("❌ Gemini API Key not found. Please set GEMINI_API_KEY in your .env file.")
+    if not MISTRAL_API_KEY:
+        st.error("❌ Mistral API Key not found. Please set MISTRAL_API_KEY in your environment variables.")
         st.stop()
     
     # Continue with the rest of the function
@@ -551,8 +540,8 @@ def run_app():
             st.warning("⚠️ Please enter a course topic!")
             return
         
-        if not GEMINI_API_KEY:
-            st.error("❌ Gemini API Key not found. Please set GEMINI_API_KEY in your .env file.")
+        if not MISTRAL_API_KEY:
+            st.error("❌ Mistral API Key not found. Please set MISTRAL_API_KEY in your environment variables.")
             return
         
         # Reset generation success flag
@@ -684,7 +673,7 @@ def run_app():
                             progress_bar.progress(0.3)
                         
                         course_data = loop.run_until_complete(
-                            generate_content_with_gemini(
+                            generate_content_with_mistral(
                                 course_prompt,
                                 temperature, # Use values from session state (updated by sidebar sliders)
                                 course_tokens,  # Use optimized token allocation
@@ -892,7 +881,7 @@ def run_app():
                                 try:
                                     loop = get_or_create_eventloop()
                                     detailed_content = loop.run_until_complete(
-                                        generate_content_with_gemini(content_prompt, temperature, content_tokens, top_k, top_p)
+                                        generate_content_with_mistral(content_prompt, temperature, content_tokens, top_k, top_p)
                                     )
                                     loop.close()
                                     
@@ -1057,10 +1046,10 @@ def run_app():
                             quiz_tokens = min(max_tokens, 768)
                             num_questions = 3
                             
-                        # Enable quiz generation with Gemini
+                        # Enable quiz generation with Mistral
                         loop = get_or_create_eventloop()
-                        quiz_data = loop.run_until_complete(quiz_utils.generate_quiz_with_gemini(
-                            module_content, GEMINI_API_KEY, temperature, quiz_tokens, top_k, top_p, num_questions=num_questions
+                        quiz_data = loop.run_until_complete(quiz_utils.generate_quiz_with_mistral(
+                            module_content, MISTRAL_API_KEY, temperature, quiz_tokens, top_k, top_p, num_questions=num_questions
                         ))
                         loop.close()
                         if quiz_data and "questions" in quiz_data:

@@ -121,10 +121,10 @@ def get_or_create_eventloop():
         asyncio.set_event_loop(loop)
         return loop
 
-# --- Gemini API Call Function for Quizzes ---
-async def generate_quiz_with_gemini(prompt, api_key, temperature, max_tokens, top_k, top_p, num_questions=5):
+# --- Mistral API Call Function for Quizzes ---
+async def generate_quiz_with_mistral(prompt, api_key, temperature, max_tokens, top_k, top_p, num_questions=5):
     """
-    Calls the Gemini API to generate a quiz in a structured JSON format.
+    Calls the Mistral API to generate a quiz in a structured JSON format.
     """
     # Define the JSON schema for the quiz
     quiz_schema = {
@@ -175,35 +175,37 @@ async def generate_quiz_with_gemini(prompt, api_key, temperature, max_tokens, to
     }}
     Ensure the JSON is valid and complete. Do not include any text outside the JSON object.
     """
-
-    chat_history = [{"role": "user", "parts": [{"text": quiz_prompt}]}]
-    generation_config = {
+    
+    # Add JSON instruction to prompt
+    quiz_prompt += f"\n\nIMPORTANT: Return ONLY valid JSON matching this structure: {json.dumps(quiz_schema, indent=2)}"
+    
+    payload = {
+        "model": "mistral-large-latest",
+        "messages": [{"role": "user", "content": quiz_prompt}],
         "temperature": temperature,
-        "maxOutputTokens": max_tokens,
-        "topK": int(top_k),
-        "topP": top_p,
+        "max_tokens": max_tokens,
+        "response_format": {"type": "json_object"}
     }
     
-    # Add JSON instruction to prompt instead of using schema
-    quiz_prompt += f"\n\nIMPORTANT: Return ONLY valid JSON matching this structure: {json.dumps(quiz_schema, indent=2)}"
-    chat_history = [{"role": "user", "parts": [{"text": quiz_prompt}]}]
-    
-    payload = {"contents": chat_history, "generationConfig": generation_config}
-    api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {api_key}"
+    }
+    api_url = "https://api.mistral.ai/v1/chat/completions"
 
     try:
         async with httpx.AsyncClient() as client:
             response = await client.post(
                 api_url,
-                headers={'Content-Type': 'application/json'},
+                headers=headers,
                 json=payload,
                 timeout=120
             )
             response.raise_for_status()
             result = response.json()
 
-        if result.get("candidates") and result["candidates"][0]["content"]["parts"][0].get("text"):
-            text_response = result["candidates"][0]["content"]["parts"][0]["text"]
+        if result.get("choices") and result["choices"][0].get("message"):
+            text_response = result["choices"][0]["message"].get("content")
             try:
                 return json.loads(text_response)
             except json.JSONDecodeError:
